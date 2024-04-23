@@ -7,7 +7,7 @@
 ![Logo](https://i.imgur.com/1ntnPwD.png)
 
 
-## Authors
+## Autores
 
 - [@Ibai Saenz De Buruaga](https://github.com/IbaiSaenzDeBuruaga)
 - [@Zahir Allonso](https://github.com/ZahirRiveraChacon)
