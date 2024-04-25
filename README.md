@@ -7,6 +7,15 @@
 ![Logo](https://i.imgur.com/1ntnPwD.png)
 
 
+## Fases
+
+- Fase 1 ✅
+- Fase 2 ▶️
+- Fase 3 ❌
+- Fase 4 ❌
+- Fase 5 ❌
+
+
 ## Autores
 
 - [@Ibai Saenz De Buruaga](https://github.com/IbaiSaenzDeBuruaga)
