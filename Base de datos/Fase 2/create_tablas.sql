@@ -1,4 +1,4 @@
--- 1. Script SQL de borrado y creación de las tablas, vistas y sinónimos.
+-- 1. Script SQL de borrado y creación de las tablas.
 
 -- BORRADO DE TABLAS.
 
