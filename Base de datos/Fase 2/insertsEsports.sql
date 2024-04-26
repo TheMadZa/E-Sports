@@ -61,881 +61,1069 @@ INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION)
 VALUES (DEFAULT, 'FlyQuest', TO_DATE('06-01-2017', 'DD-MM-YYYY'));
 
 
-/* Jugadores Equipo 1 */
+/* Equipo 1 */
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('hamed', 'MattPOF', 'China', 'Jugador',
-TO_DATE('2000-08-22', 'YYYY-MM-DD'), 3025.93, 1);
+VALUES ('lidiya', 'Squeezy_Cow', 'Francia', 'Jugador',
+TO_DATE('03-08-1997', 'DD-MM-YYYY'), 4076.86, 1);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('alazne', 'MsStyles14', 'India', 'Jugador',
-TO_DATE('2005-08-23', 'YYYY-MM-DD'), 5782.62, 1);
+VALUES ('suzzanne', 'Koeleknul06', 'Reino Unido', 'Jugador',
+TO_DATE('23-10-1995', 'DD-MM-YYYY'), 6636.99, 1);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('xochilth', 'XxLogesxX', 'Emiratos Árabes Unidos', 'Líder',
-TO_DATE('1990-05-09', 'YYYY-MM-DD'), 2217.03, 1);
+VALUES ('tyquarius', 'MoisesFGX', 'Francia', 'Jugador',
+TO_DATE('26-04-2001', 'DD-MM-YYYY'), 6332.94, 1);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('asiyah', 'Vilimson', 'Egipto', 'Jugador',
-TO_DATE('2005-09-09', 'YYYY-MM-DD'), 5809.8, 1);
+VALUES ('taina', 'Ebbitt', 'Alemania', 'Jugador',
+TO_DATE('16-01-1990', 'DD-MM-YYYY'), 5082.05, 1);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('dorthea', 'jtd_2002', 'Corea del Sur', 'Jugador',
-TO_DATE('2001-06-23', 'YYYY-MM-DD'), 4592.35, 1);
+VALUES ('gelisa', 'TheThorst', 'Estados Unidos', 'Líder',
+TO_DATE('20-08-1991', 'DD-MM-YYYY'), 4986.7, 1);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('marrio', 'Masa321', 'Australia', 'Jugador',
-TO_DATE('1990-02-21', 'YYYY-MM-DD'), 6766.09, 1);
+VALUES ('talise', 'trooper2017', 'Italia', 'Líder',
+TO_DATE('02-01-2005', 'DD-MM-YYYY'), 4568.19, 1);
 
-/* Jugadores Equipo 2 */
+/* Equipo 2 */
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('elisabetta', 'Ares__God_of_War', 'Australia', 'Jugador',
-TO_DATE('1998-01-19', 'YYYY-MM-DD'), 6780.94, 2);
+VALUES ('malaia', 'beefy67', 'Reino Unido', 'Líder',
+TO_DATE('24-11-1991', 'DD-MM-YYYY'), 6756.28, 2);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('krizia', 'thumper1111', 'Sudáfrica', 'Líder',
-TO_DATE('1992-01-29', 'YYYY-MM-DD'), 3419.32, 2);
+VALUES ('nitish', 'bluesteve876', 'Reino Unido', 'Jugador',
+TO_DATE('05-06-2003', 'DD-MM-YYYY'), 5981.64, 2);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('taejon', 'ninjachase0701', 'China', 'Líder',
-TO_DATE('1992-09-17', 'YYYY-MM-DD'), 3745.31, 2);
+VALUES ('dollie', 'BaronTheMgee', 'Estados Unidos', 'Jugador',
+TO_DATE('11-10-1997', 'DD-MM-YYYY'), 6943.04, 2);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('sherene', 'dj_t_money', 'Emiratos Árabes Unidos', 'Líder',
-TO_DATE('2004-02-10', 'YYYY-MM-DD'), 5363.33, 2);
+VALUES ('izzac', 'Xtremis1', 'Reino Unido', 'Jugador',
+TO_DATE('03-03-2004', 'DD-MM-YYYY'), 5916.58, 2);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('victorian', 'R41NB0W_L0V3R', 'España', 'Jugador',
-TO_DATE('1996-10-03', 'YYYY-MM-DD'), 3106.66, 2);
+VALUES ('javante', 'BoBo_Troll', 'Brasil', 'Jugador',
+TO_DATE('13-05-1997', 'DD-MM-YYYY'), 5440.06, 2);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('elowen', 'binx18', 'Brasil', 'Líder',
-TO_DATE('1998-08-30', 'YYYY-MM-DD'), 6047.26, 2);
+VALUES ('adrielle', 'Robot_wars11', 'Corea del Sur', 'Líder',
+TO_DATE('23-11-2001', 'DD-MM-YYYY'), 5942.27, 2);
 
-/* Jugadores Equipo 3 */
+/* Equipo 3 */
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('dagen', 'AbiCC123', 'Alemania', 'Jugador',
-TO_DATE('1998-02-26', 'YYYY-MM-DD'), 2658.43, 3);
+VALUES ('gwendalynn', 'Topblocker04', 'Canadá', 'Jugador',
+TO_DATE('22-08-2004', 'DD-MM-YYYY'), 3821.24, 3);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('jadine', 'SuPeR_sMuRf_42', 'Brasil', 'Líder',
-TO_DATE('2002-07-30', 'YYYY-MM-DD'), 5256.96, 3);
+VALUES ('kemontae', 'stampylongbro', 'Australia', 'Jugador',
+TO_DATE('11-02-1991', 'DD-MM-YYYY'), 6025.88, 3);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('dayonna', 'creekjaooo', 'Egipto', 'Líder',
-TO_DATE('1993-06-06', 'YYYY-MM-DD'), 3491.65, 3);
+VALUES ('marlow', 'Captain_Mehh', 'India', 'Jugador',
+TO_DATE('04-12-1998', 'DD-MM-YYYY'), 4452.92, 3);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('daizon', 'DnerFlo', 'Emiratos Árabes Unidos', 'Jugador',
-TO_DATE('2003-04-29', 'YYYY-MM-DD'), 2305.59, 3);
+VALUES ('neve', 'UnDeadSlender', 'España', 'Líder',
+TO_DATE('07-10-2005', 'DD-MM-YYYY'), 6366.13, 3);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('elania', 'Angry_Bird329', 'Arabia Saudita', 'Jugador',
-TO_DATE('1996-06-15', 'YYYY-MM-DD'), 6230.9, 3);
+VALUES ('tayon', 'SpuddaKing', 'Francia', 'Líder',
+TO_DATE('26-04-1994', 'DD-MM-YYYY'), 6269.21, 3);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('victorya', 'guuguu2', 'Japón', 'Jugador',
-TO_DATE('1996-01-06', 'YYYY-MM-DD'), 4293.36, 3);
+VALUES ('skye', 'xEnderFighterx', 'Reino Unido', 'Jugador',
+TO_DATE('17-09-1997', 'DD-MM-YYYY'), 6824.79, 3);
 
-/* Jugadores Equipo 4 */
+/* Equipo 4 */
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('badia', 'Rengarina', 'Reino Unido', 'Jugador',
-TO_DATE('2002-12-11', 'YYYY-MM-DD'), 3461.35, 4);
+VALUES ('mishayla', 'Dexty_', 'Italia', 'Jugador',
+TO_DATE('14-09-1995', 'DD-MM-YYYY'), 2791.72, 4);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('darrick', 'Reesey6', 'Emiratos Árabes Unidos', 'Jugador',
-TO_DATE('1992-08-17', 'YYYY-MM-DD'), 3636.75, 4);
+VALUES ('marlena', 'Timooo0', 'México', 'Jugador',
+TO_DATE('29-06-2001', 'DD-MM-YYYY'), 4709.46, 4);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('dulce', 'JustDexey', 'Estados Unidos', 'Jugador',
-TO_DATE('1991-05-06', 'YYYY-MM-DD'), 4863.94, 4);
+VALUES ('cristofer', 'dog_gamer_br', 'México', 'Jugador',
+TO_DATE('15-08-2001', 'DD-MM-YYYY'), 5411.9, 4);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('janashia', 'nyahaha', 'Brasil', 'Jugador',
-TO_DATE('1999-10-16', 'YYYY-MM-DD'), 3809.11, 4);
+VALUES ('jalisia', 'Dolphindudee', 'Argentina', 'Jugador',
+TO_DATE('07-10-1990', 'DD-MM-YYYY'), 5843.45, 4);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('shamila', 'GromStone', 'Reino Unido', 'Jugador',
-TO_DATE('1990-03-25', 'YYYY-MM-DD'), 5633.67, 4);
+VALUES ('damond', 'DerpPenguin', 'Canadá', 'Jugador',
+TO_DATE('28-07-1993', 'DD-MM-YYYY'), 6173.17, 4);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('nikiyah', 'VShaf', 'Brasil', 'Jugador',
-TO_DATE('1992-10-23', 'YYYY-MM-DD'), 2287.26, 4);
+VALUES ('sartaj', 'Blaster_Aichi', 'Italia', 'Líder',
+TO_DATE('08-12-1993', 'DD-MM-YYYY'), 2854.5, 4);
 
-/* Jugadores Equipo 5 */
+/* Equipo 5 */
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('beronica', 'iujhgtre', 'Estados Unidos', 'Líder',
-TO_DATE('2006-01-01', 'YYYY-MM-DD'), 6499.71, 5);
+VALUES ('mesa', '_IRyzuStyles_', 'Japón', 'Jugador',
+TO_DATE('06-09-2002', 'DD-MM-YYYY'), 5679.15, 5);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('rachell', 'Mateus7998', 'Estados Unidos', 'Jugador',
-TO_DATE('2000-02-10', 'YYYY-MM-DD'), 6818.69, 5);
+VALUES ('phillips', 'CoolGirl2414', 'Australia', 'Líder',
+TO_DATE('23-02-2006', 'DD-MM-YYYY'), 5759.18, 5);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('isabel', 'fastswimmer2', 'Australia', 'Líder',
-TO_DATE('1997-10-01', 'YYYY-MM-DD'), 3828.59, 5);
+VALUES ('vena', 'UnknownAlien', 'Reino Unido', 'Líder',
+TO_DATE('15-08-1996', 'DD-MM-YYYY'), 2689.94, 5);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('torria', 'Cronos90', 'Australia', 'Jugador',
-TO_DATE('2004-03-26', 'YYYY-MM-DD'), 5529.82, 5);
+VALUES ('sascha', 'MonsterMan6', 'Francia', 'Jugador',
+TO_DATE('28-05-1996', 'DD-MM-YYYY'), 5992.01, 5);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('talen', 'MeSsWiThU', 'China', 'Jugador',
-TO_DATE('1995-11-15', 'YYYY-MM-DD'), 2375.98, 5);
+VALUES ('avneet', 'teadot', 'México', 'Jugador',
+TO_DATE('24-10-1998', 'DD-MM-YYYY'), 4010.46, 5);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('mykayla', 'PinkGamings', 'Japón', 'Jugador',
-TO_DATE('2001-10-28', 'YYYY-MM-DD'), 2668.72, 5);
+VALUES ('marleny', 'Phoenix_Queen_YT', 'Estados Unidos', 'Jugador',
+TO_DATE('23-11-1995', 'DD-MM-YYYY'), 4557.89, 5);
 
-/* Jugadores Equipo 6 */
+/* Equipo 6 */
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('lupita', 'DragoRuin', 'Egipto', 'Jugador',
-TO_DATE('1994-01-06', 'YYYY-MM-DD'), 4580.45, 6);
+VALUES ('dalina', 'LittleBj', 'Reino Unido', 'Líder',
+TO_DATE('09-07-2002', 'DD-MM-YYYY'), 5212.76, 6);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('addie', 'xXCinexXx', 'Alemania', 'Jugador',
-TO_DATE('1998-10-07', 'YYYY-MM-DD'), 3125.81, 6);
+VALUES ('dawsyn', 'And_0', 'Australia', 'Jugador',
+TO_DATE('10-04-2000', 'DD-MM-YYYY'), 5372.46, 6);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('jaycean', 'BeastChris123', 'Sudáfrica', 'Jugador',
-TO_DATE('1998-08-18', 'YYYY-MM-DD'), 6340.34, 6);
+VALUES ('eleanora', 'LucaLow', 'España', 'Líder',
+TO_DATE('11-04-1991', 'DD-MM-YYYY'), 5046.41, 6);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('jakolby', 'Smo0Ker__LaW', 'Corea del Sur', 'Jugador',
-TO_DATE('2000-05-13', 'YYYY-MM-DD'), 2898.53, 6);
+VALUES ('kendyll', 'slimerking101', 'Argentina', 'Jugador',
+TO_DATE('27-06-1999', 'DD-MM-YYYY'), 3839.62, 6);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('aldin', 'Jakob_MineChamp', 'Estados Unidos', 'Jugador',
-TO_DATE('2002-06-29', 'YYYY-MM-DD'), 5575.09, 6);
+VALUES ('arvil', 'Cute_Kitty04', 'Corea del Sur', 'Líder',
+TO_DATE('27-08-1993', 'DD-MM-YYYY'), 6162.32, 6);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('timtohy', 'luffy58fr', 'Alemania', 'Jugador',
-TO_DATE('2005-01-31', 'YYYY-MM-DD'), 6210.25, 6);
+VALUES ('vyctoria', 'MonkeyMugz', 'China', 'Líder',
+TO_DATE('23-09-1995', 'DD-MM-YYYY'), 4442.38, 6);
 
-/* Jugadores Equipo 7 */
+/* Equipo 7 */
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('gabby', 'JungleThing', 'Emiratos Árabes Unidos', 'Jugador',
-TO_DATE('1994-09-27', 'YYYY-MM-DD'), 4525.01, 7);
+VALUES ('lisabeth', 'Noaehh', 'Italia', 'Líder',
+TO_DATE('13-09-2005', 'DD-MM-YYYY'), 3602.03, 7);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('nayeli', 'Ivivik_Youtube', 'Japón', 'Líder',
-TO_DATE('1995-02-07', 'YYYY-MM-DD'), 2021.35, 7);
+VALUES ('xaviera', 'LinkSwag', 'México', 'Jugador',
+TO_DATE('13-01-1992', 'DD-MM-YYYY'), 4156.3, 7);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('amali', 'TrackingJews', 'Corea del Sur', 'Jugador',
-TO_DATE('1989-10-30', 'YYYY-MM-DD'), 5715.03, 7);
+VALUES ('yuuki', 'Tall_diamond_914', 'Canadá', 'Jugador',
+TO_DATE('06-11-2001', 'DD-MM-YYYY'), 2792.13, 7);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('tauni', 'itsmebru', 'Emiratos Árabes Unidos', 'Jugador',
-TO_DATE('2004-03-11', 'YYYY-MM-DD'), 6858.74, 7);
+VALUES ('anthonella', 'Mr_Toots', 'Reino Unido', 'Jugador',
+TO_DATE('25-02-1991', 'DD-MM-YYYY'), 5192.57, 7);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('zykira', 'cutie_pie_casey', 'Brasil', 'Líder',
-TO_DATE('1996-11-17', 'YYYY-MM-DD'), 2607.36, 7);
+VALUES ('jezabel', 'SkitzzSaun', 'México', 'Jugador',
+TO_DATE('18-09-2001', 'DD-MM-YYYY'), 6387.62, 7);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('mouhamed', 'yanparadoxBR', 'Canadá', 'Jugador',
-TO_DATE('1995-01-04', 'YYYY-MM-DD'), 4170.09, 7);
+VALUES ('citlalli', 'Mrgivon_YT', 'Japón', 'Jugador',
+TO_DATE('15-07-2004', 'DD-MM-YYYY'), 5911.05, 7);
 
-/* Jugadores Equipo 8 */
+/* Equipo 8 */
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('jimeka', 'nielsms8', 'Canadá', 'Jugador',
-TO_DATE('2000-01-12', 'YYYY-MM-DD'), 6439.75, 8);
+VALUES ('lilymae', 'Rastuharem', 'Canadá', 'Jugador',
+TO_DATE('13-02-2004', 'DD-MM-YYYY'), 2951.94, 8);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('carmelia', 'SkinkeMaden', 'Canadá', 'Jugador',
-TO_DATE('1994-05-04', 'YYYY-MM-DD'), 6526.77, 8);
+VALUES ('zorana', 'Dreamwear', 'Alemania', 'Jugador',
+TO_DATE('07-10-2005', 'DD-MM-YYYY'), 5333.63, 8);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('nicholaus', 'frankstar', 'Corea del Sur', 'Jugador',
-TO_DATE('1993-05-21', 'YYYY-MM-DD'), 5452.17, 8);
+VALUES ('shawnta', 'WeddleMakeUHigh', 'México', 'Jugador',
+TO_DATE('04-03-1992', 'DD-MM-YYYY'), 4618.45, 8);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('findlay', 'ockeghem', 'Corea del Sur', 'Jugador',
-TO_DATE('1996-05-27', 'YYYY-MM-DD'), 6456.44, 8);
+VALUES ('cheney', 'The_Ibra', 'Argentina', 'Jugador',
+TO_DATE('21-09-1990', 'DD-MM-YYYY'), 3826.26, 8);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('kawana', 'MansellChik', 'Brasil', 'Jugador',
-TO_DATE('1993-09-02', 'YYYY-MM-DD'), 3472.72, 8);
+VALUES ('nina', 'xoxcassiexox', 'Brasil', 'Jugador',
+TO_DATE('23-12-1991', 'DD-MM-YYYY'), 4528.55, 8);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('pachia', 'mysan05', 'Alemania', 'Líder',
-TO_DATE('1996-10-02', 'YYYY-MM-DD'), 3779.07, 8);
+VALUES ('suhas', 'Scoopy12', 'Reino Unido', 'Jugador',
+TO_DATE('20-06-1989', 'DD-MM-YYYY'), 3185.01, 8);
 
-/* Jugadores Equipo 9 */
+/* Equipo 9 */
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('paeyton', 'Jake_Tig11', 'Italia', 'Jugador',
-TO_DATE('2000-04-02', 'YYYY-MM-DD'), 6610.51, 9);
+VALUES ('melia', 'Spiderpig_Epic', 'Argentina', 'Líder',
+TO_DATE('09-11-1990', 'DD-MM-YYYY'), 6304.0, 9);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('nikelle', '3RN357', 'Alemania', 'Jugador',
-TO_DATE('2003-08-22', 'YYYY-MM-DD'), 2748.09, 9);
+VALUES ('addisen', 'RegisTbwn', 'Reino Unido', 'Jugador',
+TO_DATE('04-01-2005', 'DD-MM-YYYY'), 6063.68, 9);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('cedrik', 'Jadigz', 'Brasil', 'Jugador',
-TO_DATE('1994-08-23', 'YYYY-MM-DD'), 3716.02, 9);
+VALUES ('loralye', 'Fast_Jon', 'Canadá', 'Líder',
+TO_DATE('30-05-2000', 'DD-MM-YYYY'), 2905.61, 9);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('abdulwahab', 'FieryWrath', 'Emiratos Árabes Unidos', 'Jugador',
-TO_DATE('2002-12-27', 'YYYY-MM-DD'), 2650.8, 9);
+VALUES ('tannisha', 'frasmeister', 'Italia', 'Jugador',
+TO_DATE('22-03-2001', 'DD-MM-YYYY'), 2087.76, 9);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('halayna', 'RACFE', 'China', 'Jugador',
-TO_DATE('2005-10-20', 'YYYY-MM-DD'), 4750.26, 9);
+VALUES ('charmin', 'TheChamp113', 'México', 'Líder',
+TO_DATE('19-01-1997', 'DD-MM-YYYY'), 6104.43, 9);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('daylen', 'WinkyClient_', 'España', 'Jugador',
-TO_DATE('1989-06-15', 'YYYY-MM-DD'), 6997.12, 9);
+VALUES ('marlaya', 'connor22316', 'Corea del Sur', 'Líder',
+TO_DATE('01-05-2003', 'DD-MM-YYYY'), 3256.55, 9);
 
-/* Jugadores Equipo 10 */
+/* Equipo 10 */
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('patryck', 'Robocoper', 'Estados Unidos', 'Jugador',
-TO_DATE('1996-09-24', 'YYYY-MM-DD'), 4498.11, 10);
+VALUES ('atari', 'Swash', 'Italia', 'Jugador',
+TO_DATE('04-05-2002', 'DD-MM-YYYY'), 2641.03, 10);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('hezakiah', 'MrZufall', 'Italia', 'Jugador',
-TO_DATE('1995-02-01', 'YYYY-MM-DD'), 3826.0, 10);
+VALUES ('kaveon', 'zocker733', 'Corea del Sur', 'Jugador',
+TO_DATE('06-03-2000', 'DD-MM-YYYY'), 5953.91, 10);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('racer', 'Tuar', 'Alemania', 'Jugador',
-TO_DATE('1993-09-13', 'YYYY-MM-DD'), 2725.65, 10);
+VALUES ('lamar', 'Marky67', 'México', 'Jugador',
+TO_DATE('28-06-1998', 'DD-MM-YYYY'), 2874.7, 10);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('sevan', 'james117r', 'Australia', 'Líder',
-TO_DATE('2005-04-04', 'YYYY-MM-DD'), 6242.56, 10);
+VALUES ('aneyah', 'valdu13940', 'Alemania', 'Jugador',
+TO_DATE('06-08-1994', 'DD-MM-YYYY'), 3693.03, 10);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('laquanna', 'MoiBoy', 'Australia', 'Jugador',
-TO_DATE('1996-08-28', 'YYYY-MM-DD'), 6027.49, 10);
+VALUES ('iden', 'sushi613', 'Reino Unido', 'Jugador',
+TO_DATE('15-08-1993', 'DD-MM-YYYY'), 5131.07, 10);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('ravae', 'Ryukubad', 'Italia', 'Líder',
-TO_DATE('1996-04-12', 'YYYY-MM-DD'), 6351.46, 10);
+VALUES ('kashawna', 'Kadmi', 'Rusia', 'Líder',
+TO_DATE('28-07-1992', 'DD-MM-YYYY'), 2808.62, 10);
 
-/* Jugadores Equipo 11 */
+/* Equipo 11 */
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('maryfer', 'max_kov', 'Emiratos Árabes Unidos', 'Jugador',
-TO_DATE('2005-11-04', 'YYYY-MM-DD'), 4276.29, 11);
+VALUES ('lawanda', 'Th3Dynam0Ch1ck3n', 'Corea del Sur', 'Jugador',
+TO_DATE('24-10-2004', 'DD-MM-YYYY'), 3918.89, 11);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('paulina', 'Vultrae', 'Estados Unidos', 'Jugador',
-TO_DATE('2002-08-12', 'YYYY-MM-DD'), 6010.71, 11);
+VALUES ('glorie', 'axew17', 'México', 'Líder',
+TO_DATE('27-09-2001', 'DD-MM-YYYY'), 5229.97, 11);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('kedric', 'OMGItsLucas', 'China', 'Líder',
-TO_DATE('1998-12-20', 'YYYY-MM-DD'), 6921.31, 11);
+VALUES ('larhonda', 'Lunar1s', 'India', 'Líder',
+TO_DATE('04-04-2003', 'DD-MM-YYYY'), 6113.13, 11);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('dalynn', 'emil_roed', 'Reino Unido', 'Jugador',
-TO_DATE('2004-05-17', 'YYYY-MM-DD'), 2135.86, 11);
+VALUES ('kristanna', 'Kid_Boom', 'Australia', 'Líder',
+TO_DATE('27-05-1996', 'DD-MM-YYYY'), 6405.92, 11);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('kashyra', 'Sc4tter', 'Corea del Sur', 'Jugador',
-TO_DATE('2005-04-07', 'YYYY-MM-DD'), 5276.68, 11);
+VALUES ('brezlyn', 'NewGirl', 'Italia', 'Jugador',
+TO_DATE('11-06-1991', 'DD-MM-YYYY'), 5640.41, 11);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('altagracia', 'maisontaylor', 'Canadá', 'Líder',
-TO_DATE('1991-02-04', 'YYYY-MM-DD'), 6073.6, 11);
+VALUES ('mikayah', 'Dela44', 'Estados Unidos', 'Jugador',
+TO_DATE('05-02-1997', 'DD-MM-YYYY'), 4832.0, 11);
 
-/* Jugadores Equipo 12 */
+/* Equipo 12 */
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('jerome', 'Limeox', 'China', 'Jugador',
-TO_DATE('2001-01-08', 'YYYY-MM-DD'), 4875.62, 12);
+VALUES ('emori', 'Dynasty_Xanop', 'México', 'Jugador',
+TO_DATE('07-06-1996', 'DD-MM-YYYY'), 3033.93, 12);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('drayah', 'GeorgeRulz21', 'Sudáfrica', 'Líder',
-TO_DATE('1996-06-12', 'YYYY-MM-DD'), 2591.68, 12);
+VALUES ('georgianna', 'Jammers0316', 'Francia', 'Líder',
+TO_DATE('08-10-2002', 'DD-MM-YYYY'), 4543.08, 12);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('curren', 'Milchsaft', 'Australia', 'Líder',
-TO_DATE('2005-01-22', 'YYYY-MM-DD'), 5419.78, 12);
+VALUES ('shamir', 'Kungfuninja55', 'Japón', 'Líder',
+TO_DATE('17-08-1995', 'DD-MM-YYYY'), 5617.29, 12);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('cinch', 'TK_KID', 'Corea del Sur', 'Jugador',
-TO_DATE('1989-05-09', 'YYYY-MM-DD'), 2669.72, 12);
+VALUES ('bailyn', 'Gyarbear', 'México', 'Jugador',
+TO_DATE('19-12-2005', 'DD-MM-YYYY'), 6441.39, 12);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('jenavie', 'RinLeone', 'India', 'Líder',
-TO_DATE('2000-02-12', 'YYYY-MM-DD'), 2483.24, 12);
+VALUES ('hamdan', 'ponylove1101', 'Argentina', 'Jugador',
+TO_DATE('06-10-2002', 'DD-MM-YYYY'), 3133.47, 12);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('chang', 'ggcan', 'India', 'Jugador',
-TO_DATE('1991-07-21', 'YYYY-MM-DD'), 5804.51, 12);
+VALUES ('keyoni', 'wovu', 'China', 'Líder',
+TO_DATE('15-03-2004', 'DD-MM-YYYY'), 5011.77, 12);
 
-/* Jugadores Equipo 13 */
+/* Equipo 13 */
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('grecia', 'LiveToFight', 'Argentina', 'Jugador',
-TO_DATE('1990-12-04', 'YYYY-MM-DD'), 4599.65, 13);
+VALUES ('mikaylee', 'SafaMaster2000', 'Japón', 'Jugador',
+TO_DATE('23-03-2005', 'DD-MM-YYYY'), 5320.01, 13);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('harjot', 'Sanderoqz', 'Emiratos Árabes Unidos', 'Líder',
-TO_DATE('1998-02-21', 'YYYY-MM-DD'), 2615.03, 13);
+VALUES ('jeramie', 'Iinea', 'India', 'Líder',
+TO_DATE('08-01-1992', 'DD-MM-YYYY'), 3197.41, 13);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('dollicia', 'TheTiger_MC', 'Arabia Saudita', 'Jugador',
-TO_DATE('1989-12-08', 'YYYY-MM-DD'), 6155.13, 13);
+VALUES ('donnelle', 'LolaBola', 'Estados Unidos', 'Jugador',
+TO_DATE('12-07-1993', 'DD-MM-YYYY'), 3105.07, 13);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('mercadez', 'Timotjoo', 'Estados Unidos', 'Jugador',
-TO_DATE('1996-10-08', 'YYYY-MM-DD'), 3580.28, 13);
+VALUES ('iridian', 'FunkyMonkey909', 'Japón', 'Jugador',
+TO_DATE('19-09-1996', 'DD-MM-YYYY'), 6902.25, 13);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('mackenzye', 'seikenman', 'Egipto', 'Jugador',
-TO_DATE('2004-06-05', 'YYYY-MM-DD'), 6349.16, 13);
+VALUES ('zandon', 'WodnyChlopak', 'Reino Unido', 'Jugador',
+TO_DATE('17-07-1995', 'DD-MM-YYYY'), 6358.0, 13);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('lashika', 'Craft35', 'Francia', 'Líder',
-TO_DATE('1992-11-11', 'YYYY-MM-DD'), 3073.89, 13);
+VALUES ('vernell', '_ImmortalObject_', 'España', 'Jugador',
+TO_DATE('02-02-1997', 'DD-MM-YYYY'), 2542.72, 13);
 
-/* Jugadores Equipo 14 */
+/* Equipo 14 */
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('rook', 'HitsLikeDannyyy', 'Argentina', 'Jugador',
-TO_DATE('2002-08-10', 'YYYY-MM-DD'), 3186.69, 14);
+VALUES ('zarela', 'Alexrupa', 'México', 'Jugador',
+TO_DATE('19-06-1998', 'DD-MM-YYYY'), 4257.45, 14);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('ruslan', 'wixsus', 'Francia', 'Jugador',
-TO_DATE('1994-10-03', 'YYYY-MM-DD'), 3247.86, 14);
+VALUES ('lathen', 'DarkSoulForever', 'Francia', 'Jugador',
+TO_DATE('22-03-1997', 'DD-MM-YYYY'), 3366.36, 14);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('naya', 'Blueblade59', 'Corea del Sur', 'Jugador',
-TO_DATE('2002-05-13', 'YYYY-MM-DD'), 2325.68, 14);
+VALUES ('leonid', 'flow_rdr', 'Japón', 'Líder',
+TO_DATE('16-12-1996', 'DD-MM-YYYY'), 3397.58, 14);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('aiko', 'SlodeBlurry', 'China', 'Jugador',
-TO_DATE('1995-08-27', 'YYYY-MM-DD'), 2901.3, 14);
+VALUES ('kashyra', 'Taffycat16', 'Italia', 'Líder',
+TO_DATE('06-09-1998', 'DD-MM-YYYY'), 6282.03, 14);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('gabriellah', 'Mr_Foxxyk', 'Brasil', 'Jugador',
-TO_DATE('1995-10-01', 'YYYY-MM-DD'), 2767.98, 14);
+VALUES ('abdikadir', 'SgtNightStalker', 'Reino Unido', 'Jugador',
+TO_DATE('21-09-2004', 'DD-MM-YYYY'), 2909.89, 14);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('naveed', 'PRO7', 'Japón', 'Jugador',
-TO_DATE('2004-03-26', 'YYYY-MM-DD'), 3100.64, 14);
+VALUES ('dang', 'Ehski', 'Canadá', 'Jugador',
+TO_DATE('17-09-2003', 'DD-MM-YYYY'), 5931.31, 14);
 
-/* Jugadores Equipo 15 */
+/* Equipo 15 */
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('emmagrace', 'L0RDkillsALOT', 'Egipto', 'Jugador',
-TO_DATE('1995-05-14', 'YYYY-MM-DD'), 3849.74, 15);
+VALUES ('arul', 'A_Walking_Cake', 'Rusia', 'Jugador',
+TO_DATE('31-10-2002', 'DD-MM-YYYY'), 3480.9, 15);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('jakarri', 'Seth032', 'Sudáfrica', 'Jugador',
-TO_DATE('2005-04-02', 'YYYY-MM-DD'), 4509.1, 15);
+VALUES ('nohely', 'TheJOHNpr', 'Brasil', 'Jugador',
+TO_DATE('22-06-1994', 'DD-MM-YYYY'), 5860.69, 15);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('nela', 'Ligtening55', 'Canadá', 'Jugador',
-TO_DATE('2000-08-09', 'YYYY-MM-DD'), 3025.54, 15);
+VALUES ('cerita', 'Sanch3zRX', 'Rusia', 'Jugador',
+TO_DATE('01-01-2005', 'DD-MM-YYYY'), 2302.24, 15);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('marlea', 'ElectricEmeraldd', 'Estados Unidos', 'Líder',
-TO_DATE('2003-10-12', 'YYYY-MM-DD'), 4119.45, 15);
+VALUES ('chandrea', 'CittingCardshark', 'Alemania', 'Líder',
+TO_DATE('10-05-1991', 'DD-MM-YYYY'), 3685.4, 15);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('marchell', 'TheBoomMC', 'Emiratos Árabes Unidos', 'Jugador',
-TO_DATE('1995-01-13', 'YYYY-MM-DD'), 2570.69, 15);
+VALUES ('drexler', 'natedon', 'Alemania', 'Líder',
+TO_DATE('22-02-1997', 'DD-MM-YYYY'), 2228.47, 15);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('janise', 'An4l_Wizard', 'México', 'Líder',
-TO_DATE('1994-07-07', 'YYYY-MM-DD'), 4588.56, 15);
+VALUES ('laymon', 'Tornado_Ez', 'Alemania', 'Jugador',
+TO_DATE('08-08-1990', 'DD-MM-YYYY'), 3744.21, 15);
 
-/* Jugadores Equipo 16 */
+/* Equipo 16 */
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('jazyiah', 'lauritor', 'India', 'Jugador',
-TO_DATE('1992-11-28', 'YYYY-MM-DD'), 2666.32, 16);
+VALUES ('elyanah', 'frenzymee', 'Canadá', 'Jugador',
+TO_DATE('23-02-1990', 'DD-MM-YYYY'), 3461.71, 16);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('leven', 'MarcoEasy', 'Alemania', 'Líder',
-TO_DATE('1998-05-11', 'YYYY-MM-DD'), 4657.42, 16);
+VALUES ('somone', 'Minecraft_Hero00', 'México', 'Jugador',
+TO_DATE('06-02-1994', 'DD-MM-YYYY'), 2351.51, 16);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('courntey', 'krixorz', 'Egipto', 'Líder',
-TO_DATE('1994-12-03', 'YYYY-MM-DD'), 2124.19, 16);
+VALUES ('vito', 'adrilovescookies', 'Argentina', 'Líder',
+TO_DATE('18-02-2005', 'DD-MM-YYYY'), 3360.41, 16);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('atheena', 'Tommeletje', 'Australia', 'Jugador',
-TO_DATE('1993-03-03', 'YYYY-MM-DD'), 2593.43, 16);
+VALUES ('mahlon', 'Matthioky', 'Italia', 'Jugador',
+TO_DATE('27-12-2001', 'DD-MM-YYYY'), 3332.0, 16);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('tanae', 'MrDeadPoule', 'Arabia Saudita', 'Jugador',
-TO_DATE('2000-06-20', 'YYYY-MM-DD'), 4143.67, 16);
+VALUES ('alejandra', 'tigerman9', 'Canadá', 'Líder',
+TO_DATE('29-06-2002', 'DD-MM-YYYY'), 3327.81, 16);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('nohealani', 'SkyzThor', 'India', 'Líder',
-TO_DATE('2002-01-04', 'YYYY-MM-DD'), 5345.55, 16);
+VALUES ('alonso', 'stevens2453', 'Japón', 'Líder',
+TO_DATE('26-10-1998', 'DD-MM-YYYY'), 2476.03, 16);
 
-/* Jugadores Equipo 17 */
+/* Equipo 17 */
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('fanta', 'TheWolfOfFlames', 'Alemania', 'Líder',
-TO_DATE('1995-11-01', 'YYYY-MM-DD'), 5089.77, 17);
+VALUES ('riyad', '74mad', 'Brasil', 'Líder',
+TO_DATE('20-02-1993', 'DD-MM-YYYY'), 5571.64, 17);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('markeeta', 'emitch', 'España', 'Jugador',
-TO_DATE('1995-05-17', 'YYYY-MM-DD'), 3118.13, 17);
+VALUES ('armen', 'Oroin_', 'Reino Unido', 'Jugador',
+TO_DATE('17-05-1997', 'DD-MM-YYYY'), 6463.48, 17);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('arilyn', 'james13479', 'Emiratos Árabes Unidos', 'Líder',
-TO_DATE('2003-05-07', 'YYYY-MM-DD'), 6724.95, 17);
+VALUES ('lateria', 'AKB48_', 'México', 'Jugador',
+TO_DATE('23-03-1991', 'DD-MM-YYYY'), 3078.03, 17);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('colden', '_TheFireboyHD_', 'España', 'Jugador',
-TO_DATE('1997-06-28', 'YYYY-MM-DD'), 6510.54, 17);
+VALUES ('adaiah', 'Jhufana', 'Rusia', 'Jugador',
+TO_DATE('01-01-1992', 'DD-MM-YYYY'), 3068.92, 17);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('quintavius', 'oliverwr1', 'China', 'Líder',
-TO_DATE('1991-10-29', 'YYYY-MM-DD'), 5150.38, 17);
+VALUES ('tavion', 'Arquette', 'Argentina', 'Jugador',
+TO_DATE('30-09-1991', 'DD-MM-YYYY'), 5429.94, 17);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('brigitta', 'trollibolliHD', 'Alemania', 'Jugador',
-TO_DATE('1997-12-05', 'YYYY-MM-DD'), 2815.31, 17);
+VALUES ('rekeisha', 'Mynaruto', 'Canadá', 'Jugador',
+TO_DATE('28-02-2001', 'DD-MM-YYYY'), 2999.51, 17);
 
-/* Jugadores Equipo 18 */
+/* Equipo 18 */
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('khristen', '1andonlyjack', 'Corea del Sur', 'Jugador',
-TO_DATE('2003-05-01', 'YYYY-MM-DD'), 6103.55, 18);
+VALUES ('jesslyn', 'WarriorGoddess', 'India', 'Líder',
+TO_DATE('29-08-1997', 'DD-MM-YYYY'), 4060.27, 18);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('silvio', 'Mr_Med', 'Japón', 'Jugador',
-TO_DATE('1998-06-01', 'YYYY-MM-DD'), 4731.13, 18);
+VALUES ('rubyann', 'a_little_miner', 'Brasil', 'Jugador',
+TO_DATE('02-10-1994', 'DD-MM-YYYY'), 3516.63, 18);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('sidea', 'pochi974', 'India', 'Jugador',
-TO_DATE('1991-05-30', 'YYYY-MM-DD'), 3897.92, 18);
+VALUES ('tylia', 'Tolexxx', 'España', 'Líder',
+TO_DATE('09-05-1994', 'DD-MM-YYYY'), 6394.85, 18);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('norelle', 'kaylee2222', 'India', 'Jugador',
-TO_DATE('2004-01-05', 'YYYY-MM-DD'), 2146.64, 18);
+VALUES ('tannah', 'magicpig999', 'India', 'Jugador',
+TO_DATE('06-12-1998', 'DD-MM-YYYY'), 3489.91, 18);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('sarayah', 'VampireGirl3', 'Sudáfrica', 'Líder',
-TO_DATE('2001-09-11', 'YYYY-MM-DD'), 5283.97, 18);
+VALUES ('beauden', 'PedroJ', 'Francia', 'Jugador',
+TO_DATE('07-08-1998', 'DD-MM-YYYY'), 4915.26, 18);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('angeliah', 'fusca_br', 'Japón', 'Jugador',
-TO_DATE('1996-05-03', 'YYYY-MM-DD'), 6290.16, 18);
+VALUES ('daimon', 'Zi___Ye', 'China', 'Jugador',
+TO_DATE('20-10-1989', 'DD-MM-YYYY'), 3224.39, 18);
 
-/* Jugadores Equipo 19 */
+/* Equipo 19 */
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('rendi', 'iTz_KillerPt', 'Reino Unido', 'Jugador',
-TO_DATE('2000-08-30', 'YYYY-MM-DD'), 2687.74, 19);
+VALUES ('tevan', 'DezeManHeeftSwag', 'Argentina', 'Jugador',
+TO_DATE('07-06-1995', 'DD-MM-YYYY'), 2952.05, 19);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('topher', 'Pickle_Monster', 'Australia', 'Líder',
-TO_DATE('2002-12-27', 'YYYY-MM-DD'), 6570.96, 19);
+VALUES ('kainoah', 'Sminkio_', 'Reino Unido', 'Líder',
+TO_DATE('03-12-2003', 'DD-MM-YYYY'), 3364.63, 19);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('jarielys', 'iSaux', 'Japón', 'Líder',
-TO_DATE('1997-05-18', 'YYYY-MM-DD'), 6133.93, 19);
+VALUES ('copeland', 'HArDzZ_', 'India', 'Líder',
+TO_DATE('03-03-1995', 'DD-MM-YYYY'), 2352.38, 19);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('jalyssa', 'Syklis', 'Estados Unidos', 'Líder',
-TO_DATE('1994-04-15', 'YYYY-MM-DD'), 2891.37, 19);
+VALUES ('layliana', 'Petr8789', 'Alemania', 'Líder',
+TO_DATE('29-03-1995', 'DD-MM-YYYY'), 6437.09, 19);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('turkesa', 'FinchIH', 'Sudáfrica', 'Jugador',
-TO_DATE('1989-06-11', 'YYYY-MM-DD'), 2655.15, 19);
+VALUES ('jeanene', 'HaloZoo', 'Canadá', 'Líder',
+TO_DATE('17-03-1995', 'DD-MM-YYYY'), 4238.67, 19);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('jakiya', 'ragesniper14', 'Francia', 'Jugador',
-TO_DATE('2003-08-06', 'YYYY-MM-DD'), 6696.24, 19);
+VALUES ('tiwana', 'tontonsabater', 'Reino Unido', 'Jugador',
+TO_DATE('19-10-1994', 'DD-MM-YYYY'), 4333.26, 19);
 
-/* Jugadores Equipo 20 */
+/* Equipo 20 */
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('cortavious', 'gracz2444', 'Brasil', 'Jugador',
-TO_DATE('1992-05-16', 'YYYY-MM-DD'), 4126.94, 20);
+VALUES ('breane', 'SACCAGEUR', 'Argentina', 'Jugador',
+TO_DATE('27-02-2002', 'DD-MM-YYYY'), 2835.18, 20);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('everet', 'Pinkiegirl57', 'Sudáfrica', 'Jugador',
-TO_DATE('1994-01-24', 'YYYY-MM-DD'), 4693.4, 20);
+VALUES ('krystale', 'OfficialGMania', 'Francia', 'Líder',
+TO_DATE('03-01-1998', 'DD-MM-YYYY'), 3119.75, 20);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('sissi', 'jhiggins10', 'Argentina', 'Líder',
-TO_DATE('2001-11-26', 'YYYY-MM-DD'), 6032.31, 20);
+VALUES ('kden', 'Imster', 'Estados Unidos', 'Jugador',
+TO_DATE('12-05-1993', 'DD-MM-YYYY'), 6666.21, 20);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('cerrone', 'Muffkel', 'Japón', 'Jugador',
-TO_DATE('1995-12-05', 'YYYY-MM-DD'), 5000.64, 20);
+VALUES ('maelyn', 'NovaFlame911', 'México', 'Jugador',
+TO_DATE('11-08-1996', 'DD-MM-YYYY'), 6305.05, 20);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('tabithia', 'ApatheticLemon', 'Argentina', 'Jugador',
-TO_DATE('1994-08-15', 'YYYY-MM-DD'), 3440.97, 20);
+VALUES ('chessica', 'archangel12', 'Brasil', 'Jugador',
+TO_DATE('27-05-2004', 'DD-MM-YYYY'), 4724.63, 20);
 INSERT INTO JUGADOR
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('nation', 'JustForYouFan', 'Brasil', 'Líder',
-TO_DATE('1999-12-22', 'YYYY-MM-DD'), 5120.8, 20);
+VALUES ('taegen', 'AsianIDK', 'España', 'Jugador',
+TO_DATE('24-12-2002', 'DD-MM-YYYY'), 6363.17, 20);
+
 
 /* Staff equipo 1 */
 INSERT INTO STAFF
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
 SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Entrenador', 'jamesina',
-TO_DATE('1981-08-06', 'YYYY-MM-DD'), 4959.77, 1);
-INSERT INTO STAFF
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
-SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Asistente', 'erin',
-TO_DATE('1966-06-14', 'YYYY-MM-DD'), 2726.52, 1);
+VALUES (DEFAULT, 'Entrenador', 'louetta',
+TO_DATE('14-07-1986', 'DD-MM-YYYY'), 3164.11, 1);
 
 /* Staff equipo 2 */
 INSERT INTO STAFF
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
 SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Entrenador', 'mariyana',
-TO_DATE('1999-12-04', 'YYYY-MM-DD'), 2861.96, 2);
+VALUES (DEFAULT, 'Entrenador', 'ellyn',
+TO_DATE('15-08-1989', 'DD-MM-YYYY'), 4323.43, 2);
 
 /* Staff equipo 3 */
 INSERT INTO STAFF
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
 SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Entrenador', 'esdras',
-TO_DATE('1989-07-20', 'YYYY-MM-DD'), 4746.37, 3);
+VALUES (DEFAULT, 'Entrenador', 'miia',
+TO_DATE('16-11-1965', 'DD-MM-YYYY'), 4938.64, 3);
 INSERT INTO STAFF
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
 SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Asistente', 'cammy',
-TO_DATE('1966-02-12', 'YYYY-MM-DD'), 2487.9, 3);
+VALUES (DEFAULT, 'Asistente', 'caulin',
+TO_DATE('23-11-1976', 'DD-MM-YYYY'), 1612.9, 3);
 
 /* Staff equipo 4 */
 INSERT INTO STAFF
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
 SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Entrenador', 'mars',
-TO_DATE('1981-11-08', 'YYYY-MM-DD'), 3546.81, 4);
+VALUES (DEFAULT, 'Entrenador', 'denette',
+TO_DATE('06-01-1974', 'DD-MM-YYYY'), 4874.18, 4);
 
 /* Staff equipo 5 */
 INSERT INTO STAFF
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
 SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Entrenador', 'chene',
-TO_DATE('1977-06-16', 'YYYY-MM-DD'), 3962.05, 5);
-INSERT INTO STAFF
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
-SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Asistente', 'aiesha',
-TO_DATE('2003-10-14', 'YYYY-MM-DD'), 1451.19, 5);
+VALUES (DEFAULT, 'Entrenador', 'cariah',
+TO_DATE('01-05-1968', 'DD-MM-YYYY'), 2906.87, 5);
 
 /* Staff equipo 6 */
 INSERT INTO STAFF
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
 SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Entrenador', 'malekai',
-TO_DATE('1973-01-22', 'YYYY-MM-DD'), 2699.89, 6);
+VALUES (DEFAULT, 'Entrenador', 'detavious',
+TO_DATE('25-04-1980', 'DD-MM-YYYY'), 4422.67, 6);
 
 /* Staff equipo 7 */
 INSERT INTO STAFF
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
 SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Entrenador', 'ellowyn',
-TO_DATE('1980-06-19', 'YYYY-MM-DD'), 4282.71, 7);
-INSERT INTO STAFF
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
-SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Asistente', 'macaria',
-TO_DATE('1998-04-11', 'YYYY-MM-DD'), 1520.72, 7);
+VALUES (DEFAULT, 'Entrenador', 'jaylyne',
+TO_DATE('13-06-1995', 'DD-MM-YYYY'), 2243.67, 7);
 
 /* Staff equipo 8 */
 INSERT INTO STAFF
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
 SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Entrenador', 'arihanna',
-TO_DATE('2002-01-15', 'YYYY-MM-DD'), 3968.17, 8);
-INSERT INTO STAFF
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
-SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Asistente', 'yexalen',
-TO_DATE('1967-04-11', 'YYYY-MM-DD'), 2899.38, 8);
+VALUES (DEFAULT, 'Entrenador', 'remy',
+TO_DATE('04-03-2004', 'DD-MM-YYYY'), 3870.93, 8);
 
 /* Staff equipo 9 */
 INSERT INTO STAFF
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
 SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Entrenador', 'gennaro',
-TO_DATE('1991-07-12', 'YYYY-MM-DD'), 3042.58, 9);
-INSERT INTO STAFF
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
-SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Asistente', 'aileth',
-TO_DATE('2001-10-18', 'YYYY-MM-DD'), 1124.47, 9);
+VALUES (DEFAULT, 'Entrenador', 'maley',
+TO_DATE('30-06-1977', 'DD-MM-YYYY'), 3088.57, 9);
 
 /* Staff equipo 10 */
 INSERT INTO STAFF
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
 SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Entrenador', 'shyquan',
-TO_DATE('1996-03-07', 'YYYY-MM-DD'), 3848.08, 10);
-INSERT INTO STAFF
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
-SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Asistente', 'deni',
-TO_DATE('1999-06-13', 'YYYY-MM-DD'), 2259.17, 10);
+VALUES (DEFAULT, 'Entrenador', 'treyshaun',
+TO_DATE('18-10-2004', 'DD-MM-YYYY'), 4783.83, 10);
 
 /* Staff equipo 11 */
 INSERT INTO STAFF
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
 SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Entrenador', 'morna',
-TO_DATE('1970-06-08', 'YYYY-MM-DD'), 4287.01, 11);
-INSERT INTO STAFF
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
-SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Asistente', 'gargi',
-TO_DATE('1965-05-28', 'YYYY-MM-DD'), 2762.63, 11);
+VALUES (DEFAULT, 'Entrenador', 'jusiah',
+TO_DATE('09-05-1974', 'DD-MM-YYYY'), 3270.1, 11);
 
 /* Staff equipo 12 */
 INSERT INTO STAFF
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
 SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Entrenador', 'jontez',
-TO_DATE('1967-03-09', 'YYYY-MM-DD'), 4784.17, 12);
-INSERT INTO STAFF
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
-SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Asistente', 'lelani',
-TO_DATE('1977-05-14', 'YYYY-MM-DD'), 1438.93, 12);
+VALUES (DEFAULT, 'Entrenador', 'makeshia',
+TO_DATE('06-10-1997', 'DD-MM-YYYY'), 4016.0, 12);
 
 /* Staff equipo 13 */
 INSERT INTO STAFF
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
 SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Entrenador', 'azumi',
-TO_DATE('1976-03-03', 'YYYY-MM-DD'), 4233.72, 13);
+VALUES (DEFAULT, 'Entrenador', 'sakib',
+TO_DATE('14-10-1979', 'DD-MM-YYYY'), 3381.57, 13);
 INSERT INTO STAFF
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
 SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Asistente', 'teyah',
-TO_DATE('2000-03-14', 'YYYY-MM-DD'), 2094.7, 13);
+VALUES (DEFAULT, 'Asistente', 'mylene',
+TO_DATE('02-02-1976', 'DD-MM-YYYY'), 1408.98, 13);
 
 /* Staff equipo 14 */
 INSERT INTO STAFF
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
 SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Entrenador', 'rielly',
-TO_DATE('1985-02-04', 'YYYY-MM-DD'), 2271.57, 14);
+VALUES (DEFAULT, 'Entrenador', 'rosslyn',
+TO_DATE('19-02-1994', 'DD-MM-YYYY'), 2008.83, 14);
+INSERT INTO STAFF
+(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
+SUELDO, ID_EQUIPO)
+VALUES (DEFAULT, 'Asistente', 'mahmood',
+TO_DATE('10-10-1968', 'DD-MM-YYYY'), 1852.46, 14);
 
 /* Staff equipo 15 */
 INSERT INTO STAFF
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
 SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Entrenador', 'oyuky',
-TO_DATE('1995-08-25', 'YYYY-MM-DD'), 3483.48, 15);
+VALUES (DEFAULT, 'Entrenador', 'anavictoria',
+TO_DATE('19-10-1973', 'DD-MM-YYYY'), 3109.75, 15);
 INSERT INTO STAFF
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
 SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Asistente', 'kasie',
-TO_DATE('1966-09-14', 'YYYY-MM-DD'), 2837.6, 15);
+VALUES (DEFAULT, 'Asistente', 'shanin',
+TO_DATE('15-10-2000', 'DD-MM-YYYY'), 2581.9, 15);
 
 /* Staff equipo 16 */
 INSERT INTO STAFF
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
 SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Entrenador', 'caroll',
-TO_DATE('1979-10-21', 'YYYY-MM-DD'), 4638.35, 16);
+VALUES (DEFAULT, 'Entrenador', 'renae',
+TO_DATE('07-04-1996', 'DD-MM-YYYY'), 3821.39, 16);
+INSERT INTO STAFF
+(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
+SUELDO, ID_EQUIPO)
+VALUES (DEFAULT, 'Asistente', 'nikesh',
+TO_DATE('25-10-1980', 'DD-MM-YYYY'), 2823.2, 16);
 
 /* Staff equipo 17 */
 INSERT INTO STAFF
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
 SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Entrenador', 'korde',
-TO_DATE('1981-09-10', 'YYYY-MM-DD'), 4200.35, 17);
+VALUES (DEFAULT, 'Entrenador', 'lexany',
+TO_DATE('03-07-1992', 'DD-MM-YYYY'), 4173.53, 17);
 
 /* Staff equipo 18 */
 INSERT INTO STAFF
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
 SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Entrenador', 'hugh',
-TO_DATE('1971-09-22', 'YYYY-MM-DD'), 3744.89, 18);
-INSERT INTO STAFF
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
-SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Asistente', 'abrial',
-TO_DATE('1986-10-30', 'YYYY-MM-DD'), 2675.19, 18);
+VALUES (DEFAULT, 'Entrenador', 'hermelinda',
+TO_DATE('10-06-1991', 'DD-MM-YYYY'), 3217.23, 18);
 
 /* Staff equipo 19 */
 INSERT INTO STAFF
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
 SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Entrenador', 'hazem',
-TO_DATE('1993-12-10', 'YYYY-MM-DD'), 2467.68, 19);
+VALUES (DEFAULT, 'Entrenador', 'lakesa',
+TO_DATE('13-08-1976', 'DD-MM-YYYY'), 2120.9, 19);
 INSERT INTO STAFF
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
 SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Asistente', 'zohra',
-TO_DATE('1995-03-15', 'YYYY-MM-DD'), 1546.0, 19);
+VALUES (DEFAULT, 'Asistente', 'skiler',
+TO_DATE('03-03-1990', 'DD-MM-YYYY'), 2329.39, 19);
 
 /* Staff equipo 20 */
 INSERT INTO STAFF
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
 SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'Entrenador', 'nakyia',
-TO_DATE('1986-12-20', 'YYYY-MM-DD'), 2002.01, 20);
+VALUES (DEFAULT, 'Entrenador', 'donyae',
+TO_DATE('21-07-1980', 'DD-MM-YYYY'), 4276.67, 20);
+INSERT INTO STAFF
+(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC,
+SUELDO, ID_EQUIPO)
+VALUES (DEFAULT, 'Asistente', 'yaminah',
+TO_DATE('20-04-2004', 'DD-MM-YYYY'), 1312.16, 20);
 
 
 /* Patrocinadores equipo 1 */
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'O Reilly');
+VALUES (DEFAULT, 'Mazda Motor');
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Martel Communication');
+VALUES (DEFAULT, 'Pfizer');
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'BorgWarner');
+VALUES (DEFAULT, 'Munich Re');
+INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'MetLife');
 
 /* Patrocinadores equipo 2 */
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Best Buy');
-INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Netcordia');
+VALUES (DEFAULT, 'China Railway Engineering');
 
 /* Patrocinadores equipo 3 */
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'American Express');
+VALUES (DEFAULT, 'Nippon Steel and Sumitomo Metal');
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'United Technologies');
+VALUES (DEFAULT, 'Groupe BPCE');
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Prestigabiz');
+VALUES (DEFAULT, 'Korea Electric Power');
+INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Korea Gas');
+INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Canon');
 
 /* Patrocinadores equipo 4 */
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Intuit');
+VALUES (DEFAULT, 'Procter and Gamble');
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Medimix International');
+VALUES (DEFAULT, 'Baker Hughes');
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Gas Legion');
+VALUES (DEFAULT, 'Weston');
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Houlihans');
+VALUES (DEFAULT, 'UBS Group');
+INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'HeBei Iron and Steel Group');
 
 /* Patrocinadores equipo 5 */
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Applebees');
+VALUES (DEFAULT, 'Mapfre Group');
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Beasts of Beauty');
+VALUES (DEFAULT, 'Itochu');
+INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Walgreens');
+INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Finatis');
+INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'CEFC China Energy');
 
 /* Patrocinadores equipo 6 */
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'NBC Universal');
+VALUES (DEFAULT, 'National Australia Bank');
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'DC Shoes');
+VALUES (DEFAULT, 'Express Scripts Holding');
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Barnes & Noble');
+VALUES (DEFAULT, 'China Electronics');
 
 /* Patrocinadores equipo 7 */
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Warner Bros. Entertainment');
+VALUES (DEFAULT, 'ZF Friedrichshafen');
+INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Mitsubishi Corp.');
 
 /* Patrocinadores equipo 8 */
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Crazy Tiger');
+VALUES (DEFAULT, 'Dai-ichi Life Insurance');
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'News Corporation');
-INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Medimix International');
+VALUES (DEFAULT, 'Allianz');
 
 /* Patrocinadores equipo 9 */
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Galaxy Man');
+VALUES (DEFAULT, 'Standard Life');
+INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Macys');
+INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Bridgestone');
+INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Sears Holdings');
+INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Japan Post Holdings');
 
 /* Patrocinadores equipo 10 */
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'W.C. Bradley Co.');
+VALUES (DEFAULT, 'Ecopetrol');
+INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Macys');
+INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Woolworths');
 
 /* Patrocinadores equipo 11 */
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'VECO Corporation');
+VALUES (DEFAULT, 'E.ON');
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'CVS Pharmacy');
+VALUES (DEFAULT, 'Alstom');
+INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Ikea');
+INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Shenhua Group');
+INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'ZF Friedrichshafen');
 
 /* Patrocinadores equipo 12 */
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Solution Bridge');
-INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Arctic Cat');
-INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Ace Hardware');
+VALUES (DEFAULT, 'Merck');
 
 /* Patrocinadores equipo 13 */
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'YRC Worldwide Inc.');
+VALUES (DEFAULT, 'China Pacific Insurance');
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Platinum Interior Design');
+VALUES (DEFAULT, 'TIAA-CREF');
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'RadioShack');
+VALUES (DEFAULT, 'Procter and Gamble');
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Unisys');
+VALUES (DEFAULT, 'Air France-KLM Group');
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Price Waterhouse Coopers');
+VALUES (DEFAULT, 'General Dynamics');
 
 /* Patrocinadores equipo 14 */
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Convergys Corp.');
+VALUES (DEFAULT, 'Delta Air Lines');
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Asian Plan');
+VALUES (DEFAULT, 'Wilmar International');
+INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'COFCO');
 
 /* Patrocinadores equipo 15 */
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Dollar Tree');
+VALUES (DEFAULT, 'DirecTV');
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Maxtor Corporation');
+VALUES (DEFAULT, 'Caterpillar');
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Quiznos');
+VALUES (DEFAULT, 'Vodafone Group');
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Prestigabiz');
+VALUES (DEFAULT, 'ChemChina');
 
 /* Patrocinadores equipo 16 */
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'PC Power and Cooling');
+VALUES (DEFAULT, '3M');
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Dun Rite Lawn Care');
+VALUES (DEFAULT, 'Shenhua Group');
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'BJs Wholesale Club');
+VALUES (DEFAULT, 'Daimler');
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Custom Lawn Service');
+VALUES (DEFAULT, 'Kailuan Group');
 
 /* Patrocinadores equipo 17 */
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'The Network Chef');
-INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Kenworth');
-INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'UTStarcom');
-INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Excella');
-INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Creative Wealth');
+VALUES (DEFAULT, '3M');
 
 /* Patrocinadores equipo 18 */
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Arryx');
-INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Paramount Pictures');
+VALUES (DEFAULT, 'Nippon Tel. and Tel.');
 
 /* Patrocinadores equipo 19 */
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'VF Corporation');
+VALUES (DEFAULT, 'Bouygues');
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Netaid');
+VALUES (DEFAULT, 'Marubeni');
+INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Shanxi LuAn Mining Group');
 
 /* Patrocinadores equipo 20 */
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Choices');
+VALUES (DEFAULT, 'Allstate');
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Stratabiz');
+VALUES (DEFAULT, 'Dow Chemical');
 INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Choices');
+VALUES (DEFAULT, 'Lowes');
+INSERT INTO PATROCINADOR (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Procter and Gamble');
 
+/*Juegos*/
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Doom', 'id Software', 
+TO_DATE('09-11-1990', 'DD-MM-YYYY'));
 
-COMMIT;
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Quake', 'id Software', 
+TO_DATE('28-11-2014', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Counter-Strike series', 'Valve', 
+TO_DATE('12-09-1992', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Call of Duty series', 'Blizzard Entertainment', 
+TO_DATE('12-01-1996', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Unreal Tournament', 'Epic Games', 
+TO_DATE('20-10-1999', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Halo series', 'Microsoft Studios', 
+TO_DATE('15-09-1995', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Battlefield series', 'Electronic Arts', 
+TO_DATE('16-11-2009', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Overwatch', 'Blizzard Entertainment', 
+TO_DATE('20-05-1998', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Team Fortress 2', 'Valve Corporation', 
+TO_DATE('15-11-1997', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Rainbow Six: Siege', 'Ubisoft', 
+TO_DATE('09-07-2007', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Valorant', 'Riot Games', 
+TO_DATE('03-06-1991', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'League of Legends', 'Riot Games', 
+TO_DATE('04-05-1999', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Dota 2', 'Valve Corporation', 
+TO_DATE('27-01-2019', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Smite', 'Hi-Rez Studios', 
+TO_DATE('27-01-2024', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Heroes of the Storm', 'Blizzard Entertainment', 
+TO_DATE('16-07-2006', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Vainglory', 'Super Evil Megacorp', 
+TO_DATE('22-11-2001', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Arena of Valor', 'Tencent Games', 
+TO_DATE('19-01-1999', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Mobile Legends: Bang Bang', 'Moonton', 
+TO_DATE('14-02-2017', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Formula 1 official games', 'Codemasters', 
+TO_DATE('25-08-2022', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Gran Turismo Sport', 'Sony Interactive Entertainment', 
+TO_DATE('21-04-2003', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'iRacing', 'iRacing.com Motorsport Simulations', 
+TO_DATE('19-07-2016', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Trackmania', 'Ubisoft', 
+TO_DATE('28-09-1999', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Project CARS', 'Bandai Namco Entertainment', 
+TO_DATE('22-07-2020', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'rFactor 2', 'Studio 397', 
+TO_DATE('13-05-1994', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Kart Rider', 'Nexon', 
+TO_DATE('16-09-1990', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'StarCraft', 'Blizzard Entertainment', 
+TO_DATE('06-06-1990', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'StarCraft II', 'Blizzard Entertainment', 
+TO_DATE('23-06-1991', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Warcraft III', 'Blizzard Entertainment', 
+TO_DATE('11-08-2002', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'FIFA Football', 'Electronic Arts', 
+TO_DATE('12-11-2018', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Madden NFL', 'Electronic Arts', 
+TO_DATE('07-05-2005', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'NBA 2K', 'Take-Two Interactive', 
+TO_DATE('03-01-2019', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Pro Evolution Soccer', 'Konami', 
+TO_DATE('25-07-2019', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Street Fighter', 'Capcom', 
+TO_DATE('15-07-2001', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Super Smash Bros.', 'Nintendo', 
+TO_DATE('27-02-2017', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Marvel vs. Capcom', 'Capcom', 
+TO_DATE('18-03-2021', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Tekken', 'Bandai Namco', 
+TO_DATE('16-06-1994', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Killer Instinct', 'Microsoft', 
+TO_DATE('28-03-2001', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Rocket League', 'Psyonix Studios', 
+TO_DATE('25-11-2004', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Gears of War', 'The Coalition', 
+TO_DATE('28-01-2018', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'PlayerUnknowns Battlegrounds (PUBG)', 'PUBG Corporation', 
+TO_DATE('03-06-2005', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Garena Free Fire', 'Garena', 
+TO_DATE('13-07-1992', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Splatoon 2', 'Nintendo', 
+TO_DATE('27-03-2019', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Hearthstone', 'Blizzard Entertainment', 
+TO_DATE('12-02-2011', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Shadowverse', 'Cygames', 
+TO_DATE('10-02-2009', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Magic: The Gathering Arena', 'Wizards of the Coast', 
+TO_DATE('08-07-2003', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Pokémon', 'The Pokémon Company', 
+TO_DATE('22-09-1998', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Puyo Puyo', 'Sega', 
+TO_DATE('20-10-2004', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Clash Royale', 'Supercell', 
+TO_DATE('09-11-2005', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGO (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Clash of Clans', 'Supercell', 
+TO_DATE('25-09-2007', 'DD-MM-YYYY'));
+
