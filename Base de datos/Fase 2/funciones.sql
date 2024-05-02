@@ -1,0 +1,9 @@
+-- Función para ...
+CREATE OR REPLACE FUNCTION FUNCION_ ()
+RETURN X
+IS
+	;
+BEGIN
+	;
+END FUNCION_;
+
