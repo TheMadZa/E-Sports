@@ -3,6 +3,7 @@ CREATE OR REPLACE PROCEDURE OBTENER_INFORMACION_COMPETICION
 BEGIN
     OPEN c_obtenerInfoCompeticion FOR
         SELECT
+            C.NOMBRE_COM,
             J.NOMBRE,
             EF.HORA_ENFRENTAMIENTO AS HORA,
             E1.NOM_EQUIPO AS EQUIPO_1,
@@ -21,14 +22,15 @@ BEGIN
         LEFT JOIN STAFF S1 ON EF.ID_EQUIPO1 = S1.ID_EQUIPO
         LEFT JOIN JUGADOR J2 ON EF.ID_EQUIPO2 = J2.ID_EQUIPO
         LEFT JOIN STAFF S2 ON EF.ID_EQUIPO2 = S2.ID_EQUIPO 
-        GROUP BY 
+        GROUP BY
+            C.NOMBRE_COM,
             J.NOMBRE,
             EF.HORA_ENFRENTAMIENTO,
             E1.NOM_EQUIPO,
             E2.NOM_EQUIPO;
 EXCEPTION
     WHEN NO_DATA_FOUND THEN
-        DBMS_OUTPUT.PUT_LINE('No se encontró información especificada.');
+        DBMS_OUTPUT.PUT_LINE('No se encontrÃ³ informaciÃ³n especificada.');
     WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('Error al recuperar información.');
+        DBMS_OUTPUT.PUT_LINE('Error al recuperar informaciÃ³n.');
 END;
