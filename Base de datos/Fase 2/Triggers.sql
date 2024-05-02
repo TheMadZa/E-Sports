@@ -1,11 +1,11 @@
-/*Scripts de borrado y creaciÛn de los TRIGGERS*/
+/*Scripts de borrado y creaci√≥n de los TRIGGERS*/
 DROP TRIGGER CANTIDAD_EQUIPO;
 DROP TRIGGER GENERAR_CALENDARIO;
 DROP TRIGGER NOMODIFICAR_EQUIPO;
 DROP TRIGGER NOMODIFICAR_JUGADOR;
 DROP TRIGGER MAXSALARIO_EQUIPO;
 
-/*Controlar que no haya m·s de 6 ni menos de 2 jugadores en un equipo.*/
+/*Controlar que no haya m√°s de 6 ni menos de 2 jugadores en un equipo.*/
 CREATE OR REPLACE TRIGGER CANTIDAD_EQUIPO
 BEFORE INSERT OR UPDATE ON JUGADOR
 FOR EACH ROW
@@ -29,8 +29,8 @@ EXCEPTION
 END CANTIDAD_EQUIPO;
 
 
-/*Controlar que para poder generar el calendario de una competiciÛn
-todos los equipos tienen que tener un mÌnimo de 2 jugadores.*/
+/*Controlar que para poder generar el calendario de una competici√≥n
+todos los equipos tienen que tener un m√≠nimo de 2 jugadores.*/
 CREATE OR REPLACE TRIGGER GENERAR_CALENDARIO
 BEFORE INSERT ON JORNADA
 FOR EACH ROW
@@ -60,7 +60,7 @@ EXCEPTION
 END GENERAR_CALENDARIO;
 
 
-/*Controlar que una vez generado el calendario de la competiciÛn, no se
+/*Controlar que una vez generado el calendario de la competici√≥n, no se
 pueden modificar los equipos.*/
 CREATE OR REPLACE TRIGGER NOMODIFICAR_EQUIPO
 BEFORE UPDATE ON EQUIPO
@@ -69,20 +69,22 @@ DECLARE
     v_etapa_competicion COMPETICION.ETAPA%TYPE;
     e_etapa_cerrada EXCEPTION;
 BEGIN
+
     SELECT ETAPA INTO v_etapa_competicion
     FROM COMPETICION
-    WHERE id_competicion = :NEW.id_competicion;
-    
+    WHERE id_competicion =(SELECT id_competicion
+                            FROM equipo_competicion
+                            WHERE id_equipo = :NEW.id_equipo); 
     IF v_etapa_competicion = 'C' THEN
         RAISE e_etapa_cerrada;
     END IF;
 EXCEPTION
     WHEN e_etapa_cerrada THEN
-        DBMS_OUTPUT.PUT_LINE('La competicion ya est· cerrada');
+        DBMS_OUTPUT.PUT_LINE('La competicion ya est√° cerrada');
 END NOMODIFICAR_EQUIPO;
 
 
-/*Controlar que una vez generado el calendario de la competiciÛn, no se
+/*Controlar que una vez generado el calendario de la competici√≥n, no se
 pueden modificar los jugadores de cada equipo.*/
 CREATE OR REPLACE TRIGGER NOMODIFICAR_JUGADOR
 BEFORE UPDATE ON JUGADOR
@@ -91,21 +93,23 @@ DECLARE
     v_etapa_competicion COMPETICION.ETAPA%TYPE;
     e_etapa_cerrada EXCEPTION;
 BEGIN
+
     SELECT ETAPA INTO v_etapa_competicion
     FROM COMPETICION
-    WHERE id_competicion = :NEW.id_competicion;
-    
+    WHERE id_competicion =(SELECT id_competicion
+                            FROM equipo_competicion
+                            WHERE id_equipo = :NEW.id_equipo);
     IF v_etapa_competicion = 'C' THEN
         RAISE e_etapa_cerrada;
     END IF;
 EXCEPTION
     WHEN e_etapa_cerrada THEN
-        DBMS_OUTPUT.PUT_LINE('La competicion ya est· cerrada');
+        DBMS_OUTPUT.PUT_LINE('La competicion ya est√° cerrada');
 END NOMODIFICAR_JUGADOR;
 
 
-/*Controlar que el salario total de los jugadores del equipo no podr· ser
-superior a 200.000Ä anuales*/
+/*Controlar que el salario total de los jugadores del equipo no podr√° ser
+superior a 200.000‚Ç¨ anuales*/
 CREATE OR REPLACE TRIGGER MAXSALARIO_EQUIPO
 BEFORE INSERT OR UPDATE ON JUGADOR
 FOR EACH ROW
@@ -117,7 +121,7 @@ BEGIN
     WHERE id_equipo = :new.id_equipo;
             
     IF v_salarioanual_total > 200000 THEN
-        RAISE_APPLICATION_ERROR('-20001','El salario del equipo es m·s
+        RAISE_APPLICATION_ERROR('-20001','El salario del equipo es m√°s
             de 200000');
     END IF;
 
