@@ -2,51 +2,51 @@
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'Team Liquid', TO_DATE('15-09-2000', 'DD-MM-YYYY'),
-       null, null);
+       'https://i.imgur.com/nuYSo51.png', 'Azul');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'Fnatic', TO_DATE('10-07-2004', 'DD-MM-YYYY'),
-       null, null);
+       'https://i.imgur.com/dPoFDgH.png', 'Naranja');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'Evil Geniuses', TO_DATE('21-03-2005', 'DD-MM-YYYY'),
-       null, null);
+       'https://i.imgur.com/H7suy3m.png', 'Blanco');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'Cloud9', TO_DATE('30-08-2006', 'DD-MM-YYYY'),
-       null, null);
+       'https://i.imgur.com/8VUwgyj.png', 'Azul');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'G2 Esports', TO_DATE('12-05-2009', 'DD-MM-YYYY'),
-       null, null);
+       'https://i.imgur.com/mMGMKYy.png', 'Blanco');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'T1', TO_DATE('17-11-2010', 'DD-MM-YYYY'),
-       null, null);
+       'https://i.imgur.com/sRIYxmQ.png', 'Rojo');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'FaZe Clan', TO_DATE('05-06-2010', 'DD-MM-YYYY'),
-       null, null);
+       'https://i.imgur.com/qWFQ4aS.png', 'Rojo');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'Team SoloMid (TSM)', TO_DATE('15-02-2011', 'DD-MM-YYYY'),
-       null, null);
+       'https://i.imgur.com/8dN57sU.png', 'Blanco');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'Natus Vincere (Na Vi)', TO_DATE('28-04-2012', 'DD-MM-YYYY'),
-       null, null);
+       'https://i.imgur.com/0bkl5K1.png', 'Amarillo');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'Astralis', TO_DATE('08-09-2013', 'DD-MM-YYYY'),
-       null, null);
+       'https://i.imgur.com/uI12LfY.png', 'Rojo');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'Team Vitality', TO_DATE('19-03-2014', 'DD-MM-YYYY'),
-       null, null);
+       'https://i.imgur.com/WDcunBM.png', 'Amarilo');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'Team Envy', TO_DATE('27-10-2014', 'DD-MM-YYYY'),
-       null, null);
+       'https://i.imgur.com/KMoJfsp.png', 'Negro');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'Rogue', TO_DATE('14-06-2015', 'DD-MM-YYYY'),
