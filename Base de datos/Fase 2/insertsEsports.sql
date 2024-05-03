@@ -2,125 +2,153 @@
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'Team Liquid', TO_DATE('15-09-2000', 'DD-MM-YYYY'),
-       'https://github.com/lootmarket/esport-team-logos/blob/master/
-	league-of-legends/team-liquid/team-liquid-logo.png?raw=true', 'Azul');
+       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/
+	main/team-liquid-logo.png?raw=true', 'Azul');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'Fnatic', TO_DATE('10-07-2004', 'DD-MM-YYYY'),
-       'https://github.com/lootmarket/esport-team-logos/blob/
-	master/cs/fnatic/fnatic-logo.png?raw=true', 'Naranja');
+       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/
+	main/fnatic-logo.png?raw=true', 'Naranja');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'Evil Geniuses', TO_DATE('21-03-2005', 'DD-MM-YYYY'),
-       'https://i.imgur.com/H7suy3m.png', 'Blanco');
+       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/
+	main/evil-geniuses-gc-logo.png?raw=true', 'Blanco');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'Cloud9', TO_DATE('30-08-2006', 'DD-MM-YYYY'),
-       'https://i.imgur.com/8VUwgyj.png', 'Azul');
+       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/
+	main/cloud9-logo.png?raw=true', 'Azul');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'G2 Esports', TO_DATE('12-05-2009', 'DD-MM-YYYY'),
-       'https://i.imgur.com/mMGMKYy.png', 'Blanco');
+       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/
+	main/g2-esports-logo.png?raw=true', 'Blanco');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'T1', TO_DATE('17-11-2010', 'DD-MM-YYYY'),
-       'https://i.imgur.com/sRIYxmQ.png', 'Rojo');
+       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/
+	main/t1-academy-logo.png?raw=true', 'Rojo');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'FaZe Clan', TO_DATE('05-06-2010', 'DD-MM-YYYY'),
-       'https://i.imgur.com/qWFQ4aS.png', 'Rojo');
+       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/
+	faze-clan-logo.png?raw=true', 'Rojo');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'Team SoloMid (TSM)', TO_DATE('15-02-2011', 'DD-MM-YYYY'),
-       'https://i.imgur.com/8dN57sU.png', 'Blanco');
+       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/
+	team-solomid-logo.png?raw=true', 'Blanco');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'Natus Vincere (Na Vi)', TO_DATE('28-04-2012', 'DD-MM-YYYY'),
-       'https://i.imgur.com/0bkl5K1.png', 'Amarillo');
+       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/
+	natus-vincere-celestials-logo.png?raw=true', 'Amarillo');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'Astralis', TO_DATE('08-09-2013', 'DD-MM-YYYY'),
-       'https://i.imgur.com/uI12LfY.png', 'Rojo');
+       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/
+	astralis-logo.png?raw=true', 'Rojo');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'Team Vitality', TO_DATE('19-03-2014', 'DD-MM-YYYY'),
-       'https://i.imgur.com/WDcunBM.png', 'Amarilo');
+       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/
+	vitality.bee-logo.png?raw=true', 'Amarilo');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'Team Envy', TO_DATE('27-10-2014', 'DD-MM-YYYY'),
-       'https://i.imgur.com/KMoJfsp.png', 'Azul');
+       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/
+	team-envyus-logo.png?raw=true', 'Azul');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'Rogue', TO_DATE('14-06-2015', 'DD-MM-YYYY'),
-       null, null);
+       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/
+	rogue-esports-club-logo.png?raw=true', 'Azul');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'Team Dignitas', TO_DATE('09-01-2016', 'DD-MM-YYYY'),
-       null, null);
+       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/
+	dignitas-logo.png?raw=true', 'Amarillo');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, '100 Thieves', TO_DATE('22-08-2016', 'DD-MM-YYYY'),
-       null, null);
+       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/
+	100-thieves-logo.png?raw=true', 'Rojo');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'Gen.G Esports', TO_DATE('03-04-2017', 'DD-MM-YYYY'),
-       null, null);
+       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/
+	gen.g-logo.png?raw=true', 'Dorado');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'Team Heretics', TO_DATE('29-11-2017', 'DD-MM-YYYY'),
-       null, null);
+       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/
+	heretics-acad-logo.png?raw=true', 'Blanco');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'MAD Lions', TO_DATE('17-05-2018', 'DD-MM-YYYY'),
-       null, null);
+       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/
+	mad-lions-logo.png?raw=true', 'Dorado');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'Team Queso', TO_DATE('08-09-2018', 'DD-MM-YYYY'),
-       null, null);
+       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/
+	queso-logo.png?raw=true', 'Amarillo');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'INTZ', TO_DATE('12-02-2019', 'DD-MM-YYYY'),
-       null, null);
+       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/
+	intz-logo.png?raw=true', 'Blanco');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, '9ine', TO_DATE('01-07-2019', 'DD-MM-YYYY'),
-       null, null);
+       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/
+	9ine-logo.png?raw=true', 'Blanco');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'G2 Arctic', TO_DATE('19-03-2020', 'DD-MM-YYYY'),
-       null, null);
+       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/
+	g2-arctic-logo.png?raw=true', 'Azul');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'Nigma Galaxy', TO_DATE('14-08-2020', 'DD-MM-YYYY'),
-       null, null);
+       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/
+	nigma-galaxy-logo.png?raw=true', 'Blanco');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'FunPlus Phoenix', TO_DATE('27-01-2021', 'DD-MM-YYYY'),
-       null, null);
+       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/
+	funplus-phoenix-blaze-logo.png?raw=true', 'Rojo');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'Barça eSports', TO_DATE('10-06-2021', 'DD-MM-YYYY'),
-       null, null);
+       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/
+	barca-logo.png?raw=true', 'Azulgrana');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
-VALUES (DEFAULT, 'Evil Geniuses*', TO_DATE('03-09-2021', 'DD-MM-YYYY'),
-       null, null);
+VALUES (DEFAULT, 'KOI', TO_DATE('03-09-2021', 'DD-MM-YYYY'),
+       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/
+	finetwork-koi-logo.png?raw=true', 'Morado');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'FURIA Esports', TO_DATE('18-02-2022', 'DD-MM-YYYY'),
-       null, null);
+       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/
+	furia-esports-logo.png?raw=true', 'Negro');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'M80', TO_DATE('06-05-2022', 'DD-MM-YYYY'),
-       null, null);
+       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/
+	m80-logo.png?raw=true', 'Verde');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'Sentinels', TO_DATE('19-10-2022', 'DD-MM-YYYY'),
-       null, null);
+       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/
+	sentinels-logo.png?raw=true', 'Rojo');
 
 INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'Imperial', TO_DATE('25-03-2023', 'DD-MM-YYYY'),
-       null, null);
+       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/
+	imperial-logo.png?raw=true', 'verde');
 
 
 /* Equipo 1 */
