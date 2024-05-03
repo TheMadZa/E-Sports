@@ -134,12 +134,10 @@ BEGIN
     WHERE id_equipo = :new.id_equipo;
             
     IF v_salarioanual_total > 200000 THEN
-        RAISE APPLICATION_ERROR;
+        RAISE_APPLICATION_ERROR('-20001','El salario del equipo es más
+            de 200000');
     END IF;
 EXCEPTION
-    WHEN APPLICATION_ERROR THEN
-        DBMS_OUTPUT.PUT_LINE('-20001','El salario del equipo es más
-            de 200000');
     WHEN OTHERS THEN
         DBMS_OUTPUT.PUT_LINE('Error al recuperar información.');
 END MAXSALARIO_EQUIPO;
