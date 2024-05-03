@@ -1,5 +1,5 @@
 /*
-Funcion para obtener el nombre del lider de un equipo, pasandole como
+Funcion para obtener el nombre de un equipo y su lider, pasandole como
 parametro el id del equipo.
 */
 CREATE OR REPLACE FUNCTION FUNCION_LIDER(p_id_equipo IN equipo.id_equipo%type)
@@ -14,10 +14,10 @@ BEGIN
     JOIN EQUIPO E ON J.ID_EQUIPO = E.ID_EQUIPO
     WHERE J.ID_EQUIPO = p_id_equipo AND lower(J.ROL) = 'lider';
 
-    RETURN 'El líder del equipo ' || nombre_equipo || ' es ' || nombre_lider || '.';
+    RETURN 'El lider del equipo ' || nombre_equipo || ' es ' || InitCap(nombre_lider) || '.';
 EXCEPTION
     WHEN NO_DATA_FOUND THEN
-        RETURN 'No se encontró un líder para el equipo especificado.';
+        RETURN 'No se encontro un lider para el equipo especificado.';
     WHEN OTHERS THEN
-        RETURN 'Ocurrió un error inesperado.';
+        RETURN 'Ocurrio un error inesperado.';
 END FUNCION_LIDER;
