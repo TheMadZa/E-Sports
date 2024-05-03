@@ -4,11 +4,11 @@ DROP TRIGGER GENERAR_CALENDARIO;
 DROP TRIGGER NOMODIFICAR_EQUIPO;
 DROP TRIGGER NOMODIFICAR_JUGADOR;
 DROP TRIGGER MAXSALARIO_EQUIPO;
-DROP TRIGGER actualizar_resultados;
+DROP TRIGGER PUNTOS_TOTALES;
 
 /*Controlar que no haya más de 6 ni menos de 2 jugadores en un equipo.*/
 CREATE OR REPLACE TRIGGER CANTIDAD_EQUIPO
-BEFORE INSERT OR UPDATE ON JUGADOR
+BEFORE INSERT OR UPDATE OR DELETE ON JUGADOR
 FOR EACH ROW
 DECLARE
     v_cantidad NUMBER;
@@ -27,8 +27,11 @@ BEGIN
 EXCEPTION
     WHEN e_pocosjugadores THEN
         DBMS_OUTPUT.PUT_LINE('No puede haber menos de 2 jugadores');
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Error al recuperar información.');
 END CANTIDAD_EQUIPO;
 
+/
 
 /*Controlar que para poder generar el calendario de una competición
 todos los equipos tienen que tener un mínimo de 2 jugadores.*/
@@ -57,9 +60,12 @@ BEGIN
 EXCEPTION
     WHEN NO_DATA_FOUND THEN
         DBMS_OUTPUT.PUT_LINE('No se han encontrado equipos');
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Error al recuperar información.');
 
 END GENERAR_CALENDARIO;
 
+/
 
 /*Controlar que una vez generado el calendario de la competición, no se
 pueden modificar los equipos.*/
@@ -82,8 +88,11 @@ BEGIN
 EXCEPTION
     WHEN e_etapa_cerrada THEN
         DBMS_OUTPUT.PUT_LINE('La competicion ya está cerrada');
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Error al recuperar información.');
 END NOMODIFICAR_EQUIPO;
 
+/
 
 /*Controlar que una vez generado el calendario de la competición, no se
 pueden modificar los jugadores de cada equipo.*/
@@ -106,8 +115,11 @@ BEGIN
 EXCEPTION
     WHEN e_etapa_cerrada THEN
         DBMS_OUTPUT.PUT_LINE('La competicion ya está cerrada');
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Error al recuperar información.');
 END NOMODIFICAR_JUGADOR;
 
+/
 
 /*Controlar que el salario total de los jugadores del equipo no podrá ser
 superior a 200.000€ anuales*/
@@ -122,11 +134,17 @@ BEGIN
     WHERE id_equipo = :new.id_equipo;
             
     IF v_salarioanual_total > 200000 THEN
-        RAISE_APPLICATION_ERROR('-20001','El salario del equipo es más
-            de 200000');
+        RAISE APPLICATION_ERROR;
     END IF;
-
+EXCEPTION
+    WHEN APPLICATION_ERROR THEN
+        DBMS_OUTPUT.PUT_LINE('-20001','El salario del equipo es más
+            de 200000');
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Error al recuperar información.');
 END MAXSALARIO_EQUIPO;
+
+/
 
 CREATE OR REPLACE TRIGGER actualizar_resultados
 AFTER INSERT ON ENFRENTAMIENTO
@@ -159,4 +177,8 @@ BEGIN
         SET VICTORIAS = VICTORIAS + 1
         WHERE ID_EQUIPO = v_equipo2;
     END IF;
+    
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Error al recuperar información.');
 END;
