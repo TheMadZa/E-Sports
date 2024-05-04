@@ -5,7 +5,8 @@ IS
 	PROCEDURE OBTENER_INFO_COMPETICION(c_obtenerInfoCompeticion
                                         OUT SYS_REFCURSOR);
 	PROCEDURE OBTENER_INFORMACION(c_obtenerInfo OUT SYS_REFCURSOR);
-    FUNCTION FUNCION_LIDER(p_id_equipo IN EQUIPO.ID_EQUIPO%type) RETURN VARCHAR2;
+    	FUNCTION OBTENER_CANTIDAD_JUGADORES(a_id_equipo IN EQUIPO.ID_EQUIPO%TYPE)
+        	RETURN NUMBER;
 END PAQUETE_DATOS;
 
 
@@ -73,24 +74,17 @@ AS
             
     END OBTENER_INFORMACION;
     
-    FUNCTION FUNCION_LIDER(p_id_equipo IN EQUIPO.ID_EQUIPO%type)
-    RETURN VARCHAR2
+    FUNCTION OBTENER_CANTIDAD_JUGADORES(a_id_equipo IN EQUIPO.ID_EQUIPO%TYPE)
+    RETURN NUMBER
     IS
-        nombre_lider VARCHAR2(50);
-        nombre_equipo VARCHAR2(50);
+        v_cantidad_jugadores NUMBER;
     BEGIN
-        SELECT J.NOMBRE, E.NOM_EQUIPO
-        INTO nombre_lider, nombre_equipo
-        FROM JUGADOR J
-        JOIN EQUIPO E ON J.ID_EQUIPO = E.ID_EQUIPO
-        WHERE J.ID_EQUIPO = p_id_equipo AND lower(J.ROL) = 'lider';
-    
-        RETURN 'El lider del equipo ' || nombre_equipo || ' es ' || InitCap(nombre_lider) || '.';
-    EXCEPTION
-        WHEN NO_DATA_FOUND THEN
-            RETURN 'No se encontro un lider para el equipo especificado.';
-        WHEN OTHERS THEN
-            RETURN 'Ocurrio un error inesperado.';
-    END FUNCION_LIDER;
+        SELECT COUNT(*) INTO v_cantidad_jugadores
+        FROM JUGADOR
+        WHERE id_equipo = a_id_equipo;
+
+        RETURN v_cantidad_jugadores;
+
+    END OBTENER_CANTIDAD_JUGADORES;
 
 END PAQUETE_DATOS;
