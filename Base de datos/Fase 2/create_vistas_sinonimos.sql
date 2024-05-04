@@ -1,6 +1,6 @@
--- 1. Script SQL de borrado y creación de las vistas y sinónimos.
+-- 1. Script SQL de borrado y creaciÃ³n de las vistas y sinÃ³nimos.
 
--- Comprobación de los datos de las tablas.
+-- ComprobaciÃ³n de los datos de las tablas.
 SELECT * FROM USUARIO;
 SELECT * FROM JUGADOR;
 SELECT * FROM STAFF;
@@ -13,7 +13,7 @@ SELECT * FROM JUEGO;
 SELECT * FROM PATROCINADOR_EQUIPO;
 SELECT * FROM EQUIPO_COMPETICION;
 
--- BORRADO Y CREACIÓN DE VISTAS.
+-- BORRADO Y CREACIÃ“N DE VISTAS.
 
 -- Select que devuelve todos los jugadores con sus equipos correspondientes.
 CREATE OR REPLACE VIEW VISTA_JUGADORES_EQUIPOS AS (
@@ -23,7 +23,7 @@ CREATE OR REPLACE VIEW VISTA_JUGADORES_EQUIPOS AS (
 	WHERE E.ID_EQUIPO = J.ID_EQUIPO
 );
 
--- Select que devuelve los enfrentamientos que hay por jornada en una competición.
+-- Select que devuelve los enfrentamientos que hay por jornada en una competiciÃ³n.
 CREATE OR REPLACE VIEW VISTA_ENFRENTAMIENTOS_JORNADA AS (
 	SELECT  E.ID_ENFRENTAMIENTO,
             TO_CHAR(E.HORA_ENFRENTAMIENTO,'DD-MM-YY HH24:MI')
@@ -32,7 +32,7 @@ CREATE OR REPLACE VIEW VISTA_ENFRENTAMIENTOS_JORNADA AS (
             E.RESULTADO1 AS "RESULTADO_EQUIPO_1",
             E.ID_EQUIPO2 AS "ID_EQUIPO_2",
             E.RESULTADO2 AS "RESULTADO_EQUIPO_2",
-            J.NUM_JORNADA AS "N�MERO_JORNADA", J.FECHA_JORNADA,
+            J.NUM_JORNADA AS "NÚMERO_JORNADA", J.FECHA_JORNADA,
             C.ID_COMPETICION,
             C.NOMBRE_COM AS "NOMBRE_COMPETICION"
 	FROM ENFRENTAMIENTO E, JORNADA J, COMPETICION C
@@ -41,8 +41,8 @@ CREATE OR REPLACE VIEW VISTA_ENFRENTAMIENTOS_JORNADA AS (
 );
 
 /*
-Relación de los equipos que conforman la competición, con todos los datos que
-se tengan de la misma: nombre del juego, fechas, relación de equipos
+RelaciÃ³n de los equipos que conforman la competiciÃ³n, con todos los datos que
+se tengan de la misma: nombre del juego, fechas, relaciÃ³n de equipos
 incluyendo para cada equipo el nombre del mismo, los miembros del
 staff y la cantidad de jugadores que hay en ese equipo.
 */
@@ -62,17 +62,27 @@ CREATE OR REPLACE VIEW VISTA_EQUIPOS_COMPETICION AS (
                 EQUIPO.NOM_EQUIPO, STAFF.NOMBRE
 );
 
--- BORRADO Y CREACIÓN DE SINÓNIMOS.
+-- BORRADO Y CREACIÃ“N DE SINÃ“NIMOS.
 
 DROP SYNONYM ENFREN;
 DROP SYNONYM PATRO_EQUI;
 DROP SYNONYM EQUI_COMPE;
+DROP SYNONYM INFO_COMPE;
+DROP SYNONYM INFO_EQUI;
 
-CREATE SYNONYM ENFREN
+-- Sinónimos para algunas tablas:
+CREATE PUBLIC SYNONYM ENFREN
 FOR eqdaw03.ENFRENTAMIENTO;
 
-CREATE SYNONYM PATRO_EQUI
+CREATE PUBLIC SYNONYM PATRO_EQUI
 FOR eqdaw03.PATROCINADOR_EQUIPO;
 
-CREATE SYNONYM EQUI_COMPE
+CREATE PUBLIC SYNONYM EQUI_COMPE
 FOR eqdaw03.EQUIPO_COMPETICION;
+
+-- Sinónimos para los procedimientos:
+CREATE PUBLIC SYNONYM INFO_COMPE
+FOR eqdaw03.OBTENER_INFO_COMPETICION;
+
+CREATE PUBLIC SYNONYM INFO_EQUI
+FOR eqdaw03.OBTENER_INFORMACION;
