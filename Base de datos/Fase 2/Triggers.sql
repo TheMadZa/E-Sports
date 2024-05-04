@@ -4,7 +4,7 @@ DROP TRIGGER GENERAR_CALENDARIO;
 DROP TRIGGER NOMODIFICAR_EQUIPO;
 DROP TRIGGER NOMODIFICAR_JUGADOR;
 DROP TRIGGER MAXSALARIO_EQUIPO;
-DROP TRIGGER PUNTOS_TOTALES;
+DROP TRIGGER ACTUALIZAR_RESULTADOS;
 
 /*Controlar que no haya más de 6 ni menos de 2 jugadores en un equipo.*/
 CREATE OR REPLACE TRIGGER CANTIDAD_EQUIPO
@@ -14,19 +14,18 @@ DECLARE
     v_cantidad NUMBER;
     e_pocosjugadores EXCEPTION;
 BEGIN
-    SELECT COUNT(*) INTO v_cantidad
-    FROM JUGADOR
-    WHERE id_equipo = :new.id_equipo;
+    
+    v_cantidad := OBTENER_CANTIDAD_JUGADORES(:NEW.id_equipo);
     
     IF v_cantidad >= 6 THEN
-        RAISE_APPLICATION_ERROR('-20001','No puede haber mas de 6 jugadores');
+        RAISE_APPLICATION_ERROR('-20001','No puede haber mas de 6 jugadores.');
     ELSIF v_cantidad <= 2 THEN
         RAISE e_pocosjugadores;
     END IF;
     
 EXCEPTION
     WHEN e_pocosjugadores THEN
-        DBMS_OUTPUT.PUT_LINE('No puede haber menos de 2 jugadores');
+        DBMS_OUTPUT.PUT_LINE('No puede haber menos de 2 jugadores.');
     WHEN OTHERS THEN
         DBMS_OUTPUT.PUT_LINE('Error al recuperar información.');
 END CANTIDAD_EQUIPO;
@@ -47,19 +46,17 @@ BEGIN
     LOOP
         v_cantidad_min := 0;
         v_equipo_id := lista_equipos.id_equipo;
-    
-        SELECT COUNT(*) INTO v_cantidad_min
-        FROM JUGADOR
-        WHERE id_equipo = v_equipo_id;
+
+        v_cantidad_min := OBTENER_CANTIDAD_JUGADORES(v_equipo_id);
         
         IF v_cantidad_min < 2 THEN
-            RAISE_APPLICATION_ERROR('-20001','Hay menos de 2 jugadores');
+            RAISE_APPLICATION_ERROR('-20001','Hay menos de 2 jugadores.');
         END IF;
     END LOOP;
 
 EXCEPTION
     WHEN NO_DATA_FOUND THEN
-        DBMS_OUTPUT.PUT_LINE('No se han encontrado equipos');
+        DBMS_OUTPUT.PUT_LINE('No se han encontrado equipos.');
     WHEN OTHERS THEN
         DBMS_OUTPUT.PUT_LINE('Error al recuperar información.');
 
@@ -79,15 +76,16 @@ BEGIN
 
     SELECT ETAPA INTO v_etapa_competicion
     FROM COMPETICION
-    WHERE id_competicion =(SELECT id_competicion
+    WHERE id_competicion = (SELECT id_competicion
                             FROM equipo_competicion
-                            WHERE id_equipo = :NEW.id_equipo); 
+                            WHERE id_equipo = :NEW.id_equipo);
+    
     IF v_etapa_competicion = 'C' THEN
         RAISE e_etapa_cerrada;
     END IF;
 EXCEPTION
     WHEN e_etapa_cerrada THEN
-        DBMS_OUTPUT.PUT_LINE('La competicion ya está cerrada');
+        DBMS_OUTPUT.PUT_LINE('La competicion ya está cerrada.');
     WHEN OTHERS THEN
         DBMS_OUTPUT.PUT_LINE('Error al recuperar información.');
 END NOMODIFICAR_EQUIPO;
@@ -106,15 +104,16 @@ BEGIN
 
     SELECT ETAPA INTO v_etapa_competicion
     FROM COMPETICION
-    WHERE id_competicion =(SELECT id_competicion
+    WHERE id_competicion = (SELECT id_competicion
                             FROM equipo_competicion
                             WHERE id_equipo = :NEW.id_equipo);
+    
     IF v_etapa_competicion = 'C' THEN
         RAISE e_etapa_cerrada;
     END IF;
 EXCEPTION
     WHEN e_etapa_cerrada THEN
-        DBMS_OUTPUT.PUT_LINE('La competicion ya está cerrada');
+        DBMS_OUTPUT.PUT_LINE('La competicion ya está cerrada.');
     WHEN OTHERS THEN
         DBMS_OUTPUT.PUT_LINE('Error al recuperar información.');
 END NOMODIFICAR_JUGADOR;
@@ -131,11 +130,11 @@ DECLARE
 BEGIN    
     SELECT SUM(SUELDO * 12) INTO v_salarioanual_total
     FROM JUGADOR
-    WHERE id_equipo = :new.id_equipo;
-            
+    WHERE id_equipo = :NEW.id_equipo;
+    
     IF v_salarioanual_total > 200000 THEN
         RAISE_APPLICATION_ERROR('-20001','El salario del equipo es más
-            de 200000');
+            de 200000.');
     END IF;
 EXCEPTION
     WHEN OTHERS THEN
@@ -144,7 +143,7 @@ END MAXSALARIO_EQUIPO;
 
 /
 
-CREATE OR REPLACE TRIGGER actualizar_resultados
+CREATE OR REPLACE TRIGGER ACTUALIZAR_RESULTADOS
 AFTER INSERT ON ENFRENTAMIENTO
 FOR EACH ROW
 DECLARE
