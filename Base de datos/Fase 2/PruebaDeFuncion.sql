@@ -1,35 +1,68 @@
--- Prueba de la función que está en un script:
+SET SERVEROUTPUT ON;
+
+-- Prueba de las funciones que están en un script:
 
 DECLARE
-    resultado VARCHAR2(200);
+    resultado NUMBER;
+    e_error_consulta EXCEPTION;
 BEGIN
-    -- Probar la función con un equipo que tiene un líder
-    resultado := FUNCION_LIDER(2);
-    DBMS_OUTPUT.PUT_LINE(resultado);
+    -- Probar la función con un equipo que tiene 6 jugadores.
+    resultado := OBTENER_CANTIDAD_JUGADORES(1);
+    IF resultado=0 THEN
+        DBMS_OUTPUT.PUT_LINE('El equipo no tiene jugadores.');
+    ELSIF resultado IS NULL THEN
+        RAISE e_error_consulta;
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('El equipo tiene ' || resultado || ' jugadores.');
+    END IF;
 
-    -- Probar la función con un equipo que no tiene líder
-    --resultado := FUNCION_LIDER();
-    --DBMS_OUTPUT.PUT_LINE(resultado);
-
-    -- Probar la función con un equipo que no existe
-    resultado := FUNCION_LIDER(31);
-    DBMS_OUTPUT.PUT_LINE(resultado);
+    -- Probar la función con un equipo que no existe.
+    resultado := OBTENER_CANTIDAD_JUGADORES(80);
+    IF resultado=0 THEN
+        DBMS_OUTPUT.PUT_LINE('El equipo no tiene jugadores.');
+    ELSIF resultado IS NULL THEN
+        RAISE e_error_consulta;
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('El equipo tiene ' || resultado || ' jugadores.');
+    END IF;
+EXCEPTION
+    WHEN e_error_consulta THEN
+        DBMS_OUTPUT.PUT_LINE('Error al recuperar información. ' ||
+            'Puede que no exista el equipo especificado.');
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Se produjo un error desconocido.');
 END;
 
--- Prueba de la función que está en el paquete "PAQUETE_DATOS":
+
+-- Prueba de las funciones que están en el paquete "PAQUETE_DATOS":
 
 DECLARE
-    resultado VARCHAR2(200);
+    resultado NUMBER;
+    e_error_consulta EXCEPTION;
 BEGIN
-    -- Probar la función con un equipo que tiene un líder
-    resultado := PAQUETE_DATOS.FUNCION_LIDER(2);
-    DBMS_OUTPUT.PUT_LINE(resultado);
+    -- Probar la función con un equipo que tiene 6 jugadores.
+    resultado := PAQUETE_DATOS.OBTENER_CANTIDAD_JUGADORES(1);
+    IF resultado=0 THEN
+        DBMS_OUTPUT.PUT_LINE('El equipo no tiene jugadores.');
+    ELSIF resultado IS NULL THEN
+        RAISE e_error_consulta;
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('El equipo tiene ' || resultado || ' jugadores.');
+    END IF;
 
-    -- Probar la función con un equipo que no tiene líder
-    --resultado := PAQUETE_DATOS.FUNCION_LIDER();
-    --DBMS_OUTPUT.PUT_LINE(resultado);
-
-    -- Probar la función con un equipo que no existe
-    resultado := PAQUETE_DATOS.FUNCION_LIDER(31);
-    DBMS_OUTPUT.PUT_LINE(resultado);
+    -- Probar la función con un equipo que no existe.
+    resultado := PAQUETE_DATOS.OBTENER_CANTIDAD_JUGADORES(80);
+    IF resultado=0 THEN
+        DBMS_OUTPUT.PUT_LINE('El equipo no tiene jugadores.');
+    ELSIF resultado IS NULL THEN
+        RAISE e_error_consulta;
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('El equipo tiene ' || resultado || ' jugadores.');
+    END IF;
+EXCEPTION
+    WHEN e_error_consulta THEN
+        DBMS_OUTPUT.PUT_LINE('Error al recuperar información. ' ||
+            'Puede que no exista el equipo especificado.');
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Se produjo un error desconocido.');
 END;
