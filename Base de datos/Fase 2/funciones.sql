@@ -7,7 +7,7 @@ en base al argumento "ID_EQUIPO".
 CREATE OR REPLACE FUNCTION OBTENER_CANTIDAD_JUGADORES(a_id_equipo IN EQUIPO.ID_EQUIPO%TYPE)
 RETURN NUMBER
 IS
-    v_cantidad_jugadores NUMBER(2);
+    v_cantidad_jugadores NUMBER;
 BEGIN
     SELECT COUNT(*) INTO v_cantidad_jugadores
 	FROM JUGADOR
@@ -15,6 +15,7 @@ BEGIN
 
     RETURN v_cantidad_jugadores;
 END OBTENER_CANTIDAD_JUGADORES;
+
 
 /*
 Función para obtener el valor/estado de la etapa de una
