@@ -1,25 +1,27 @@
 SET SERVEROUTPUT ON;
 
--- Prueba de las funciones que están en un script:
+-- Prueba de las funciones que estÃ¡n en un script:
 
 DECLARE
     resultado NUMBER;
     e_error_consulta EXCEPTION;
 BEGIN
-    -- Probar la función con un equipo que tiene 6 jugadores.
+    -- Probar la funciÃ³n con un equipo que tiene 6 jugadores.
     resultado := OBTENER_CANTIDAD_JUGADORES(1);
     IF resultado=0 THEN
-        DBMS_OUTPUT.PUT_LINE('El equipo no tiene jugadores.');
+        DBMS_OUTPUT.PUT_LINE('El equipo no tiene jugadores.' ||
+            ' Puede que no exista el equipo especificado.');
     ELSIF resultado IS NULL THEN
         RAISE e_error_consulta;
     ELSE
         DBMS_OUTPUT.PUT_LINE('El equipo tiene ' || resultado || ' jugadores.');
     END IF;
 
-    -- Probar la función con un equipo que no existe.
+    -- Probar la funciÃ³n con un equipo que no existe.
     resultado := OBTENER_CANTIDAD_JUGADORES(80);
     IF resultado=0 THEN
-        DBMS_OUTPUT.PUT_LINE('El equipo no tiene jugadores.');
+        DBMS_OUTPUT.PUT_LINE('El equipo no tiene jugadores.' ||
+            ' Puede que no exista el equipo especificado.');
     ELSIF resultado IS NULL THEN
         RAISE e_error_consulta;
     ELSE
@@ -27,33 +29,34 @@ BEGIN
     END IF;
 EXCEPTION
     WHEN e_error_consulta THEN
-        DBMS_OUTPUT.PUT_LINE('Error al recuperar información. ' ||
-            'Puede que no exista el equipo especificado.');
+        DBMS_OUTPUT.PUT_LINE('Error al recuperar informaciÃ³n. ');
     WHEN OTHERS THEN
         DBMS_OUTPUT.PUT_LINE('Se produjo un error desconocido.');
 END;
 
 
--- Prueba de las funciones que están en el paquete "PAQUETE_DATOS":
+-- Prueba de las funciones que estÃ¡n en el paquete "PAQUETE_DATOS":
 
 DECLARE
     resultado NUMBER;
     e_error_consulta EXCEPTION;
 BEGIN
-    -- Probar la función con un equipo que tiene 6 jugadores.
+    -- Probar la funciÃ³n con un equipo que tiene 6 jugadores.
     resultado := PAQUETE_DATOS.OBTENER_CANTIDAD_JUGADORES(1);
     IF resultado=0 THEN
-        DBMS_OUTPUT.PUT_LINE('El equipo no tiene jugadores.');
+        DBMS_OUTPUT.PUT_LINE('El equipo no tiene jugadores.' ||
+            ' Puede que no exista el equipo especificado.');
     ELSIF resultado IS NULL THEN
         RAISE e_error_consulta;
     ELSE
         DBMS_OUTPUT.PUT_LINE('El equipo tiene ' || resultado || ' jugadores.');
     END IF;
 
-    -- Probar la función con un equipo que no existe.
+    -- Probar la funciÃ³n con un equipo que no existe.
     resultado := PAQUETE_DATOS.OBTENER_CANTIDAD_JUGADORES(80);
     IF resultado=0 THEN
-        DBMS_OUTPUT.PUT_LINE('El equipo no tiene jugadores.');
+        DBMS_OUTPUT.PUT_LINE('El equipo no tiene jugadores.' ||
+            ' Puede que no exista el equipo especificado.');
     ELSIF resultado IS NULL THEN
         RAISE e_error_consulta;
     ELSE
@@ -61,8 +64,7 @@ BEGIN
     END IF;
 EXCEPTION
     WHEN e_error_consulta THEN
-        DBMS_OUTPUT.PUT_LINE('Error al recuperar información. ' ||
-            'Puede que no exista el equipo especificado.');
+        DBMS_OUTPUT.PUT_LINE('Error al recuperar informaciÃ³n. ');
     WHEN OTHERS THEN
         DBMS_OUTPUT.PUT_LINE('Se produjo un error desconocido.');
 END;
