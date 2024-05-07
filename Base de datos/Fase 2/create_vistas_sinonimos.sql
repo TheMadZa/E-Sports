@@ -1,6 +1,6 @@
--- 1. Script SQL de borrado y creaciÃ³n de las vistas y sinÃ³nimos.
+-- 1. Script SQL de borrado y creacion de las vistas y sinonimos.
 
--- ComprobaciÃ³n de los datos de las tablas.
+-- Comprobacion de los datos de las tablas.
 SELECT * FROM USUARIO;
 SELECT * FROM JUGADOR;
 SELECT * FROM STAFF;
@@ -13,7 +13,7 @@ SELECT * FROM JUEGO;
 SELECT * FROM PATROCINADOR_EQUIPO;
 SELECT * FROM EQUIPO_COMPETICION;
 
--- BORRADO Y CREACIÃ“N DE VISTAS.
+-- BORRADO Y CREACION DE VISTAS.
 
 -- Select que devuelve todos los jugadores con sus equipos correspondientes.
 CREATE OR REPLACE VIEW VISTA_JUGADORES_EQUIPOS AS (
@@ -23,7 +23,7 @@ CREATE OR REPLACE VIEW VISTA_JUGADORES_EQUIPOS AS (
 	WHERE E.ID_EQUIPO = J.ID_EQUIPO
 );
 
--- Select que devuelve los enfrentamientos que hay por jornada en una competiciÃ³n.
+-- Select que devuelve los enfrentamientos que hay por jornada en una competicion.
 CREATE OR REPLACE VIEW VISTA_ENFRENTAMIENTOS_JORNADA AS (
 	SELECT  E.ID_ENFRENTAMIENTO,
             TO_CHAR(E.HORA_ENFRENTAMIENTO,'DD-MM-YY HH24:MI')
@@ -41,8 +41,8 @@ CREATE OR REPLACE VIEW VISTA_ENFRENTAMIENTOS_JORNADA AS (
 );
 
 /*
-RelaciÃ³n de los equipos que conforman la competiciÃ³n, con todos los datos que
-se tengan de la misma: nombre del juego, fechas, relaciÃ³n de equipos
+Relacion de los equipos que conforman la competicion, con todos los datos que
+se tengan de la misma: nombre del juego, fechas, relacion de equipos
 incluyendo para cada equipo el nombre del mismo, los miembros del
 staff y la cantidad de jugadores que hay en ese equipo.
 */
@@ -62,7 +62,7 @@ CREATE OR REPLACE VIEW VISTA_EQUIPOS_COMPETICION AS (
                 EQUIPO.NOM_EQUIPO, STAFF.NOMBRE
 );
 
--- BORRADO Y CREACIÃ“N DE SINÃ“NIMOS.
+-- BORRADO Y CREACION DE SINONIMOS.
 
 DROP SYNONYM ENFREN;
 DROP SYNONYM PATRO_EQUI;
@@ -70,7 +70,7 @@ DROP SYNONYM EQUI_COMPE;
 DROP SYNONYM INFO_COMPE;
 DROP SYNONYM INFO_EQUI;
 
--- Sinónimos para algunas tablas:
+-- Sinonimos para algunas tablas:
 CREATE PUBLIC SYNONYM ENFREN
 FOR eqdaw03.ENFRENTAMIENTO;
 
@@ -80,7 +80,7 @@ FOR eqdaw03.PATROCINADOR_EQUIPO;
 CREATE PUBLIC SYNONYM EQUI_COMPE
 FOR eqdaw03.EQUIPO_COMPETICION;
 
--- Sinónimos para los procedimientos:
+-- Sinonimos para los procedimientos:
 CREATE PUBLIC SYNONYM INFO_COMPE
 FOR eqdaw03.OBTENER_INFO_COMPETICION;
 
