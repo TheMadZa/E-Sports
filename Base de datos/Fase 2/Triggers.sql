@@ -1,4 +1,4 @@
-/*Scripts de borrado y creación de los TRIGGERS*/
+/*Scripts de borrado y creacion de los TRIGGERS*/
 DROP TRIGGER CANTIDAD_EQUIPO;
 DROP TRIGGER GENERAR_CALENDARIO;
 DROP TRIGGER NOMODIFICAR_EQUIPO;
@@ -6,7 +6,7 @@ DROP TRIGGER NOMODIFICAR_JUGADOR;
 DROP TRIGGER MAXSALARIO_EQUIPO;
 DROP TRIGGER ACTUALIZAR_RESULTADOS;
 
-/*Controlar que no haya más de 6 ni menos de 2 jugadores en un equipo.*/
+/*Controlar que no haya mas de 6 ni menos de 2 jugadores en un equipo.*/
 CREATE OR REPLACE TRIGGER CANTIDAD_EQUIPO
 BEFORE INSERT OR UPDATE OR DELETE ON JUGADOR
 FOR EACH ROW
@@ -27,12 +27,12 @@ EXCEPTION
     WHEN e_pocosjugadores THEN
         DBMS_OUTPUT.PUT_LINE('No puede haber menos de 2 jugadores.');
     WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('Error al recuperar información.');
+        DBMS_OUTPUT.PUT_LINE('Error al recuperar informacion.');
 END CANTIDAD_EQUIPO;
 
 /
 
-/*Controlar que para poder generar el calendario de una competición
+/*Controlar que para poder generar el calendario de una competicion
 todos los equipos tienen que tener un mínimo de 2 jugadores.*/
 CREATE OR REPLACE TRIGGER GENERAR_CALENDARIO
 BEFORE INSERT ON JORNADA
@@ -58,13 +58,13 @@ EXCEPTION
     WHEN NO_DATA_FOUND THEN
         DBMS_OUTPUT.PUT_LINE('No se han encontrado equipos.');
     WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('Error al recuperar información.');
+        DBMS_OUTPUT.PUT_LINE('Error al recuperar informacion.');
 
 END GENERAR_CALENDARIO;
 
 /
 
-/*Controlar que una vez generado el calendario de la competición, no se
+/*Controlar que una vez generado el calendario de la competicion, no se
 pueden modificar los equipos.*/
 CREATE OR REPLACE TRIGGER NOMODIFICAR_EQUIPO
 BEFORE UPDATE ON EQUIPO
@@ -85,14 +85,14 @@ BEGIN
     END IF;
 EXCEPTION
     WHEN e_etapa_cerrada THEN
-        DBMS_OUTPUT.PUT_LINE('La competicion ya está cerrada.');
+        DBMS_OUTPUT.PUT_LINE('La competicion ya esta cerrada.');
     WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('Error al recuperar información.');
+        DBMS_OUTPUT.PUT_LINE('Error al recuperar informacion.');
 END NOMODIFICAR_EQUIPO;
 
 /
 
-/*Controlar que una vez generado el calendario de la competición, no se
+/*Controlar que una vez generado el calendario de la competicion, no se
 pueden modificar los jugadores de cada equipo.*/
 CREATE OR REPLACE TRIGGER NOMODIFICAR_JUGADOR
 BEFORE UPDATE ON JUGADOR
@@ -113,14 +113,14 @@ BEGIN
     END IF;
 EXCEPTION
     WHEN e_etapa_cerrada THEN
-        DBMS_OUTPUT.PUT_LINE('La competicion ya está cerrada.');
+        DBMS_OUTPUT.PUT_LINE('La competicion ya esta cerrada.');
     WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('Error al recuperar información.');
+        DBMS_OUTPUT.PUT_LINE('Error al recuperar informacion.');
 END NOMODIFICAR_JUGADOR;
 
 /
 
-/*Controlar que el salario total de los jugadores del equipo no podrá ser
+/*Controlar que el salario total de los jugadores del equipo no podra ser
 superior a 200.000€ anuales*/
 CREATE OR REPLACE TRIGGER MAXSALARIO_EQUIPO
 BEFORE INSERT OR UPDATE ON JUGADOR
@@ -133,12 +133,12 @@ BEGIN
     WHERE id_equipo = :NEW.id_equipo;
     
     IF v_salarioanual_total > 200000 THEN
-        RAISE_APPLICATION_ERROR('-20001','El salario del equipo es más
+        RAISE_APPLICATION_ERROR('-20001','El salario del equipo es mas
             de 200000.');
     END IF;
 EXCEPTION
     WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('Error al recuperar información.');
+        DBMS_OUTPUT.PUT_LINE('Error al recuperar informacion.');
 END MAXSALARIO_EQUIPO;
 
 /

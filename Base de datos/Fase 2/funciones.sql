@@ -1,7 +1,10 @@
+DROP FUNCTION OBTENER_CANTIDAD_JUGADORES;
+DROP FUNCTION OBTENER_ETAPA_COMPETICION;
+
 /*
-Función para obtener la cantidad de jugadores de un equipo
+Funcion para obtener la cantidad de jugadores de un equipo
 a partir del ID de ese equipo.
-Obtendrá el valor del resultado de un COUNT de "JUGADOR"
+Obtendra el valor del resultado de un COUNT de "JUGADOR"
 en base al argumento "ID_EQUIPO".
 */
 CREATE OR REPLACE FUNCTION OBTENER_CANTIDAD_JUGADORES(a_id_equipo IN EQUIPO.ID_EQUIPO%TYPE)
@@ -18,10 +21,10 @@ END OBTENER_CANTIDAD_JUGADORES;
 
 
 /*
-Función para obtener el valor/estado de la etapa de una
-competición en la que participa un equipo, a partir del
+Funcion para obtener el valor/estado de la etapa de una
+competicion en la que participa un equipo, a partir del
 ID de ese equipo.
-Obtendrá el valor de la etapa en base al argumento "ID_EQUIPO".
+Obtendra el valor de la etapa en base al argumento "ID_EQUIPO".
 */
 CREATE OR REPLACE FUNCTION OBTENER_ETAPA_COMPETICION(a_id_equipo IN EQUIPO.ID_EQUIPO%TYPE)
 RETURN VARCHAR2
