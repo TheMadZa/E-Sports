@@ -47,9 +47,9 @@ AS
                 E2.NOM_EQUIPO;
     EXCEPTION
         WHEN NO_DATA_FOUND THEN
-            DBMS_OUTPUT.PUT_LINE('No se encontrÃ³ informaciÃ³n especificada.');
+            DBMS_OUTPUT.PUT_LINE('No se encontro informacion especificada.');
         WHEN OTHERS THEN
-            DBMS_OUTPUT.PUT_LINE('Error al recuperar informaciÃ³n.');
+            DBMS_OUTPUT.PUT_LINE('Error al recuperar informacion.');
             
     END OBTENER_INFO_COMPETICION;
 
@@ -67,10 +67,10 @@ AS
             GROUP BY nom_equipo;
     EXCEPTION
         WHEN NO_DATA_FOUND THEN
-            DBMS_OUTPUT.PUT_LINE('No se encontró información para ' ||
+            DBMS_OUTPUT.PUT_LINE('No se encontro informacion para ' ||
             'el equipo especificado.');
         WHEN OTHERS THEN
-            DBMS_OUTPUT.PUT_LINE('Error al recuperar información.');
+            DBMS_OUTPUT.PUT_LINE('Error al recuperar informacion.');
             
     END OBTENER_INFORMACION;
     
