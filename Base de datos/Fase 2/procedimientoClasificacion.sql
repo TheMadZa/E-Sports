@@ -31,4 +31,7 @@ BEGIN
         || ', Juego: ' || v_juego || ', Equipo: ' || v_nombre_equipo
         || ', Victorias: ' || v_victorias || ', Puntos: ' || v_puntos);
     END LOOP;
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Error al recuperar informacion.');
 END listarEquiposCompeticion;
