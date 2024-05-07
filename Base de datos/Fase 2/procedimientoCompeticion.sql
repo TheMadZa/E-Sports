@@ -30,7 +30,7 @@ BEGIN
             E2.NOM_EQUIPO;
 EXCEPTION
     WHEN NO_DATA_FOUND THEN
-        DBMS_OUTPUT.PUT_LINE('No se encontró información especificada.');
+        DBMS_OUTPUT.PUT_LINE('No se encontro informacion especificada.');
     WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('Error al recuperar información.');
+        DBMS_OUTPUT.PUT_LINE('Error al recuperar informacion.');
 END;
