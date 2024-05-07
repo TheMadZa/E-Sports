@@ -1,3 +1,5 @@
+DROP PROCEDURE listarEquiposCompeticion;
+
 CREATE OR REPLACE PROCEDURE listarEquiposCompeticion
 (v_id_competicion IN COMPETICION.ID_COMPETICION%TYPE)
 AS
