@@ -11,8 +11,8 @@ BEGIN
         GROUP BY nom_equipo;
 EXCEPTION
     WHEN NO_DATA_FOUND THEN
-        DBMS_OUTPUT.PUT_LINE('No se encontró información para ' ||
+        DBMS_OUTPUT.PUT_LINE('No se encontro informacion para ' ||
         'el equipo especificado.');
     WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('Error al recuperar información.');
+        DBMS_OUTPUT.PUT_LINE('Error al recuperar informacion.');
 END;
