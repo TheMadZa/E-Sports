@@ -78,6 +78,22 @@ BEGIN
   CLOSE c_obtenerInfo;
 END;
 
+/*
+Prueba del procedimiento almacenado "listarEquiposCompeticion".
+
+Muestra la clasifiacion de cada competicion en orden de victorias 
+y luego de puntos
+Puedes elegir la competicion que quieres ver, cambiando la id
+
+Se utilizara como consulta en la ventana de clasificacion
+*/
+
+DECLARE
+    v_id_competicion COMPETICION.ID_COMPETICION%TYPE := 1;
+BEGIN
+    listarEquiposCompeticion(v_id_competicion);
+END;
+
 -- Pruebas de los procedimientos almacenados que están en el paquete "PAQUETE_DATOS":
 
 DECLARE
