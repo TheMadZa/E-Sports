@@ -1,5 +1,5 @@
-CREATE OR REPLACE PROCEDURE listarEquiposCompeticion (v_id_competicion 
-                                            IN COMPETICION.ID_COMPETICION%TYPE)
+CREATE OR REPLACE PROCEDURE listarEquiposCompeticion
+(v_id_competicion IN COMPETICION.ID_COMPETICION%TYPE)
 AS
     v_nombre_competicion COMPETICION.NOMBRE_COM%TYPE;
     v_id_equipo EQUIPO_COMPETICION.ID_EQUIPO%TYPE;
@@ -8,7 +8,7 @@ AS
     v_puntos EQUIPO_COMPETICION.PUNTOS%TYPE;
 BEGIN
     FOR comp IN (SELECT C.NOMBRE_COM, EC.ID_EQUIPO, E.NOM_EQUIPO, 
-                                        EC.VICTORIAS, EC.PUNTOS
+                    EC.VICTORIAS, EC.PUNTOS
                  FROM COMPETICION C
                  INNER JOIN EQUIPO_COMPETICION EC 
                  ON C.ID_COMPETICION = EC.ID_COMPETICION
@@ -22,7 +22,7 @@ BEGIN
         v_victorias := comp.VICTORIAS;
         v_puntos := comp.PUNTOS;
         
-        DBMS_OUTPUT.PUT_LINE('Competición: ' || v_nombre_competicion 
+        DBMS_OUTPUT.PUT_LINE('Competicion: ' || v_nombre_competicion 
         || ', Equipo: ' || v_nombre_equipo || ', Victorias: ' 
         || v_victorias || ', Puntos: ' || v_puntos);
     END LOOP;
