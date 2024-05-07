@@ -1,14 +1,14 @@
 SET SERVEROUTPUT ON;
 
--- Pruebas de los procedimientos almacenados que están en scripts separados:
+-- Pruebas de los procedimientos almacenados que estan en scripts separados:
 
 /*
 Prueba del procedimiento almacenado "OBTENER_INFO_COMPETICION".
 
-Muestra datos sobre la competición y su juego, los enfrentamientos jugados,
+Muestra datos sobre la competicion y su juego, los enfrentamientos jugados,
 y la cantidad de jugadores y de staff de cada equipo.
 
-Se utilizará como consulta en la ventana del administrador para visualizar las
+Se utilizara como consulta en la ventana del administrador para visualizar las
 competiciones con sus respectivos datos.
 */
 DECLARE
@@ -55,8 +55,8 @@ Prueba del procedimiento almacenado "OBTENER_INFORMACION".
 
 Muestra el nombre de cada equipo con la cantidad de jugadores y staff que tiene.
 
-Se utilizará como consulta en la ventana de un usuario corriente para visualizar
-los equipos con el número total de jugadores y de staff.
+Se utilizara como consulta en la ventana de un usuario corriente para
+visualizar los equipos con el numero total de jugadores y de staff.
 */
 DECLARE
   c_obtenerInfo SYS_REFCURSOR;
@@ -81,11 +81,10 @@ END;
 /*
 Prueba del procedimiento almacenado "listarEquiposCompeticion".
 
-Muestra la clasifiacion de cada competicion en orden de victorias 
-y luego de puntos
-Puedes elegir la competicion que quieres ver, cambiando la id
+Muestra la clasifiacion de cada competicion en orden de victorias y de puntos.
+Se puede elegir la competicion que se quiere ver, cambiando el ID.
 
-Se utilizara como consulta en la ventana de clasificacion
+Se utilizara como consulta en la ventana de clasificacion.
 */
 
 DECLARE
@@ -94,7 +93,8 @@ BEGIN
     listarEquiposCompeticion(v_id_competicion);
 END;
 
--- Pruebas de los procedimientos almacenados que están en el paquete "PAQUETE_DATOS":
+
+-- Pruebas de los procedimientos almacenados que estan en el paquete "PAQUETE_DATOS":
 
 DECLARE
   c_obtenerInfoCompeticion SYS_REFCURSOR;
@@ -153,4 +153,10 @@ BEGIN
     ', Cantidad de jugadores: ' || cantidadJugadores);
   END LOOP;
   CLOSE c_obtenerInfo;
+END;
+
+DECLARE
+    v_id_competicion COMPETICION.ID_COMPETICION%TYPE := 1;
+BEGIN
+    PAQUETE_DATOS.listarEquiposCompeticion(v_id_competicion);
 END;
