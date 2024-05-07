@@ -96,6 +96,7 @@ END;
 
 -- Pruebas de los procedimientos almacenados que estan en el paquete "PAQUETE_DATOS":
 
+-- Prueba del procedimiento "OBTENER_INFO_COMPETICION".
 DECLARE
   c_obtenerInfoCompeticion SYS_REFCURSOR;
   nombreCom COMPETICION.NOMBRE_COM%TYPE;
@@ -135,6 +136,7 @@ BEGIN
   CLOSE c_obtenerInfoCompeticion;
 END;
 
+-- Prueba del procedimiento "OBTENER_INFORMACION".
 DECLARE
   c_obtenerInfo SYS_REFCURSOR;
   nom_equipo EQUIPO.nom_equipo%TYPE;
@@ -155,6 +157,7 @@ BEGIN
   CLOSE c_obtenerInfo;
 END;
 
+-- Prueba del procedimiento "listarEquiposCompeticion".
 DECLARE
     v_id_competicion COMPETICION.ID_COMPETICION%TYPE := 1;
 BEGIN
