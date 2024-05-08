@@ -5,5 +5,14 @@
              version="3.0">
   <persistence-unit name="default">
 
+      <class>Modelo.Competicion</class>
+      <class>Modelo.Enfrentamiento</class>
+      <class>Modelo.Equipo</class>
+      <class>Modelo.EquipoCompeticion</class>
+      <class>Modelo.Jornada</class>
+      <class>Modelo.Juego</class>
+      <class>Modelo.Jugador</class>
+      <class>Modelo.Patrocinador</class>
+      <class>Modelo.PatrocinadorEquipo</class>
   </persistence-unit>
 </persistence>
