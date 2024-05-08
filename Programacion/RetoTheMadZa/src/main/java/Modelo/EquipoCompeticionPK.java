@@ -8,9 +8,9 @@ import jakarta.persistence.Id;
 import java.io.Serializable;
 
 public class EquipoCompeticionPK implements Serializable {
-    //@Column(name = "ID_EQUIPO")
+    @Column(name = "ID_EQUIPO")
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private byte idEquipo;
     @Column(name = "ID_COMPETICION")
     @Id
