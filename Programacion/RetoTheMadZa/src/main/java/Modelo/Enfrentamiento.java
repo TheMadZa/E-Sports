@@ -7,9 +7,37 @@ import java.sql.Timestamp;
 @Entity
 public class Enfrentamiento {
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @jakarta.persistence.Column(name = "ID_ENFRENTAMIENTO")
+    @Column(name = "ID_ENFRENTAMIENTO")
     private byte idEnfrentamiento;
+    @Basic
+    @Column(name = "HORA_ENFRENTAMIENTO")
+    private Timestamp horaEnfrentamiento;
+    @Basic
+    @Column(name = "RESULTADO1")
+    private byte resultado1;
+    @Basic
+    @Column(name = "RESULTADO2")
+    private byte resultado2;
+    @Basic
+    @Column(name = "ID_EQUIPO1")
+    private byte idEquipo1;
+    @Basic
+    @Column(name = "ID_EQUIPO2")
+    private byte idEquipo2;
+    @Basic
+    @Column(name = "ID_JORNADA")
+    private byte idJornada;
+    @ManyToOne
+    @JoinColumn(name = "ID_EQUIPO1", referencedColumnName = "ID_EQUIPO", nullable = false)
+    private Equipo equipoByIdEquipo1;
+    @ManyToOne
+    @JoinColumn(name = "ID_EQUIPO2", referencedColumnName = "ID_EQUIPO", nullable = false)
+    private Equipo equipoByIdEquipo2;
+    @ManyToOne
+    @JoinColumn(name = "ID_JORNADA", referencedColumnName = "ID_JORNADA", nullable = false)
+    private Jornada jornadaByIdJornada;
 
     public byte getIdEnfrentamiento() {
         return idEnfrentamiento;
@@ -19,10 +47,6 @@ public class Enfrentamiento {
         this.idEnfrentamiento = idEnfrentamiento;
     }
 
-    @Basic
-    @Column(name = "HORA_ENFRENTAMIENTO")
-    private Timestamp horaEnfrentamiento;
-
     public Timestamp getHoraEnfrentamiento() {
         return horaEnfrentamiento;
     }
@@ -30,10 +54,6 @@ public class Enfrentamiento {
     public void setHoraEnfrentamiento(Timestamp horaEnfrentamiento) {
         this.horaEnfrentamiento = horaEnfrentamiento;
     }
-
-    @Basic
-    @Column(name = "RESULTADO1")
-    private byte resultado1;
 
     public byte getResultado1() {
         return resultado1;
@@ -43,10 +63,6 @@ public class Enfrentamiento {
         this.resultado1 = resultado1;
     }
 
-    @Basic
-    @Column(name = "RESULTADO2")
-    private byte resultado2;
-
     public byte getResultado2() {
         return resultado2;
     }
@@ -54,10 +70,6 @@ public class Enfrentamiento {
     public void setResultado2(byte resultado2) {
         this.resultado2 = resultado2;
     }
-
-    @Basic
-    @Column(name = "ID_EQUIPO1")
-    private byte idEquipo1;
 
     public byte getIdEquipo1() {
         return idEquipo1;
@@ -67,10 +79,6 @@ public class Enfrentamiento {
         this.idEquipo1 = idEquipo1;
     }
 
-    @Basic
-    @Column(name = "ID_EQUIPO2")
-    private byte idEquipo2;
-
     public byte getIdEquipo2() {
         return idEquipo2;
     }
@@ -78,10 +86,6 @@ public class Enfrentamiento {
     public void setIdEquipo2(byte idEquipo2) {
         this.idEquipo2 = idEquipo2;
     }
-
-    @Basic
-    @Column(name = "ID_JORNADA")
-    private byte idJornada;
 
     public byte getIdJornada() {
         return idJornada;
@@ -120,5 +124,29 @@ public class Enfrentamiento {
         result = 31 * result + (int) idEquipo2;
         result = 31 * result + (int) idJornada;
         return result;
+    }
+
+    public Equipo getEquipoByIdEquipo1() {
+        return equipoByIdEquipo1;
+    }
+
+    public void setEquipoByIdEquipo1(Equipo equipoByIdEquipo1) {
+        this.equipoByIdEquipo1 = equipoByIdEquipo1;
+    }
+
+    public Equipo getEquipoByIdEquipo2() {
+        return equipoByIdEquipo2;
+    }
+
+    public void setEquipoByIdEquipo2(Equipo equipoByIdEquipo2) {
+        this.equipoByIdEquipo2 = equipoByIdEquipo2;
+    }
+
+    public Jornada getJornadaByIdJornada() {
+        return jornadaByIdJornada;
+    }
+
+    public void setJornadaByIdJornada(Jornada jornadaByIdJornada) {
+        this.jornadaByIdJornada = jornadaByIdJornada;
     }
 }
