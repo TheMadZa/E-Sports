@@ -9,12 +9,14 @@ DROP TRIGGER ACTUALIZAR_RESULTADOS;
 
 /*Controlar que no haya más de 6 ni menos de 2 jugadores en un equipo.*/
 CREATE OR REPLACE TRIGGER CANTIDAD_EQUIPO
-BEFORE INSERT OR UPDATE OR /*DELETE*/ ON JUGADOR
+BEFORE INSERT /*OR UPDATE OR DELETE*/ ON JUGADOR
 FOR EACH ROW
 DECLARE
     v_cantidad NUMBER;
+    /*
     v_cantidad_new NUMBER;
     v_cantidad_old NUMBER;
+    */
 BEGIN
     IF INSERTING THEN
 
@@ -33,7 +35,6 @@ BEGIN
             RAISE_APPLICATION_ERROR('-20002',
                 'No puede haber menos de 2 jugadores.');
         END IF;
-    */
         
     ELSIF UPDATING THEN
         v_cantidad_new := OBTENER_CANTIDAD_JUGADORES(:NEW.id_equipo);
@@ -47,7 +48,7 @@ BEGIN
             RAISE_APPLICATION_ERROR('-20002',
                 'No puede haber menos de 2 jugadores.');
         END IF;
-        
+        */
     END IF;
 
 EXCEPTION
@@ -292,7 +293,7 @@ END NOMODIFICAR_JUGADOR;
 /*Controlar que el salario total de los jugadores del equipo no podra ser
 superior a 200.000€ anuales.*/
 CREATE OR REPLACE TRIGGER MAXSALARIO_EQUIPO
-AFTER INSERT OR UPDATE ON JUGADOR
+AFTER INSERT /*OR UPDATE*/ ON JUGADOR
 FOR EACH ROW
 DECLARE
     v_salarioanual_total NUMBER;
