@@ -1,4 +1,4 @@
-package Modelo;
+package modelo;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
