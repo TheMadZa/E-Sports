@@ -3,13 +3,43 @@ package Modelo;
 import jakarta.persistence.*;
 
 import java.sql.Date;
+import java.util.Collection;
 
 @Entity
 public class Competicion {
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @jakarta.persistence.Column(name = "ID_COMPETICION")
+    @Column(name = "ID_COMPETICION")
     private byte idCompeticion;
+    @Basic
+    @Column(name = "NOMBRE_COM")
+    private String nombreCom;
+    @Basic
+    @Column(name = "FECHA_INICIO")
+    private Date fechaInicio;
+    @Basic
+    @Column(name = "FECHA_FIN")
+    private Date fechaFin;
+    @Basic
+    @Column(name = "ETAPA")
+    private String etapa;
+    @Basic
+    @Column(name = "ID_JUEGO")
+    private byte idJuego;
+    @Basic
+    @Column(name = "ID_EQUIPO_GANADOR")
+    private Byte idEquipoGanador;
+    @ManyToOne
+    @JoinColumn(name = "ID_JUEGO", referencedColumnName = "ID_JUEGO", nullable = false)
+    private Juego juegoByIdJuego;
+    @ManyToOne
+    @JoinColumn(name = "ID_EQUIPO_GANADOR", referencedColumnName = "ID_EQUIPO")
+    private Equipo equipoByIdEquipoGanador;
+    @OneToMany(mappedBy = "competicionByIdCompeticion")
+    private Collection<EquipoCompeticion> equipoCompeticionsByIdCompeticion;
+    @OneToMany(mappedBy = "competicionByIdCompeticion")
+    private Collection<Jornada> jornadasByIdCompeticion;
 
     public byte getIdCompeticion() {
         return idCompeticion;
@@ -19,10 +49,6 @@ public class Competicion {
         this.idCompeticion = idCompeticion;
     }
 
-    @Basic
-    @Column(name = "NOMBRE_COM")
-    private String nombreCom;
-
     public String getNombreCom() {
         return nombreCom;
     }
@@ -30,10 +56,6 @@ public class Competicion {
     public void setNombreCom(String nombreCom) {
         this.nombreCom = nombreCom;
     }
-
-    @Basic
-    @Column(name = "FECHA_INICIO")
-    private Date fechaInicio;
 
     public Date getFechaInicio() {
         return fechaInicio;
@@ -43,10 +65,6 @@ public class Competicion {
         this.fechaInicio = fechaInicio;
     }
 
-    @Basic
-    @Column(name = "FECHA_FIN")
-    private Date fechaFin;
-
     public Date getFechaFin() {
         return fechaFin;
     }
@@ -54,10 +72,6 @@ public class Competicion {
     public void setFechaFin(Date fechaFin) {
         this.fechaFin = fechaFin;
     }
-
-    @Basic
-    @Column(name = "ETAPA")
-    private String etapa;
 
     public String getEtapa() {
         return etapa;
@@ -67,10 +81,6 @@ public class Competicion {
         this.etapa = etapa;
     }
 
-    @Basic
-    @Column(name = "ID_JUEGO")
-    private byte idJuego;
-
     public byte getIdJuego() {
         return idJuego;
     }
@@ -78,10 +88,6 @@ public class Competicion {
     public void setIdJuego(byte idJuego) {
         this.idJuego = idJuego;
     }
-
-    @Basic
-    @Column(name = "ID_EQUIPO_GANADOR")
-    private Byte idEquipoGanador;
 
     public Byte getIdEquipoGanador() {
         return idEquipoGanador;
@@ -120,5 +126,37 @@ public class Competicion {
         result = 31 * result + (int) idJuego;
         result = 31 * result + (idEquipoGanador != null ? idEquipoGanador.hashCode() : 0);
         return result;
+    }
+
+    public Juego getJuegoByIdJuego() {
+        return juegoByIdJuego;
+    }
+
+    public void setJuegoByIdJuego(Juego juegoByIdJuego) {
+        this.juegoByIdJuego = juegoByIdJuego;
+    }
+
+    public Equipo getEquipoByIdEquipoGanador() {
+        return equipoByIdEquipoGanador;
+    }
+
+    public void setEquipoByIdEquipoGanador(Equipo equipoByIdEquipoGanador) {
+        this.equipoByIdEquipoGanador = equipoByIdEquipoGanador;
+    }
+
+    public Collection<EquipoCompeticion> getEquipoCompeticionsByIdCompeticion() {
+        return equipoCompeticionsByIdCompeticion;
+    }
+
+    public void setEquipoCompeticionsByIdCompeticion(Collection<EquipoCompeticion> equipoCompeticionsByIdCompeticion) {
+        this.equipoCompeticionsByIdCompeticion = equipoCompeticionsByIdCompeticion;
+    }
+
+    public Collection<Jornada> getJornadasByIdCompeticion() {
+        return jornadasByIdCompeticion;
+    }
+
+    public void setJornadasByIdCompeticion(Collection<Jornada> jornadasByIdCompeticion) {
+        this.jornadasByIdCompeticion = jornadasByIdCompeticion;
     }
 }

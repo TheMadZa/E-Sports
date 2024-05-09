@@ -2,12 +2,20 @@ package Modelo;
 
 import jakarta.persistence.*;
 
+import java.util.Collection;
+
 @Entity
 public class Patrocinador {
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @jakarta.persistence.Column(name = "ID_PATROCINADOR")
+    @Column(name = "ID_PATROCINADOR")
     private byte idPatrocinador;
+    @Basic
+    @Column(name = "NOMBRE")
+    private String nombre;
+    @OneToMany(mappedBy = "patrocinadorByIdPatrocinador")
+    private Collection<PatrocinadorEquipo> patrocinadorEquiposByIdPatrocinador;
 
     public byte getIdPatrocinador() {
         return idPatrocinador;
@@ -16,10 +24,6 @@ public class Patrocinador {
     public void setIdPatrocinador(byte idPatrocinador) {
         this.idPatrocinador = idPatrocinador;
     }
-
-    @Basic
-    @Column(name = "NOMBRE")
-    private String nombre;
 
     public String getNombre() {
         return nombre;
@@ -47,5 +51,13 @@ public class Patrocinador {
         int result = (int) idPatrocinador;
         result = 31 * result + (nombre != null ? nombre.hashCode() : 0);
         return result;
+    }
+
+    public Collection<PatrocinadorEquipo> getPatrocinadorEquiposByIdPatrocinador() {
+        return patrocinadorEquiposByIdPatrocinador;
+    }
+
+    public void setPatrocinadorEquiposByIdPatrocinador(Collection<PatrocinadorEquipo> patrocinadorEquiposByIdPatrocinador) {
+        this.patrocinadorEquiposByIdPatrocinador = patrocinadorEquiposByIdPatrocinador;
     }
 }

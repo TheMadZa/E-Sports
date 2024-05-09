@@ -1,18 +1,26 @@
 package Modelo;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
-@jakarta.persistence.Table(name = "PATROCINADOR_EQUIPO", schema = "EQDAW03", catalog = "")
-@jakarta.persistence.IdClass(Modelo.PatrocinadorEquipoPK.class)
+@Table(name = "PATROCINADOR_EQUIPO", schema = "EQDAW03", catalog = "")
+@IdClass(PatrocinadorEquipoPK.class)
 public class PatrocinadorEquipo {
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @jakarta.persistence.Column(name = "ID_PATROCINADOR")
+    @Column(name = "ID_PATROCINADOR")
     private byte idPatrocinador;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @Column(name = "ID_EQUIPO")
+    private byte idEquipo;
+    @ManyToOne
+    @JoinColumn(name = "ID_PATROCINADOR", referencedColumnName = "ID_PATROCINADOR", nullable = false)
+    private Patrocinador patrocinadorByIdPatrocinador;
+    @ManyToOne
+    @JoinColumn(name = "ID_EQUIPO", referencedColumnName = "ID_EQUIPO", nullable = false)
+    private Equipo equipoByIdEquipo;
 
     public byte getIdPatrocinador() {
         return idPatrocinador;
@@ -21,11 +29,6 @@ public class PatrocinadorEquipo {
     public void setIdPatrocinador(byte idPatrocinador) {
         this.idPatrocinador = idPatrocinador;
     }
-
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
-    @jakarta.persistence.Column(name = "ID_EQUIPO")
-    private byte idEquipo;
 
     public byte getIdEquipo() {
         return idEquipo;
@@ -53,5 +56,21 @@ public class PatrocinadorEquipo {
         int result = (int) idPatrocinador;
         result = 31 * result + (int) idEquipo;
         return result;
+    }
+
+    public Patrocinador getPatrocinadorByIdPatrocinador() {
+        return patrocinadorByIdPatrocinador;
+    }
+
+    public void setPatrocinadorByIdPatrocinador(Patrocinador patrocinadorByIdPatrocinador) {
+        this.patrocinadorByIdPatrocinador = patrocinadorByIdPatrocinador;
+    }
+
+    public Equipo getEquipoByIdEquipo() {
+        return equipoByIdEquipo;
+    }
+
+    public void setEquipoByIdEquipo(Equipo equipoByIdEquipo) {
+        this.equipoByIdEquipo = equipoByIdEquipo;
     }
 }

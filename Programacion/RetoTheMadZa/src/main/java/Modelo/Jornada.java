@@ -3,13 +3,29 @@ package Modelo;
 import jakarta.persistence.*;
 
 import java.sql.Date;
+import java.util.Collection;
 
 @Entity
 public class Jornada {
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @jakarta.persistence.Column(name = "ID_JORNADA")
+    @Column(name = "ID_JORNADA")
     private byte idJornada;
+    @Basic
+    @Column(name = "NUM_JORNADA")
+    private byte numJornada;
+    @Basic
+    @Column(name = "FECHA_JORNADA")
+    private Date fechaJornada;
+    @Basic
+    @Column(name = "ID_COMPETICION")
+    private byte idCompeticion;
+    @OneToMany(mappedBy = "jornadaByIdJornada")
+    private Collection<Enfrentamiento> enfrentamientosByIdJornada;
+    @ManyToOne
+    @JoinColumn(name = "ID_COMPETICION", referencedColumnName = "ID_COMPETICION", nullable = false)
+    private Competicion competicionByIdCompeticion;
 
     public byte getIdJornada() {
         return idJornada;
@@ -19,10 +35,6 @@ public class Jornada {
         this.idJornada = idJornada;
     }
 
-    @Basic
-    @Column(name = "NUM_JORNADA")
-    private byte numJornada;
-
     public byte getNumJornada() {
         return numJornada;
     }
@@ -31,10 +43,6 @@ public class Jornada {
         this.numJornada = numJornada;
     }
 
-    @Basic
-    @Column(name = "FECHA_JORNADA")
-    private Date fechaJornada;
-
     public Date getFechaJornada() {
         return fechaJornada;
     }
@@ -42,10 +50,6 @@ public class Jornada {
     public void setFechaJornada(Date fechaJornada) {
         this.fechaJornada = fechaJornada;
     }
-
-    @Basic
-    @Column(name = "ID_COMPETICION")
-    private byte idCompeticion;
 
     public byte getIdCompeticion() {
         return idCompeticion;
@@ -78,5 +82,21 @@ public class Jornada {
         result = 31 * result + (fechaJornada != null ? fechaJornada.hashCode() : 0);
         result = 31 * result + (int) idCompeticion;
         return result;
+    }
+
+    public Collection<Enfrentamiento> getEnfrentamientosByIdJornada() {
+        return enfrentamientosByIdJornada;
+    }
+
+    public void setEnfrentamientosByIdJornada(Collection<Enfrentamiento> enfrentamientosByIdJornada) {
+        this.enfrentamientosByIdJornada = enfrentamientosByIdJornada;
+    }
+
+    public Competicion getCompeticionByIdCompeticion() {
+        return competicionByIdCompeticion;
+    }
+
+    public void setCompeticionByIdCompeticion(Competicion competicionByIdCompeticion) {
+        this.competicionByIdCompeticion = competicionByIdCompeticion;
     }
 }

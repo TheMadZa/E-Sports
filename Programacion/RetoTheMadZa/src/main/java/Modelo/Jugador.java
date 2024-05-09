@@ -7,9 +7,34 @@ import java.sql.Date;
 @Entity
 public class Jugador {
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @jakarta.persistence.Column(name = "ID_JUGADOR")
+    @Column(name = "ID_JUGADOR")
     private byte idJugador;
+    @Basic
+    @Column(name = "NOMBRE")
+    private String nombre;
+    @Basic
+    @Column(name = "NICKNAME")
+    private String nickname;
+    @Basic
+    @Column(name = "NACIONALIDAD")
+    private String nacionalidad;
+    @Basic
+    @Column(name = "ROL")
+    private String rol;
+    @Basic
+    @Column(name = "FECHA_NAC")
+    private Date fechaNac;
+    @Basic
+    @Column(name = "SUELDO")
+    private int sueldo;
+    @Basic
+    @Column(name = "ID_EQUIPO")
+    private byte idEquipo;
+    @ManyToOne
+    @JoinColumn(name = "ID_EQUIPO", referencedColumnName = "ID_EQUIPO", nullable = false)
+    private Equipo equipoByIdEquipo;
 
     public byte getIdJugador() {
         return idJugador;
@@ -19,10 +44,6 @@ public class Jugador {
         this.idJugador = idJugador;
     }
 
-    @Basic
-    @Column(name = "NOMBRE")
-    private String nombre;
-
     public String getNombre() {
         return nombre;
     }
@@ -30,10 +51,6 @@ public class Jugador {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
-    @Basic
-    @Column(name = "NICKNAME")
-    private String nickname;
 
     public String getNickname() {
         return nickname;
@@ -43,10 +60,6 @@ public class Jugador {
         this.nickname = nickname;
     }
 
-    @Basic
-    @Column(name = "NACIONALIDAD")
-    private String nacionalidad;
-
     public String getNacionalidad() {
         return nacionalidad;
     }
@@ -54,10 +67,6 @@ public class Jugador {
     public void setNacionalidad(String nacionalidad) {
         this.nacionalidad = nacionalidad;
     }
-
-    @Basic
-    @Column(name = "ROL")
-    private String rol;
 
     public String getRol() {
         return rol;
@@ -67,10 +76,6 @@ public class Jugador {
         this.rol = rol;
     }
 
-    @Basic
-    @Column(name = "FECHA_NAC")
-    private Date fechaNac;
-
     public Date getFechaNac() {
         return fechaNac;
     }
@@ -79,10 +84,6 @@ public class Jugador {
         this.fechaNac = fechaNac;
     }
 
-    @Basic
-    @Column(name = "SUELDO")
-    private int sueldo;
-
     public int getSueldo() {
         return sueldo;
     }
@@ -90,10 +91,6 @@ public class Jugador {
     public void setSueldo(int sueldo) {
         this.sueldo = sueldo;
     }
-
-    @Basic
-    @Column(name = "ID_EQUIPO")
-    private byte idEquipo;
 
     public byte getIdEquipo() {
         return idEquipo;
@@ -134,5 +131,13 @@ public class Jugador {
         result = 31 * result + sueldo;
         result = 31 * result + (int) idEquipo;
         return result;
+    }
+
+    public Equipo getEquipoByIdEquipo() {
+        return equipoByIdEquipo;
+    }
+
+    public void setEquipoByIdEquipo(Equipo equipoByIdEquipo) {
+        this.equipoByIdEquipo = equipoByIdEquipo;
     }
 }
