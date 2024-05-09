@@ -3,51 +3,25 @@ package modelo;
 import jakarta.persistence.*;
 
 import java.sql.Date;
-import java.util.Collection;
 
 @Entity
 public class Competicion {
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "ID_COMPETICION")
-    private byte idCompeticion;
-    @Basic
-    @Column(name = "NOMBRE_COM")
-    private String nombreCom;
-    @Basic
-    @Column(name = "FECHA_INICIO")
-    private Date fechaInicio;
-    @Basic
-    @Column(name = "FECHA_FIN")
-    private Date fechaFin;
-    @Basic
-    @Column(name = "ETAPA")
-    private String etapa;
-    @Basic
-    @Column(name = "ID_JUEGO")
-    private byte idJuego;
-    @Basic
-    @Column(name = "ID_EQUIPO_GANADOR")
-    private Byte idEquipoGanador;
-    @ManyToOne
-    @JoinColumn(name = "ID_JUEGO", referencedColumnName = "ID_JUEGO", nullable = false)
-    private Juego juegoByIdJuego;
-    @ManyToOne
-    @JoinColumn(name = "ID_EQUIPO_GANADOR", referencedColumnName = "ID_EQUIPO")
-    private Equipo equipoByIdEquipoGanador;
-    @OneToMany(mappedBy = "competicionByIdCompeticion")
-    private Collection<EquipoCompeticion> equipoCompeticionsByIdCompeticion;
-    @OneToMany(mappedBy = "competicionByIdCompeticion")
-    private Collection<Jornada> jornadasByIdCompeticion;
+    @jakarta.persistence.Column(name = "ID_COMPETICION")
+    private int idCompeticion;
 
-    public byte getIdCompeticion() {
+    public int getIdCompeticion() {
         return idCompeticion;
     }
 
-    public void setIdCompeticion(byte idCompeticion) {
+    public void setIdCompeticion(int idCompeticion) {
         this.idCompeticion = idCompeticion;
     }
+
+    @Basic
+    @Column(name = "NOMBRE_COM")
+    private String nombreCom;
 
     public String getNombreCom() {
         return nombreCom;
@@ -57,6 +31,10 @@ public class Competicion {
         this.nombreCom = nombreCom;
     }
 
+    @Basic
+    @Column(name = "FECHA_INICIO")
+    private Date fechaInicio;
+
     public Date getFechaInicio() {
         return fechaInicio;
     }
@@ -64,6 +42,10 @@ public class Competicion {
     public void setFechaInicio(Date fechaInicio) {
         this.fechaInicio = fechaInicio;
     }
+
+    @Basic
+    @Column(name = "FECHA_FIN")
+    private Date fechaFin;
 
     public Date getFechaFin() {
         return fechaFin;
@@ -73,28 +55,16 @@ public class Competicion {
         this.fechaFin = fechaFin;
     }
 
+    @Basic
+    @Column(name = "ETAPA")
+    private String etapa;
+
     public String getEtapa() {
         return etapa;
     }
 
     public void setEtapa(String etapa) {
         this.etapa = etapa;
-    }
-
-    public byte getIdJuego() {
-        return idJuego;
-    }
-
-    public void setIdJuego(byte idJuego) {
-        this.idJuego = idJuego;
-    }
-
-    public Byte getIdEquipoGanador() {
-        return idEquipoGanador;
-    }
-
-    public void setIdEquipoGanador(Byte idEquipoGanador) {
-        this.idEquipoGanador = idEquipoGanador;
     }
 
     @Override
@@ -105,58 +75,21 @@ public class Competicion {
         Competicion that = (Competicion) o;
 
         if (idCompeticion != that.idCompeticion) return false;
-        if (idJuego != that.idJuego) return false;
         if (nombreCom != null ? !nombreCom.equals(that.nombreCom) : that.nombreCom != null) return false;
         if (fechaInicio != null ? !fechaInicio.equals(that.fechaInicio) : that.fechaInicio != null) return false;
         if (fechaFin != null ? !fechaFin.equals(that.fechaFin) : that.fechaFin != null) return false;
         if (etapa != null ? !etapa.equals(that.etapa) : that.etapa != null) return false;
-        if (idEquipoGanador != null ? !idEquipoGanador.equals(that.idEquipoGanador) : that.idEquipoGanador != null)
-            return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = (int) idCompeticion;
+        int result = idCompeticion;
         result = 31 * result + (nombreCom != null ? nombreCom.hashCode() : 0);
         result = 31 * result + (fechaInicio != null ? fechaInicio.hashCode() : 0);
         result = 31 * result + (fechaFin != null ? fechaFin.hashCode() : 0);
         result = 31 * result + (etapa != null ? etapa.hashCode() : 0);
-        result = 31 * result + (int) idJuego;
-        result = 31 * result + (idEquipoGanador != null ? idEquipoGanador.hashCode() : 0);
         return result;
-    }
-
-    public Juego getJuegoByIdJuego() {
-        return juegoByIdJuego;
-    }
-
-    public void setJuegoByIdJuego(Juego juegoByIdJuego) {
-        this.juegoByIdJuego = juegoByIdJuego;
-    }
-
-    public Equipo getEquipoByIdEquipoGanador() {
-        return equipoByIdEquipoGanador;
-    }
-
-    public void setEquipoByIdEquipoGanador(Equipo equipoByIdEquipoGanador) {
-        this.equipoByIdEquipoGanador = equipoByIdEquipoGanador;
-    }
-
-    public Collection<EquipoCompeticion> getEquipoCompeticionsByIdCompeticion() {
-        return equipoCompeticionsByIdCompeticion;
-    }
-
-    public void setEquipoCompeticionsByIdCompeticion(Collection<EquipoCompeticion> equipoCompeticionsByIdCompeticion) {
-        this.equipoCompeticionsByIdCompeticion = equipoCompeticionsByIdCompeticion;
-    }
-
-    public Collection<Jornada> getJornadasByIdCompeticion() {
-        return jornadasByIdCompeticion;
-    }
-
-    public void setJornadasByIdCompeticion(Collection<Jornada> jornadasByIdCompeticion) {
-        this.jornadasByIdCompeticion = jornadasByIdCompeticion;
     }
 }

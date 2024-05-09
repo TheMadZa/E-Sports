@@ -7,11 +7,10 @@ import java.util.Collection;
 
 @Entity
 public class Equipo {
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "ID_EQUIPO")
-    private byte idEquipo;
+    private int idEquipo;
     @Basic
     @Column(name = "NOM_EQUIPO")
     private String nomEquipo;
@@ -24,26 +23,16 @@ public class Equipo {
     @Basic
     @Column(name = "COLOR")
     private String color;
-    @OneToMany(mappedBy = "equipoByIdEquipoGanador")
-    private Collection<Competicion> competicionsByIdEquipo;
-    @OneToMany(mappedBy = "equipoByIdEquipo1")
-    private Collection<Enfrentamiento> enfrentamientosByIdEquipo;
-    @OneToMany(mappedBy = "equipoByIdEquipo2")
-    private Collection<Enfrentamiento> enfrentamientosByIdEquipo_0;
-    @OneToMany(mappedBy = "equipoByIdEquipo")
-    private Collection<EquipoCompeticion> equipoCompeticionsByIdEquipo;
     @OneToMany(mappedBy = "equipoByIdEquipo")
     private Collection<Jugador> jugadorsByIdEquipo;
     @OneToMany(mappedBy = "equipoByIdEquipo")
-    private Collection<PatrocinadorEquipo> patrocinadorEquiposByIdEquipo;
-    @OneToMany(mappedBy = "equipoByIdEquipo")
     private Collection<Staff> staffByIdEquipo;
 
-    public byte getIdEquipo() {
+    public int getIdEquipo() {
         return idEquipo;
     }
 
-    public void setIdEquipo(byte idEquipo) {
+    public void setIdEquipo(int idEquipo) {
         this.idEquipo = idEquipo;
     }
 
@@ -98,44 +87,12 @@ public class Equipo {
 
     @Override
     public int hashCode() {
-        int result = (int) idEquipo;
+        int result = idEquipo;
         result = 31 * result + (nomEquipo != null ? nomEquipo.hashCode() : 0);
         result = 31 * result + (fechaFundacion != null ? fechaFundacion.hashCode() : 0);
         result = 31 * result + (logo != null ? logo.hashCode() : 0);
         result = 31 * result + (color != null ? color.hashCode() : 0);
         return result;
-    }
-
-    public Collection<Competicion> getCompeticionsByIdEquipo() {
-        return competicionsByIdEquipo;
-    }
-
-    public void setCompeticionsByIdEquipo(Collection<Competicion> competicionsByIdEquipo) {
-        this.competicionsByIdEquipo = competicionsByIdEquipo;
-    }
-
-    public Collection<Enfrentamiento> getEnfrentamientosByIdEquipo() {
-        return enfrentamientosByIdEquipo;
-    }
-
-    public void setEnfrentamientosByIdEquipo(Collection<Enfrentamiento> enfrentamientosByIdEquipo) {
-        this.enfrentamientosByIdEquipo = enfrentamientosByIdEquipo;
-    }
-
-    public Collection<Enfrentamiento> getEnfrentamientosByIdEquipo_0() {
-        return enfrentamientosByIdEquipo_0;
-    }
-
-    public void setEnfrentamientosByIdEquipo_0(Collection<Enfrentamiento> enfrentamientosByIdEquipo_0) {
-        this.enfrentamientosByIdEquipo_0 = enfrentamientosByIdEquipo_0;
-    }
-
-    public Collection<EquipoCompeticion> getEquipoCompeticionsByIdEquipo() {
-        return equipoCompeticionsByIdEquipo;
-    }
-
-    public void setEquipoCompeticionsByIdEquipo(Collection<EquipoCompeticion> equipoCompeticionsByIdEquipo) {
-        this.equipoCompeticionsByIdEquipo = equipoCompeticionsByIdEquipo;
     }
 
     public Collection<Jugador> getJugadorsByIdEquipo() {
@@ -144,14 +101,6 @@ public class Equipo {
 
     public void setJugadorsByIdEquipo(Collection<Jugador> jugadorsByIdEquipo) {
         this.jugadorsByIdEquipo = jugadorsByIdEquipo;
-    }
-
-    public Collection<PatrocinadorEquipo> getPatrocinadorEquiposByIdEquipo() {
-        return patrocinadorEquiposByIdEquipo;
-    }
-
-    public void setPatrocinadorEquiposByIdEquipo(Collection<PatrocinadorEquipo> patrocinadorEquiposByIdEquipo) {
-        this.patrocinadorEquiposByIdEquipo = patrocinadorEquiposByIdEquipo;
     }
 
     public Collection<Staff> getStaffByIdEquipo() {

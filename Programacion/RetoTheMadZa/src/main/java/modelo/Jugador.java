@@ -6,11 +6,10 @@ import java.sql.Date;
 
 @Entity
 public class Jugador {
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "ID_JUGADOR")
-    private byte idJugador;
+    private int idJugador;
     @Basic
     @Column(name = "NOMBRE")
     private String nombre;
@@ -29,18 +28,15 @@ public class Jugador {
     @Basic
     @Column(name = "SUELDO")
     private int sueldo;
-    @Basic
-    @Column(name = "ID_EQUIPO")
-    private byte idEquipo;
     @ManyToOne
     @JoinColumn(name = "ID_EQUIPO", referencedColumnName = "ID_EQUIPO", nullable = false)
     private Equipo equipoByIdEquipo;
 
-    public byte getIdJugador() {
+    public int getIdJugador() {
         return idJugador;
     }
 
-    public void setIdJugador(byte idJugador) {
+    public void setIdJugador(int idJugador) {
         this.idJugador = idJugador;
     }
 
@@ -92,14 +88,6 @@ public class Jugador {
         this.sueldo = sueldo;
     }
 
-    public byte getIdEquipo() {
-        return idEquipo;
-    }
-
-    public void setIdEquipo(byte idEquipo) {
-        this.idEquipo = idEquipo;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -109,7 +97,6 @@ public class Jugador {
 
         if (idJugador != jugador.idJugador) return false;
         if (sueldo != jugador.sueldo) return false;
-        if (idEquipo != jugador.idEquipo) return false;
         if (nombre != null ? !nombre.equals(jugador.nombre) : jugador.nombre != null) return false;
         if (nickname != null ? !nickname.equals(jugador.nickname) : jugador.nickname != null) return false;
         if (nacionalidad != null ? !nacionalidad.equals(jugador.nacionalidad) : jugador.nacionalidad != null)
@@ -122,14 +109,13 @@ public class Jugador {
 
     @Override
     public int hashCode() {
-        int result = (int) idJugador;
+        int result = idJugador;
         result = 31 * result + (nombre != null ? nombre.hashCode() : 0);
         result = 31 * result + (nickname != null ? nickname.hashCode() : 0);
         result = 31 * result + (nacionalidad != null ? nacionalidad.hashCode() : 0);
         result = 31 * result + (rol != null ? rol.hashCode() : 0);
         result = 31 * result + (fechaNac != null ? fechaNac.hashCode() : 0);
         result = 31 * result + sueldo;
-        result = 31 * result + (int) idEquipo;
         return result;
     }
 

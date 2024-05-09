@@ -9,7 +9,7 @@ public class Staff {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "ID_STAFF")
-    private byte idStaff;
+    private int idStaff;
     @Basic
     @Column(name = "PUESTO")
     private String puesto;
@@ -22,18 +22,15 @@ public class Staff {
     @Basic
     @Column(name = "SUELDO")
     private int sueldo;
-    @Basic
-    @Column(name = "ID_EQUIPO")
-    private byte idEquipo;
     @ManyToOne
     @JoinColumn(name = "ID_EQUIPO", referencedColumnName = "ID_EQUIPO", nullable = false)
     private Equipo equipoByIdEquipo;
 
-    public byte getIdStaff() {
+    public int getIdStaff() {
         return idStaff;
     }
 
-    public void setIdStaff(byte idStaff) {
+    public void setIdStaff(int idStaff) {
         this.idStaff = idStaff;
     }
 
@@ -69,14 +66,6 @@ public class Staff {
         this.sueldo = sueldo;
     }
 
-    public byte getIdEquipo() {
-        return idEquipo;
-    }
-
-    public void setIdEquipo(byte idEquipo) {
-        this.idEquipo = idEquipo;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -86,7 +75,6 @@ public class Staff {
 
         if (idStaff != staff.idStaff) return false;
         if (sueldo != staff.sueldo) return false;
-        if (idEquipo != staff.idEquipo) return false;
         if (puesto != null ? !puesto.equals(staff.puesto) : staff.puesto != null) return false;
         if (nombre != null ? !nombre.equals(staff.nombre) : staff.nombre != null) return false;
         if (fechaNac != null ? !fechaNac.equals(staff.fechaNac) : staff.fechaNac != null) return false;
@@ -96,12 +84,11 @@ public class Staff {
 
     @Override
     public int hashCode() {
-        int result = (int) idStaff;
+        int result = idStaff;
         result = 31 * result + (puesto != null ? puesto.hashCode() : 0);
         result = 31 * result + (nombre != null ? nombre.hashCode() : 0);
         result = 31 * result + (fechaNac != null ? fechaNac.hashCode() : 0);
         result = 31 * result + sueldo;
-        result = 31 * result + (int) idEquipo;
         return result;
     }
 
