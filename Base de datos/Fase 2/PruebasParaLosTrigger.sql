@@ -1,233 +1,841 @@
-/*PRUEBA PARA EL PRIMER TRIGGER*/
-/*EJEMPLO DE UN MAL INSERT (SI TIENE MENOS DE 2)*/
-INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
-VALUES (DEFAULT, 'Team Liquid', TO_DATE('15-09-2000', 'DD-MM-YYYY'),
-       'https://i.imgur.com/nuYSo51.png', 'Azul');
+--Trigger CANTIDAD_EQUIPO compilado
 
-INSERT INTO JUGADOR
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('lidiya', 'Squeezy_Cow', 'Francia', 'Jugador',
-TO_DATE('03-08-1997', 'DD-MM-YYYY'), 4076.86, 1);
-INSERT INTO JUGADOR
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('kaelan', 'JDinooPvP', 'Reino Unido',
-        'Jugador', TO_DATE('23-04-2006', 'DD-MM-YYYY'), 4335.61, 1);
-INSERT INTO JUGADOR
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('matalyn', 'Puppygamer02', 'Corea del Sur',
-        'Jugador', TO_DATE('08-09-1993', 'DD-MM-YYYY'), 4928.08, 1);
-INSERT INTO JUGADOR
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('anyi', 'LunaEclipse135', 'Estados Unidos',
-        'Jugador', TO_DATE('09-01-2001', 'DD-MM-YYYY'), 2903.51, 1);
-INSERT INTO JUGADOR
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('demarrion', 'Laziness_', 'Australia',
-        'Jugador', TO_DATE('29-12-1990', 'DD-MM-YYYY'), 5975.62, 1);
-INSERT INTO JUGADOR
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('abril', 'PayHra', 'India',
-        'Jugador', TO_DATE('07-08-1996', 'DD-MM-YYYY'), 4677.36, 1);
+/*PROBAMOS EL TRIGGER*/
+--Insertamos un jugador en un equipo con 0 jugadores (FUNCIONA)
+
+/*
+DELETE FROM EQUIPO WHERE ID_EQUIPO = 35;
+
+INSERT INTO EQUIPO VALUES(DEFAULT,'PruebaTrigger',
+    TO_DATE('01/01/85','DD/MM/YY'),'A','Rojo');
+
+COMMIT;
+
+SELECT * FROM EQUIPO WHERE NOM_EQUIPO = 'PruebaTrigger';
+*/
+SELECT E.ID_EQUIPO, NVL(COUNT(J.ID_JUGADOR),0) AS "CANTIDAD JUGADORES"
+FROM EQUIPO E
+LEFT JOIN JUGADOR J ON E.ID_EQUIPO = J.ID_EQUIPO
+WHERE E.ID_EQUIPO = 35
+GROUP BY E.ID_EQUIPO
+ORDER BY E.ID_EQUIPO;
+
+INSERT INTO JUGADOR VALUES(DEFAULT,'Juan','JuanGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),3500,35);
+
+COMMIT;
+
+SELECT E.ID_EQUIPO, NVL(COUNT(J.ID_JUGADOR),0) AS "CANTIDAD JUGADORES"
+FROM EQUIPO E
+LEFT JOIN JUGADOR J ON E.ID_EQUIPO = J.ID_EQUIPO
+WHERE E.ID_EQUIPO = 35
+GROUP BY E.ID_EQUIPO
+ORDER BY E.ID_EQUIPO;
+
+/*Resultado:
+
+ ID_EQUIPO CANTIDAD JUGADORES
+---------- ------------------
+        35                  0
+
+1 fila insertadas.
+
+Confirmación terminada.
+
+ ID_EQUIPO CANTIDAD JUGADORES
+---------- ------------------
+        35                  1
+         
+*/
+--Insertamos un jugador en un equipo con 6 jugadores (FUNCIONA)
+/*LLENAMOS EL EQUIPO CREADO ANTERIORMENTE PARA LA PRUEBA
+
+INSERT INTO JUGADOR VALUES(DEFAULT,'Luis','LuisGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),3500,35);
+    COMMIT;
+INSERT INTO JUGADOR VALUES(DEFAULT,'David','DavidGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),3500,35);
+    COMMIT;
+INSERT INTO JUGADOR VALUES(DEFAULT,'Zahir','ZaGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),3500,35);
+    COMMIT;
+INSERT INTO JUGADOR VALUES(DEFAULT,'Ibai','YaleroGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),3500,35);
+    COMMIT;
+INSERT INTO JUGADOR VALUES(DEFAULT,'Lorena','LorenaGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),3500,35);
+    COMMIT;
+
+*/
+SELECT E.ID_EQUIPO, NVL(COUNT(J.ID_JUGADOR),0) AS "CANTIDAD JUGADORES"
+FROM EQUIPO E
+JOIN JUGADOR J ON E.ID_EQUIPO = J.ID_EQUIPO
+GROUP BY E.ID_EQUIPO
+HAVING E.ID_EQUIPO = 35
+ORDER BY ID_EQUIPO;
+
+INSERT INTO JUGADOR VALUES(DEFAULT,'DIOS','DIOSGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),3500,35);
+
+SELECT E.ID_EQUIPO, NVL(COUNT(J.ID_JUGADOR),0) AS "CANTIDAD JUGADORES"
+FROM EQUIPO E
+JOIN JUGADOR J ON E.ID_EQUIPO = J.ID_EQUIPO
+GROUP BY E.ID_EQUIPO
+HAVING E.ID_EQUIPO = 33
+ORDER BY ID_EQUIPO;
+
+/*Resultado:
+
+ ID_EQUIPO CANTIDAD JUGADORES
+---------- ------------------
+        35                  6
+
+Error que empieza en la línea: 132 del comando -
+INSERT INTO JUGADOR VALUES(DEFAULT,'DIOS','DIOSGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),3500,35)
+Error en la línea de comandos : 132 Columna : 13
+Informe de error -
+Error SQL: ORA-20001: No puede haber mas de 6 jugadores
+ORA-06512: en "EQDAW03.CANTIDAD_EQUIPO", línea 12
+ORA-04088: error durante la ejecución del disparador 'EQDAW03.CANTIDAD_EQUIPO'
+
+ ID_EQUIPO CANTIDAD JUGADORES
+---------- ------------------
+        35                  6
         
+*/
+
+--Borramos un jugador de un equipo con 2 jugadores (NO FUNCIONA)
+/*
+SELECT ID_JUGADOR
+FROM JUGADOR
+WHERE ID_EQUIPO = 35;
+commit;
+DELETE FROM
+JUGADOR WHERE ID_JUGADOR = 215;
+DELETE FROM
+JUGADOR WHERE ID_JUGADOR = 199;
+DELETE FROM
+JUGADOR WHERE ID_JUGADOR = 200;
+DELETE FROM
+JUGADOR WHERE ID_JUGADOR = 201;
+
+SELECT ID_EQUIPO
+FROM EQUIPO
+WHERE NOM_EQUIPO = 'PruebaTrigger';
+
+INSERT INTO JUGADOR VALUES(DEFAULT,'Juan','JuanGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),3500,31);
+    
+INSERT INTO JUGADOR VALUES(DEFAULT,'Mati','ELMati','Colombia','Jugador',
+    TO_DATE('01/04/98','DD/MM/YY'),3500,31);
+
+INSERT INTO JUGADOR VALUES(DEFAULT,'Ibai','Yalero','Colombia','Jugador',
+    TO_DATE('01/04/98','DD/MM/YY'),3500,31);
+    
+SELECT *
+FROM JUGADOR
+WHERE ID_EQUIPO = 33;
+
+COMMIT;
+*/
+SELECT ID_JUGADOR
+FROM JUGADOR
+WHERE ID_EQUIPO = 35;
+
+DELETE
+FROM JUGADOR
+WHERE id_jugador = 197;
+
+COMMIT;
+
+/*Resultado:
+
+*/
+
+--Actualizamos el id_equipo de un jugador de un equipo con 2 jugadores (NO FUNCIONA)
+
+/*
+INSERT INTO EQUIPO VALUES(DEFAULT,'PruebaTrigger2',
+    TO_DATE('01/01/85','DD/MM/YY'),'A','Rojo');
+
+COMMIT;
+
+SELECT * FROM EQUIPO WHERE NOM_EQUIPO = 'PruebaTrigger2';
+
+INSERT INTO JUGADOR VALUES(DEFAULT,'Ibai','Yalero','Colombia','Jugador',
+    TO_DATE('01/04/98','DD/MM/YY'),3500,36);
+INSERT INTO JUGADOR VALUES(DEFAULT,'Mati','ELMati','Colombia','Jugador',
+    TO_DATE('01/04/98','DD/MM/YY'),3500,36);
+COMMIT;
+
+SELECT E.ID_EQUIPO, NVL(COUNT(J.ID_JUGADOR),0) AS "CANTIDAD JUGADORES"
+FROM EQUIPO E
+JOIN JUGADOR J ON E.ID_EQUIPO = J.ID_EQUIPO
+GROUP BY E.ID_EQUIPO
+ORDER BY ID_EQUIPO;
+
+*/
+UPDATE JUGADOR
+SET id_equipo = 36
+WHERE id_jugador = 215;
+
+
+/*PROBAMOS EL TRIGGER GENERAR_CALENDARIO*/
+--Insertamos una jornada y que todos los equipos tengan mínimo 2 jugadores (FUNCIONA)
+INSERT INTO JORNADA VALUES(DEFAULT,'17',TO_DATE('30/08/24','DD/MM/YY'),2);
+
+COMMIT;
+
+SELECT * FROM JORNADA WHERE ID_JORNADA = 34;
+/*Resultado:
+
+1 fila insertadas.
+
+Confirmación terminada.
+
+ID_JORNADA NUM_JORNADA FECHA_JO ID_COMPETICION
+---------- ----------- -------- --------------
+        34          17 30/08/24              2
+
+*/
+--Insertamos una jornada y que algún equipo no tenga menos de 2 jugadores (FUNCIONA)
+/*
+Creamos un equipo vacío para la comprobación
+
+INSERT INTO EQUIPO VALUES(DEFAULT,'PruebaTrigger3',
+    TO_DATE('01/01/85','DD/MM/YY'),'A','Rojo');
+    COMMIT;
+*/
+INSERT INTO JORNADA VALUES(DEFAULT,'18',TO_DATE('07/09/24','DD/MM/YY'),2);
+
+/*Resultado:
+
+Error que empieza en la línea: 294 del comando -
+INSERT INTO JORNADA VALUES(DEFAULT,'18',TO_DATE('07/09/24','DD/MM/YY'),2)
+Error en la línea de comandos : 294 Columna : 13
+Informe de error -
+Error SQL: ORA-20001: Hay menos de 2 jugadores
+ORA-06512: en "EQDAW03.GENERAR_CALENDARIO", línea 16
+ORA-04088: error durante la ejecución del disparador 'EQDAW03.GENERAR_CALENDARIO'
+
+*/
+
+
+/*PROBAMOS EL TRIGGER NOMODIFICAR_EQUIPO*/
+--Insertamos un equipo en una competicion ABIERTA (FUNCIONA)
+/*
+SELECT * FROM COMPETICION WHERE ETAPA = 'A';
+SELECT * FROM EQUIPO_COMPETICION;
+
+Creamos un equipo con 6 jugadores
+INSERT INTO EQUIPO VALUES(DEFAULT,'PruebaTrigger4',
+    TO_DATE('01/01/85','DD/MM/YY'),'A','Rojo');
+COMMIT;
+
+SELECT ID_EQUIPO FROM EQUIPO WHERE NOM_EQUIPO = 'PruebaTrigger4';
+
+INSERT INTO JUGADOR VALUES(DEFAULT,'Luis','LuisGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),3500,38);
+INSERT INTO JUGADOR VALUES(DEFAULT,'David','DavidGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),3500,38);
+INSERT INTO JUGADOR VALUES(DEFAULT,'Zahir','ZaGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),3500,38);
+INSERT INTO JUGADOR VALUES(DEFAULT,'Ibai','YaleroGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),3500,38);
+INSERT INTO JUGADOR VALUES(DEFAULT,'Lorena','LorenaGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),3500,38);
+INSERT INTO JUGADOR VALUES(DEFAULT,'Mati','ELMati','Colombia','Jugador',
+    TO_DATE('01/04/98','DD/MM/YY'),3500,38);
+    
+SELECT E.ID_EQUIPO, NVL(COUNT(J.ID_JUGADOR),0) AS "CANTIDAD JUGADORES"
+FROM EQUIPO E
+JOIN JUGADOR J ON E.ID_EQUIPO = J.ID_EQUIPO
+GROUP BY E.ID_EQUIPO
+HAVING E.ID_EQUIPO = 38
+ORDER BY ID_EQUIPO;
+*/
+SELECT * FROM COMPETICION WHERE ETAPA = 'A';
+
+INSERT INTO EQUIPO_COMPETICION VALUES(38,1,0,0);
+
+COMMIT;
+
+SELECT * FROM EQUIPO_COMPETICION WHERE ID_EQUIPO = 38;
+
+/*Resultado:
+ID_COMPETICION NOMBRE_COM                                                                                           FECHA_IN FECHA_FI ET   ID_JUEGO ID_EQUIPO_GANADOR
+-------------- ---------------------------------------------------------------------------------------------------- -------- -------- -- ---------- -----------------
+             1 CS2 MAJOR COPENHAGEN 2024                                                                            05/05/24 05/06/24 A           3                  
+
+1 fila insertadas.
+
+Confirmación terminada.
+
+ ID_EQUIPO ID_COMPETICION  VICTORIAS     PUNTOS
+---------- -------------- ---------- ----------
+        38              1          0          0
+
+*/
+--Insertamos un equipo en una competicion CERRADA (FUNCIONA)
+/*
+SELECT * FROM COMPETICION WHERE ETAPA = 'C';
+SELECT * FROM EQUIPO_COMPETICION;
+
+Creamos un equipo con 6 jugadores
+INSERT INTO EQUIPO VALUES(DEFAULT,'PruebaTrigger5',
+    TO_DATE('01/01/85','DD/MM/YY'),'A','Rojo');
+COMMIT;
+
+SELECT ID_EQUIPO FROM EQUIPO WHERE NOM_EQUIPO = 'PruebaTrigger5';
+
+INSERT INTO JUGADOR VALUES(DEFAULT,'Luis','LuisGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),3500,39);
+INSERT INTO JUGADOR VALUES(DEFAULT,'David','DavidGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),3500,39);
+INSERT INTO JUGADOR VALUES(DEFAULT,'Zahir','ZaGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),3500,39);
+INSERT INTO JUGADOR VALUES(DEFAULT,'Ibai','YaleroGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),3500,39);
+INSERT INTO JUGADOR VALUES(DEFAULT,'Lorena','LorenaGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),3500,39);
+INSERT INTO JUGADOR VALUES(DEFAULT,'Mati','ELMati','Colombia','Jugador',
+    TO_DATE('01/04/98','DD/MM/YY'),3500,39);
+
+COMMIT;
+
+SELECT E.ID_EQUIPO, NVL(COUNT(J.ID_JUGADOR),0) AS "CANTIDAD JUGADORES"
+FROM EQUIPO E
+JOIN JUGADOR J ON E.ID_EQUIPO = J.ID_EQUIPO
+GROUP BY E.ID_EQUIPO
+HAVING E.ID_EQUIPO = 39
+ORDER BY ID_EQUIPO;
+*/
+INSERT INTO EQUIPO_COMPETICION VALUES(39,2,0,0);
+
+COMMIT;
+
+SELECT * FROM EQUIPO_COMPETICION WHERE ID_EQUIPO = 39;
+/*Resultado:
+
+ID_COMPETICION NOMBRE_COM                                                                                           FECHA_IN FECHA_FI ET   ID_JUEGO ID_EQUIPO_GANADOR
+-------------- ---------------------------------------------------------------------------------------------------- -------- -------- -- ---------- -----------------
+             2 LEC                                                                                                  01/01/24 01/06/24 C          12                  
+
+Error que empieza en la línea: 442 del comando -
+INSERT INTO EQUIPO_COMPETICION VALUES(39,2,0,0)
+Error en la línea de comandos : 442 Columna : 13
+Informe de error -
+Error SQL: ORA-20001: La etapa está cerrada
+ORA-06512: en "EQDAW03.NOMODIFICAR_EQUIPO", línea 27
+ORA-04088: error durante la ejecución del disparador 'EQDAW03.NOMODIFICAR_EQUIPO'
+
+no se ha seleccionado ninguna fila
+
+*/
+--Borramos un equipo de una competicion ABIERTA (FUNCIONA)
+SELECT * FROM EQUIPO_COMPETICION;
+
+DELETE
+FROM EQUIPO_COMPETICION
+WHERE id_equipo = 38;
+
+COMMIT;
+
+SELECT * FROM EQUIPO_COMPETICION WHERE ID_EQUIPO = 38;
+/*Resultado:
+
+1 fila eliminado
+
+Confirmación terminada.
+
+no se ha seleccionado ninguna fila
+*/
+
+--Borramos un equipo de una competicion CERRADA (FUNCIONA)
+SELECT * FROM EQUIPO_COMPETICION WHERE ID_COMPETICION = 2;
+
+DELETE
+FROM EQUIPO_COMPETICION
+WHERE id_equipo = 17
+AND id_competicion = 2;
+
+SELECT * FROM EQUIPO_COMPETICION
+WHERE ID_EQUIPO = 17 AND id_competicion = 2;
+
+/*Resultado:
+
+Error que empieza en la línea: 485 del comando -
+DELETE
+FROM EQUIPO_COMPETICION
+WHERE id_equipo = 17
+AND id_competicion = 2
+Error en la línea de comandos : 486 Columna : 6
+Informe de error -
+Error SQL: ORA-20001: La etapa está cerrada
+ORA-06512: en "EQDAW03.NOMODIFICAR_EQUIPO", línea 27
+ORA-04088: error durante la ejecución del disparador 'EQDAW03.NOMODIFICAR_EQUIPO'
+
+ ID_EQUIPO ID_COMPETICION  VICTORIAS     PUNTOS
+---------- -------------- ---------- ----------
+        17              2          3         22
+
+*/
+--Actualizamos un equipo de una competicion ABIERTA (FUNCIONA)
+SELECT * FROM EQUIPO_COMPETICION
+WHERE ID_COMPETICION = 1
+AND ID_EQUIPO = 20;
+
+UPDATE EQUIPO_COMPETICION
+SET victorias = 0
+WHERE id_equipo = 20
+AND id_competicion = 1;
+
+COMMIT;
+
+SELECT * FROM EQUIPO_COMPETICION
+WHERE ID_COMPETICION = 1
+AND ID_EQUIPO = 20;
+
+/*Resultado:
+
+ ID_EQUIPO ID_COMPETICION  VICTORIAS     PUNTOS
+---------- -------------- ---------- ----------
+        20              1          6         21
+
+1 fila actualizadas.
+
+Confirmación terminada.
+
+ ID_EQUIPO ID_COMPETICION  VICTORIAS     PUNTOS
+---------- -------------- ---------- ----------
+        20              1          0         21
+*/
+
+--Actualizamos un equipo de una competicion CERRADA (FUNCIONA)
+SELECT * FROM EQUIPO_COMPETICION
+WHERE ID_COMPETICION = 2
+AND ID_EQUIPO = 20;
+
+UPDATE EQUIPO_COMPETICION
+SET victorias = 0
+WHERE id_equipo = 20
+AND id_competicion = 2;
+
+COMMIT;
+
+SELECT * FROM EQUIPO_COMPETICION
+WHERE ID_COMPETICION = 2
+AND ID_EQUIPO = 20;
+
+/*Resultado:
+
+ ID_EQUIPO ID_COMPETICION  VICTORIAS     PUNTOS
+---------- -------------- ---------- ----------
+        20              2          1          6
+
+Error que empieza en la línea: 547 del comando -
+UPDATE EQUIPO_COMPETICION
+SET victorias = 0
+WHERE id_equipo = 20
+AND id_competicion = 2
+Error en la línea de comandos : 547 Columna : 8
+Informe de error -
+Error SQL: ORA-20001: La etapa está cerrada
+ORA-06512: en "EQDAW03.NOMODIFICAR_EQUIPO", línea 43
+ORA-04088: error durante la ejecución del disparador 'EQDAW03.NOMODIFICAR_EQUIPO'
+
+Confirmación terminada.
+
+ ID_EQUIPO ID_COMPETICION  VICTORIAS     PUNTOS
+---------- -------------- ---------- ----------
+        20              2          1          6
+*/
+
+
+/*PROBAMOS EL TRIGGER NOMODIFICAR_JUGADOR*/
+--Insertamos un jugador en un equipo que esté en una competicion ABIERTA (FUNCIONA)
+SELECT * FROM EQUIPO_COMPETICION
+WHERE ID_COMPETICION = 1
+AND ID_EQUIPO = 20;
+
+INSERT INTO JUGADOR VALUES(DEFAULT,'Mati','ELMati','Colombia','Jugador',
+    TO_DATE('01/04/98','DD/MM/YY'),3500,20);
+
+COMMIT;
+
+SELECT * FROM JUGADOR
+WHERE ID_EQUIPO = 20;
+
+/*Resultado:
+
+ ID_EQUIPO ID_COMPETICION  VICTORIAS     PUNTOS
+---------- -------------- ---------- ----------
+        20              1          6         21
+
+1 fila insertadas.
+
+Confirmación terminada.
+
+ID_JUGADOR NOMBRE                         NICKNAME                       NACIONALIDAD                   ROL        FECHA_NA     SUELDO  ID_EQUIPO
+---------- ------------------------------ ------------------------------ ------------------------------ ---------- -------- ---------- ----------
+       231 Mati                           ELMati                         Colombia                       Jugador    01/04/98       3500         20
+       115 esteven                        SirSkullCandy07                Estados Unidos                 Lider      31/05/89    5671,68         20
+       116 cyleigh                        iskos                          Australia                      Jugador    25/03/97    5737,45         20
+       117 ayat                           Vengeos                        Francia                        Jugador    21/12/00     3882,6         20
+       118 quintell                       3X0N                           Alemania                       Jugador    10/09/03    4408,87         20
+       119 charlesetta                    ISuckedHitlerDry               Reino Unido                    Jugador    23/06/92    5454,75         20
+       120 tyliyah                        Kripps                         Italia                         Jugador    19/06/94    6329,41         20
+
+7 filas seleccionadas.
+*/
+--Insertamos un jugador en un equipo que esté en una competicion CERRADA (FUNCIONA)
+SELECT * FROM EQUIPO_COMPETICION
+WHERE ID_COMPETICION = 2
+AND ID_EQUIPO = 20;
+
+INSERT INTO JUGADOR VALUES(DEFAULT,'Mati','ELMati','Colombia','Jugador',
+    TO_DATE('01/04/98','DD/MM/YY'),3500,20);
+
+SELECT * FROM JUGADOR
+WHERE ID_EQUIPO = 20;
+
+/*Resultado:
+
+ ID_EQUIPO ID_COMPETICION  VICTORIAS     PUNTOS
+---------- -------------- ---------- ----------
+        20              2          1          6
+
+Error que empieza en la línea: 677 del comando -
+INSERT INTO JUGADOR VALUES(DEFAULT,'Mati','ELMati','Colombia','Jugador',
+    TO_DATE('01/04/98','DD/MM/YY'),3500,20)
+Error en la línea de comandos : 677 Columna : 13
+Informe de error -
+Error SQL: ORA-20001: Al menos una competición asociada al equipo está cerrada. No se pueden modificar los jugadores.
+ORA-06512: en "EQDAW03.NOMODIFICAR_JUGADOR", línea 17
+ORA-04088: error durante la ejecución del disparador 'EQDAW03.NOMODIFICAR_JUGADOR'
+
+ID_JUGADOR NOMBRE                         NICKNAME                       NACIONALIDAD                   ROL        FECHA_NA     SUELDO  ID_EQUIPO
+---------- ------------------------------ ------------------------------ ------------------------------ ---------- -------- ---------- ----------
+       115 esteven                        SirSkullCandy07                Estados Unidos                 Lider      31/05/89    5671,68         20
+       116 cyleigh                        iskos                          Australia                      Jugador    25/03/97    5737,45         20
+       117 ayat                           Vengeos                        Francia                        Jugador    21/12/00     3882,6         20
+       118 quintell                       3X0N                           Alemania                       Jugador    10/09/03    4408,87         20
+       119 charlesetta                    ISuckedHitlerDry               Reino Unido                    Jugador    23/06/92    5454,75         20
+       120 tyliyah                        Kripps                         Italia                         Jugador    19/06/94    6329,41         20
+
+6 filas seleccionadas. 
+*/
+
+--Borramos un jugador de un equipo que esté en una competicion ABIERTA (FUNCIONA)
+SELECT * FROM JUGADOR
+WHERE ID_EQUIPO = 7;
+
+DELETE
+FROM JUGADOR
+WHERE ID_JUGADOR = 42
+AND ID_EQUIPO = 7;
+
+COMMIT;
+
+SELECT * FROM JUGADOR
+WHERE ID_EQUIPO = 7;
+
+/*Resultado:
+
+ID_JUGADOR NOMBRE                         NICKNAME                       NACIONALIDAD                   ROL        FECHA_NA     SUELDO  ID_EQUIPO
+---------- ------------------------------ ------------------------------ ------------------------------ ---------- -------- ---------- ----------
+        37 orianna                        MustafaGaming_YT               Australia                      Lider      21/11/96    5873,69          7
+        38 lakeasha                       Katymaty                       Rusia                          Jugador    05/08/99    5892,62          7
+        39 amanuel                        itsDarkii                      Francia                        Jugador    10/02/99    5261,08          7
+        40 yamin                          Dante19                        Italia                         Jugador    11/01/99    5877,92          7
+        41 lamar                          OrlNi                          Corea del Sur                  Jugador    05/03/97    4659,73          7
+        42 briya                          Hiiri132                       Brasil                         Jugador    11/08/91    6078,62          7
+
+6 filas seleccionadas.
+
+1 fila eliminado
+
+Confirmación terminada.
+
+ID_JUGADOR NOMBRE                         NICKNAME                       NACIONALIDAD                   ROL        FECHA_NA     SUELDO  ID_EQUIPO
+---------- ------------------------------ ------------------------------ ------------------------------ ---------- -------- ---------- ----------
+        37 orianna                        MustafaGaming_YT               Australia                      Lider      21/11/96    5873,69          7
+        38 lakeasha                       Katymaty                       Rusia                          Jugador    05/08/99    5892,62          7
+        39 amanuel                        itsDarkii                      Francia                        Jugador    10/02/99    5261,08          7
+        40 yamin                          Dante19                        Italia                         Jugador    11/01/99    5877,92          7
+        41 lamar                          OrlNi                          Corea del Sur                  Jugador    05/03/97    4659,73          7
+
+*/
+
+--Borramos un jugador de un equipo que esté en una competicion CERRADA (FUNCIONA)
+SELECT * FROM JUGADOR
+WHERE ID_EQUIPO = 6;
+
+DELETE
+FROM JUGADOR
+WHERE ID_JUGADOR = 31
+AND ID_EQUIPO = 6;
+
+SELECT * FROM JUGADOR
+WHERE ID_EQUIPO = 6;
+
+/*Resultado:
+
+ID_JUGADOR NOMBRE                         NICKNAME                       NACIONALIDAD                   ROL        FECHA_NA     SUELDO  ID_EQUIPO
+---------- ------------------------------ ------------------------------ ------------------------------ ---------- -------- ---------- ----------
+        31 matalin                        I_AteTheDonut125               China                          Lider      06/03/03    6358,45          6
+        32 jalayna                        Xoky                           India                          Jugador    18/09/91    5556,55          6
+        33 gaila                          Ober_Zombie23                  Rusia                          Jugador    20/10/04    4627,08          6
+        34 srah                           Dagio20016                     India                          Jugador    04/07/00    5227,52          6
+        35 creedence                      SortaCurious                   Rusia                          Jugador    08/01/05    3705,63          6
+        36 anyea                          blazej2610                     Argentina                      Jugador    11/11/05     2067,5          6
+
+6 filas seleccionadas. 
+
+Error que empieza en la línea: 755 del comando -
+DELETE
+FROM JUGADOR
+WHERE ID_JUGADOR = 31
+AND ID_EQUIPO = 6
+Error en la línea de comandos : 756 Columna : 6
+Informe de error -
+Error SQL: ORA-20002: Al menos una competición asociada
+                al equipo está cerrada. No se pueden modificar los jugadores.
+ORA-06512: en "EQDAW03.NOMODIFICAR_JUGADOR", línea 37
+ORA-04088: error durante la ejecución del disparador 'EQDAW03.NOMODIFICAR_JUGADOR'
+
+ID_JUGADOR NOMBRE                         NICKNAME                       NACIONALIDAD                   ROL        FECHA_NA     SUELDO  ID_EQUIPO
+---------- ------------------------------ ------------------------------ ------------------------------ ---------- -------- ---------- ----------
+        31 matalin                        I_AteTheDonut125               China                          Lider      06/03/03    6358,45          6
+        32 jalayna                        Xoky                           India                          Jugador    18/09/91    5556,55          6
+        33 gaila                          Ober_Zombie23                  Rusia                          Jugador    20/10/04    4627,08          6
+        34 srah                           Dagio20016                     India                          Jugador    04/07/00    5227,52          6
+        35 creedence                      SortaCurious                   Rusia                          Jugador    08/01/05    3705,63          6
+        36 anyea                          blazej2610                     Argentina                      Jugador    11/11/05     2067,5          6
+
+6 filas seleccionadas. 
+*/
+
+--Actualizamos un jugador de un equipo que esté en una competicion ABIERTA (FUNCIONA)
+SELECT * FROM JUGADOR
+WHERE ID_EQUIPO = 7;
+
+UPDATE JUGADOR
+SET NOMBRE = 'markel'
+WHERE id_jugador = 37;
+
+COMMIT;
+
+SELECT * FROM JUGADOR
+WHERE ID_EQUIPO = 7;
+
+/*Resultado:
+
+ID_JUGADOR NOMBRE                         NICKNAME                       NACIONALIDAD                   ROL        FECHA_NA     SUELDO  ID_EQUIPO
+---------- ------------------------------ ------------------------------ ------------------------------ ---------- -------- ---------- ----------
+        37 orianna                        MustafaGaming_YT               Australia                      Lider      21/11/96    5873,69          7
+        38 lakeasha                       Katymaty                       Rusia                          Jugador    05/08/99    5892,62          7
+        39 amanuel                        itsDarkii                      Francia                        Jugador    10/02/99    5261,08          7
+        40 yamin                          Dante19                        Italia                         Jugador    11/01/99    5877,92          7
+        41 lamar                          OrlNi                          Corea del Sur                  Jugador    05/03/97    4659,73          7
+
+1 fila actualizadas.
+
+Confirmación terminada.
+
+ID_JUGADOR NOMBRE                         NICKNAME                       NACIONALIDAD                   ROL        FECHA_NA     SUELDO  ID_EQUIPO
+---------- ------------------------------ ------------------------------ ------------------------------ ---------- -------- ---------- ----------
+        37 markel                         MustafaGaming_YT               Australia                      Lider      21/11/96    5873,69          7
+        38 lakeasha                       Katymaty                       Rusia                          Jugador    05/08/99    5892,62          7
+        39 amanuel                        itsDarkii                      Francia                        Jugador    10/02/99    5261,08          7
+        40 yamin                          Dante19                        Italia                         Jugador    11/01/99    5877,92          7
+        41 lamar                          OrlNi                          Corea del Sur                  Jugador    05/03/97    4659,73          7
+*/
+
+--Actualizamos un jugador de un equipo que esté en una competicion CERRADA (FUNCIONA)
+SELECT * FROM JUGADOR
+WHERE ID_EQUIPO = 6;
+
+UPDATE JUGADOR
+SET NOMBRE = 'markel'
+WHERE id_jugador = 31;
+
+SELECT * FROM JUGADOR
+WHERE ID_EQUIPO = 6;
+
+/*Resultado:
+
+ID_JUGADOR NOMBRE                         NICKNAME                       NACIONALIDAD                   ROL        FECHA_NA     SUELDO  ID_EQUIPO
+---------- ------------------------------ ------------------------------ ------------------------------ ---------- -------- ---------- ----------
+        31 matalin                        I_AteTheDonut125               China                          Lider      06/03/03    6358,45          6
+        32 jalayna                        Xoky                           India                          Jugador    18/09/91    5556,55          6
+        33 gaila                          Ober_Zombie23                  Rusia                          Jugador    20/10/04    4627,08          6
+        34 srah                           Dagio20016                     India                          Jugador    04/07/00    5227,52          6
+        35 creedence                      SortaCurious                   Rusia                          Jugador    08/01/05    3705,63          6
+        36 anyea                          blazej2610                     Argentina                      Jugador    11/11/05     2067,5          6
+
+6 filas seleccionadas. 
+
+Error que empieza en la línea: 840 del comando -
+UPDATE JUGADOR
+SET NOMBRE = 'markel'
+WHERE id_jugador = 31
+Error en la línea de comandos : 840 Columna : 8
+Informe de error -
+Error SQL: ORA-20003: Al menos una competición asociada
+                al equipo está cerrada. No se pueden modificar los jugadores.
+ORA-06512: en "EQDAW03.NOMODIFICAR_JUGADOR", línea 54
+ORA-04088: error durante la ejecución del disparador 'EQDAW03.NOMODIFICAR_JUGADOR'
+
+ID_JUGADOR NOMBRE                         NICKNAME                       NACIONALIDAD                   ROL        FECHA_NA     SUELDO  ID_EQUIPO
+---------- ------------------------------ ------------------------------ ------------------------------ ---------- -------- ---------- ----------
+        31 matalin                        I_AteTheDonut125               China                          Lider      06/03/03    6358,45          6
+        32 jalayna                        Xoky                           India                          Jugador    18/09/91    5556,55          6
+        33 gaila                          Ober_Zombie23                  Rusia                          Jugador    20/10/04    4627,08          6
+        34 srah                           Dagio20016                     India                          Jugador    04/07/00    5227,52          6
+        35 creedence                      SortaCurious                   Rusia                          Jugador    08/01/05    3705,63          6
+        36 anyea                          blazej2610                     Argentina                      Jugador    11/11/05     2067,5          6
+
+6 filas seleccionadas.
+*/
+
+
+/*PROBAMOS EL TRIGGER MAXSALARIO_EQUIPO*/
+--Insertamos un jugador con un sueldo suficiente para que no salte error (FUNCIONA)
+/*Creamos un equipo con jugadores que tengan menos de 200k anuales
+
+INSERT INTO EQUIPO VALUES(DEFAULT,'PruebaTrigger6',
+    TO_DATE('01/01/85','DD/MM/YY'),'A','Rojo');
+
+SELECT ID_EQUIPO
+FROM EQUIPO
+WHERE NOM_EQUIPO = 'PruebaTrigger6';
+
+COMMIT;
+
+INSERT INTO JUGADOR VALUES(DEFAULT,'Luis','LuisGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),2000,40);
+INSERT INTO JUGADOR VALUES(DEFAULT,'David','DavidGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),2000,40);
+INSERT INTO JUGADOR VALUES(DEFAULT,'Zahir','ZaGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),2000,40);
+
+COMMIT;
+
+SELECT * FROM JUGADOR
+WHERE ID_EQUIPO = 40;
+
 DELETE FROM JUGADOR
-WHERE NICKNAME IN ('Puppygamer02', 'LunaEclipse135'
-, 'Laziness_', 'PayHra', 'JDinooPvP');
+WHERE ID_JUGADOR = 255;
 
-/*EJEMPLO DE UN MAL INSERT (SI TIENE MAS DE 6)*/
-INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
-VALUES (DEFAULT, 'Fnatic', TO_DATE('10-07-2004', 'DD-MM-YYYY'),
-       'https://i.imgur.com/dPoFDgH.png', 'Naranja');
+COMMIT;
 
-INSERT INTO JUGADOR
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('tristan', 'Froont', 'Rusia',
-        'Lider', TO_DATE('10-10-1994', 'DD-MM-YYYY'), 6177.99, 2);
-INSERT INTO JUGADOR
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('gabrille', '_BlackWinter_', 'Argentina',
-        'Jugador', TO_DATE('13-07-1994', 'DD-MM-YYYY'), 2345.42, 2);
-INSERT INTO JUGADOR
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('jevonte', 'Creepz630', 'Argentina',
-        'Jugador', TO_DATE('09-07-1998', 'DD-MM-YYYY'), 4184.01, 2);
-INSERT INTO JUGADOR
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('shaheim', 'dman1324', 'Corea del Sur',
-        'Jugador', TO_DATE('22-03-1996', 'DD-MM-YYYY'), 2062.05, 2);
-INSERT INTO JUGADOR
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('deeann', 'Jadco77', 'India',
-        'Jugador', TO_DATE('12-02-1991', 'DD-MM-YYYY'), 5949.87, 2);
-INSERT INTO JUGADOR
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('quran', 'Glamorousreese', 'Rusia',
-        'Jugador', TO_DATE('17-07-2005', 'DD-MM-YYYY'), 3075.35, 2);
-INSERT INTO JUGADOR
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('quranz', 'Glamorousreese', 'Rusia',
-        'Jugador', TO_DATE('17-07-2005', 'DD-MM-YYYY'), 7075.35, 2);
+*/
+SELECT SUM(SUELDO * 12)
+FROM JUGADOR
+WHERE id_equipo = 40;
 
+INSERT INTO JUGADOR VALUES(DEFAULT,'Lorena','LorenaGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),2000,40);
 
-/*PRUEBA PARA PROBAR EL SEGUNDO TRIGGER */
-/*EJEMPLO DE UN MAL INSERT*/
-INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
-VALUES (DEFAULT, 'Fnatic', TO_DATE('10-07-2004', 'DD-MM-YYYY'),
-       'https://i.imgur.com/dPoFDgH.png', 'Naranja');
+COMMIT;
 
-INSERT INTO JUGADOR
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('tristan', 'Froont', 'Rusia',
-        'Lider', TO_DATE('10-10-1994', 'DD-MM-YYYY'), 6177.99, 2);
+SELECT SUM(SUELDO * 12)
+FROM JUGADOR
+WHERE id_equipo = 40;
 
-INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
-VALUES (DEFAULT, 'Fnatic', TO_DATE('10-07-2004', 'DD-MM-YYYY'),
-       'https://i.imgur.com/dPoFDgH.png', 'Naranja');
+/*Resultado:
 
-INSERT INTO JUGADOR
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('tristan', 'Froont', 'Rusia',
-        'Lider', TO_DATE('10-10-1994', 'DD-MM-YYYY'), 6177.99, 2);
+SUM(SUELDO*12)
+--------------
+         72000
 
-INSERT INTO JORNADA (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 1, TO_DATE('02-05-2024', 'DD-MM-YYYY'), 1);
+1 fila insertadas.
 
-INSERT INTO ENFRENTAMIENTO (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
-RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('02-05-2024 15:34', 'DD-MM-YYYY HH24:MI'),
-1, 2, 1, 2, 1);
+Confirmación terminada.
 
+SUM(SUELDO*12)
+--------------
+         96000
+*/
 
-/*PRUEBA PARA EL TERCER TRIGGER*/
-/*EJEMPLO DE UN MAL INSERT*/
-INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
-VALUES (DEFAULT, 'Team Liquid', TO_DATE('15-09-2000', 'DD-MM-YYYY'),
-       'https://i.imgur.com/nuYSo51.png', 'Azul');
+--Insertamos un jugador con un sueldo para que salte error (FUNCIONA)
+SELECT SUM(SUELDO * 12)
+FROM JUGADOR
+WHERE id_equipo = 40;
+--rollback commit
+INSERT INTO JUGADOR VALUES(DEFAULT,'Ibai','Yalero','Colombia','Jugador',
+    TO_DATE('01/04/98','DD/MM/YY'),50000,40);
 
-INSERT INTO COMPETICION (ID_COMPETICION, NOMBRE_COM,
- 	FECHA_INICIO, FECHA_FIN, ETAPA, ID_JUEGO, ID_EQUIPO_GANADOR)
-VALUES (DEFAULT, 'CS2 MAJOR COPENHAGEN 2024', 
-		TO_DATE('17-03-2024', 'DD-MM-YYYY'), 
-		TO_DATE('31-03-2024', 'DD-MM-YYYY'), 'C', 3, NULL);       
-UPDATE EQUIPO E
-SET E.NOM_EQUIPO = 'Nuevo Nombre'
-WHERE EXISTS (
-    SELECT 1
-    FROM COMPETICION C
-    JOIN EQUIPO_COMPETICION EC ON C.ID_COMPETICION = EC.ID_COMPETICION
-    WHERE EC.ID_EQUIPO = E.ID_EQUIPO
-    AND C.ETAPA = 'A'
-);
+SELECT SUM(SUELDO * 12)
+FROM JUGADOR
+WHERE id_equipo = 40;
 
-/*EJEMPLO DE UN BUEN INSER*/
-INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
-VALUES (DEFAULT, 'Fnatic', TO_DATE('10-07-2004', 'DD-MM-YYYY'),
-       'https://i.imgur.com/dPoFDgH.png', 'Naranja');
+/*Resultado:
 
-INSERT INTO COMPETICION (ID_COMPETICION, NOMBRE_COM,
- 	FECHA_INICIO, FECHA_FIN, ETAPA, ID_JUEGO, ID_EQUIPO_GANADOR)
-VALUES (DEFAULT, 'CS2 MAJOR COPENHAGEN 2024', 
-		TO_DATE('17-03-2024', 'DD-MM-YYYY'), 
-		TO_DATE('31-03-2024', 'DD-MM-YYYY'), 'A', 3, NULL);       
-UPDATE EQUIPO E
-SET E.NOM_EQUIPO = 'Nuevo Nombre'
-WHERE EXISTS (
-    SELECT 1
-    FROM COMPETICION C
-    JOIN EQUIPO_COMPETICION EC ON C.ID_COMPETICION = EC.ID_COMPETICION
-    WHERE EC.ID_EQUIPO = E.ID_EQUIPO
-    AND C.ETAPA = 'A'
-);
-/*PRUEBA PARA EL CUARTO TRIGGER*/
-/*EJEMPLO DE UN MAL INSERT*/
-INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
-VALUES (DEFAULT, 'Team Liquid', TO_DATE('15-09-2000', 'DD-MM-YYYY'),
-       'https://i.imgur.com/nuYSo51.png', 'Azul');
-       
-INSERT INTO JUGADOR
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('lidiya', 'Squeezy_Cow', 'Francia', 'Jugador',
-TO_DATE('03-08-1997', 'DD-MM-YYYY'), 4076.86, 1);
-INSERT INTO JUGADOR
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('kaelan', 'JDinooPvP', 'Reino Unido',
-        'Jugador', TO_DATE('23-04-2006', 'DD-MM-YYYY'), 4335.61, 1);
+SUM(SUELDO*12)
+--------------
+         96000
 
-INSERT INTO COMPETICION (ID_COMPETICION, NOMBRE_COM,
- 	FECHA_INICIO, FECHA_FIN, ETAPA, ID_JUEGO, ID_EQUIPO_GANADOR)
-VALUES (DEFAULT, 'CS2 MAJOR COPENHAGEN 2024', 
-		TO_DATE('17-03-2024', 'DD-MM-YYYY'), 
-		TO_DATE('31-03-2024', 'DD-MM-YYYY'), 'C', 3, NULL);
-UPDATE JUGADOR J
-SET J.NOMBRE = 'Nuevo Nombre'
-WHERE EXISTS (
-    SELECT 1
-    FROM COMPETICION C
-    JOIN EQUIPO_COMPETICION EC ON C.ID_COMPETICION = EC.ID_COMPETICION
-    WHERE EC.ID_EQUIPO = J.ID_EQUIPO
-    AND C.ETAPA = 'A'
-);
-/*EJEMPLO DE UN BUEN INSER*/
-INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
-VALUES (DEFAULT, 'Fnatic', TO_DATE('10-07-2004', 'DD-MM-YYYY'),
-       'https://i.imgur.com/dPoFDgH.png', 'Naranja');
-       
-INSERT INTO JUGADOR
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('tristan', 'Froont', 'Rusia',
-        'Lider', TO_DATE('10-10-1994', 'DD-MM-YYYY'), 6177.99, 2);
-INSERT INTO JUGADOR
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('gabrille', '_BlackWinter_', 'Argentina',
-        'Jugador', TO_DATE('13-07-1994', 'DD-MM-YYYY'), 2345.42, 2);
+Error que empieza en la línea: 1.034 del comando -
+INSERT INTO JUGADOR VALUES(DEFAULT,'Ibai','Yalero','Colombia','Jugador',
+    TO_DATE('01/04/98','DD/MM/YY'),50000,40)
+Error en la línea de comandos : 1.034 Columna : 13
+Informe de error -
+Error SQL: ORA-20001: El salario del equipo es más
+                de 200000
+ORA-06512: en "EQDAW03.MAXSALARIO_EQUIPO", línea 11
+ORA-04088: error durante la ejecución del disparador 'EQDAW03.MAXSALARIO_EQUIPO'
 
-INSERT INTO COMPETICION (ID_COMPETICION, NOMBRE_COM,
- 	FECHA_INICIO, FECHA_FIN, ETAPA, ID_JUEGO, ID_EQUIPO_GANADOR)
-VALUES (DEFAULT, 'CS2 MAJOR COPENHAGEN 2024', 
-		TO_DATE('17-03-2024', 'DD-MM-YYYY'), 
-		TO_DATE('31-03-2024', 'DD-MM-YYYY'), 'A', 3, NULL);
-UPDATE JUGADOR J
-SET J.NOMBRE = 'Nuevo Nombre'
-WHERE EXISTS (
-    SELECT 1
-    FROM COMPETICION C
-    JOIN EQUIPO_COMPETICION EC ON C.ID_COMPETICION = EC.ID_COMPETICION
-    WHERE EC.ID_EQUIPO = J.ID_EQUIPO
-    AND C.ETAPA = 'A'
-);
+SUM(SUELDO*12)
+--------------
+         96000
 
-/*PRUEBA PARA EL QUINTO TRIGGER*/
-/*EJEMPLO DE UN MAL INSERT*/
-INSERT INTO EQUIPO (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
-VALUES (DEFAULT, 'Team Liquid', TO_DATE('15-09-2000', 'DD-MM-YYYY'),
-       'https://i.imgur.com/nuYSo51.png', 'Azul');
+*/
 
-INSERT INTO JUGADOR
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('haileyann', 'Raptorella', 'Japón',
-        'Lider', TO_DATE('20-08-1997', 'DD-MM-YYYY'), 001.69, 1);
-INSERT INTO JUGADOR
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('kaelan', 'JDinooPvP', 'Reino Unido',
-        'Jugador', TO_DATE('23-04-2006', 'DD-MM-YYYY'), 335.61, 1);
-INSERT INTO JUGADOR
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('matalyn', 'Puppygamer02', 'Corea del Sur',
-        'Jugador', TO_DATE('08-09-1993', 'DD-MM-YYYY'), 928.08, 1);
-INSERT INTO JUGADOR
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('anyi', 'LunaEclipse135', 'Estados Unidos',
-        'Jugador', TO_DATE('09-01-2001', 'DD-MM-YYYY'), 903.51, 1);
-INSERT INTO JUGADOR
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('demarrion', 'Laziness_', 'Australia',
-        'Jugador', TO_DATE('29-12-1990', 'DD-MM-YYYY'), 975.62, 1);
-INSERT INTO JUGADOR
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('abril', 'PayHra', 'India',
-        'Jugador', TO_DATE('07-08-1996', 'DD-MM-YYYY'), 677.36, 1);
+--Actualizamos el sueldo de un jugador para que no salte error (NO FUNCIONA)
+SELECT ID_JUGADOR, SUELDO
+FROM JUGADOR
+WHERE id_equipo = 40;
+
+SELECT SUM(SUELDO * 12)
+FROM JUGADOR
+WHERE id_equipo = 40;
+
+UPDATE JUGADOR
+SET sueldo = 3000
+WHERE id_jugador = 233;
+
+commit;
+
+SELECT SUM(SUELDO * 12)
+FROM JUGADOR
+WHERE id_equipo = 40;
+
+SELECT ID_JUGADOR, SUELDO
+FROM JUGADOR
+WHERE id_equipo = 40;
+
+/*Resultado:
 
 
-/*PRUEBA PARA EL SEXTO TRIGGER */
+
+*/
+
+--Actualizamos el sueldo de un jugador para que salte error (NO FUNCIONA)
+UPDATE JUGADOR
+SET sueldo = 1
+WHERE id_jugador = 1;
+
+/*Resultado:
+
+
+
+*/
+
+
+/*PRUEBA PARA EL TRIGGER ACTUALIZAR_RESULTADOS*/
 SELECT *
 FROM EQUIPO_COMPETICION
 Where ID_COMPETICION = 1
