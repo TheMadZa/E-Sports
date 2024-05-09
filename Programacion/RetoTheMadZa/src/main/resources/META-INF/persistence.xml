@@ -5,20 +5,17 @@
              version="3.0">
   <persistence-unit name="default">
 
-      <class>Modelo.Competicion</class>
-      <class>Modelo.Enfrentamiento</class>
-      <class>Modelo.Equipo</class>
-      <class>Modelo.EquipoCompeticion</class>
-      <class>Modelo.Jornada</class>
-      <class>Modelo.Juego</class>
-      <class>Modelo.Jugador</class>
-      <class>Modelo.Patrocinador</class>
-      <class>Modelo.PatrocinadorEquipo</class>
-      <class>Modelo.Staff</class>
-      <class>Modelo.Usuario</class>
-      <class>Modelo.VistaEnfrentamientosJornada</class>
-      <class>Modelo.VistaEquiposCompeticion</class>
-      <class>Modelo.VistaJugadoresEquipos</class>
+      <class>modelo.Competicion</class>
+      <class>modelo.Enfrentamiento</class>
+      <class>modelo.Equipo</class>
+      <class>modelo.EquipoCompeticion</class>
+      <class>modelo.Jornada</class>
+      <class>modelo.Juego</class>
+      <class>modelo.Jugador</class>
+      <class>modelo.Patrocinador</class>
+      <class>modelo.PatrocinadorEquipo</class>
+      <class>modelo.Staff</class>
+      <class>modelo.Usuario</class>
       <properties>
           <property name="toplink.jdbc.url" value="jdbc:oracle:thin:@srvoracle:1521:orcl"/>
           <property name="toplink.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
