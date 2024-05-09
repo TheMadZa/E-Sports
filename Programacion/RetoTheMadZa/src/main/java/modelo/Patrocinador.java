@@ -2,28 +2,24 @@ package modelo;
 
 import jakarta.persistence.*;
 
-import java.util.Collection;
-
 @Entity
 public class Patrocinador {
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "ID_PATROCINADOR")
-    private byte idPatrocinador;
-    @Basic
-    @Column(name = "NOMBRE")
-    private String nombre;
-    @OneToMany(mappedBy = "patrocinadorByIdPatrocinador")
-    private Collection<PatrocinadorEquipo> patrocinadorEquiposByIdPatrocinador;
+    @jakarta.persistence.Column(name = "ID_PATROCINADOR")
+    private int idPatrocinador;
 
-    public byte getIdPatrocinador() {
+    public int getIdPatrocinador() {
         return idPatrocinador;
     }
 
-    public void setIdPatrocinador(byte idPatrocinador) {
+    public void setIdPatrocinador(int idPatrocinador) {
         this.idPatrocinador = idPatrocinador;
     }
+
+    @Basic
+    @Column(name = "NOMBRE")
+    private String nombre;
 
     public String getNombre() {
         return nombre;
@@ -48,16 +44,8 @@ public class Patrocinador {
 
     @Override
     public int hashCode() {
-        int result = (int) idPatrocinador;
+        int result = idPatrocinador;
         result = 31 * result + (nombre != null ? nombre.hashCode() : 0);
         return result;
-    }
-
-    public Collection<PatrocinadorEquipo> getPatrocinadorEquiposByIdPatrocinador() {
-        return patrocinadorEquiposByIdPatrocinador;
-    }
-
-    public void setPatrocinadorEquiposByIdPatrocinador(Collection<PatrocinadorEquipo> patrocinadorEquiposByIdPatrocinador) {
-        this.patrocinadorEquiposByIdPatrocinador = patrocinadorEquiposByIdPatrocinador;
     }
 }

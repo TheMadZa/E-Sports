@@ -1,6 +1,4 @@
-package vista;
+package Vista;
 
-import javax.swing.*;
-
-public class VentanaInicial extends JFrame {
+public class ventanaInicial {
 }

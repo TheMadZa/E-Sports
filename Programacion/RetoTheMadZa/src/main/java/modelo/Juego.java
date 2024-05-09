@@ -3,34 +3,25 @@ package modelo;
 import jakarta.persistence.*;
 
 import java.sql.Date;
-import java.util.Collection;
 
 @Entity
 public class Juego {
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "ID_JUEGO")
-    private byte idJuego;
-    @Basic
-    @Column(name = "NOMBRE")
-    private String nombre;
-    @Basic
-    @Column(name = "EMPRESA")
-    private String empresa;
-    @Basic
-    @Column(name = "FECHA_LANZAMIENTO")
-    private Date fechaLanzamiento;
-    @OneToMany(mappedBy = "juegoByIdJuego")
-    private Collection<Competicion> competicionsByIdJuego;
+    @jakarta.persistence.Column(name = "ID_JUEGO")
+    private int idJuego;
 
-    public byte getIdJuego() {
+    public int getIdJuego() {
         return idJuego;
     }
 
-    public void setIdJuego(byte idJuego) {
+    public void setIdJuego(int idJuego) {
         this.idJuego = idJuego;
     }
+
+    @Basic
+    @Column(name = "NOMBRE")
+    private String nombre;
 
     public String getNombre() {
         return nombre;
@@ -40,6 +31,10 @@ public class Juego {
         this.nombre = nombre;
     }
 
+    @Basic
+    @Column(name = "EMPRESA")
+    private String empresa;
+
     public String getEmpresa() {
         return empresa;
     }
@@ -47,6 +42,10 @@ public class Juego {
     public void setEmpresa(String empresa) {
         this.empresa = empresa;
     }
+
+    @Basic
+    @Column(name = "FECHA_LANZAMIENTO")
+    private Date fechaLanzamiento;
 
     public Date getFechaLanzamiento() {
         return fechaLanzamiento;
@@ -74,18 +73,10 @@ public class Juego {
 
     @Override
     public int hashCode() {
-        int result = (int) idJuego;
+        int result = idJuego;
         result = 31 * result + (nombre != null ? nombre.hashCode() : 0);
         result = 31 * result + (empresa != null ? empresa.hashCode() : 0);
         result = 31 * result + (fechaLanzamiento != null ? fechaLanzamiento.hashCode() : 0);
         return result;
-    }
-
-    public Collection<Competicion> getCompeticionsByIdJuego() {
-        return competicionsByIdJuego;
-    }
-
-    public void setCompeticionsByIdJuego(Collection<Competicion> competicionsByIdJuego) {
-        this.competicionsByIdJuego = competicionsByIdJuego;
     }
 }
