@@ -41,8 +41,7 @@ public class VentanaInicial extends JFrame {
 
         try {
             // Cargar la imagen original
-            URL imageUrl = new URL("https://raw.githubusercontent.com/TheMadZa/E-Sports/main/Programacion" +
-                    "/RetoTheMadZa/src/main/java/vista/Imagenes/TheMadZaLogoSimple.png");
+            URL imageUrl = new URL("https://github.com/TheMadZa/E-Sports/blob/main/Programacion/RetoTheMadZa/src/main/java/Vista/Imagenes/TheMadZaLogoSimple.png?raw=true");
             BufferedImage imagenOriginal = ImageIO.read(imageUrl);
 
             // Escalar la imagen a un tamaño de 150x150 usando ImgScalr
