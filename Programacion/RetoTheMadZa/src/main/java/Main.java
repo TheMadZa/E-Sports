@@ -6,6 +6,8 @@ import Controlador.ControladorPrincipal;
  */
 public class Main {
 
-    ControladorPrincipal c = new ControladorPrincipal();
+    public static void main(String[] args) {
+        ControladorPrincipal c = new ControladorPrincipal();
+    }
 
 }
