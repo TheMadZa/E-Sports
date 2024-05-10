@@ -6,6 +6,7 @@ import java.sql.Date;
 
 @Entity
 public class Jugador {
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "ID_JUGADOR")
@@ -34,6 +35,10 @@ public class Jugador {
 
     public int getIdJugador() {
         return idJugador;
+    }
+
+    public void setIdJugador(byte idJugador) {
+        this.idJugador = idJugador;
     }
 
     public void setIdJugador(int idJugador) {

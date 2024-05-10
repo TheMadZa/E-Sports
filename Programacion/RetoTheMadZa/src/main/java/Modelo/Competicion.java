@@ -6,10 +6,29 @@ import java.sql.Date;
 
 @Entity
 public class Competicion {
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @jakarta.persistence.Column(name = "ID_COMPETICION")
+    @Column(name = "ID_COMPETICION")
     private int idCompeticion;
+    @Basic
+    @Column(name = "NOMBRE_COM")
+    private String nombreCom;
+    @Basic
+    @Column(name = "FECHA_INICIO")
+    private Date fechaInicio;
+    @Basic
+    @Column(name = "FECHA_FIN")
+    private Date fechaFin;
+    @Basic
+    @Column(name = "ETAPA")
+    private String etapa;
+    @ManyToOne
+    @JoinColumn(name = "ID_JUEGO", referencedColumnName = "ID_JUEGO", nullable = false)
+    private Juego juegoByIdJuego;
+    @ManyToOne
+    @JoinColumn(name = "ID_EQUIPO_GANADOR", referencedColumnName = "ID_EQUIPO")
+    private Equipo equipoByIdEquipoGanador;
 
     public int getIdCompeticion() {
         return idCompeticion;
@@ -19,10 +38,6 @@ public class Competicion {
         this.idCompeticion = idCompeticion;
     }
 
-    @Basic
-    @Column(name = "NOMBRE_COM")
-    private String nombreCom;
-
     public String getNombreCom() {
         return nombreCom;
     }
@@ -30,10 +45,6 @@ public class Competicion {
     public void setNombreCom(String nombreCom) {
         this.nombreCom = nombreCom;
     }
-
-    @Basic
-    @Column(name = "FECHA_INICIO")
-    private Date fechaInicio;
 
     public Date getFechaInicio() {
         return fechaInicio;
@@ -43,10 +54,6 @@ public class Competicion {
         this.fechaInicio = fechaInicio;
     }
 
-    @Basic
-    @Column(name = "FECHA_FIN")
-    private Date fechaFin;
-
     public Date getFechaFin() {
         return fechaFin;
     }
@@ -54,10 +61,6 @@ public class Competicion {
     public void setFechaFin(Date fechaFin) {
         this.fechaFin = fechaFin;
     }
-
-    @Basic
-    @Column(name = "ETAPA")
-    private String etapa;
 
     public String getEtapa() {
         return etapa;
@@ -91,5 +94,21 @@ public class Competicion {
         result = 31 * result + (fechaFin != null ? fechaFin.hashCode() : 0);
         result = 31 * result + (etapa != null ? etapa.hashCode() : 0);
         return result;
+    }
+
+    public Juego getJuegoByIdJuego() {
+        return juegoByIdJuego;
+    }
+
+    public void setJuegoByIdJuego(Juego juegoByIdJuego) {
+        this.juegoByIdJuego = juegoByIdJuego;
+    }
+
+    public Equipo getEquipoByIdEquipoGanador() {
+        return equipoByIdEquipoGanador;
+    }
+
+    public void setEquipoByIdEquipoGanador(Equipo equipoByIdEquipoGanador) {
+        this.equipoByIdEquipoGanador = equipoByIdEquipoGanador;
     }
 }
