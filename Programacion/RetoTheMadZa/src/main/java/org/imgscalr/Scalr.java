@@ -687,7 +687,8 @@ public class Scalr {
 				throw new ImagingOpException(
 						"BufferedImageOp ["
 								+ op.toString()
-								+ "] getBounds2D(src) returned null bounds for the target image; this should not happen and indicates a problem with application of this type of op.");
+								+ "] getBounds2D(src) returned null bounds for the target image; this should not happen"
+								+ " and indicates a problem with application of this type of op.");
 
 			/*
 			 * We must manually create the target image; we cannot rely on the
@@ -1027,7 +1028,8 @@ public class Scalr {
 
 		if (DEBUG)
 			log(0,
-					"Padding Image from [originalWidth=%d, originalHeight=%d, padding=%d] to [newWidth=%d, newHeight=%d]...",
+					"Padding Image from [originalWidth=%d, originalHeight=%d, padding=%d] to [newWidth=%d, " +
+							"newHeight=%d]...",
 					srcWidth, srcHeight, padding, newWidth, newHeight);
 
 		boolean colorHasAlpha = (color.getAlpha() != 255);
@@ -1602,7 +1604,8 @@ public class Scalr {
 
 		if (DEBUG)
 			log(0,
-					"Resizing Image [size=%dx%d, resizeMode=%s, orientation=%s, ratio(H/W)=%f] to [targetSize=%dx%d]",
+					"Resizing Image [size=%dx%d, resizeMode=%s, orientation=%s, ratio(H/W)=%f] to " +
+							"[targetSize=%dx%d]",
 					currentWidth, currentHeight, resizeMode,
 					(ratio <= 1 ? "Landscape/Square" : "Portrait"), ratio,
 					targetWidth, targetHeight);
