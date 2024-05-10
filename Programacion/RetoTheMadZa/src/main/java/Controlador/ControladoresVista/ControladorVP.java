@@ -13,8 +13,10 @@ public class ControladorVP {
         this.cv = cv;
     }
 
-    public void crearMostrar() throws MalformedURLException {
+    public void crearMostrar() {
         vi = new VentanaInicial();
+
+        // TODO : aquí estarían los action listeners de los botones y demás.
 
         vi.setVisible(true);
     }

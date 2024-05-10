@@ -21,10 +21,10 @@ public class EquipoCompeticion {
     @Column(name = "PUNTOS")
     private int puntos;
     @ManyToOne
-    @JoinColumn(name = "ID_EQUIPO", referencedColumnName = "ID_EQUIPO", nullable = false)
+    @JoinColumn(name = "ID_EQUIPO", referencedColumnName = "ID_EQUIPO", nullable = false, insertable = false, updatable = false)
     private Equipo equipoByIdEquipo;
     @ManyToOne
-    @JoinColumn(name = "ID_COMPETICION", referencedColumnName = "ID_COMPETICION", nullable = false)
+    @JoinColumn(name = "ID_COMPETICION", referencedColumnName = "ID_COMPETICION", nullable = false, insertable = false, updatable = false)
     private Competicion competicionByIdCompeticion;
 
     public int getIdEquipo() {

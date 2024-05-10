@@ -10,7 +10,7 @@ public class ControladorPrincipal {
 
     public ControladorPrincipal() {
         cv = new ControladorVista(this);
-        cm = new ControladorModelo(this);
+        cm = new ControladorModelo();
     }
 
     //COMPETICION

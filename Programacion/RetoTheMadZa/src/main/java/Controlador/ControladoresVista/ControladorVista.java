@@ -30,6 +30,6 @@ public class ControladorVista {
         cvpa = new ControladorVPatrocinadores(this);
         cvs = new ControladorVStaff(this);
 
-        //cvp.crearMostrar();
+        cvp.crearMostrar();
     }
 }
