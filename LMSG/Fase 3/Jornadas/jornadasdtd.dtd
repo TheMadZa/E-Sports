@@ -1,0 +1,21 @@
+<!-- Este seria el DTD -->
+<!-- Definimos el elemento padre , sus atributos y elementos -->
+<!ELEMENT jornadas (jornada+)>
+<!ATTLIST jornada id CDATA #REQUIRED>
+<!-- Definimos los atributos para poner enlazar el xsd -->
+<!ATTLIST jornadas xmlns:xsi CDATA #REQUIRED>
+<!ATTLIST jornadas xsi:noNamespaceSchemaLocation CDATA #REQUIRED>
+<!ELEMENT jornada (numero_jornada+,fecha_jornada+,competicion-info+ )>
+<!ELEMENT numero_jornada (#PCDATA)>
+<!ELEMENT fecha_jornada (#PCDATA)>
+<!-- Definimos otro elmento el cual contiene informacion-->
+<!ELEMENT competicion-info (competicion+)>
+<!-- Definimos otro elemento con sus atributos y elementos -->
+<!ELEMENT competicion (nombre-competicion+, fecha-inicio+,fecha-fin+,etapa+,juego+,ganador?)>
+<!ATTLIST competicion id CDATA #REQUIRED>
+<!ELEMENT nombre-competicion (#PCDATA)>
+<!ELEMENT fecha-inicio (#PCDATA)>
+<!ELEMENT fecha-fin (#PCDATA)>
+<!ELEMENT etapa (#PCDATA)>
+<!ELEMENT juego (#PCDATA)>
+<!ELEMENT ganador (#PCDATA)>
