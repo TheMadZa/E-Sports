@@ -51,4 +51,12 @@ public class Patrocinador {
         result = 31 * result + (nombre != null ? nombre.hashCode() : 0);
         return result;
     }
+
+    public Patrocinador() {
+    }
+
+    public Patrocinador(int idPatrocinador, String nombre) {
+        this.idPatrocinador = idPatrocinador;
+        this.nombre = nombre;
+    }
 }

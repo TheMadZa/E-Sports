@@ -60,4 +60,13 @@ public class Usuario {
         result = 31 * result + (tipo != null ? tipo.hashCode() : 0);
         return result;
     }
+
+    public Usuario() {
+    }
+
+    public Usuario(String nomUsuario, String contrasena, String tipo) {
+        this.nomUsuario = nomUsuario;
+        this.contrasena = contrasena;
+        this.tipo = tipo;
+    }
 }

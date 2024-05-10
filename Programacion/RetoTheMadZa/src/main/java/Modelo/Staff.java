@@ -103,4 +103,16 @@ public class Staff {
     public void setEquipoByIdEquipo(Equipo equipoByIdEquipo) {
         this.equipoByIdEquipo = equipoByIdEquipo;
     }
+
+    public Staff() {
+    }
+
+    public Staff(int idStaff, String puesto, String nombre, Date fechaNac, int sueldo, Equipo equipoByIdEquipo) {
+        this.idStaff = idStaff;
+        this.puesto = puesto;
+        this.nombre = nombre;
+        this.fechaNac = fechaNac;
+        this.sueldo = sueldo;
+        this.equipoByIdEquipo = equipoByIdEquipo;
+    }
 }

@@ -3,6 +3,7 @@ package Modelo;
 import jakarta.persistence.*;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.Collection;
 
 @Entity
@@ -113,5 +114,28 @@ public class Equipo {
 
     public void setStaffByIdEquipo(Collection<Staff> staffByIdEquipo) {
         this.staffByIdEquipo = staffByIdEquipo;
+    }
+
+    public Equipo() {
+    }
+
+    public Equipo(int idEquipo, String nomEquipo, Date fechaFundacion, String logo, String color) {
+        this.idEquipo = idEquipo;
+        this.nomEquipo = nomEquipo;
+        this.fechaFundacion = fechaFundacion;
+        this.logo = logo;
+        this.color = color;
+    }
+
+    public void setJugador(Jugador j){
+        if (jugadorsByIdEquipo == null)
+            jugadorsByIdEquipo = new ArrayList<>();
+        jugadorsByIdEquipo.add(j);
+    }
+
+    public void setStaff(Staff s){
+        if (staffByIdEquipo == null)
+            staffByIdEquipo = new ArrayList<>();
+        staffByIdEquipo.add(s);
     }
 }
