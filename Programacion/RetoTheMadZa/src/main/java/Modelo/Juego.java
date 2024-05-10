@@ -80,4 +80,14 @@ public class Juego {
         result = 31 * result + (fechaLanzamiento != null ? fechaLanzamiento.hashCode() : 0);
         return result;
     }
+
+    public Juego() {
+    }
+
+    public Juego(int idJuego, String nombre, String empresa, Date fechaLanzamiento) {
+        this.idJuego = idJuego;
+        this.nombre = nombre;
+        this.empresa = empresa;
+        this.fechaLanzamiento = fechaLanzamiento;
+    }
 }

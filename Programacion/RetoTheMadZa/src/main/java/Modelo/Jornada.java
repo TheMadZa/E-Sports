@@ -3,6 +3,7 @@ package Modelo;
 import jakarta.persistence.*;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.Collection;
 
 @Entity
@@ -92,5 +93,21 @@ public class Jornada {
 
     public void setCompeticionByIdCompeticion(Competicion competicionByIdCompeticion) {
         this.competicionByIdCompeticion = competicionByIdCompeticion;
+    }
+
+    public Jornada() {
+    }
+
+    public Jornada(int idJornada, int numJornada, Date fechaJornada, Competicion competicionByIdCompeticion) {
+        this.idJornada = idJornada;
+        this.numJornada = numJornada;
+        this.fechaJornada = fechaJornada;
+        this.competicionByIdCompeticion = competicionByIdCompeticion;
+    }
+
+    public void setEnfrentamiento(Enfrentamiento e){
+        if (enfrentamientosByIdJornada == null)
+            enfrentamientosByIdJornada = new ArrayList<>();
+        enfrentamientosByIdJornada.add(e);
     }
 }

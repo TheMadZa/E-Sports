@@ -130,4 +130,19 @@ public class Jugador {
     public void setEquipoByIdEquipo(Equipo equipoByIdEquipo) {
         this.equipoByIdEquipo = equipoByIdEquipo;
     }
+
+    public Jugador() {
+    }
+
+    public Jugador(int idJugador, String nombre, String nickname, String nacionalidad, String rol, Date fechaNac,
+                   int sueldo, Equipo equipoByIdEquipo) {
+        this.idJugador = idJugador;
+        this.nombre = nombre;
+        this.nickname = nickname;
+        this.nacionalidad = nacionalidad;
+        this.rol = rol;
+        this.fechaNac = fechaNac;
+        this.sueldo = sueldo;
+        this.equipoByIdEquipo = equipoByIdEquipo;
+    }
 }

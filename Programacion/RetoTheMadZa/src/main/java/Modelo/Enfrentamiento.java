@@ -79,7 +79,8 @@ public class Enfrentamiento {
         if (idEnfrentamiento != that.idEnfrentamiento) return false;
         if (resultado1 != that.resultado1) return false;
         if (resultado2 != that.resultado2) return false;
-        if (horaEnfrentamiento != null ? !horaEnfrentamiento.equals(that.horaEnfrentamiento) : that.horaEnfrentamiento != null)
+        if (horaEnfrentamiento != null ? !horaEnfrentamiento.equals(that.horaEnfrentamiento) :
+                that.horaEnfrentamiento != null)
             return false;
 
         return true;
@@ -115,6 +116,20 @@ public class Enfrentamiento {
     }
 
     public void setJornadaByIdJornada(Jornada jornadaByIdJornada) {
+        this.jornadaByIdJornada = jornadaByIdJornada;
+    }
+
+    public Enfrentamiento() {
+    }
+
+    public Enfrentamiento(int idEnfrentamiento, Timestamp horaEnfrentamiento, int resultado1, int resultado2,
+                          Equipo equipoByIdEquipo1, Equipo equipoByIdEquipo2, Jornada jornadaByIdJornada) {
+        this.idEnfrentamiento = idEnfrentamiento;
+        this.horaEnfrentamiento = horaEnfrentamiento;
+        this.resultado1 = resultado1;
+        this.resultado2 = resultado2;
+        this.equipoByIdEquipo1 = equipoByIdEquipo1;
+        this.equipoByIdEquipo2 = equipoByIdEquipo2;
         this.jornadaByIdJornada = jornadaByIdJornada;
     }
 }
