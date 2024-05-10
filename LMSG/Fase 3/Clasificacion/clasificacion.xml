@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Fichero para clasificacion -->
+<!-- Enlazamos el dtd -->
+<!DOCTYPE clasificacion SYSTEM "clasificaciondtd.dtd">
+<!-- Enlazamos el xsd -->
+<clasificacion id="1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="clasificacionxsd.xsd">
+    <nombre_competicion>CS2 MAJOR COPENHAGEN 2024</nombre_competicion>
+    <nombre_juego>Counter-Strike series</nombre_juego>
+    <equipo id_equipo="17">
+        <nombre_equipo>Team Heretics</nombre_equipo>
+        <victorias>9</victorias>
+        <puntos>45</puntos>
+    </equipo>
+    <equipo id_equipo="3">
+        <nombre_equipo>Evil Geniuses</nombre_equipo>
+        <victorias>8</victorias>
+        <puntos>18</puntos>
+    </equipo>
+    <equipo id_equipo="20">
+        <nombre_equipo>INTZ</nombre_equipo>
+        <victorias>6</victorias>
+        <puntos>21</puntos>
+    </equipo>
+</clasificacion>

@@ -1,0 +1,15 @@
+<!-- Este seria el DTD -->
+<!-- Definimos el elemento padre , sus atributos y elementos -->
+<!ELEMENT clasificacion (nombre_competicion+, nombre_juego+, equipo+)>
+<!ATTLIST clasificacion id CDATA #REQUIRED>
+<!-- Definimos los atributos para poner enlazar el xsd -->
+<!ATTLIST clasificacion xmlns:xsi CDATA #REQUIRED>
+<!ATTLIST clasificacion xsi:noNamespaceSchemaLocation CDATA #REQUIRED>
+<!ELEMENT nombre_competicion (#PCDATA)>
+<!ELEMENT nombre_juego (#PCDATA)>
+<!-- Definimos otro elemento con sus atributos y elementos -->
+<!ELEMENT equipo (nombre_equipo+, victorias+, puntos+)>
+<!ATTLIST equipo id_equipo CDATA #REQUIRED>
+<!ELEMENT nombre_equipo (#PCDATA)>
+<!ELEMENT victorias (#PCDATA)>
+<!ELEMENT puntos (#PCDATA)>
