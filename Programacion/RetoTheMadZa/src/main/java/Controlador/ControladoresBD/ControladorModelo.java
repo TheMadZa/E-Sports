@@ -16,25 +16,22 @@ public class ControladorModelo {
     private ControladorJugadores cjug;
     private ControladorPatrocinadores cp;
     private ControladorStaff cs;
-    private ControladorPrincipal c;
     private EntityManagerFactory emf;
     private EntityManager em;
-    private EntityTransaction transaction;
 
-    public ControladorModelo(ControladorPrincipal c) {
-        this.c = c;
+    public ControladorModelo() {
 
         emf = Persistence.createEntityManagerFactory("default");
         em = emf.createEntityManager();
-        transaction = em.getTransaction();
+        EntityTransaction transaction = em.getTransaction();
 
-        this.cc = new ControladorCompeticiones(this);
-        this.ce = new ControladorEquipos(this);
-        this.cjo = new ControladorJornadas(this);
-        this.cjue = new ControladorJuegos(this);
-        this.cjug = new ControladorJugadores(this);
-        this.cp = new ControladorPatrocinadores(this);
-        this.cs = new ControladorStaff(this);
+        cc = new ControladorCompeticiones(this);
+        ce = new ControladorEquipos(this);
+        cjo = new ControladorJornadas(this);
+        cjue = new ControladorJuegos(this);
+        cjug = new ControladorJugadores(this);
+        cp = new ControladorPatrocinadores(this);
+        cs = new ControladorStaff(this);
     }
 
     //COMPETICION
