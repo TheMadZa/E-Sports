@@ -1,0 +1,13 @@
+<!-- Este seria el DTD -->
+<!-- Definimos el elemento padre sus atributos y elementos -->
+<!ELEMENT jornadas (jornada+)>
+<!ELEMENT jornada (idJornada, numJornada, fechaJornada, idCompeticion, enfrentamientos)>
+<!ELEMENT idJornada (#PCDATA)>
+<!ELEMENT numJornada (#PCDATA)>
+<!ELEMENT fechaJornada (#PCDATA)>
+<!ELEMENT idCompeticion (#PCDATA)>
+<!ELEMENT enfrentamientos (enfrentamiento+)>
+<!ELEMENT enfrentamiento (equipo1, equipo2, resultado)>
+<!ELEMENT equipo1 (#PCDATA)>
+<!ELEMENT equipo2 (#PCDATA)>
+<!ELEMENT resultado (#PCDATA)>
