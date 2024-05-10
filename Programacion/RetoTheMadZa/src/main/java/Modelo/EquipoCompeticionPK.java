@@ -14,7 +14,7 @@ public class EquipoCompeticionPK implements Serializable {
     private int idEquipo;
     @Column(name = "ID_COMPETICION")
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idCompeticion;
 
     public int getIdEquipo() {
