@@ -1,7 +1,14 @@
 package Vista;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import org.imgscalr.Scalr;
+
 
 public class VentanaInicial extends JFrame {
     private JPanel pPrincipal;
@@ -25,16 +32,37 @@ public class VentanaInicial extends JFrame {
     private JMenu mJornadas;
     private JMenu mClasificacion;
     private JMenu mEquipos;
+    private JLabel ftThemadza;
 
-    public VentanaInicial(){
+    public VentanaInicial() {
         super("Ventana principal");
         setContentPane(pPrincipal);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
+
+        try {
+            // Cargar la imagen original
+            URL imageUrl = new URL("https://raw.githubusercontent.com/TheMadZa/E-Sports/main/Programacion" +
+                    "/RetoTheMadZa/src/main/java/vista/Imagenes/TheMadZaLogoSimple.png");
+            BufferedImage imagenOriginal = ImageIO.read(imageUrl);
+
+            // Escalar la imagen a un tamaño de 150x150 usando ImgScalr
+            BufferedImage bufferedImage = Scalr.resize(imagenOriginal, 250);
+
+            // Crear un ImageIcon a partir del BufferedImage escalado
+            ImageIcon iconoEscalado = new ImageIcon(bufferedImage);
+
+            // Asignar el ImageIcon escalado al JLabel ftThemadza
+            ftThemadza.setIcon(iconoEscalado);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {
-        // Crear y mostrar la ventana en el hilo de despacho de eventos de Swing
-        SwingUtilities.invokeLater(() -> new VentanaInicial());
+        SwingUtilities.invokeLater(() -> {
+            VentanaInicial ventana = new VentanaInicial();
+            ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            ventana.setVisible(true);
+        });
     }
-
 }
