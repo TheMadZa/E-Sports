@@ -7,7 +7,6 @@ import java.sql.Timestamp;
 @Entity
 public class Enfrentamiento {
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "ID_ENFRENTAMIENTO")
     private int idEnfrentamiento;

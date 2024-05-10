@@ -8,7 +8,6 @@ import java.util.Collection;
 @Entity
 public class Equipo {
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "ID_EQUIPO")
     private int idEquipo;
