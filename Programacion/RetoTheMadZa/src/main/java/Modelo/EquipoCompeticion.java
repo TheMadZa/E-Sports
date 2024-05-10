@@ -3,7 +3,7 @@ package Modelo;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "EQUIPO_COMPETICION", schema = "EQDAW03", catalog = "")
+@Table(name = "EQUIPO_COMPETICION", schema = "EQDAW03")
 @IdClass(EquipoCompeticionPK.class)
 public class EquipoCompeticion {
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -113,5 +113,15 @@ public class EquipoCompeticion {
 
     public void setCompeticionByIdCompeticion(Competicion competicionByIdCompeticion) {
         this.competicionByIdCompeticion = competicionByIdCompeticion;
+    }
+
+    public EquipoCompeticion() {
+    }
+
+    public EquipoCompeticion(int idEquipo, int idCompeticion, int victorias, int puntos) {
+        this.idEquipo = idEquipo;
+        this.idCompeticion = idCompeticion;
+        this.victorias = victorias;
+        this.puntos = puntos;
     }
 }

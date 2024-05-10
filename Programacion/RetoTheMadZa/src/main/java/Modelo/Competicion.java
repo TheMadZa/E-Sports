@@ -110,4 +110,18 @@ public class Competicion {
     public void setEquipoByIdEquipoGanador(Equipo equipoByIdEquipoGanador) {
         this.equipoByIdEquipoGanador = equipoByIdEquipoGanador;
     }
+
+    public Competicion() {
+    }
+
+    public Competicion(int idCompeticion, String nombreCom, Date fechaInicio, Date fechaFin, String etapa,
+                       Juego juegoByIdJuego, Equipo equipoByIdEquipoGanador) {
+        this.idCompeticion = idCompeticion;
+        this.nombreCom = nombreCom;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.etapa = etapa;
+        this.juegoByIdJuego = juegoByIdJuego;
+        this.equipoByIdEquipoGanador = equipoByIdEquipoGanador;
+    }
 }
