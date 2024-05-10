@@ -1,6 +1,6 @@
-package controlador.ControladoresVista;
+package Controlador.ControladoresVista;
 
-import ;
+import Vista.VentanaInicial;
 
 public class ControladorVP {
     private VentanaInicial vi;

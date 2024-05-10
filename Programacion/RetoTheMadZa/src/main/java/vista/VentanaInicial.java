@@ -1,6 +1,7 @@
 package Vista;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class VentanaInicial extends JFrame {
     private JPanel pPrincipal;
@@ -21,4 +22,19 @@ public class VentanaInicial extends JFrame {
     private JLabel pEquipo3;
     private JLabel pEquipo4;
     private JLabel pEquipo5;
+    private JMenu mJornadas;
+    private JMenu mClasificacion;
+    private JMenu mEquipos;
+
+    public VentanaInicial(){
+        super("Ventana principal");
+        setContentPane(pPrincipal);
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+    }
+
+    public static void main(String[] args) {
+        // Crear y mostrar la ventana en el hilo de despacho de eventos de Swing
+        SwingUtilities.invokeLater(() -> new VentanaInicial());
+    }
+
 }

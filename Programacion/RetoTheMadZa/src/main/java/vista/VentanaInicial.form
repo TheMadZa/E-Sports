@@ -30,7 +30,7 @@
             </properties>
             <border type="none"/>
             <children>
-              <grid id="1f6e2" class="javax.swing.JMenu" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+              <grid id="1f6e2" class="javax.swing.JMenu" binding="mJornadas" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
                 <constraints/>
                 <properties>
                   <background color="-15527899"/>
@@ -48,7 +48,7 @@
                   </vspacer>
                 </children>
               </grid>
-              <grid id="34a13" class="javax.swing.JMenu" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+              <grid id="34a13" class="javax.swing.JMenu" binding="mClasificacion" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
                 <constraints/>
                 <properties>
                   <background color="-15527899"/>
@@ -66,7 +66,7 @@
                   </vspacer>
                 </children>
               </grid>
-              <grid id="a5b83" class="javax.swing.JMenu" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+              <grid id="a5b83" class="javax.swing.JMenu" binding="mEquipos" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
                 <constraints/>
                 <properties>
                   <background color="-15527899"/>
@@ -96,7 +96,6 @@
               <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <icon value="Vista/Imagenes/TheMadZaLogoSimple.png"/>
               <text value=""/>
             </properties>
           </component>

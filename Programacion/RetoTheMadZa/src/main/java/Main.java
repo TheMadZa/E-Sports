@@ -1,4 +1,4 @@
-import controlador.ControladorPrincipal;
+import Controlador.ControladorPrincipal;
 
 /**
  * Clase Main que ejecutará el programa al completo.

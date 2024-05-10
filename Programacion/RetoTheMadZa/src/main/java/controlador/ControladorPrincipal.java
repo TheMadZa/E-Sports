@@ -1,16 +1,15 @@
-package controlador;
+package Controlador;
 
-import controlador.ControladoresBD.ControladorModelo;
-import controlador.ControladoresVista.ControladorVista;
+import Controlador.ControladoresVista.ControladorVista;
 import Modelo.*;
 
 public class ControladorPrincipal {
     private ControladorVista cv;
-    private ControladorModelo cm;
+    private Controlador.ControladoresBD.ControladorModelo cm;
 
     public ControladorPrincipal() {
         cv = new ControladorVista(this);
-        cm = new ControladorModelo(this);
+        cm = new Controlador.ControladoresBD.ControladorModelo(this);
     }
 
     //COMPETICION
@@ -138,3 +137,4 @@ public class ControladorPrincipal {
         cm.modificarStaff(s);
     }
 }
+
