@@ -1,4 +1,4 @@
-package controlador.ControladoresVista;
+package Controlador.ControladoresVista;
 
 public class ControladorVJugadores {
 

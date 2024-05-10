@@ -1,6 +1,7 @@
-package controlador.ControladoresVista;
+package Controlador.ControladoresVista;
 
-import controlador.ControladorPrincipal;
+
+import Controlador.ControladorPrincipal;
 
 public class ControladorVista {
 

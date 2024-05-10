@@ -1,11 +1,12 @@
-package controlador.ControladoresBD;
+package Controlador.ControladoresBD;
 
-import controlador.ControladorPrincipal;
+import Controlador.ControladorPrincipal;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 import Modelo.*;
+
 
 public class ControladorModelo {
     private ControladorCompeticiones cc;

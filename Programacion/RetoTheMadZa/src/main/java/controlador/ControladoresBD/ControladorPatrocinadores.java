@@ -1,4 +1,4 @@
-package controlador.ControladoresBD;
+package Controlador.ControladoresBD;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
