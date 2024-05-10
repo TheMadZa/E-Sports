@@ -4,22 +4,26 @@ import jakarta.persistence.*;
 
 @Entity
 public class Patrocinador {
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @jakarta.persistence.Column(name = "ID_PATROCINADOR")
+    @Column(name = "ID_PATROCINADOR")
     private int idPatrocinador;
+    @Basic
+    @Column(name = "NOMBRE")
+    private String nombre;
 
     public int getIdPatrocinador() {
         return idPatrocinador;
     }
 
-    public void setIdPatrocinador(int idPatrocinador) {
+    public void setIdPatrocinador(byte idPatrocinador) {
         this.idPatrocinador = idPatrocinador;
     }
 
-    @Basic
-    @Column(name = "NOMBRE")
-    private String nombre;
+    public void setIdPatrocinador(int idPatrocinador) {
+        this.idPatrocinador = idPatrocinador;
+    }
 
     public String getNombre() {
         return nombre;

@@ -6,10 +6,29 @@ import java.sql.Timestamp;
 
 @Entity
 public class Enfrentamiento {
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @jakarta.persistence.Column(name = "ID_ENFRENTAMIENTO")
+    @Column(name = "ID_ENFRENTAMIENTO")
     private int idEnfrentamiento;
+    @Basic
+    @Column(name = "HORA_ENFRENTAMIENTO")
+    private Timestamp horaEnfrentamiento;
+    @Basic
+    @Column(name = "RESULTADO1")
+    private int resultado1;
+    @Basic
+    @Column(name = "RESULTADO2")
+    private int resultado2;
+    @ManyToOne
+    @JoinColumn(name = "ID_EQUIPO1", referencedColumnName = "ID_EQUIPO", nullable = false)
+    private Equipo equipoByIdEquipo1;
+    @ManyToOne
+    @JoinColumn(name = "ID_EQUIPO2", referencedColumnName = "ID_EQUIPO", nullable = false)
+    private Equipo equipoByIdEquipo2;
+    @ManyToOne
+    @JoinColumn(name = "ID_JORNADA", referencedColumnName = "ID_JORNADA", nullable = false)
+    private Jornada jornadaByIdJornada;
 
     public int getIdEnfrentamiento() {
         return idEnfrentamiento;
@@ -19,10 +38,6 @@ public class Enfrentamiento {
         this.idEnfrentamiento = idEnfrentamiento;
     }
 
-    @Basic
-    @Column(name = "HORA_ENFRENTAMIENTO")
-    private Timestamp horaEnfrentamiento;
-
     public Timestamp getHoraEnfrentamiento() {
         return horaEnfrentamiento;
     }
@@ -31,24 +46,24 @@ public class Enfrentamiento {
         this.horaEnfrentamiento = horaEnfrentamiento;
     }
 
-    @Basic
-    @Column(name = "RESULTADO1")
-    private byte resultado1;
-
-    public byte getResultado1() {
+    public int getResultado1() {
         return resultado1;
+    }
+
+    public void setResultado1(int resultado1) {
+        this.resultado1 = resultado1;
     }
 
     public void setResultado1(byte resultado1) {
         this.resultado1 = resultado1;
     }
 
-    @Basic
-    @Column(name = "RESULTADO2")
-    private byte resultado2;
-
-    public byte getResultado2() {
+    public int getResultado2() {
         return resultado2;
+    }
+
+    public void setResultado2(int resultado2) {
+        this.resultado2 = resultado2;
     }
 
     public void setResultado2(byte resultado2) {
@@ -78,5 +93,29 @@ public class Enfrentamiento {
         result = 31 * result + (int) resultado1;
         result = 31 * result + (int) resultado2;
         return result;
+    }
+
+    public Equipo getEquipoByIdEquipo1() {
+        return equipoByIdEquipo1;
+    }
+
+    public void setEquipoByIdEquipo1(Equipo equipoByIdEquipo1) {
+        this.equipoByIdEquipo1 = equipoByIdEquipo1;
+    }
+
+    public Equipo getEquipoByIdEquipo2() {
+        return equipoByIdEquipo2;
+    }
+
+    public void setEquipoByIdEquipo2(Equipo equipoByIdEquipo2) {
+        this.equipoByIdEquipo2 = equipoByIdEquipo2;
+    }
+
+    public Jornada getJornadaByIdJornada() {
+        return jornadaByIdJornada;
+    }
+
+    public void setJornadaByIdJornada(Jornada jornadaByIdJornada) {
+        this.jornadaByIdJornada = jornadaByIdJornada;
     }
 }
