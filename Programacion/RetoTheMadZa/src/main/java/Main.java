@@ -5,7 +5,6 @@ import Controlador.ControladorPrincipal;
  * Contiene el código para ejecutar el controlador principal.
  */
 public class Main {
-
-    ControladorPrincipal c = new ControladorPrincipal();
+    public static void main(String[] args){ ControladorPrincipal c = new ControladorPrincipal();}
 
 }
