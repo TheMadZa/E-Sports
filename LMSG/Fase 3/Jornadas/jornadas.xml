@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Fichero para jornadas -->
+<!-- Enlazamos el dtd -->
+<!DOCTYPE jornadas SYSTEM "jornadasdtd.dtd">
+<!-- Enlazamos el xsd -->
+<jornadas
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="jornadasxsd.xsd">
+    <jornada id="1">
+        <numero_jornada>1</numero_jornada>
+        <fecha_jornada>2024-05-10</fecha_jornada>
+        <competicion-info>
+            <competicion id="1">
+                <nombre-competicion>CS2 MAJOR COPENHAGEN 2024</nombre-competicion>
+                <fecha-inicio>2024-05-05</fecha-inicio>
+                <fecha-fin>2024-06-05</fecha-fin>
+                <etapa>A</etapa>
+                <juego>Counter-Strike series</juego>
+            </competicion>
+        </competicion-info>
+    </jornada>
+    <jornada id="2">
+        <numero_jornada>2</numero_jornada>
+        <fecha_jornada>2024-05-17</fecha_jornada>
+        <competicion-info>
+            <competicion id="3">
+                <nombre-competicion>CS2 MAJOR COPENHAGEN 2024</nombre-competicion>
+                <fecha-inicio>2024-05-05</fecha-inicio>
+                <fecha-fin>2024-06-05</fecha-fin>
+                <etapa>C</etapa>
+                <juego>Counter-Strike series</juego>
+            </competicion>
+        </competicion-info>
+    </jornada>
+</jornadas>
