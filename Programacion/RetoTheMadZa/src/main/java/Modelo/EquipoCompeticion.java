@@ -7,7 +7,6 @@ import jakarta.persistence.*;
 @IdClass(EquipoCompeticionPK.class)
 public class EquipoCompeticion {
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "ID_EQUIPO")
     private int idEquipo;

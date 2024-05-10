@@ -10,11 +10,10 @@ import java.io.Serializable;
 public class PatrocinadorEquipoPK implements Serializable {
     @Column(name = "ID_PATROCINADOR")
     @Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idPatrocinador;
     @Column(name = "ID_EQUIPO")
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idEquipo;
 
     public int getIdPatrocinador() {

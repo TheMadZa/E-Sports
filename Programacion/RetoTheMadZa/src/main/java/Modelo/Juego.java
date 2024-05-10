@@ -7,7 +7,6 @@ import java.sql.Date;
 @Entity
 public class Juego {
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "ID_JUEGO")
     private int idJuego;

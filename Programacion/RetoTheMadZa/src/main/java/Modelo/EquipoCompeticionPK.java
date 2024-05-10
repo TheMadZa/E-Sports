@@ -9,9 +9,8 @@ import java.io.Serializable;
 
 public class EquipoCompeticionPK implements Serializable {
     @Column(name = "ID_EQUIPO")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private int idEquipo;
     @Column(name = "ID_COMPETICION")
     @Id
