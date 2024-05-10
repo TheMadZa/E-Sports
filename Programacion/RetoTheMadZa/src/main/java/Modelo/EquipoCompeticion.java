@@ -3,15 +3,31 @@ package Modelo;
 import jakarta.persistence.*;
 
 @Entity
-@jakarta.persistence.Table(name = "EQUIPO_COMPETICION", schema = "EQDAW03", catalog = "")
-@IdClass(Modelo.EquipoCompeticionPK.class)
+@Table(name = "EQUIPO_COMPETICION", schema = "EQDAW03")
+@IdClass(EquipoCompeticionPK.class)
 public class EquipoCompeticion {
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @jakarta.persistence.Column(name = "ID_EQUIPO")
-    private byte idEquipo;
+    @Column(name = "ID_EQUIPO")
+    private int idEquipo;
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @Column(name = "ID_COMPETICION")
+    private int idCompeticion;
+    @Basic
+    @Column(name = "VICTORIAS")
+    private int victorias;
+    @Basic
+    @Column(name = "PUNTOS")
+    private int puntos;
+    @ManyToOne
+    @JoinColumn(name = "ID_EQUIPO", referencedColumnName = "ID_EQUIPO", nullable = false)
+    private Equipo equipoByIdEquipo;
+    @ManyToOne
+    @JoinColumn(name = "ID_COMPETICION", referencedColumnName = "ID_COMPETICION", nullable = false)
+    private Competicion competicionByIdCompeticion;
 
-    public byte getIdEquipo() {
+    public int getIdEquipo() {
         return idEquipo;
     }
 
@@ -19,12 +35,11 @@ public class EquipoCompeticion {
         this.idEquipo = idEquipo;
     }
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
-    @jakarta.persistence.Column(name = "ID_COMPETICION")
-    private byte idCompeticion;
+    public void setIdEquipo(int idEquipo) {
+        this.idEquipo = idEquipo;
+    }
 
-    public byte getIdCompeticion() {
+    public int getIdCompeticion() {
         return idCompeticion;
     }
 
@@ -32,11 +47,11 @@ public class EquipoCompeticion {
         this.idCompeticion = idCompeticion;
     }
 
-    @Basic
-    @Column(name = "VICTORIAS")
-    private Short victorias;
+    public void setIdCompeticion(int idCompeticion) {
+        this.idCompeticion = idCompeticion;
+    }
 
-    public Short getVictorias() {
+    public int getVictorias() {
         return victorias;
     }
 
@@ -44,15 +59,19 @@ public class EquipoCompeticion {
         this.victorias = victorias;
     }
 
-    @Basic
-    @Column(name = "PUNTOS")
-    private Short puntos;
+    public void setVictorias(int victorias) {
+        this.victorias = victorias;
+    }
 
-    public Short getPuntos() {
+    public int getPuntos() {
         return puntos;
     }
 
     public void setPuntos(Short puntos) {
+        this.puntos = puntos;
+    }
+
+    public void setPuntos(int puntos) {
         this.puntos = puntos;
     }
 
@@ -65,18 +84,44 @@ public class EquipoCompeticion {
 
         if (idEquipo != that.idEquipo) return false;
         if (idCompeticion != that.idCompeticion) return false;
-        if (victorias != null ? !victorias.equals(that.victorias) : that.victorias != null) return false;
-        if (puntos != null ? !puntos.equals(that.puntos) : that.puntos != null) return false;
+        if (victorias != that.victorias) return false;
+        if (puntos != that.puntos) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = (int) idEquipo;
-        result = 31 * result + (int) idCompeticion;
-        result = 31 * result + (victorias != null ? victorias.hashCode() : 0);
-        result = 31 * result + (puntos != null ? puntos.hashCode() : 0);
+        int result = idEquipo;
+        result = 31 * result + idCompeticion;
+        result = 31 * result + victorias;
+        result = 31 * result + puntos;
         return result;
+    }
+
+    public Equipo getEquipoByIdEquipo() {
+        return equipoByIdEquipo;
+    }
+
+    public void setEquipoByIdEquipo(Equipo equipoByIdEquipo) {
+        this.equipoByIdEquipo = equipoByIdEquipo;
+    }
+
+    public Competicion getCompeticionByIdCompeticion() {
+        return competicionByIdCompeticion;
+    }
+
+    public void setCompeticionByIdCompeticion(Competicion competicionByIdCompeticion) {
+        this.competicionByIdCompeticion = competicionByIdCompeticion;
+    }
+
+    public EquipoCompeticion() {
+    }
+
+    public EquipoCompeticion(int idEquipo, int idCompeticion, int victorias, int puntos) {
+        this.idEquipo = idEquipo;
+        this.idCompeticion = idCompeticion;
+        this.victorias = victorias;
+        this.puntos = puntos;
     }
 }

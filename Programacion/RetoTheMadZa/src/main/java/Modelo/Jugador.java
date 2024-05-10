@@ -8,10 +8,31 @@ import java.sql.Date;
 public class Jugador {
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @jakarta.persistence.Column(name = "ID_JUGADOR")
-    private byte idJugador;
+    @Column(name = "ID_JUGADOR")
+    private int idJugador;
+    @Basic
+    @Column(name = "NOMBRE")
+    private String nombre;
+    @Basic
+    @Column(name = "NICKNAME")
+    private String nickname;
+    @Basic
+    @Column(name = "NACIONALIDAD")
+    private String nacionalidad;
+    @Basic
+    @Column(name = "ROL")
+    private String rol;
+    @Basic
+    @Column(name = "FECHA_NAC")
+    private Date fechaNac;
+    @Basic
+    @Column(name = "SUELDO")
+    private int sueldo;
+    @ManyToOne
+    @JoinColumn(name = "ID_EQUIPO", referencedColumnName = "ID_EQUIPO", nullable = false)
+    private Equipo equipoByIdEquipo;
 
-    public byte getIdJugador() {
+    public int getIdJugador() {
         return idJugador;
     }
 
@@ -19,9 +40,9 @@ public class Jugador {
         this.idJugador = idJugador;
     }
 
-    @Basic
-    @Column(name = "NOMBRE")
-    private String nombre;
+    public void setIdJugador(int idJugador) {
+        this.idJugador = idJugador;
+    }
 
     public String getNombre() {
         return nombre;
@@ -31,10 +52,6 @@ public class Jugador {
         this.nombre = nombre;
     }
 
-    @Basic
-    @Column(name = "NICKNAME")
-    private String nickname;
-
     public String getNickname() {
         return nickname;
     }
@@ -42,10 +59,6 @@ public class Jugador {
     public void setNickname(String nickname) {
         this.nickname = nickname;
     }
-
-    @Basic
-    @Column(name = "NACIONALIDAD")
-    private String nacionalidad;
 
     public String getNacionalidad() {
         return nacionalidad;
@@ -55,10 +68,6 @@ public class Jugador {
         this.nacionalidad = nacionalidad;
     }
 
-    @Basic
-    @Column(name = "ROL")
-    private String rol;
-
     public String getRol() {
         return rol;
     }
@@ -66,10 +75,6 @@ public class Jugador {
     public void setRol(String rol) {
         this.rol = rol;
     }
-
-    @Basic
-    @Column(name = "FECHA_NAC")
-    private Date fechaNac;
 
     public Date getFechaNac() {
         return fechaNac;
@@ -79,28 +84,12 @@ public class Jugador {
         this.fechaNac = fechaNac;
     }
 
-    @Basic
-    @Column(name = "SUELDO")
-    private int sueldo;
-
     public int getSueldo() {
         return sueldo;
     }
 
     public void setSueldo(int sueldo) {
         this.sueldo = sueldo;
-    }
-
-    @Basic
-    @Column(name = "ID_EQUIPO")
-    private byte idEquipo;
-
-    public byte getIdEquipo() {
-        return idEquipo;
-    }
-
-    public void setIdEquipo(byte idEquipo) {
-        this.idEquipo = idEquipo;
     }
 
     @Override
@@ -112,7 +101,6 @@ public class Jugador {
 
         if (idJugador != jugador.idJugador) return false;
         if (sueldo != jugador.sueldo) return false;
-        if (idEquipo != jugador.idEquipo) return false;
         if (nombre != null ? !nombre.equals(jugador.nombre) : jugador.nombre != null) return false;
         if (nickname != null ? !nickname.equals(jugador.nickname) : jugador.nickname != null) return false;
         if (nacionalidad != null ? !nacionalidad.equals(jugador.nacionalidad) : jugador.nacionalidad != null)
@@ -125,14 +113,36 @@ public class Jugador {
 
     @Override
     public int hashCode() {
-        int result = (int) idJugador;
+        int result = idJugador;
         result = 31 * result + (nombre != null ? nombre.hashCode() : 0);
         result = 31 * result + (nickname != null ? nickname.hashCode() : 0);
         result = 31 * result + (nacionalidad != null ? nacionalidad.hashCode() : 0);
         result = 31 * result + (rol != null ? rol.hashCode() : 0);
         result = 31 * result + (fechaNac != null ? fechaNac.hashCode() : 0);
         result = 31 * result + sueldo;
-        result = 31 * result + (int) idEquipo;
         return result;
+    }
+
+    public Equipo getEquipoByIdEquipo() {
+        return equipoByIdEquipo;
+    }
+
+    public void setEquipoByIdEquipo(Equipo equipoByIdEquipo) {
+        this.equipoByIdEquipo = equipoByIdEquipo;
+    }
+
+    public Jugador() {
+    }
+
+    public Jugador(int idJugador, String nombre, String nickname, String nacionalidad, String rol, Date fechaNac,
+                   int sueldo, Equipo equipoByIdEquipo) {
+        this.idJugador = idJugador;
+        this.nombre = nombre;
+        this.nickname = nickname;
+        this.nacionalidad = nacionalidad;
+        this.rol = rol;
+        this.fechaNac = fechaNac;
+        this.sueldo = sueldo;
+        this.equipoByIdEquipo = equipoByIdEquipo;
     }
 }

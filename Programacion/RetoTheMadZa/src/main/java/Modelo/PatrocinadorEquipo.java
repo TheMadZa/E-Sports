@@ -1,20 +1,27 @@
 package Modelo;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
-@jakarta.persistence.Table(name = "PATROCINADOR_EQUIPO", schema = "EQDAW03", catalog = "")
-@jakarta.persistence.IdClass(Modelo.PatrocinadorEquipoPK.class)
+@Table(name = "PATROCINADOR_EQUIPO", schema = "EQDAW03")
+@IdClass(PatrocinadorEquipoPK.class)
 public class PatrocinadorEquipo {
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @jakarta.persistence.Column(name = "ID_PATROCINADOR")
-    private byte idPatrocinador;
+    @Column(name = "ID_PATROCINADOR")
+    private int idPatrocinador;
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @Column(name = "ID_EQUIPO")
+    private int idEquipo;
+    @ManyToOne
+    @JoinColumn(name = "ID_PATROCINADOR", referencedColumnName = "ID_PATROCINADOR", nullable = false)
+    private Patrocinador patrocinadorByIdPatrocinador;
+    @ManyToOne
+    @JoinColumn(name = "ID_EQUIPO", referencedColumnName = "ID_EQUIPO", nullable = false)
+    private Equipo equipoByIdEquipo;
 
-    public byte getIdPatrocinador() {
+    public int getIdPatrocinador() {
         return idPatrocinador;
     }
 
@@ -22,16 +29,19 @@ public class PatrocinadorEquipo {
         this.idPatrocinador = idPatrocinador;
     }
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
-    @jakarta.persistence.Column(name = "ID_EQUIPO")
-    private byte idEquipo;
+    public void setIdPatrocinador(int idPatrocinador) {
+        this.idPatrocinador = idPatrocinador;
+    }
 
-    public byte getIdEquipo() {
+    public int getIdEquipo() {
         return idEquipo;
     }
 
     public void setIdEquipo(byte idEquipo) {
+        this.idEquipo = idEquipo;
+    }
+
+    public void setIdEquipo(int idEquipo) {
         this.idEquipo = idEquipo;
     }
 
@@ -50,8 +60,32 @@ public class PatrocinadorEquipo {
 
     @Override
     public int hashCode() {
-        int result = (int) idPatrocinador;
-        result = 31 * result + (int) idEquipo;
+        int result = idPatrocinador;
+        result = 31 * result + idEquipo;
         return result;
+    }
+
+    public Patrocinador getPatrocinadorByIdPatrocinador() {
+        return patrocinadorByIdPatrocinador;
+    }
+
+    public void setPatrocinadorByIdPatrocinador(Patrocinador patrocinadorByIdPatrocinador) {
+        this.patrocinadorByIdPatrocinador = patrocinadorByIdPatrocinador;
+    }
+
+    public Equipo getEquipoByIdEquipo() {
+        return equipoByIdEquipo;
+    }
+
+    public void setEquipoByIdEquipo(Equipo equipoByIdEquipo) {
+        this.equipoByIdEquipo = equipoByIdEquipo;
+    }
+
+    public PatrocinadorEquipo() {
+    }
+
+    public PatrocinadorEquipo(int idPatrocinador, int idEquipo) {
+        this.idPatrocinador = idPatrocinador;
+        this.idEquipo = idEquipo;
     }
 }

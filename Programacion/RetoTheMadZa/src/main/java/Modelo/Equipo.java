@@ -3,15 +3,33 @@ package Modelo;
 import jakarta.persistence.*;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.Collection;
 
 @Entity
 public class Equipo {
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @jakarta.persistence.Column(name = "ID_EQUIPO")
-    private byte idEquipo;
+    @Column(name = "ID_EQUIPO")
+    private int idEquipo;
+    @Basic
+    @Column(name = "NOM_EQUIPO")
+    private String nomEquipo;
+    @Basic
+    @Column(name = "FECHA_FUNDACION")
+    private Date fechaFundacion;
+    @Basic
+    @Column(name = "LOGO")
+    private String logo;
+    @Basic
+    @Column(name = "COLOR")
+    private String color;
+    @OneToMany(mappedBy = "equipoByIdEquipo")
+    private Collection<Jugador> jugadorsByIdEquipo;
+    @OneToMany(mappedBy = "equipoByIdEquipo")
+    private Collection<Staff> staffByIdEquipo;
 
-    public byte getIdEquipo() {
+    public int getIdEquipo() {
         return idEquipo;
     }
 
@@ -19,9 +37,9 @@ public class Equipo {
         this.idEquipo = idEquipo;
     }
 
-    @Basic
-    @Column(name = "NOM_EQUIPO")
-    private String nomEquipo;
+    public void setIdEquipo(int idEquipo) {
+        this.idEquipo = idEquipo;
+    }
 
     public String getNomEquipo() {
         return nomEquipo;
@@ -31,10 +49,6 @@ public class Equipo {
         this.nomEquipo = nomEquipo;
     }
 
-    @Basic
-    @Column(name = "FECHA_FUNDACION")
-    private Date fechaFundacion;
-
     public Date getFechaFundacion() {
         return fechaFundacion;
     }
@@ -43,10 +57,6 @@ public class Equipo {
         this.fechaFundacion = fechaFundacion;
     }
 
-    @Basic
-    @Column(name = "LOGO")
-    private String logo;
-
     public String getLogo() {
         return logo;
     }
@@ -54,10 +64,6 @@ public class Equipo {
     public void setLogo(String logo) {
         this.logo = logo;
     }
-
-    @Basic
-    @Column(name = "COLOR")
-    private String color;
 
     public String getColor() {
         return color;
@@ -86,11 +92,50 @@ public class Equipo {
 
     @Override
     public int hashCode() {
-        int result = (int) idEquipo;
+        int result = idEquipo;
         result = 31 * result + (nomEquipo != null ? nomEquipo.hashCode() : 0);
         result = 31 * result + (fechaFundacion != null ? fechaFundacion.hashCode() : 0);
         result = 31 * result + (logo != null ? logo.hashCode() : 0);
         result = 31 * result + (color != null ? color.hashCode() : 0);
         return result;
+    }
+
+    public Collection<Jugador> getJugadorsByIdEquipo() {
+        return jugadorsByIdEquipo;
+    }
+
+    public void setJugadorsByIdEquipo(Collection<Jugador> jugadorsByIdEquipo) {
+        this.jugadorsByIdEquipo = jugadorsByIdEquipo;
+    }
+
+    public Collection<Staff> getStaffByIdEquipo() {
+        return staffByIdEquipo;
+    }
+
+    public void setStaffByIdEquipo(Collection<Staff> staffByIdEquipo) {
+        this.staffByIdEquipo = staffByIdEquipo;
+    }
+
+    public Equipo() {
+    }
+
+    public Equipo(int idEquipo, String nomEquipo, Date fechaFundacion, String logo, String color) {
+        this.idEquipo = idEquipo;
+        this.nomEquipo = nomEquipo;
+        this.fechaFundacion = fechaFundacion;
+        this.logo = logo;
+        this.color = color;
+    }
+
+    public void setJugador(Jugador j){
+        if (jugadorsByIdEquipo == null)
+            jugadorsByIdEquipo = new ArrayList<>();
+        jugadorsByIdEquipo.add(j);
+    }
+
+    public void setStaff(Staff s){
+        if (staffByIdEquipo == null)
+            staffByIdEquipo = new ArrayList<>();
+        staffByIdEquipo.add(s);
     }
 }

@@ -8,10 +8,19 @@ import java.sql.Date;
 public class Juego {
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @jakarta.persistence.Column(name = "ID_JUEGO")
-    private byte idJuego;
+    @Column(name = "ID_JUEGO")
+    private int idJuego;
+    @Basic
+    @Column(name = "NOMBRE")
+    private String nombre;
+    @Basic
+    @Column(name = "EMPRESA")
+    private String empresa;
+    @Basic
+    @Column(name = "FECHA_LANZAMIENTO")
+    private Date fechaLanzamiento;
 
-    public byte getIdJuego() {
+    public int getIdJuego() {
         return idJuego;
     }
 
@@ -19,9 +28,9 @@ public class Juego {
         this.idJuego = idJuego;
     }
 
-    @Basic
-    @Column(name = "NOMBRE")
-    private String nombre;
+    public void setIdJuego(int idJuego) {
+        this.idJuego = idJuego;
+    }
 
     public String getNombre() {
         return nombre;
@@ -31,10 +40,6 @@ public class Juego {
         this.nombre = nombre;
     }
 
-    @Basic
-    @Column(name = "EMPRESA")
-    private String empresa;
-
     public String getEmpresa() {
         return empresa;
     }
@@ -42,10 +47,6 @@ public class Juego {
     public void setEmpresa(String empresa) {
         this.empresa = empresa;
     }
-
-    @Basic
-    @Column(name = "FECHA_LANZAMIENTO")
-    private Date fechaLanzamiento;
 
     public Date getFechaLanzamiento() {
         return fechaLanzamiento;
@@ -73,10 +74,20 @@ public class Juego {
 
     @Override
     public int hashCode() {
-        int result = (int) idJuego;
+        int result = idJuego;
         result = 31 * result + (nombre != null ? nombre.hashCode() : 0);
         result = 31 * result + (empresa != null ? empresa.hashCode() : 0);
         result = 31 * result + (fechaLanzamiento != null ? fechaLanzamiento.hashCode() : 0);
         return result;
+    }
+
+    public Juego() {
+    }
+
+    public Juego(int idJuego, String nombre, String empresa, Date fechaLanzamiento) {
+        this.idJuego = idJuego;
+        this.nombre = nombre;
+        this.empresa = empresa;
+        this.fechaLanzamiento = fechaLanzamiento;
     }
 }

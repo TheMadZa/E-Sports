@@ -9,27 +9,27 @@ import java.io.Serializable;
 
 public class EquipoCompeticionPK implements Serializable {
     @Column(name = "ID_EQUIPO")
-    @Id
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private byte idEquipo;
+    @Id
+    private int idEquipo;
     @Column(name = "ID_COMPETICION")
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private byte idCompeticion;
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int idCompeticion;
 
-    public byte getIdEquipo() {
+    public int getIdEquipo() {
         return idEquipo;
     }
 
-    public void setIdEquipo(byte idEquipo) {
+    public void setIdEquipo(int idEquipo) {
         this.idEquipo = idEquipo;
     }
 
-    public byte getIdCompeticion() {
+    public int getIdCompeticion() {
         return idCompeticion;
     }
 
-    public void setIdCompeticion(byte idCompeticion) {
+    public void setIdCompeticion(int idCompeticion) {
         this.idCompeticion = idCompeticion;
     }
 
@@ -48,8 +48,8 @@ public class EquipoCompeticionPK implements Serializable {
 
     @Override
     public int hashCode() {
-        int result = (int) idEquipo;
-        result = 31 * result + (int) idCompeticion;
+        int result = idEquipo;
+        result = 31 * result + idCompeticion;
         return result;
     }
 }
