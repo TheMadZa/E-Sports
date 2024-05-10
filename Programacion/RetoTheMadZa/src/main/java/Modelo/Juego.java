@@ -6,22 +6,32 @@ import java.sql.Date;
 
 @Entity
 public class Juego {
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @jakarta.persistence.Column(name = "ID_JUEGO")
+    @Column(name = "ID_JUEGO")
     private int idJuego;
+    @Basic
+    @Column(name = "NOMBRE")
+    private String nombre;
+    @Basic
+    @Column(name = "EMPRESA")
+    private String empresa;
+    @Basic
+    @Column(name = "FECHA_LANZAMIENTO")
+    private Date fechaLanzamiento;
 
     public int getIdJuego() {
         return idJuego;
     }
 
-    public void setIdJuego(int idJuego) {
+    public void setIdJuego(byte idJuego) {
         this.idJuego = idJuego;
     }
 
-    @Basic
-    @Column(name = "NOMBRE")
-    private String nombre;
+    public void setIdJuego(int idJuego) {
+        this.idJuego = idJuego;
+    }
 
     public String getNombre() {
         return nombre;
@@ -31,10 +41,6 @@ public class Juego {
         this.nombre = nombre;
     }
 
-    @Basic
-    @Column(name = "EMPRESA")
-    private String empresa;
-
     public String getEmpresa() {
         return empresa;
     }
@@ -42,10 +48,6 @@ public class Juego {
     public void setEmpresa(String empresa) {
         this.empresa = empresa;
     }
-
-    @Basic
-    @Column(name = "FECHA_LANZAMIENTO")
-    private Date fechaLanzamiento;
 
     public Date getFechaLanzamiento() {
         return fechaLanzamiento;

@@ -6,6 +6,7 @@ import java.sql.Date;
 
 @Entity
 public class Staff {
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "ID_STAFF")
@@ -28,6 +29,10 @@ public class Staff {
 
     public int getIdStaff() {
         return idStaff;
+    }
+
+    public void setIdStaff(byte idStaff) {
+        this.idStaff = idStaff;
     }
 
     public void setIdStaff(int idStaff) {

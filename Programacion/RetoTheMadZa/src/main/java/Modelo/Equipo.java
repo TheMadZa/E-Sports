@@ -7,6 +7,7 @@ import java.util.Collection;
 
 @Entity
 public class Equipo {
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "ID_EQUIPO")
@@ -30,6 +31,10 @@ public class Equipo {
 
     public int getIdEquipo() {
         return idEquipo;
+    }
+
+    public void setIdEquipo(byte idEquipo) {
+        this.idEquipo = idEquipo;
     }
 
     public void setIdEquipo(int idEquipo) {

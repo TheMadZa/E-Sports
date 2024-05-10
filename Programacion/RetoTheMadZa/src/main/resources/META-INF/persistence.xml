@@ -20,7 +20,6 @@
           <property name="toplink.jdbc.url" value="jdbc:oracle:thin:@srvoracle:1521:orcl"/>
           <property name="toplink.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
           <property name="toplink.jdbc.user" value="eqdaw03"/>
-          <property name="toplink.jdbc.password" value="eqdaw03"/>
           <property name="hibernate.connection.url" value="jdbc:oracle:thin:@srvoracle:1521:orcl"/>
           <property name="hibernate.connection.driver_class" value="oracle.jdbc.OracleDriver"/>
           <property name="hibernate.connection.username" value="eqdaw03"/>
