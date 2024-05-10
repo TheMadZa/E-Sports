@@ -1,15 +1,16 @@
 package Controlador;
 
+import Controlador.ControladoresBD.ControladorModelo;
 import Controlador.ControladoresVista.ControladorVista;
 import Modelo.*;
 
 public class ControladorPrincipal {
     private ControladorVista cv;
-    private Controlador.ControladoresBD.ControladorModelo cm;
+    private ControladorModelo cm;
 
     public ControladorPrincipal() {
         cv = new ControladorVista(this);
-        cm = new Controlador.ControladoresBD.ControladorModelo(this);
+        cm = new ControladorModelo(this);
     }
 
     //COMPETICION
