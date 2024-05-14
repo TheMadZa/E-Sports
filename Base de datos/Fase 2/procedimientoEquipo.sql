@@ -6,9 +6,9 @@ BEGIN
     OPEN c_obtenerInfo for
         SELECT nom_equipo,COUNT(DISTINCT s.id_staff) AS "cantidadStaff",
             COUNT(DISTINCT j.id_jugador) AS "cantidadJugadores"
-        FROM EQUIPO e
-        LEFT JOIN STAFF s ON e.id_equipo = s.id_equipo
-        LEFT JOIN JUGADOR j ON e.id_equipo = j.id_equipo
+        FROM EQUIPOS e
+        LEFT JOIN STAFFS s ON e.id_equipo = s.id_equipo
+        LEFT JOIN JUGADORES j ON e.id_equipo = j.id_equipo
         --WHERE e.nom_equipo = e_nom
         GROUP BY nom_equipo;
 EXCEPTION

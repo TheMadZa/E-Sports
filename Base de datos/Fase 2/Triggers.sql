@@ -107,7 +107,7 @@ BEFORE INSERT ON JORNADAS
 FOR EACH ROW
 DECLARE
     v_cantidad_min NUMBER;
-    v_equipo_id EQUIPO.ID_EQUIPO%TYPE;
+    v_equipo_id EQUIPOS.ID_EQUIPO%TYPE;
 BEGIN
     
     FOR lista_equipos IN (SELECT id_equipo FROM EQUIPOS)
