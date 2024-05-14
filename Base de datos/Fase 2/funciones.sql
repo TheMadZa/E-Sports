@@ -4,13 +4,14 @@ a partir del ID de ese equipo.
 Obtendrá el valor del resultado de un COUNT de "JUGADOR"
 en base al argumento "ID_EQUIPO".
 */
-CREATE OR REPLACE FUNCTION OBTENER_CANTIDAD_JUGADORES(a_id_equipo IN EQUIPO.ID_EQUIPO%TYPE)
+CREATE OR REPLACE FUNCTION OBTENER_CANTIDAD_JUGADORES(a_id_equipo IN
+    EQUIPOS.ID_EQUIPO%TYPE)
 RETURN NUMBER
 IS
     v_cantidad_jugadores NUMBER;
 BEGIN
     SELECT COUNT(*) INTO v_cantidad_jugadores
-	FROM JUGADOR
+	FROM JUGADORES
 	WHERE id_equipo = a_id_equipo;
 
     RETURN v_cantidad_jugadores;
@@ -30,15 +31,15 @@ ID de ese equipo.
 Obtendrá el valor de la etapa en base al argumento "ID_EQUIPO".
 */
 /*
-CREATE OR REPLACE FUNCTION OBTENER_ETAPA_COMPETICION(a_id_equipo IN EQUIPO.ID_EQUIPO%TYPE)
+CREATE OR REPLACE FUNCTION OBTENER_ETAPA_COMPETICION(a_id_equipo IN EQUIPOS.ID_EQUIPO%TYPE)
 RETURN VARCHAR2
 IS
-    v_etapa_competicion COMPETICION.ETAPA%TYPE;
+    v_etapa_competicion COMPETICIONES.ETAPA%TYPE;
 BEGIN
     SELECT ETAPA INTO v_etapa_competicion
-	FROM COMPETICION
+	FROM COMPETICIONES
 	WHERE id_competicion = (SELECT id_competicion
-	                        FROM equipo_competicion
+	                        FROM equipos_competiciones
 	                        WHERE id_equipo = a_id_equipo);
 	
     RETURN v_etapa_competicion;
