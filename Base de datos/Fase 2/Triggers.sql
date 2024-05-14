@@ -1,124 +1,104 @@
 /*Scripts de borrado y creaciOn de los TRIGGERS*/
-DROP TRIGGER CANTIDAD_EQUIPO;
+DROP TRIGGER CANTIDAD_EQUIPO_INSERT;
+DROP TRIGGER CANTIDAD_EQUIPO_DELETE;
+DROP TRIGGER CANTIDAD_EQUIPO_UPDATE;
 DROP TRIGGER GENERAR_CALENDARIO;
 DROP TRIGGER NOMODIFICAR_EQUIPO;
 DROP TRIGGER NOMODIFICAR_JUGADOR;
-DROP TRIGGER MAXSALARIO_EQUIPO;
+DROP TRIGGER MAXSALARIO_EQUIPO_INSERT;
+DROP TRIGGER MAXSALARIO_EQUIPO_UPDATE;
 DROP TRIGGER ACTUALIZAR_RESULTADOS;
 
 
 /*Controlar que no haya más de 6 ni menos de 2 jugadores en un equipo.*/
-CREATE OR REPLACE TRIGGER CANTIDAD_EQUIPO
-BEFORE INSERT /*OR UPDATE OR DELETE*/ ON JUGADOR
+CREATE OR REPLACE TRIGGER CANTIDAD_EQUIPO_INSERT
+BEFORE INSERT ON JUGADOR
 FOR EACH ROW
 DECLARE
     v_cantidad NUMBER;
-    /*
-    v_cantidad_new NUMBER;
-    v_cantidad_old NUMBER;
-    */
 BEGIN
-    IF INSERTING THEN
-
-        v_cantidad := OBTENER_CANTIDAD_JUGADORES(:NEW.id_equipo);
+    SELECT COUNT(*) INTO v_cantidad
+    FROM JUGADOR
+    WHERE id_equipo = :new.id_equipo;
         
-        IF v_cantidad >= 6 THEN
-          RAISE_APPLICATION_ERROR('-20001','No puede haber mas de 6 jugadores.');
-        END IF;
-    /*
-    ELSIF DELETING THEN
-        SELECT COUNT(*) INTO v_cantidad
-        FROM JUGADOR
-        WHERE id_equipo = :old.id_equipo;
-        
-        IF v_cantidad <= 2 THEN
-            RAISE_APPLICATION_ERROR('-20002',
-                'No puede haber menos de 2 jugadores.');
-        END IF;
-        
-    ELSIF UPDATING THEN
-        v_cantidad_new := OBTENER_CANTIDAD_JUGADORES(:NEW.id_equipo);
-        
-        v_cantidad_old := OBTENER_CANTIDAD_JUGADORES(:OLD.id_equipo);
-        
-        IF v_cantidad_new >= 6 THEN
-          RAISE_APPLICATION_ERROR('-20003','No puede haber mas de 6 jugadores.');
-          
-        ELSIF v_cantidad <= 2 THEN
-            RAISE_APPLICATION_ERROR('-20002',
-                'No puede haber menos de 2 jugadores.');
-        END IF;
-        */
+    IF v_cantidad >= 6 THEN
+        RAISE_APPLICATION_ERROR('-20001','No puede haber mas de 6 jugadores');
     END IF;
 
 EXCEPTION
-    WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('Error al recuperar informacion.');
-END CANTIDAD_EQUIPO;
+    WHEN NO_DATA_FOUND THEN
+        RAISE_APPLICATION_ERROR('-20002','Error al encontrar informacion.');
 
--- Lo siguiente es el mismo trigger pero mejorado (hay que revisarlo/corregirlo).
-/*
-DROP TRIGGER controlar_jugadores_equipo;
+END CANTIDAD_EQUIPO_INSERT;
 
-CREATE OR REPLACE TRIGGER controlar_jugadores_equipo
-BEFORE INSERT OR UPDATE OF ID_EQUIPO OR DELETE ON JUGADOR
-FOR EACH ROW
-DECLARE
-    total_jugadores_new NUMBER;
-    total_jugadores_old NUMBER;
-BEGIN
-    IF DELETING THEN
-        -- Al eliminar un jugador, contar el número total de jugadores en el equipo del que se está eliminando
-        SELECT COUNT(*)
-        INTO total_jugadores_old
-        FROM JUGADOR
-        WHERE ID_EQUIPO = :OLD.ID_EQUIPO;
+CREATE OR REPLACE NONEDITIONABLE TRIGGER CANTIDAD_EQUIPO_DELETE
+FOR DELETE ON JUGADOR
+COMPOUND TRIGGER
+    equipo_id NUMBER;
+    v_cantidad NUMBER;
+    
+    BEFORE EACH ROW IS
+        BEGIN
+            equipo_id:= :OLD.ID_EQUIPO;
+    END BEFORE EACH ROW;
+    
+    AFTER STATEMENT IS
+        BEGIN
+            SELECT COUNT(*) INTO v_cantidad
+            FROM JUGADOR
+            WHERE id_equipo = equipo_id;
 
-        -- Verificar si el equipo del que se está eliminando el jugador se queda sin jugadores después de la eliminación
-        IF total_jugadores_old - 1 < 2 THEN
-            -- Si el equipo se queda con menos de 2 jugadores, mostrar un mensaje de error
-            RAISE_APPLICATION_ERROR(-20001, 'No se puede eliminar este jugador. El equipo debe tener al menos 2 jugadores.');
-        END IF;
-    ELSIF UPDATING THEN
-        -- Al actualizar un jugador, contar el número total de jugadores en el equipo al que se va a agregar el jugador
-        SELECT COUNT(*)
-        INTO total_jugadores_new
-        FROM JUGADOR
-        WHERE ID_EQUIPO = :NEW.ID_EQUIPO;
+            IF v_cantidad < 2 THEN
+                RAISE_APPLICATION_ERROR('-20002',
+                    'No puede haber menos de 2 jugadores.');
+            END IF;
+        EXCEPTION
+            WHEN NO_DATA_FOUND THEN
+                RAISE_APPLICATION_ERROR('-20001','No se han encontrado datos');
+    END AFTER STATEMENT;
+END CANTIDAD_EQUIPO_DELETE;
 
-        -- Verificar si el número de jugadores en el equipo al que se va a agregar el jugador es menor que 2 o mayor que 6
-        IF total_jugadores_new > 6 THEN
-            -- Si el equipo al que se va a agregar el jugador no tiene el número adecuado de jugadores, mostrar un mensaje de error
-            RAISE_APPLICATION_ERROR(-20002, 'El equipo al que se va a agregar el jugador debe tener entre 2 y 6 jugadores.');
-        END IF;
+CREATE OR REPLACE NONEDITIONABLE TRIGGER CANTIDAD_EQUIPO_UPDATE
+FOR UPDATE ON JUGADOR
+COMPOUND TRIGGER
+    equipo_id_old NUMBER;
+    equipo_id_new NUMBER;
+    v_cantidad NUMBER;
+    BEFORE EACH ROW IS
+        BEGIN
+            equipo_id_new := :NEW.ID_EQUIPO;
+            equipo_id_old := :OLD.ID_EQUIPO;
+    END BEFORE EACH ROW;
+    
+    AFTER STATEMENT IS
+        BEGIN
+            SELECT COUNT(*) INTO v_cantidad
+            FROM JUGADOR
+            WHERE id_equipo = equipo_id_new;
 
-        -- Contar el número total de jugadores en el equipo del que se está quitando el jugador
-        SELECT COUNT(*)
-        INTO total_jugadores_old
-        FROM JUGADOR
-        WHERE ID_EQUIPO = :OLD.ID_EQUIPO;
+            IF v_cantidad > 6 THEN
+                RAISE_APPLICATION_ERROR('-20003','No puede haber mas de
+                    6 jugadores.');
+            END IF;
+            
+            SELECT COUNT(*) INTO v_cantidad
+            FROM JUGADOR
+            WHERE id_equipo = equipo_id_old;
+            
+            IF v_cantidad <= 2 THEN
+                RAISE_APPLICATION_ERROR('-20002',
+                    'No puede haber menos de 2 jugadores.');
+            END IF;
+        EXCEPTION
+            WHEN NO_DATA_FOUND THEN
+                RAISE_APPLICATION_ERROR('-20001','No se han encontrado datos');
+    END AFTER STATEMENT;
 
-        -- Verificar si el equipo del que se está quitando el jugador se quedaría con menos de 2 jugadores después de la actualización
-        IF total_jugadores_old - 1 < 2 THEN
-            -- Si el equipo se queda con menos de 2 jugadores, mostrar un mensaje de error
-            RAISE_APPLICATION_ERROR(-20003, 'No se puede cambiar este jugador de equipo. El equipo actual debe tener al menos 2 jugadores.');
-        END IF;
-    ELSE -- Será insert.
-        -- Al insertar un nuevo jugador, contar el número total de jugadores en el equipo al que se va a agregar el jugador
-        SELECT COUNT(*)
-        INTO total_jugadores_new
-        FROM JUGADOR
-        WHERE ID_EQUIPO = :NEW.ID_EQUIPO;
+END CANTIDAD_EQUIPO_UPDATE;
 
-        -- Verificar si el número de jugadores en el equipo al que se va a agregar el jugador es menor que 2 o mayor que 6
-        IF total_jugadores_new > 6 THEN
-            -- Si el equipo al que se va a agregar el jugador no tiene el número adecuado de jugadores, mostrar un mensaje de error
-            RAISE_APPLICATION_ERROR(-20004, 'El equipo al que se va a agregar el jugador debe tener entre 2 y 6 jugadores.');
-        END IF;
-    END IF;
-END controlar_jugadores_equipo;
-*/
-
+--Trigger CANTIDAD_EQUIPO_INSERT compilado
+--Trigger CANTIDAD_EQUIPO_UPDATE compilado
+--Trigger CANTIDAD_EQUIPO_DELETE compilado
 
 /*Controlar que para poder generar el calendario de una competicion
 todos los equipos tienen que tener un mínimo de 2 jugadores.*/
@@ -144,11 +124,10 @@ BEGIN
 
 EXCEPTION
     WHEN NO_DATA_FOUND THEN
-        DBMS_OUTPUT.PUT_LINE('No se han encontrado equipos.');
-    WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('Error al recuperar informacion.');
+        RAISE_APPLICATION_ERROR('-20002','No se han encontrado equipos.');
 END GENERAR_CALENDARIO;
 
+--Trigger GENERAR_CALENDARIO compilado
 
 /*Controlar que una vez generado el calendario de la competicion, no se
 pueden modificar los equipos.*/
@@ -197,11 +176,10 @@ BEGIN
     
 EXCEPTION
     WHEN e_etapa_cerrada THEN
-        RAISE_APPLICATION_ERROR('-20001','La etapa esta cerrada.');
-    WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('Error al recuperar informacion.');
+        RAISE_APPLICATION_ERROR('-20001','La etapa está cerrada.');
 END NOMODIFICAR_EQUIPO;
 
+--Trigger NOMODIFICAR_EQUIPO compilado
 
 /*Controlar que una vez generado el calendario de la competicion, no se
 pueden modificar los jugadores de cada equipo.*/
@@ -285,15 +263,14 @@ BEGIN
 EXCEPTION
     WHEN NO_DATA_FOUND THEN
         RAISE_APPLICATION_ERROR('-20005','No se han encontrado datos.');
-    WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('Error al recuperar informacion.');
 END NOMODIFICAR_JUGADOR;
 
+--Trigger NOMODIFICAR_JUGADOR compilado
 
 /*Controlar que el salario total de los jugadores del equipo no podra ser
 superior a 200.000€ anuales.*/
-CREATE OR REPLACE TRIGGER MAXSALARIO_EQUIPO
-AFTER INSERT /*OR UPDATE*/ ON JUGADOR
+CREATE OR REPLACE TRIGGER MAXSALARIO_EQUIPO_INSERT
+BEFORE INSERT ON JUGADOR
 FOR EACH ROW
 DECLARE
     v_salarioanual_total NUMBER;
@@ -302,21 +279,47 @@ BEGIN
     FROM JUGADOR
     WHERE id_equipo = :new.id_equipo;
     
-    v_salarioanual_total := v_salarioanual_total + :new.sueldo;
-    
     IF v_salarioanual_total + :new.sueldo * 12 > 200000 THEN
-        RAISE_APPLICATION_ERROR('-20001','El salario del equipo es mas
-            de 200000.');
+        RAISE_APPLICATION_ERROR('-20001','El salario del equipo es más
+            de 200000');
     END IF;
 
 EXCEPTION
     WHEN NO_DATA_FOUND THEN
-        NULL;
-    WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('Error al recuperar informacion.');
-END MAXSALARIO_EQUIPO;
+        RAISE_APPLICATION_ERROR('-20002','No se han encontrado datos');
+END MAXSALARIO_EQUIPO_INSERT;
 
+CREATE OR REPLACE NONEDITIONABLE TRIGGER MAXSALARIO_EQUIPO_UPDATE
+FOR UPDATE ON JUGADOR
+COMPOUND TRIGGER
+    v_salarioanual_total NUMBER;
+    equipo_id NUMBER;
+    BEFORE EACH ROW IS
+        BEGIN
+            equipo_id := :NEW.ID_EQUIPO;
+    END BEFORE EACH ROW;
+    
+    AFTER STATEMENT IS
+        BEGIN
+            SELECT NVL(SUM(SUELDO * 12),0) INTO v_salarioanual_total
+            FROM JUGADOR
+            WHERE id_equipo = equipo_id;
 
+            IF v_salarioanual_total > 200000 THEN
+                RAISE_APPLICATION_ERROR('-20001','El salario del equipo es más 
+                    de 200000');
+            END IF;
+        EXCEPTION
+            WHEN NO_DATA_FOUND THEN
+                RAISE_APPLICATION_ERROR('-20001','Error al encontrar informacion.');
+    END AFTER STATEMENT;
+
+END MAXSALARIO_EQUIPO_UPDATE;
+
+--Trigger MAXSALARIO_EQUIPO_INSERT compilado
+--Trigger MAXSALARIO_EQUIPO_UPDATE compilado
+
+/*Controlar que los resultados de los enfrentamientos estén correctos*/
 CREATE OR REPLACE TRIGGER ACTUALIZAR_RESULTADOS
 AFTER INSERT ON ENFRENTAMIENTO
 FOR EACH ROW
@@ -350,6 +353,8 @@ BEGIN
     END IF;
     
 EXCEPTION
-    WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('Error al recuperar informacion.');
-END;
+    WHEN NO_DATA_FOUND THEN
+        RAISE_APPLICATION_ERROR('-20001','Error al encontrar informacion.');
+END ACTUALIZAR_RESULTADOS;
+
+--Trigger ACTUALIZAR_RESULTADOS compilado
