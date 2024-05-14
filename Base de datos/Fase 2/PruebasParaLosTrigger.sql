@@ -1,42 +1,44 @@
---Trigger CANTIDAD_EQUIPO compilado
-
-/*PROBAMOS EL TRIGGER*/
+/*PROBAMOS LOS TRIGGER PARA CONTROLAR LA CANTIDAD DE JUGADORES DE UN EQUIPO*/
 --Insertamos un jugador en un equipo con 0 jugadores (FUNCIONA)
-
-/*
-DELETE FROM EQUIPO WHERE ID_EQUIPO = 35;
-
 INSERT INTO EQUIPO VALUES(DEFAULT,'PruebaTrigger',
     TO_DATE('01/01/85','DD/MM/YY'),'A','Rojo');
 
 COMMIT;
 
-SELECT * FROM EQUIPO WHERE NOM_EQUIPO = 'PruebaTrigger';
-*/
+SELECT ID_EQUIPO FROM EQUIPO WHERE NOM_EQUIPO = 'PruebaTrigger';
+
 SELECT E.ID_EQUIPO, NVL(COUNT(J.ID_JUGADOR),0) AS "CANTIDAD JUGADORES"
 FROM EQUIPO E
 LEFT JOIN JUGADOR J ON E.ID_EQUIPO = J.ID_EQUIPO
-WHERE E.ID_EQUIPO = 35
+WHERE E.ID_EQUIPO = 1
 GROUP BY E.ID_EQUIPO
 ORDER BY E.ID_EQUIPO;
 
 INSERT INTO JUGADOR VALUES(DEFAULT,'Juan','JuanGOD','Colombia','Jugador',
-    TO_DATE('02/03/98','DD/MM/YY'),3500,35);
+    TO_DATE('02/03/98','DD/MM/YY'),3500,1);
 
 COMMIT;
 
 SELECT E.ID_EQUIPO, NVL(COUNT(J.ID_JUGADOR),0) AS "CANTIDAD JUGADORES"
 FROM EQUIPO E
 LEFT JOIN JUGADOR J ON E.ID_EQUIPO = J.ID_EQUIPO
-WHERE E.ID_EQUIPO = 35
+WHERE E.ID_EQUIPO = 1
 GROUP BY E.ID_EQUIPO
 ORDER BY E.ID_EQUIPO;
 
 /*Resultado:
 
+1 fila insertadas.
+
+Confirmación terminada.
+
+ ID_EQUIPO
+----------
+         1
+
  ID_EQUIPO CANTIDAD JUGADORES
 ---------- ------------------
-        35                  0
+         1                  0
 
 1 fila insertadas.
 
@@ -44,141 +46,353 @@ Confirmación terminada.
 
  ID_EQUIPO CANTIDAD JUGADORES
 ---------- ------------------
-        35                  1
-         
+         1                  1
 */
+
 --Insertamos un jugador en un equipo con 6 jugadores (FUNCIONA)
-/*LLENAMOS EL EQUIPO CREADO ANTERIORMENTE PARA LA PRUEBA
-
+/*LLENAMOS EL EQUIPO CREADO ANTERIORMENTE PARA LA PRUEBA*/
 INSERT INTO JUGADOR VALUES(DEFAULT,'Luis','LuisGOD','Colombia','Jugador',
-    TO_DATE('02/03/98','DD/MM/YY'),3500,35);
-    COMMIT;
+    TO_DATE('02/03/98','DD/MM/YY'),3500,1);
 INSERT INTO JUGADOR VALUES(DEFAULT,'David','DavidGOD','Colombia','Jugador',
-    TO_DATE('02/03/98','DD/MM/YY'),3500,35);
-    COMMIT;
+    TO_DATE('02/03/98','DD/MM/YY'),3500,1);
 INSERT INTO JUGADOR VALUES(DEFAULT,'Zahir','ZaGOD','Colombia','Jugador',
-    TO_DATE('02/03/98','DD/MM/YY'),3500,35);
-    COMMIT;
+    TO_DATE('02/03/98','DD/MM/YY'),3500,1);
 INSERT INTO JUGADOR VALUES(DEFAULT,'Ibai','YaleroGOD','Colombia','Jugador',
-    TO_DATE('02/03/98','DD/MM/YY'),3500,35);
-    COMMIT;
+    TO_DATE('02/03/98','DD/MM/YY'),3500,1);
 INSERT INTO JUGADOR VALUES(DEFAULT,'Lorena','LorenaGOD','Colombia','Jugador',
-    TO_DATE('02/03/98','DD/MM/YY'),3500,35);
-    COMMIT;
+    TO_DATE('02/03/98','DD/MM/YY'),3500,1);
 
-*/
+COMMIT;
+
 SELECT E.ID_EQUIPO, NVL(COUNT(J.ID_JUGADOR),0) AS "CANTIDAD JUGADORES"
 FROM EQUIPO E
 JOIN JUGADOR J ON E.ID_EQUIPO = J.ID_EQUIPO
 GROUP BY E.ID_EQUIPO
-HAVING E.ID_EQUIPO = 35
+HAVING E.ID_EQUIPO = 1
 ORDER BY ID_EQUIPO;
 
 INSERT INTO JUGADOR VALUES(DEFAULT,'DIOS','DIOSGOD','Colombia','Jugador',
-    TO_DATE('02/03/98','DD/MM/YY'),3500,35);
+    TO_DATE('02/03/98','DD/MM/YY'),3500,1);
 
 SELECT E.ID_EQUIPO, NVL(COUNT(J.ID_JUGADOR),0) AS "CANTIDAD JUGADORES"
 FROM EQUIPO E
 JOIN JUGADOR J ON E.ID_EQUIPO = J.ID_EQUIPO
 GROUP BY E.ID_EQUIPO
-HAVING E.ID_EQUIPO = 33
+HAVING E.ID_EQUIPO = 1
 ORDER BY ID_EQUIPO;
 
 /*Resultado:
 
  ID_EQUIPO CANTIDAD JUGADORES
 ---------- ------------------
-        35                  6
+         1                  6
 
-Error que empieza en la línea: 132 del comando -
+Error que empieza en la línea: 291 del comando -
 INSERT INTO JUGADOR VALUES(DEFAULT,'DIOS','DIOSGOD','Colombia','Jugador',
-    TO_DATE('02/03/98','DD/MM/YY'),3500,35)
-Error en la línea de comandos : 132 Columna : 13
+    TO_DATE('02/03/98','DD/MM/YY'),3500,1)
+Error en la línea de comandos : 291 Columna : 13
 Informe de error -
 Error SQL: ORA-20001: No puede haber mas de 6 jugadores
-ORA-06512: en "EQDAW03.CANTIDAD_EQUIPO", línea 12
-ORA-04088: error durante la ejecución del disparador 'EQDAW03.CANTIDAD_EQUIPO'
+ORA-06512: en "DAW06.CANTIDAD_EQUIPO_INSERT", línea 9
+ORA-04088: error durante la ejecución del disparador 'DAW06.CANTIDAD_EQUIPO_INSERT'
 
  ID_EQUIPO CANTIDAD JUGADORES
 ---------- ------------------
-        35                  6
-        
-*/
+         1                  6
 
---Borramos un jugador de un equipo con 2 jugadores (NO FUNCIONA)
-/*
+*/
+--Borramos un jugador de un equipo con 2 jugadores (FUNCIONA)
 SELECT ID_JUGADOR
 FROM JUGADOR
-WHERE ID_EQUIPO = 35;
-commit;
-DELETE FROM
-JUGADOR WHERE ID_JUGADOR = 215;
-DELETE FROM
-JUGADOR WHERE ID_JUGADOR = 199;
-DELETE FROM
-JUGADOR WHERE ID_JUGADOR = 200;
-DELETE FROM
-JUGADOR WHERE ID_JUGADOR = 201;
+WHERE ID_EQUIPO = 1;
 
-SELECT ID_EQUIPO
-FROM EQUIPO
-WHERE NOM_EQUIPO = 'PruebaTrigger';
-
-INSERT INTO JUGADOR VALUES(DEFAULT,'Juan','JuanGOD','Colombia','Jugador',
-    TO_DATE('02/03/98','DD/MM/YY'),3500,31);
-    
-INSERT INTO JUGADOR VALUES(DEFAULT,'Mati','ELMati','Colombia','Jugador',
-    TO_DATE('01/04/98','DD/MM/YY'),3500,31);
-
-INSERT INTO JUGADOR VALUES(DEFAULT,'Ibai','Yalero','Colombia','Jugador',
-    TO_DATE('01/04/98','DD/MM/YY'),3500,31);
-    
-SELECT *
-FROM JUGADOR
-WHERE ID_EQUIPO = 33;
+DELETE FROM
+JUGADOR WHERE ID_JUGADOR = 1;
+DELETE FROM
+JUGADOR WHERE ID_JUGADOR = 2;
+DELETE FROM
+JUGADOR WHERE ID_JUGADOR = 3;
+DELETE FROM
+JUGADOR WHERE ID_JUGADOR = 4;
 
 COMMIT;
-*/
+
 SELECT ID_JUGADOR
 FROM JUGADOR
-WHERE ID_EQUIPO = 35;
+WHERE ID_EQUIPO = 1;
 
-DELETE
-FROM JUGADOR
-WHERE id_jugador = 197;
-
-COMMIT;
+DELETE FROM JUGADOR
+WHERE ID_JUGADOR = 5;
 
 /*Resultado:
 
+ID_JUGADOR
+----------
+         1
+         2
+         3
+         4
+         5
+         6
+
+1 fila eliminado
+
+1 fila eliminado
+
+1 fila eliminado
+
+1 fila eliminado
+
+Confirmación terminada.
+
+ID_JUGADOR
+----------
+         5
+         6
+
+Error que empieza en la línea: 341 del comando -
+DELETE FROM JUGADOR
+WHERE ID_JUGADOR = 5
+Error en la línea de comandos : 341 Columna : 13
+Informe de error -
+Error SQL: ORA-20002: No puede haber menos de 2 jugadores.
+ORA-06512: en "DAW06.CANTIDAD_EQUIPO_DELETE", línea 17
+ORA-04088: error durante la ejecución del disparador 'DAW06.CANTIDAD_EQUIPO_DELETE'
+
 */
 
---Actualizamos el id_equipo de un jugador de un equipo con 2 jugadores (NO FUNCIONA)
+/*Actualizamos el id_equipo de un jugador de un equipo con 2 jugadores a un
+equipo con 6 jugadores*/
 
-/*
+--FUNCIONA
+
 INSERT INTO EQUIPO VALUES(DEFAULT,'PruebaTrigger2',
     TO_DATE('01/01/85','DD/MM/YY'),'A','Rojo');
 
-COMMIT;
-
-SELECT * FROM EQUIPO WHERE NOM_EQUIPO = 'PruebaTrigger2';
-
-INSERT INTO JUGADOR VALUES(DEFAULT,'Ibai','Yalero','Colombia','Jugador',
-    TO_DATE('01/04/98','DD/MM/YY'),3500,36);
-INSERT INTO JUGADOR VALUES(DEFAULT,'Mati','ELMati','Colombia','Jugador',
-    TO_DATE('01/04/98','DD/MM/YY'),3500,36);
+INSERT INTO JUGADOR VALUES(DEFAULT,'Luis','LuisGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),3500,2);
+INSERT INTO JUGADOR VALUES(DEFAULT,'David','DavidGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),3500,2);
+INSERT INTO JUGADOR VALUES(DEFAULT,'Zahir','ZaGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),3500,2);
+INSERT INTO JUGADOR VALUES(DEFAULT,'Ibai','YaleroGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),3500,2);
+INSERT INTO JUGADOR VALUES(DEFAULT,'Lorena','LorenaGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),3500,2);
+INSERT INTO JUGADOR VALUES(DEFAULT,'DIOS','DIOSGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),3500,2);
+    
 COMMIT;
 
 SELECT E.ID_EQUIPO, NVL(COUNT(J.ID_JUGADOR),0) AS "CANTIDAD JUGADORES"
 FROM EQUIPO E
 JOIN JUGADOR J ON E.ID_EQUIPO = J.ID_EQUIPO
 GROUP BY E.ID_EQUIPO
+HAVING E.ID_EQUIPO = 2
 ORDER BY ID_EQUIPO;
 
-*/
+SELECT ID_JUGADOR, ID_EQUIPO
+FROM JUGADOR
+ORDER BY ID_EQUIPO;
+
 UPDATE JUGADOR
-SET id_equipo = 36
-WHERE id_jugador = 215;
+SET id_equipo = 2
+WHERE id_jugador = 5;
+
+COMMIT;
+
+SELECT E.ID_EQUIPO, NVL(COUNT(J.ID_JUGADOR),0) AS "CANTIDAD JUGADORES"
+FROM EQUIPO E
+JOIN JUGADOR J ON E.ID_EQUIPO = J.ID_EQUIPO
+GROUP BY E.ID_EQUIPO
+HAVING E.ID_EQUIPO = 2
+ORDER BY ID_EQUIPO;
+
+SELECT ID_JUGADOR FROM JUGADOR WHERE ID_EQUIPO = 2;
+
+/*Resultados
+
+1 fila insertadas.
+
+1 fila insertadas.
+
+1 fila insertadas.
+
+1 fila insertadas.
+
+1 fila insertadas.
+
+1 fila insertadas.
+
+1 fila insertadas.
+
+Confirmación terminada.
+
+ ID_EQUIPO CANTIDAD JUGADORES
+---------- ------------------
+         2                  6
+
+ID_JUGADOR  ID_EQUIPO
+---------- ----------
+         5          1
+         6          1
+        10          2
+        13          2
+        12          2
+         9          2
+         8          2
+        11          2
+
+Error que empieza en la línea: 411 del comando -
+UPDATE JUGADOR
+SET id_equipo = 2
+WHERE id_jugador = 5
+Error en la línea de comandos : 411 Columna : 8
+Informe de error -
+Error SQL: ORA-20003: No puede haber mas de 6 jugadores.
+ORA-06512: en "DAW06.CANTIDAD_EQUIPO_UPDATE", línea 21
+ORA-04088: error durante la ejecución del disparador 'DAW06.CANTIDAD_EQUIPO_UPDATE'
+*/
+
+/*Actualizamos el id_equipo de un jugador de un equipo con 2 jugadores a un
+equipo con 5 jugadores (FUNCIONA)*/
+
+SELECT E.ID_EQUIPO, NVL(COUNT(J.ID_JUGADOR),0) AS "CANTIDAD JUGADORES"
+FROM EQUIPO E
+JOIN JUGADOR J ON E.ID_EQUIPO = J.ID_EQUIPO
+GROUP BY E.ID_EQUIPO
+HAVING E.ID_EQUIPO = 1
+ORDER BY ID_EQUIPO;
+
+SELECT E.ID_EQUIPO, NVL(COUNT(J.ID_JUGADOR),0) AS "CANTIDAD JUGADORES"
+FROM EQUIPO E
+JOIN JUGADOR J ON E.ID_EQUIPO = J.ID_EQUIPO
+GROUP BY E.ID_EQUIPO
+HAVING E.ID_EQUIPO = 2
+ORDER BY ID_EQUIPO;
+
+SELECT ID_JUGADOR, ID_EQUIPO
+FROM JUGADOR
+ORDER BY ID_EQUIPO;
+
+UPDATE JUGADOR
+SET ID_EQUIPO = 2
+WHERE ID_JUGADOR = 14;
+
+/*Resultado:
+
+ ID_EQUIPO CANTIDAD JUGADORES
+---------- ------------------
+         1                  2
+
+ ID_EQUIPO CANTIDAD JUGADORES
+---------- ------------------
+         2                  5
+
+ID_JUGADOR  ID_EQUIPO
+---------- ----------
+         5          1
+        14          1
+        11          2
+        12          2
+         6          2
+         9          2
+         8          2
+
+Error que empieza en la línea: 495 del comando -
+UPDATE JUGADOR
+SET ID_EQUIPO = 2
+WHERE ID_JUGADOR = 14
+Error en la línea de comandos : 495 Columna : 8
+Informe de error -
+Error SQL: ORA-20002: No puede haber menos de 2 jugadores.
+ORA-06512: en "DAW06.CANTIDAD_EQUIPO_UPDATE", línea 27
+ORA-04088: error durante la ejecución del disparador 'DAW06.CANTIDAD_EQUIPO_UPDATE'
+*/
+
+/*Actualizamos el id_equipo de un jugador de un equipo con 4 jugadores a un
+equipo con 5 jugadores (FUNCIONA)*/
+
+INSERT INTO JUGADOR VALUES(DEFAULT,'Luis','LuisGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),3500,1);
+INSERT INTO JUGADOR VALUES(DEFAULT,'David','DavidGOD','Colombia','Jugador',
+    TO_DATE('02/03/98','DD/MM/YY'),3500,1);
+
+DELETE FROM JUGADOR
+WHERE ID_JUGADOR = 10;
+
+COMMIT;
+
+SELECT E.ID_EQUIPO, NVL(COUNT(J.ID_JUGADOR),0) AS "CANTIDAD JUGADORES"
+FROM EQUIPO E
+JOIN JUGADOR J ON E.ID_EQUIPO = J.ID_EQUIPO
+GROUP BY E.ID_EQUIPO
+HAVING E.ID_EQUIPO = 1
+ORDER BY ID_EQUIPO;
+
+SELECT E.ID_EQUIPO, NVL(COUNT(J.ID_JUGADOR),0) AS "CANTIDAD JUGADORES"
+FROM EQUIPO E
+JOIN JUGADOR J ON E.ID_EQUIPO = J.ID_EQUIPO
+GROUP BY E.ID_EQUIPO
+HAVING E.ID_EQUIPO = 2
+ORDER BY ID_EQUIPO;
+
+SELECT ID_JUGADOR, ID_EQUIPO
+FROM JUGADOR
+ORDER BY ID_EQUIPO;
+
+UPDATE JUGADOR
+SET id_equipo = 2
+WHERE id_jugador = 6;
+
+COMMIT;
+
+/*Resultado:
+
+1 fila insertadas.
+
+1 fila insertadas.
+
+1 fila eliminado
+
+Confirmación terminada.
+
+ ID_EQUIPO CANTIDAD JUGADORES
+---------- ------------------
+         1                  4
+
+ ID_EQUIPO CANTIDAD JUGADORES
+---------- ------------------
+         2                  5
+
+ID_JUGADOR  ID_EQUIPO
+---------- ----------
+         6          1
+        14          1
+        15          1
+         5          1
+        13          2
+        12          2
+        11          2
+         9          2
+         8          2
+
+1 fila actualizadas.
+
+Confirmación terminada.
+
+ID_JUGADOR  ID_EQUIPO
+---------- ----------
+        14          1
+        15          1
+         5          1
+        12          2
+        13          2
+        11          2
+         9          2
+         8          2
+         6          2
+*/
 
 
 /*PROBAMOS EL TRIGGER GENERAR_CALENDARIO*/
@@ -701,9 +915,9 @@ ID_JUGADOR NOMBRE                         NICKNAME                       NACIONA
 */
 
 
-/*PROBAMOS EL TRIGGER MAXSALARIO_EQUIPO*/
+/*PROBAMOS LOS TRIGGERS PARA CONTROLAR EL SALARIO ANUAL DE CADA EQUIPO*/
 --Insertamos un jugador con un sueldo suficiente para que no salte error (FUNCIONA)
-/*Creamos un equipo con jugadores que tengan menos de 200k anuales
+/*Creamos un equipo con jugadores que tengan menos de 200k anuales*/
 
 INSERT INTO EQUIPO VALUES(DEFAULT,'PruebaTrigger6',
     TO_DATE('01/01/85','DD/MM/YY'),'A','Rojo');
@@ -715,37 +929,54 @@ WHERE NOM_EQUIPO = 'PruebaTrigger6';
 COMMIT;
 
 INSERT INTO JUGADOR VALUES(DEFAULT,'Luis','LuisGOD','Colombia','Jugador',
-    TO_DATE('02/03/98','DD/MM/YY'),2000,40);
+    TO_DATE('02/03/98','DD/MM/YY'),2000,3);
 INSERT INTO JUGADOR VALUES(DEFAULT,'David','DavidGOD','Colombia','Jugador',
-    TO_DATE('02/03/98','DD/MM/YY'),2000,40);
+    TO_DATE('02/03/98','DD/MM/YY'),2000,3);
 INSERT INTO JUGADOR VALUES(DEFAULT,'Zahir','ZaGOD','Colombia','Jugador',
-    TO_DATE('02/03/98','DD/MM/YY'),2000,40);
+    TO_DATE('02/03/98','DD/MM/YY'),2000,3);
 
 COMMIT;
 
-SELECT * FROM JUGADOR
-WHERE ID_EQUIPO = 40;
+SELECT ID_JUGADOR
+FROM JUGADOR
+WHERE ID_EQUIPO = 3;
 
-DELETE FROM JUGADOR
-WHERE ID_JUGADOR = 255;
-
-COMMIT;
-
-*/
 SELECT SUM(SUELDO * 12)
 FROM JUGADOR
-WHERE id_equipo = 40;
+WHERE id_equipo = 3;
 
 INSERT INTO JUGADOR VALUES(DEFAULT,'Lorena','LorenaGOD','Colombia','Jugador',
-    TO_DATE('02/03/98','DD/MM/YY'),2000,40);
+    TO_DATE('02/03/98','DD/MM/YY'),2000,3);
 
 COMMIT;
 
 SELECT SUM(SUELDO * 12)
 FROM JUGADOR
-WHERE id_equipo = 40;
+WHERE id_equipo = 3;
 
 /*Resultado:
+
+1 fila insertadas.
+
+ ID_EQUIPO
+----------
+         3
+
+Confirmación terminada.
+
+1 fila insertadas.
+
+1 fila insertadas.
+
+1 fila insertadas.
+
+Confirmación terminada.
+
+ID_JUGADOR
+----------
+        16
+        17
+        18
 
 SUM(SUELDO*12)
 --------------
@@ -763,14 +994,14 @@ SUM(SUELDO*12)
 --Insertamos un jugador con un sueldo para que salte error (FUNCIONA)
 SELECT SUM(SUELDO * 12)
 FROM JUGADOR
-WHERE id_equipo = 40;
---rollback commit
+WHERE id_equipo = 3;
+
 INSERT INTO JUGADOR VALUES(DEFAULT,'Ibai','Yalero','Colombia','Jugador',
-    TO_DATE('01/04/98','DD/MM/YY'),50000,40);
+    TO_DATE('01/04/98','DD/MM/YY'),50000,3);
 
 SELECT SUM(SUELDO * 12)
 FROM JUGADOR
-WHERE id_equipo = 40;
+WHERE id_equipo = 3;
 
 /*Resultado:
 
@@ -778,15 +1009,15 @@ SUM(SUELDO*12)
 --------------
          96000
 
-Error que empieza en la línea: 1.034 del comando -
+Error que empieza en la línea: 1.279 del comando -
 INSERT INTO JUGADOR VALUES(DEFAULT,'Ibai','Yalero','Colombia','Jugador',
-    TO_DATE('01/04/98','DD/MM/YY'),50000,40)
-Error en la línea de comandos : 1.034 Columna : 13
+    TO_DATE('01/04/98','DD/MM/YY'),50000,3)
+Error en la línea de comandos : 1.279 Columna : 13
 Informe de error -
 Error SQL: ORA-20001: El salario del equipo es más
-                de 200000
-ORA-06512: en "EQDAW03.MAXSALARIO_EQUIPO", línea 11
-ORA-04088: error durante la ejecución del disparador 'EQDAW03.MAXSALARIO_EQUIPO'
+            de 200000
+ORA-06512: en "DAW06.MAXSALARIO_EQUIPO_INSERT", línea 9
+ORA-04088: error durante la ejecución del disparador 'DAW06.MAXSALARIO_EQUIPO_INSERT'
 
 SUM(SUELDO*12)
 --------------
@@ -797,46 +1028,136 @@ SUM(SUELDO*12)
 --Actualizamos el sueldo de un jugador para que no salte error (NO FUNCIONA)
 SELECT ID_JUGADOR, SUELDO
 FROM JUGADOR
-WHERE id_equipo = 40;
+WHERE id_equipo = 3;
 
 SELECT SUM(SUELDO * 12)
 FROM JUGADOR
-WHERE id_equipo = 40;
+WHERE id_equipo = 3;
 
 UPDATE JUGADOR
 SET sueldo = 3000
-WHERE id_jugador = 233;
+WHERE id_jugador = 19;
 
 commit;
 
 SELECT SUM(SUELDO * 12)
 FROM JUGADOR
-WHERE id_equipo = 40;
+WHERE id_equipo = 3;
 
 SELECT ID_JUGADOR, SUELDO
 FROM JUGADOR
-WHERE id_equipo = 40;
+WHERE id_equipo = 3;
 
 /*Resultado:
 
+ID_JUGADOR     SUELDO
+---------- ----------
+        16       2000
+        17       2000
+        18       2000
+        19       2000
 
+SUM(SUELDO*12)
+--------------
+         96000
+
+1 fila actualizadas.
+
+Confirmación terminada.
+
+SUM(SUELDO*12)
+--------------
+        108000
+
+ID_JUGADOR     SUELDO
+---------- ----------
+        16       2000
+        17       2000
+        18       2000
+        19       3000
 
 */
 
---Actualizamos el sueldo de un jugador para que salte error (NO FUNCIONA)
+--Actualizamos el sueldo de un jugador para que salte error (FUNCIONA)
+SELECT ID_JUGADOR, SUELDO
+FROM JUGADOR
+WHERE id_equipo = 3;
+
+SELECT SUM(SUELDO * 12)
+FROM JUGADOR
+WHERE id_equipo = 3;
+
 UPDATE JUGADOR
-SET sueldo = 1
-WHERE id_jugador = 1;
+SET sueldo = 60000
+WHERE id_jugador = 16;
+
+SELECT ID_JUGADOR, SUELDO
+FROM JUGADOR
+WHERE id_equipo = 3;
+
+SELECT SUM(SUELDO * 12)
+FROM JUGADOR
+WHERE id_equipo = 3;
 
 /*Resultado:
 
+ID_JUGADOR     SUELDO
+---------- ----------
+        16       2000
+        17       2000
+        18       2000
+        19       3000
 
+SUM(SUELDO*12)
+--------------
+        108000
+
+Error que empieza en la línea: 1.370 del comando -
+UPDATE JUGADOR
+SET sueldo = 60000
+WHERE id_jugador = 16
+Error en la línea de comandos : 1.370 Columna : 8
+Informe de error -
+Error SQL: ORA-20001: El salario del equipo es más 
+                    de 200000
+ORA-06512: en "DAW06.MAXSALARIO_EQUIPO_UPDATE", línea 16
+ORA-04088: error durante la ejecución del disparador 'DAW06.MAXSALARIO_EQUIPO_UPDATE'
+
+ID_JUGADOR     SUELDO
+---------- ----------
+        16       2000
+        17       2000
+        18       2000
+        19       3000
+
+
+SUM(SUELDO*12)
+--------------
+        108000
 
 */
-
 
 /*PRUEBA PARA EL TRIGGER ACTUALIZAR_RESULTADOS*/
 SELECT *
 FROM EQUIPO_COMPETICION
 Where ID_COMPETICION = 1
 ORDER BY VICTORIAS DESC, PUNTOS DESC;
+
+/*Resultado:
+
+ ID_EQUIPO ID_COMPETICION  VICTORIAS     PUNTOS
+---------- -------------- ---------- ----------
+        17              1          9         45
+         3              1          8         18
+        20              1          6         21
+        10              1          5         29
+        16              1          5         26
+         7              1          4         53
+        13              1          4         23
+         4              1          4         19
+         1              1          4         15
+         2              1          2         16
+
+10 filas seleccionadas. 
+
+*/
