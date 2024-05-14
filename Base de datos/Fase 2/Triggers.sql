@@ -12,13 +12,13 @@ DROP TRIGGER ACTUALIZAR_RESULTADOS;
 
 /*Controlar que no haya más de 6 ni menos de 2 jugadores en un equipo.*/
 CREATE OR REPLACE TRIGGER CANTIDAD_EQUIPO_INSERT
-BEFORE INSERT ON JUGADOR
+BEFORE INSERT ON JUGADORES
 FOR EACH ROW
 DECLARE
     v_cantidad NUMBER;
 BEGIN
     SELECT COUNT(*) INTO v_cantidad
-    FROM JUGADOR
+    FROM JUGADORES
     WHERE id_equipo = :new.id_equipo;
         
     IF v_cantidad >= 6 THEN
@@ -32,7 +32,7 @@ EXCEPTION
 END CANTIDAD_EQUIPO_INSERT;
 
 CREATE OR REPLACE NONEDITIONABLE TRIGGER CANTIDAD_EQUIPO_DELETE
-FOR DELETE ON JUGADOR
+FOR DELETE ON JUGADORES
 COMPOUND TRIGGER
     equipo_id NUMBER;
     v_cantidad NUMBER;
@@ -45,7 +45,7 @@ COMPOUND TRIGGER
     AFTER STATEMENT IS
         BEGIN
             SELECT COUNT(*) INTO v_cantidad
-            FROM JUGADOR
+            FROM JUGADORES
             WHERE id_equipo = equipo_id;
 
             IF v_cantidad < 2 THEN
@@ -59,7 +59,7 @@ COMPOUND TRIGGER
 END CANTIDAD_EQUIPO_DELETE;
 
 CREATE OR REPLACE NONEDITIONABLE TRIGGER CANTIDAD_EQUIPO_UPDATE
-FOR UPDATE ON JUGADOR
+FOR UPDATE ON JUGADORES
 COMPOUND TRIGGER
     equipo_id_old NUMBER;
     equipo_id_new NUMBER;
@@ -73,7 +73,7 @@ COMPOUND TRIGGER
     AFTER STATEMENT IS
         BEGIN
             SELECT COUNT(*) INTO v_cantidad
-            FROM JUGADOR
+            FROM JUGADORES
             WHERE id_equipo = equipo_id_new;
 
             IF v_cantidad > 6 THEN
@@ -82,7 +82,7 @@ COMPOUND TRIGGER
             END IF;
             
             SELECT COUNT(*) INTO v_cantidad
-            FROM JUGADOR
+            FROM JUGADORES
             WHERE id_equipo = equipo_id_old;
             
             IF v_cantidad <= 2 THEN
@@ -103,14 +103,14 @@ END CANTIDAD_EQUIPO_UPDATE;
 /*Controlar que para poder generar el calendario de una competicion
 todos los equipos tienen que tener un mínimo de 2 jugadores.*/
 CREATE OR REPLACE TRIGGER GENERAR_CALENDARIO
-BEFORE INSERT ON JORNADA
+BEFORE INSERT ON JORNADAS
 FOR EACH ROW
 DECLARE
     v_cantidad_min NUMBER;
     v_equipo_id EQUIPO.ID_EQUIPO%TYPE;
 BEGIN
     
-    FOR lista_equipos IN (SELECT id_equipo FROM EQUIPO)
+    FOR lista_equipos IN (SELECT id_equipo FROM EQUIPOS)
     LOOP
         v_cantidad_min := 0;
         v_equipo_id := lista_equipos.id_equipo;
@@ -132,15 +132,15 @@ END GENERAR_CALENDARIO;
 /*Controlar que una vez generado el calendario de la competicion, no se
 pueden modificar los equipos.*/
 CREATE OR REPLACE TRIGGER NOMODIFICAR_EQUIPO
-BEFORE INSERT OR DELETE OR UPDATE ON EQUIPO_COMPETICION
+BEFORE INSERT OR DELETE OR UPDATE ON EQUIPOS_COMPETICIONES
 FOR EACH ROW
 DECLARE
-    v_etapa_competicion COMPETICION.etapa%TYPE;
+    v_etapa_competicion COMPETICIONES.etapa%TYPE;
     e_etapa_cerrada EXCEPTION;
 BEGIN
     IF INSERTING THEN
         SELECT C.etapa INTO v_etapa_competicion
-        FROM COMPETICION C
+        FROM COMPETICIONES C
         WHERE C.id_competicion = :new.id_competicion;
     
         IF v_etapa_competicion = 'C' THEN
@@ -149,7 +149,7 @@ BEGIN
         
     ELSIF DELETING THEN
         SELECT C.etapa INTO v_etapa_competicion
-        FROM COMPETICION C
+        FROM COMPETICIONES C
         WHERE C.id_competicion = :old.id_competicion;
     
         IF v_etapa_competicion = 'C' THEN
@@ -158,7 +158,7 @@ BEGIN
     
     ELSIF UPDATING THEN
         SELECT C.etapa INTO v_etapa_competicion
-        FROM COMPETICION C
+        FROM COMPETICIONES C
         WHERE C.id_competicion = :new.id_competicion;
         
         IF v_etapa_competicion = 'C' THEN
@@ -166,7 +166,7 @@ BEGIN
         END IF;
         
         SELECT C.etapa INTO v_etapa_competicion
-        FROM COMPETICION C
+        FROM COMPETICIONES C
         WHERE C.id_competicion = :old.id_competicion;
         
         IF v_etapa_competicion = 'C' THEN
@@ -184,18 +184,18 @@ END NOMODIFICAR_EQUIPO;
 /*Controlar que una vez generado el calendario de la competicion, no se
 pueden modificar los jugadores de cada equipo.*/
 CREATE OR REPLACE TRIGGER NOMODIFICAR_JUGADOR
-BEFORE INSERT OR DELETE OR UPDATE ON JUGADOR
+BEFORE INSERT OR DELETE OR UPDATE ON JUGADORES
 FOR EACH ROW
 DECLARE
-    v_etapa_competicion COMPETICION.ETAPA%TYPE;
+    v_etapa_competicion COMPETICIONES.ETAPA%TYPE;
     v_competencia_cerrada BOOLEAN := FALSE;
     e_competencia_cerrada EXCEPTION;
 BEGIN
 
     IF INSERTING THEN
         FOR comp IN (SELECT C.etapa
-                  FROM EQUIPO_COMPETICION EC
-                  JOIN COMPETICION C ON EC.id_competicion = C.id_competicion
+                  FROM EQUIPOS_COMPETICIONES EC
+                  JOIN COMPETICIONES C ON EC.id_competicion = C.id_competicion
                   WHERE EC.id_equipo = :new.id_equipo)
         LOOP
             IF comp.etapa = 'C' THEN
@@ -211,8 +211,8 @@ BEGIN
     
     ELSIF DELETING THEN
         FOR comp IN (SELECT C.etapa
-                  FROM EQUIPO_COMPETICION EC
-                  JOIN COMPETICION C ON EC.id_competicion = C.id_competicion
+                  FROM EQUIPOS_COMPETICIONES EC
+                  JOIN COMPETICIONES C ON EC.id_competicion = C.id_competicion
                   WHERE EC.id_equipo = :old.id_equipo)
         LOOP
             IF comp.etapa = 'C' THEN
@@ -228,8 +228,8 @@ BEGIN
     
     ELSIF UPDATING THEN
         FOR comp IN (SELECT C.etapa
-                  FROM EQUIPO_COMPETICION EC
-                  JOIN COMPETICION C ON EC.id_competicion = C.id_competicion
+                  FROM EQUIPOS_COMPETICIONES EC
+                  JOIN COMPETICIONES C ON EC.id_competicion = C.id_competicion
                   WHERE EC.id_equipo = :new.id_equipo)
         LOOP
             IF comp.etapa = 'C' THEN
@@ -244,8 +244,8 @@ BEGIN
         END IF;
         
         FOR comp IN (SELECT C.etapa
-                  FROM EQUIPO_COMPETICION EC
-                  JOIN COMPETICION C ON EC.id_competicion = C.id_competicion
+                  FROM EQUIPOS_COMPETICIONES EC
+                  JOIN COMPETICIONES C ON EC.id_competicion = C.id_competicion
                   WHERE EC.id_equipo = :old.id_equipo)
         LOOP
             IF comp.etapa = 'C' THEN
@@ -270,13 +270,13 @@ END NOMODIFICAR_JUGADOR;
 /*Controlar que el salario total de los jugadores del equipo no podra ser
 superior a 200.000€ anuales.*/
 CREATE OR REPLACE TRIGGER MAXSALARIO_EQUIPO_INSERT
-BEFORE INSERT ON JUGADOR
+BEFORE INSERT ON JUGADORES
 FOR EACH ROW
 DECLARE
     v_salarioanual_total NUMBER;
 BEGIN
     SELECT NVL(SUM(SUELDO * 12),0) INTO v_salarioanual_total
-    FROM JUGADOR
+    FROM JUGADORES
     WHERE id_equipo = :new.id_equipo;
     
     IF v_salarioanual_total + :new.sueldo * 12 > 200000 THEN
@@ -290,7 +290,7 @@ EXCEPTION
 END MAXSALARIO_EQUIPO_INSERT;
 
 CREATE OR REPLACE NONEDITIONABLE TRIGGER MAXSALARIO_EQUIPO_UPDATE
-FOR UPDATE ON JUGADOR
+FOR UPDATE ON JUGADORES
 COMPOUND TRIGGER
     v_salarioanual_total NUMBER;
     equipo_id NUMBER;
@@ -302,7 +302,7 @@ COMPOUND TRIGGER
     AFTER STATEMENT IS
         BEGIN
             SELECT NVL(SUM(SUELDO * 12),0) INTO v_salarioanual_total
-            FROM JUGADOR
+            FROM JUGADORES
             WHERE id_equipo = equipo_id;
 
             IF v_salarioanual_total > 200000 THEN
@@ -321,7 +321,7 @@ END MAXSALARIO_EQUIPO_UPDATE;
 
 /*Controlar que los resultados de los enfrentamientos estén correctos*/
 CREATE OR REPLACE TRIGGER ACTUALIZAR_RESULTADOS
-AFTER INSERT ON ENFRENTAMIENTO
+AFTER INSERT ON ENFRENTAMIENTOS
 FOR EACH ROW
 DECLARE
     v_equipo1 NUMBER(2);
@@ -336,18 +336,18 @@ BEGIN
     v_resultado2 := :NEW.RESULTADO2;
     
     -- Actualizar los puntos del equipo 1 y 2 sumando el resultado obtenido
-    UPDATE EQUIPO_COMPETICION
+    UPDATE EQUIPOS_COMPETICIONES
     SET PUNTOS = PUNTOS + v_resultado1
     WHERE ID_EQUIPO IN (v_equipo1, v_equipo2);
 
     -- Si el equipo 1 ha ganado, se le suma una victoria
     IF v_resultado1 > v_resultado2 THEN
-        UPDATE EQUIPO_COMPETICION
+        UPDATE EQUIPOS_COMPETICIONES
         SET VICTORIAS = VICTORIAS + 1
         WHERE ID_EQUIPO = v_equipo1;
     -- Si el equipo 2 ha ganado, se le suma una victoria
     ELSIF v_resultado1 < v_resultado2 THEN
-        UPDATE EQUIPO_COMPETICION
+        UPDATE EQUIPOS_COMPETICIONES
         SET VICTORIAS = VICTORIAS + 1
         WHERE ID_EQUIPO = v_equipo2;
     END IF;
