@@ -28,12 +28,6 @@ public class Equipo {
     private Collection<Jugador> jugadoresByIdEquipo;
     @OneToMany(mappedBy = "equipoByIdEquipo")
     private Collection<Staff> entrenadoresByIdEquipo;
-    // TODO : hay que añadir el atributo de ID_ASISTENTE (staff)
-    /*
-    @ManyToOne
-    @JoinColumn(name = "ID_ASISTENTE", referencedColumnName = "ID_ASISTENTE")
-    private Staff asistenteByIdStaff;
-     */
 
     public int getIdEquipo() {
         return idEquipo;
