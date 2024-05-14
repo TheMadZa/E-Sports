@@ -14,6 +14,11 @@ BEGIN
 	WHERE id_equipo = a_id_equipo;
 
     RETURN v_cantidad_jugadores;
+
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        RAISE_APPLICATION_ERROR('-20008','No se han encontrado datos');
+
 END OBTENER_CANTIDAD_JUGADORES;
 
 
