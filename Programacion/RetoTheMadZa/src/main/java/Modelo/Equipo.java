@@ -27,7 +27,7 @@ public class Equipo {
     @OneToMany(mappedBy = "equipoByIdEquipo")
     private Collection<Jugador> jugadorsByIdEquipo;
     @OneToMany(mappedBy = "equipoByIdEquipo")
-    private Collection<Staff> staffByIdEquipo;
+    private Collection<Staff> entrenadorByIdEquipo;
 
     public int getIdEquipo() {
         return idEquipo;
@@ -108,12 +108,12 @@ public class Equipo {
         this.jugadorsByIdEquipo = jugadorsByIdEquipo;
     }
 
-    public Collection<Staff> getStaffByIdEquipo() {
-        return staffByIdEquipo;
+    public Collection<Staff> getEntrenadorByIdEquipo() {
+        return entrenadorByIdEquipo;
     }
 
-    public void setStaffByIdEquipo(Collection<Staff> staffByIdEquipo) {
-        this.staffByIdEquipo = staffByIdEquipo;
+    public void setEntrenadorByIdEquipo(Collection<Staff> staffByIdEquipo) {
+        this.entrenadorByIdEquipo = staffByIdEquipo;
     }
 
     public Equipo() {
@@ -133,9 +133,9 @@ public class Equipo {
         jugadorsByIdEquipo.add(j);
     }
 
-    public void setStaff(Staff s){
-        if (staffByIdEquipo == null)
-            staffByIdEquipo = new ArrayList<>();
-        staffByIdEquipo.add(s);
+    public void setEntrenador(Staff s){
+        if (entrenadorByIdEquipo == null)
+            entrenadorByIdEquipo = new ArrayList<>();
+        entrenadorByIdEquipo.add(s);
     }
 }
