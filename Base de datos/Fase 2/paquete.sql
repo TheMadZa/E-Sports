@@ -8,8 +8,8 @@ IS
                                         OUT SYS_REFCURSOR);
 	PROCEDURE OBTENER_INFORMACION(c_obtenerInfo OUT SYS_REFCURSOR);
     PROCEDURE listarEquiposCompeticion(v_id_competicion IN
-                                        COMPETICION.ID_COMPETICION%TYPE);
-    FUNCTION OBTENER_CANTIDAD_JUGADORES(a_id_equipo IN EQUIPO.ID_EQUIPO%TYPE)
+                                        COMPETICIONES.ID_COMPETICION%TYPE);
+    FUNCTION OBTENER_CANTIDAD_JUGADORES(a_id_equipo IN EQUIPOS.ID_EQUIPO%TYPE)
         RETURN NUMBER;
 END PAQUETE_DATOS;
 
@@ -37,15 +37,15 @@ AS
                 COUNT(DISTINCT J2.ID_JUGADOR) AS CANTIDAD_JUGADORES_EQUIPO_2,
                 COUNT(DISTINCT S2.ID_STAFF) AS CANTIDAD_STAFF_EQUIPO_2
             FROM 
-                ENFRENTAMIENTO EF
-            INNER JOIN EQUIPO E1 ON EF.ID_EQUIPO1 = E1.ID_EQUIPO
-            INNER JOIN EQUIPO E2 ON EF.ID_EQUIPO2 = E2.ID_EQUIPO
-            INNER JOIN COMPETICION C ON C.ID_JUEGO = C.ID_JUEGO
-            INNER JOIN JUEGO J ON C.ID_JUEGO = J.ID_JUEGO
-            LEFT JOIN JUGADOR J1 ON EF.ID_EQUIPO1 = J1.ID_EQUIPO
-            LEFT JOIN STAFF S1 ON EF.ID_EQUIPO1 = S1.ID_EQUIPO
-            LEFT JOIN JUGADOR J2 ON EF.ID_EQUIPO2 = J2.ID_EQUIPO
-            LEFT JOIN STAFF S2 ON EF.ID_EQUIPO2 = S2.ID_EQUIPO 
+                ENFRENTAMIENTOS EF
+            INNER JOIN EQUIPOS E1 ON EF.ID_EQUIPO1 = E1.ID_EQUIPO
+            INNER JOIN EQUIPOS E2 ON EF.ID_EQUIPO2 = E2.ID_EQUIPO
+            INNER JOIN COMPETICIONES C ON C.ID_JUEGO = C.ID_JUEGO
+            INNER JOIN JUEGOS J ON C.ID_JUEGO = J.ID_JUEGO
+            LEFT JOIN JUGADORES J1 ON EF.ID_EQUIPO1 = J1.ID_EQUIPO
+            LEFT JOIN STAFFS S1 ON EF.ID_EQUIPO1 = S1.ID_EQUIPO
+            LEFT JOIN JUGADORES J2 ON EF.ID_EQUIPO2 = J2.ID_EQUIPO
+            LEFT JOIN STAFFS S2 ON EF.ID_EQUIPO2 = S2.ID_EQUIPO 
             GROUP BY
                 C.NOMBRE_COM,
                 J.NOMBRE,
@@ -68,9 +68,9 @@ AS
         OPEN c_obtenerInfo for
             SELECT nom_equipo,COUNT(DISTINCT s.id_staff) AS "cantidadStaff",
                 COUNT(DISTINCT j.id_jugador) AS "cantidadJugadores"
-            FROM EQUIPO e
-            LEFT JOIN STAFF s ON e.id_equipo = s.id_equipo
-            LEFT JOIN JUGADOR j ON e.id_equipo = j.id_equipo
+            FROM EQUIPOS e
+            LEFT JOIN STAFFS s ON e.id_equipo = s.id_equipo
+            LEFT JOIN JUGADORES j ON e.id_equipo = j.id_equipo
             --WHERE e.nom_equipo = e_nom
             GROUP BY nom_equipo;
     EXCEPTION
@@ -84,22 +84,22 @@ AS
 
 
     PROCEDURE listarEquiposCompeticion(v_id_competicion IN
-                                        COMPETICION.ID_COMPETICION%TYPE)
+                                        COMPETICIONES.ID_COMPETICION%TYPE)
     AS
-    v_nombre_competicion COMPETICION.NOMBRE_COM%TYPE;
-    v_id_equipo EQUIPO_COMPETICION.ID_EQUIPO%TYPE;
-    v_nombre_equipo EQUIPO.NOM_EQUIPO%TYPE;
-    v_victorias EQUIPO_COMPETICION.VICTORIAS%TYPE;
-    v_puntos EQUIPO_COMPETICION.PUNTOS%TYPE;
+    v_nombre_competicion COMPETICIONES.NOMBRE_COM%TYPE;
+    v_id_equipo EQUIPOS_COMPETICIONES.ID_EQUIPO%TYPE;
+    v_nombre_equipo EQUIPOS.NOM_EQUIPO%TYPE;
+    v_victorias EQUIPOS_COMPETICIONES.VICTORIAS%TYPE;
+    v_puntos EQUIPOS_COMPETICIONES.PUNTOS%TYPE;
     v_juego VARCHAR2(50);
     BEGIN
         FOR comp IN (SELECT C.NOMBRE_COM, EC.ID_EQUIPO, E.NOM_EQUIPO, EC.VICTORIAS,
                         EC.PUNTOS, J.NOMBRE AS NOMBRE_JUEGO
-                     FROM COMPETICION C
-                     INNER JOIN EQUIPO_COMPETICION EC ON
+                     FROM COMPETICIONES C
+                     INNER JOIN EQUIPOS_COMPETICIONES EC ON
                      C.ID_COMPETICION = EC.ID_COMPETICION
-                     INNER JOIN EQUIPO E ON EC.ID_EQUIPO = E.ID_EQUIPO
-                     INNER JOIN JUEGO J ON C.ID_JUEGO = J.ID_JUEGO
+                     INNER JOIN EQUIPOS E ON EC.ID_EQUIPO = E.ID_EQUIPO
+                     INNER JOIN JUEGOS J ON C.ID_JUEGO = J.ID_JUEGO
                      WHERE C.ID_COMPETICION = v_id_competicion
                      ORDER BY EC.VICTORIAS DESC, EC.PUNTOS DESC)
         LOOP
@@ -122,13 +122,13 @@ AS
 
     -- Funciones:
     
-    FUNCTION OBTENER_CANTIDAD_JUGADORES(a_id_equipo IN EQUIPO.ID_EQUIPO%TYPE)
+    FUNCTION OBTENER_CANTIDAD_JUGADORES(a_id_equipo IN EQUIPOS.ID_EQUIPO%TYPE)
     RETURN NUMBER
     IS
         v_cantidad_jugadores NUMBER;
     BEGIN
         SELECT COUNT(*) INTO v_cantidad_jugadores
-        FROM JUGADOR
+        FROM JUGADORES
         WHERE id_equipo = a_id_equipo;
 
         RETURN v_cantidad_jugadores;

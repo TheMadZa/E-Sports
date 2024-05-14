@@ -13,13 +13,13 @@ competiciones con sus respectivos datos.
 */
 DECLARE
   c_obtenerInfoCompeticion SYS_REFCURSOR;
-  nombreCom COMPETICION.NOMBRE_COM%TYPE;
-  nombre JUEGO.nombre%TYPE;
-  hora_enfrentamiento ENFRENTAMIENTO.hora_enfrentamiento%TYPE;
-  equipo_1 EQUIPO.nom_equipo%TYPE;
+  nombreCom COMPETICIONES.NOMBRE_COM%TYPE;
+  nombre JUEGOS.nombre%TYPE;
+  hora_enfrentamiento ENFRENTAMIENTOS.hora_enfrentamiento%TYPE;
+  equipo_1 EQUIPOS.nom_equipo%TYPE;
   cantidad_jugadores_equipo_1 NUMBER;
   cantidad_staff_equipo_1 NUMBER;
-  equipo_2 EQUIPO.nom_equipo%TYPE;
+  equipo_2 EQUIPOS.nom_equipo%TYPE;
   cantidad_jugadores_equipo_2 NUMBER;
   cantidad_staff_equipo_2 NUMBER;
 BEGIN
@@ -60,7 +60,7 @@ visualizar los equipos con el numero total de jugadores y de staff.
 */
 DECLARE
   c_obtenerInfo SYS_REFCURSOR;
-  nom_equipo EQUIPO.nom_equipo%TYPE;
+  nom_equipo EQUIPOS.nom_equipo%TYPE;
   cantidadStaff NUMBER;
   cantidadJugadores NUMBER;
 BEGIN
@@ -88,7 +88,7 @@ Se utilizara como consulta en la ventana de clasificacion.
 */
 
 DECLARE
-    v_id_competicion COMPETICION.ID_COMPETICION%TYPE := 1;
+    v_id_competicion COMPETICIONES.ID_COMPETICION%TYPE := 1;
 BEGIN
     listarEquiposCompeticion(v_id_competicion);
 END;
@@ -99,13 +99,13 @@ END;
 -- Prueba del procedimiento "OBTENER_INFO_COMPETICION".
 DECLARE
   c_obtenerInfoCompeticion SYS_REFCURSOR;
-  nombreCom COMPETICION.NOMBRE_COM%TYPE;
-  nombre JUEGO.nombre%TYPE;
-  hora_enfrentamiento ENFRENTAMIENTO.hora_enfrentamiento%TYPE;
-  equipo_1 EQUIPO.nom_equipo%TYPE;
+  nombreCom COMPETICIONES.NOMBRE_COM%TYPE;
+  nombre JUEGOS.nombre%TYPE;
+  hora_enfrentamiento ENFRENTAMIENTOS.hora_enfrentamiento%TYPE;
+  equipo_1 EQUIPOS.nom_equipo%TYPE;
   cantidad_jugadores_equipo_1 NUMBER;
   cantidad_staff_equipo_1 NUMBER;
-  equipo_2 EQUIPO.nom_equipo%TYPE;
+  equipo_2 EQUIPOS.nom_equipo%TYPE;
   cantidad_jugadores_equipo_2 NUMBER;
   cantidad_staff_equipo_2 NUMBER;
 BEGIN
@@ -139,7 +139,7 @@ END;
 -- Prueba del procedimiento "OBTENER_INFORMACION".
 DECLARE
   c_obtenerInfo SYS_REFCURSOR;
-  nom_equipo EQUIPO.nom_equipo%TYPE;
+  nom_equipo EQUIPOS.nom_equipo%TYPE;
   cantidadStaff NUMBER;
   cantidadJugadores NUMBER;
 BEGIN
@@ -159,7 +159,7 @@ END;
 
 -- Prueba del procedimiento "listarEquiposCompeticion".
 DECLARE
-    v_id_competicion COMPETICION.ID_COMPETICION%TYPE := 1;
+    v_id_competicion COMPETICIONES.ID_COMPETICION%TYPE := 1;
 BEGIN
     PAQUETE_DATOS.listarEquiposCompeticion(v_id_competicion);
 END;
