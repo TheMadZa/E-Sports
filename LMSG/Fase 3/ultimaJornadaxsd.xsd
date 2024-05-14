@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Definición de los elementos -->
+  <xs:element name="ultimaJornada" type="tipoultimo"/>
+    <xs:complexType name="tipoultimo">
+      <xs:sequence>
+        <xs:element name="jornada" type="tipoJornada" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="tipoJornada">
+        <xs:sequence>
+              <xs:element name="numero_jornada" type="xs:string"/>
+              <xs:element name="fecha_jornada" type="xs:date"/>
+              <xs:element name="competicion-info" type="tipoinfo"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="tipoinfo">
+        <xs:sequence>
+          <xs:element name="competicion" type="tipocompeticion"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tipocompeticion">
+        <xs:sequence>
+          <xs:element name="nombre-competicion" type="xs:string"/>
+          <xs:element name="fecha-inicio" type="xs:date"/>
+          <xs:element name="fecha-fin" type="xs:date"/>
+          <xs:element name="etapa" type="tipoetapa"/>
+          <xs:element name="juego" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="required"/>
+      </xs:complexType>
+      <xs:simpleType name="tipoetapa">
+        <xs:restriction base ="xs:string">
+            <xs:pattern value="A"/>
+            <xs:pattern value="C"/>
+        </xs:restriction>
+      </xs:simpleType>
+</xs:schema>
