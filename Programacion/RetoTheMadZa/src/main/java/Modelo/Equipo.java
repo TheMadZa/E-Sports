@@ -25,9 +25,15 @@ public class Equipo {
     @Column(name = "COLOR")
     private String color;
     @OneToMany(mappedBy = "equipoByIdEquipo")
-    private Collection<Jugador> jugadorsByIdEquipo;
+    private Collection<Jugador> jugadoresByIdEquipo;
     @OneToMany(mappedBy = "equipoByIdEquipo")
-    private Collection<Staff> entrenadorByIdEquipo;
+    private Collection<Staff> entrenadoresByIdEquipo;
+    // TODO : hay que añadir el atributo de ID_ASISTENTE (staff)
+    /*
+    @ManyToOne
+    @JoinColumn(name = "ID_ASISTENTE", referencedColumnName = "ID_ASISTENTE")
+    private Staff asistenteByIdStaff;
+     */
 
     public int getIdEquipo() {
         return idEquipo;
@@ -100,20 +106,20 @@ public class Equipo {
         return result;
     }
 
-    public Collection<Jugador> getJugadorsByIdEquipo() {
-        return jugadorsByIdEquipo;
+    public Collection<Jugador> getJugadoresByIdEquipo() {
+        return jugadoresByIdEquipo;
     }
 
-    public void setJugadorsByIdEquipo(Collection<Jugador> jugadorsByIdEquipo) {
-        this.jugadorsByIdEquipo = jugadorsByIdEquipo;
+    public void setJugadoresByIdEquipo(Collection<Jugador> jugadorsByIdEquipo) {
+        this.jugadoresByIdEquipo = jugadorsByIdEquipo;
     }
 
-    public Collection<Staff> getEntrenadorByIdEquipo() {
-        return entrenadorByIdEquipo;
+    public Collection<Staff> getEntrenadoresByIdEquipo() {
+        return entrenadoresByIdEquipo;
     }
 
-    public void setEntrenadorByIdEquipo(Collection<Staff> staffByIdEquipo) {
-        this.entrenadorByIdEquipo = staffByIdEquipo;
+    public void setEntrenadoresByIdEquipo(Collection<Staff> staffByIdEquipo) {
+        this.entrenadoresByIdEquipo = staffByIdEquipo;
     }
 
     public Equipo() {
@@ -128,14 +134,14 @@ public class Equipo {
     }
 
     public void setJugador(Jugador j){
-        if (jugadorsByIdEquipo == null)
-            jugadorsByIdEquipo = new ArrayList<>();
-        jugadorsByIdEquipo.add(j);
+        if (jugadoresByIdEquipo == null)
+            jugadoresByIdEquipo = new ArrayList<>();
+        jugadoresByIdEquipo.add(j);
     }
 
     public void setEntrenador(Staff s){
-        if (entrenadorByIdEquipo == null)
-            entrenadorByIdEquipo = new ArrayList<>();
-        entrenadorByIdEquipo.add(s);
+        if (entrenadoresByIdEquipo == null)
+            entrenadoresByIdEquipo = new ArrayList<>();
+        entrenadoresByIdEquipo.add(s);
     }
 }
