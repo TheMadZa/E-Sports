@@ -27,7 +27,7 @@ public class Jugador {
     private Date fechaNac;
     @Basic
     @Column(name = "SUELDO")
-    private int sueldo;
+    private double sueldo;
     @ManyToOne
     @JoinColumn(name = "ID_EQUIPO", referencedColumnName = "ID_EQUIPO", nullable = false)
     private Equipo equipoByIdEquipo;
@@ -84,11 +84,11 @@ public class Jugador {
         this.fechaNac = fechaNac;
     }
 
-    public int getSueldo() {
+    public double getSueldo() {
         return sueldo;
     }
 
-    public void setSueldo(int sueldo) {
+    public void setSueldo(double sueldo) {
         this.sueldo = sueldo;
     }
 
@@ -111,18 +111,6 @@ public class Jugador {
         return true;
     }
 
-    @Override
-    public int hashCode() {
-        int result = idJugador;
-        result = 31 * result + (nombre != null ? nombre.hashCode() : 0);
-        result = 31 * result + (nickname != null ? nickname.hashCode() : 0);
-        result = 31 * result + (nacionalidad != null ? nacionalidad.hashCode() : 0);
-        result = 31 * result + (rol != null ? rol.hashCode() : 0);
-        result = 31 * result + (fechaNac != null ? fechaNac.hashCode() : 0);
-        result = 31 * result + sueldo;
-        return result;
-    }
-
     public Equipo getEquipoByIdEquipo() {
         return equipoByIdEquipo;
     }
@@ -135,7 +123,7 @@ public class Jugador {
     }
 
     public Jugador(int idJugador, String nombre, String nickname, String nacionalidad, String rol, Date fechaNac,
-                   int sueldo, Equipo equipoByIdEquipo) {
+                   double sueldo, Equipo equipoByIdEquipo) {
         this.idJugador = idJugador;
         this.nombre = nombre;
         this.nickname = nickname;

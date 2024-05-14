@@ -21,7 +21,7 @@ public class Staff {
     private Date fechaNac;
     @Basic
     @Column(name = "SUELDO")
-    private int sueldo;
+    private double sueldo;
     @ManyToOne
     @JoinColumn(name = "ID_EQUIPO", referencedColumnName = "ID_EQUIPO", nullable = false)
     private Equipo equipoByIdEquipo;
@@ -62,11 +62,11 @@ public class Staff {
         this.fechaNac = fechaNac;
     }
 
-    public int getSueldo() {
+    public double getSueldo() {
         return sueldo;
     }
 
-    public void setSueldo(int sueldo) {
+    public void setSueldo(double sueldo) {
         this.sueldo = sueldo;
     }
 
@@ -86,16 +86,6 @@ public class Staff {
         return true;
     }
 
-    @Override
-    public int hashCode() {
-        int result = idStaff;
-        result = 31 * result + (puesto != null ? puesto.hashCode() : 0);
-        result = 31 * result + (nombre != null ? nombre.hashCode() : 0);
-        result = 31 * result + (fechaNac != null ? fechaNac.hashCode() : 0);
-        result = 31 * result + sueldo;
-        return result;
-    }
-
     public Equipo getEquipoByIdEquipo() {
         return equipoByIdEquipo;
     }
@@ -107,7 +97,7 @@ public class Staff {
     public Staff() {
     }
 
-    public Staff(int idStaff, String puesto, String nombre, Date fechaNac, int sueldo, Equipo equipoByIdEquipo) {
+    public Staff(int idStaff, String puesto, String nombre, Date fechaNac, double sueldo, Equipo equipoByIdEquipo) {
         this.idStaff = idStaff;
         this.puesto = puesto;
         this.nombre = nombre;
