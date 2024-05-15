@@ -3,6 +3,7 @@ package Controlador.ControladoresVista;
 import Vista.VentanaInicial;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -55,7 +56,12 @@ public class ControladorVI {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            String enlace = "https://www.facebook.com/?locale=es_ES";
+            try {
+                Desktop.getDesktop().browse(java.net.URI.create(enlace));
+            } catch (java.io.IOException ex) {
+                System.out.println("Error al abrir el enlace: " + ex.getMessage());
+            }
         }
     }
 
