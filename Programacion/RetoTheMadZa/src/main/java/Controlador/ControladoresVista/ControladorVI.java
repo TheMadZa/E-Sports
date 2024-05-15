@@ -69,7 +69,12 @@ public class ControladorVI {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            String enlace = "https://www.instagram.com";
+            try {
+                Desktop.getDesktop().browse(java.net.URI.create(enlace));
+            } catch (java.io.IOException ex) {
+                System.out.println("Error al abrir el enlace: " + ex.getMessage());
+            }
         }
     }
 
@@ -77,7 +82,12 @@ public class ControladorVI {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            String enlace = "https://twitter.com/?logout=1715768138184";
+            try {
+                Desktop.getDesktop().browse(java.net.URI.create(enlace));
+            } catch (java.io.IOException ex) {
+                System.out.println("Error al abrir el enlace: " + ex.getMessage());
+            }
         }
     }
 
