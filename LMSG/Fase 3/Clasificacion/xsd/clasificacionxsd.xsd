@@ -3,14 +3,20 @@
     <!-- Aqui definimos la clase padre y el tipo donde enlazaremos los elementos -->
     <xs:element name="clasificacion" type="tipoclasifi" />
     <xs:complexType name="tipoclasifi">
+            <xs:sequence>
+                <xs:element name="competicion" type="tipoCompeticion" maxOccurs="unbounded"/>
+            </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipoCompeticion">
         <xs:sequence>
-            <!-- ponemos los elementos y los atributos -->
+            <!-- ponemos los elementos y su atributo -->
             <xs:element name="nombre_competicion" type="xs:string"/>
             <xs:element name="nombre_juego" type="xs:string"/>
             <xs:element name="equipo" type="tipoequipo" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attribute name="id" type="xs:int" use="required"/>
-    <!-- Creamos otro complextype con elementos y atributos dentro -->
+    <!-- Creamos otro complextype con elementos y su atributo -->
     </xs:complexType>
     <xs:complexType name="tipoequipo">
         <xs:sequence>
