@@ -29,6 +29,7 @@ public class ControladorVI {
         vi.addMJornadasAL(new MJornadasAL());
         vi.addMClasificacionAL(new MClasificacionAL());
         vi.addMEquiposAL(new MEquiposAL());
+        vi.addCbClasificacionAL(new CbClasificacionAL());
 
         vi.setVisible(true);
         vi.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -40,7 +41,7 @@ public class ControladorVI {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            //cv.mostrarInicioSesion();
         }
     }
 
@@ -114,5 +115,24 @@ public class ControladorVI {
 
         }
     }
+
+    public class CbClasificacionAL implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            try {
+                int id = vi.getCbClasifiacion().getSelectedIndex();
+                if (id > 0){
+                    validarBuscarCompeticion(id);
+                }
+            }
+            catch (Exception ex)
+            {
+                //vi.mostrarMensaje(ex.getMessage());
+            }
+
+        }
+    }
+
 
 }

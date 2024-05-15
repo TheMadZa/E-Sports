@@ -266,6 +266,17 @@ public class VentanaInicial extends JFrame {
         });
     }
 
+    // Getters y setters
+
+
+    public JComboBox<String> getCbClasifiacion() {
+        return cbClasifiacion;
+    }
+
+    public void setCbClasifiacion(JComboBox<String> cbClasifiacion) {
+        this.cbClasifiacion = cbClasifiacion;
+    }
+
     // Listeners
     public void addBInicioAL(ActionListener al)
     {
@@ -293,5 +304,7 @@ public class VentanaInicial extends JFrame {
     public void addMEquiposAL(ActionListener al) {
         mequipos.addActionListener(al);
     }
-
+    public void addCbClasificacionAL(ActionListener al){
+        cbClasifiacion.addActionListener(al);
+    }
 }
