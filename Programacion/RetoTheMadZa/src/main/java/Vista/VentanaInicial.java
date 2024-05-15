@@ -2,6 +2,7 @@ package Vista;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -224,7 +225,7 @@ public class VentanaInicial extends JFrame {
                     URL imageUrl = new URL(url);
                     BufferedImage imagen = ImageIO.read(imageUrl);
                     // Escalar la imagen a un tamaño adecuado (opcional)
-                    imagen = Scalr.resize(imagen, 200); // TODO : Sería 500
+                    imagen = Scalr.resize(imagen, Scalr.Method.AUTOMATIC, Scalr.Mode.AUTOMATIC, 600, 600);
                     // Crear un ImageIcon a partir del BufferedImage
                     ImageIcon icon = new ImageIcon(imagen);
                     // Establecer la imagen en el JLabel

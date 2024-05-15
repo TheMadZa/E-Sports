@@ -9,5 +9,53 @@
       <jdbc-url>jdbc:oracle:thin:@srvoracle:1521:orcl</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="default/EclipseLink" uuid="fccf66bc-b34e-45df-940b-e3e19349d398">
+      <driver-ref>oracle.19</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>EclipseLink
+
+C:/Users/1gdaw04/Desktop/RETO/E-Sports/Programacion/RetoTheMadZa/src/main/resources/META-INF/persistence.xml</remarks>
+      <auto-commit>false</auto-commit>
+      <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
+      <jdbc-url>jdbc:oracle:thin:@srvoracle:1521:orcl</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="default/Hibernate" uuid="c3e84d54-88fa-4757-8771-ace2be3ab46c">
+      <driver-ref>oracle.19</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+C:/Users/1gdaw04/Desktop/RETO/E-Sports/Programacion/RetoTheMadZa/src/main/resources/META-INF/persistence.xml</remarks>
+      <auto-commit>false</auto-commit>
+      <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
+      <jdbc-url>jdbc:oracle:thin:@srvoracle:1521:orcl</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="default/OpenJPA" uuid="3407afc8-c5d4-46dd-b7b8-f3322f813b9e">
+      <driver-ref>oracle.19</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>OpenJPA
+
+C:/Users/1gdaw04/Desktop/RETO/E-Sports/Programacion/RetoTheMadZa/src/main/resources/META-INF/persistence.xml</remarks>
+      <auto-commit>false</auto-commit>
+      <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
+      <jdbc-url>jdbc:oracle:thin:@srvoracle:1521:orcl</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="default/TopLink" uuid="2cc55315-1a9e-437c-a0f1-4a4ac4be12b1">
+      <driver-ref>oracle.19</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>TopLink
+
+C:/Users/1gdaw04/Desktop/RETO/E-Sports/Programacion/RetoTheMadZa/src/main/resources/META-INF/persistence.xml</remarks>
+      <auto-commit>false</auto-commit>
+      <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
+      <jdbc-url>jdbc:oracle:thin:@srvoracle:1521:orcl</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
