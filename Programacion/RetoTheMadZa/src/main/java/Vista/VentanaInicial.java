@@ -48,11 +48,16 @@ public class VentanaInicial extends JFrame {
     private JMenuBar mPrincipal;
     private int indiceImagenes = 0;
     private final String[] urls = {
-            "https://raw.githubusercontent.com/IbaiSaenzDeBuruaga/E-SportsLogos/1b853f57103aeb0b09c40566e475ec6503098592/OIG1.jpg",
-            "https://th.bing.com/th/id/OIP.LqZXVmR_sXroyyzsTNrfrAAAAA?rs=1&pid=ImgDetMain", // TODO : sustituir
-            "https://www.techsurprise.com/wp-content/uploads/2020/02/esports-players.jpg", // TODO : sustituir
-            "https://www.justgeek.fr/wp-content/uploads/2019/10/esport.jpeg", // TODO : sustituir
-            "https://www.vssmonitoring.com/wp-content/uploads/2021/06/response-time.png" // TODO : sustituir
+            "https://github.com/IbaiSaenzDeBuruaga" +
+                    "/E-SportsLogos/blob/main/Noticias/0b9235b8-f812-4629-8c04-e9a5d874134b.png?raw=true",
+            "https://github.com/IbaiSaenzDeBuruaga" +
+                    "/E-SportsLogos/blob/main/Noticias/84752ff3-2cd1-465d-832a-c661bb701549.png?raw=true",
+            "https://github.com/IbaiSaenzDeBuruaga" +
+                    "/E-SportsLogos/blob/main/Noticias/ba6db8a3-4203-42a0-a5f2-4075bd89e161.png?raw=true",
+            "https://github.com/IbaiSaenzDeBuruaga" +
+                    "/E-SportsLogos/blob/main/Noticias/ed187317-1ef3-49a0-86b1-d5387a83ccca.png?raw=true",
+            "https://github.com/IbaiSaenzDeBuruaga" +
+                    "/E-SportsLogos/blob/main/Noticias/mano.png?raw=true"
     };
 
     public VentanaInicial() {
