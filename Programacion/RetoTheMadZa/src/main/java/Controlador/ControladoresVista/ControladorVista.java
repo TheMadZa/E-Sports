@@ -6,7 +6,7 @@ import Controlador.ControladorPrincipal;
 public class ControladorVista {
 
     //CONTROLADORES DE LAS VENTANAS
-    private ControladorVP cvp;
+    private ControladorVI cvp;
     private ControladorVCompeticiones cvc;
     private ControladorVEquipos cve;
     private ControladorVJornadas cvjo;
@@ -21,7 +21,7 @@ public class ControladorVista {
         this.cp = cp;
 
         //Creación de los controladores de las ventanas
-        cvp = new ControladorVP(this);
+        cvp = new ControladorVI(this);
         cvc = new ControladorVCompeticiones(this);
         cve = new ControladorVEquipos(this);
         cvjo = new ControladorVJornadas(this);
