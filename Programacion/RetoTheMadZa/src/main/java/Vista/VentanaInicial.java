@@ -2,8 +2,8 @@ package Vista;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.plaf.ColorUIResource;
-import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
@@ -40,13 +40,23 @@ public class VentanaInicial extends JFrame {
     private JPanel PanelLogo;
     private JButton bInicio;
     private JButton bSalir;
-    private JComboBox cbClasifiacion;
+    private JComboBox<String> cbClasifiacion;
     private JButton bTwitter;
     private JButton bInstagram;
     private JButton bFacebook;
     private JMenuBar mPrincipal;
+    private int indiceImagenes = 0;
+    private final String[] urls = {
+            "https://raw.githubusercontent.com/IbaiSaenzDeBuruaga/E-SportsLogos/1b853f57103aeb0b09c40566e475ec6503098592/OIG1.jpg",
+            "https://th.bing.com/th/id/OIP.LqZXVmR_sXroyyzsTNrfrAAAAA?rs=1&pid=ImgDetMain", // TODO : sustituir
+            "https://www.techsurprise.com/wp-content/uploads/2020/02/esports-players.jpg", // TODO : sustituir
+            "https://www.justgeek.fr/wp-content/uploads/2019/10/esport.jpeg", // TODO : sustituir
+            "https://www.vssmonitoring.com/wp-content/uploads/2021/06/response-time.png" // TODO : sustituir
+    };
 
     public VentanaInicial() {
+
+        mostrarImagenesFugaces();
 
         try {
             // Cargar la imagen original
@@ -62,6 +72,7 @@ public class VentanaInicial extends JFrame {
             // Asignar el ImageIcon escalado al JLabel ftThemadza
             ftThemadza.setIcon(iconoEscalado);
 
+            /*
             // Cargar la imagen Noticias
             URL Noticia1 = new URL("https://raw.githubusercontent.com/IbaiSaenzDeBuruaga/E-SportsLogos/1b853f57103aeb0b09c40566e475ec6503098592/OIG1.jpg");
             BufferedImage imagenOriginal3 = ImageIO.read(Noticia1);
@@ -74,6 +85,7 @@ public class VentanaInicial extends JFrame {
 
             // Asignar el ImageIcon escalado al JLabel
             ftNoticias.setIcon(iconoEscalado3);
+             */
 
             // Cargar la imagen Boton Inicio
             URL Inicio1 = new URL("https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/inicio.png?raw=true");
@@ -193,12 +205,48 @@ public class VentanaInicial extends JFrame {
         setVisible(true);
     }
 
+    // Función para mostrar las imágenes transitorias.
+    public void mostrarImagenesFugaces() {
 
+        // Crear un temporizador que cambie la imagen después de unos 4 segundos.
+        Timer timer = new Timer(3000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                // Cambiar la imagen y actualizar el índice
+                indiceImagenes = (indiceImagenes + 1) % urls.length;
+                // Obtener la URL de la imagen actual del array
+                String url = urls[indiceImagenes];
+
+                try {
+
+                    // Cargar la imagen desde la URL
+                    URL imageUrl = new URL(url);
+                    BufferedImage imagen = ImageIO.read(imageUrl);
+                    // Escalar la imagen a un tamaño adecuado (opcional)
+                    imagen = Scalr.resize(imagen, 200); // TODO : Sería 500
+                    // Crear un ImageIcon a partir del BufferedImage
+                    ImageIcon icon = new ImageIcon(imagen);
+                    // Establecer la imagen en el JLabel
+                    ftNoticias.setIcon(icon);
+
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+
+            }
+        });
+
+        // Comenzar el temporizador
+        timer.start();
+
+    }
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             VentanaInicial ventana = new VentanaInicial();
             ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            ventana.setExtendedState(JFrame.MAXIMIZED_BOTH);
             ventana.setVisible(true);
         });
     }
