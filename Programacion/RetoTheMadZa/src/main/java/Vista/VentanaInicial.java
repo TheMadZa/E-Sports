@@ -66,7 +66,8 @@ public class VentanaInicial extends JFrame {
 
         try {
             // Cargar la imagen original
-            URL imageUrl = new URL("https://github.com/TheMadZa/E-Sports/blob/main/Programacion/RetoTheMadZa/src/main/java/Vista/Imagenes/TheMadZaLogoSimple.png?raw=true");
+            URL imageUrl = new URL("https://github.com/IbaiSaenzDeBuruaga" +
+                    "/E-SportsLogos/blob/main/RRSS/TheMadZaLogoSimple.png?raw=true");
             BufferedImage imagenOriginal = ImageIO.read(imageUrl);
 
             // Escalar la imagen a un tamaño de 150x150 usando ImgScalr
@@ -78,20 +79,6 @@ public class VentanaInicial extends JFrame {
             // Asignar el ImageIcon escalado al JLabel ftThemadza
             ftThemadza.setIcon(iconoEscalado);
 
-            /*
-            // Cargar la imagen Noticias
-            URL Noticia1 = new URL("https://raw.githubusercontent.com/IbaiSaenzDeBuruaga/E-SportsLogos/1b853f57103aeb0b09c40566e475ec6503098592/OIG1.jpg");
-            BufferedImage imagenOriginal3 = ImageIO.read(Noticia1);
-
-            // Escalar la imagen
-            BufferedImage bufferedImage3 = Scalr.resize(imagenOriginal3, 500);
-
-            // Crear un ImageIcon a partir del BufferedImage escalado
-            ImageIcon iconoEscalado3 = new ImageIcon(bufferedImage3);
-
-            // Asignar el ImageIcon escalado al JLabel
-            ftNoticias.setIcon(iconoEscalado3);
-             */
 
             // Cargar la imagen Boton Inicio
             URL Inicio1 = new URL("https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/inicio.png?raw=true");
