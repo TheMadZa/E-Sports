@@ -67,7 +67,8 @@ public class VentanaInicial extends JFrame {
 
         try {
             // Cargar la imagen original
-            URL imageUrl = new URL("https://github.com/TheMadZa/E-Sports/blob/main/Programacion/RetoTheMadZa/src/main/java/Vista/Imagenes/TheMadZaLogoSimple.png?raw=true");
+            URL imageUrl = new URL("https://github.com/IbaiSaenzDeBuruaga" +
+                    "/E-SportsLogos/blob/main/RRSS/TheMadZaLogoSimple.png?raw=true");
             BufferedImage imagenOriginal = ImageIO.read(imageUrl);
 
             // Escalar la imagen a un tamaño de 150x150 usando ImgScalr
@@ -95,7 +96,8 @@ public class VentanaInicial extends JFrame {
              */
 
             // Cargar la imagen Boton Inicio
-            URL Inicio1 = new URL("https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/inicio.png?raw=true");
+            URL Inicio1 = new URL("https://github.com/IbaiSaenzDeBuruaga" +
+                    "/E-SportsLogos/blob/main/inicio.png?raw=true");
             BufferedImage imagenOriginal4 = ImageIO.read(Inicio1);
 
             // Escalar la imagen
@@ -108,7 +110,8 @@ public class VentanaInicial extends JFrame {
             bInicio.setIcon(iconoEscalado4);
 
             // Cargar la imagen Boton Salir
-            URL Salir1 = new URL("https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/powerOff.png?raw=true");
+            URL Salir1 = new URL("https://github.com/IbaiSaenzDeBuruaga" +
+                    "/E-SportsLogos/blob/main/powerOff.png?raw=true");
             BufferedImage imagenOriginal5 = ImageIO.read(Salir1);
 
             // Escalar la imagen
@@ -122,7 +125,8 @@ public class VentanaInicial extends JFrame {
 
 
             // Cargar la imagen equipo1
-            URL Equipo1 = new URL("https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/faze-clan-logo.png?raw=true");
+            URL Equipo1 = new URL("https://github.com/IbaiSaenzDeBuruaga" +
+                    "/E-SportsLogos/blob/main/faze-clan-logo.png?raw=true");
             BufferedImage imagenOriginal1 = ImageIO.read(Equipo1);
 
             // Escalar la imagen
@@ -136,7 +140,8 @@ public class VentanaInicial extends JFrame {
 
 
             // Cargar la imagen equipo1
-            URL Equipo2 = new URL("https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/fnatic-logo.png?raw=true");
+            URL Equipo2 = new URL("https://github.com/IbaiSaenzDeBuruaga" +
+                    "/E-SportsLogos/blob/main/fnatic-logo.png?raw=true");
             BufferedImage imagenOriginal2 = ImageIO.read(Equipo2);
 
             // Escalar la imagen
@@ -150,7 +155,8 @@ public class VentanaInicial extends JFrame {
 
 
             // Cargar la imagen Boton Twitter
-            URL Twitter = new URL("https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/RRSS/TwitterLogo.png?raw=true");
+            URL Twitter = new URL("https://github.com/IbaiSaenzDeBuruaga" +
+                    "/E-SportsLogos/blob/main/RRSS/TwitterLogo.png?raw=true");
             BufferedImage imagenOriginal6 = ImageIO.read(Twitter);
 
             // Escalar la imagen
@@ -164,7 +170,8 @@ public class VentanaInicial extends JFrame {
 
 
             // Cargar la imagen Boton Instagram
-            URL Insta = new URL("https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/RRSS/InstagramLogo.png?raw=true");
+            URL Insta = new URL("https://github.com/IbaiSaenzDeBuruaga" +
+                    "/E-SportsLogos/blob/main/RRSS/InstagramLogo.png?raw=true");
             BufferedImage imagenOriginal7 = ImageIO.read(Insta);
 
             // Escalar la imagen
@@ -178,7 +185,8 @@ public class VentanaInicial extends JFrame {
 
 
             // Cargar la imagen Boton Facebook
-            URL Facebook = new URL("https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/RRSS/FacebookLogo.png?raw=true");
+            URL Facebook = new URL("https://github.com/IbaiSaenzDeBuruaga" +
+                    "/E-SportsLogos/blob/main/RRSS/FacebookLogo.png?raw=true");
             BufferedImage imagenOriginal8 = ImageIO.read(Facebook);
 
             // Escalar la imagen
