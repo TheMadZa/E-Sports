@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clasificacion 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="clasificacionxsd.xsd">
+    <competicion id="1">
+        <nombre_competicion>CS2 MAJOR COPENHAGEN 2024</nombre_competicion>
+        <nombre_juego>Counter-Strike series</nombre_juego>
+        <equipo id_equipo="17">
+            <nombre_equipo>Team Heretics</nombre_equipo>
+            <victorias>9</victorias>
+            <puntos>45</puntos>
+        </equipo>
+        <equipo id_equipo="3">
+            <nombre_equipo>Evil Geniuses</nombre_equipo>
+            <victorias>8</victorias>
+            <puntos>18</puntos>
+        </equipo>
+        <equipo id_equipo="20">
+            <nombre_equipo>INTZ</nombre_equipo>
+            <victorias>6</victorias>
+            <puntos>21</puntos>
+        </equipo>
+    </competicion>
+    <!-- parece que en la segunda competicion no hay datos por eso hice algunos ficticios-->
+    <competicion id="2">
+        <nombre_competicion>LEC</nombre_competicion>
+        <nombre_juego>League of Legends</nombre_juego>
+        <equipo id_equipo="10">
+            <nombre_equipo>Astralis</nombre_equipo>
+            <victorias>5</victorias>
+            <puntos>29</puntos>
+        </equipo>
+        <equipo id_equipo="16">
+            <nombre_equipo>Gen.G Esports</nombre_equipo>
+            <victorias>5</victorias>
+            <puntos>26</puntos>
+        </equipo>
+        <equipo id_equipo="7">
+            <nombre_equipo>FaZe Clan</nombre_equipo>
+            <victorias>4</victorias>
+            <puntos>53</puntos>
+        </equipo>
+    </competicion>
+</clasificacion>
