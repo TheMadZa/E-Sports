@@ -46,6 +46,7 @@ public class VentanaInicial extends JFrame {
     private JButton bInstagram;
     private JButton bFacebook;
     private JMenuBar mPrincipal;
+    private JPanel panelNoticias;
     private int indiceImagenes = 0;
     private final String[] urls = {
             "https://github.com/IbaiSaenzDeBuruaga" +
