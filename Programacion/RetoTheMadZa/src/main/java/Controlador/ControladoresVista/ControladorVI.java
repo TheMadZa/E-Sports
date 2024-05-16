@@ -215,13 +215,17 @@ public class ControladorVI {
 
     public void llenarComboBox(){
         try {
+            System.out.println("bien la funcion 1");
             vi.getCbClasificacion().removeAllItems();
-
+            System.out.println("bien la funcion 2");
             List<Competicion> competiciones = cv.buscarTodasCompeticiones();
+
+            System.out.println("bien la funcion 3");
 
             for (Competicion competicion : competiciones){
                 vi.getCbClasificacion().addItem(competicion.getNombreCom());
             }
+            System.out.println("bien la funcion 4");
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,e.getMessage());

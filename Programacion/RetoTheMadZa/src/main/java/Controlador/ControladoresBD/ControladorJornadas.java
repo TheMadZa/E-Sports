@@ -10,27 +10,24 @@ import Modelo.Jornada;
 import javax.swing.*;
 
 public class ControladorJornadas {
-    private ControladorModelo cm;
-    private EntityManagerFactory emf;
     private EntityManager em;
     private EntityTransaction transaction;
     private Jornada j;
 
-    public ControladorJornadas(ControladorModelo cm)
+    public ControladorJornadas(EntityManager em, EntityTransaction transaction)
     {
-        this.cm = cm;
-
-        emf = Persistence.createEntityManagerFactory("default");
-        em = emf.createEntityManager();
-        transaction = em.getTransaction();
+        this.em = em;
+        this.transaction = transaction;
 
         System.out.println("Elementos creados");
     }
 
+    /*
     public void terminar() throws Exception{
         em.close();
         emf.close();
     }
+    */
 
     public void insertarJornada(Jornada j) throws Exception
     {
