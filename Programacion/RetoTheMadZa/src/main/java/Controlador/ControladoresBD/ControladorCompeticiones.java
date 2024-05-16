@@ -69,6 +69,17 @@ public class ControladorCompeticiones {
         return c;
     }
 
+    public Competicion buscarCompeticionNombre(String nombre_com) throws Exception
+    {
+        transaction.begin();
+        c = em.find(Competicion.class, nombre_com);
+        if (c == null){
+            JOptionPane.showMessageDialog(null,"No hay ninguna competición con ese nombre");
+        }
+        transaction.commit();
+        return c;
+    }
+
     public void modificarCompeticion(Competicion competicion) throws Exception
     {
         transaction.begin();

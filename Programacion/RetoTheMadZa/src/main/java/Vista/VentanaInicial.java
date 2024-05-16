@@ -314,6 +314,46 @@ public class VentanaInicial extends JFrame {
         }
     }
 
+    public JLabel getvEquipo1() {
+        return vEquipo1;
+    }
+
+    public void setvEquipo1(JLabel vEquipo1) {
+        this.vEquipo1 = vEquipo1;
+    }
+
+    public JLabel getvEquipo2() {
+        return vEquipo2;
+    }
+
+    public void setvEquipo2(JLabel vEquipo2) {
+        this.vEquipo2 = vEquipo2;
+    }
+
+    public JLabel getvEquipo3() {
+        return vEquipo3;
+    }
+
+    public void setvEquipo3(JLabel vEquipo3) {
+        this.vEquipo3 = vEquipo3;
+    }
+
+    public JLabel getvEquipo4() {
+        return vEquipo4;
+    }
+
+    public void setvEquipo4(JLabel vEquipo4) {
+        this.vEquipo4 = vEquipo4;
+    }
+
+    public JLabel getvEquipo5() {
+        return vEquipo5;
+    }
+
+    public void setvEquipo5(JLabel vEquipo5) {
+        this.vEquipo5 = vEquipo5;
+    }
+
     // Listeners
     public void addBInicioAL(ActionListener al) {
         bInicio.addActionListener(al);
