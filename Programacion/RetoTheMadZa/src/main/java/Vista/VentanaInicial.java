@@ -314,6 +314,126 @@ public class VentanaInicial extends JFrame {
         }
     }
 
+    public JLabel getvEquipo1() {
+        return vEquipo1;
+    }
+
+    public void setvEquipo1(JLabel vEquipo1) {
+        this.vEquipo1 = vEquipo1;
+    }
+
+    public JLabel getvEquipo2() {
+        return vEquipo2;
+    }
+
+    public void setvEquipo2(JLabel vEquipo2) {
+        this.vEquipo2 = vEquipo2;
+    }
+
+    public JLabel getvEquipo3() {
+        return vEquipo3;
+    }
+
+    public void setvEquipo3(JLabel vEquipo3) {
+        this.vEquipo3 = vEquipo3;
+    }
+
+    public JLabel getvEquipo4() {
+        return vEquipo4;
+    }
+
+    public void setvEquipo4(JLabel vEquipo4) {
+        this.vEquipo4 = vEquipo4;
+    }
+
+    public JLabel getvEquipo5() {
+        return vEquipo5;
+    }
+
+    public void setvEquipo5(JLabel vEquipo5) {
+        this.vEquipo5 = vEquipo5;
+    }
+
+    public JLabel getpEquipo1() {
+        return pEquipo1;
+    }
+
+    public void setpEquipo1(JLabel pEquipo1) {
+        this.pEquipo1 = pEquipo1;
+    }
+
+    public JLabel getpEquipo2() {
+        return pEquipo2;
+    }
+
+    public void setpEquipo2(JLabel pEquipo2) {
+        this.pEquipo2 = pEquipo2;
+    }
+
+    public JLabel getpEquipo3() {
+        return pEquipo3;
+    }
+
+    public void setpEquipo3(JLabel pEquipo3) {
+        this.pEquipo3 = pEquipo3;
+    }
+
+    public JLabel getpEquipo4() {
+        return pEquipo4;
+    }
+
+    public void setpEquipo4(JLabel pEquipo4) {
+        this.pEquipo4 = pEquipo4;
+    }
+
+    public JLabel getpEquipo5() {
+        return pEquipo5;
+    }
+
+    public void setpEquipo5(JLabel pEquipo5) {
+        this.pEquipo5 = pEquipo5;
+    }
+
+    public JLabel getEquipo2() {
+        return equipo2;
+    }
+
+    public void setEquipo2(JLabel equipo2) {
+        this.equipo2 = equipo2;
+    }
+
+    public JLabel getEquipo3() {
+        return equipo3;
+    }
+
+    public void setEquipo3(JLabel equipo3) {
+        this.equipo3 = equipo3;
+    }
+
+    public JLabel getEquipo4() {
+        return equipo4;
+    }
+
+    public void setEquipo4(JLabel equipo4) {
+        this.equipo4 = equipo4;
+    }
+
+    public JLabel getEquipo5() {
+        return equipo5;
+    }
+
+    public void setEquipo5(JLabel equipo5) {
+        this.equipo5 = equipo5;
+    }
+
+    public JLabel getEquipo1() {
+        return equipo1;
+    }
+
+    public void setEquipo1(JLabel equipo1) {
+        this.equipo1 = equipo1;
+    }
+
     // Listeners
     public void addBInicioAL(ActionListener al) {
         bInicio.addActionListener(al);

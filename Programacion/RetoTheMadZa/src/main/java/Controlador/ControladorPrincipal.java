@@ -4,13 +4,15 @@ import Controlador.ControladoresBD.ControladorModelo;
 import Controlador.ControladoresVista.ControladorVista;
 import Modelo.*;
 
+import java.util.List;
+
 public class ControladorPrincipal {
     private ControladorVista cv;
     private ControladorModelo cm;
 
     public ControladorPrincipal() {
         cv = new ControladorVista(this);
-        cm = new ControladorModelo();
+        cm = new ControladorModelo(this);
     }
 
     //COMPETICION
@@ -24,6 +26,14 @@ public class ControladorPrincipal {
 
     public Competicion buscarCompeticion(Integer id_competicion) throws Exception {
         return cm.buscarCompeticion(id_competicion);
+    }
+
+    public Competicion buscarCompeticionNombre(String nombre) throws Exception {
+        return cm.buscarCompeticionNombre(nombre);
+    }
+
+    public List<Competicion> buscarTodasCompeticiones() throws Exception {
+        return cm.buscarTodasCompeticiones();
     }
 
     public void modificarCompeticion(Competicion c) throws Exception{
@@ -136,6 +146,11 @@ public class ControladorPrincipal {
 
     public void modificarStaff(Staff s) throws Exception{
         cm.modificarStaff(s);
+    }
+
+    //EQUIPO_COMPETICION
+    public List<EquipoCompeticion> buscarTodosEquiposCompeticiones() throws Exception {
+        return cm.buscarTodosEquiposCompeticiones();
     }
 }
 

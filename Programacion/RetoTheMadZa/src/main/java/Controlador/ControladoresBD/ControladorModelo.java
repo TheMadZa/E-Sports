@@ -7,6 +7,8 @@ import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 import Modelo.*;
 
+import java.util.List;
+
 
 public class ControladorModelo {
     private ControladorCompeticiones cc;
@@ -16,22 +18,20 @@ public class ControladorModelo {
     private ControladorJugadores cjug;
     private ControladorPatrocinadores cp;
     private ControladorStaff cs;
-    private EntityManagerFactory emf;
-    private EntityManager em;
+    private ControladorEquiposCompeticiones cec;
+    private ControladorPrincipal c;
 
-    public ControladorModelo() {
+    public ControladorModelo(ControladorPrincipal c) {
+        this.c = c;
 
-        emf = Persistence.createEntityManagerFactory("default");
-        em = emf.createEntityManager();
-        EntityTransaction transaction = em.getTransaction();
-
-        cc = new ControladorCompeticiones(this);
-        ce = new ControladorEquipos(this);
-        cjo = new ControladorJornadas(this);
-        cjue = new ControladorJuegos(this);
-        cjug = new ControladorJugadores(this);
-        cp = new ControladorPatrocinadores(this);
-        cs = new ControladorStaff(this);
+        this.cc = new ControladorCompeticiones(this);
+        this.ce = new ControladorEquipos(this);
+        this.cjo = new ControladorJornadas(this);
+        this.cjue = new ControladorJuegos(this);
+        this.cjug = new ControladorJugadores(this);
+        this.cp = new ControladorPatrocinadores(this);
+        this.cs = new ControladorStaff(this);
+        this.cec = new ControladorEquiposCompeticiones(this);
     }
 
     //COMPETICION
@@ -45,6 +45,14 @@ public class ControladorModelo {
 
     public Competicion buscarCompeticion(Integer id_competicion) throws Exception {
         return cc.buscarCompeticion(id_competicion);
+    }
+
+    public Competicion buscarCompeticionNombre(String nombre) throws Exception {
+        return cc.buscarCompeticionNombre(nombre);
+    }
+
+    public List<Competicion> buscarTodasCompeticiones() throws Exception {
+        return cc.buscarTodasCompeticiones();
     }
 
     public void modificarCompeticion(Competicion c) throws Exception{
@@ -157,5 +165,10 @@ public class ControladorModelo {
 
     public void modificarStaff(Staff s) throws Exception{
         cs.modificarStaff(s);
+    }
+
+    //EQUIPO_COMPETICION
+    public List<EquipoCompeticion> buscarTodosEquiposCompeticiones() throws Exception {
+        return cec.buscarTodosEquiposCompeticiones();
     }
 }
