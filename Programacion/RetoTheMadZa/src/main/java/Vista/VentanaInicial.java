@@ -2,12 +2,14 @@ package Vista;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+
+import Modelo.Competicion;
 import org.imgscalr.Scalr;
 
 
@@ -41,7 +43,7 @@ public class VentanaInicial extends JFrame {
     private JPanel PanelLogo;
     private JButton bInicio;
     private JButton bSalir;
-    private JComboBox<String> cbClasifiacion;
+    private JComboBox<String> cbClasificacion;
     private JButton bTwitter;
     private JButton bInstagram;
     private JButton bFacebook;
@@ -205,18 +207,17 @@ public class VentanaInicial extends JFrame {
         // Configurar la ventana
         setContentPane(pPrincipal);
         setTitle("Ventana Inicial");
-        setSize(800, 600);
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        getRootPane().setDefaultButton(bInicio);
         bFacebook.setBorder(BorderFactory.createEmptyBorder());
         bTwitter.setBorder(BorderFactory.createEmptyBorder());
         bInstagram.setBorder(BorderFactory.createEmptyBorder());
         bSalir.setBorder(BorderFactory.createEmptyBorder());
         bInicio.setBorder(BorderFactory.createEmptyBorder());
         mPrincipal.setBorder(BorderFactory.createEmptyBorder());
-        cbClasifiacion.setBorder(BorderFactory.createEmptyBorder());
+        cbClasificacion.setBorder(BorderFactory.createEmptyBorder());
 
-
-        setLocationRelativeTo(null); // Centrar la ventana en la pantalla
         setVisible(true);
     }
 
@@ -267,14 +268,18 @@ public class VentanaInicial extends JFrame {
     }
 
     // Getters y setters
-
-
-    public JComboBox<String> getCbClasifiacion() {
-        return cbClasifiacion;
+    public JComboBox<String> getCbClasificacion() {
+        return cbClasificacion;
     }
+    public void setCbClasificacion(ArrayList<Competicion> listaCompeticiones) {
 
-    public void setCbClasifiacion(JComboBox<String> cbClasifiacion) {
-        this.cbClasifiacion = cbClasifiacion;
+        // Poner que ningún elemento esté seleccionado, y por lo tanto, que la tabla esté vacía.
+        this.cbClasificacion.insertItemAt("",-1);
+
+        for (Competicion competicion : listaCompeticiones) {
+            this.cbClasificacion.addItem(competicion.getNombreCom());
+        }
+
     }
 
     // Listeners
@@ -305,6 +310,7 @@ public class VentanaInicial extends JFrame {
         mequipos.addActionListener(al);
     }
     public void addCbClasificacionAL(ActionListener al){
-        cbClasifiacion.addActionListener(al);
+        cbClasificacion.addActionListener(al);
     }
+
 }
