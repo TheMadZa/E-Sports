@@ -47,6 +47,10 @@ public class ControladorModelo {
         return cc.buscarCompeticion(id_competicion);
     }
 
+    public Competicion buscarCompeticionNombre(String nombre) throws Exception {
+        return cc.buscarCompeticionNombre(nombre);
+    }
+
     public void modificarCompeticion(Competicion c) throws Exception{
         cc.modificarCompeticion(c);
     }

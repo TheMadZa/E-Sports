@@ -26,6 +26,10 @@ public class ControladorPrincipal {
         return cm.buscarCompeticion(id_competicion);
     }
 
+    public Competicion buscarCompeticionNombre(String nombre) throws Exception {
+        return cm.buscarCompeticionNombre(nombre);
+    }
+
     public void modificarCompeticion(Competicion c) throws Exception{
         cm.modificarCompeticion(c);
     }

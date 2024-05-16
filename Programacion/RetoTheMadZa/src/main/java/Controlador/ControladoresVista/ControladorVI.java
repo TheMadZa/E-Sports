@@ -1,11 +1,14 @@
 package Controlador.ControladoresVista;
 
+import Modelo.*;
 import Vista.VentanaInicial;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ControladorVI {
 
@@ -19,6 +22,8 @@ public class ControladorVI {
 
     public void crearMostrar() {
         vi = new VentanaInicial();
+
+        llenarComboBox();
 
         // Action Listeners de los botones y demás.
         vi.addBInicioAL(new BInicioAL());
@@ -121,9 +126,9 @@ public class ControladorVI {
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
-                int id = vi.getCbClasificacion().getSelectedIndex();
-                if (id > 0){
-                    //validarBuscarCompeticion(id); // TODO
+                String nombreSeleccionado = vi.getCbClasificacion().getSelectedItem().toString();
+                if (nombreSeleccionado != null && !nombreSeleccionado.isEmpty()){
+                    validarBuscarCompeticionNombre(nombreSeleccionado); // TODO
                 }
             }
             catch (Exception ex)
@@ -131,6 +136,45 @@ public class ControladorVI {
                 //vi.mostrarMensaje(ex.getMessage());
             }
 
+        }
+    }
+
+    public void validarBuscarCompeticionNombre(String nombreSeleccionado) throws Exception {
+        List<EquipoCompeticion> equipoCompeticiones = new ArrayList<>();
+
+        //Bsucamos el objeto competicion para conseguir el id
+        Competicion c = cv.buscarCompeticionNombre(nombreSeleccionado);
+
+        //Llenamos la lista con los equipos de una competicion específica
+        for (EquipoCompeticion equipoCompeticion : c.getIdCompeticion()){
+            if (equipoCompeticion.getCompeticionByIdCompeticion() != c){
+                equipoCompeticiones.
+            }
+        }
+
+        //De los 5 mejores conseguir el logo, victorias y puntos
+
+
+        for (int x = 0; x < 5; x++) {
+            EquipoCompeticion ec = ;
+            vi.getvEquipo1().setText();
+        }
+    }
+
+
+
+    public void llenarComboBox(){
+        try {
+            vi.getCbClasificacion().removeAllItems();
+
+            List<Competicion> competiciones = cv.consultaTodasCompeticiones();
+
+            for (Competicion competicion : competiciones){
+                vi.getCbClasificacion().addItem(competicion.getNombreCom());
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,e.getMessage());
         }
     }
 
