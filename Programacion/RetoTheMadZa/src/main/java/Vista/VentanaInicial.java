@@ -2,7 +2,6 @@ package Vista;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -54,6 +53,7 @@ public class VentanaInicial extends JFrame {
     private JMenuBar menuSoloTienda;
     private JLabel labelTextoHorizontal;
     private JButton bTienda;
+    private JLabel logoBlanco;
     private int indiceImagenes = 0;
     private final String[] urls = {
             "https://github.com/IbaiSaenzDeBuruaga" +
@@ -68,8 +68,12 @@ public class VentanaInicial extends JFrame {
                     "/E-SportsLogos/blob/main/Noticias/mano.png?raw=true"
     };
 
-    private String text = " Za esta completamente loco                de verdad esta muy loco                     y encima es peruano" +
-            "                   imaginate ser peruano                             pues za lo es. ";
+    private String text = " TheMadZa, compañía líder en eSports, organiza dos competiciones activas: el Torneo de" +
+            " TheMadZa Legends, con premios millonarios para equipos globales, y TheMadZa Clash, enfocado en nuevos" +
+            " talentos. Recientemente, lanzaron su tienda online con productos exclusivos y personalizados. Los" +
+            " jugadores pueden registrarse fácilmente para participar en competiciones y acceder a contenido" +
+            " exclusivo, sorteos y descuentos especiales. Además, TheMadZa organiza eventos anuales como" +
+            " TheMadZa GameCon para mantener a la comunidad activa y comprometida. ";
     private int currentIndex = 0;
 
 
@@ -204,6 +208,20 @@ public class VentanaInicial extends JFrame {
             // Asignar el ImageIcon escalado al JLabel
             bTienda.setIcon(iconoEscalado9);
 
+            // Cargar la imagen LogoBlanco
+            URL LogoBlanco = new URL("https://github.com/IbaiSaenzDeBuruaga" +
+                    "/E-SportsLogos/blob/main/RRSS/SoloBlanco.png?raw=true");
+            BufferedImage imagenOriginal10 = ImageIO.read(LogoBlanco);
+
+            // Escalar la imagen
+            BufferedImage bufferedImage10 = Scalr.resize(imagenOriginal10, 100);
+
+            // Crear un ImageIcon a partir del BufferedImage escalado
+            ImageIcon iconoEscalado10 = new ImageIcon(bufferedImage10);
+
+            // Asignar el ImageIcon escalado al JLabel
+            logoBlanco.setIcon(iconoEscalado10);
+
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -231,7 +249,7 @@ public class VentanaInicial extends JFrame {
     }
 
     private void iniciarDesplazamientoTexto() {
-        Timer timer = new Timer(200, new ActionListener() {
+        Timer timer = new Timer(80, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String displayedText = text.substring(currentIndex) + text.substring(0, currentIndex);
