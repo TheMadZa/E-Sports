@@ -9,20 +9,14 @@ import jakarta.persistence.Persistence;
 import java.util.List;
 
 public class ControladorEquiposCompeticiones {
-
-    private ControladorModelo cm;
-    private EntityManagerFactory emf;
     private EntityManager em;
     private EntityTransaction transaction;
     private EquipoCompeticion ec;
 
-    public ControladorEquiposCompeticiones(ControladorModelo cm)
+    public ControladorEquiposCompeticiones(EntityManager em, EntityTransaction transaction)
     {
-        this.cm = cm;
-
-        emf = Persistence.createEntityManagerFactory("default");
-        em = emf.createEntityManager();
-        transaction = em.getTransaction();
+        this.em = em;
+        this.transaction = transaction;
 
         System.out.println("Elementos creados");
     }

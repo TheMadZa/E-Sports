@@ -12,27 +12,24 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ControladorEquipos {
-    private ControladorModelo cm;
-    private EntityManagerFactory emf;
     private EntityManager em;
     private EntityTransaction transaction;
     private Equipo e;
 
-    public ControladorEquipos(ControladorModelo cm)
+    public ControladorEquipos(EntityManager em, EntityTransaction transaction)
     {
-        this.cm = cm;
-
-        emf = Persistence.createEntityManagerFactory("default");
-        em = emf.createEntityManager();
-        transaction = em.getTransaction();
+        this.em = em;
+        this.transaction = transaction;
 
         System.out.println("Elementos creados");
     }
 
+    /*
     public void terminar() throws Exception{
         em.close();
         emf.close();
     }
+    */
 
     public void insertarEquipo(Equipo e) throws Exception
     {

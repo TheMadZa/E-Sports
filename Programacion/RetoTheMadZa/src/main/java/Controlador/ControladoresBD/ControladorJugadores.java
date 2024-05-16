@@ -10,27 +10,24 @@ import Modelo.Jugador;
 import javax.swing.*;
 
 public class ControladorJugadores {
-    private ControladorModelo cm;
-    private EntityManagerFactory emf;
     private EntityManager em;
     private EntityTransaction transaction;
     private Jugador j;
 
-    public ControladorJugadores(ControladorModelo cm)
+    public ControladorJugadores(EntityManager em, EntityTransaction transaction)
     {
-        this.cm = cm;
-
-        emf = Persistence.createEntityManagerFactory("default");
-        em = emf.createEntityManager();
-        transaction = em.getTransaction();
+        this.em = em;
+        this.transaction = transaction;
 
         System.out.println("Elementos creados");
     }
 
+    /*
     public void terminar() throws Exception{
         em.close();
         emf.close();
     }
+    */
 
     public void insertarJugador(Jugador j) throws Exception
     {

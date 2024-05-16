@@ -12,26 +12,42 @@ import java.util.List;
 
 public class ControladorModelo {
     private ControladorCompeticiones cc;
-    private ControladorEquipos ce;
-    private ControladorJornadas cjo;
-    private ControladorJuegos cjue;
-    private ControladorJugadores cjug;
-    private ControladorPatrocinadores cp;
-    private ControladorStaff cs;
-    private ControladorEquiposCompeticiones cec;
+    private final ControladorEquipos ce;
+    private final ControladorJornadas cjo;
+    private final ControladorJuegos cjue;
+    private final ControladorJugadores cjug;
+    private final ControladorPatrocinadores cp;
+    private final ControladorStaff cs;
     private ControladorPrincipal c;
+    private final ControladorEquiposCompeticiones cec;
+    private final EntityManagerFactory emf;
+    private final EntityManager em;
 
     public ControladorModelo(ControladorPrincipal c) {
         this.c = c;
 
-        this.cc = new ControladorCompeticiones(this);
-        this.ce = new ControladorEquipos(this);
-        this.cjo = new ControladorJornadas(this);
-        this.cjue = new ControladorJuegos(this);
-        this.cjug = new ControladorJugadores(this);
-        this.cp = new ControladorPatrocinadores(this);
-        this.cs = new ControladorStaff(this);
-        this.cec = new ControladorEquiposCompeticiones(this);
+        emf = Persistence.createEntityManagerFactory("default");
+        em = emf.createEntityManager();
+        EntityTransaction transaction = em.getTransaction();
+
+        System.out.println("bien 1");
+
+        this.cc = new ControladorCompeticiones(this,em,transaction);
+        System.out.println("bien 2");
+        ce = new ControladorEquipos(em,transaction);
+        System.out.println("bien 3");
+        cjo = new ControladorJornadas(em,transaction);
+        System.out.println("bien 4");
+        cjue = new ControladorJuegos(em,transaction);
+        System.out.println("bien 5");
+        cjug = new ControladorJugadores(em,transaction);
+        System.out.println("bien 6");
+        cp = new ControladorPatrocinadores(em,transaction);
+        System.out.println("bien 7");
+        cs = new ControladorStaff(em,transaction);
+        System.out.println("bien 8");
+        cec = new ControladorEquiposCompeticiones(em,transaction);
+        System.out.println("bien 9");
     }
 
     //COMPETICION
