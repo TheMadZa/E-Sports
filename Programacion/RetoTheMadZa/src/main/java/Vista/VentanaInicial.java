@@ -49,6 +49,11 @@ public class VentanaInicial extends JFrame {
     private JButton bFacebook;
     private JMenuBar mPrincipal;
     private JPanel panelNoticias;
+    private JMenu mTienda;
+    private JMenuBar menuSoloTienda;
+    private JLabel labelTextoHorizontal;
+    private JButton bTienda;
+    private JLabel logoBlanco;
     private int indiceImagenes = 0;
     private final String[] urls = {
             "https://github.com/IbaiSaenzDeBuruaga" +
@@ -63,8 +68,17 @@ public class VentanaInicial extends JFrame {
                     "/E-SportsLogos/blob/main/Noticias/mano.png?raw=true"
     };
 
-    public VentanaInicial() {
+    private String text = " TheMadZa, compañía líder en eSports, organiza dos competiciones activas: el Torneo de" +
+            " TheMadZa Legends, con premios millonarios para equipos globales, y TheMadZa Clash, enfocado en nuevos" +
+            " talentos. Recientemente, lanzaron su tienda online con productos exclusivos y personalizados. Los" +
+            " jugadores pueden registrarse fácilmente para participar en competiciones y acceder a contenido" +
+            " exclusivo, sorteos y descuentos especiales. Además, TheMadZa organiza eventos anuales como" +
+            " TheMadZa GameCon para mantener a la comunidad activa y comprometida. ";
+    private int currentIndex = 0;
 
+
+
+    public VentanaInicial() {
         mostrarImagenesFugaces();
 
         try {
@@ -81,21 +95,6 @@ public class VentanaInicial extends JFrame {
 
             // Asignar el ImageIcon escalado al JLabel ftThemadza
             ftThemadza.setIcon(iconoEscalado);
-
-            /*
-            // Cargar la imagen Noticias
-            URL Noticia1 = new URL("https://raw.githubusercontent.com/IbaiSaenzDeBuruaga/E-SportsLogos/1b853f57103aeb0b09c40566e475ec6503098592/OIG1.jpg");
-            BufferedImage imagenOriginal3 = ImageIO.read(Noticia1);
-
-            // Escalar la imagen
-            BufferedImage bufferedImage3 = Scalr.resize(imagenOriginal3, 500);
-
-            // Crear un ImageIcon a partir del BufferedImage escalado
-            ImageIcon iconoEscalado3 = new ImageIcon(bufferedImage3);
-
-            // Asignar el ImageIcon escalado al JLabel
-            ftNoticias.setIcon(iconoEscalado3);
-             */
 
             // Cargar la imagen Boton Inicio
             URL Inicio1 = new URL("https://github.com/IbaiSaenzDeBuruaga" +
@@ -125,7 +124,6 @@ public class VentanaInicial extends JFrame {
             // Asignar el ImageIcon escalado al JLabel
             bSalir.setIcon(iconoEscalado5);
 
-
             // Cargar la imagen equipo1
             URL Equipo1 = new URL("https://github.com/IbaiSaenzDeBuruaga" +
                     "/E-SportsLogos/blob/main/faze-clan-logo.png?raw=true");
@@ -140,8 +138,7 @@ public class VentanaInicial extends JFrame {
             // Asignar el ImageIcon escalado al JLabel
             equipo1.setIcon(iconoEscalado1);
 
-
-            // Cargar la imagen equipo1
+            // Cargar la imagen equipo2
             URL Equipo2 = new URL("https://github.com/IbaiSaenzDeBuruaga" +
                     "/E-SportsLogos/blob/main/fnatic-logo.png?raw=true");
             BufferedImage imagenOriginal2 = ImageIO.read(Equipo2);
@@ -154,7 +151,6 @@ public class VentanaInicial extends JFrame {
 
             // Asignar el ImageIcon escalado al JLabel
             equipo2.setIcon(iconoEscalado2);
-
 
             // Cargar la imagen Boton Twitter
             URL Twitter = new URL("https://github.com/IbaiSaenzDeBuruaga" +
@@ -170,7 +166,6 @@ public class VentanaInicial extends JFrame {
             // Asignar el ImageIcon escalado al JLabel
             bTwitter.setIcon(iconoEscalado6);
 
-
             // Cargar la imagen Boton Instagram
             URL Insta = new URL("https://github.com/IbaiSaenzDeBuruaga" +
                     "/E-SportsLogos/blob/main/RRSS/InstagramLogo.png?raw=true");
@@ -184,7 +179,6 @@ public class VentanaInicial extends JFrame {
 
             // Asignar el ImageIcon escalado al JLabel
             bInstagram.setIcon(iconoEscalado7);
-
 
             // Cargar la imagen Boton Facebook
             URL Facebook = new URL("https://github.com/IbaiSaenzDeBuruaga" +
@@ -200,6 +194,35 @@ public class VentanaInicial extends JFrame {
             // Asignar el ImageIcon escalado al JLabel
             bFacebook.setIcon(iconoEscalado8);
 
+            // Cargar la imagen Boton Tienda
+            URL Tienda = new URL("https://github.com/IbaiSaenzDeBuruaga" +
+                    "/E-SportsLogos/blob/main/RRSS/tienda.png?raw=true");
+            BufferedImage imagenOriginal9 = ImageIO.read(Tienda);
+
+            // Escalar la imagen
+            BufferedImage bufferedImage9 = Scalr.resize(imagenOriginal9, 40);
+
+            // Crear un ImageIcon a partir del BufferedImage escalado
+            ImageIcon iconoEscalado9 = new ImageIcon(bufferedImage9);
+
+            // Asignar el ImageIcon escalado al JLabel
+            bTienda.setIcon(iconoEscalado9);
+
+            // Cargar la imagen LogoBlanco
+            URL LogoBlanco = new URL("https://github.com/IbaiSaenzDeBuruaga" +
+                    "/E-SportsLogos/blob/main/RRSS/SoloBlanco.png?raw=true");
+            BufferedImage imagenOriginal10 = ImageIO.read(LogoBlanco);
+
+            // Escalar la imagen
+            BufferedImage bufferedImage10 = Scalr.resize(imagenOriginal10, 100);
+
+            // Crear un ImageIcon a partir del BufferedImage escalado
+            ImageIcon iconoEscalado10 = new ImageIcon(bufferedImage10);
+
+            // Asignar el ImageIcon escalado al JLabel
+            logoBlanco.setIcon(iconoEscalado10);
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -210,6 +233,7 @@ public class VentanaInicial extends JFrame {
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getRootPane().setDefaultButton(bInicio);
+        bTienda.setBorder(BorderFactory.createEmptyBorder());
         bFacebook.setBorder(BorderFactory.createEmptyBorder());
         bTwitter.setBorder(BorderFactory.createEmptyBorder());
         bInstagram.setBorder(BorderFactory.createEmptyBorder());
@@ -218,24 +242,38 @@ public class VentanaInicial extends JFrame {
         mPrincipal.setBorder(BorderFactory.createEmptyBorder());
         cbClasificacion.setBorder(BorderFactory.createEmptyBorder());
 
+        // Iniciar el desplazamiento del texto
+        iniciarDesplazamientoTexto();
+
         setVisible(true);
+    }
+
+    private void iniciarDesplazamientoTexto() {
+        Timer timer = new Timer(80, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String displayedText = text.substring(currentIndex) + text.substring(0, currentIndex);
+                labelTextoHorizontal.setText(displayedText);
+                currentIndex++;
+                if (currentIndex >= text.length()) {
+                    currentIndex = 0;
+                }
+            }
+        });
+        timer.start();
     }
 
     // Función para mostrar las imágenes transitorias.
     public void mostrarImagenesFugaces() {
-
         // Crear un temporizador que cambie la imagen después de unos 4 segundos.
         Timer timer = new Timer(3000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
                 // Cambiar la imagen y actualizar el índice
                 indiceImagenes = (indiceImagenes + 1) % urls.length;
                 // Obtener la URL de la imagen actual del array
                 String url = urls[indiceImagenes];
-
                 try {
-
                     // Cargar la imagen desde la URL
                     URL imageUrl = new URL(url);
                     BufferedImage imagen = ImageIO.read(imageUrl);
@@ -245,17 +283,13 @@ public class VentanaInicial extends JFrame {
                     ImageIcon icon = new ImageIcon(imagen);
                     // Establecer la imagen en el JLabel
                     ftNoticias.setIcon(icon);
-
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
-
             }
         });
-
         // Comenzar el temporizador
         timer.start();
-
     }
 
     public static void main(String[] args) {
@@ -271,46 +305,81 @@ public class VentanaInicial extends JFrame {
     public JComboBox<String> getCbClasificacion() {
         return cbClasificacion;
     }
+
     public void setCbClasificacion(ArrayList<Competicion> listaCompeticiones) {
-
         // Poner que ningún elemento esté seleccionado, y por lo tanto, que la tabla esté vacía.
-        this.cbClasificacion.insertItemAt("",-1);
-
+        this.cbClasificacion.insertItemAt("", -1);
         for (Competicion competicion : listaCompeticiones) {
             this.cbClasificacion.addItem(competicion.getNombreCom());
         }
+    }
 
+    public JLabel getvEquipo1() {
+        return vEquipo1;
+    }
+
+    public void setvEquipo1(JLabel vEquipo1) {
+        this.vEquipo1 = vEquipo1;
+    }
+
+    public JLabel getvEquipo2() {
+        return vEquipo2;
+    }
+
+    public void setvEquipo2(JLabel vEquipo2) {
+        this.vEquipo2 = vEquipo2;
+    }
+
+    public JLabel getvEquipo3() {
+        return vEquipo3;
+    }
+
+    public void setvEquipo3(JLabel vEquipo3) {
+        this.vEquipo3 = vEquipo3;
+    }
+
+    public JLabel getvEquipo4() {
+        return vEquipo4;
+    }
+
+    public void setvEquipo4(JLabel vEquipo4) {
+        this.vEquipo4 = vEquipo4;
+    }
+
+    public JLabel getvEquipo5() {
+        return vEquipo5;
+    }
+
+    public void setvEquipo5(JLabel vEquipo5) {
+        this.vEquipo5 = vEquipo5;
     }
 
     // Listeners
-    public void addBInicioAL(ActionListener al)
-    {
+    public void addBInicioAL(ActionListener al) {
         bInicio.addActionListener(al);
     }
-    public void addBSalirAL(ActionListener al){
+    public void addBSalirAL(ActionListener al) {
         bSalir.addActionListener(al);
     }
     public void addBFacebookAL(ActionListener al) {
         bFacebook.addActionListener(al);
     }
-    public void addBInstagramAL(ActionListener al)
-    {
+    public void addBInstagramAL(ActionListener al) {
         bInstagram.addActionListener(al);
     }
-    public void addBTwitterAL(ActionListener al){
+    public void addBTwitterAL(ActionListener al) {
         bTwitter.addActionListener(al);
     }
     public void addMJornadasAL(ActionListener al) {
         mJornadas.addActionListener(al);
     }
-    public void addMClasificacionAL(ActionListener al){
+    public void addMClasificacionAL(ActionListener al) {
         mClasificacion.addActionListener(al);
     }
     public void addMEquiposAL(ActionListener al) {
         mequipos.addActionListener(al);
     }
-    public void addCbClasificacionAL(ActionListener al){
+    public void addCbClasificacionAL(ActionListener al) {
         cbClasificacion.addActionListener(al);
     }
-
 }

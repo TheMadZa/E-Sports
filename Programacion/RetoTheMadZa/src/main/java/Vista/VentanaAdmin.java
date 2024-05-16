@@ -2,7 +2,8 @@ package Vista;
 
 import javax.swing.*;
 
-public class VentanaTienda {
+public class VentanaAdmin extends JFrame {
+    private JLabel labelTextoHorizontal;
     private JPanel panelUp;
     private JPanel PanelMenu;
     private JMenuBar mPrincipal;
@@ -13,9 +14,7 @@ public class VentanaTienda {
     private JLabel ftThemadza;
     private JButton bInicio;
     private JButton bSalir;
-    private JPanel PanelSoloTienda;
-    private JMenuBar menuSoloTienda;
-    private JMenu mTienda;
+    private JButton bTienda;
     private JPanel PanelMedio;
     private JPanel panelJornadas;
     private JLabel vEquipo1;
@@ -40,4 +39,5 @@ public class VentanaTienda {
     private JButton bTwitter;
     private JButton bInstagram;
     private JButton bFacebook;
+    private JLabel logoBlanco;
 }

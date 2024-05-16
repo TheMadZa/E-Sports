@@ -1,8 +1,15 @@
 package Vista;
 
+import org.imgscalr.Scalr;
+
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class VentanaInicioSesion extends JFrame {
 
@@ -12,6 +19,7 @@ public class VentanaInicioSesion extends JFrame {
     private JButton bIniciarSesion; // TODO : poner bordes redondos
     private JButton bRegistrarse; // TODO : poner bordes redondos
     private JPanel pDatos; // TODO : poner con forma cuadrada y centrado
+    private JLabel tfImagenLogo;
 
     public VentanaInicioSesion(){
 
@@ -34,8 +42,8 @@ public class VentanaInicioSesion extends JFrame {
                 //Point2D end = new Point2D.Float(getWidth(), getHeight());
 
                 // Colores para el degradado
-                Color colorInicio = new Color(0x5B2C78);
-                Color colorFin = new Color(0xFDA2A1);
+                Color colorInicio = new Color(0x201641);
+                Color colorFin = new Color(0xAE72C2);
 
                 // Crear y configurar el objeto GradientPaint
                 //GradientPaint gradientPaint = new GradientPaint(start, colorInicio, end, colorFin);
@@ -48,8 +56,37 @@ public class VentanaInicioSesion extends JFrame {
             }
         };
 
-        // Añadir el panel principal al panel del degradado
-        pPrincipal.add(pDatos, BorderLayout.CENTER);
+        // Configurar el layout del panel principal como GridBagLayout para centrar el pDatos
+        pPrincipal.setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.insets = new Insets(80, 80, 80, 80);
+        pPrincipal.add(pDatos, gbc);
+
+        // Poner la imagen centrada y superpuesta. // TODO : tengo que ponerla bien
+        try {
+
+            // Cargar la imagen original
+            URL imageUrl = new URL("https://github.com/IbaiSaenzDeBuruaga" +
+                    "/E-SportsLogos/blob/main/RRSS/TheMadZaLogoColor.png?raw=true");
+            BufferedImage imagenOriginal = ImageIO.read(imageUrl);
+
+            // Escalar la imagen usando ImgScalr
+            BufferedImage bufferedImage = Scalr.resize(imagenOriginal, 200);
+
+            // Crear un ImageIcon a partir del BufferedImage escalado
+            ImageIcon iconoEscalado = new ImageIcon(bufferedImage);
+
+            // Asignar el ImageIcon escalado al JLabel ftThemadza
+            tfImagenLogo.setIcon(iconoEscalado);
+
+            pPrincipal.add(tfImagenLogo);
+
+        }
+        catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         setContentPane(pPrincipal);
         getRootPane().setDefaultButton(bIniciarSesion);
