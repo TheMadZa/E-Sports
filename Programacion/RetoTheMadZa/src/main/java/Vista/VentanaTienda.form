@@ -815,7 +815,7 @@
                     </constraints>
                     <properties>
                       <foreground color="-394241"/>
-                      <text value="MochilasTheMAdZa"/>
+                      <text value="Mochilas TheMAdZa"/>
                     </properties>
                   </component>
                   <component id="81a25" class="javax.swing.JButton" binding="bBuy2">
@@ -873,7 +873,7 @@
                     </constraints>
                     <properties>
                       <foreground color="-394241"/>
-                      <text value="Camisetas TheMAdZa"/>
+                      <text value="Zapatillas TheMAdZa"/>
                     </properties>
                   </component>
                   <component id="c5566" class="javax.swing.JButton" binding="bBuy3">
@@ -931,7 +931,7 @@
                     </constraints>
                     <properties>
                       <foreground color="-394241"/>
-                      <text value="Camisetas TheMAdZa"/>
+                      <text value="Boxer TheMAdZa"/>
                     </properties>
                   </component>
                   <component id="bc5b9" class="javax.swing.JButton" binding="bBuy4">
@@ -989,7 +989,7 @@
                     </constraints>
                     <properties>
                       <foreground color="-394241"/>
-                      <text value="Camisetas TheMAdZa"/>
+                      <text value="Raton TheMAdZa"/>
                     </properties>
                   </component>
                   <component id="e7bee" class="javax.swing.JButton" binding="bBuy5">
@@ -1047,7 +1047,7 @@
                     </constraints>
                     <properties>
                       <foreground color="-394241"/>
-                      <text value="Camisetas TheMAdZa"/>
+                      <text value="Chaqueta TheMAdZa"/>
                     </properties>
                   </component>
                   <component id="e25ec" class="javax.swing.JButton" binding="bBuy6">
@@ -1105,7 +1105,7 @@
                     </constraints>
                     <properties>
                       <foreground color="-394241"/>
-                      <text value="Camisetas TheMAdZa"/>
+                      <text value="Calcetines TheMAdZa"/>
                     </properties>
                   </component>
                   <component id="3a60" class="javax.swing.JButton" binding="bBuy7">
@@ -1163,7 +1163,7 @@
                     </constraints>
                     <properties>
                       <foreground color="-394241"/>
-                      <text value="Camisetas TheMAdZa"/>
+                      <text value="Bikini TheMAdZa"/>
                     </properties>
                   </component>
                   <component id="1e77" class="javax.swing.JButton" binding="bBuy8">
@@ -1221,7 +1221,7 @@
                     </constraints>
                     <properties>
                       <foreground color="-394241"/>
-                      <text value="Camisetas TheMAdZa"/>
+                      <text value="Gorras TheMAdZa"/>
                     </properties>
                   </component>
                   <component id="4b8da" class="javax.swing.JButton" binding="bBuy9">
@@ -1279,7 +1279,7 @@
                     </constraints>
                     <properties>
                       <foreground color="-394241"/>
-                      <text value="Camisetas TheMAdZa"/>
+                      <text value="Guantes TheMAdZa"/>
                     </properties>
                   </component>
                   <component id="d6129" class="javax.swing.JButton" binding="bBuy10">
@@ -1337,7 +1337,7 @@
                     </constraints>
                     <properties>
                       <foreground color="-394241"/>
-                      <text value="Camisetas TheMAdZa"/>
+                      <text value="Pantalon TheMAdZa"/>
                     </properties>
                   </component>
                   <component id="8f606" class="javax.swing.JButton" binding="bBuy11">
