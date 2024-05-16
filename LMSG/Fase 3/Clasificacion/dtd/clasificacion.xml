@@ -19,41 +19,6 @@
             <victorias>6</victorias>
             <puntos>21</puntos>
         </equipo>
-        <equipo id_equipo="10">
-            <nombre_equipo>Astralis</nombre_equipo>
-            <victorias>5</victorias>
-            <puntos>29</puntos>
-        </equipo>
-        <equipo id_equipo="16">
-            <nombre_equipo>Gen.G Esports</nombre_equipo>
-            <victorias>5</victorias>
-            <puntos>26</puntos>
-        </equipo>
-        <equipo id_equipo="7">
-            <nombre_equipo>FaZe Clan</nombre_equipo>
-            <victorias>4</victorias>
-            <puntos>53</puntos>
-        </equipo>
-        <equipo id_equipo="13">
-            <nombre_equipo>Rogue</nombre_equipo>
-            <victorias>4</victorias>
-            <puntos>23</puntos>
-        </equipo>
-        <equipo id_equipo="4">
-            <nombre_equipo>Cloud9</nombre_equipo>
-            <victorias>4</victorias>
-            <puntos>19</puntos>
-        </equipo>
-        <equipo id_equipo="1">
-            <nombre_equipo>Team Liquid</nombre_equipo>
-            <victorias>4</victorias>
-            <puntos>15</puntos>
-        </equipo>
-        <equipo id_equipo="2">
-            <nombre_equipo>Fnatic</nombre_equipo>
-            <victorias>2</victorias>
-            <puntos>16</puntos>
-        </equipo>
     </competicion>
     <competicion id="2">
         <nombre_competicion>LEC</nombre_competicion>
@@ -72,41 +37,6 @@
             <nombre_equipo>Team Envy</nombre_equipo>
             <victorias>5</victorias>
             <puntos>14</puntos>
-        </equipo>
-        <equipo id_equipo="6">
-            <nombre_equipo>T1</nombre_equipo>
-            <victorias>4</victorias>
-            <puntos>18</puntos>
-        </equipo>
-        <equipo id_equipo="17">
-            <nombre_equipo>Team Heretics</nombre_equipo>
-            <victorias>3</victorias>
-            <puntos>22</puntos>
-        </equipo>
-        <equipo id_equipo="4">
-            <nombre_equipo>Cloud9</nombre_equipo>
-            <victorias>3</victorias>
-            <puntos>5</puntos>
-        </equipo>
-        <equipo id_equipo="2">
-            <nombre_equipo>Fnatic</nombre_equipo>
-            <victorias>1</victorias>
-            <puntos>10</puntos>
-        </equipo>
-        <equipo id_equipo="10">
-            <nombre_equipo>Astralis</nombre_equipo>
-            <victorias>1</victorias>
-            <puntos>8</puntos>
-        </equipo>
-        <equipo id_equipo="20">
-            <nombre_equipo>INTZ</nombre_equipo>
-            <victorias>1</victorias>
-            <puntos>6</puntos>
-        </equipo>
-        <equipo id_equipo="1">
-            <nombre_equipo>Team Liquid</nombre_equipo>
-            <victorias>1</victorias>
-            <puntos>3</puntos>
         </equipo>
     </competicion>
 </clasificacion>
