@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ControladorVI {
+
     private VentanaInicial vi;
     private ControladorVista cv;
 
@@ -19,8 +20,7 @@ public class ControladorVI {
     public void crearMostrar() {
         vi = new VentanaInicial();
 
-        // TODO : aquí estarían los action listeners de los botones y demás.
-
+        // Action Listeners de los botones y demás.
         vi.addBInicioAL(new BInicioAL());
         vi.addBSalirAL(new BSalirAL());
         vi.addBFacebookAL(new BFacebookAL());
@@ -41,11 +41,11 @@ public class ControladorVI {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            //cv.mostrarInicioSesion();
+            cv.mostrarInicioSesion();
         }
     }
 
-    public class BSalirAL implements ActionListener{
+    public static class BSalirAL implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -121,9 +121,9 @@ public class ControladorVI {
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
-                int id = vi.getCbClasifiacion().getSelectedIndex();
+                int id = vi.getCbClasificacion().getSelectedIndex();
                 if (id > 0){
-                    validarBuscarCompeticion(id);
+                    //validarBuscarCompeticion(id); // TODO
                 }
             }
             catch (Exception ex)

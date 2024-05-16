@@ -9,5 +9,8 @@
         <module name="RetoTheMadZa" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="RetoTheMadZa" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

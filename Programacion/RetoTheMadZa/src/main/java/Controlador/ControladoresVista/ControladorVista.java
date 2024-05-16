@@ -6,7 +6,8 @@ import Controlador.ControladorPrincipal;
 public class ControladorVista {
 
     //CONTROLADORES DE LAS VENTANAS
-    private ControladorVI cvp;
+    private ControladorVI cvi;
+    private ControladorVIS cvis;
     private ControladorVCompeticiones cvc;
     private ControladorVEquipos cve;
     private ControladorVJornadas cvjo;
@@ -21,7 +22,8 @@ public class ControladorVista {
         this.cp = cp;
 
         //Creación de los controladores de las ventanas
-        cvp = new ControladorVI(this);
+        cvi = new ControladorVI(this);
+        cvis = new ControladorVIS(this);
         cvc = new ControladorVCompeticiones(this);
         cve = new ControladorVEquipos(this);
         cvjo = new ControladorVJornadas(this);
@@ -30,6 +32,11 @@ public class ControladorVista {
         cvpa = new ControladorVPatrocinadores(this);
         cvs = new ControladorVStaff(this);
 
-        cvp.crearMostrar();
+        cvi.crearMostrar();
     }
+
+    public void mostrarInicioSesion(){
+        cvis.crearMostrar();
+    }
+
 }
