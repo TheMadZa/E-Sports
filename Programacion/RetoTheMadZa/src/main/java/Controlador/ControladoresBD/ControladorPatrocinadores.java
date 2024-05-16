@@ -18,7 +18,7 @@ public class ControladorPatrocinadores {
         this.em = em;
         this.transaction = transaction;
 
-        System.out.println("Elementos creados");
+        System.out.println("Elementos creados de ControladorPatrocinadores.");
     }
 
     /*

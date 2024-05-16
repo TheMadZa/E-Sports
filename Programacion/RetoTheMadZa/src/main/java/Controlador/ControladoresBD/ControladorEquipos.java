@@ -21,7 +21,7 @@ public class ControladorEquipos {
         this.em = em;
         this.transaction = transaction;
 
-        System.out.println("Elementos creados");
+        System.out.println("Elementos creados de ControladorEquipos.");
     }
 
     /*

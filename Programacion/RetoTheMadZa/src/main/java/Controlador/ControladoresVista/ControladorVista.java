@@ -1,6 +1,5 @@
 package Controlador.ControladoresVista;
 
-
 import Controlador.ControladorPrincipal;
 import Modelo.*;
 
@@ -9,8 +8,9 @@ import java.util.List;
 public class ControladorVista {
 
     //CONTROLADORES DE LAS VENTANAS
-    private ControladorVI cvi;
-    private ControladorVIS cvis;
+    private final ControladorVTienda cvt;
+    private final ControladorVIS cvis;
+    private final ControladorVAdmin cva;
     private ControladorVCompeticiones cvc;
     private ControladorVEquipos cve;
     private ControladorVJornadas cvjo;
@@ -19,14 +19,16 @@ public class ControladorVista {
     private ControladorVPatrocinadores cvpa;
     private ControladorVStaff cvs;
 
-    private ControladorPrincipal cp;
+    private final ControladorPrincipal cp;
 
     public ControladorVista(ControladorPrincipal cp) {
         this.cp = cp;
 
         //Creación de los controladores de las ventanas
-        cvi = new ControladorVI(this);
+        cvt = new ControladorVTienda(this);
+        ControladorVI cvi = new ControladorVI(this);
         cvis = new ControladorVIS(this);
+        cva = new ControladorVAdmin(this);
         cvc = new ControladorVCompeticiones(this);
         cve = new ControladorVEquipos(this);
         cvjo = new ControladorVJornadas(this);
@@ -38,11 +40,17 @@ public class ControladorVista {
         cvi.crearMostrar();
     }
 
+    public void mostrarTienda(){
+        cvt.crearMostrar();
+    }
+
     public void mostrarInicioSesion(){
         cvis.crearMostrar();
     }
 
-
+    public void mostrarVAdmin(){
+        cva.crearMostrar();
+    }
 
     //COMPETICION
     public void insertarCompeticion(Competicion c) throws Exception {

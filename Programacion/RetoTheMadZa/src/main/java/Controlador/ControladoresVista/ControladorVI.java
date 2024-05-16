@@ -17,10 +17,9 @@ import java.util.List;
 public class ControladorVI {
 
     private VentanaInicial vi;
-    private ControladorVista cv;
+    private final ControladorVista cv;
 
-    public ControladorVI(ControladorVista cv)
-    {
+    public ControladorVI(ControladorVista cv) {
         this.cv = cv;
     }
 
@@ -30,6 +29,7 @@ public class ControladorVI {
         llenarComboBox();
 
         // Action Listeners de los botones y demás.
+        vi.addBTiendaAL(new BTiendaAL());
         vi.addBInicioAL(new BInicioAL());
         vi.addBSalirAL(new BSalirAL());
         vi.addBFacebookAL(new BFacebookAL());
@@ -39,15 +39,16 @@ public class ControladorVI {
         vi.addMClasificacionAL(new MClasificacionAL());
         vi.addMEquiposAL(new MEquiposAL());
         vi.addCbClasificacionAL(new CbClasificacionAL());
+    }
 
-        vi.setVisible(true);
-        vi.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        vi.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        vi.setResizable(true);
+    public class BTiendaAL implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            cv.mostrarTienda();
+        }
     }
 
     public class BInicioAL implements ActionListener{
-
         @Override
         public void actionPerformed(ActionEvent e) {
             cv.mostrarInicioSesion();
@@ -55,15 +56,13 @@ public class ControladorVI {
     }
 
     public static class BSalirAL implements ActionListener{
-
         @Override
         public void actionPerformed(ActionEvent e) {
             System.exit(0);
         }
     }
 
-    public class BFacebookAL implements ActionListener{
-
+    public static class BFacebookAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             String enlace = "https://www.facebook.com/?locale=es_ES";
@@ -74,8 +73,7 @@ public class ControladorVI {
             }
         }
     }
-
-    public class BInstagramAL implements ActionListener{
+    public static class BInstagramAL implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -87,8 +85,7 @@ public class ControladorVI {
             }
         }
     }
-
-    public class BTwitterAL implements ActionListener{
+    public static class BTwitterAL implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -102,7 +99,6 @@ public class ControladorVI {
     }
 
     public class MJornadasAL implements ActionListener{
-
         @Override
         public void actionPerformed(ActionEvent e) {
 
@@ -110,7 +106,6 @@ public class ControladorVI {
     }
 
     public class MClasificacionAL implements ActionListener{
-
         @Override
         public void actionPerformed(ActionEvent e) {
 
@@ -118,7 +113,6 @@ public class ControladorVI {
     }
 
     public class MEquiposAL implements ActionListener{
-
         @Override
         public void actionPerformed(ActionEvent e) {
 
@@ -126,7 +120,6 @@ public class ControladorVI {
     }
 
     public class CbClasificacionAL implements ActionListener{
-
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
@@ -231,6 +224,5 @@ public class ControladorVI {
             JOptionPane.showMessageDialog(null,e.getMessage());
         }
     }
-
 
 }

@@ -18,7 +18,7 @@ public class ControladorEquiposCompeticiones {
         this.em = em;
         this.transaction = transaction;
 
-        System.out.println("Elementos creados");
+        System.out.println("Elementos creados de ControladorEquiposCompeticiones.");
     }
 
     public List<EquipoCompeticion> buscarTodosEquiposCompeticiones() throws Exception

@@ -1,41 +1,24 @@
 package Controlador.ControladoresBD;
 
-import Controlador.ControladoresBD.ControladorModelo;
-import Modelo.EquipoCompeticion;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
-import jakarta.persistence.Persistence;
 import Modelo.Competicion;
 
 import javax.swing.*;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 public class ControladorCompeticiones {
-    private ControladorModelo cm;
     private final EntityManager em;
     private final EntityTransaction transaction;
     private Competicion c;
 
-    public ControladorCompeticiones(ControladorModelo cm, EntityManager em, EntityTransaction transaction)
+    public ControladorCompeticiones(EntityManager em, EntityTransaction transaction)
     {
-        this.cm = cm;
-
         this.em = em;
         this.transaction = transaction;
 
-        System.out.println("Elementos creados");
+        System.out.println("Elementos creados de ControladorCompeticiones.");
     }
-
-    /*
-    public void terminar() throws Exception{
-        em.close();
-        emf.close();
-    }
-    */
 
     public void insertarCompeticion(Competicion c) throws Exception
     {
@@ -65,7 +48,7 @@ public class ControladorCompeticiones {
         transaction.begin();
         c = em.find(Competicion.class, id_competicion);
         if (c == null){
-            JOptionPane.showMessageDialog(null,"No hay ninguna competición con ese id");
+            JOptionPane.showMessageDialog(null,"No hay ninguna competición con ese ID.");
         }
         transaction.commit();
         return c;
@@ -76,12 +59,13 @@ public class ControladorCompeticiones {
         transaction.begin();
         c = em.find(Competicion.class, nombre_com);
         if (c == null){
-            JOptionPane.showMessageDialog(null,"No hay ninguna competición con ese nombre");
+            JOptionPane.showMessageDialog(null,"No hay ninguna competición con ese nombre.");
         }
         transaction.commit();
         return c;
     }
 
+    // TODO : EL PROBLEMÓN
     public List<Competicion> buscarTodasCompeticiones() throws Exception
     {
         transaction.begin();

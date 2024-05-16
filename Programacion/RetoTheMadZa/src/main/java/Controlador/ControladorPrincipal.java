@@ -7,11 +7,10 @@ import Modelo.*;
 import java.util.List;
 
 public class ControladorPrincipal {
-    private ControladorVista cv;
-    private ControladorModelo cm;
+    private final ControladorModelo cm;
 
     public ControladorPrincipal() {
-        cv = new ControladorVista(this);
+        ControladorVista cv = new ControladorVista(this);
         cm = new ControladorModelo(this);
     }
 

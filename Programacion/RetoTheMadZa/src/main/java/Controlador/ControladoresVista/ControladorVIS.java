@@ -31,14 +31,14 @@ public class ControladorVIS {
     public class BIniciarSesionAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            cv.mostrarVAdmin();
         }
     }
 
     public class BRegistroAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            // TODO : que aparezca un dialog para meter los datos de un nuevo usuario y se pueda hacer un insert
         }
     }
 

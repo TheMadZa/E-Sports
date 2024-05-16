@@ -9,7 +9,6 @@ import Modelo.*;
 
 import java.util.List;
 
-
 public class ControladorModelo {
     private ControladorCompeticiones cc;
     private final ControladorEquipos ce;
@@ -29,10 +28,9 @@ public class ControladorModelo {
         emf = Persistence.createEntityManagerFactory("default");
         em = emf.createEntityManager();
         EntityTransaction transaction = em.getTransaction();
+        System.out.println("bien 1"); // TODO : QUITAR LOS "System.out.println"
 
-        System.out.println("bien 1");
-
-        this.cc = new ControladorCompeticiones(this,em,transaction);
+        cc = new ControladorCompeticiones(em,transaction);
         System.out.println("bien 2");
         ce = new ControladorEquipos(em,transaction);
         System.out.println("bien 3");
@@ -49,6 +47,13 @@ public class ControladorModelo {
         cec = new ControladorEquiposCompeticiones(em,transaction);
         System.out.println("bien 9");
     }
+
+    /*
+    public void terminar() throws Exception{
+        em.close();
+        emf.close();
+    }
+    */
 
     //COMPETICION
     public void insertarCompeticion(Competicion c) throws Exception {

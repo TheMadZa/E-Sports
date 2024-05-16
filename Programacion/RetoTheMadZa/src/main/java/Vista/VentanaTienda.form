@@ -757,7 +757,7 @@
                     </constraints>
                     <properties>
                       <foreground color="-394241"/>
-                      <text value="Ropa TheMAdZa"/>
+                      <text value="Ropa TheMadZa"/>
                     </properties>
                   </component>
                   <component id="ecbd7" class="javax.swing.JButton" binding="bBuy1">
@@ -815,7 +815,7 @@
                     </constraints>
                     <properties>
                       <foreground color="-394241"/>
-                      <text value="Mochilas TheMAdZa"/>
+                      <text value="Mochilas TheMadZa"/>
                     </properties>
                   </component>
                   <component id="81a25" class="javax.swing.JButton" binding="bBuy2">
@@ -989,7 +989,7 @@
                     </constraints>
                     <properties>
                       <foreground color="-394241"/>
-                      <text value="Raton TheMAdZa"/>
+                      <text value="Ratón TheMAdZa"/>
                     </properties>
                   </component>
                   <component id="e7bee" class="javax.swing.JButton" binding="bBuy5">
@@ -1337,7 +1337,7 @@
                     </constraints>
                     <properties>
                       <foreground color="-394241"/>
-                      <text value="Pantalon TheMAdZa"/>
+                      <text value="Pantalón TheMAdZa"/>
                     </properties>
                   </component>
                   <component id="8f606" class="javax.swing.JButton" binding="bBuy11">
@@ -1395,7 +1395,7 @@
                     </constraints>
                     <properties>
                       <foreground color="-394241"/>
-                      <text value="Botellas TheMAdZa"/>
+                      <text value="Botellas TheMadZa"/>
                     </properties>
                   </component>
                   <component id="9035d" class="javax.swing.JButton" binding="bBuy12">
