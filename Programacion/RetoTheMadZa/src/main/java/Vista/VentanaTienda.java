@@ -412,7 +412,8 @@ public class VentanaTienda extends JFrame{
 
 
             // Tienda4
-            URL Tienda4 = new URL("https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Tienda/buy.png?raw=true");
+            URL Tienda4 = new URL("https://github.com/IbaiSaenzDeBuruaga/" +
+                    "E-SportsLogos/blob/main/Tienda/zapatilla1.png?raw=true");
             BufferedImage imagenOriginal26 = ImageIO.read(Tienda4);
             BufferedImage bufferedImage26 = Scalr.resize(imagenOriginal26, 400);
             ImageIcon iconoEscalado26 = new ImageIcon(bufferedImage26);
@@ -421,7 +422,8 @@ public class VentanaTienda extends JFrame{
 
 
             // Tienda5
-            URL Tienda5 = new URL("https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Tienda/buy.png?raw=true");
+            URL Tienda5 = new URL("https://github.com/IbaiSaenzDeBuruaga" +
+                    "/E-SportsLogos/blob/main/Tienda/boxers.png?raw=true");
             BufferedImage imagenOriginal27 = ImageIO.read(Tienda5);
             BufferedImage bufferedImage27 = Scalr.resize(imagenOriginal27, 400);
             ImageIcon iconoEscalado27 = new ImageIcon(bufferedImage27);
@@ -430,7 +432,8 @@ public class VentanaTienda extends JFrame{
 
 
             // Tienda6
-            URL Tienda6 = new URL("https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Tienda/buy.png?raw=true");
+            URL Tienda6 = new URL("https://github.com/IbaiSaenzDeBuruaga" +
+                    "/E-SportsLogos/blob/main/Tienda/raton.png?raw=true");
             BufferedImage imagenOriginal28 = ImageIO.read(Tienda6);
             BufferedImage bufferedImage28 = Scalr.resize(imagenOriginal28, 400);
             ImageIcon iconoEscalado28 = new ImageIcon(bufferedImage28);
@@ -439,7 +442,8 @@ public class VentanaTienda extends JFrame{
 
 
             // Tienda7
-            URL Tienda7 = new URL("https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Tienda/buy.png?raw=true");
+            URL Tienda7 = new URL("https://github.com/IbaiSaenzDeBuruaga/" +
+                    "E-SportsLogos/blob/main/Tienda/bikini.png?raw=true");
             BufferedImage imagenOriginal29 = ImageIO.read(Tienda7);
             BufferedImage bufferedImage29 = Scalr.resize(imagenOriginal29, 400);
             ImageIcon iconoEscalado29 = new ImageIcon(bufferedImage29);
@@ -448,7 +452,8 @@ public class VentanaTienda extends JFrame{
 
 
             // Tienda8
-            URL Tienda8 = new URL("https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Tienda/buy.png?raw=true");
+            URL Tienda8 = new URL("https://github.com/IbaiSaenzDeBuruaga" +
+                    "/E-SportsLogos/blob/main/Tienda/calcetines.png?raw=true");
             BufferedImage imagenOriginal30 = ImageIO.read(Tienda8);
             BufferedImage bufferedImage30 = Scalr.resize(imagenOriginal30, 400);
             ImageIcon iconoEscalado30 = new ImageIcon(bufferedImage30);
@@ -457,7 +462,8 @@ public class VentanaTienda extends JFrame{
 
 
             // Tienda9
-            URL Tienda9 = new URL("https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Tienda/buy.png?raw=true");
+            URL Tienda9 = new URL("https://github.com/IbaiSaenzDeBuruaga/" +
+                    "E-SportsLogos/blob/main/Tienda/chaqueta.png?raw=true");
             BufferedImage imagenOriginal31 = ImageIO.read(Tienda9);
             BufferedImage bufferedImage31 = Scalr.resize(imagenOriginal31, 400);
             ImageIcon iconoEscalado31 = new ImageIcon(bufferedImage31);
@@ -466,7 +472,8 @@ public class VentanaTienda extends JFrame{
 
 
             // Tienda10
-            URL Tienda10 = new URL("https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Tienda/buy.png?raw=true");
+            URL Tienda10 = new URL("https://github.com/IbaiSaenzDeBuruaga" +
+                    "/E-SportsLogos/blob/main/Tienda/gorra.png?raw=true");
             BufferedImage imagenOriginal32 = ImageIO.read(Tienda10);
             BufferedImage bufferedImage32 = Scalr.resize(imagenOriginal32, 400);
             ImageIcon iconoEscalado32 = new ImageIcon(bufferedImage32);
@@ -475,7 +482,8 @@ public class VentanaTienda extends JFrame{
 
 
             // Tienda11
-            URL Tienda11 = new URL("https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Tienda/buy.png?raw=true");
+            URL Tienda11 = new URL("https://github.com/IbaiSaenzDeBuruaga/" +
+                    "E-SportsLogos/blob/main/Tienda/guantes.png?raw=true");
             BufferedImage imagenOriginal33 = ImageIO.read(Tienda11);
             BufferedImage bufferedImage33 = Scalr.resize(imagenOriginal33, 400);
             ImageIcon iconoEscalado33 = new ImageIcon(bufferedImage33);
@@ -484,7 +492,8 @@ public class VentanaTienda extends JFrame{
 
 
             // Tienda12
-            URL Tienda12 = new URL("https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Tienda/buy.png?raw=true");
+            URL Tienda12 = new URL("https://github.com/IbaiSaenzDeBuruaga" +
+                    "/E-SportsLogos/blob/main/Tienda/pantalon.png?raw=true");
             BufferedImage imagenOriginal34 = ImageIO.read(Tienda12);
             BufferedImage bufferedImage34 = Scalr.resize(imagenOriginal34, 400);
             ImageIcon iconoEscalado34 = new ImageIcon(bufferedImage34);
