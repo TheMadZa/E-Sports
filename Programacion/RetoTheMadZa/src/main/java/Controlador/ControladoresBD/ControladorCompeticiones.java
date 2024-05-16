@@ -1,6 +1,7 @@
 package Controlador.ControladoresBD;
 
 import Controlador.ControladoresBD.ControladorModelo;
+import Modelo.EquipoCompeticion;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
@@ -11,6 +12,7 @@ import javax.swing.*;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 
 public class ControladorCompeticiones {
     private ControladorModelo cm;
@@ -78,6 +80,15 @@ public class ControladorCompeticiones {
         }
         transaction.commit();
         return c;
+    }
+
+    public List<Competicion> buscarTodasCompeticiones() throws Exception
+    {
+        transaction.begin();
+        List<Competicion> lista = em.createQuery("select c from Competicion c",
+                Competicion.class).getResultList();
+        transaction.commit();
+        return lista;
     }
 
     public void modificarCompeticion(Competicion competicion) throws Exception

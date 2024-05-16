@@ -4,6 +4,8 @@ package Controlador.ControladoresVista;
 import Controlador.ControladorPrincipal;
 import Modelo.*;
 
+import java.util.List;
+
 public class ControladorVista {
 
     //CONTROLADORES DE LAS VENTANAS
@@ -57,6 +59,10 @@ public class ControladorVista {
 
     public Competicion buscarCompeticionNombre(String nombre) throws Exception {
         return cp.buscarCompeticionNombre(nombre);
+    }
+
+    public List<Competicion> buscarTodasCompeticiones() throws Exception {
+        return cp.buscarTodasCompeticiones();
     }
 
     public void modificarCompeticion(Competicion c) throws Exception{
@@ -169,6 +175,11 @@ public class ControladorVista {
 
     public void modificarStaff(Staff s) throws Exception{
         cp.modificarStaff(s);
+    }
+
+    //EQUIPO_COMPETICION
+    public List<EquipoCompeticion> buscarTodosEquiposCompeticiones() throws Exception {
+        return cp.buscarTodosEquiposCompeticiones();
     }
 
 }
