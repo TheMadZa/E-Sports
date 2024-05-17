@@ -14,8 +14,9 @@ public class ControladorPrincipal {
     public ControladorPrincipal() {
         ControladorImagenes ci = new ControladorImagenes();
         ControladorImagenes.cargarImagenes();
-        cv = new ControladorVista(this);
+
         cm = new ControladorModelo();
+        cv = new ControladorVista(this);
     }
 
     //COMPETICION
