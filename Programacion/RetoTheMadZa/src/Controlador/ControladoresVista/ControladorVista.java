@@ -67,7 +67,7 @@ public class ControladorVista {
         return cp.buscarCompeticion(id_competicion);
     }
 
-    public Competicion buscarCompeticionNombre(String nombre) throws Exception {
+    public String[][] buscarCompeticionNombre(String nombre) throws Exception {
         return cp.buscarCompeticionNombre(nombre);
     }
 

@@ -1,6 +1,7 @@
 package Controlador.ControladoresBD;
 
 import Modelo.Competicion;
+import Modelo.Equipo;
 import Modelo.EquipoCompeticion;
 
 import java.sql.Connection;
@@ -23,15 +24,14 @@ public class ControladorEquiposCompeticiones {
         List<EquipoCompeticion> equiposCompeticiones = new ArrayList<>();
         try
         {
-            String plantilla = "SELECT * FROM equipos_competiciones";
+            String plantilla = "SELECT victorias, puntos FROM equipos_competiciones";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
 
             ResultSet rs = sentenciaPre.executeQuery();
             while (rs.next()) {
                 ec = new EquipoCompeticion();
-                ec.getEquipo().setIdEquipo(rs.getInt("id_equipo"));
-                ec.getCompeticion().setIdCompeticion(rs.getInt("id_competicion"));
+
                 ec.setVictorias(rs.getInt("victorias"));
                 ec.setPuntos(rs.getInt("puntos"));
                 equiposCompeticiones.add(ec);
