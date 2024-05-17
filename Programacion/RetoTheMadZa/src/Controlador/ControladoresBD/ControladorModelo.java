@@ -1,6 +1,5 @@
 package Controlador.ControladoresBD;
 
-import Controlador.ControladorPrincipal;
 import Modelo.*;
 
 import java.sql.Connection;
@@ -46,8 +45,8 @@ public class ControladorModelo {
         return cc.buscarCompeticion(id_competicion);
     }
 
-    public String[][] buscarCompeticionNombre(String nombre) throws Exception {
-        return cc.buscarCompeticionNombre(nombre);
+    public String[][] buscarEquiposPorNombreCom(String nombre) throws Exception {
+        return cc.buscarEquiposPorNombreCom(nombre);
     }
 
     public List<Competicion> buscarTodasCompeticiones() throws Exception {
