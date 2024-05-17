@@ -1,7 +1,6 @@
 package Controlador;
 
 import Controlador.ControladoresBD.ControladorModelo;
-import Controlador.ControladoresVista.ControladorImagenes;
 import Controlador.ControladoresVista.ControladorVista;
 import Modelo.*;
 
@@ -11,8 +10,6 @@ public class ControladorPrincipal {
     private final ControladorModelo cm;
 
     public ControladorPrincipal() {
-        ControladorImagenes ci = new ControladorImagenes();
-        ControladorImagenes.cargarImagenes();
         ControladorVista cv = new ControladorVista(this);
         cm = new ControladorModelo(this);
     }

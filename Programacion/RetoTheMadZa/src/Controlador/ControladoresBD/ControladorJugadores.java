@@ -1,57 +1,126 @@
 package Controlador.ControladoresBD;
 
+import Modelo.Juego;
 import Modelo.Jugador;
 
 import javax.swing.*;
+import java.rmi.ConnectIOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ControladorJugadores {
-    private final List<Jugador> jugadores;
+    private Connection con;
+    private Jugador j;
 
-    public ControladorJugadores() {
-        this.jugadores = new ArrayList<>();
-        System.out.println("Elementos creados de ControladorJugadores.");
+    public ControladorJugadores(Connection con) {
+        this.con = con;
     }
 
-    public void insertarJugador(Jugador j) throws Exception {
-        try {
-            jugadores.add(j);
-        } catch (Exception ex) {
-            throw new Exception("Error al insertar el jugador: " + ex.getMessage());
+    public void insertarJugador(Jugador j) throws Exception
+    {
+        try
+        {
+            String plantilla = "INSERT INTO jugadores VALUES (?,?,?,?,?,?,?,?)";
+
+            PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
+
+            sentenciaPre.setInt(1,j.getIdJugador());
+            sentenciaPre.setString(2,j.getNombre());
+            sentenciaPre.setString(3,j.getNickname());
+            sentenciaPre.setString(4,j.getNacionalidad());
+            sentenciaPre.setString(5,j.getRol());
+            sentenciaPre.setDate(6,j.getFechaNac());
+            sentenciaPre.setDouble(7,j.getSueldo());
+            sentenciaPre.setInt(8,j.getEquipo().getIdEquipo());
+
+            int n = sentenciaPre.executeUpdate();
+
+            sentenciaPre.close();
+
+            if (n != 1)
+            {
+                throw new Exception("No se ha insertado el jugador");
+            }
+
+        }
+        catch (SQLIntegrityConstraintViolationException e)
+        {
+            throw new Exception("Ya hay un jugador con ese id");
         }
     }
 
-    public void borrarJugador(Jugador j) throws Exception {
-        if (jugadores.remove(j)) {
-            System.out.println("Jugador eliminado.");
-        } else {
-            throw new Exception("No se encontró el jugador a eliminar.");
-        }
-    }
+    public void borrarJugador(int idJugador) throws Exception
+    {
+        try
+        {
+            String plantilla = "DELETE FROM jugadores WHERE id_jugador = ?";
 
-    public Jugador buscarJugador(Integer id_jugador) throws Exception {
-        for (Jugador jugador : jugadores) {
-            if (jugador.getIdJugador() == id_jugador) {
-                return jugador;
+            PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
+
+            sentenciaPre.setInt(1, idJugador);
+
+            int n = sentenciaPre.executeUpdate();
+            if (n != 1) {
+                throw new Exception("No se ha eliminado ningún jugador");
             }
         }
-        JOptionPane.showMessageDialog(null, "No hay ningún jugador con ese ID.");
-        return null;
+        catch (SQLIntegrityConstraintViolationException e)
+        {
+            throw new Exception("No existe un jugador con ese id para borrar");
+        }
     }
 
-    public void modificarJugador(Jugador jugador) throws Exception {
-        Jugador j = buscarJugador(jugador.getIdJugador());
-        if (j != null) {
-            j.setNombre(jugador.getNombre());
-            j.setNickname(jugador.getNickname());
-            j.setNacionalidad(jugador.getNacionalidad());
-            j.setRol(jugador.getRol());
-            j.setFechaNac(jugador.getFechaNac());
-            j.setSueldo(jugador.getSueldo());
-            j.setEquipo(jugador.getEquipo());
-        } else {
-            throw new Exception("No se encontró ningún jugador con el ID provisto: " + jugador.getIdJugador());
+    public Juego buscarJuego(int idJuego) throws Exception
+    {
+        try
+        {
+            String plantilla = "SELECT * FROM juegos WHERE id_juego = ?";
+
+            PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
+
+            sentenciaPre.setInt(1,idJuego);
+
+            ResultSet rs = sentenciaPre.executeQuery();
+            if (rs.next())
+            {
+                j = new Juego();
+                j.setIdJuego(idJuego);
+                j.setNombre(rs.getString("nombre"));
+                j.setEmpresa(rs.getString("empresa"));
+                j.setFechaLanzamiento(rs.getDate("fecha_lanzamiento"));
+            }
+            else
+            {
+                throw new Exception("No hay ningún juego con ese id");
+            }
+            sentenciaPre.close();
+            return j;
+        }
+        catch (Exception e)
+        {
+            throw new Exception("Error");
+        }
+    }
+
+    public void modificarJuego(Juego j) throws Exception
+    {
+        String plantilla = "UPDATE juegos SET nombre = ?, empresa = ?, fecha_lanzamiento = ?, " +
+                "WHERE id_juego = ?";
+
+        PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
+
+        sentenciaPre.setString(1, j.getNombre());
+        sentenciaPre.setString(2, j.getEmpresa());
+        sentenciaPre.setDate(3, j.getFechaLanzamiento());
+        sentenciaPre.setInt(4, j.getIdJuego());
+
+        int n = sentenciaPre.executeUpdate();
+        if (n != 1){
+            throw new Exception("No se ha actualizado ningún juego");
         }
     }
 }

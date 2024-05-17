@@ -17,16 +17,18 @@ import java.util.List;
 public class ControladorVI {
 
     private VentanaInicial vi;
-    private final ControladorVista cv;
+    private ControladorVista cv;
 
     public ControladorVI(ControladorVista cv) {
         this.cv = cv;
     }
 
-    public void crearMostrar() {
+    public void crearMostrar()
+    {
         vi = new VentanaInicial();
+        vi.setVisible(true);
 
-        //llenarComboBox();
+        llenarComboBox();
 
         // Action Listeners de los botones y demás.
         vi.addBTiendaAL(new BTiendaAL());
@@ -38,7 +40,7 @@ public class ControladorVI {
         vi.addMJornadasAL(new MJornadasAL());
         vi.addMClasificacionAL(new MClasificacionAL());
         vi.addMEquiposAL(new MEquiposAL());
-        //vi.addCbClasificacionAL(new CbClasificacionAL());
+        vi.addCbClasificacionAL(new CbClasificacionAL());
     }
 
     public class BTiendaAL implements ActionListener{
@@ -119,7 +121,7 @@ public class ControladorVI {
         }
     }
 
-    /*public class CbClasificacionAL implements ActionListener{
+    public class CbClasificacionAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
@@ -149,7 +151,7 @@ public class ControladorVI {
 
         //Borramos de la lista los equipos que no tienen el id que queremos
         for (EquipoCompeticion equipoCompeticion : equipoCompeticiones){
-            if (equipoCompeticion.getCompeticionByIdCompeticion() != c){
+            if (equipoCompeticion.getCompeticion() != c){
                 equipoCompeticiones.remove(equipoCompeticion);
             }
         }
@@ -168,37 +170,37 @@ public class ControladorVI {
         vi.getvEquipo5().setText(String.valueOf(primerosCinco.get(4).getVictorias()));
         vi.getpEquipo5().setText(String.valueOf(primerosCinco.get(4).getPuntos()));
 
-        vi.getEquipo1().setText(primerosCinco.get(0).getEquipoByIdEquipo().getLogo());
-        vi.getEquipo2().setText(primerosCinco.get(1).getEquipoByIdEquipo().getLogo());
-        vi.getEquipo3().setText(primerosCinco.get(2).getEquipoByIdEquipo().getLogo());
-        vi.getEquipo4().setText(primerosCinco.get(3).getEquipoByIdEquipo().getLogo());
-        vi.getEquipo5().setText(primerosCinco.get(4).getEquipoByIdEquipo().getLogo());
+        vi.getEquipo1().setText(primerosCinco.get(0).getEquipo().getLogo());
+        vi.getEquipo2().setText(primerosCinco.get(1).getEquipo().getLogo());
+        vi.getEquipo3().setText(primerosCinco.get(2).getEquipo().getLogo());
+        vi.getEquipo4().setText(primerosCinco.get(3).getEquipo().getLogo());
+        vi.getEquipo5().setText(primerosCinco.get(4).getEquipo().getLogo());
 
-        URL Equipo1 = new URL(primerosCinco.get(0).getEquipoByIdEquipo().getLogo());
+        URL Equipo1 = new URL(primerosCinco.get(0).getEquipo().getLogo());
         BufferedImage imagenOriginal1 = ImageIO.read(Equipo1);
         BufferedImage bufferedImage1 = Scalr.resize(imagenOriginal1, 55);
         ImageIcon iconoEscalado1 = new ImageIcon(bufferedImage1);
         vi.getEquipo1().setIcon(iconoEscalado1);
 
-        URL Equipo2 = new URL(primerosCinco.get(1).getEquipoByIdEquipo().getLogo());
+        URL Equipo2 = new URL(primerosCinco.get(1).getEquipo().getLogo());
         BufferedImage imagenOriginal2 = ImageIO.read(Equipo2);
         BufferedImage bufferedImage2 = Scalr.resize(imagenOriginal2, 55);
         ImageIcon iconoEscalado2 = new ImageIcon(bufferedImage2);
         vi.getEquipo2().setIcon(iconoEscalado2);
 
-        URL Equipo3 = new URL(primerosCinco.get(2).getEquipoByIdEquipo().getLogo());
+        URL Equipo3 = new URL(primerosCinco.get(2).getEquipo().getLogo());
         BufferedImage imagenOriginal3 = ImageIO.read(Equipo3);
         BufferedImage bufferedImage3 = Scalr.resize(imagenOriginal3, 55);
         ImageIcon iconoEscalado3 = new ImageIcon(bufferedImage3);
         vi.getEquipo3().setIcon(iconoEscalado3);
 
-        URL Equipo4 = new URL(primerosCinco.get(3).getEquipoByIdEquipo().getLogo());
+        URL Equipo4 = new URL(primerosCinco.get(3).getEquipo().getLogo());
         BufferedImage imagenOriginal4 = ImageIO.read(Equipo4);
         BufferedImage bufferedImage4 = Scalr.resize(imagenOriginal4, 55);
         ImageIcon iconoEscalado4 = new ImageIcon(bufferedImage4);
         vi.getEquipo4().setIcon(iconoEscalado4);
 
-        URL Equipo5 = new URL(primerosCinco.get(4).getEquipoByIdEquipo().getLogo());
+        URL Equipo5 = new URL(primerosCinco.get(4).getEquipo().getLogo());
         BufferedImage imagenOriginal5 = ImageIO.read(Equipo5);
         BufferedImage bufferedImage5 = Scalr.resize(imagenOriginal5, 55);
         ImageIcon iconoEscalado5 = new ImageIcon(bufferedImage5);
@@ -223,6 +225,6 @@ public class ControladorVI {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,e.getMessage());
         }
-    }*/
+    }
 
 }

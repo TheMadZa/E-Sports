@@ -3,27 +3,32 @@ package Controlador.ControladoresBD;
 import Controlador.ControladorPrincipal;
 import Modelo.*;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.List;
 
 public class ControladorModelo {
-    private final ControladorCompeticiones cc;
-    private final ControladorEquipos ce;
-    private final ControladorJornadas cjo;
-    private final ControladorJuegos cjue;
-    private final ControladorJugadores cjug;
-    private final ControladorPatrocinadores cp;
-    private final ControladorStaff cs;
-    private final ControladorEquiposCompeticiones cec;
+    private Connection con;
+    private ControladorCompeticiones cc;
+    private ControladorEquipos ce;
+    private ControladorJornadas cjo;
+    private ControladorJuegos cjue;
+    private ControladorJugadores cjug;
+    private ControladorPatrocinadores cp;
+    private ControladorStaff cs;
+    private ControladorEquiposCompeticiones cec;
 
-    public ControladorModelo(ControladorPrincipal c) {
-        cc = new ControladorCompeticiones();
-        ce = new ControladorEquipos();
-        cjo = new ControladorJornadas();
-        cjue = new ControladorJuegos();
-        cjug = new ControladorJugadores();
-        cp = new ControladorPatrocinadores();
-        cs = new ControladorStaff();
-        cec = new ControladorEquiposCompeticiones();
+    public ControladorModelo() {
+        abrirConexion();
+
+        cc = new ControladorCompeticiones(con);
+        ce = new ControladorEquipos(con);
+        cjo = new ControladorJornadas(con);
+        cjue = new ControladorJuegos(con);
+        cjug = new ControladorJugadores(con);
+        cp = new ControladorPatrocinadores(con);
+        cs = new ControladorStaff(con);
+        cec = new ControladorEquiposCompeticiones(con);
 
         System.out.println("ControladorModelo inicializado correctamente.");
     }
@@ -33,8 +38,8 @@ public class ControladorModelo {
         cc.insertarCompeticion(c);
     }
 
-    public void borrarCompeticion(Competicion c) throws Exception {
-        cc.borrarCompeticion(c);
+    public void borrarCompeticion(int idCompeticion) throws Exception {
+        cc.borrarCompeticion(idCompeticion);
     }
 
     public Competicion buscarCompeticion(Integer id_competicion) throws Exception {
@@ -58,8 +63,8 @@ public class ControladorModelo {
         ce.insertarEquipo(e);
     }
 
-    public void borrarEquipo(Equipo e) throws Exception {
-        ce.borrarEquipo(e);
+    public void borrarEquipo(int idEquipo) throws Exception {
+        ce.borrarEquipo(idEquipo);
     }
 
     public Equipo buscarEquipo(Integer id_equipo) throws Exception {
@@ -158,5 +163,37 @@ public class ControladorModelo {
     //EQUIPO_COMPETICION
     public List<EquipoCompeticion> buscarTodosEquiposCompeticiones() throws Exception {
         return cec.buscarTodosEquiposCompeticiones();
+    }
+
+    //ABRIR LA CONEXION CON LA BASE DE DATOS
+    public void abrirConexion()
+    {
+        try
+        {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            String url = "jdbc:mysql://localhost:3306/aerolinea";
+            String user = "root";
+            String passwd = "usbw";
+            con = DriverManager.getConnection(url, user, passwd);
+            System.out.println("Conexión abierta");
+
+            cc = new ControladorCompeticiones(con);
+            ce = new ControladorEquipos(con);
+            cjo = new ControladorJornadas(con);
+            cjue = new ControladorJuegos(con);
+            cjug = new ControladorJugadores(con);
+            cp = new ControladorPatrocinadores(con);
+            cs = new ControladorStaff(con);
+            cec = new ControladorEquiposCompeticiones(con);
+        }
+        catch (Exception e)
+        {
+            System.out.println("Problemas con la base de datos");
+        }
+    }
+
+    public void cerrarConexion() throws Exception
+    {
+        con.close();
     }
 }

@@ -8,9 +8,10 @@ import java.util.List;
 public class ControladorVista {
 
     //CONTROLADORES DE LAS VENTANAS
-    private final ControladorVTienda cvt;
-    private final ControladorVIS cvis;
-    private final ControladorVAdmin cva;
+    private ControladorVI cvi;
+    private ControladorVTienda cvt;
+    private ControladorVIS cvis;
+    private ControladorVAdmin cva;
     private ControladorVCompeticiones cvc;
     private ControladorVEquipos cve;
     private ControladorVJornadas cvjo;
@@ -25,8 +26,9 @@ public class ControladorVista {
         this.cp = cp;
 
         //Creación de los controladores de las ventanas
+
+        cvi = new ControladorVI(this);
         cvt = new ControladorVTienda(this);
-        ControladorVI cvi = new ControladorVI(this);
         cvis = new ControladorVIS(this);
         cva = new ControladorVAdmin(this);
         cvc = new ControladorVCompeticiones(this);
@@ -57,8 +59,8 @@ public class ControladorVista {
         cp.insertarCompeticion(c);
     }
 
-    public void borrarCompeticion(Competicion c) throws Exception{
-        cp.borrarCompeticion(c);
+    public void borrarCompeticion(int idCompeticion) throws Exception{
+        cp.borrarCompeticion(idCompeticion);
     }
 
     public Competicion buscarCompeticion(Integer id_competicion) throws Exception {
@@ -83,8 +85,8 @@ public class ControladorVista {
         cp.insertarEquipo(e);
     }
 
-    public void borrarEquipo(Equipo e) throws Exception{
-        cp.borrarEquipo(e);
+    public void borrarEquipo(int idEquipo) throws Exception{
+        cp.borrarEquipo(idEquipo);
     }
 
     public Equipo buscarEquipo(Integer id_equipo) throws Exception {
@@ -190,4 +192,8 @@ public class ControladorVista {
         return cp.buscarTodosEquiposCompeticiones();
     }
 
+    //CONEXION
+    public void cerrarConexion() throws Exception{
+        cp.cerrarConexion();
+    }
 }
