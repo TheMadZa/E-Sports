@@ -170,8 +170,8 @@ public class ControladorModelo {
     {
         try
         {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            String url = "jdbc:oracle:thin:@srvoracle:1521:orcl";
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            String url = "jdbc:oracle:thin:@SrvOracle:1521:ORCL";
             String user = "eqdaw03";
             String passwd = "eqdaw03";
             con = DriverManager.getConnection(url, user, passwd);

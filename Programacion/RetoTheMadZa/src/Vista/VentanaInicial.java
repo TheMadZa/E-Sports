@@ -68,6 +68,7 @@ public class VentanaInicial extends JFrame {
 
         System.out.println("Iniciando constructor de VentanaInicial.");
 
+        // TODO : SE PODRÍA REUTILIZAR ESTO (HACER UNA FUNCIÓN GENERAL)
         // Cargar la imagen del logo con tamaño específico
         ImageIcon iconoLogo = ControladorImagenes.obtenerImagen("TheMadZaLogoSimple", 250, 250);
         if (iconoLogo != null) {
