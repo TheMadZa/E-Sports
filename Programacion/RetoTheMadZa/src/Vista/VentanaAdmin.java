@@ -1,5 +1,6 @@
 package Vista;
 
+import Controlador.ControladoresVista.ControladorImagenes;
 import org.imgscalr.Scalr;
 
 import javax.imageio.ImageIO;
@@ -60,28 +61,72 @@ public class VentanaAdmin extends JFrame {
 
         panelCRUD.setVisible(false);
 
-        // Poner la imagen.
-        try {
 
-            // TODO : PONER ESTO CENTRALIZADO EN UNA VENTANA PARA REUTILIZACIÓN DE CÓDIGO.
-            // Cargar la imagen original
-            URL imageUrl = new URL("https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/RRSS/TheMadZaLogoSoloNegro.png?raw=true");
-            BufferedImage imagenOriginal = ImageIO.read(imageUrl);
+            // Cargar la imagen del botón Twitter con tamaño específico
+            ImageIcon logoConColor = ControladorImagenes.obtenerImagen("LogoColor", 700, 700);
+            if (logoConColor != null) {
+                tfImagenLogo.setIcon(logoConColor);
+            } else {
+                System.err.println("La imagen logo no se encontró.");
+            }
 
-            // Escalar la imagen usando ImgScalr
-            BufferedImage bufferedImage = Scalr.resize(imagenOriginal, 500);
-
-            // Crear un ImageIcon a partir del BufferedImage escalado
-            ImageIcon iconoEscalado = new ImageIcon(bufferedImage);
-
-            // Asignar el ImageIcon escalado al JLabel ftThemadza
-            tfImagenLogo.setIcon(iconoEscalado);
-
+        // Cargar la imagen del botón Tienda con tamaño específico
+        ImageIcon iconoTienda = ControladorImagenes.obtenerImagen("Tienda", 40, 40);
+        if (iconoTienda != null) {
+            bTienda.setIcon(iconoTienda);
+        } else {
+            System.err.println("La imagen Tienda no se encontró.");
         }
-        catch (IOException e) {
-            throw new RuntimeException(e);
+
+        // Cargar la imagen del botón Inicio con tamaño específico
+        ImageIcon iconoInicio = ControladorImagenes.obtenerImagen("Inicio", 40, 40);
+        if (iconoInicio != null) {
+            bInicio.setIcon(iconoInicio);
+        } else {
+            System.err.println("La imagen Inicio no se encontró.");
         }
+
+        // Cargar la imagen del botón Salir con tamaño específico
+        ImageIcon iconoSalir = ControladorImagenes.obtenerImagen("Salir", 40, 40);
+        if (iconoSalir != null) {
+            bSalir.setIcon(iconoSalir);
+        } else {
+            System.err.println("La imagen Salir no se encontró.");
+        }
+
+        // Cargar la imagen del botón Twitter con tamaño específico
+        ImageIcon iconoTwitter = ControladorImagenes.obtenerImagen("Twitter", 40, 40);
+        if (iconoTwitter != null) {
+            bTwitter.setIcon(iconoTwitter);
+        } else {
+            System.err.println("La imagen Twitter no se encontró.");
+        }
+
+        // Cargar la imagen del botón Instagram con tamaño específico
+        ImageIcon iconoInstagram = ControladorImagenes.obtenerImagen("Instagram", 40, 40);
+        if (iconoInstagram != null) {
+            bInstagram.setIcon(iconoInstagram);
+        } else {
+            System.err.println("La imagen Instagram no se encontró.");
+        }
+
+        // Cargar la imagen del botón Facebook con tamaño específico
+        ImageIcon iconoFacebook = ControladorImagenes.obtenerImagen("Facebook", 40, 40);
+        if (iconoFacebook != null) {
+            bFacebook.setIcon(iconoFacebook);
+        } else {
+            System.err.println("La imagen Facebook no se encontró.");
+        }
+
+        // Cargar la imagen del logo blanco con tamaño específico
+        ImageIcon iconoLogoBlanco = ControladorImagenes.obtenerImagen("LogoBlanco", 100, 100);
+        if (iconoLogoBlanco != null) {
+            logoBlanco.setIcon(iconoLogoBlanco);
+        } else {
+            System.err.println("La imagen LogoBlanco no se encontró.");
+        }
+
+
 
         // Configurar la ventana
         setContentPane(pPrincipal);

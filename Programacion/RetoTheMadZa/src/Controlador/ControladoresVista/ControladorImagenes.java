@@ -58,6 +58,8 @@ public class ControladorImagenes {
         cargarImagen("Tienda12", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Tienda/pantalon.png?raw=true");
         cargarImagen("Buy", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Tienda/buy.png?raw=true");
 
+        cargarImagen("LogoColor", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/RRSS/TheMadZaLogoSoloNegro.png?raw=true");
+
         System.out.println("Todas las imágenes han sido cargadas.");
         vc.setVisible(false);
 
