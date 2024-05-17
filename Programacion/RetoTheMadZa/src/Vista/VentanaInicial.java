@@ -1,17 +1,9 @@
 package Vista;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.net.URL;
-import java.util.ArrayList;
 
 import Controlador.ControladoresVista.ControladorImagenes;
-import Modelo.Competicion;
-import org.imgscalr.Scalr;
 
 public class VentanaInicial extends JFrame {
     private JPanel pPrincipal;
@@ -68,7 +60,19 @@ public class VentanaInicial extends JFrame {
 
         System.out.println("Iniciando constructor de VentanaInicial.");
 
-        // TODO : SE PODRÍA REUTILIZAR ESTO (HACER UNA FUNCIÓN GENERAL)
+        // TODO : SE PODRÍA REUTILIZAR ESTO (HACER UNA FUNCIÓN GENERAL PARA TODAS LAS VENTANAS)
+
+        // Cargar las imágenes con un tamaño específico.
+        cargarImagenEstablecerIcono("TheMadZaLogoSimple", 250, 250, ftThemadza);
+        cargarImagenEstablecerIcono("Tienda", bTienda);
+        cargarImagenEstablecerIcono("Inicio", bInicio);
+        cargarImagenEstablecerIcono("Salir", bSalir);
+        cargarImagenEstablecerIcono("Twitter", bTwitter);
+        cargarImagenEstablecerIcono("Instagram", bInstagram);
+        cargarImagenEstablecerIcono("Facebook", bFacebook);
+        cargarImagenEstablecerIcono("LogoBlanco", 100, 100, logoBlanco);
+
+        /*
         // Cargar la imagen del logo con tamaño específico
         ImageIcon iconoLogo = ControladorImagenes.obtenerImagen("TheMadZaLogoSimple", 250, 250);
         if (iconoLogo != null) {
@@ -99,22 +103,6 @@ public class VentanaInicial extends JFrame {
             bSalir.setIcon(iconoSalir);
         } else {
             System.err.println("La imagen Salir no se encontró.");
-        }
-
-        // Cargar la imagen del equipo1 con tamaño específico
-        ImageIcon iconoEquipo1 = ControladorImagenes.obtenerImagen("Equipo1", 55, 55);
-        if (iconoEquipo1 != null) {
-            equipo1.setIcon(iconoEquipo1);
-        } else {
-            System.err.println("La imagen Equipo1 no se encontró.");
-        }
-
-        // Cargar la imagen del equipo2 con tamaño específico
-        ImageIcon iconoEquipo2 = ControladorImagenes.obtenerImagen("Equipo2", 55, 55);
-        if (iconoEquipo2 != null) {
-            equipo2.setIcon(iconoEquipo2);
-        } else {
-            System.err.println("La imagen Equipo2 no se encontró.");
         }
 
         // Cargar la imagen del botón Twitter con tamaño específico
@@ -148,6 +136,7 @@ public class VentanaInicial extends JFrame {
         } else {
             System.err.println("La imagen LogoBlanco no se encontró.");
         }
+         */
 
         // Configurar la ventana
         setContentPane(pPrincipal);
@@ -157,6 +146,13 @@ public class VentanaInicial extends JFrame {
         setResizable(true);
         getRootPane().setDefaultButton(bInicio);
 
+        JComponent[] componentesConBorde = {mPrincipal, bTienda, bInicio, bSalir, cbClasificacion, bFacebook,
+                bTwitter, bInstagram};
+        for (JComponent componente : componentesConBorde) {
+            componente.setBorder(BorderFactory.createEmptyBorder());
+        }
+
+        /*
         mPrincipal.setBorder(BorderFactory.createEmptyBorder());
         bTienda.setBorder(BorderFactory.createEmptyBorder());
         bInicio.setBorder(BorderFactory.createEmptyBorder());
@@ -165,6 +161,7 @@ public class VentanaInicial extends JFrame {
         bFacebook.setBorder(BorderFactory.createEmptyBorder());
         bTwitter.setBorder(BorderFactory.createEmptyBorder());
         bInstagram.setBorder(BorderFactory.createEmptyBorder());
+         */
 
         // Iniciar el desplazamiento del texto
         iniciarDesplazamientoTexto();
@@ -362,5 +359,28 @@ public class VentanaInicial extends JFrame {
     }
     public void addCbClasificacionAL(ActionListener al) {
         cbClasificacion.addActionListener(al);
+    }
+
+    // Funciones
+    public void mostrarMensaje(String mensaje){
+        JOptionPane.showMessageDialog(null,mensaje);
+    }
+
+    // Método auxiliar para cargar imágenes y establecer íconos (una función es para los JLabel y la otra para JButton)
+    private void cargarImagenEstablecerIcono(String nombreImagen, int ancho, int alto, JLabel label) {
+        ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
+        if (icono != null) {
+            label.setIcon(icono);
+        } else {
+            System.err.println("La imagen " + nombreImagen + " no se encontró.");
+        }
+    }
+    private void cargarImagenEstablecerIcono(String nombreImagen, JButton button) {
+        ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, 40, 40);
+        if (icono != null) {
+            button.setIcon(icono);
+        } else {
+            System.err.println("La imagen " + nombreImagen + " no se encontró.");
+        }
     }
 }

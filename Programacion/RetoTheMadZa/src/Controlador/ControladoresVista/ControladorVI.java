@@ -9,19 +9,21 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
+/**
+ * Clase ControladorVI que gestiona la primera ventana en aparecer.
+ *
+ * @author Julen
+ */
 public class ControladorVI {
-
     private VentanaInicial vi;
-    private ControladorVista cv;
+    private final ControladorVista cv;
 
     public ControladorVI(ControladorVista cv) {
         this.cv = cv;
     }
 
-    public void crearMostrar()
-    {
+    public void crearMostrar() {
         vi = new VentanaInicial();
-        vi.setVisible(true);
 
         llenarComboBox();
 
@@ -120,24 +122,33 @@ public class ControladorVI {
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
-                String nombreSeleccionado = vi.getCbClasificacion().getSelectedItem().toString();
+                String nombreSeleccionado = String.valueOf(vi.getCbClasificacion().getSelectedItem());
                 if (nombreSeleccionado != null && !nombreSeleccionado.isEmpty()){
-                    validarBuscarCompeticionNombre(nombreSeleccionado);
+                    rellenarTablaEquiposCompeticion(nombreSeleccionado);
                 }
             }
-            catch (Exception ex)
-            {
-                //vi.mostrarMensaje(ex.getMessage());
+            catch (Exception ex) {
+                vi.mostrarMensaje(ex.getMessage());
             }
 
         }
     }
 
-    public void validarBuscarCompeticionNombre(String nombreSeleccionado) throws Exception {
+    /**
+     * Función que muestra los datos de los equipos según la competición.
+     * Se rellena la tabla con los 5 equipos con más victorias de la competición seleccionada en el JComboBox.
+     *
+     * @author Julen
+     * @author Lorena
+     * @param nombreSeleccionado
+     * @throws Exception
+     */
+    public void rellenarTablaEquiposCompeticion(String nombreSeleccionado) throws Exception {
 
-        //Buscamos el objeto competicion para conseguir el id
+        // Obtener un array multidimensional (5F·3C) con los datos de los equipos de la competición seleccionada.
         String[][] listaCompeticiones = cv.buscarEquiposPorNombreCom(nombreSeleccionado);
 
+        // Aparecerán los 5 equipos con más victorias.
         vi.getvEquipo1().setText(String.valueOf(listaCompeticiones[0][1]));
         vi.getpEquipo1().setText(String.valueOf(listaCompeticiones[0][2]));
         vi.getvEquipo2().setText(String.valueOf(listaCompeticiones[1][1]));
@@ -149,9 +160,9 @@ public class ControladorVI {
         vi.getvEquipo5().setText(String.valueOf(listaCompeticiones[4][1]));
         vi.getpEquipo5().setText(String.valueOf(listaCompeticiones[4][2]));
 
-    }
+        // TODO : PONER LAS IMÁGENES
 
-/*
+        /*
         //Borramos de la lista los equipos que no tienen el id que queremos
 
         for (EquipoCompeticion equipoCompeticion : equipoCompeticiones){
@@ -209,24 +220,18 @@ public class ControladorVI {
         BufferedImage bufferedImage5 = Scalr.resize(imagenOriginal5, 55);
         ImageIcon iconoEscalado5 = new ImageIcon(bufferedImage5);
         vi.getEquipo5().setIcon(iconoEscalado5);
+        */
 
     }
- */
 
-
-public void llenarComboBox(){
+    public void llenarComboBox(){
         try {
-            System.out.println("bien la funcion 1");
             vi.getCbClasificacion().removeAllItems();
-            System.out.println("bien la funcion 2");
-            List<Competicion> competiciones = cv.buscarTodasCompeticiones();
+            List<Competicion> listaCompeticiones = cv.buscarTodasCompeticiones();
 
-            System.out.println("bien la funcion 3");
-
-            for (Competicion competicion : competiciones){
+            for (Competicion competicion : listaCompeticiones){
                 vi.getCbClasificacion().addItem(competicion.getNombreCom());
             }
-            System.out.println("bien la funcion 4");
 
             vi.getCbClasificacion().setSelectedIndex(-1);
 

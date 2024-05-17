@@ -135,6 +135,12 @@ public class VentanaAdmin extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(true);
 
+        JComponent[] componentesConBorde = {mPrincipal, bTienda, bInicio, bSalir, bFacebook, bTwitter, bInstagram};
+        for (JComponent componente : componentesConBorde) {
+            componente.setBorder(BorderFactory.createEmptyBorder());
+        }
+
+        /*
         mPrincipal.setBorder(BorderFactory.createEmptyBorder());
         bTienda.setBorder(BorderFactory.createEmptyBorder());
         bInicio.setBorder(BorderFactory.createEmptyBorder());
@@ -142,6 +148,7 @@ public class VentanaAdmin extends JFrame {
         bFacebook.setBorder(BorderFactory.createEmptyBorder());
         bTwitter.setBorder(BorderFactory.createEmptyBorder());
         bInstagram.setBorder(BorderFactory.createEmptyBorder());
+         */
 
         setVisible(true);
     }

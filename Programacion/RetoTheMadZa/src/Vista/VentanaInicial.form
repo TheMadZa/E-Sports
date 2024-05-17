@@ -242,12 +242,12 @@
               </component>
               <component id="d497e" class="javax.swing.JLabel">
                 <constraints>
-                  <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <font name="Inter Semi Bold" size="28" style="0"/>
                   <foreground color="-394241"/>
-                  <text value="Derrotas"/>
+                  <text value="Puntos"/>
                 </properties>
               </component>
               <component id="eb8f3" class="javax.swing.JLabel" binding="vEquipo1">
@@ -257,7 +257,7 @@
                 <properties>
                   <font name="Inter Semi Bold" size="28" style="0"/>
                   <foreground color="-394241"/>
-                  <text value="a"/>
+                  <text value=""/>
                 </properties>
               </component>
               <component id="c81ba" class="javax.swing.JLabel" binding="vEquipo2">
@@ -267,7 +267,7 @@
                 <properties>
                   <font name="Inter Semi Bold" size="28" style="0"/>
                   <foreground color="-394241"/>
-                  <text value="a"/>
+                  <text value=""/>
                 </properties>
               </component>
               <component id="a5ee6" class="javax.swing.JLabel" binding="vEquipo3">
@@ -277,7 +277,7 @@
                 <properties>
                   <font name="Inter Semi Bold" size="28" style="0"/>
                   <foreground color="-394241"/>
-                  <text value="a"/>
+                  <text value=""/>
                 </properties>
               </component>
               <component id="68c3" class="javax.swing.JLabel" binding="vEquipo4">
@@ -287,7 +287,7 @@
                 <properties>
                   <font name="Inter Semi Bold" size="28" style="0"/>
                   <foreground color="-394241"/>
-                  <text value="a"/>
+                  <text value=""/>
                 </properties>
               </component>
               <component id="64e6d" class="javax.swing.JLabel" binding="vEquipo5">
@@ -297,7 +297,7 @@
                 <properties>
                   <font name="Inter Semi Bold" size="28" style="0"/>
                   <foreground color="-394241"/>
-                  <text value="a"/>
+                  <text value=""/>
                 </properties>
               </component>
               <component id="3f116" class="javax.swing.JLabel" binding="pEquipo1">
@@ -307,7 +307,7 @@
                 <properties>
                   <font name="Inter Semi Bold" size="28" style="0"/>
                   <foreground color="-394241"/>
-                  <text value="a"/>
+                  <text value=""/>
                 </properties>
               </component>
               <component id="d19e9" class="javax.swing.JLabel" binding="pEquipo2">
@@ -317,7 +317,7 @@
                 <properties>
                   <font name="Inter Semi Bold" size="28" style="0"/>
                   <foreground color="-394241"/>
-                  <text value="a"/>
+                  <text value=""/>
                 </properties>
               </component>
               <component id="95c0d" class="javax.swing.JLabel" binding="pEquipo3">
@@ -327,7 +327,7 @@
                 <properties>
                   <font name="Inter Semi Bold" size="28" style="0"/>
                   <foreground color="-394241"/>
-                  <text value="a"/>
+                  <text value=""/>
                 </properties>
               </component>
               <component id="1bf5b" class="javax.swing.JLabel" binding="pEquipo4">
@@ -337,7 +337,7 @@
                 <properties>
                   <font name="Inter Semi Bold" size="28" style="0"/>
                   <foreground color="-394241"/>
-                  <text value="a"/>
+                  <text value=""/>
                 </properties>
               </component>
               <component id="19136" class="javax.swing.JLabel" binding="pEquipo5">
@@ -347,7 +347,7 @@
                 <properties>
                   <font name="Inter Semi Bold" size="28" style="0"/>
                   <foreground color="-394241"/>
-                  <text value="a"/>
+                  <text value=""/>
                 </properties>
               </component>
               <component id="205e8" class="javax.swing.JLabel" binding="equipo1">
@@ -397,7 +397,7 @@
               </component>
               <component id="a4d9a" class="javax.swing.JLabel">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <font name="Inter Semi Bold" size="28" style="0"/>
@@ -492,11 +492,6 @@
                   <font name="Inter Semi Bold" size="28" style="0"/>
                   <foreground color="-394241"/>
                   <model>
-                    <item value="CS2 MAJOR BELGICA 2024"/>
-                    <item value="CS2 MAJOR BELGICA 2024"/>
-                    <item value="CS2 MAJOR BELGICA 2024"/>
-                    <item value="CS2 MAJOR BELGICA 2024"/>
-                    <item value="CS2 MAJOR BELGICA 2024"/>
                     <item value="CS2 MAJOR BELGICA 2024"/>
                   </model>
                 </properties>
