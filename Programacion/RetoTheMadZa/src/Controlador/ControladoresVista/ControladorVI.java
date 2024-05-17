@@ -13,6 +13,7 @@ import java.awt.image.BufferedImage;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class ControladorVI {
 
@@ -127,7 +128,7 @@ public class ControladorVI {
             try {
                 String nombreSeleccionado = vi.getCbClasificacion().getSelectedItem().toString();
                 if (nombreSeleccionado != null && !nombreSeleccionado.isEmpty()){
-                    validarBuscarCompeticionNombre(nombreSeleccionado); // TODO
+                    validarBuscarCompeticionNombre(nombreSeleccionado);
                 }
             }
             catch (Exception ex)
@@ -139,19 +140,28 @@ public class ControladorVI {
     }
 
     public void validarBuscarCompeticionNombre(String nombreSeleccionado) throws Exception {
-        List<EquipoCompeticion> equipoCompeticiones = new ArrayList<>();
-
-        equipoCompeticiones.clear();
-
-        //Llenamos una lista con todos los equipos y sus competiciones
-        equipoCompeticiones = cv.buscarTodosEquiposCompeticiones();
 
         //Buscamos el objeto competicion para conseguir el id
-        Competicion c = cv.buscarCompeticionNombre(nombreSeleccionado);
+        String[][] listaCompeticiones = cv.buscarCompeticionNombre(nombreSeleccionado);
 
+        vi.getvEquipo1().setText(String.valueOf(listaCompeticiones[0][1]));
+        vi.getpEquipo1().setText(String.valueOf(listaCompeticiones[0][2]));
+        vi.getvEquipo2().setText(String.valueOf(listaCompeticiones[1][1]));
+        vi.getpEquipo2().setText(String.valueOf(listaCompeticiones[1][2]));
+        vi.getvEquipo3().setText(String.valueOf(listaCompeticiones[2][1]));
+        vi.getpEquipo3().setText(String.valueOf(listaCompeticiones[2][2]));
+        vi.getvEquipo4().setText(String.valueOf(listaCompeticiones[3][1]));
+        vi.getpEquipo4().setText(String.valueOf(listaCompeticiones[3][2]));
+        vi.getvEquipo5().setText(String.valueOf(listaCompeticiones[4][1]));
+        vi.getpEquipo5().setText(String.valueOf(listaCompeticiones[4][2]));
+
+    }
+
+/*
         //Borramos de la lista los equipos que no tienen el id que queremos
+
         for (EquipoCompeticion equipoCompeticion : equipoCompeticiones){
-            if (equipoCompeticion.getCompeticion() != c){
+            if (!equipoCompeticion.getCompeticion().equals(c)){
                 equipoCompeticiones.remove(equipoCompeticion);
             }
         }
@@ -207,8 +217,10 @@ public class ControladorVI {
         vi.getEquipo5().setIcon(iconoEscalado5);
 
     }
+ */
 
-    public void llenarComboBox(){
+
+public void llenarComboBox(){
         try {
             System.out.println("bien la funcion 1");
             vi.getCbClasificacion().removeAllItems();
@@ -221,6 +233,8 @@ public class ControladorVI {
                 vi.getCbClasificacion().addItem(competicion.getNombreCom());
             }
             System.out.println("bien la funcion 4");
+
+            vi.getCbClasificacion().setSelectedIndex(-1);
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,e.getMessage());

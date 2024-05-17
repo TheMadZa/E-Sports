@@ -212,14 +212,6 @@ public class VentanaInicial extends JFrame {
         return cbClasificacion;
     }
 
-    public void setCbClasificacion(ArrayList<Competicion> listaCompeticiones) {
-        // Poner que ningún elemento esté seleccionado, y por lo tanto, que la tabla esté vacía.
-        this.cbClasificacion.insertItemAt("", -1);
-        for (Competicion competicion : listaCompeticiones) {
-            this.cbClasificacion.addItem(competicion.getNombreCom());
-        }
-    }
-
     public JLabel getvEquipo1() {
         return vEquipo1;
     }

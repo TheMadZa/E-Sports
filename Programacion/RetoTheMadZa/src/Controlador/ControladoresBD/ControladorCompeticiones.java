@@ -1,13 +1,12 @@
 package Controlador.ControladoresBD;
 
 import Modelo.Competicion;
+import Modelo.Equipo;
+import Modelo.EquipoCompeticion;
 import Modelo.Juego;
 
 import javax.swing.*;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLIntegrityConstraintViolationException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -102,31 +101,46 @@ public class ControladorCompeticiones {
         }
     }
 
-    public Competicion buscarCompeticionNombre(String nombreCom) throws Exception
+    public String[][] buscarCompeticionNombre(String nombreCom) throws Exception
     {
+
         try
         {
-            String plantilla = "SELECT * FROM competiciones WHERE nombre_com = ?";
+            String plantilla = "SELECT e.logo, ec.victorias, ec.puntos FROM equipos e JOIN equipos_competiciones ec " +
+                    "ON e.id_equipo = ec.id_equipo WHERE ec.id_competicion IN (SELECT id_competicion FROM competiciones "
+                    +"WHERE UPPER(nombre_com) = ?)";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
 
             sentenciaPre.setString(1, nombreCom);
 
             ResultSet rs = sentenciaPre.executeQuery();
-            if (rs.next()) {
-                c = new Competicion();
-                c.setNombreCom(nombreCom);
-                c.setIdCompeticion(rs.getInt("id_competicion"));
-                c.setFechaInicio(rs.getDate("fecha_inicio"));
-                c.setFechaFin(rs.getDate("fecha_fin"));
-                c.setEtapa(rs.getString("etapa"));
-                c.getJuego().setIdJuego(rs.getInt("id_juego"));
-                c.getEquipoGanador().setIdEquipo(rs.getInt("id_equipo_ganador"));
-            } else {
-                throw new Exception("No hay ninguna competicion con ese nombre");
+
+
+            String[][] listaCompeticiones = new String[10][3]; // Array multidimensional con 10 filas y 3 columnas
+
+            int i = 0;
+            while (rs.next() && i < 10) { // Iterar sobre las filas y limitar a 10 filas
+                String[] fila = new String[3]; // Array para almacenar los datos de una fila
+
+                fila[0] = rs.getString("logo"); // Obtener el logo del equipo
+                fila[1] = Integer.toString(rs.getInt("victorias")); // Obtener las victorias
+                fila[2] = Integer.toString(rs.getInt("puntos")); // Obtener los puntos
+
+                listaCompeticiones[i] = fila; // Agregar la fila al array multidimensional
+                i++;
             }
+
+
             sentenciaPre.close();
-            return c;
+
+
+            if (i == 0) {
+                throw new Exception("No hay ninguna competición con ese nombre");
+            }
+
+
+            return listaCompeticiones;
         }
         catch (Exception e)
         {
@@ -139,20 +153,14 @@ public class ControladorCompeticiones {
         List<Competicion> competiciones = new ArrayList<>();
         try
         {
-            String plantilla = "SELECT * FROM competiciones";
+            String plantilla = "SELECT nombre_com FROM competiciones";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
 
             ResultSet rs = sentenciaPre.executeQuery();
             while (rs.next()) {
                 c = new Competicion();
-                c.setIdCompeticion(rs.getInt("id_competicion"));
                 c.setNombreCom(rs.getString("nombre_com"));
-                c.setFechaInicio(rs.getDate("fecha_inicio"));
-                c.setFechaFin(rs.getDate("fecha_fin"));
-                c.setEtapa(rs.getString("etapa"));
-                c.getJuego().setIdJuego(rs.getInt("id_juego"));
-                c.getEquipoGanador().setIdEquipo(rs.getInt("id_equipo_ganador"));
                 competiciones.add(c);
             }
             sentenciaPre.close();
