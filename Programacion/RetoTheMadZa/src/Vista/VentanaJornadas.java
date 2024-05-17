@@ -163,13 +163,10 @@ public class VentanaJornadas extends JFrame{
         setResizable(true);
         getRootPane().setDefaultButton(bInicio);
 
-        mPrincipal.setBorder(BorderFactory.createEmptyBorder());
-        bTienda.setBorder(BorderFactory.createEmptyBorder());
-        bInicio.setBorder(BorderFactory.createEmptyBorder());
-        bSalir.setBorder(BorderFactory.createEmptyBorder());
-        bFacebook.setBorder(BorderFactory.createEmptyBorder());
-        bTwitter.setBorder(BorderFactory.createEmptyBorder());
-        bInstagram.setBorder(BorderFactory.createEmptyBorder());
+        JComponent[] componentesConBorde = {mPrincipal, bTienda, bInicio, bSalir, bFacebook, bTwitter, bInstagram};
+        for (JComponent componente : componentesConBorde) {
+            componente.setBorder(BorderFactory.createEmptyBorder());
+        }
 
         // Iniciar el desplazamiento del texto
         iniciarDesplazamientoTexto();

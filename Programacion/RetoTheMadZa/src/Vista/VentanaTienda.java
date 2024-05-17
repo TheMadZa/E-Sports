@@ -1,15 +1,10 @@
 package Vista;
 
 import Controlador.ControladoresVista.ControladorImagenes;
-import org.imgscalr.Scalr;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.net.URL;
 
 public class VentanaTienda extends JFrame{
     private JPanel pPrincipal;
@@ -29,7 +24,6 @@ public class VentanaTienda extends JFrame{
     private JButton bInstagram;
     private JButton bFacebook;
     private JLabel logoBlanco;
-    private JLabel labelTextoHorizontal;
     private JScrollPane PanelMedio;
     private JLabel tienda3;
     private JLabel tienda4;
@@ -59,52 +53,52 @@ public class VentanaTienda extends JFrame{
     private JButton bBuy12;
     private JLabel tienda2;
     private JPanel panelTienda1;
-    private final String text = " TheMadZa, compañía líder en eSports, organiza dos competiciones activas: el Torneo de" +
-            " TheMadZa Legends, con premios millonarios para equipos globales, y TheMadZa Clash, enfocado en nuevos" +
-            " talentos. Recientemente, lanzaron su tienda online con productos exclusivos y personalizados. Los" +
-            " jugadores pueden registrarse fácilmente para participar en competiciones y acceder a contenido" +
-            " exclusivo, sorteos y descuentos especiales. Además, TheMadZa organiza eventos anuales como" +
-            " TheMadZa GameCon para mantener a la comunidad activa y comprometida. ";
-    private int currentIndex = 0;
 
     public VentanaTienda() {
 
+        // Cargar las imágenes con un tamaño específico.
+        cargarImagenEstablecerIcono("TheMadZaLogoSimple", 250, 250, ftThemadza);
+        cargarImagenEstablecerIcono("Tienda", bTienda);
+        cargarImagenEstablecerIcono("Inicio", bInicio);
+        cargarImagenEstablecerIcono("Salir", bSalir);
+        cargarImagenEstablecerIcono("Twitter", bTwitter);
+        cargarImagenEstablecerIcono("Instagram", bInstagram);
+        cargarImagenEstablecerIcono("Facebook", bFacebook);
+        cargarImagenEstablecerIcono("LogoBlanco", 100, 100, logoBlanco);
+        cargarImagenEstablecerIcono("Tienda1", 400, 400, tienda1);
+        cargarImagenEstablecerIcono("Tienda2", 400, 400, tienda2);
+        cargarImagenEstablecerIcono("Tienda3", 400, 400, tienda3);
+        cargarImagenEstablecerIcono("Tienda4", 400, 400, tienda4);
+        cargarImagenEstablecerIcono("Tienda5", 400, 400, tienda5);
+        cargarImagenEstablecerIcono("Tienda6", 400, 400, tienda6);
+        cargarImagenEstablecerIcono("Tienda7", 400, 400, tienda7);
+        cargarImagenEstablecerIcono("Tienda8", 400, 400, tienda8);
+        cargarImagenEstablecerIcono("Tienda9", 400, 400, tienda9);
+        cargarImagenEstablecerIcono("Tienda10", 400, 400, tienda10);
+        cargarImagenEstablecerIcono("Tienda11", 400, 400, tienda11);
+        cargarImagenEstablecerIcono("Tienda12", 400, 400, tienda12);
 
-            ftThemadza.setIcon(ControladorImagenes.obtenerImagen("TheMadZaLogoSimple", 250, 250));
-            bTienda.setIcon(ControladorImagenes.obtenerImagen("Tienda", 40, 40));
-            bInicio.setIcon(ControladorImagenes.obtenerImagen("Inicio", 40, 40));
-            bSalir.setIcon(ControladorImagenes.obtenerImagen("Salir", 40, 40));
-            bTwitter.setIcon(ControladorImagenes.obtenerImagen("Twitter", 40, 40));
-            bInstagram.setIcon(ControladorImagenes.obtenerImagen("Instagram", 40, 40));
-            bFacebook.setIcon(ControladorImagenes.obtenerImagen("Facebook", 40, 40));
-            logoBlanco.setIcon(ControladorImagenes.obtenerImagen("LogoBlanco", 100, 100));
-            tienda1.setIcon(ControladorImagenes.obtenerImagen("Tienda1", 400, 400));
-            tienda2.setIcon(ControladorImagenes.obtenerImagen("Tienda2", 400, 400));
-            tienda3.setIcon(ControladorImagenes.obtenerImagen("Tienda3", 400, 400));
-            tienda4.setIcon(ControladorImagenes.obtenerImagen("Tienda4", 400, 400));
-            tienda5.setIcon(ControladorImagenes.obtenerImagen("Tienda5", 400, 400));
-            tienda6.setIcon(ControladorImagenes.obtenerImagen("Tienda6", 400, 400));
-            tienda7.setIcon(ControladorImagenes.obtenerImagen("Tienda7", 400, 400));
-            tienda8.setIcon(ControladorImagenes.obtenerImagen("Tienda8", 400, 400));
-            tienda9.setIcon(ControladorImagenes.obtenerImagen("Tienda9", 400, 400));
-            tienda10.setIcon(ControladorImagenes.obtenerImagen("Tienda10", 400, 400));
-            tienda11.setIcon(ControladorImagenes.obtenerImagen("Tienda11", 400, 400));
-            tienda12.setIcon(ControladorImagenes.obtenerImagen("Tienda12", 400, 400));
+        ImageIcon iconoBuy = ControladorImagenes.obtenerImagen("Buy", 50, 50);
+        JButton[] botonesBuy = {bBuy1, bBuy2, bBuy3, bBuy4, bBuy5, bBuy6, bBuy7, bBuy8, bBuy9, bBuy10, bBuy11, bBuy12};
+        for (JButton boton : botonesBuy) {
+            boton.setIcon(iconoBuy);
+        }
 
-            ImageIcon iconoBuy = ControladorImagenes.obtenerImagen("Buy", 50, 50);
-            bBuy1.setIcon(iconoBuy);
-            bBuy2.setIcon(iconoBuy);
-            bBuy3.setIcon(iconoBuy);
-            bBuy4.setIcon(iconoBuy);
-            bBuy5.setIcon(iconoBuy);
-            bBuy6.setIcon(iconoBuy);
-            bBuy7.setIcon(iconoBuy);
-            bBuy8.setIcon(iconoBuy);
-            bBuy9.setIcon(iconoBuy);
-            bBuy10.setIcon(iconoBuy);
-            bBuy11.setIcon(iconoBuy);
-            bBuy12.setIcon(iconoBuy);
-
+        /*
+        ImageIcon iconoBuy = ControladorImagenes.obtenerImagen("Buy", 50, 50);
+        bBuy1.setIcon(iconoBuy);
+        bBuy2.setIcon(iconoBuy);
+        bBuy3.setIcon(iconoBuy);
+        bBuy4.setIcon(iconoBuy);
+        bBuy5.setIcon(iconoBuy);
+        bBuy6.setIcon(iconoBuy);
+        bBuy7.setIcon(iconoBuy);
+        bBuy8.setIcon(iconoBuy);
+        bBuy9.setIcon(iconoBuy);
+        bBuy10.setIcon(iconoBuy);
+        bBuy11.setIcon(iconoBuy);
+        bBuy12.setIcon(iconoBuy);
+         */
 
         // Configurar la ventana
         setContentPane(pPrincipal);
@@ -114,6 +108,13 @@ public class VentanaTienda extends JFrame{
         setResizable(true);
         getRootPane().setDefaultButton(bInicio);
 
+        JComponent[] componentesConBorde = {mPrincipal, bTienda, bInicio, bSalir, bFacebook, bTwitter, bInstagram,
+                bBuy1, bBuy2, bBuy3, bBuy4, bBuy5, bBuy6, bBuy7, bBuy8, bBuy9, bBuy10, bBuy11, bBuy12};
+        for (JComponent componente : componentesConBorde) {
+            componente.setBorder(BorderFactory.createEmptyBorder());
+        }
+
+        /*
         mPrincipal.setBorder(BorderFactory.createEmptyBorder());
         bTienda.setBorder(BorderFactory.createEmptyBorder());
         bInicio.setBorder(BorderFactory.createEmptyBorder());
@@ -133,6 +134,7 @@ public class VentanaTienda extends JFrame{
         bBuy10.setBorder(BorderFactory.createEmptyBorder());
         bBuy11.setBorder(BorderFactory.createEmptyBorder());
         bBuy12.setBorder(BorderFactory.createEmptyBorder());
+         */
 
         Color backgroundColor = Color.decode("#5B2C78");
         Color foregroundColor = Color.decode("#151135");
@@ -143,22 +145,7 @@ public class VentanaTienda extends JFrame{
         PanelMedio.getViewport().setBackground(backgroundColor);
         PanelMedio.setBackground(backgroundColor);
 
-        // Iniciar el desplazamiento del texto
-        iniciarDesplazamientoTexto();
-
         setVisible(true);
-    }
-
-    private void iniciarDesplazamientoTexto() {
-        Timer timer = new Timer(80, e -> {
-            String displayedText = text.substring(currentIndex) + text.substring(0, currentIndex);
-            labelTextoHorizontal.setText(displayedText);
-            currentIndex++;
-            if (currentIndex >= text.length()) {
-                currentIndex = 0;
-            }
-        });
-        timer.start();
     }
 
     public static void main(String[] args) {
@@ -213,6 +200,24 @@ public class VentanaTienda extends JFrame{
         // Mostrar el JOptionPane personalizado
         JOptionPane.showMessageDialog(null, panel, "Aviso", JOptionPane.PLAIN_MESSAGE);
 
+    }
+
+    // Método auxiliar para cargar imágenes y establecer íconos (una función es para los JLabel y la otra para JButton)
+    private void cargarImagenEstablecerIcono(String nombreImagen, int ancho, int alto, JLabel label) {
+        ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
+        if (icono != null) {
+            label.setIcon(icono);
+        } else {
+            System.err.println("La imagen " + nombreImagen + " no se encontró.");
+        }
+    }
+    private void cargarImagenEstablecerIcono(String nombreImagen, JButton button) {
+        ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, 40, 40);
+        if (icono != null) {
+            button.setIcon(icono);
+        } else {
+            System.err.println("La imagen " + nombreImagen + " no se encontró.");
+        }
     }
 
     // Listeners

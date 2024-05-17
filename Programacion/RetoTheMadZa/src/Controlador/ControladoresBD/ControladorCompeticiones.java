@@ -89,6 +89,7 @@ public class ControladorCompeticiones {
         }
     }
 
+    // TODO : IGUAL HABRÍA QUE HACER QUE DEVUELVA LOS EQUIPOS CON MÁS VICTORIAS? (ORDER BY ec.victorias DESC)
     /**
      * Función para obtener logo, victorias y puntos de un equipo en una competición.
      * Se buscarán los logos, las victorias y los puntos totales de los equipos que participan
@@ -145,6 +146,7 @@ public class ControladorCompeticiones {
         }
     }
 
+    // TODO : SEGURAMENTE SE PUEDA PONER QUE DEVUELVA UN ARRAYLIST PERO DE STRING nombre_com
     public List<Competicion> buscarTodasCompeticiones() throws Exception {
         List<Competicion> competiciones = new ArrayList<>();
         try {

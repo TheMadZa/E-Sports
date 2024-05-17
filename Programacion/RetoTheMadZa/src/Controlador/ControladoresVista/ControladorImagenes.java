@@ -12,9 +12,14 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Clase ControladorImagenes para cargar las imágenes.
+ * Gestiona la carga inicial de todas las imágenes del proyecto.
+ *
+ * @author Ibai
+ */
 public class ControladorImagenes {
     private static VentanaCarga vc;
-
     private static Map<String, BufferedImage> imagenes = new HashMap<>();
 
     public static void cargarImagenes() {

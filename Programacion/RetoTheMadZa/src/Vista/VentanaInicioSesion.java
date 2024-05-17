@@ -18,7 +18,7 @@ public class VentanaInicioSesion extends JFrame {
     private JTextField tfContrasena;
     private JButton bIniciarSesion; // TODO : poner bordes redondos
     private JButton bRegistrarse; // TODO : poner bordes redondos
-    private JPanel pDatos; // TODO : poner con forma cuadrada y centrado
+    private JPanel pDatos;
     private JLabel tfImagenLogo;
 
     public VentanaInicioSesion(){

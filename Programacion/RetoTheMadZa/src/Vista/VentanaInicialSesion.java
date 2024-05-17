@@ -155,18 +155,17 @@ public class VentanaInicialSesion extends JFrame {
 
         // Configurar la ventana
         setContentPane(pPrincipal);
-        setTitle("Ventana Inicial");
+        setTitle("Ventana Inicial Sesión");
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setResizable(true);
         getRootPane().setDefaultButton(bInicio);
-        bTienda.setBorder(BorderFactory.createEmptyBorder());
-        bFacebook.setBorder(BorderFactory.createEmptyBorder());
-        bTwitter.setBorder(BorderFactory.createEmptyBorder());
-        bInstagram.setBorder(BorderFactory.createEmptyBorder());
-        bSalir.setBorder(BorderFactory.createEmptyBorder());
-        bInicio.setBorder(BorderFactory.createEmptyBorder());
-        mPrincipal.setBorder(BorderFactory.createEmptyBorder());
-        cbClasificacion.setBorder(BorderFactory.createEmptyBorder());
+
+        JComponent[] componentesConBorde = {mPrincipal, bTienda, bInicio, bSalir, cbClasificacion, bFacebook,
+                bTwitter, bInstagram};
+        for (JComponent componente : componentesConBorde) {
+            componente.setBorder(BorderFactory.createEmptyBorder());
+        }
 
         // Iniciar el desplazamiento del texto
         iniciarDesplazamientoTexto();
