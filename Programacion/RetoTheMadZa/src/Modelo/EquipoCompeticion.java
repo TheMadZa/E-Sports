@@ -2,39 +2,37 @@ package Modelo;
 
 public class EquipoCompeticion {
 
-    private int idEquipo;
-    private int idCompeticion;
-    private int victorias;
-    private int puntos;
     private Equipo equipo;
     private Competicion competicion;
+    private int victorias;
+    private int puntos;
 
     // Constructors
     public EquipoCompeticion() {
     }
 
-    public EquipoCompeticion(int idEquipo, int idCompeticion, int victorias, int puntos) {
-        this.idEquipo = idEquipo;
-        this.idCompeticion = idCompeticion;
+    public EquipoCompeticion(Equipo equipo, Competicion competicion, int victorias, int puntos) {
+        this.equipo = equipo;
+        this.competicion = competicion;
         this.victorias = victorias;
         this.puntos = puntos;
     }
 
     // Getters and Setters
-    public int getIdEquipo() {
-        return idEquipo;
+    public Equipo getEquipo() {
+        return equipo;
     }
 
-    public void setIdEquipo(int idEquipo) {
-        this.idEquipo = idEquipo;
+    public void setEquipo(Equipo equipo) {
+        this.equipo = equipo;
     }
 
-    public int getIdCompeticion() {
-        return idCompeticion;
+    public Competicion getCompeticion() {
+        return competicion;
     }
 
-    public void setIdCompeticion(int idCompeticion) {
-        this.idCompeticion = idCompeticion;
+    public void setCompeticion(Competicion competicion) {
+        this.competicion = competicion;
     }
 
     public int getVictorias() {
@@ -53,22 +51,6 @@ public class EquipoCompeticion {
         this.puntos = puntos;
     }
 
-    public Equipo getEquipo() {
-        return equipo;
-    }
-
-    public void setEquipo(Equipo equipo) {
-        this.equipo = equipo;
-    }
-
-    public Competicion getCompeticion() {
-        return competicion;
-    }
-
-    public void setCompeticion(Competicion competicion) {
-        this.competicion = competicion;
-    }
-
     // equals and hashCode
     @Override
     public boolean equals(Object o) {
@@ -77,18 +59,9 @@ public class EquipoCompeticion {
 
         EquipoCompeticion that = (EquipoCompeticion) o;
 
-        if (idEquipo != that.idEquipo) return false;
-        if (idCompeticion != that.idCompeticion) return false;
+        if (equipo != that.equipo) return false;
+        if (competicion != that.competicion) return false;
         if (victorias != that.victorias) return false;
         return puntos == that.puntos;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = idEquipo;
-        result = 31 * result + idCompeticion;
-        result = 31 * result + victorias;
-        result = 31 * result + puntos;
-        return result;
     }
 }

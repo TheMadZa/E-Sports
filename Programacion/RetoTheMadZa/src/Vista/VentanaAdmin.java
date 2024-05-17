@@ -62,13 +62,6 @@ public class VentanaAdmin extends JFrame {
     private JButton bEliminar;
     private JButton bActualizar;
     private JButton bConsultar;
-    private final String text = " TheMadZa, compañía líder en eSports, organiza dos competiciones activas: el Torneo de" +
-            " TheMadZa Legends, con premios millonarios para equipos globales, y TheMadZa Clash, enfocado en nuevos" +
-            " talentos. Recientemente, lanzaron su tienda online con productos exclusivos y personalizados. Los" +
-            " jugadores pueden registrarse fácilmente para participar en competiciones y acceder a contenido" +
-            " exclusivo, sorteos y descuentos especiales. Además, TheMadZa organiza eventos anuales como" +
-            " TheMadZa GameCon para mantener a la comunidad activa y comprometida. ";
-    private int currentIndex = 0;
 
     public VentanaAdmin(){
 
@@ -112,22 +105,7 @@ public class VentanaAdmin extends JFrame {
         bTwitter.setBorder(BorderFactory.createEmptyBorder());
         bInstagram.setBorder(BorderFactory.createEmptyBorder());
 
-        // Iniciar el desplazamiento del texto
-        iniciarDesplazamientoTexto();
-
         setVisible(true);
-    }
-
-    private void iniciarDesplazamientoTexto() {
-        Timer timer = new Timer(80, e -> {
-            String displayedText = text.substring(currentIndex) + text.substring(0, currentIndex);
-            labelTextoHorizontal.setText(displayedText);
-            currentIndex++;
-            if (currentIndex >= text.length()) {
-                currentIndex = 0;
-            }
-        });
-        timer.start();
     }
 
     public static void main(String[] args) {
