@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 <!-- Aqui definimos la clase padre y el tipo donde enlazaremos los elementos -->
-    <xs:element name="competiciones" type="tipoCompeticiones"/>
-        <xs:complexType name="tipoCompeticiones">
+    <xs:element name="ultimaJornada" type="tipoUltima"/>
+        <xs:complexType name="tipoUltima">
             <xs:sequence>
                 <xs:element name="competicion" type="tipoCompeticion" maxOccurs="unbounded"/>
             </xs:sequence>
@@ -47,4 +47,3 @@
             <xs:attribute name="id" type="xs:int" use="required"/>
         </xs:complexType>
 </xs:schema>
-    
