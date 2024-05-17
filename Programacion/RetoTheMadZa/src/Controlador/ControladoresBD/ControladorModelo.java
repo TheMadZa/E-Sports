@@ -171,9 +171,9 @@ public class ControladorModelo {
         try
         {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3306/aerolinea";
-            String user = "root";
-            String passwd = "usbw";
+            String url = "jdbc:oracle:thin:@srvoracle:1521:orcl";
+            String user = "eqdaw03";
+            String passwd = "eqdaw03";
             con = DriverManager.getConnection(url, user, passwd);
             System.out.println("Conexión abierta");
 
