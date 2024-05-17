@@ -34,6 +34,7 @@ public class ControladorEquiposCompeticiones {
                 ec.getCompeticion().setIdCompeticion(rs.getInt("id_competicion"));
                 ec.setVictorias(rs.getInt("victorias"));
                 ec.setPuntos(rs.getInt("puntos"));
+                equiposCompeticiones.add(ec);
             }
             sentenciaPre.close();
             return equiposCompeticiones;
