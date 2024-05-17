@@ -11,8 +11,8 @@ public class Equipo {
     private Date fechaFundacion;
     private String logo;
     private String color;
-    private Collection<Jugador> jugadores;
-    private Collection<Staff> entrenadores;
+    private Collection<Jugador> listaJugadores;
+    private Collection<Staff> listaEntrenadores;
 
     // Constructors
     public Equipo() {
@@ -67,34 +67,34 @@ public class Equipo {
         this.color = color;
     }
 
-    public Collection<Jugador> getJugadores() {
-        return jugadores;
+    public Collection<Jugador> getListaJugadores() {
+        return listaJugadores;
     }
 
-    public void setJugadores(Collection<Jugador> jugadores) {
-        this.jugadores = jugadores;
+    public void setListaJugadores(Collection<Jugador> listaJugadores) {
+        this.listaJugadores = listaJugadores;
     }
 
-    public Collection<Staff> getEntrenadores() {
-        return entrenadores;
+    public Collection<Staff> getListaEntrenadores() {
+        return listaEntrenadores;
     }
 
-    public void setEntrenadores(Collection<Staff> entrenadores) {
-        this.entrenadores = entrenadores;
+    public void setListaEntrenadores(Collection<Staff> listaEntrenadores) {
+        this.listaEntrenadores = listaEntrenadores;
     }
 
     // Add single jugador
     public void addJugador(Jugador jugador) {
-        if (jugadores == null)
-            jugadores = new ArrayList<>();
-        jugadores.add(jugador);
+        if (listaJugadores == null)
+            listaJugadores = new ArrayList<>();
+        listaJugadores.add(jugador);
     }
 
     // Add single entrenador
     public void addEntrenador(Staff entrenador) {
-        if (entrenadores == null)
-            entrenadores = new ArrayList<>();
-        entrenadores.add(entrenador);
+        if (listaEntrenadores == null)
+            listaEntrenadores = new ArrayList<>();
+        listaEntrenadores.add(entrenador);
     }
 
     // equals and hashCode

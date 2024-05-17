@@ -8,7 +8,7 @@ public class Jornada {
     private int idJornada;
     private int numJornada;
     private Date fechaJornada;
-    private Collection<Enfrentamiento> enfrentamientos;
+    private Collection<Enfrentamiento> listaEnfrentamientos;
     private Competicion competicion;
 
     // Constructors
@@ -47,12 +47,12 @@ public class Jornada {
         this.fechaJornada = fechaJornada;
     }
 
-    public Collection<Enfrentamiento> getEnfrentamientos() {
-        return enfrentamientos;
+    public Collection<Enfrentamiento> getListaEnfrentamientos() {
+        return listaEnfrentamientos;
     }
 
-    public void setEnfrentamientos(Collection<Enfrentamiento> enfrentamientos) {
-        this.enfrentamientos = enfrentamientos;
+    public void setListaEnfrentamientos(Collection<Enfrentamiento> listaEnfrentamientos) {
+        this.listaEnfrentamientos = listaEnfrentamientos;
     }
 
     public Competicion getCompeticion() {
@@ -65,9 +65,9 @@ public class Jornada {
 
     // Add single enfrentamiento
     public void addEnfrentamiento(Enfrentamiento enfrentamiento) {
-        if (enfrentamientos == null)
-            enfrentamientos = new ArrayList<>();
-        enfrentamientos.add(enfrentamiento);
+        if (listaEnfrentamientos == null)
+            listaEnfrentamientos = new ArrayList<>();
+        listaEnfrentamientos.add(enfrentamiento);
     }
 
     // equals and hashCode

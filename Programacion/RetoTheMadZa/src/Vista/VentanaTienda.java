@@ -338,7 +338,7 @@ public class VentanaTienda extends JFrame{
                 // Dibujar fondo degradado
                 GradientPaint gradientPaint = new GradientPaint(
                         0, 0, new Color(68, 1, 84), 0, getHeight(),
-                        new Color(230, 141, 140));
+                        new Color(213, 113, 112));
                 g2.setPaint(gradientPaint);
                 g2.fillRect(0, 0, getWidth(), getHeight());
 

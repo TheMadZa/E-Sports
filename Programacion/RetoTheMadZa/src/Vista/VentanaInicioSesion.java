@@ -37,10 +37,6 @@ public class VentanaInicioSesion extends JFrame {
                 super.paintComponent(g);
                 Graphics2D g2d = (Graphics2D) g;
 
-                // Coordenadas para el degradado (para que aparezca en diagonal)
-                //Point2D start = new Point2D.Float(0, 0);
-                //Point2D end = new Point2D.Float(getWidth(), getHeight());
-
                 // Colores para el degradado
                 Color colorInicio = new Color(0x201641);
                 Color colorFin = new Color(0xAE72C2);
@@ -59,9 +55,17 @@ public class VentanaInicioSesion extends JFrame {
         // Configurar el layout del panel principal como GridBagLayout para centrar el pDatos
         pPrincipal.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
+
+        // Añadir tfImagenLogo
         gbc.gridx = 0;
         gbc.gridy = 0;
-        gbc.insets = new Insets(80, 80, 80, 80);
+        gbc.insets = new Insets(20, 0, 20, 0);
+        gbc.anchor = GridBagConstraints.CENTER;
+        pPrincipal.add(tfImagenLogo, gbc);
+
+        // Añadir pDatos
+        gbc.gridy = 1;
+        gbc.insets = new Insets(0, 0, 80, 0);
         pPrincipal.add(pDatos, gbc);
 
         // Poner la imagen centrada y superpuesta. // TODO : tengo que ponerla bien
@@ -80,8 +84,6 @@ public class VentanaInicioSesion extends JFrame {
 
             // Asignar el ImageIcon escalado al JLabel ftThemadza
             tfImagenLogo.setIcon(iconoEscalado);
-
-            pPrincipal.add(tfImagenLogo);
 
         }
         catch (IOException e) {
