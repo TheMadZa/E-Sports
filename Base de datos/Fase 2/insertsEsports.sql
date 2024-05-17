@@ -64,1884 +64,1142 @@ INSERT INTO EQUIPOS (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
 VALUES (DEFAULT, 'Gen.G Esports', TO_DATE('03-04-2017', 'DD-MM-YYYY'),
        'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/gen.g-logo.png?raw=true', '#a48721');
 
-INSERT INTO EQUIPOS (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
-VALUES (DEFAULT, 'Team Heretics', TO_DATE('29-11-2017', 'DD-MM-YYYY'),
-       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/heretics-acad-logo.png?raw=true', '#ffffff');
-
-INSERT INTO EQUIPOS (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
-VALUES (DEFAULT, 'MAD Lions', TO_DATE('17-05-2018', 'DD-MM-YYYY'),
-       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/mad-lions-logo.png?raw=true', '#e6c96b');
-
-INSERT INTO EQUIPOS (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
-VALUES (DEFAULT, 'Team Queso', TO_DATE('08-09-2018', 'DD-MM-YYYY'),
-       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/queso-logo.png?raw=true', '#ffd700');
-
-INSERT INTO EQUIPOS (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
-VALUES (DEFAULT, 'INTZ', TO_DATE('12-02-2019', 'DD-MM-YYYY'),
-       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/intz-logo.png?raw=true', '#eeeeee');
-
-INSERT INTO EQUIPOS (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
-VALUES (DEFAULT, '9ine', TO_DATE('01-07-2019', 'DD-MM-YYYY'),
-       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/9ine-logo.png?raw=true', '#ffffff');
-
-INSERT INTO EQUIPOS (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
-VALUES (DEFAULT, 'G2 Arctic', TO_DATE('19-03-2020', 'DD-MM-YYYY'),
-       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/g2-arctic-logo.png?raw=true', '#008cde');
-
-INSERT INTO EQUIPOS (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
-VALUES (DEFAULT, 'Nigma Galaxy', TO_DATE('14-08-2020', 'DD-MM-YYYY'),
-       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/nigma-galaxy-logo.png?raw=true', '#ffffff');
-
-INSERT INTO EQUIPOS (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
-VALUES (DEFAULT, 'FunPlus Phoenix', TO_DATE('27-01-2021', 'DD-MM-YYYY'),
-       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/funplus-phoenix-blaze-logo.png?raw=true', '#fa0f01');
-
-INSERT INTO EQUIPOS (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
-VALUES (DEFAULT, 'Barça eSports', TO_DATE('10-06-2021', 'DD-MM-YYYY'),
-       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/barca-logo.png?raw=true', '#004d98');
-
-INSERT INTO EQUIPOS (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
-VALUES (DEFAULT, 'KOI', TO_DATE('03-09-2021', 'DD-MM-YYYY'),
-       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/finetwork-koi-logo.png?raw=true', '#9167dd');
-
-INSERT INTO EQUIPOS (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
-VALUES (DEFAULT, 'FURIA Esports', TO_DATE('18-02-2022', 'DD-MM-YYYY'),
-       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/furia-esports-logo.png?raw=true', '#000000');
-
-INSERT INTO EQUIPOS (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
-VALUES (DEFAULT, 'M80', TO_DATE('06-05-2022', 'DD-MM-YYYY'),
-       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/m80-logo.png?raw=true', '#daff00');
-
-INSERT INTO EQUIPOS (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
-VALUES (DEFAULT, 'Sentinels', TO_DATE('19-10-2022', 'DD-MM-YYYY'),
-       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/sentinels-logo.png?raw=true', '#ce0037');
-
-INSERT INTO EQUIPOS (ID_EQUIPO, NOM_EQUIPO, FECHA_FUNDACION, LOGO, COLOR)
-VALUES (DEFAULT, 'Imperial', TO_DATE('25-03-2023', 'DD-MM-YYYY'),
-       'https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/imperial-logo.png?raw=true', '#0cd664');
-
 
 /* Insert de jugadores */
 
 /* Equipo 1 */
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('abrham', 'FrainbreezeN1', 'India',
-        'Lider', TO_DATE('01-08-1992', 'DD-MM-YYYY'), 2450.00, 1);
-
+VALUES ('loyalty', 'GarotaWarr', 'Alemania',
+        'Lider', TO_DATE('07-06-1990', 'DD-MM-YYYY'), 1881.61, 1);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('minda', 'Smilox', 'México',
-        'Jugador', TO_DATE('14-02-2002', 'DD-MM-YYYY'), 1820.50, 1);
-
+VALUES ('rubia', 'zito585', 'Brasil',
+        'Jugador', TO_DATE('07-01-1991', 'DD-MM-YYYY'), 1600.36, 1);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('deren', 'Wolffrab', 'Estados Unidos',
-        'Jugador', TO_DATE('03-02-1994', 'DD-MM-YYYY'), 2100.75, 1);
-
+VALUES ('darcella', 'senpai_mxddy', 'Argentina',
+        'Jugador', TO_DATE('10-04-1997', 'DD-MM-YYYY'), 1754.73, 1);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('condola', 'ChealsylikesMC', 'Canadá',
-        'Jugador', TO_DATE('16-12-1997', 'DD-MM-YYYY'), 1995.00, 1);
-
+VALUES ('alem', 'ItzElias_MC', 'Canadá',
+        'Jugador', TO_DATE('04-05-1998', 'DD-MM-YYYY'), 1864.74, 1);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('alexey', 'PikkuTipuliini', 'China',
-        'Jugador', TO_DATE('08-04-1997', 'DD-MM-YYYY'), 2350.60, 1);
-
+VALUES ('tomekia', 'KaiPanda88', 'Canadá',
+        'Jugador', TO_DATE('23-07-1995', 'DD-MM-YYYY'), 1730.85, 1);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('creek', 'vlagamer', 'Australia',
-        'Jugador', TO_DATE('12-10-2005', 'DD-MM-YYYY'), 1550.00, 1);
-        
+VALUES ('claire', 'Jannus37', 'Reino Unido',
+        'Jugador', TO_DATE('10-08-2004', 'DD-MM-YYYY'), 1788.64, 1);
+
 /* Equipo 2 */
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('abrham', 'FrainbreezeN1', 'India',
-        'Lider', TO_DATE('01-08-1992', 'DD-MM-YYYY'), 2450.00, 2);
-
+VALUES ('saniyya', 'itay_rap', 'India',
+        'Lider', TO_DATE('19-04-1995', 'DD-MM-YYYY'), 2278.33, 2);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('minda', 'Smilox', 'México',
-        'Jugador', TO_DATE('14-02-2002', 'DD-MM-YYYY'), 1820.50, 2);
-
+VALUES ('anvi', 'HeyItsBreeee', 'India',
+        'Jugador', TO_DATE('17-02-2000', 'DD-MM-YYYY'), 2481.34, 2);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('deren', 'Wolffrab', 'Estados Unidos',
-        'Jugador', TO_DATE('03-02-1994', 'DD-MM-YYYY'), 2100.75, 2);
-
+VALUES ('dashanti', 'iArad', 'Corea del Sur',
+        'Jugador', TO_DATE('08-05-1997', 'DD-MM-YYYY'), 1699.74, 2);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('condola', 'ChealsylikesMC', 'Canadá',
-        'Jugador', TO_DATE('16-12-1997', 'DD-MM-YYYY'), 1995.00, 2);
-
+VALUES ('wisdom', 'Nodhulos', 'Francia',
+        'Jugador', TO_DATE('22-12-2004', 'DD-MM-YYYY'), 2237.3, 2);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('alexey', 'PikkuTipuliini', 'China',
-        'Jugador', TO_DATE('08-04-1997', 'DD-MM-YYYY'), 2350.60, 2);
-
+VALUES ('tunisha', 'KayX23', 'Corea del Sur',
+        'Jugador', TO_DATE('20-12-2005', 'DD-MM-YYYY'), 1534.39, 2);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('creek', 'vlagamer', 'Australia',
-        'Jugador', TO_DATE('12-10-2005', 'DD-MM-YYYY'), 1550.00, 2);
-
+VALUES ('zyann', 'jedman503', 'Canadá',
+        'Jugador', TO_DATE('28-10-1992', 'DD-MM-YYYY'), 1547.28, 2);
 
 /* Equipo 3 */
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('novella', 'Woolycooly', 'España',
-        'Lider', TO_DATE('21-07-1995', 'DD-MM-YYYY'), 2400.00, 3);
-
+VALUES ('caitlynn', 'AnnyDash', 'Argentina',
+        'Lider', TO_DATE('25-08-2004', 'DD-MM-YYYY'), 2231.68, 3);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('alexandrya', 'space6', 'Rusia',
-        'Jugador', TO_DATE('19-10-1996', 'DD-MM-YYYY'), 2200.00, 3);
-
+VALUES ('christene', 'shadowking320', 'Australia',
+        'Jugador', TO_DATE('29-12-1999', 'DD-MM-YYYY'), 2122.92, 3);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('arkin', 'zzDaniikzz', 'Alemania',
-        'Jugador', TO_DATE('14-06-2000', 'DD-MM-YYYY'), 2300.00, 3);
-
+VALUES ('levita', 'EnderHypeZz', 'Argentina',
+        'Jugador', TO_DATE('20-10-1997', 'DD-MM-YYYY'), 2157.1, 3);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('mitzie', 'LordJalapeno', 'Canadá',
-        'Jugador', TO_DATE('21-09-1997', 'DD-MM-YYYY'), 2100.00, 3);
-
+VALUES ('jaclin', 'cdogg1999', 'China',
+        'Jugador', TO_DATE('13-11-1992', 'DD-MM-YYYY'), 1699.77, 3);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('kjell', 'YTRaZeR_TOP', 'Australia',
-        'Jugador', TO_DATE('31-12-1993', 'DD-MM-YYYY'), 2500.00, 3);
-
+VALUES ('velicia', 'helikid313', 'Japón',
+        'Jugador', TO_DATE('29-06-2002', 'DD-MM-YYYY'), 2153.88, 3);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('leianna', 'MikeTheMonkey7', 'Brasil',
-        'Jugador', TO_DATE('24-11-2001', 'DD-MM-YYYY'), 2000.00, 3);
+VALUES ('destin', 'haloc14', 'Argentina',
+        'Jugador', TO_DATE('08-11-1994', 'DD-MM-YYYY'), 1686.17, 3);
 
 /* Equipo 4 */
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('markelle', 'dan_J1', 'Rusia',
-        'Lider', TO_DATE('20-05-1997', 'DD-MM-YYYY'), 2500.00, 4);
-
+VALUES ('chianne', 'Kiwax_', 'India',
+        'Lider', TO_DATE('03-01-2006', 'DD-MM-YYYY'), 2140.63, 4);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('donetta', 'xSkeletonQueenx', 'México',
-        'Jugador', TO_DATE('16-01-1995', 'DD-MM-YYYY'), 1900.00, 4);
-
+VALUES ('palyn', 'SillyDillyPickle', 'Reino Unido',
+        'Jugador', TO_DATE('13-05-2002', 'DD-MM-YYYY'), 1719.04, 4);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('zania', 'kuba1388', 'Reino Unido',
-        'Jugador', TO_DATE('19-06-1996', 'DD-MM-YYYY'), 2400.00, 4);
-
+VALUES ('jayonna', 'Zouxq', 'Estados Unidos',
+        'Jugador', TO_DATE('08-05-1997', 'DD-MM-YYYY'), 1989.34, 4);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('jake', 'Dududux566', 'México',
-        'Jugador', TO_DATE('09-07-2005', 'DD-MM-YYYY'), 1500.00, 4);
-
+VALUES ('nayomi', 'QRGAMER10', 'Japón',
+        'Jugador', TO_DATE('21-06-1989', 'DD-MM-YYYY'), 1587.84, 4);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('kissa', 'Mr_SmileAlot', 'México',
-        'Jugador', TO_DATE('30-11-1998', 'DD-MM-YYYY'), 2300.00, 4);
-
+VALUES ('annalucia', 'Fanji24', 'India',
+        'Jugador', TO_DATE('10-03-1995', 'DD-MM-YYYY'), 1925.33, 4);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('natosha', 'TY_tomyom', 'Rusia',
-        'Jugador', TO_DATE('09-05-1990', 'DD-MM-YYYY'), 2000.00, 4);
+VALUES ('mykell', 'JayySea', 'Italia',
+        'Jugador', TO_DATE('27-07-1992', 'DD-MM-YYYY'), 1997.93, 4);
 
 /* Equipo 5 */
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('sajid', 'Attack_On_Panda', 'Canadá',
-        'Lider', TO_DATE('30-03-2005', 'DD-MM-YYYY'), 2500.00, 5);
-
+VALUES ('kortny', 'CommandoPee', 'Italia',
+        'Lider', TO_DATE('05-05-2004', 'DD-MM-YYYY'), 1924.72, 5);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('monay', 'snilletorres', 'Australia',
-        'Jugador', TO_DATE('23-07-1990', 'DD-MM-YYYY'), 2300.00, 5);
-
+VALUES ('yovanny', 'Apatheticpikachu', 'Italia',
+        'Jugador', TO_DATE('20-06-1991', 'DD-MM-YYYY'), 1873.65, 5);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('kenia', 'Ashtah_', 'Alemania',
-        'Jugador', TO_DATE('12-11-2005', 'DD-MM-YYYY'), 2200.00, 5);
-
+VALUES ('arshad', 'EpikJoker', 'México',
+        'Jugador', TO_DATE('27-11-2002', 'DD-MM-YYYY'), 1922.7, 5);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('kahmya', 'xXjimbobmanXx', 'Brasil',
-        'Jugador', TO_DATE('22-01-2002', 'DD-MM-YYYY'), 2100.00, 5);
-
+VALUES ('jenay', 'Matt6288', 'Alemania',
+        'Jugador', TO_DATE('12-11-1997', 'DD-MM-YYYY'), 2399.98, 5);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('denitra', 'zena9', 'Corea del Sur',
-        'Jugador', TO_DATE('15-07-1994', 'DD-MM-YYYY'), 2247.45, 5);
-
+VALUES ('daziyah', 'TheOnlyBae', 'Estados Unidos',
+        'Jugador', TO_DATE('16-04-2000', 'DD-MM-YYYY'), 2479.54, 5);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('keirah', 'Foliun', 'Argentina',
-        'Jugador', TO_DATE('22-04-1990', 'DD-MM-YYYY'), 2000.00, 5);
-
+VALUES ('antonina', 'FyrePowrHD', 'China',
+        'Jugador', TO_DATE('07-06-2000', 'DD-MM-YYYY'), 1521.1, 5);
 
 /* Equipo 6 */
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('matalin', 'I_AteTheDonut125', 'China',
-        'Lider', TO_DATE('06-03-2003', 'DD-MM-YYYY'), 2500.00, 6);
-
+VALUES ('coady', 'Sorogon_', 'Estados Unidos',
+        'Lider', TO_DATE('17-12-2003', 'DD-MM-YYYY'), 1514.29, 6);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('jalayna', 'Xoky', 'India',
-        'Jugador', TO_DATE('18-09-1991', 'DD-MM-YYYY'), 2200.00, 6);
-
+VALUES ('dunia', 'DanielStatzz', 'México',
+        'Jugador', TO_DATE('22-11-1999', 'DD-MM-YYYY'), 2071.82, 6);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('gaila', 'Ober_Zombie23', 'Rusia',
-        'Jugador', TO_DATE('20-10-2004', 'DD-MM-YYYY'), 2400.00, 6);
-
+VALUES ('levante', 'KillinSpreeFull', 'Canadá',
+        'Jugador', TO_DATE('23-01-1992', 'DD-MM-YYYY'), 2378.88, 6);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('srah', 'Dagio20016', 'India',
-        'Jugador', TO_DATE('04-07-2000', 'DD-MM-YYYY'), 2100.00, 6);
-
+VALUES ('tyquez', 'CupcakeMixer', 'Brasil',
+        'Jugador', TO_DATE('27-06-2005', 'DD-MM-YYYY'), 2157.53, 6);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('creedence', 'SortaCurious', 'Rusia',
-        'Jugador', TO_DATE('08-01-2005', 'DD-MM-YYYY'), 2300.00, 6);
-
+VALUES ('faisal', 'TaylorIsTheQueen', 'Reino Unido',
+        'Jugador', TO_DATE('19-07-1995', 'DD-MM-YYYY'), 2290.02, 6);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('anyea', 'blazej2610', 'Argentina',
-        'Jugador', TO_DATE('11-11-2005', 'DD-MM-YYYY'), 2067.50, 6);
-
+VALUES ('mareli', 'mrswapers', 'Japón',
+        'Jugador', TO_DATE('21-12-2001', 'DD-MM-YYYY'), 1987.97, 6);
 
 /* Equipo 7 */
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('orianna', 'MustafaGaming_YT', 'Australia',
-        'Lider', TO_DATE('21-11-1996', 'DD-MM-YYYY'), 2500.00, 7);
-
+VALUES ('kailee', 'sharx_and_scones', 'Estados Unidos',
+        'Lider', TO_DATE('31-05-1998', 'DD-MM-YYYY'), 2024.84, 7);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('lakeasha', 'Katymaty', 'Rusia',
-        'Jugador', TO_DATE('05-08-1999', 'DD-MM-YYYY'), 1750.00, 7);
-
+VALUES ('vivyana', 'Alli1003g', 'India',
+        'Jugador', TO_DATE('26-07-2003', 'DD-MM-YYYY'), 2341.25, 7);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('amanuel', 'itsDarkii', 'Francia',
-        'Jugador', TO_DATE('10-02-1999', 'DD-MM-YYYY'), 2400.00, 7);
-
+VALUES ('braxson', 'Boxtel', 'Italia',
+        'Jugador', TO_DATE('08-03-1994', 'DD-MM-YYYY'), 2202.53, 7);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('yamin', 'Dante19', 'Italia',
-        'Jugador', TO_DATE('11-01-1999', 'DD-MM-YYYY'), 1900.00, 7);
-
+VALUES ('aibhlinn', 'XxEvilMonkeyxX', 'Argentina',
+        'Jugador', TO_DATE('29-11-1989', 'DD-MM-YYYY'), 2495.75, 7);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('lamar', 'OrlNi', 'Corea del Sur',
-        'Jugador', TO_DATE('05-03-1997', 'DD-MM-YYYY'), 2200.00, 7);
-
+VALUES ('ilah', 'camunlucas', 'Reino Unido',
+        'Jugador', TO_DATE('15-02-1994', 'DD-MM-YYYY'), 2235.92, 7);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('briya', 'Hiiri132', 'Brasil',
-        'Jugador', TO_DATE('11-08-1991', 'DD-MM-YYYY'), 2000.00, 7);
+VALUES ('jaselynn', 'JarneMisionX1', 'Rusia',
+        'Jugador', TO_DATE('07-02-1998', 'DD-MM-YYYY'), 2174.41, 7);
 
 /* Equipo 8 */
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('kalasia', 'CheetaMann', 'Argentina',
-        'Lider', TO_DATE('16-08-1998', 'DD-MM-YYYY'), 2500.00, 8);
-
+VALUES ('jurgen', 'Arduinos', 'Alemania',
+        'Lider', TO_DATE('18-05-2002', 'DD-MM-YYYY'), 1775.07, 8);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('aimar', 'Bauch77', 'Francia',
-        'Jugador', TO_DATE('15-11-1989', 'DD-MM-YYYY'), 1800.00, 8);
-
+VALUES ('dorinda', 'KingBraden04', 'Australia',
+        'Jugador', TO_DATE('20-08-2000', 'DD-MM-YYYY'), 1853.66, 8);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('nikolaus', '_PepeTheFrog_', 'Argentina',
-        'Jugador', TO_DATE('24-01-2001', 'DD-MM-YYYY'), 2400.00, 8);
-
+VALUES ('gidget', 'NotYourAvgCactus', 'Australia',
+        'Jugador', TO_DATE('31-01-1990', 'DD-MM-YYYY'), 2057.78, 8);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('saathvik', 'ratanna', 'Brasil',
-        'Jugador', TO_DATE('05-02-1993', 'DD-MM-YYYY'), 2200.00, 8);
-
+VALUES ('janyia', 'Lemonaise', 'Alemania',
+        'Jugador', TO_DATE('30-04-2002', 'DD-MM-YYYY'), 2039.96, 8);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('dennisha', 'MaraboutMC', 'Canadá',
-        'Jugador', TO_DATE('22-01-1993', 'DD-MM-YYYY'), 2000.00, 8);
-
+VALUES ('cyril', 'AshtonMooseSon1', 'México',
+        'Jugador', TO_DATE('04-01-2005', 'DD-MM-YYYY'), 2201.57, 8);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('saryna', 'Eibicofa', 'India',
-        'Jugador', TO_DATE('21-12-1998', 'DD-MM-YYYY'), 1900.00, 8);
-
+VALUES ('delaynie', 'megnic12', 'Alemania',
+        'Jugador', TO_DATE('07-04-1999', 'DD-MM-YYYY'), 2146.73, 8);
 
 /* Equipo 9 */
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('kolston', 'james1114', 'Alemania',
-        'Lider', TO_DATE('02-06-1989', 'DD-MM-YYYY'), 2500.00, 9);
-
+VALUES ('jasani', 'ktstew', 'Estados Unidos',
+        'Lider', TO_DATE('25-07-1992', 'DD-MM-YYYY'), 2055.94, 9);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('analaya', 'Liftedbedos_pvp', 'México',
-        'Jugador', TO_DATE('19-12-1990', 'DD-MM-YYYY'), 1800.00, 9);
-
+VALUES ('briggitte', 'YUDORA', 'Corea del Sur',
+        'Jugador', TO_DATE('22-01-1999', 'DD-MM-YYYY'), 1888.4, 9);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('decklan', 'RedNinjaCat99', 'Argentina',
-        'Jugador', TO_DATE('19-09-2000', 'DD-MM-YYYY'), 2000.00, 9);
-
+VALUES ('nanami', 'RedstoneGenius45', 'México',
+        'Jugador', TO_DATE('04-02-2004', 'DD-MM-YYYY'), 2200.35, 9);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('walida', 'Kalacokitty458', 'España',
-        'Jugador', TO_DATE('12-05-1999', 'DD-MM-YYYY'), 2200.00, 9);
-
+VALUES ('athena', 'jalden99', 'Brasil',
+        'Jugador', TO_DATE('05-09-2004', 'DD-MM-YYYY'), 1745.34, 9);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('allana', 'luckysneha', 'India',
-        'Jugador', TO_DATE('24-08-2005', 'DD-MM-YYYY'), 1900.00, 9);
-
+VALUES ('arreon', 'xX_PotatoWolf_Xx', 'Australia',
+        'Jugador', TO_DATE('22-04-1994', 'DD-MM-YYYY'), 1953.4, 9);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('devaney', 'ollie_pro', 'México',
-        'Jugador', TO_DATE('04-11-1991', 'DD-MM-YYYY'), 2400.00, 9);
-
+VALUES ('anessa', 'PyreYT', 'India',
+        'Jugador', TO_DATE('26-04-2001', 'DD-MM-YYYY'), 1598.96, 9);
 
 /* Equipo 10 */
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('rashee', 'Moneymaker200', 'México',
-        'Lider', TO_DATE('19-03-1990', 'DD-MM-YYYY'), 2200.00, 10);
-
+VALUES ('solanch', 'Minpyttekat', 'Japón',
+        'Lider', TO_DATE('30-06-2005', 'DD-MM-YYYY'), 2147.33, 10);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('joani', 'Excaliar', 'India',
-        'Jugador', TO_DATE('17-08-1994', 'DD-MM-YYYY'), 1900.00, 10);
-
+VALUES ('nylia', 'Flo2009', 'Argentina',
+        'Jugador', TO_DATE('06-07-1999', 'DD-MM-YYYY'), 2494.76, 10);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('ylonda', 'lnnocent', 'Italia',
-        'Jugador', TO_DATE('01-12-2005', 'DD-MM-YYYY'), 2500.00, 10);
-
+VALUES ('marty', 'makarg7', 'Canadá',
+        'Jugador', TO_DATE('11-05-1992', 'DD-MM-YYYY'), 1563.68, 10);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('shardasia', 'Kenmahut', 'Canadá',
-        'Jugador', TO_DATE('08-01-1998', 'DD-MM-YYYY'), 2300.00, 10);
-
+VALUES ('meliya', 'xMazHD1997', 'China',
+        'Jugador', TO_DATE('11-10-1991', 'DD-MM-YYYY'), 1640.23, 10);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('maili', 'Betty_Minecraft', 'Rusia',
-        'Jugador', TO_DATE('13-05-1992', 'DD-MM-YYYY'), 2000.00, 10);
-
+VALUES ('shakura', 'Penguin_head', 'India',
+        'Jugador', TO_DATE('04-06-1992', 'DD-MM-YYYY'), 1541.1, 10);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('adanna', 'enzov5', 'México',
-        'Jugador', TO_DATE('01-04-1990', 'DD-MM-YYYY'), 2400.00, 10);
+VALUES ('sanjaya', 'DTZ_David', 'India',
+        'Jugador', TO_DATE('11-05-2002', 'DD-MM-YYYY'), 1726.51, 10);
 
 /* Equipo 11 */
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('monita', 'Detonadordima', 'China',
-        'Lider', TO_DATE('27-09-1999', 'DD-MM-YYYY'), 2300.00, 11);
-
+VALUES ('twan', 'Paje_PVP', 'Japón',
+        'Lider', TO_DATE('03-10-2003', 'DD-MM-YYYY'), 2215.35, 11);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('leopoldo', 'ET_07_06_05', 'México',
-        'Jugador', TO_DATE('21-10-2005', 'DD-MM-YYYY'), 1800.00, 11);
-
+VALUES ('davian', 'SHOCKINGSHEEP', 'Japón',
+        'Jugador', TO_DATE('05-08-1996', 'DD-MM-YYYY'), 1771.39, 11);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('sanuel', 'Ixiepixigirl', 'Brasil',
-        'Jugador', TO_DATE('30-05-2005', 'DD-MM-YYYY'), 2200.00, 11);
-
+VALUES ('tresia', 'SE16N', 'Alemania',
+        'Jugador', TO_DATE('24-11-1994', 'DD-MM-YYYY'), 2267.25, 11);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('rahn', 'Duda5', 'Australia',
-        'Jugador', TO_DATE('15-09-2005', 'DD-MM-YYYY'), 1900.00, 11);
-
+VALUES ('ameera', 'RobBarg', 'Australia',
+        'Jugador', TO_DATE('25-06-1998', 'DD-MM-YYYY'), 2400.31, 11);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('matalyn', 'AddictiveGamez', 'México',
-        'Jugador', TO_DATE('28-07-2001', 'DD-MM-YYYY'), 2400.00, 11);
-
+VALUES ('ameris', 'ZeadGod', 'Canadá',
+        'Jugador', TO_DATE('03-06-2001', 'DD-MM-YYYY'), 1523.07, 11);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('lamarkus', 'DDplaysVG', 'Argentina',
-        'Jugador', TO_DATE('15-05-2002', 'DD-MM-YYYY'), 2000.00, 11);
-
+VALUES ('taronda', 'CharSnake', 'Argentina',
+        'Jugador', TO_DATE('07-01-1993', 'DD-MM-YYYY'), 1929.2, 11);
 
 /* Equipo 12 */
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('kenneith', 'kjeeks', 'Alemania',
-        'Lider', TO_DATE('17-11-1990', 'DD-MM-YYYY'), 2000.00, 12);
-
+VALUES ('gaddiel', 'rezakaJDM', 'Corea del Sur',
+        'Lider', TO_DATE('05-12-1994', 'DD-MM-YYYY'), 2236.92, 12);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('jomarie', 'pfautschkids', 'Alemania',
-        'Jugador', TO_DATE('02-12-1999', 'DD-MM-YYYY'), 2400.00, 12);
-
+VALUES ('maika', 'AdriaNPlays46', 'Corea del Sur',
+        'Jugador', TO_DATE('09-05-2002', 'DD-MM-YYYY'), 2165.71, 12);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('quadre', 'xFreshlemonx', 'Japón',
-        'Jugador', TO_DATE('27-02-2003', 'DD-MM-YYYY'), 1900.00, 12);
-
+VALUES ('caspian', 'BasicPvP', 'Corea del Sur',
+        'Jugador', TO_DATE('15-04-1994', 'DD-MM-YYYY'), 1888.16, 12);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('mizuki', 'ThatTNTCrafter', 'Reino Unido',
-        'Jugador', TO_DATE('13-09-2004', 'DD-MM-YYYY'), 2100.00, 12);
-
+VALUES ('neta', 'RedRevengers', 'Reino Unido',
+        'Jugador', TO_DATE('23-01-1991', 'DD-MM-YYYY'), 1761.0, 12);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('sharonda', 'iheartfishes', 'Brasil',
-        'Jugador', TO_DATE('06-05-1992', 'DD-MM-YYYY'), 2300.00, 12);
-
+VALUES ('tanzie', 'sharksfood', 'Rusia',
+        'Jugador', TO_DATE('15-10-1990', 'DD-MM-YYYY'), 1559.56, 12);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('avaiah', 'Falcio98', 'Argentina',
-        'Jugador', TO_DATE('28-05-1989', 'DD-MM-YYYY'), 2200.00, 12);
-
+VALUES ('dolan', 'Budilein', 'Japón',
+        'Jugador', TO_DATE('22-06-1994', 'DD-MM-YYYY'), 2067.7, 12);
 
 /* Equipo 13 */
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('damyra', 'Taco_Ninja1', 'Brasil',
-        'Lider', TO_DATE('31-12-2002', 'DD-MM-YYYY'), 2300.00, 13);
-
+VALUES ('gill', 'FatToddler', 'México',
+        'Lider', TO_DATE('15-09-2000', 'DD-MM-YYYY'), 2352.97, 13);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('caleigha', 'TNT_ARMY2005', 'Australia',
-        'Jugador', TO_DATE('06-09-2001', 'DD-MM-YYYY'), 1900.00, 13);
-
+VALUES ('jilda', 'KittKatt0', 'Corea del Sur',
+        'Jugador', TO_DATE('26-11-1994', 'DD-MM-YYYY'), 1833.86, 13);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('malkia', 'Sourapplesauce', 'Rusia',
-        'Jugador', TO_DATE('12-12-1994', 'DD-MM-YYYY'), 1600.00, 13);
-
+VALUES ('marlana', 'CombatCutie', 'Brasil',
+        'Jugador', TO_DATE('29-04-1991', 'DD-MM-YYYY'), 2163.97, 13);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('kimbella', 'paige1005', 'Reino Unido',
-        'Jugador', TO_DATE('18-01-2004', 'DD-MM-YYYY'), 2200.00, 13);
-
+VALUES ('wilfrido', 'IanDW1', 'Reino Unido',
+        'Jugador', TO_DATE('21-08-2000', 'DD-MM-YYYY'), 1779.39, 13);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('delaine', 'CrazyLanGamers', 'Argentina',
-        'Jugador', TO_DATE('23-01-2004', 'DD-MM-YYYY'), 2000.00, 13);
-
+VALUES ('dyonna', 'Blique', 'Rusia',
+        'Jugador', TO_DATE('11-08-2001', 'DD-MM-YYYY'), 2090.9, 13);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('tytan', 'Mleno614', 'Canadá',
-        'Jugador', TO_DATE('05-10-2005', 'DD-MM-YYYY'), 1800.00, 13);
+VALUES ('hoda', 'Hippos', 'China',
+        'Jugador', TO_DATE('24-06-2002', 'DD-MM-YYYY'), 1639.79, 13);
 
 /* Equipo 14 */
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('rashanna', 'CelineV', 'Reino Unido',
-        'Lider', TO_DATE('15-08-1989', 'DD-MM-YYYY'), 1975.46, 14);
+VALUES ('jadynn', 'kirito7416', 'Australia',
+        'Lider', TO_DATE('24-08-1995', 'DD-MM-YYYY'), 2313.01, 14);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('lavar', '_Pimousse_', 'España',
-        'Jugador', TO_DATE('13-01-2005', 'DD-MM-YYYY'), 1755.77, 14);
+VALUES ('irfan', 'PieOrPi', 'Alemania',
+        'Jugador', TO_DATE('23-04-1993', 'DD-MM-YYYY'), 2449.83, 14);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('maygan', 'xImTechy', 'Australia',
-        'Jugador', TO_DATE('28-08-1992', 'DD-MM-YYYY'), 1678.54, 14);
+VALUES ('cheralyn', 'CutieAna', 'Corea del Sur',
+        'Jugador', TO_DATE('23-07-2000', 'DD-MM-YYYY'), 1866.12, 14);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('rory', 'LosBonscos', 'Reino Unido',
-        'Jugador', TO_DATE('26-12-1993', 'DD-MM-YYYY'), 1798.72, 14);
+VALUES ('aliviya', 'MarbleCandy', 'Reino Unido',
+        'Jugador', TO_DATE('05-08-1993', 'DD-MM-YYYY'), 1651.92, 14);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('jayce', 'roey156', 'Brasil',
-        'Jugador', TO_DATE('08-04-2002', 'DD-MM-YYYY'), 2307.34, 14);
+VALUES ('jenisis', 'Agnios', 'Australia',
+        'Jugador', TO_DATE('24-03-2000', 'DD-MM-YYYY'), 1802.62, 14);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('josemiguel', 'Danilokzh', 'India',
-        'Jugador', TO_DATE('26-06-2004', 'DD-MM-YYYY'), 2239.39, 14);
+VALUES ('leara', 'IKnowImAWolf', 'Japón',
+        'Jugador', TO_DATE('16-02-1995', 'DD-MM-YYYY'), 2064.06, 14);
 
 /* Equipo 15 */
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('tailynn', 'MrDominoGrm', 'México',
-        'Lider', TO_DATE('29-01-2003', 'DD-MM-YYYY'), 1800, 15);
+VALUES ('lanisha', 'SaintClairee', 'Canadá',
+        'Lider', TO_DATE('26-06-1999', 'DD-MM-YYYY'), 2257.82, 15);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('synia', 'MusicNinja101', 'Estados Unidos',
-        'Jugador', TO_DATE('23-10-1994', 'DD-MM-YYYY'), 2200, 15);
+VALUES ('dorathy', 'Brrokk', 'Rusia',
+        'Jugador', TO_DATE('24-12-1997', 'DD-MM-YYYY'), 2323.71, 15);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('demonica', 'LilOrangePlayer', 'Rusia',
-        'Jugador', TO_DATE('24-07-2003', 'DD-MM-YYYY'), 1750, 15);
+VALUES ('cortney', 'ThisHorseGirl', 'Australia',
+        'Jugador', TO_DATE('11-12-1997', 'DD-MM-YYYY'), 1777.8, 15);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('lillian', 'ryanfcu_030', 'China',
-        'Jugador', TO_DATE('19-04-1999', 'DD-MM-YYYY'), 2100, 15);
+VALUES ('kirklan', 'chris129', 'Argentina',
+        'Jugador', TO_DATE('09-08-2001', 'DD-MM-YYYY'), 1527.16, 15);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('johsua', 'GRAMSTAD', 'Estados Unidos',
-        'Jugador', TO_DATE('28-08-1990', 'DD-MM-YYYY'), 2400, 15);
+VALUES ('teresea', 'mustashman7878', 'Rusia',
+        'Jugador', TO_DATE('18-10-1993', 'DD-MM-YYYY'), 1535.77, 15);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('lucretia', 'InfamousXII', 'España',
-        'Jugador', TO_DATE('10-02-1996', 'DD-MM-YYYY'), 2000, 15);
+VALUES ('shelsy', 'Gev_Blackings', 'China',
+        'Jugador', TO_DATE('20-10-1990', 'DD-MM-YYYY'), 2127.46, 15);
 
 /* Equipo 16 */
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('aldair', 'lori1103', 'China',
-        'Lider', TO_DATE('21-03-1995', 'DD-MM-YYYY'), 1900, 16);
+VALUES ('paullette', 'deantaylor2015', 'Estados Unidos',
+        'Lider', TO_DATE('01-12-1994', 'DD-MM-YYYY'), 2026.82, 16);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('tramain', 'o_oBen', 'Corea del Sur',
-        'Jugador', TO_DATE('18-08-1996', 'DD-MM-YYYY'), 1600, 16);
+VALUES ('levar', 'OMGAtomicPenguin', 'Reino Unido',
+        'Jugador', TO_DATE('02-05-2006', 'DD-MM-YYYY'), 1988.44, 16);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('avea', 'EpicMeh', 'España',
-        'Jugador', TO_DATE('25-06-2002', 'DD-MM-YYYY'), 2300, 16);
+VALUES ('karington', 'Twistxz', 'Alemania',
+        'Jugador', TO_DATE('19-03-2002', 'DD-MM-YYYY'), 1807.38, 16);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('ashantee', 'RedKiPlaysMC', 'Italia',
-        'Jugador', TO_DATE('16-05-2005', 'DD-MM-YYYY'), 2100, 16);
+VALUES ('mamadou', 'yummy_suqirtz', 'India',
+        'Jugador', TO_DATE('25-11-1996', 'DD-MM-YYYY'), 1563.64, 16);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('nicolle', 'D0BBIEZZzzX', 'Argentina',
-        'Jugador', TO_DATE('27-11-1991', 'DD-MM-YYYY'), 1750, 16);
+VALUES ('vivaan', 'XxLunaGurlxX', 'México',
+        'Jugador', TO_DATE('26-10-1996', 'DD-MM-YYYY'), 1863.18, 16);
 INSERT INTO JUGADORES
 (NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('brylyn', 'Darth_Prox', 'Australia',
-        'Jugador', TO_DATE('19-10-1993', 'DD-MM-YYYY'), 2000, 16);
+VALUES ('towanda', 'FunStyle08', 'Estados Unidos',
+        'Jugador', TO_DATE('13-11-1990', 'DD-MM-YYYY'), 1803.19, 16);
 
-/* Equipo 17 */
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('larson', 'MrSnoopy_Playz', 'Francia',
-        'Lider', TO_DATE('02-05-1996', 'DD-MM-YYYY'), 1750, 17);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('karyme', 'daPoseidonGuy', 'China',
-        'Jugador', TO_DATE('28-11-1994', 'DD-MM-YYYY'), 2100, 17);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('kiandre', 'DexGamer_', 'Estados Unidos',
-        'Jugador', TO_DATE('23-07-1989', 'DD-MM-YYYY'), 1900, 17);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('clarita', 'Dylon5', 'Corea del Sur',
-        'Jugador', TO_DATE('14-12-2005', 'DD-MM-YYYY'), 2400, 17);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('shivon', 'Kimster', 'Japón',
-        'Jugador', TO_DATE('19-03-2000', 'DD-MM-YYYY'), 2000, 17);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('amalia', 'DerpWaffle33', 'Italia',
-        'Jugador', TO_DATE('04-09-1990', 'DD-MM-YYYY'), 2200, 17);
-
-/* Equipo 18 */
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('michaelangelo', 'timbmx1', 'Alemania',
-        'Lider', TO_DATE('13-07-1998', 'DD-MM-YYYY'), 1800, 18);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('mikko', 'ben13_', 'Rusia',
-        'Jugador', TO_DATE('13-01-1998', 'DD-MM-YYYY'), 2100, 18);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('natalya', 'WolfyBlossoms', 'Rusia',
-        'Jugador', TO_DATE('12-03-2000', 'DD-MM-YYYY'), 2400, 18);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('garnett', 'XxDARK__MATTERxX', 'México',
-        'Jugador', TO_DATE('15-07-2005', 'DD-MM-YYYY'), 2000, 18);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('tenita', 'KennyS_OP', 'Alemania',
-        'Jugador', TO_DATE('30-08-2003', 'DD-MM-YYYY'), 2200, 18);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('kiernan', 'Paigey123456', 'Francia',
-        'Jugador', TO_DATE('03-08-2004', 'DD-MM-YYYY'), 1900, 18);
-
-/* Equipo 19 */
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('dawuan', 'le0cr', 'Japón',
-        'Lider', TO_DATE('27-06-1994', 'DD-MM-YYYY'), 1750, 19);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('emiline', 'MR_koeki01', 'Corea del Sur',
-        'Jugador', TO_DATE('24-04-2000', 'DD-MM-YYYY'), 2100, 19);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('javontae', 'Superpicker', 'Italia',
-        'Jugador', TO_DATE('22-02-2003', 'DD-MM-YYYY'), 2300, 19);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('jahmani', 'mr224488', 'Australia',
-        'Jugador', TO_DATE('11-07-1995', 'DD-MM-YYYY'), 2000, 19);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('lorie', 'neilu06', 'Brasil',
-        'Jugador', TO_DATE('06-12-2003', 'DD-MM-YYYY'), 2200, 19);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('areeb', 'EsTheBest', 'Argentina',
-        'Jugador', TO_DATE('16-05-2005', 'DD-MM-YYYY'), 2400, 19);
-
-/* Equipo 20 */
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('esteven', 'SirSkullCandy07', 'Estados Unidos',
-        'Lider', TO_DATE('31-05-1989', 'DD-MM-YYYY'), 1800, 20);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('cyleigh', 'iskos', 'Australia',
-        'Jugador', TO_DATE('25-03-1997', 'DD-MM-YYYY'), 2100, 20);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('ayat', 'Vengeos', 'Francia',
-        'Jugador', TO_DATE('21-12-2000', 'DD-MM-YYYY'), 1900, 20);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('quintell', '3X0N', 'Alemania',
-        'Jugador', TO_DATE('10-09-2003', 'DD-MM-YYYY'), 2200, 20);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('charlesetta', 'ISuckedHitlerDry', 'Reino Unido',
-        'Jugador', TO_DATE('23-06-1992', 'DD-MM-YYYY'), 2000, 20);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('tyliyah', 'Kripps', 'Italia',
-        'Jugador', TO_DATE('19-06-1994', 'DD-MM-YYYY'), 2300, 20);
-
-
-
-/* Equipo 21 */
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('huxton', 'emre2014', 'Brasil',
-        'Lider', TO_DATE('23-07-2005', 'DD-MM-YYYY'), 2046.82, 21);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('avantae', 'DonutEatMeh', 'Alemania',
-        'Jugador', TO_DATE('30-03-1999', 'DD-MM-YYYY'), 1814.52, 21);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('rosisela', 'PortalMaster123', 'Alemania',
-        'Jugador', TO_DATE('05-07-1989', 'DD-MM-YYYY'), 2084.22, 21);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('mellody', 'trici86', 'Francia',
-        'Jugador', TO_DATE('21-01-1990', 'DD-MM-YYYY'), 1962.92, 21);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('terrie', 'Yannick_2000_', 'Reino Unido',
-        'Jugador', TO_DATE('25-08-1994', 'DD-MM-YYYY'), 1719.11, 21);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('rasheed', 'Joethetroll1', 'Rusia',
-        'Jugador', TO_DATE('31-07-1991', 'DD-MM-YYYY'), 1932.46, 21);
-
-/* Equipo 22 */
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('chailyn', 'Nibble5TheBeast', 'Francia',
-        'Lider', TO_DATE('04-06-1989', 'DD-MM-YYYY'), 2229.79, 22);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('andrez', 'gigosaurus', 'China',
-        'Jugador', TO_DATE('06-07-2000', 'DD-MM-YYYY'), 2312.08, 22);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('cuauhtemoc', 'GFgongasGF', 'Alemania',
-        'Jugador', TO_DATE('23-03-1993', 'DD-MM-YYYY'), 1778.66, 22);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('iridessa', 'ajanek2', 'Corea del Sur',
-        'Jugador', TO_DATE('29-04-2000', 'DD-MM-YYYY'), 1613.18, 22);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('daphanie', 'wcameron578', 'Estados Unidos',
-        'Jugador', TO_DATE('29-06-1997', 'DD-MM-YYYY'), 1989.23, 22);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('gunther', 'FreakyPear5', 'Brasil',
-        'Jugador', TO_DATE('23-04-1999', 'DD-MM-YYYY'), 1751.94, 22);
-
-/* Equipo 23 */
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('shawnita', 'NUFEE515', 'China',
-        'Lider', TO_DATE('10-07-2001', 'DD-MM-YYYY'), 1985.51, 23);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('maguire', 'Amsomnia', 'Estados Unidos',
-        'Jugador', TO_DATE('06-03-1997', 'DD-MM-YYYY'), 1827.56, 23);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('nadira', 'Zap3r', 'India',
-        'Jugador', TO_DATE('13-09-2000', 'DD-MM-YYYY'), 1868.81, 23);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('ariel', 'Lylah_J', 'Reino Unido',
-        'Jugador', TO_DATE('09-10-2004', 'DD-MM-YYYY'), 2115.32, 23);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('meilani', 'DragonSlayer270', 'Rusia',
-        'Jugador', TO_DATE('13-12-2005', 'DD-MM-YYYY'), 2493.41, 23);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('miya', 'WarLord100', 'Australia',
-        'Jugador', TO_DATE('31-08-1998', 'DD-MM-YYYY'), 2355.92, 23);
-
-/* Equipo 24 */
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('kallin', 'OtherKill', 'Alemania',
-        'Lider', TO_DATE('18-01-2005', 'DD-MM-YYYY'), 1702.54, 24);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('jayvin', 'oliviepley', 'Reino Unido',
-        'Jugador', TO_DATE('03-03-2002', 'DD-MM-YYYY'), 1628.43, 24);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('halona', 'MaddieSlays', 'España',
-        'Jugador', TO_DATE('08-03-1996', 'DD-MM-YYYY'), 2114.36, 24);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('mekayla', 'TheDebTeam', 'Australia',
-        'Jugador', TO_DATE('12-08-1995', 'DD-MM-YYYY'), 2258.67, 24);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('henery', 'doggluver123', 'Estados Unidos',
-        'Jugador', TO_DATE('03-06-1998', 'DD-MM-YYYY'), 1792.39, 24);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('nyajah', 'avenger2002', 'Australia',
-        'Jugador', TO_DATE('19-11-1990', 'DD-MM-YYYY'), 1663.32, 24);
-
-/* Equipo 25 */
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('draven', 'simgar98', 'México',
-        'Lider', TO_DATE('13-03-2004', 'DD-MM-YYYY'), 1891.86, 25);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('kache', 'ThaSexyWizard', 'Rusia',
-        'Jugador', TO_DATE('24-10-1989', 'DD-MM-YYYY'), 2235.15, 25);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('fleur', 'NE_Revolution', 'Rusia',
-        'Jugador', TO_DATE('02-11-1998', 'DD-MM-YYYY'), 2020.02, 25);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('leeasia', 'tsboss12', 'India',
-        'Jugador', TO_DATE('23-03-2005', 'DD-MM-YYYY'), 2348.92, 25);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('dasja', 'CandaceJane', 'Brasil',
-        'Jugador', TO_DATE('24-04-2001', 'DD-MM-YYYY'), 2417.01, 25);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('alysa', 'Charlou8808', 'Estados Unidos',
-        'Jugador', TO_DATE('15-05-2003', 'DD-MM-YYYY'), 2025.69, 25);
-
-/* Equipo 26 */
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('diquan', 'ItsCheeseMC', 'Reino Unido',
-        'Lider', TO_DATE('13-06-1991', 'DD-MM-YYYY'), 1852.73, 26);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('siddhartha', 'Javy_', 'China',
-        'Jugador', TO_DATE('01-04-2000', 'DD-MM-YYYY'), 1743.09, 26);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('chanin', 'Devinovitch', 'Rusia',
-        'Jugador', TO_DATE('24-11-2001', 'DD-MM-YYYY'), 2166.22, 26);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('nazar', 'goldcheetha', 'Brasil',
-        'Jugador', TO_DATE('01-01-2003', 'DD-MM-YYYY'), 2112.34, 26);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('morena', 'Lillgrisen123', 'Francia',
-        'Jugador', TO_DATE('25-10-1997', 'DD-MM-YYYY'), 2328.65, 26);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('analea', 'beecool12', 'Italia',
-        'Jugador', TO_DATE('04-10-1995', 'DD-MM-YYYY'), 1601.84, 26);
-        
-/* Equipo 27 */
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('abbegayle', 'KitHCF', 'China',
-        'Lider', TO_DATE('10-11-1996', 'DD-MM-YYYY'), 2091.43, 27);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('kaia', 'PriXey', 'Reino Unido',
-        'Jugador', TO_DATE('09-07-1999', 'DD-MM-YYYY'), 1800.69, 27);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('siddiq', 'SnoepHond', 'Italia',
-        'Jugador', TO_DATE('11-12-1997', 'DD-MM-YYYY'), 2188.01, 27);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('bryella', 'mynameisdylanbro', 'Canadá',
-        'Jugador', TO_DATE('11-06-1990', 'DD-MM-YYYY'), 1883.73, 27);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('jace', 'Leocat41', 'Alemania',
-        'Jugador', TO_DATE('08-09-1992', 'DD-MM-YYYY'), 1999.52, 27);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('daran', 'Kg007', 'Reino Unido',
-        'Jugador', TO_DATE('28-10-2004', 'DD-MM-YYYY'), 2240.78, 27);
-
-/* Equipo 28 */
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('alyviah', 'lukygamescz', 'Canadá',
-        'Lider', TO_DATE('10-08-1999', 'DD-MM-YYYY'), 1901.32, 28);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('kaina', 'stawberrymilk', 'Estados Unidos',
-        'Jugador', TO_DATE('07-04-1995', 'DD-MM-YYYY'), 2215.37, 28);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('sofya', 'robinope', 'Francia',
-        'Jugador', TO_DATE('24-02-1994', 'DD-MM-YYYY'), 1974.85, 28);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('breckin', 'HOBO_TACO_MAN_45', 'Alemania',
-        'Jugador', TO_DATE('25-11-2000', 'DD-MM-YYYY'), 1867.54, 28);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('dhruva', 'itay0105', 'Corea del Sur',
-        'Jugador', TO_DATE('04-07-1991', 'DD-MM-YYYY'), 1643.97, 28);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('tashanna', 'Asunna', 'Canadá',
-        'Jugador', TO_DATE('07-06-1993', 'DD-MM-YYYY'), 1560.12, 28);
-
-/* Equipo 29 */
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('suellen', 'DorShay2007', 'Australia',
-        'Lider', TO_DATE('16-10-1995', 'DD-MM-YYYY'), 2201.13, 29);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('conor', 'spiroufoo', 'España',
-        'Jugador', TO_DATE('03-06-2005', 'DD-MM-YYYY'), 1940.57, 29);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('traylon', 'Blazatron', 'Corea del Sur',
-        'Jugador', TO_DATE('12-08-2005', 'DD-MM-YYYY'),2265.88, 29);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('sheritha', 'Liquid_Bayron', 'España',
-        'Jugador', TO_DATE('05-06-1990', 'DD-MM-YYYY'), 2299.73, 29);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('jolean', 'mcgno', 'Estados Unidos',
-        'Jugador', TO_DATE('16-01-1994', 'DD-MM-YYYY'), 1789.62, 29);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('patina', 'jojomacandrew', 'Francia',
-        'Jugador', TO_DATE('21-07-1993', 'DD-MM-YYYY'), 2385.47, 29);
-
-/* Equipo 30 */
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('caliegh', 'Lovelywishes', 'Estados Unidos',
-        'Lider', TO_DATE('09-03-2005', 'DD-MM-YYYY'), 1524.15, 30);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('calan', 'SkyKiller07', 'China',
-        'Jugador', TO_DATE('06-02-2000', 'DD-MM-YYYY'), 2439.17, 30);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('tywanda', 'Seba23176', 'España',
-        'Jugador', TO_DATE('09-12-2001', 'DD-MM-YYYY'), 1599.88, 30);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('ikram', 'opie267', 'Argentina',
-        'Jugador', TO_DATE('25-10-1992', 'DD-MM-YYYY'), 1840.29, 30);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('janeli', 'BUTTER_MAN_106', 'Alemania',
-        'Jugador', TO_DATE('22-02-1994', 'DD-MM-YYYY'), 1975.99, 30);
-INSERT INTO JUGADORES
-(NOMBRE, NICKNAME, NACIONALIDAD, ROL, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES ('ciara', 'commandertomas', 'Corea del Sur',
-        'Jugador', TO_DATE('01-06-1996', 'DD-MM-YYYY'), 2137.77, 30);
 
 /* Insert de staff */
 
 /* Staff equipo 1 */
 INSERT INTO STAFFS
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'E', 'haddon',
-TO_DATE('28-08-1994', 'DD-MM-YYYY'), 3888.47, 1);
+VALUES (DEFAULT, 'E', 'bellina',
+TO_DATE('15-03-1999', 'DD-MM-YYYY'), 2384.39, 1);
+INSERT INTO STAFFS
+(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
+VALUES (DEFAULT, 'A', 'michael',
+TO_DATE('25-12-1985', 'DD-MM-YYYY'), 2553.14, 1);
 
 /* Staff equipo 2 */
 INSERT INTO STAFFS
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'E', 'nechelle',
-TO_DATE('16-05-1967', 'DD-MM-YYYY'), 3790.05, 2);
+VALUES (DEFAULT, 'E', 'phillippa',
+TO_DATE('03-11-1980', 'DD-MM-YYYY'), 4355.37, 2);
 INSERT INTO STAFFS
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'A', 'jane',
-TO_DATE('21-10-1965', 'DD-MM-YYYY'), 1105.1, 2);
+VALUES (DEFAULT, 'A', 'juliahna',
+TO_DATE('06-09-1969', 'DD-MM-YYYY'), 1098.32, 2);
 
 /* Staff equipo 3 */
 INSERT INTO STAFFS
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'E', 'teng',
-TO_DATE('17-10-1977', 'DD-MM-YYYY'), 2474.92, 3);
+VALUES (DEFAULT, 'E', 'brenda',
+TO_DATE('09-09-1994', 'DD-MM-YYYY'), 2363.13, 3);
 INSERT INTO STAFFS
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'A', 'cecelia',
-TO_DATE('30-01-1967', 'DD-MM-YYYY'), 2552.96, 3);
+VALUES (DEFAULT, 'A', 'keshauna',
+TO_DATE('18-02-1993', 'DD-MM-YYYY'), 2283.32, 3);
 
 /* Staff equipo 4 */
 INSERT INTO STAFFS
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'E', 'yohan',
-TO_DATE('31-12-1985', 'DD-MM-YYYY'), 2324.19, 4);
+VALUES (DEFAULT, 'E', 'anik',
+TO_DATE('14-07-1964', 'DD-MM-YYYY'), 4691.98, 4);
 
 /* Staff equipo 5 */
 INSERT INTO STAFFS
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'E', 'shawna',
-TO_DATE('08-07-1998', 'DD-MM-YYYY'), 4044.49, 5);
+VALUES (DEFAULT, 'E', 'arneisha',
+TO_DATE('18-02-1991', 'DD-MM-YYYY'), 2794.82, 5);
+INSERT INTO STAFFS
+(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
+VALUES (DEFAULT, 'A', 'myrtle',
+TO_DATE('19-11-1980', 'DD-MM-YYYY'), 1256.81, 5);
 
 /* Staff equipo 6 */
 INSERT INTO STAFFS
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'E', 'jordayn',
-TO_DATE('24-12-1997', 'DD-MM-YYYY'), 4015.97, 6);
+VALUES (DEFAULT, 'E', 'bane',
+TO_DATE('18-12-1967', 'DD-MM-YYYY'), 3167.37, 6);
 INSERT INTO STAFFS
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'A', 'bryden',
-TO_DATE('12-02-1989', 'DD-MM-YYYY'), 2897.93, 6);
+VALUES (DEFAULT, 'A', 'kourosh',
+TO_DATE('31-12-1965', 'DD-MM-YYYY'), 2251.47, 6);
 
 /* Staff equipo 7 */
 INSERT INTO STAFFS
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'E', 'avaya',
-TO_DATE('16-07-1981', 'DD-MM-YYYY'), 4838.04, 7);
+VALUES (DEFAULT, 'E', 'zarielle',
+TO_DATE('14-06-1985', 'DD-MM-YYYY'), 2688.01, 7);
 
 /* Staff equipo 8 */
 INSERT INTO STAFFS
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'E', 'chelle',
-TO_DATE('05-10-1970', 'DD-MM-YYYY'), 4601.02, 8);
+VALUES (DEFAULT, 'E', 'jennavicia',
+TO_DATE('29-10-1983', 'DD-MM-YYYY'), 4656.15, 8);
 INSERT INTO STAFFS
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'A', 'romulus',
-TO_DATE('22-04-1990', 'DD-MM-YYYY'), 1453.1, 8);
+VALUES (DEFAULT, 'A', 'kaseem',
+TO_DATE('12-11-1964', 'DD-MM-YYYY'), 2320.28, 8);
 
 /* Staff equipo 9 */
 INSERT INTO STAFFS
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'E', 'tawni',
-TO_DATE('07-07-1985', 'DD-MM-YYYY'), 2385.94, 9);
+VALUES (DEFAULT, 'E', 'collis',
+TO_DATE('31-07-1970', 'DD-MM-YYYY'), 2295.21, 9);
 
 /* Staff equipo 10 */
 INSERT INTO STAFFS
 (ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'E', 'crystale',
-TO_DATE('23-02-1991', 'DD-MM-YYYY'), 4897.41, 10);
-
-/* Staff equipo 11 */
-INSERT INTO STAFFS
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'E', 'aaisha',
-TO_DATE('27-03-1966', 'DD-MM-YYYY'), 4844.35, 11);
-INSERT INTO STAFFS
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'A', 'tanysha',
-TO_DATE('23-01-1981', 'DD-MM-YYYY'), 2161.91, 11);
-
-/* Staff equipo 12 */
-INSERT INTO STAFFS
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'E', 'raychell',
-TO_DATE('19-02-1969', 'DD-MM-YYYY'), 2747.87, 12);
-
-/* Staff equipo 13 */
-INSERT INTO STAFFS
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'E', 'jozy',
-TO_DATE('10-05-1987', 'DD-MM-YYYY'), 4170.71, 13);
-INSERT INTO STAFFS
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'A', 'jorley',
-TO_DATE('28-10-1995', 'DD-MM-YYYY'), 1168.23, 13);
-
-/* Staff equipo 14 */
-INSERT INTO STAFFS
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'E', 'willem',
-TO_DATE('01-12-1990', 'DD-MM-YYYY'), 2049.41, 14);
-INSERT INTO STAFFS
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'A', 'braylah',
-TO_DATE('20-01-1975', 'DD-MM-YYYY'), 1388.72, 14);
-
-/* Staff equipo 15 */
-INSERT INTO STAFFS
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'E', 'alynna',
-TO_DATE('25-12-1979', 'DD-MM-YYYY'), 4777.89, 15);
-
-/* Staff equipo 16 */
-INSERT INTO STAFFS
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'E', 'nethra',
-TO_DATE('08-03-1991', 'DD-MM-YYYY'), 3337.75, 16);
-INSERT INTO STAFFS
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'A', 'emie',
-TO_DATE('24-12-2004', 'DD-MM-YYYY'), 1966.51, 16);
-
-/* Staff equipo 17 */
-INSERT INTO STAFFS
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'E', 'rayshaun',
-TO_DATE('23-09-2003', 'DD-MM-YYYY'), 4878.84, 17);
-INSERT INTO STAFFS
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'A', 'racheal',
-TO_DATE('05-08-1999', 'DD-MM-YYYY'), 1753.92, 17);
-
-/* Staff equipo 18 */
-INSERT INTO STAFFS
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'E', 'nalla',
-TO_DATE('24-03-2006', 'DD-MM-YYYY'), 3225.8, 18);
-
-/* Staff equipo 19 */
-INSERT INTO STAFFS
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'E', 'reigna',
-TO_DATE('14-11-1968', 'DD-MM-YYYY'), 2925.66, 19);
-
-/* Staff equipo 20 */
-INSERT INTO STAFFS
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'E', 'garv',
-TO_DATE('27-02-1985', 'DD-MM-YYYY'), 3063.52, 20);
-
-/* Staff equipo 21 */
-INSERT INTO STAFFS
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'E', 'bain',
-TO_DATE('25-02-1992', 'DD-MM-YYYY'), 2217.66, 21);
-
-/* Staff equipo 22 */
-INSERT INTO STAFFS
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'E', 'clifton',
-TO_DATE('13-01-1988', 'DD-MM-YYYY'), 2223.08, 22);
-INSERT INTO STAFFS
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'A', 'eddie',
-TO_DATE('23-03-2006', 'DD-MM-YYYY'), 1396.97, 22);
-
-/* Staff equipo 23 */
-INSERT INTO STAFFS
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'E', 'phuoc',
-TO_DATE('02-09-1966', 'DD-MM-YYYY'), 2700.15, 23);
-INSERT INTO STAFFS
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'A', 'annalysa',
-TO_DATE('15-12-1998', 'DD-MM-YYYY'), 1578.75, 23);
-
-/* Staff equipo 24 */
-INSERT INTO STAFFS
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'E', 'madyn',
-TO_DATE('28-05-1990', 'DD-MM-YYYY'), 2238.61, 24);
-INSERT INTO STAFFS
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'A', 'baisha',
-TO_DATE('19-09-1997', 'DD-MM-YYYY'), 1769.12, 24);
-
-/* Staff equipo 25 */
-INSERT INTO STAFFS
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'E', 'rodell',
-TO_DATE('22-12-1999', 'DD-MM-YYYY'), 4857.97, 25);
-INSERT INTO STAFFS
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'A', 'vitalia',
-TO_DATE('22-11-2002', 'DD-MM-YYYY'), 1645.7, 25);
-
-/* Staff equipo 26 */
-INSERT INTO STAFFS
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'E', 'hudson',
-TO_DATE('09-12-1978', 'DD-MM-YYYY'), 3728.77, 26);
-
-/* Staff equipo 27 */
-INSERT INTO STAFFS
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'E', 'cochise',
-TO_DATE('13-11-2000', 'DD-MM-YYYY'), 2359.59, 27);
-INSERT INTO STAFFS
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'A', 'kimberlynn',
-TO_DATE('29-05-1993', 'DD-MM-YYYY'), 1964.37, 27);
-
-/* Staff equipo 28 */
-INSERT INTO STAFFS
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'E', 'namish',
-TO_DATE('26-01-1999', 'DD-MM-YYYY'), 4126.35, 28);
-
-/* Staff equipo 29 */
-INSERT INTO STAFFS
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'E', 'ameila',
-TO_DATE('14-01-1966', 'DD-MM-YYYY'), 2831.03, 29);
-
-/* Staff equipo 30 */
-INSERT INTO STAFFS
-(ID_STAFF, PUESTO, NOMBRE, FECHA_NAC, SUELDO, ID_EQUIPO)
-VALUES (DEFAULT, 'E', 'jazelle',
-TO_DATE('09-08-1982', 'DD-MM-YYYY'), 4277.1, 30);
+VALUES (DEFAULT, 'E', 'raizy',
+TO_DATE('07-02-2003', 'DD-MM-YYYY'), 3608.53, 10);
 
 
 /* Insert de patrocinadores */
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Bayer');
+VALUES (DEFAULT, 'Zhejiang Materials Industry Group');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'America Movil');
+VALUES (DEFAULT, 'Korea Electric Power');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Massachusetts Mutual Life');
+VALUES (DEFAULT, 'Louis Dreyfus Commodities');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'TJX');
+VALUES (DEFAULT, 'Lufthansa Group');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Telecom Italia');
+VALUES (DEFAULT, 'Huawei Investment and Holding');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Fresenius');
+VALUES (DEFAULT, 'China National Bldg. Materials Group');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Baosteel Group');
+VALUES (DEFAULT, 'Sberbank');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Avnet');
+VALUES (DEFAULT, 'National Grid');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Aviva');
+VALUES (DEFAULT, 'Jardine Matheson');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Daiwa House Industry');
+VALUES (DEFAULT, 'Wilmar International');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Lenovo Group');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Walgreens');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'State Farm Insurance Cos.');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Suzuki Motor');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Sainsburys');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Duke Energy');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Greenland Holding Group');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Shandong Weiqiao Pioneering');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Ingram Micro');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Woolworths');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Johnson Controls');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Xinxing Cathay International');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Cardinal Health');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Repsol');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Morrisons');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Royal Bank of Canada');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Siemens');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Bohai Steel Group');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'ChemChina');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Cosmo Oil');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Northwestern Mutual');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Yangquan Coal Industry Group');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Talanx');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'China Guodian');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Veolia Environnement');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Baker Hughes');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'ConocoPhillips');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Pertamina');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Shanghai Pudong Devel. Bank');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Mitsubishi Chemical Holdings');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Zhejiang Geely Holding Group');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Saint-Gobain');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'PTT');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Anheuser-Busch InBev');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Ikea');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'China Power Investment');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Energie Baden-Wï¿½rttemberg');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Aluminum Corp. of China');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Achmea');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'LyondellBasell Industries');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Morgan Stanley');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'TonenGeneral Sekiyu');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'New York Life Insurance');
+VALUES (DEFAULT, 'Sony');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
 VALUES (DEFAULT, 'Michelin');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'China Merchants Bank');
+VALUES (DEFAULT, 'Deutsche Telekom');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Bosch');
+VALUES (DEFAULT, 'China Nonferrous Metal Mining');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'UnitedHealth Group');
+VALUES (DEFAULT, 'China Shipbuilding Industry');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'POSCO');
+VALUES (DEFAULT, 'Microsoft');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Royal Dutch Shell');
+VALUES (DEFAULT, 'McKesson');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Oracle');
+VALUES (DEFAULT, 'Verizon');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'DZ Bank');
+VALUES (DEFAULT, 'Avnet');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Deutsche Bank');
+VALUES (DEFAULT, 'AntarChile');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'China Minmetals');
+VALUES (DEFAULT, 'ACS');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Industrial and Commer. Bank of China');
+VALUES (DEFAULT, 'China Electronics');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Tesla');
+VALUES (DEFAULT, 'UBS Group');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'KDDI');
+VALUES (DEFAULT, 'Shandong Energy Group');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Freddie Mac');
+VALUES (DEFAULT, 'Bank of America Corp.');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'China Aerospace Science and Technology');
+VALUES (DEFAULT, 'Prudential Financial');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'China Railway Engineering');
+VALUES (DEFAULT, 'Iberdrola');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'SABIC');
+VALUES (DEFAULT, 'Novartis');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Trafigura Beheer');
+VALUES (DEFAULT, 'Samsung Electronics');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Citigroup');
+VALUES (DEFAULT, 'America Movil');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Gazprom');
+VALUES (DEFAULT, 'China Huadian');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'China Energy Engineering');
+VALUES (DEFAULT, 'Sumitomo');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Ford Motor');
+VALUES (DEFAULT, 'McDonalds');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Prudential plc');
+VALUES (DEFAULT, 'Shenhua Group');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Boeing');
+VALUES (DEFAULT, 'Baosteel Group');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Time Warner');
+VALUES (DEFAULT, 'Achmea');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Nationwide');
+VALUES (DEFAULT, 'Bank of Nova Scotia');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Seven and I Holdings');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Honda Motor');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Aetna');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Daimler');
-
-INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Tokio Marine Holdings');
+VALUES (DEFAULT, 'Coop Group');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
 VALUES (DEFAULT, 'Sinochem');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Nippon Steel and Sumitomo Metal');
+VALUES (DEFAULT, 'LG Display');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Allstate');
+VALUES (DEFAULT, 'RWE');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Air France-KLM Group');
+VALUES (DEFAULT, 'Sinopec Group');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'CVS Health');
+VALUES (DEFAULT, 'Johnson Controls');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'China State Construction Engineering');
+VALUES (DEFAULT, 'Mazda Motor');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Express Scripts Holding');
+VALUES (DEFAULT, 'PDVSA');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'BNP Paribas');
+VALUES (DEFAULT, 'POSCO');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Capital One Financial');
+VALUES (DEFAULT, 'JFE Holdings');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Aviation Industry Corp. of China');
+VALUES (DEFAULT, 'Fannie Mae');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Shanxi Coking Coal Group');
+VALUES (DEFAULT, 'Lowes');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Jizhong Energy Group');
+VALUES (DEFAULT, 'Kroger');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Rosneft Oil');
+VALUES (DEFAULT, 'Samsung Life Insurance');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'Power Corp. of Canada');
+VALUES (DEFAULT, 'Zhejiang Geely Holding Group');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'World Fuel Services');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Telecom Italia');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Royal Ahold');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Petronas');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Suzuki Motor');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Banco Santander');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Unilever');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Henan Energy and Chemical');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Sompo Japan Nipponkoa');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'ABB');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'AEON');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'JX Holdings');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'China FAW Group');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Japan Post Holdings');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Vinci');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Panasonic');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Finatis');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Fujitsu');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
 VALUES (DEFAULT, 'Standard Chartered');
 
 INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
-VALUES (DEFAULT, 'American Airlines Group');
+VALUES (DEFAULT, 'ThyssenKrupp');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Banco do Brasil');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'China Post Group');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Datong Coal Mine Group');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Telstra');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'China General Technology');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Plains GP Holdings');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Boeing');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Sharp');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'BP');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Greenland Holding Group');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Deutsche Post');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Legal and General Group');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'SoftBank Group');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'BNP Paribas');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Express Scripts Holding');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Enbridge');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'China National Aviation Fuel Group');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Saint-Gobain');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Baker Hughes');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Peugeot');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Sainsburys');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Idemitsu Kosan');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Bank of China');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Tata Motors');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Beijing Automotive Group');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'State Farm Insurance Cos.');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'GDF Suez');
+
+INSERT INTO PATROCINADORES (ID_PATROCINADOR, NOMBRE)
+VALUES (DEFAULT, 'Dai-ichi Life Insurance');
 
 
 /* Insert de enlaces entre patrocinadores y equipos */
 
 /* Patrocinadores equipo 1 */
 INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (52, 1);
+VALUES (7, 1);
+INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
+VALUES (12, 1);
+INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
+VALUES (19, 1);
+INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
+VALUES (2, 1);
 
 /* Patrocinadores equipo 2 */
 INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (34, 2);
+VALUES (10, 2);
+INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
+VALUES (2, 2);
+INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
+VALUES (16, 2);
+INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
+VALUES (11, 2);
 
 /* Patrocinadores equipo 3 */
 INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (92, 3);
+VALUES (7, 3);
+INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
+VALUES (5, 3);
 
 /* Patrocinadores equipo 4 */
 INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (60, 4);
+VALUES (4, 4);
+INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
+VALUES (6, 4);
+INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
+VALUES (16, 4);
 
 /* Patrocinadores equipo 5 */
 INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (24, 5);
+VALUES (7, 5);
 INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (54, 5);
+VALUES (4, 5);
 INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (39, 5);
+VALUES (17, 5);
 
 /* Patrocinadores equipo 6 */
 INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (67, 6);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (78, 6);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (13, 6);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (54, 6);
+VALUES (14, 6);
 
 /* Patrocinadores equipo 7 */
 INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (81, 7);
+VALUES (7, 7);
+INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
+VALUES (3, 7);
+INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
+VALUES (15, 7);
+INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
+VALUES (19, 7);
+INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
+VALUES (17, 7);
 
 /* Patrocinadores equipo 8 */
 INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (39, 8);
+VALUES (17, 8);
 INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (5, 8);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (81, 8);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (61, 8);
+VALUES (19, 8);
 
 /* Patrocinadores equipo 9 */
 INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (25, 9);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
 VALUES (1, 9);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (56, 9);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (28, 9);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (88, 9);
 
 /* Patrocinadores equipo 10 */
 INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (86, 10);
+VALUES (19, 10);
 INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (56, 10);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (39, 10);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (21, 10);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (16, 10);
+VALUES (13, 10);
 
 /* Patrocinadores equipo 11 */
 INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (98, 11);
+VALUES (16, 11);
 INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (20, 11);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (93, 11);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (33, 11);
+VALUES (10, 11);
 
 /* Patrocinadores equipo 12 */
 INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (2, 12);
+VALUES (18, 12);
 INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (43, 12);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (38, 12);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (94, 12);
+VALUES (15, 12);
 
 /* Patrocinadores equipo 13 */
 INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (68, 13);
+VALUES (2, 13);
 INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (53, 13);
+VALUES (16, 13);
+INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
+VALUES (14, 13);
+INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
+VALUES (18, 13);
+INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
+VALUES (19, 13);
 
 /* Patrocinadores equipo 14 */
 INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (45, 14);
+VALUES (3, 14);
 INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (78, 14);
+VALUES (15, 14);
 INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (62, 14);
+VALUES (7, 14);
 INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (19, 14);
+VALUES (14, 14);
 INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (5, 14);
+VALUES (1, 14);
 
 /* Patrocinadores equipo 15 */
 INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (46, 15);
+VALUES (3, 15);
+INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
+VALUES (11, 15);
+INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
+VALUES (16, 15);
 
 /* Patrocinadores equipo 16 */
 INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (56, 16);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (46, 16);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (14, 16);
-
-/* Patrocinadores equipo 17 */
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (68, 17);
-
-/* Patrocinadores equipo 18 */
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (87, 18);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (95, 18);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (74, 18);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (56, 18);
-
-/* Patrocinadores equipo 19 */
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (54, 19);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (42, 19);
-
-/* Patrocinadores equipo 20 */
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (31, 20);
-
-/* Patrocinadores equipo 21 */
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (39, 21);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (23, 21);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (30, 21);
-
-/* Patrocinadores equipo 22 */
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (30, 22);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (69, 22);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (58, 22);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (68, 22);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (95, 22);
-
-/* Patrocinadores equipo 23 */
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (15, 23);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (18, 23);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (96, 23);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (63, 23);
-
-/* Patrocinadores equipo 24 */
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (20, 24);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (99, 24);
-
-/* Patrocinadores equipo 25 */
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (13, 25);
-
-/* Patrocinadores equipo 26 */
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (1, 26);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (60, 26);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (84, 26);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (85, 26);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (33, 26);
-
-/* Patrocinadores equipo 27 */
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (7, 27);
-
-/* Patrocinadores equipo 28 */
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (54, 28);
-
-/* Patrocinadores equipo 29 */
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (81, 29);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (61, 29);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (21, 29);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (15, 29);
-
-/* Patrocinadores equipo 30 */
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (94, 30);
-INSERT INTO PATROCINADORES_EQUIPOS (ID_PATROCINADOR, ID_EQUIPO)
-VALUES (17, 30);
+VALUES (10, 16);
 
 
 /* Insert de juegos */
 
-/*Juegos*/
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Doom', 'id Software', 
-TO_DATE('09-11-1990', 'DD-MM-YYYY'));
+TO_DATE('13-07-2021', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Quake', 'id Software', 
-TO_DATE('28-11-2014', 'DD-MM-YYYY'));
+TO_DATE('08-09-2008', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Counter-Strike series', 'Valve', 
-TO_DATE('12-09-1992', 'DD-MM-YYYY'));
+TO_DATE('10-05-1995', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
-VALUES (DEFAULT, 'Call of Duty series', 'Blizzard Entertainment', 
-TO_DATE('12-01-1996', 'DD-MM-YYYY'));
+VALUES (DEFAULT, 'Call of Duty series', 'Infinity Ward, Treyarch, Sledgehammer Games, entre otros.', 
+TO_DATE('07-12-2024', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Unreal Tournament', 'Epic Games', 
-TO_DATE('20-10-1999', 'DD-MM-YYYY'));
+TO_DATE('24-06-2020', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
-VALUES (DEFAULT, 'Halo series', 'Microsoft Studios', 
-TO_DATE('15-09-1995', 'DD-MM-YYYY'));
+VALUES (DEFAULT, 'Halo series', 'Bungie Studios, 343 Industries (subsidiaria de Microsoft Studios)', 
+TO_DATE('08-12-2007', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
-VALUES (DEFAULT, 'Battlefield series', 'Electronic Arts', 
-TO_DATE('16-11-2009', 'DD-MM-YYYY'));
+VALUES (DEFAULT, 'Painkiller', 'People Can Fly, DreamCatcher Interactive', 
+TO_DATE('11-04-1992', 'DD-MM-YYYY'));
+
+INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
+VALUES (DEFAULT, 'Battlefield series', 'DICE (subsidiaria de Electronic Arts)', 
+TO_DATE('18-06-1990', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Overwatch', 'Blizzard Entertainment', 
-TO_DATE('20-05-1998', 'DD-MM-YYYY'));
+TO_DATE('18-04-1996', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Team Fortress 2', 'Valve Corporation', 
-TO_DATE('15-11-1997', 'DD-MM-YYYY'));
+TO_DATE('27-06-2009', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Rainbow Six: Siege', 'Ubisoft', 
-TO_DATE('09-07-2007', 'DD-MM-YYYY'));
+TO_DATE('25-06-1992', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Valorant', 'Riot Games', 
-TO_DATE('03-06-1991', 'DD-MM-YYYY'));
+TO_DATE('24-10-2005', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'League of Legends', 'Riot Games', 
-TO_DATE('04-05-1999', 'DD-MM-YYYY'));
+TO_DATE('07-02-1995', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Dota 2', 'Valve Corporation', 
-TO_DATE('27-01-2019', 'DD-MM-YYYY'));
+TO_DATE('27-08-2023', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Smite', 'Hi-Rez Studios', 
-TO_DATE('27-01-2024', 'DD-MM-YYYY'));
+TO_DATE('15-08-2023', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Heroes of the Storm', 'Blizzard Entertainment', 
-TO_DATE('16-07-2006', 'DD-MM-YYYY'));
+TO_DATE('18-10-2023', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Vainglory', 'Super Evil Megacorp', 
-TO_DATE('22-11-2001', 'DD-MM-YYYY'));
+TO_DATE('02-09-2024', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
-VALUES (DEFAULT, 'Arena of Valor', 'Tencent Games', 
-TO_DATE('19-01-1999', 'DD-MM-YYYY'));
+VALUES (DEFAULT, 'Arena of Valor', 'TiMi Studios (desarrollador), Tencent Games (publicador)', 
+TO_DATE('16-10-2023', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Mobile Legends: Bang Bang', 'Moonton', 
-TO_DATE('14-02-2017', 'DD-MM-YYYY'));
+TO_DATE('26-03-1994', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Formula 1 official games', 'Codemasters', 
-TO_DATE('25-08-2022', 'DD-MM-YYYY'));
+TO_DATE('02-12-2011', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
-VALUES (DEFAULT, 'Gran Turismo Sport', 'Sony Interactive Entertainment', 
-TO_DATE('21-04-2003', 'DD-MM-YYYY'));
+VALUES (DEFAULT, 'Gran Turismo Sport', 'Polyphony Digital (desarrollador), Sony Interactive Entertainment (publicador)', 
+TO_DATE('10-11-1993', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'iRacing', 'iRacing.com Motorsport Simulations', 
-TO_DATE('19-07-2016', 'DD-MM-YYYY'));
+TO_DATE('07-11-2024', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
-VALUES (DEFAULT, 'Trackmania', 'Ubisoft', 
-TO_DATE('28-09-1999', 'DD-MM-YYYY'));
+VALUES (DEFAULT, 'Trackmania', 'Nadeo (desarrollador), Ubisoft (publicador)', 
+TO_DATE('21-02-1996', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
-VALUES (DEFAULT, 'Project CARS', 'Bandai Namco Entertainment', 
-TO_DATE('22-07-2020', 'DD-MM-YYYY'));
+VALUES (DEFAULT, 'Project CARS', 'Slightly Mad Studios (desarrollador), Bandai Namco Entertainment (publicador)', 
+TO_DATE('28-03-2009', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'rFactor 2', 'Studio 397', 
-TO_DATE('13-05-1994', 'DD-MM-YYYY'));
+TO_DATE('07-08-1995', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Kart Rider', 'Nexon', 
-TO_DATE('16-09-1990', 'DD-MM-YYYY'));
+TO_DATE('03-02-2017', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'StarCraft', 'Blizzard Entertainment', 
-TO_DATE('06-06-1990', 'DD-MM-YYYY'));
+TO_DATE('02-07-2024', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'StarCraft II', 'Blizzard Entertainment', 
-TO_DATE('23-06-1991', 'DD-MM-YYYY'));
+TO_DATE('20-06-2002', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Warcraft III', 'Blizzard Entertainment', 
-TO_DATE('11-08-2002', 'DD-MM-YYYY'));
+TO_DATE('25-03-1993', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'FIFA Football', 'Electronic Arts', 
-TO_DATE('12-11-2018', 'DD-MM-YYYY'));
+TO_DATE('23-11-2022', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Madden NFL', 'Electronic Arts', 
-TO_DATE('07-05-2005', 'DD-MM-YYYY'));
+TO_DATE('15-03-1998', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'NBA 2K', 'Take-Two Interactive', 
-TO_DATE('03-01-2019', 'DD-MM-YYYY'));
+TO_DATE('10-02-1993', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Pro Evolution Soccer', 'Konami', 
-TO_DATE('25-07-2019', 'DD-MM-YYYY'));
+TO_DATE('10-03-2015', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Street Fighter', 'Capcom', 
-TO_DATE('15-07-2001', 'DD-MM-YYYY'));
+TO_DATE('08-10-2023', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Super Smash Bros.', 'Nintendo', 
-TO_DATE('27-02-2017', 'DD-MM-YYYY'));
+TO_DATE('13-11-2021', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Marvel vs. Capcom', 'Capcom', 
-TO_DATE('18-03-2021', 'DD-MM-YYYY'));
+TO_DATE('21-04-2006', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Tekken', 'Bandai Namco', 
-TO_DATE('16-06-1994', 'DD-MM-YYYY'));
+TO_DATE('10-04-2022', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Killer Instinct', 'Microsoft', 
-TO_DATE('28-03-2001', 'DD-MM-YYYY'));
+TO_DATE('02-02-1994', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Rocket League', 'Psyonix Studios', 
-TO_DATE('25-11-2004', 'DD-MM-YYYY'));
+TO_DATE('16-06-2010', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Gears of War', 'The Coalition', 
-TO_DATE('28-01-2018', 'DD-MM-YYYY'));
+TO_DATE('02-06-2023', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'PlayerUnknowns Battlegrounds (PUBG)', 'PUBG Corporation', 
-TO_DATE('03-06-2005', 'DD-MM-YYYY'));
+TO_DATE('07-01-2019', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
-VALUES (DEFAULT, 'Garena Free Fire', 'Garena', 
-TO_DATE('13-07-1992', 'DD-MM-YYYY'));
+VALUES (DEFAULT, 'Garena Free Fire', '111dots Studio (desarrollador), Garena (publicador)', 
+TO_DATE('11-04-1990', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Splatoon 2', 'Nintendo', 
-TO_DATE('27-03-2019', 'DD-MM-YYYY'));
+TO_DATE('25-08-2005', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Hearthstone', 'Blizzard Entertainment', 
-TO_DATE('12-02-2011', 'DD-MM-YYYY'));
+TO_DATE('25-12-1991', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Shadowverse', 'Cygames', 
-TO_DATE('10-02-2009', 'DD-MM-YYYY'));
+TO_DATE('20-07-2000', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Magic: The Gathering Arena', 'Wizards of the Coast', 
-TO_DATE('08-07-2003', 'DD-MM-YYYY'));
+TO_DATE('06-03-2023', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
-VALUES (DEFAULT, 'Pokémon', 'The Pokémon Company', 
-TO_DATE('22-09-1998', 'DD-MM-YYYY'));
+VALUES (DEFAULT, 'Pokemon', 'The Pokemon Company', 
+TO_DATE('26-06-1993', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Puyo Puyo', 'Sega', 
-TO_DATE('20-10-2004', 'DD-MM-YYYY'));
+TO_DATE('21-01-1997', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Clash Royale', 'Supercell', 
-TO_DATE('09-11-2005', 'DD-MM-YYYY'));
+TO_DATE('20-01-1997', 'DD-MM-YYYY'));
 
 INSERT INTO JUEGOS (ID_JUEGO, NOMBRE, EMPRESA, FECHA_LANZAMIENTO)
 VALUES (DEFAULT, 'Clash of Clans', 'Supercell', 
-TO_DATE('25-09-2007', 'DD-MM-YYYY'));
+TO_DATE('10-09-2000', 'DD-MM-YYYY'));
 
 
 /* Competición 1 */
@@ -1949,802 +1207,1051 @@ TO_DATE('25-09-2007', 'DD-MM-YYYY'));
 INSERT INTO COMPETICIONES (ID_COMPETICION, NOMBRE_COM, FECHA_INICIO, FECHA_FIN, ETAPA, ID_JUEGO, ID_EQUIPO_GANADOR)
 VALUES (DEFAULT, 'CS2 MAJOR COPENHAGEN 2024', 
         TO_DATE('05-05-2024', 'DD-MM-YYYY'), 
-        TO_DATE('05-06-2024', 'DD-MM-YYYY'), 'A', 3, NULL);
+        TO_DATE('05-05-2025', 'DD-MM-YYYY'), 'A', 3, NULL);
 
 /* Equipos competición 1 */
 INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
-VALUES (20, 1, 0, 0);
+VALUES (2, 1, 0, 0);
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (9, 1, 0, 0);
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (5, 1, 0, 0);
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (6, 1, 0, 0);
 INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
 VALUES (7, 1, 0, 0);
 INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
-VALUES (2, 1, 0, 0);
+VALUES (10, 1, 0, 0);
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (1, 1, 0, 0);
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (8, 1, 0, 0);
 INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
 VALUES (3, 1, 0, 0);
 INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
 VALUES (4, 1, 0, 0);
-INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
-VALUES (16, 1, 0, 0);
-INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
-VALUES (1, 1, 0, 0);
-INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
-VALUES (17, 1, 0, 0);
-INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
-VALUES (10, 1, 0, 0);
-INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
-VALUES (13, 1, 0, 0);
 
 /* Jornadas competición 1 */
 INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 1, TO_DATE('10-05-2024', 'DD-MM-YYYY'), 1);
+VALUES (DEFAULT, 1, TO_DATE('24-05-2024', 'DD-MM-YYYY'), 1);
 INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 2, TO_DATE('17-05-2024', 'DD-MM-YYYY'), 1);
+VALUES (DEFAULT, 2, TO_DATE('31-05-2024', 'DD-MM-YYYY'), 1);
 INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 3, TO_DATE('24-05-2024', 'DD-MM-YYYY'), 1);
+VALUES (DEFAULT, 3, TO_DATE('07-06-2024', 'DD-MM-YYYY'), 1);
 INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 4, TO_DATE('31-05-2024', 'DD-MM-YYYY'), 1);
+VALUES (DEFAULT, 4, TO_DATE('14-06-2024', 'DD-MM-YYYY'), 1);
 INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 5, TO_DATE('07-06-2024', 'DD-MM-YYYY'), 1);
+VALUES (DEFAULT, 5, TO_DATE('21-06-2024', 'DD-MM-YYYY'), 1);
 INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 6, TO_DATE('14-06-2024', 'DD-MM-YYYY'), 1);
+VALUES (DEFAULT, 6, TO_DATE('28-06-2024', 'DD-MM-YYYY'), 1);
 INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 7, TO_DATE('21-06-2024', 'DD-MM-YYYY'), 1);
+VALUES (DEFAULT, 7, TO_DATE('05-07-2024', 'DD-MM-YYYY'), 1);
 INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 8, TO_DATE('28-06-2024', 'DD-MM-YYYY'), 1);
+VALUES (DEFAULT, 8, TO_DATE('12-07-2024', 'DD-MM-YYYY'), 1);
 INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 9, TO_DATE('05-07-2024', 'DD-MM-YYYY'), 1);
+VALUES (DEFAULT, 9, TO_DATE('19-07-2024', 'DD-MM-YYYY'), 1);
 INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 10, TO_DATE('12-07-2024', 'DD-MM-YYYY'), 1);
-INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 11, TO_DATE('19-07-2024', 'DD-MM-YYYY'), 1);
-INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 12, TO_DATE('26-07-2024', 'DD-MM-YYYY'), 1);
-INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 13, TO_DATE('02-08-2024', 'DD-MM-YYYY'), 1);
-INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 14, TO_DATE('09-08-2024', 'DD-MM-YYYY'), 1);
-INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 15, TO_DATE('16-08-2024', 'DD-MM-YYYY'), 1);
-INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 16, TO_DATE('23-08-2024', 'DD-MM-YYYY'), 1);
+VALUES (DEFAULT, 10, TO_DATE('26-07-2024', 'DD-MM-YYYY'), 1);
 
 /* Enfrentamientos competición 1 */
 /*Jornada 1*/
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('10-05-2024 15:10', 'DD-MM-YYYY HH24:MI'),
-1, 2, 17, 18, 1);
+VALUES (DEFAULT, TO_TIMESTAMP('24-05-2024 18:50', 'DD-MM-YYYY HH24:MI'),
+1, 3, 1, 13, 1);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('10-05-2024 17:38', 'DD-MM-YYYY HH24:MI'),
-2, 3, 1, 10, 1);
+VALUES (DEFAULT, TO_TIMESTAMP('24-05-2024 14:27', 'DD-MM-YYYY HH24:MI'),
+3, 1, 14, 15, 1);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('10-05-2024 18:50', 'DD-MM-YYYY HH24:MI'),
-3, 1, 10, 4, 1);
+VALUES (DEFAULT, TO_TIMESTAMP('24-05-2024 12:18', 'DD-MM-YYYY HH24:MI'),
+3, 1, 10, 13, 1);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('10-05-2024 12:13', 'DD-MM-YYYY HH24:MI'),
-1, 3, 4, 8, 1);
+VALUES (DEFAULT, TO_TIMESTAMP('24-05-2024 16:55', 'DD-MM-YYYY HH24:MI'),
+3, 1, 3, 10, 1);
 
 /*Jornada 2*/
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('17-05-2024 13:50', 'DD-MM-YYYY HH24:MI'),
-2, 3, 17, 8, 2);
+VALUES (DEFAULT, TO_TIMESTAMP('31-05-2024 15:33', 'DD-MM-YYYY HH24:MI'),
+1, 3, 12, 14, 2);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('17-05-2024 10:39', 'DD-MM-YYYY HH24:MI'),
-3, 2, 11, 4, 2);
+VALUES (DEFAULT, TO_TIMESTAMP('31-05-2024 10:18', 'DD-MM-YYYY HH24:MI'),
+3, 2, 13, 7, 2);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('17-05-2024 11:17', 'DD-MM-YYYY HH24:MI'),
-3, 2, 17, 10, 2);
+VALUES (DEFAULT, TO_TIMESTAMP('31-05-2024 13:42', 'DD-MM-YYYY HH24:MI'),
+2, 1, 9, 3, 2);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('17-05-2024 17:01', 'DD-MM-YYYY HH24:MI'),
-2, 3, 7, 14, 2);
+VALUES (DEFAULT, TO_TIMESTAMP('31-05-2024 10:33', 'DD-MM-YYYY HH24:MI'),
+2, 3, 11, 15, 2);
 
 /*Jornada 3*/
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('24-05-2024 14:06', 'DD-MM-YYYY HH24:MI'),
-1, 2, 6, 20, 3);
+VALUES (DEFAULT, TO_TIMESTAMP('07-06-2024 18:33', 'DD-MM-YYYY HH24:MI'),
+2, 1, 10, 6, 3);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('24-05-2024 12:11', 'DD-MM-YYYY HH24:MI'),
-1, 3, 20, 19, 3);
+VALUES (DEFAULT, TO_TIMESTAMP('07-06-2024 18:05', 'DD-MM-YYYY HH24:MI'),
+2, 3, 11, 10, 3);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('24-05-2024 15:10', 'DD-MM-YYYY HH24:MI'),
-2, 3, 3, 1, 3);
+VALUES (DEFAULT, TO_TIMESTAMP('07-06-2024 12:04', 'DD-MM-YYYY HH24:MI'),
+1, 3, 9, 14, 3);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('24-05-2024 15:01', 'DD-MM-YYYY HH24:MI'),
-3, 1, 6, 2, 3);
+VALUES (DEFAULT, TO_TIMESTAMP('07-06-2024 12:13', 'DD-MM-YYYY HH24:MI'),
+3, 1, 5, 3, 3);
 
 /*Jornada 4*/
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('31-05-2024 11:35', 'DD-MM-YYYY HH24:MI'),
-1, 3, 8, 9, 4);
+VALUES (DEFAULT, TO_TIMESTAMP('14-06-2024 14:28', 'DD-MM-YYYY HH24:MI'),
+3, 1, 6, 5, 4);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('31-05-2024 14:54', 'DD-MM-YYYY HH24:MI'),
-3, 2, 20, 7, 4);
+VALUES (DEFAULT, TO_TIMESTAMP('14-06-2024 18:15', 'DD-MM-YYYY HH24:MI'),
+1, 2, 12, 1, 4);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('31-05-2024 17:59', 'DD-MM-YYYY HH24:MI'),
-2, 1, 16, 5, 4);
+VALUES (DEFAULT, TO_TIMESTAMP('14-06-2024 15:10', 'DD-MM-YYYY HH24:MI'),
+3, 1, 6, 16, 4);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('31-05-2024 17:12', 'DD-MM-YYYY HH24:MI'),
-2, 1, 14, 10, 4);
+VALUES (DEFAULT, TO_TIMESTAMP('14-06-2024 14:15', 'DD-MM-YYYY HH24:MI'),
+2, 1, 16, 6, 4);
 
 /*Jornada 5*/
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('07-06-2024 18:03', 'DD-MM-YYYY HH24:MI'),
-3, 1, 18, 7, 5);
+VALUES (DEFAULT, TO_TIMESTAMP('21-06-2024 16:59', 'DD-MM-YYYY HH24:MI'),
+3, 2, 7, 4, 5);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('07-06-2024 16:15', 'DD-MM-YYYY HH24:MI'),
-2, 3, 16, 17, 5);
+VALUES (DEFAULT, TO_TIMESTAMP('21-06-2024 12:15', 'DD-MM-YYYY HH24:MI'),
+2, 1, 16, 2, 5);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('07-06-2024 11:24', 'DD-MM-YYYY HH24:MI'),
-2, 1, 13, 7, 5);
+VALUES (DEFAULT, TO_TIMESTAMP('21-06-2024 16:41', 'DD-MM-YYYY HH24:MI'),
+3, 2, 2, 13, 5);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('07-06-2024 17:25', 'DD-MM-YYYY HH24:MI'),
-3, 1, 10, 11, 5);
+VALUES (DEFAULT, TO_TIMESTAMP('21-06-2024 16:53', 'DD-MM-YYYY HH24:MI'),
+3, 2, 5, 3, 5);
 
 /*Jornada 6*/
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('14-06-2024 16:23', 'DD-MM-YYYY HH24:MI'),
-1, 2, 16, 9, 6);
+VALUES (DEFAULT, TO_TIMESTAMP('28-06-2024 10:49', 'DD-MM-YYYY HH24:MI'),
+2, 3, 13, 6, 6);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('14-06-2024 17:35', 'DD-MM-YYYY HH24:MI'),
-1, 3, 16, 8, 6);
+VALUES (DEFAULT, TO_TIMESTAMP('28-06-2024 17:19', 'DD-MM-YYYY HH24:MI'),
+1, 2, 1, 10, 6);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('14-06-2024 10:19', 'DD-MM-YYYY HH24:MI'),
-3, 1, 16, 14, 6);
+VALUES (DEFAULT, TO_TIMESTAMP('28-06-2024 18:16', 'DD-MM-YYYY HH24:MI'),
+1, 3, 6, 3, 6);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('14-06-2024 12:00', 'DD-MM-YYYY HH24:MI'),
-1, 3, 2, 8, 6);
+VALUES (DEFAULT, TO_TIMESTAMP('28-06-2024 16:26', 'DD-MM-YYYY HH24:MI'),
+2, 1, 7, 3, 6);
 
 /*Jornada 7*/
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('21-06-2024 10:10', 'DD-MM-YYYY HH24:MI'),
-3, 1, 14, 16, 7);
+VALUES (DEFAULT, TO_TIMESTAMP('05-07-2024 10:37', 'DD-MM-YYYY HH24:MI'),
+2, 1, 5, 2, 7);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('21-06-2024 15:25', 'DD-MM-YYYY HH24:MI'),
-3, 2, 16, 6, 7);
+VALUES (DEFAULT, TO_TIMESTAMP('05-07-2024 17:45', 'DD-MM-YYYY HH24:MI'),
+3, 2, 1, 5, 7);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('21-06-2024 18:23', 'DD-MM-YYYY HH24:MI'),
-3, 2, 13, 7, 7);
+VALUES (DEFAULT, TO_TIMESTAMP('05-07-2024 16:34', 'DD-MM-YYYY HH24:MI'),
+2, 1, 5, 11, 7);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('21-06-2024 14:30', 'DD-MM-YYYY HH24:MI'),
-1, 2, 14, 11, 7);
+VALUES (DEFAULT, TO_TIMESTAMP('05-07-2024 17:44', 'DD-MM-YYYY HH24:MI'),
+2, 3, 16, 11, 7);
 
 /*Jornada 8*/
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('28-06-2024 13:49', 'DD-MM-YYYY HH24:MI'),
-2, 3, 20, 19, 8);
+VALUES (DEFAULT, TO_TIMESTAMP('12-07-2024 11:14', 'DD-MM-YYYY HH24:MI'),
+2, 3, 2, 9, 8);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('28-06-2024 10:30', 'DD-MM-YYYY HH24:MI'),
-2, 1, 19, 1, 8);
+VALUES (DEFAULT, TO_TIMESTAMP('12-07-2024 17:31', 'DD-MM-YYYY HH24:MI'),
+2, 3, 14, 4, 8);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('28-06-2024 17:11', 'DD-MM-YYYY HH24:MI'),
-3, 1, 11, 5, 8);
+VALUES (DEFAULT, TO_TIMESTAMP('12-07-2024 13:07', 'DD-MM-YYYY HH24:MI'),
+3, 1, 5, 7, 8);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('28-06-2024 17:25', 'DD-MM-YYYY HH24:MI'),
-1, 3, 11, 10, 8);
+VALUES (DEFAULT, TO_TIMESTAMP('12-07-2024 14:22', 'DD-MM-YYYY HH24:MI'),
+3, 1, 1, 14, 8);
 
 /*Jornada 9*/
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('05-07-2024 13:27', 'DD-MM-YYYY HH24:MI'),
-3, 1, 12, 8, 9);
+VALUES (DEFAULT, TO_TIMESTAMP('19-07-2024 17:38', 'DD-MM-YYYY HH24:MI'),
+1, 2, 5, 8, 9);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('05-07-2024 17:47', 'DD-MM-YYYY HH24:MI'),
-2, 1, 18, 4, 9);
+VALUES (DEFAULT, TO_TIMESTAMP('19-07-2024 14:18', 'DD-MM-YYYY HH24:MI'),
+2, 1, 16, 9, 9);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('05-07-2024 15:25', 'DD-MM-YYYY HH24:MI'),
-1, 2, 13, 12, 9);
+VALUES (DEFAULT, TO_TIMESTAMP('19-07-2024 13:01', 'DD-MM-YYYY HH24:MI'),
+2, 1, 10, 6, 9);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('05-07-2024 14:48', 'DD-MM-YYYY HH24:MI'),
-1, 2, 17, 20, 9);
+VALUES (DEFAULT, TO_TIMESTAMP('19-07-2024 16:40', 'DD-MM-YYYY HH24:MI'),
+2, 1, 1, 12, 9);
 
 /*Jornada 10*/
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('12-07-2024 16:03', 'DD-MM-YYYY HH24:MI'),
-2, 3, 8, 3, 10);
+VALUES (DEFAULT, TO_TIMESTAMP('26-07-2024 10:34', 'DD-MM-YYYY HH24:MI'),
+3, 1, 6, 10, 10);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('12-07-2024 17:29', 'DD-MM-YYYY HH24:MI'),
-2, 3, 10, 14, 10);
+VALUES (DEFAULT, TO_TIMESTAMP('26-07-2024 12:11', 'DD-MM-YYYY HH24:MI'),
+1, 3, 15, 5, 10);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('12-07-2024 10:50', 'DD-MM-YYYY HH24:MI'),
-1, 3, 19, 12, 10);
+VALUES (DEFAULT, TO_TIMESTAMP('26-07-2024 17:12', 'DD-MM-YYYY HH24:MI'),
+2, 1, 8, 5, 10);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('12-07-2024 18:03', 'DD-MM-YYYY HH24:MI'),
-2, 3, 9, 2, 10);
-
-/*Jornada 11*/
-INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
-RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('19-07-2024 16:52', 'DD-MM-YYYY HH24:MI'),
-1, 3, 4, 18, 11);
-
-INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
-RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('19-07-2024 11:34', 'DD-MM-YYYY HH24:MI'),
-1, 2, 7, 3, 11);
-
-INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
-RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('19-07-2024 11:23', 'DD-MM-YYYY HH24:MI'),
-2, 3, 15, 14, 11);
-
-INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
-RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('19-07-2024 13:43', 'DD-MM-YYYY HH24:MI'),
-3, 1, 1, 7, 11);
-
-/*Jornada 12*/
-INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
-RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('26-07-2024 11:49', 'DD-MM-YYYY HH24:MI'),
-2, 3, 10, 20, 12);
-
-INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
-RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('26-07-2024 14:58', 'DD-MM-YYYY HH24:MI'),
-2, 3, 8, 5, 12);
-
-INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
-RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('26-07-2024 10:30', 'DD-MM-YYYY HH24:MI'),
-3, 1, 14, 6, 12);
-
-INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
-RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('26-07-2024 15:27', 'DD-MM-YYYY HH24:MI'),
-3, 1, 17, 10, 12);
-
-/*Jornada 13*/
-INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
-RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('02-08-2024 10:29', 'DD-MM-YYYY HH24:MI'),
-3, 1, 1, 7, 13);
-
-INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
-RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('02-08-2024 10:08', 'DD-MM-YYYY HH24:MI'),
-3, 2, 9, 13, 13);
-
-INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
-RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('02-08-2024 13:37', 'DD-MM-YYYY HH24:MI'),
-2, 3, 7, 5, 13);
-
-INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
-RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('02-08-2024 17:35', 'DD-MM-YYYY HH24:MI'),
-3, 1, 7, 20, 13);
-
-/*Jornada 14*/
-INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
-RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('09-08-2024 14:02', 'DD-MM-YYYY HH24:MI'),
-3, 1, 17, 4, 14);
-
-INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
-RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('09-08-2024 11:57', 'DD-MM-YYYY HH24:MI'),
-1, 2, 19, 20, 14);
-
-INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
-RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('09-08-2024 10:02', 'DD-MM-YYYY HH24:MI'),
-1, 2, 17, 5, 14);
-
-INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
-RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('09-08-2024 16:48', 'DD-MM-YYYY HH24:MI'),
-2, 3, 19, 18, 14);
-
-/*Jornada 15*/
-INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
-RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('16-08-2024 18:41', 'DD-MM-YYYY HH24:MI'),
-2, 1, 17, 15, 15);
-
-INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
-RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('16-08-2024 14:54', 'DD-MM-YYYY HH24:MI'),
-2, 3, 14, 6, 15);
-
-INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
-RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('16-08-2024 13:10', 'DD-MM-YYYY HH24:MI'),
-1, 3, 20, 6, 15);
-
-INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
-RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('16-08-2024 17:41', 'DD-MM-YYYY HH24:MI'),
-1, 3, 15, 9, 15);
-
-/*Jornada 16*/
-INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
-RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('23-08-2024 11:47', 'DD-MM-YYYY HH24:MI'),
-3, 2, 17, 11, 16);
-
-INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
-RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('23-08-2024 13:42', 'DD-MM-YYYY HH24:MI'),
-2, 3, 17, 7, 16);
-
-INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
-RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('23-08-2024 17:36', 'DD-MM-YYYY HH24:MI'),
-1, 2, 14, 6, 16);
-
-INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
-RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('23-08-2024 13:56', 'DD-MM-YYYY HH24:MI'),
-1, 2, 5, 4, 16);
+VALUES (DEFAULT, TO_TIMESTAMP('26-07-2024 11:02', 'DD-MM-YYYY HH24:MI'),
+1, 3, 9, 7, 10);
 
 
 /* Competición 2 */
 
 INSERT INTO COMPETICIONES (ID_COMPETICION, NOMBRE_COM, FECHA_INICIO, FECHA_FIN, ETAPA, ID_JUEGO, ID_EQUIPO_GANADOR)
 VALUES (DEFAULT, 'LEC', 
-        TO_DATE('01-01-2024', 'DD-MM-YYYY'), 
-        TO_DATE('01-06-2024', 'DD-MM-YYYY'), 'A', 12, NULL);
+        TO_DATE('01-01-2025', 'DD-MM-YYYY'), 
+        TO_DATE('01-01-2026', 'DD-MM-YYYY'), 'A', 13, NULL);
 
 /* Equipos competición 2 */
 INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
-VALUES (17, 2, 0, 0);
-INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
-VALUES (3, 2, 0, 0);
-INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
-VALUES (14, 2, 0, 0);
-INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
-VALUES (2, 2, 0, 0);
-INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
-VALUES (6, 2, 0, 0);
-INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
-VALUES (10, 2, 0, 0);
-INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
-VALUES (12, 2, 0, 0);
-INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
 VALUES (4, 2, 0, 0);
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (9, 2, 0, 0);
 INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
 VALUES (1, 2, 0, 0);
 INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
-VALUES (20, 2, 0, 0);
+VALUES (3, 2, 0, 0);
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (6, 2, 0, 0);
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (8, 2, 0, 0);
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (10, 2, 0, 0);
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (5, 2, 0, 0);
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (7, 2, 0, 0);
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (2, 2, 0, 0);
 
 /* Jornadas competición 2 */
 INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 1, TO_DATE('10-05-2024', 'DD-MM-YYYY'), 2);
+VALUES (DEFAULT, 1, TO_DATE('24-05-2025', 'DD-MM-YYYY'), 2);
 INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 2, TO_DATE('17-05-2024', 'DD-MM-YYYY'), 2);
+VALUES (DEFAULT, 2, TO_DATE('31-05-2025', 'DD-MM-YYYY'), 2);
 INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 3, TO_DATE('24-05-2024', 'DD-MM-YYYY'), 2);
+VALUES (DEFAULT, 3, TO_DATE('07-06-2025', 'DD-MM-YYYY'), 2);
 INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 4, TO_DATE('31-05-2024', 'DD-MM-YYYY'), 2);
+VALUES (DEFAULT, 4, TO_DATE('14-06-2025', 'DD-MM-YYYY'), 2);
 INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 5, TO_DATE('07-06-2024', 'DD-MM-YYYY'), 2);
+VALUES (DEFAULT, 5, TO_DATE('21-06-2025', 'DD-MM-YYYY'), 2);
 INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 6, TO_DATE('14-06-2024', 'DD-MM-YYYY'), 2);
+VALUES (DEFAULT, 6, TO_DATE('28-06-2025', 'DD-MM-YYYY'), 2);
 INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 7, TO_DATE('21-06-2024', 'DD-MM-YYYY'), 2);
+VALUES (DEFAULT, 7, TO_DATE('05-07-2025', 'DD-MM-YYYY'), 2);
 INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 8, TO_DATE('28-06-2024', 'DD-MM-YYYY'), 2);
+VALUES (DEFAULT, 8, TO_DATE('12-07-2025', 'DD-MM-YYYY'), 2);
 INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 9, TO_DATE('05-07-2024', 'DD-MM-YYYY'), 2);
+VALUES (DEFAULT, 9, TO_DATE('19-07-2025', 'DD-MM-YYYY'), 2);
 INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 10, TO_DATE('12-07-2024', 'DD-MM-YYYY'), 2);
-INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 11, TO_DATE('19-07-2024', 'DD-MM-YYYY'), 2);
-INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 12, TO_DATE('26-07-2024', 'DD-MM-YYYY'), 2);
-INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 13, TO_DATE('02-08-2024', 'DD-MM-YYYY'), 2);
-INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 14, TO_DATE('09-08-2024', 'DD-MM-YYYY'), 2);
-INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 15, TO_DATE('16-08-2024', 'DD-MM-YYYY'), 2);
-INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
-VALUES (DEFAULT, 16, TO_DATE('23-08-2024', 'DD-MM-YYYY'), 2);
+VALUES (DEFAULT, 10, TO_DATE('26-07-2025', 'DD-MM-YYYY'), 2);
 
 /* Enfrentamientos competición 2 */
+/*Jornada 11*/
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('02-08-2025 16:34', 'DD-MM-YYYY HH24:MI'),
+2, 3, 1, 12, 11);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('02-08-2025 17:15', 'DD-MM-YYYY HH24:MI'),
+3, 2, 15, 9, 11);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('02-08-2025 13:31', 'DD-MM-YYYY HH24:MI'),
+2, 3, 11, 12, 11);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('02-08-2025 14:59', 'DD-MM-YYYY HH24:MI'),
+1, 3, 2, 5, 11);
+
+/*Jornada 12*/
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('09-08-2025 15:22', 'DD-MM-YYYY HH24:MI'),
+3, 1, 2, 13, 12);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('09-08-2025 13:22', 'DD-MM-YYYY HH24:MI'),
+2, 3, 8, 11, 12);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('09-08-2025 10:06', 'DD-MM-YYYY HH24:MI'),
+3, 1, 11, 15, 12);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('09-08-2025 13:49', 'DD-MM-YYYY HH24:MI'),
+1, 3, 6, 7, 12);
+
+/*Jornada 13*/
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('16-08-2025 17:56', 'DD-MM-YYYY HH24:MI'),
+2, 3, 6, 16, 13);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('16-08-2025 18:50', 'DD-MM-YYYY HH24:MI'),
+3, 2, 2, 16, 13);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('16-08-2025 17:44', 'DD-MM-YYYY HH24:MI'),
+2, 1, 12, 1, 13);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('16-08-2025 16:13', 'DD-MM-YYYY HH24:MI'),
+2, 3, 6, 3, 13);
+
+/*Jornada 14*/
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('23-08-2025 14:44', 'DD-MM-YYYY HH24:MI'),
+1, 2, 16, 13, 14);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('23-08-2025 11:02', 'DD-MM-YYYY HH24:MI'),
+1, 3, 16, 9, 14);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('23-08-2025 18:55', 'DD-MM-YYYY HH24:MI'),
+1, 3, 1, 14, 14);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('23-08-2025 12:36', 'DD-MM-YYYY HH24:MI'),
+1, 2, 7, 1, 14);
+
+/*Jornada 15*/
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('30-08-2025 13:49', 'DD-MM-YYYY HH24:MI'),
+2, 3, 4, 13, 15);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('30-08-2025 17:48', 'DD-MM-YYYY HH24:MI'),
+3, 1, 4, 2, 15);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('30-08-2025 11:43', 'DD-MM-YYYY HH24:MI'),
+1, 2, 13, 3, 15);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('30-08-2025 15:08', 'DD-MM-YYYY HH24:MI'),
+1, 3, 14, 8, 15);
+
+/*Jornada 16*/
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('06-09-2025 13:06', 'DD-MM-YYYY HH24:MI'),
+2, 1, 10, 13, 16);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('06-09-2025 18:03', 'DD-MM-YYYY HH24:MI'),
+2, 1, 8, 15, 16);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('06-09-2025 17:59', 'DD-MM-YYYY HH24:MI'),
+1, 3, 4, 3, 16);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('06-09-2025 10:35', 'DD-MM-YYYY HH24:MI'),
+3, 2, 15, 4, 16);
+
 /*Jornada 17*/
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('30-08-2024 11:17', 'DD-MM-YYYY HH24:MI'),
-3, 1, 1, 19, 17);
+VALUES (DEFAULT, TO_TIMESTAMP('13-09-2025 16:20', 'DD-MM-YYYY HH24:MI'),
+3, 2, 14, 16, 17);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('30-08-2024 13:09', 'DD-MM-YYYY HH24:MI'),
-1, 2, 15, 9, 17);
+VALUES (DEFAULT, TO_TIMESTAMP('13-09-2025 11:19', 'DD-MM-YYYY HH24:MI'),
+2, 3, 7, 12, 17);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('30-08-2024 17:12', 'DD-MM-YYYY HH24:MI'),
-3, 1, 13, 19, 17);
+VALUES (DEFAULT, TO_TIMESTAMP('13-09-2025 18:34', 'DD-MM-YYYY HH24:MI'),
+1, 3, 4, 15, 17);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('30-08-2024 11:46', 'DD-MM-YYYY HH24:MI'),
-2, 1, 11, 10, 17);
+VALUES (DEFAULT, TO_TIMESTAMP('13-09-2025 10:11', 'DD-MM-YYYY HH24:MI'),
+3, 1, 1, 6, 17);
 
 /*Jornada 18*/
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('06-09-2024 18:42', 'DD-MM-YYYY HH24:MI'),
-3, 1, 18, 7, 18);
+VALUES (DEFAULT, TO_TIMESTAMP('20-09-2025 15:59', 'DD-MM-YYYY HH24:MI'),
+2, 1, 10, 14, 18);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('06-09-2024 12:34', 'DD-MM-YYYY HH24:MI'),
-3, 1, 7, 8, 18);
+VALUES (DEFAULT, TO_TIMESTAMP('20-09-2025 15:22', 'DD-MM-YYYY HH24:MI'),
+2, 1, 7, 15, 18);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('06-09-2024 14:55', 'DD-MM-YYYY HH24:MI'),
-1, 2, 10, 14, 18);
+VALUES (DEFAULT, TO_TIMESTAMP('20-09-2025 12:31', 'DD-MM-YYYY HH24:MI'),
+3, 2, 14, 5, 18);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('06-09-2024 11:39', 'DD-MM-YYYY HH24:MI'),
-3, 2, 14, 18, 18);
+VALUES (DEFAULT, TO_TIMESTAMP('20-09-2025 12:55', 'DD-MM-YYYY HH24:MI'),
+2, 1, 7, 1, 18);
 
 /*Jornada 19*/
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('13-09-2024 11:44', 'DD-MM-YYYY HH24:MI'),
-2, 3, 7, 3, 19);
+VALUES (DEFAULT, TO_TIMESTAMP('27-09-2025 15:14', 'DD-MM-YYYY HH24:MI'),
+2, 1, 14, 11, 19);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('13-09-2024 13:11', 'DD-MM-YYYY HH24:MI'),
-2, 3, 9, 18, 19);
+VALUES (DEFAULT, TO_TIMESTAMP('27-09-2025 17:14', 'DD-MM-YYYY HH24:MI'),
+2, 1, 7, 6, 19);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('13-09-2024 15:23', 'DD-MM-YYYY HH24:MI'),
-1, 2, 19, 4, 19);
+VALUES (DEFAULT, TO_TIMESTAMP('27-09-2025 16:37', 'DD-MM-YYYY HH24:MI'),
+2, 1, 1, 12, 19);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('13-09-2024 14:03', 'DD-MM-YYYY HH24:MI'),
-3, 2, 17, 6, 19);
+VALUES (DEFAULT, TO_TIMESTAMP('27-09-2025 18:52', 'DD-MM-YYYY HH24:MI'),
+3, 2, 7, 3, 19);
 
 /*Jornada 20*/
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('20-09-2024 10:07', 'DD-MM-YYYY HH24:MI'),
-2, 1, 12, 6, 20);
+VALUES (DEFAULT, TO_TIMESTAMP('04-10-2025 10:46', 'DD-MM-YYYY HH24:MI'),
+2, 1, 14, 2, 20);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('20-09-2024 17:26', 'DD-MM-YYYY HH24:MI'),
-3, 2, 3, 17, 20);
+VALUES (DEFAULT, TO_TIMESTAMP('04-10-2025 14:11', 'DD-MM-YYYY HH24:MI'),
+2, 3, 10, 8, 20);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('20-09-2024 10:53', 'DD-MM-YYYY HH24:MI'),
-3, 2, 6, 8, 20);
+VALUES (DEFAULT, TO_TIMESTAMP('04-10-2025 18:24', 'DD-MM-YYYY HH24:MI'),
+1, 3, 9, 14, 20);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('20-09-2024 18:13', 'DD-MM-YYYY HH24:MI'),
-2, 3, 12, 14, 20);
+VALUES (DEFAULT, TO_TIMESTAMP('04-10-2025 16:33', 'DD-MM-YYYY HH24:MI'),
+3, 2, 10, 9, 20);
 
+
+/* Competición 3 */
+
+INSERT INTO COMPETICIONES (ID_COMPETICION, NOMBRE_COM, FECHA_INICIO, FECHA_FIN, ETAPA, ID_JUEGO, ID_EQUIPO_GANADOR)
+VALUES (DEFAULT, 'OWCS 2024', 
+        TO_DATE('07-07-2026', 'DD-MM-YYYY'), 
+        TO_DATE('07-07-2027', 'DD-MM-YYYY'), 'A', 9, NULL);
+
+/* Equipos competición 3 */
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (1, 3, 0, 0);
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (2, 3, 0, 0);
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (10, 3, 0, 0);
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (5, 3, 0, 0);
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (3, 3, 0, 0);
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (4, 3, 0, 0);
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (6, 3, 0, 0);
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (7, 3, 0, 0);
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (9, 3, 0, 0);
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (8, 3, 0, 0);
+
+/* Jornadas competición 3 */
+INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
+VALUES (DEFAULT, 1, TO_DATE('24-05-2026', 'DD-MM-YYYY'), 3);
+INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
+VALUES (DEFAULT, 2, TO_DATE('31-05-2026', 'DD-MM-YYYY'), 3);
+INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
+VALUES (DEFAULT, 3, TO_DATE('07-06-2026', 'DD-MM-YYYY'), 3);
+INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
+VALUES (DEFAULT, 4, TO_DATE('14-06-2026', 'DD-MM-YYYY'), 3);
+INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
+VALUES (DEFAULT, 5, TO_DATE('21-06-2026', 'DD-MM-YYYY'), 3);
+INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
+VALUES (DEFAULT, 6, TO_DATE('28-06-2026', 'DD-MM-YYYY'), 3);
+INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
+VALUES (DEFAULT, 7, TO_DATE('05-07-2026', 'DD-MM-YYYY'), 3);
+INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
+VALUES (DEFAULT, 8, TO_DATE('12-07-2026', 'DD-MM-YYYY'), 3);
+INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
+VALUES (DEFAULT, 9, TO_DATE('19-07-2026', 'DD-MM-YYYY'), 3);
+INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
+VALUES (DEFAULT, 10, TO_DATE('26-07-2026', 'DD-MM-YYYY'), 3);
+
+/* Enfrentamientos competición 3 */
 /*Jornada 21*/
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('27-09-2024 10:38', 'DD-MM-YYYY HH24:MI'),
-1, 2, 7, 12, 21);
+VALUES (DEFAULT, TO_TIMESTAMP('11-10-2026 15:25', 'DD-MM-YYYY HH24:MI'),
+2, 3, 14, 7, 21);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('27-09-2024 16:22', 'DD-MM-YYYY HH24:MI'),
-3, 2, 6, 17, 21);
+VALUES (DEFAULT, TO_TIMESTAMP('11-10-2026 13:06', 'DD-MM-YYYY HH24:MI'),
+3, 1, 10, 5, 21);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('27-09-2024 13:17', 'DD-MM-YYYY HH24:MI'),
-2, 3, 12, 16, 21);
+VALUES (DEFAULT, TO_TIMESTAMP('11-10-2026 18:10', 'DD-MM-YYYY HH24:MI'),
+2, 3, 1, 14, 21);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('27-09-2024 13:24', 'DD-MM-YYYY HH24:MI'),
-3, 1, 6, 9, 21);
+VALUES (DEFAULT, TO_TIMESTAMP('11-10-2026 12:15', 'DD-MM-YYYY HH24:MI'),
+1, 3, 5, 8, 21);
 
 /*Jornada 22*/
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('04-10-2024 15:39', 'DD-MM-YYYY HH24:MI'),
-3, 1, 5, 8, 22);
+VALUES (DEFAULT, TO_TIMESTAMP('18-10-2026 17:55', 'DD-MM-YYYY HH24:MI'),
+1, 2, 9, 8, 22);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('04-10-2024 16:27', 'DD-MM-YYYY HH24:MI'),
-1, 2, 2, 20, 22);
+VALUES (DEFAULT, TO_TIMESTAMP('18-10-2026 12:02', 'DD-MM-YYYY HH24:MI'),
+1, 2, 12, 5, 22);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('04-10-2024 10:14', 'DD-MM-YYYY HH24:MI'),
-3, 1, 14, 17, 22);
+VALUES (DEFAULT, TO_TIMESTAMP('18-10-2026 16:08', 'DD-MM-YYYY HH24:MI'),
+1, 3, 3, 13, 22);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('04-10-2024 16:48', 'DD-MM-YYYY HH24:MI'),
-2, 3, 17, 10, 22);
+VALUES (DEFAULT, TO_TIMESTAMP('18-10-2026 11:19', 'DD-MM-YYYY HH24:MI'),
+2, 1, 1, 13, 22);
 
 /*Jornada 23*/
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('11-10-2024 12:05', 'DD-MM-YYYY HH24:MI'),
-2, 3, 19, 9, 23);
+VALUES (DEFAULT, TO_TIMESTAMP('25-10-2026 17:45', 'DD-MM-YYYY HH24:MI'),
+2, 3, 7, 3, 23);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('11-10-2024 17:49', 'DD-MM-YYYY HH24:MI'),
-2, 1, 14, 17, 23);
+VALUES (DEFAULT, TO_TIMESTAMP('25-10-2026 15:52', 'DD-MM-YYYY HH24:MI'),
+2, 3, 9, 12, 23);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('11-10-2024 13:58', 'DD-MM-YYYY HH24:MI'),
-3, 1, 11, 7, 23);
+VALUES (DEFAULT, TO_TIMESTAMP('25-10-2026 16:49', 'DD-MM-YYYY HH24:MI'),
+2, 1, 16, 10, 23);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('11-10-2024 17:24', 'DD-MM-YYYY HH24:MI'),
-2, 3, 2, 17, 23);
+VALUES (DEFAULT, TO_TIMESTAMP('25-10-2026 18:02', 'DD-MM-YYYY HH24:MI'),
+3, 2, 4, 16, 23);
 
 /*Jornada 24*/
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('18-10-2024 10:40', 'DD-MM-YYYY HH24:MI'),
-2, 1, 5, 19, 24);
+VALUES (DEFAULT, TO_TIMESTAMP('01-11-2026 10:01', 'DD-MM-YYYY HH24:MI'),
+2, 1, 4, 3, 24);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('18-10-2024 14:17', 'DD-MM-YYYY HH24:MI'),
-2, 1, 8, 9, 24);
+VALUES (DEFAULT, TO_TIMESTAMP('01-11-2026 11:37', 'DD-MM-YYYY HH24:MI'),
+3, 2, 6, 16, 24);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('18-10-2024 10:36', 'DD-MM-YYYY HH24:MI'),
-1, 3, 16, 17, 24);
+VALUES (DEFAULT, TO_TIMESTAMP('01-11-2026 12:55', 'DD-MM-YYYY HH24:MI'),
+1, 3, 9, 7, 24);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('18-10-2024 10:22', 'DD-MM-YYYY HH24:MI'),
-2, 1, 18, 14, 24);
+VALUES (DEFAULT, TO_TIMESTAMP('01-11-2026 12:09', 'DD-MM-YYYY HH24:MI'),
+3, 1, 7, 9, 24);
 
 /*Jornada 25*/
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('25-10-2024 17:47', 'DD-MM-YYYY HH24:MI'),
-3, 1, 3, 7, 25);
+VALUES (DEFAULT, TO_TIMESTAMP('08-11-2026 14:38', 'DD-MM-YYYY HH24:MI'),
+1, 3, 16, 3, 25);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('25-10-2024 11:45', 'DD-MM-YYYY HH24:MI'),
-1, 3, 5, 3, 25);
+VALUES (DEFAULT, TO_TIMESTAMP('08-11-2026 18:46', 'DD-MM-YYYY HH24:MI'),
+2, 1, 13, 7, 25);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('25-10-2024 12:25', 'DD-MM-YYYY HH24:MI'),
-2, 1, 15, 16, 25);
+VALUES (DEFAULT, TO_TIMESTAMP('08-11-2026 16:17', 'DD-MM-YYYY HH24:MI'),
+2, 3, 14, 2, 25);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('25-10-2024 12:14', 'DD-MM-YYYY HH24:MI'),
-3, 1, 18, 2, 25);
+VALUES (DEFAULT, TO_TIMESTAMP('08-11-2026 18:40', 'DD-MM-YYYY HH24:MI'),
+3, 1, 4, 16, 25);
 
 /*Jornada 26*/
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('01-11-2024 15:38', 'DD-MM-YYYY HH24:MI'),
-3, 2, 11, 14, 26);
+VALUES (DEFAULT, TO_TIMESTAMP('15-11-2026 14:16', 'DD-MM-YYYY HH24:MI'),
+1, 3, 16, 3, 26);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('01-11-2024 16:53', 'DD-MM-YYYY HH24:MI'),
-1, 3, 18, 3, 26);
+VALUES (DEFAULT, TO_TIMESTAMP('15-11-2026 15:13', 'DD-MM-YYYY HH24:MI'),
+3, 1, 7, 14, 26);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('01-11-2024 18:22', 'DD-MM-YYYY HH24:MI'),
-3, 2, 9, 13, 26);
+VALUES (DEFAULT, TO_TIMESTAMP('15-11-2026 17:09', 'DD-MM-YYYY HH24:MI'),
+1, 3, 12, 2, 26);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('01-11-2024 18:53', 'DD-MM-YYYY HH24:MI'),
-2, 1, 11, 7, 26);
+VALUES (DEFAULT, TO_TIMESTAMP('15-11-2026 10:38', 'DD-MM-YYYY HH24:MI'),
+3, 1, 15, 16, 26);
 
 /*Jornada 27*/
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('08-11-2024 10:20', 'DD-MM-YYYY HH24:MI'),
-1, 3, 3, 19, 27);
+VALUES (DEFAULT, TO_TIMESTAMP('22-11-2026 16:19', 'DD-MM-YYYY HH24:MI'),
+3, 2, 10, 1, 27);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('08-11-2024 17:41', 'DD-MM-YYYY HH24:MI'),
-3, 1, 2, 7, 27);
+VALUES (DEFAULT, TO_TIMESTAMP('22-11-2026 17:36', 'DD-MM-YYYY HH24:MI'),
+2, 1, 9, 12, 27);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('08-11-2024 12:56', 'DD-MM-YYYY HH24:MI'),
-3, 1, 5, 16, 27);
+VALUES (DEFAULT, TO_TIMESTAMP('22-11-2026 11:01', 'DD-MM-YYYY HH24:MI'),
+3, 2, 9, 6, 27);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('08-11-2024 11:50', 'DD-MM-YYYY HH24:MI'),
-3, 1, 11, 13, 27);
+VALUES (DEFAULT, TO_TIMESTAMP('22-11-2026 10:07', 'DD-MM-YYYY HH24:MI'),
+1, 2, 8, 7, 27);
 
 /*Jornada 28*/
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('15-11-2024 16:48', 'DD-MM-YYYY HH24:MI'),
-1, 3, 2, 4, 28);
+VALUES (DEFAULT, TO_TIMESTAMP('29-11-2026 18:59', 'DD-MM-YYYY HH24:MI'),
+3, 2, 14, 10, 28);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('15-11-2024 13:26', 'DD-MM-YYYY HH24:MI'),
-1, 3, 11, 12, 28);
+VALUES (DEFAULT, TO_TIMESTAMP('29-11-2026 14:25', 'DD-MM-YYYY HH24:MI'),
+1, 3, 7, 8, 28);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('15-11-2024 10:59', 'DD-MM-YYYY HH24:MI'),
-1, 3, 7, 13, 28);
+VALUES (DEFAULT, TO_TIMESTAMP('29-11-2026 10:14', 'DD-MM-YYYY HH24:MI'),
+3, 2, 1, 7, 28);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('15-11-2024 13:14', 'DD-MM-YYYY HH24:MI'),
-1, 3, 4, 14, 28);
+VALUES (DEFAULT, TO_TIMESTAMP('29-11-2026 13:11', 'DD-MM-YYYY HH24:MI'),
+3, 1, 4, 3, 28);
 
 /*Jornada 29*/
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('22-11-2024 12:58', 'DD-MM-YYYY HH24:MI'),
-2, 1, 14, 20, 29);
+VALUES (DEFAULT, TO_TIMESTAMP('06-12-2026 14:50', 'DD-MM-YYYY HH24:MI'),
+2, 3, 8, 7, 29);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('22-11-2024 10:08', 'DD-MM-YYYY HH24:MI'),
-3, 2, 12, 19, 29);
+VALUES (DEFAULT, TO_TIMESTAMP('06-12-2026 17:02', 'DD-MM-YYYY HH24:MI'),
+1, 2, 2, 10, 29);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('22-11-2024 10:02', 'DD-MM-YYYY HH24:MI'),
-2, 3, 10, 7, 29);
+VALUES (DEFAULT, TO_TIMESTAMP('06-12-2026 15:52', 'DD-MM-YYYY HH24:MI'),
+2, 3, 9, 6, 29);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('22-11-2024 16:08', 'DD-MM-YYYY HH24:MI'),
-2, 1, 6, 17, 29);
+VALUES (DEFAULT, TO_TIMESTAMP('06-12-2026 16:39', 'DD-MM-YYYY HH24:MI'),
+1, 2, 14, 1, 29);
 
 /*Jornada 30*/
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('29-11-2024 15:37', 'DD-MM-YYYY HH24:MI'),
-1, 3, 6, 18, 30);
+VALUES (DEFAULT, TO_TIMESTAMP('13-12-2026 11:27', 'DD-MM-YYYY HH24:MI'),
+2, 3, 6, 16, 30);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('29-11-2024 13:01', 'DD-MM-YYYY HH24:MI'),
-1, 3, 15, 14, 30);
+VALUES (DEFAULT, TO_TIMESTAMP('13-12-2026 10:33', 'DD-MM-YYYY HH24:MI'),
+3, 1, 7, 5, 30);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('29-11-2024 15:19', 'DD-MM-YYYY HH24:MI'),
-1, 2, 3, 18, 30);
+VALUES (DEFAULT, TO_TIMESTAMP('13-12-2026 16:56', 'DD-MM-YYYY HH24:MI'),
+2, 3, 12, 2, 30);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('29-11-2024 10:44', 'DD-MM-YYYY HH24:MI'),
-1, 2, 17, 15, 30);
+VALUES (DEFAULT, TO_TIMESTAMP('13-12-2026 14:01', 'DD-MM-YYYY HH24:MI'),
+2, 3, 10, 7, 30);
 
+
+/* Competición 4 */
+
+INSERT INTO COMPETICIONES (ID_COMPETICION, NOMBRE_COM, FECHA_INICIO, FECHA_FIN, ETAPA, ID_JUEGO, ID_EQUIPO_GANADOR)
+VALUES (DEFAULT, 'VCT GAME CHANGERS', 
+        TO_DATE('04-04-2028', 'DD-MM-YYYY'), 
+        TO_DATE('04-04-2029', 'DD-MM-YYYY'), 'A', 12, NULL);
+
+/* Equipos competición 4 */
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (3, 4, 0, 0);
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (8, 4, 0, 0);
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (7, 4, 0, 0);
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (9, 4, 0, 0);
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (1, 4, 0, 0);
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (10, 4, 0, 0);
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (4, 4, 0, 0);
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (2, 4, 0, 0);
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (5, 4, 0, 0);
+INSERT INTO EQUIPOS_COMPETICIONES (ID_EQUIPO, ID_COMPETICION, VICTORIAS, PUNTOS)
+VALUES (6, 4, 0, 0);
+
+/* Jornadas competición 4 */
+INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
+VALUES (DEFAULT, 1, TO_DATE('24-05-2028', 'DD-MM-YYYY'), 4);
+INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
+VALUES (DEFAULT, 2, TO_DATE('31-05-2028', 'DD-MM-YYYY'), 4);
+INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
+VALUES (DEFAULT, 3, TO_DATE('07-06-2028', 'DD-MM-YYYY'), 4);
+INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
+VALUES (DEFAULT, 4, TO_DATE('14-06-2028', 'DD-MM-YYYY'), 4);
+INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
+VALUES (DEFAULT, 5, TO_DATE('21-06-2028', 'DD-MM-YYYY'), 4);
+INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
+VALUES (DEFAULT, 6, TO_DATE('28-06-2028', 'DD-MM-YYYY'), 4);
+INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
+VALUES (DEFAULT, 7, TO_DATE('05-07-2028', 'DD-MM-YYYY'), 4);
+INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
+VALUES (DEFAULT, 8, TO_DATE('12-07-2028', 'DD-MM-YYYY'), 4);
+INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
+VALUES (DEFAULT, 9, TO_DATE('19-07-2028', 'DD-MM-YYYY'), 4);
+INSERT INTO JORNADAS (ID_JORNADA, NUM_JORNADA, FECHA_JORNADA, ID_COMPETICION)
+VALUES (DEFAULT, 10, TO_DATE('26-07-2028', 'DD-MM-YYYY'), 4);
+
+/* Enfrentamientos competición 4 */
 /*Jornada 31*/
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('06-12-2024 10:22', 'DD-MM-YYYY HH24:MI'),
-3, 2, 18, 13, 31);
+VALUES (DEFAULT, TO_TIMESTAMP('20-12-2028 14:05', 'DD-MM-YYYY HH24:MI'),
+1, 2, 4, 10, 31);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('06-12-2024 18:39', 'DD-MM-YYYY HH24:MI'),
-1, 2, 6, 5, 31);
+VALUES (DEFAULT, TO_TIMESTAMP('20-12-2028 12:47', 'DD-MM-YYYY HH24:MI'),
+2, 3, 15, 3, 31);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('06-12-2024 10:21', 'DD-MM-YYYY HH24:MI'),
-1, 2, 10, 12, 31);
+VALUES (DEFAULT, TO_TIMESTAMP('20-12-2028 10:01', 'DD-MM-YYYY HH24:MI'),
+3, 1, 14, 13, 31);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('06-12-2024 12:33', 'DD-MM-YYYY HH24:MI'),
-3, 2, 15, 9, 31);
+VALUES (DEFAULT, TO_TIMESTAMP('20-12-2028 13:24', 'DD-MM-YYYY HH24:MI'),
+1, 2, 5, 7, 31);
 
 /*Jornada 32*/
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('13-12-2024 14:32', 'DD-MM-YYYY HH24:MI'),
-1, 3, 13, 3, 32);
+VALUES (DEFAULT, TO_TIMESTAMP('27-12-2028 16:13', 'DD-MM-YYYY HH24:MI'),
+1, 2, 2, 4, 32);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('13-12-2024 14:29', 'DD-MM-YYYY HH24:MI'),
-2, 1, 4, 12, 32);
+VALUES (DEFAULT, TO_TIMESTAMP('27-12-2028 13:55', 'DD-MM-YYYY HH24:MI'),
+3, 1, 16, 13, 32);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('13-12-2024 11:33', 'DD-MM-YYYY HH24:MI'),
-3, 2, 16, 7, 32);
+VALUES (DEFAULT, TO_TIMESTAMP('27-12-2028 17:12', 'DD-MM-YYYY HH24:MI'),
+2, 1, 11, 3, 32);
 
 INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
 RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
-VALUES (DEFAULT, TO_TIMESTAMP('13-12-2024 17:01', 'DD-MM-YYYY HH24:MI'),
-3, 2, 5, 20, 32);
+VALUES (DEFAULT, TO_TIMESTAMP('27-12-2028 11:24', 'DD-MM-YYYY HH24:MI'),
+2, 1, 14, 10, 32);
 
+/*Jornada 33*/
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('03-01-2028 11:14', 'DD-MM-YYYY HH24:MI'),
+1, 3, 16, 9, 33);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('03-01-2028 15:37', 'DD-MM-YYYY HH24:MI'),
+1, 3, 11, 9, 33);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('03-01-2028 14:22', 'DD-MM-YYYY HH24:MI'),
+1, 2, 1, 5, 33);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('03-01-2028 15:15', 'DD-MM-YYYY HH24:MI'),
+2, 3, 12, 2, 33);
+
+/*Jornada 34*/
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('10-01-2028 18:37', 'DD-MM-YYYY HH24:MI'),
+1, 3, 1, 13, 34);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('10-01-2028 13:10', 'DD-MM-YYYY HH24:MI'),
+2, 1, 2, 3, 34);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('10-01-2028 12:02', 'DD-MM-YYYY HH24:MI'),
+1, 3, 5, 7, 34);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('10-01-2028 14:14', 'DD-MM-YYYY HH24:MI'),
+1, 2, 9, 3, 34);
+
+/*Jornada 35*/
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('17-01-2028 15:50', 'DD-MM-YYYY HH24:MI'),
+3, 2, 15, 2, 35);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('17-01-2028 14:41', 'DD-MM-YYYY HH24:MI'),
+1, 3, 10, 3, 35);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('17-01-2028 16:32', 'DD-MM-YYYY HH24:MI'),
+1, 3, 11, 5, 35);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('17-01-2028 14:46', 'DD-MM-YYYY HH24:MI'),
+2, 1, 14, 15, 35);
+
+/*Jornada 36*/
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('24-01-2028 14:31', 'DD-MM-YYYY HH24:MI'),
+2, 3, 13, 4, 36);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('24-01-2028 11:33', 'DD-MM-YYYY HH24:MI'),
+2, 1, 5, 13, 36);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('24-01-2028 13:04', 'DD-MM-YYYY HH24:MI'),
+3, 2, 2, 10, 36);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('24-01-2028 17:08', 'DD-MM-YYYY HH24:MI'),
+2, 3, 10, 11, 36);
+
+/*Jornada 37*/
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('31-01-2028 11:26', 'DD-MM-YYYY HH24:MI'),
+1, 3, 7, 11, 37);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('31-01-2028 10:54', 'DD-MM-YYYY HH24:MI'),
+2, 1, 13, 2, 37);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('31-01-2028 16:16', 'DD-MM-YYYY HH24:MI'),
+3, 2, 2, 16, 37);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('31-01-2028 18:28', 'DD-MM-YYYY HH24:MI'),
+1, 3, 9, 1, 37);
+
+/*Jornada 38*/
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('07-02-2028 12:32', 'DD-MM-YYYY HH24:MI'),
+2, 1, 1, 7, 38);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('07-02-2028 12:24', 'DD-MM-YYYY HH24:MI'),
+2, 3, 12, 13, 38);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('07-02-2028 14:17', 'DD-MM-YYYY HH24:MI'),
+2, 3, 3, 4, 38);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('07-02-2028 11:00', 'DD-MM-YYYY HH24:MI'),
+3, 2, 12, 8, 38);
+
+/*Jornada 39*/
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('14-02-2028 16:32', 'DD-MM-YYYY HH24:MI'),
+2, 1, 7, 13, 39);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('14-02-2028 10:38', 'DD-MM-YYYY HH24:MI'),
+2, 1, 14, 15, 39);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('14-02-2028 11:50', 'DD-MM-YYYY HH24:MI'),
+3, 1, 9, 16, 39);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('14-02-2028 16:25', 'DD-MM-YYYY HH24:MI'),
+3, 2, 3, 2, 39);
+
+/*Jornada 40*/
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('21-02-2028 17:28', 'DD-MM-YYYY HH24:MI'),
+2, 3, 2, 11, 40);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('21-02-2028 12:09', 'DD-MM-YYYY HH24:MI'),
+1, 2, 6, 10, 40);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('21-02-2028 12:59', 'DD-MM-YYYY HH24:MI'),
+3, 2, 7, 11, 40);
+
+INSERT INTO ENFRENTAMIENTOS (ID_ENFRENTAMIENTO, HORA_ENFRENTAMIENTO,
+RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2, ID_JORNADA)
+VALUES (DEFAULT, TO_TIMESTAMP('21-02-2028 12:55', 'DD-MM-YYYY HH24:MI'),
+1, 3, 5, 11, 40);
 
 INSERT INTO USUARIOS (NOM_USUARIO, CONTRASENA, TIPO)
 VALUES ('Za','2Az@z4','A');
