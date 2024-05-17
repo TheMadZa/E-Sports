@@ -1,0 +1,17 @@
+<!-- Este seria el DTD -->
+<!-- Definimos el elemento padre , sus atributos y elementos -->
+<!ELEMENT competiciones (competicion+)>
+<!ELEMENT competicion (nombre_competicion, fecha_inicio, fecha_fin, nombre_juego, jornadas)>
+<!ATTLIST competicion id CDATA #REQUIRED>
+<!ELEMENT nombre_competicion (#PCDATA)>
+<!ELEMENT fecha_inicio (#PCDATA)>
+<!ELEMENT fecha_fin (#PCDATA)>
+<!ELEMENT nombre_juego (#PCDATA)>
+<!ELEMENT jornadas (jornada+)>
+<!ELEMENT jornada (numero_jornada, fecha_jornada, enfrentamiento+)>
+<!ATTLIST jornada id_jornada CDATA #REQUIRED>
+<!ELEMENT numero_jornada (#PCDATA)>
+<!ELEMENT fecha_jornada (#PCDATA)>
+<!ELEMENT enfrentamiento (resultados)>
+<!ATTLIST enfrentamiento id CDATA #REQUIRED>
+<!ELEMENT resultados (#PCDATA)>
