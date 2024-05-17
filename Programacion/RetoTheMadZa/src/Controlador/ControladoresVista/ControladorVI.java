@@ -2,18 +2,12 @@ package Controlador.ControladoresVista;
 
 import Modelo.*;
 import Vista.VentanaInicial;
-import org.imgscalr.Scalr;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class ControladorVI {
 
@@ -142,7 +136,7 @@ public class ControladorVI {
     public void validarBuscarCompeticionNombre(String nombreSeleccionado) throws Exception {
 
         //Buscamos el objeto competicion para conseguir el id
-        String[][] listaCompeticiones = cv.buscarCompeticionNombre(nombreSeleccionado);
+        String[][] listaCompeticiones = cv.buscarEquiposPorNombreCom(nombreSeleccionado);
 
         vi.getvEquipo1().setText(String.valueOf(listaCompeticiones[0][1]));
         vi.getpEquipo1().setText(String.valueOf(listaCompeticiones[0][2]));

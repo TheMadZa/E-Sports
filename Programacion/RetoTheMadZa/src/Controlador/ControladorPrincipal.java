@@ -32,8 +32,8 @@ public class ControladorPrincipal {
         return cm.buscarCompeticion(id_competicion);
     }
 
-    public String[][] buscarCompeticionNombre(String nombre) throws Exception {
-        return cm.buscarCompeticionNombre(nombre);
+    public String[][] buscarEquiposPorNombreCom(String nombre) throws Exception {
+        return cm.buscarEquiposPorNombreCom(nombre);
     }
 
     public List<Competicion> buscarTodasCompeticiones() throws Exception {
