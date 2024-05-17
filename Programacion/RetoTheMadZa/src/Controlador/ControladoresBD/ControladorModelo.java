@@ -80,8 +80,8 @@ public class ControladorModelo {
         cjo.insertarJornada(j);
     }
 
-    public void borrarJornada(Jornada j) throws Exception {
-        cjo.borrarJornada(j);
+    public void borrarJornada(int idJornada) throws Exception {
+        cjo.borrarJornada(idJornada);
     }
 
     public Jornada buscarJornada(Integer id_jornada) throws Exception {
@@ -114,8 +114,8 @@ public class ControladorModelo {
         cjug.insertarJugador(j);
     }
 
-    public void borrarJugador(Jugador j) throws Exception {
-        cjug.borrarJugador(j);
+    public void borrarJugador(int idJugador) throws Exception {
+        cjug.borrarJugador(idJugador);
     }
 
     public Jugador buscarJugador(Integer id_jugador) throws Exception {

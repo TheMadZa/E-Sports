@@ -103,8 +103,8 @@ public class ControladorVista {
         cp.insertarJornada(j);
     }
 
-    public void borrarJornada(Jornada j) throws Exception{
-        cp.borrarJornada(j);
+    public void borrarJornada(int idJornada) throws Exception{
+        cp.borrarJornada(idJornada);
     }
 
     public Jornada buscarJornada(Integer id_jornada) throws Exception {
