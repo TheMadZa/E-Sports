@@ -26,8 +26,6 @@ public class ControladorImagenes {
         cargarImagen("Tienda", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/RRSS/tienda.png?raw=true");
         cargarImagen("Inicio", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/inicio.png?raw=true");
         cargarImagen("Salir", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/powerOff.png?raw=true");
-        cargarImagen("Equipo1", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/faze-clan-logo.png?raw=true");
-        cargarImagen("Equipo2", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/fnatic-logo.png?raw=true");
         cargarImagen("Twitter", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/RRSS/TwitterLogo.png?raw=true");
         cargarImagen("Instagram", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/RRSS/InstagramLogo.png?raw=true");
         cargarImagen("Facebook", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/RRSS/FacebookLogo.png?raw=true");
@@ -59,6 +57,38 @@ public class ControladorImagenes {
         cargarImagen("Buy", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Tienda/buy.png?raw=true");
 
         cargarImagen("LogoColor", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/RRSS/TheMadZaLogoSoloNegro.png?raw=true");
+
+        //Equipos
+        cargarImagen("Equipo1", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/team-liquid-logo.png?raw=true");
+        cargarImagen("Equipo2", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/fnatic-logo.png?raw=true");
+        cargarImagen("Equipo3", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/evil-geniuses-gc-logo.png?raw=true");
+        cargarImagen("Equipo4", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/cloud9-logo.png?raw=true");
+        cargarImagen("Equipo5", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/g2-esports-logo.png?raw=true");
+        cargarImagen("Equipo6", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/t1-academy-logo.png?raw=true");
+        cargarImagen("Equipo7", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/faze-clan-logo.png?raw=true");
+        cargarImagen("Equipo8", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/team-solomid-logo.png?raw=true");
+        cargarImagen("Equipo9", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/natus-vincere-celestials-logo.png?raw=true");
+        cargarImagen("Equipo10", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/astralis-logo.png?raw=true");
+        cargarImagen("Equipo11", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/vitality.bee-logo.png?raw=true");
+        cargarImagen("Equipo12", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/team-envyus-logo.png?raw=true");
+        cargarImagen("Equipo13", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/rogue-esports-club-logo.png?raw=true");
+        cargarImagen("Equipo14", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/dignitas-logo.png?raw=true");
+        cargarImagen("Equipo15", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/100-thieves-logo.png?raw=true");
+        cargarImagen("Equipo16", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/gen.g-logo.png?raw=true");
+        cargarImagen("Equipo17", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/heretics-acad-logo.png?raw=true");
+        cargarImagen("Equipo18", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/mad-lions-logo.png?raw=true");
+        cargarImagen("Equipo19", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/queso-logo.png?raw=true");
+        cargarImagen("Equipo20", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/intz-logo.png?raw=true");
+        cargarImagen("Equipo21", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/9ine-logo.png?raw=true");
+        cargarImagen("Equipo22", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/g2-arctic-logo.png?raw=true");
+        cargarImagen("Equipo23", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/nigma-galaxy-logo.png?raw=true");
+        cargarImagen("Equipo24", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/funplus-phoenix-blaze-logo.png?raw=true");
+        cargarImagen("Equipo25", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/barca-logo.png?raw=true");
+        cargarImagen("Equipo26", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/finetwork-koi-logo.png?raw=true");
+        cargarImagen("Equipo27", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/furia-esports-logo.png?raw=true");
+        cargarImagen("Equipo28", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/m80-logo.png?raw=true");
+        cargarImagen("Equipo29", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/sentinels-logo.png?raw=true");
+        cargarImagen("Equipo30", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/imperial-logo.png?raw=true");
 
         System.out.println("Todas las imágenes han sido cargadas.");
         vc.setVisible(false);
