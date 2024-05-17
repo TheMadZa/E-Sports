@@ -39,12 +39,15 @@
         <xs:complexType name="tipoEnfrentamiento">
             <xs:sequence>
                  <!-- ponemos los elementos y su atributo -->
-                <xs:element name="equipo1" type="xs:int"/>
-                <xs:element name="resultado1" type="xs:int"/>
-                <xs:element name="equipo2" type="xs:int"/>
-                <xs:element name="resultado2" type="xs:int"/>
+                <xs:element name="resultados" type="tipoResultado" maxOccurs="unbounded"/>
             </xs:sequence>
             <xs:attribute name="id" type="xs:int" use="required"/>
         </xs:complexType>
+        <xs:simpleType name="tipoResultado">
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[0-9] - [0-9]"/>
+            </xs:restriction>
+        </xs:simpleType>
+
 </xs:schema>
     

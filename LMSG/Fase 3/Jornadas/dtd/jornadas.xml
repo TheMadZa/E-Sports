@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE competiciones SYSTEM "jornadasdtd.dtd">    
+<!DOCTYPE competiciones SYSTEM "jornadasdtd.dtd">
 <competiciones>
     <competicion id="1">
         <nombre_competicion>CS2 MAJOR COPENHAGEN 2024</nombre_competicion>
@@ -11,160 +11,160 @@
                 <numero_jornada>10</numero_jornada>
                 <fecha_jornada>2024-07-26</fecha_jornada>
                 <enfrentamiento id="37">
-                    <equipo1>6</equipo1>
-                    <resultado1>3</resultado1>
-                    <equipo2>10</equipo2>
-                    <resultado2>1</resultado2>
+                    <resultados>3 - 1</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="38">
-                    <equipo1>15</equipo1>
-                    <resultado1>1</resultado1>
-                    <equipo2>5</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>1 - 3</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="39">
+                    <resultados>2 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="40">
+                    <resultados>1 - 3</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="9">
                 <numero_jornada>9</numero_jornada>
                 <fecha_jornada>2024-07-19</fecha_jornada>
                 <enfrentamiento id="33">
-                    <equipo1>5</equipo1>
-                    <resultado1>1</resultado1>
-                    <equipo2>8</equipo2>
-                    <resultado2>2</resultado2>
+                    <resultados>1 - 2</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="34">
-                    <equipo1>16</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>9</equipo2>
-                    <resultado2>1</resultado2>
+                    <resultados>2 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="35">
+                    <resultados>2 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="36">
+                    <resultados>2 - 1</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="8">
                 <numero_jornada>8</numero_jornada>
                 <fecha_jornada>2024-07-12</fecha_jornada>
                 <enfrentamiento id="29">
-                    <equipo1>2</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>9</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>2 - 3</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="30">
-                    <equipo1>14</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>4</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>2 - 3</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="31">
+                    <resultados>3 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="32">
+                    <resultados>3 - 1</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="7">
                 <numero_jornada>7</numero_jornada>
                 <fecha_jornada>2024-07-05</fecha_jornada>
                 <enfrentamiento id="25">
-                    <equipo1>5</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>2</equipo2>
-                    <resultado2>1</resultado2>
+                    <resultados>2 - 1</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="26">
-                    <equipo1>1</equipo1>
-                    <resultado1>3</resultado1>
-                    <equipo2>5</equipo2>
-                    <resultado2>2</resultado2>
+                    <resultados>3 - 2</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="27">
+                    <resultados>2 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="28">
+                    <resultados>2 - 3</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="6">
                 <numero_jornada>6</numero_jornada>
                 <fecha_jornada>2024-06-28</fecha_jornada>
                 <enfrentamiento id="21">
-                    <equipo1>13</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>6</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>2 - 3</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="22">
-                    <equipo1>1</equipo1>
-                    <resultado1>1</resultado1>
-                    <equipo2>10</equipo2>
-                    <resultado2>2</resultado2>
+                    <resultados>1 - 2</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="23">
+                    <resultados>1 - 3</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="24">
+                    <resultados>2 - 1</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="5">
                 <numero_jornada>5</numero_jornada>
                 <fecha_jornada>2024-06-21</fecha_jornada>
                 <enfrentamiento id="17">
-                    <equipo1>7</equipo1>
-                    <resultado1>3</resultado1>
-                    <equipo2>4</equipo2>
-                    <resultado2>2</resultado2>
+                    <resultados>3 - 2</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="18">
-                    <equipo1>16</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>2</equipo2>
-                    <resultado2>1</resultado2>
+                    <resultados>2 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="19">
+                    <resultados>3 - 2</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="20">
+                    <resultados>3 - 2</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="4">
                 <numero_jornada>4</numero_jornada>
                 <fecha_jornada>2024-06-14</fecha_jornada>
                 <enfrentamiento id="13">
-                    <equipo1>6</equipo1>
-                    <resultado1>3</resultado1>
-                    <equipo2>5</equipo2>
-                    <resultado2>1</resultado2>
+                    <resultados>3 - 1</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="14">
-                    <equipo1>12</equipo1>
-                    <resultado1>1</resultado1>
-                    <equipo2>1</equipo2>
-                    <resultado2>2</resultado2>
+                    <resultados>1 - 2</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="15">
+                    <resultados>3 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="16">
+                    <resultados>2 - 1</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="3">
                 <numero_jornada>3</numero_jornada>
                 <fecha_jornada>2024-06-07</fecha_jornada>
                 <enfrentamiento id="9">
-                    <equipo1>10</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>6</equipo2>
-                    <resultado2>1</resultado2>
+                    <resultados>2 - 1</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="10">
-                    <equipo1>11</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>10</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>2 - 3</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="11">
+                    <resultados>1 - 3</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="12">
+                    <resultados>3 - 1</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="2">
                 <numero_jornada>2</numero_jornada>
                 <fecha_jornada>2024-05-31</fecha_jornada>
                 <enfrentamiento id="5">
-                    <equipo1>12</equipo1>
-                    <resultado1>1</resultado1>
-                    <equipo2>14</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>1 - 3</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="6">
-                    <equipo1>13</equipo1>
-                    <resultado1>3</resultado1>
-                    <equipo2>7</equipo2>
-                    <resultado2>2</resultado2>
+                    <resultados>3 - 2</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="7">
+                    <resultados>2 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="8">
+                    <resultados>2 - 3</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="1">
                 <numero_jornada>1</numero_jornada>
                 <fecha_jornada>2024-05-24</fecha_jornada>
                 <enfrentamiento id="1">
-                    <equipo1>1</equipo1>
-                    <resultado1>1</resultado1>
-                    <equipo2>13</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>1 - 3</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="2">
-                    <equipo1>14</equipo1>
-                    <resultado1>3</resultado1>
-                    <equipo2>15</equipo2>
-                    <resultado2>1</resultado2>
+                    <resultados>3 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="3">
+                    <resultados>3 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="4">
+                    <resultados>3 - 1</resultados>
                 </enfrentamiento>
             </jornada>
         </jornadas>
@@ -179,160 +179,160 @@
                 <numero_jornada>10</numero_jornada>
                 <fecha_jornada>2024-07-26</fecha_jornada>
                 <enfrentamiento id="77">
-                    <equipo1>14</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>2</equipo2>
-                    <resultado2>1</resultado2>
+                    <resultados>2 - 1</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="78">
-                    <equipo1>10</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>8</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>2 - 3</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="79">
+                    <resultados>1 - 3</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="80">
+                    <resultados>3 - 2</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="19">
                 <numero_jornada>9</numero_jornada>
                 <fecha_jornada>2024-07-19</fecha_jornada>
                 <enfrentamiento id="73">
-                    <equipo1>14</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>11</equipo2>
-                    <resultado2>1</resultado2>
+                    <resultados>2 - 1</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="74">
-                    <equipo1>7</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>6</equipo2>
-                    <resultado2>1</resultado2>
+                    <resultados>2 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="75">
+                    <resultados>2 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="76">
+                    <resultados>3 - 2</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="18">
                 <numero_jornada>8</numero_jornada>
                 <fecha_jornada>2024-07-12</fecha_jornada>
                 <enfrentamiento id="69">
-                    <equipo1>10</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>14</equipo2>
-                    <resultado2>1</resultado2>
+                    <resultados>2 - 1</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="70">
-                    <equipo1>7</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>15</equipo2>
-                    <resultado2>1</resultado2>
+                    <resultados>2 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="71">
+                    <resultados>3 - 2</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="72">
+                    <resultados>2 - 1</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="17">
                 <numero_jornada>7</numero_jornada>
                 <fecha_jornada>2024-07-05</fecha_jornada>
                 <enfrentamiento id="65">
-                    <equipo1>14</equipo1>
-                    <resultado1>3</resultado1>
-                    <equipo2>16</equipo2>
-                    <resultado2>2</resultado2>
+                    <resultados>3 - 2</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="66">
-                    <equipo1>7</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>12</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>2 - 3</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="67">
+                    <resultados>1 - 3</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="68">
+                    <resultados>3 - 1</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="16">
                 <numero_jornada>6</numero_jornada>
                 <fecha_jornada>2024-06-28</fecha_jornada>
                 <enfrentamiento id="61">
-                    <equipo1>10</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>13</equipo2>
-                    <resultado2>1</resultado2>
+                    <resultados>2 - 1</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="62">
-                    <equipo1>8</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>15</equipo2>
-                    <resultado2>1</resultado2>
+                    <resultados>2 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="63">
+                    <resultados>1 - 3</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="64">
+                    <resultados>3 - 2</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="15">
                 <numero_jornada>5</numero_jornada>
                 <fecha_jornada>2024-06-21</fecha_jornada>
                 <enfrentamiento id="57">
-                    <equipo1>4</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>13</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>2 - 3</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="58">
-                    <equipo1>4</equipo1>
-                    <resultado1>3</resultado1>
-                    <equipo2>2</equipo2>
-                    <resultado2>1</resultado2>
+                    <resultados>3 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="59">
+                    <resultados>1 - 2</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="60">
+                    <resultados>1 - 3</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="14">
                 <numero_jornada>4</numero_jornada>
                 <fecha_jornada>2024-06-14</fecha_jornada>
                 <enfrentamiento id="53">
-                    <equipo1>16</equipo1>
-                    <resultado1>1</resultado1>
-                    <equipo2>13</equipo2>
-                    <resultado2>2</resultado2>
+                    <resultados>1 - 2</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="54">
-                    <equipo1>16</equipo1>
-                    <resultado1>1</resultado1>
-                    <equipo2>9</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>1 - 3</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="55">
+                    <resultados>1 - 3</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="56">
+                    <resultados>1 - 2</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="13">
                 <numero_jornada>3</numero_jornada>
                 <fecha_jornada>2024-06-07</fecha_jornada>
                 <enfrentamiento id="49">
-                    <equipo1>6</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>16</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>2 - 3</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="50">
-                    <equipo1>2</equipo1>
-                    <resultado1>3</resultado1>
-                    <equipo2>16</equipo2>
-                    <resultado2>2</resultado2>
+                    <resultados>3 - 2</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="51">
+                    <resultados>2 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="52">
+                    <resultados>2 - 3</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="12">
                 <numero_jornada>2</numero_jornada>
                 <fecha_jornada>2024-05-31</fecha_jornada>
                 <enfrentamiento id="45">
-                    <equipo1>2</equipo1>
-                    <resultado1>3</resultado1>
-                    <equipo2>13</equipo2>
-                    <resultado2>1</resultado2>
+                    <resultados>3 - 1</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="46">
-                    <equipo1>8</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>11</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>2 - 3</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="47">
+                    <resultados>3 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="48">
+                    <resultados>1 - 3</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="11">
                 <numero_jornada>1</numero_jornada>
                 <fecha_jornada>2024-05-24</fecha_jornada>
                 <enfrentamiento id="41">
-                    <equipo1>1</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>12</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>2 - 3</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="42">
-                    <equipo1>15</equipo1>
-                    <resultado1>3</resultado1>
-                    <equipo2>9</equipo2>
-                    <resultado2>2</resultado2>
+                    <resultados>3 - 2</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="43">
+                    <resultados>2 - 3</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="44">
+                    <resultados>1 - 3</resultados>
                 </enfrentamiento>
             </jornada>
         </jornadas>
@@ -347,160 +347,160 @@
                 <numero_jornada>10</numero_jornada>
                 <fecha_jornada>2024-07-26</fecha_jornada>
                 <enfrentamiento id="117">
-                    <equipo1>6</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>16</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>2 - 3</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="118">
-                    <equipo1>7</equipo1>
-                    <resultado1>3</resultado1>
-                    <equipo2>5</equipo2>
-                    <resultado2>1</resultado2>
+                    <resultados>3 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="119">
+                    <resultados>2 - 3</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="120">
+                    <resultados>2 - 3</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="29">
                 <numero_jornada>9</numero_jornada>
                 <fecha_jornada>2024-07-19</fecha_jornada>
                 <enfrentamiento id="113">
-                    <equipo1>8</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>7</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>2 - 3</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="114">
-                    <equipo1>2</equipo1>
-                    <resultado1>1</resultado1>
-                    <equipo2>10</equipo2>
-                    <resultado2>2</resultado2>
+                    <resultados>1 - 2</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="115">
+                    <resultados>2 - 3</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="116">
+                    <resultados>1 - 2</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="28">
                 <numero_jornada>8</numero_jornada>
                 <fecha_jornada>2024-07-12</fecha_jornada>
                 <enfrentamiento id="109">
-                    <equipo1>14</equipo1>
-                    <resultado1>3</resultado1>
-                    <equipo2>10</equipo2>
-                    <resultado2>2</resultado2>
+                    <resultados>3 - 2</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="110">
-                    <equipo1>7</equipo1>
-                    <resultado1>1</resultado1>
-                    <equipo2>8</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>1 - 3</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="111">
+                    <resultados>3 - 2</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="112">
+                    <resultados>3 - 1</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="27">
                 <numero_jornada>7</numero_jornada>
                 <fecha_jornada>2024-07-05</fecha_jornada>
                 <enfrentamiento id="105">
-                    <equipo1>10</equipo1>
-                    <resultado1>3</resultado1>
-                    <equipo2>1</equipo2>
-                    <resultado2>2</resultado2>
+                    <resultados>3 - 2</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="106">
-                    <equipo1>9</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>12</equipo2>
-                    <resultado2>1</resultado2>
+                    <resultados>2 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="107">
+                    <resultados>3 - 2</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="108">
+                    <resultados>1 - 2</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="26">
                 <numero_jornada>6</numero_jornada>
                 <fecha_jornada>2024-06-28</fecha_jornada>
                 <enfrentamiento id="101">
-                    <equipo1>16</equipo1>
-                    <resultado1>1</resultado1>
-                    <equipo2>3</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>1 - 3</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="102">
-                    <equipo1>7</equipo1>
-                    <resultado1>3</resultado1>
-                    <equipo2>14</equipo2>
-                    <resultado2>1</resultado2>
+                    <resultados>3 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="103">
+                    <resultados>1 - 3</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="104">
+                    <resultados>3 - 1</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="25">
                 <numero_jornada>5</numero_jornada>
                 <fecha_jornada>2024-06-21</fecha_jornada>
                 <enfrentamiento id="97">
-                    <equipo1>16</equipo1>
-                    <resultado1>1</resultado1>
-                    <equipo2>3</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>1 - 3</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="98">
-                    <equipo1>13</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>7</equipo2>
-                    <resultado2>1</resultado2>
+                    <resultados>2 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="99">
+                    <resultados>2 - 3</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="100">
+                    <resultados>3 - 1</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="24">
                 <numero_jornada>4</numero_jornada>
                 <fecha_jornada>2024-06-14</fecha_jornada>
                 <enfrentamiento id="93">
-                    <equipo1>4</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>3</equipo2>
-                    <resultado2>1</resultado2>
+                    <resultados>2 - 1</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="94">
-                    <equipo1>6</equipo1>
-                    <resultado1>3</resultado1>
-                    <equipo2>16</equipo2>
-                    <resultado2>2</resultado2>
+                    <resultados>3 - 2</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="95">
+                    <resultados>1 - 3</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="96">
+                    <resultados>3 - 1</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="23">
                 <numero_jornada>3</numero_jornada>
                 <fecha_jornada>2024-06-07</fecha_jornada>
                 <enfrentamiento id="89">
-                    <equipo1>7</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>3</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>2 - 3</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="90">
-                    <equipo1>9</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>12</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>2 - 3</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="91">
+                    <resultados>2 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="92">
+                    <resultados>3 - 2</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="22">
                 <numero_jornada>2</numero_jornada>
                 <fecha_jornada>2024-05-31</fecha_jornada>
                 <enfrentamiento id="85">
-                    <equipo1>9</equipo1>
-                    <resultado1>1</resultado1>
-                    <equipo2>8</equipo2>
-                    <resultado2>2</resultado2>
+                    <resultados>1 - 2</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="86">
-                    <equipo1>12</equipo1>
-                    <resultado1>1</resultado1>
-                    <equipo2>5</equipo2>
-                    <resultado2>2</resultado2>
+                    <resultados>1 - 2</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="87">
+                    <resultados>1 - 3</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="88">
+                    <resultados>2 - 1</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="21">
                 <numero_jornada>1</numero_jornada>
                 <fecha_jornada>2024-05-24</fecha_jornada>
                 <enfrentamiento id="81">
-                    <equipo1>14</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>7</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>2 - 3</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="82">
-                    <equipo1>10</equipo1>
-                    <resultado1>3</resultado1>
-                    <equipo2>5</equipo2>
-                    <resultado2>1</resultado2>
+                    <resultados>3 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="83">
+                    <resultados>2 - 3</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="84">
+                    <resultados>1 - 3</resultados>
                 </enfrentamiento>
             </jornada>
         </jornadas>
@@ -515,160 +515,160 @@
                 <numero_jornada>10</numero_jornada>
                 <fecha_jornada>2024-07-26</fecha_jornada>
                 <enfrentamiento id="157">
-                    <equipo1>2</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>11</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>2 - 3</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="158">
-                    <equipo1>6</equipo1>
-                    <resultado1>1</resultado1>
-                    <equipo2>10</equipo2>
-                    <resultado2>2</resultado2>
+                    <resultados>1 - 2</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="159">
+                    <resultados>3 - 2</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="160">
+                    <resultados>1 - 3</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="39">
                 <numero_jornada>9</numero_jornada>
                 <fecha_jornada>2024-07-19</fecha_jornada>
                 <enfrentamiento id="153">
-                    <equipo1>7</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>13</equipo2>
-                    <resultado2>1</resultado2>
+                    <resultados>2 - 1</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="154">
-                    <equipo1>14</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>15</equipo2>
-                    <resultado2>1</resultado2>
+                    <resultados>2 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="155">
+                    <resultados>3 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="156">
+                    <resultados>3 - 2</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="38">
                 <numero_jornada>8</numero_jornada>
                 <fecha_jornada>2024-07-12</fecha_jornada>
                 <enfrentamiento id="149">
-                    <equipo1>1</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>7</equipo2>
-                    <resultado2>1</resultado2>
+                    <resultados>2 - 1</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="150">
-                    <equipo1>12</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>13</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>2 - 3</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="151">
+                    <resultados>2 - 3</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="152">
+                    <resultados>3 - 2</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="37">
                 <numero_jornada>7</numero_jornada>
                 <fecha_jornada>2024-07-05</fecha_jornada>
                 <enfrentamiento id="145">
-                    <equipo1>7</equipo1>
-                    <resultado1>1</resultado1>
-                    <equipo2>11</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>1 - 3</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="146">
-                    <equipo1>13</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>2</equipo2>
-                    <resultado2>1</resultado2>
+                    <resultados>2 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="147">
+                    <resultados>3 - 2</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="148">
+                    <resultados>1 - 3</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="36">
                 <numero_jornada>6</numero_jornada>
                 <fecha_jornada>2024-06-28</fecha_jornada>
                 <enfrentamiento id="141">
-                    <equipo1>13</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>4</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>2 - 3</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="142">
-                    <equipo1>5</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>13</equipo2>
-                    <resultado2>1</resultado2>
+                    <resultados>2 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="143">
+                    <resultados>3 - 2</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="144">
+                    <resultados>2 - 3</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="35">
                 <numero_jornada>5</numero_jornada>
                 <fecha_jornada>2024-06-21</fecha_jornada>
                 <enfrentamiento id="137">
-                    <equipo1>15</equipo1>
-                    <resultado1>3</resultado1>
-                    <equipo2>2</equipo2>
-                    <resultado2>2</resultado2>
+                    <resultados>3 - 2</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="138">
-                    <equipo1>10</equipo1>
-                    <resultado1>1</resultado1>
-                    <equipo2>3</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>1 - 3</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="139">
+                    <resultados>1 - 3</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="140">
+                    <resultados>2 - 1</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="34">
                 <numero_jornada>4</numero_jornada>
                 <fecha_jornada>2024-06-14</fecha_jornada>
                 <enfrentamiento id="133">
-                    <equipo1>1</equipo1>
-                    <resultado1>1</resultado1>
-                    <equipo2>13</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>1 - 3</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="134">
-                    <equipo1>2</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>3</equipo2>
-                    <resultado2>1</resultado2>
+                    <resultados>2 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="135">
+                    <resultados>1 - 3</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="136">
+                    <resultados>1 - 2</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="33">
                 <numero_jornada>3</numero_jornada>
                 <fecha_jornada>2024-06-07</fecha_jornada>
                 <enfrentamiento id="129">
-                    <equipo1>16</equipo1>
-                    <resultado1>1</resultado1>
-                    <equipo2>9</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>1 - 3</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="130">
-                    <equipo1>11</equipo1>
-                    <resultado1>1</resultado1>
-                    <equipo2>9</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>1 - 3</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="131">
+                    <resultados>1 - 2</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="132">
+                    <resultados>2 - 3</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="32">
                 <numero_jornada>2</numero_jornada>
                 <fecha_jornada>2024-05-31</fecha_jornada>
                 <enfrentamiento id="125">
-                    <equipo1>2</equipo1>
-                    <resultado1>1</resultado1>
-                    <equipo2>4</equipo2>
-                    <resultado2>2</resultado2>
+                    <resultados>1 - 2</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="126">
-                    <equipo1>16</equipo1>
-                    <resultado1>3</resultado1>
-                    <equipo2>13</equipo2>
-                    <resultado2>1</resultado2>
+                    <resultados>3 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="127">
+                    <resultados>2 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="128">
+                    <resultados>2 - 1</resultados>
                 </enfrentamiento>
             </jornada>
             <jornada id_jornada="31">
                 <numero_jornada>1</numero_jornada>
                 <fecha_jornada>2024-05-24</fecha_jornada>
                 <enfrentamiento id="121">
-                    <equipo1>4</equipo1>
-                    <resultado1>1</resultado1>
-                    <equipo2>10</equipo2>
-                    <resultado2>2</resultado2>
+                    <resultados>1 - 2</resultados>
                 </enfrentamiento>
                 <enfrentamiento id="122">
-                    <equipo1>15</equipo1>
-                    <resultado1>2</resultado1>
-                    <equipo2>3</equipo2>
-                    <resultado2>3</resultado2>
+                    <resultados>2 - 3</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="123">
+                    <resultados>3 - 1</resultados>
+                </enfrentamiento>
+                <enfrentamiento id="124">
+                    <resultados>1 - 2</resultados>
                 </enfrentamiento>
             </jornada>
         </jornadas>

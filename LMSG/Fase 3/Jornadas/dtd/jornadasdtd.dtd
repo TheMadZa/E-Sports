@@ -12,9 +12,6 @@
 <!ATTLIST jornada id_jornada CDATA #REQUIRED>
 <!ELEMENT numero_jornada (#PCDATA)>
 <!ELEMENT fecha_jornada (#PCDATA)>
-<!ELEMENT enfrentamiento (equipo1, resultado1, equipo2, resultado2)>
+<!ELEMENT enfrentamiento (resultados)>
 <!ATTLIST enfrentamiento id CDATA #REQUIRED>
-<!ELEMENT equipo1 (#PCDATA)>
-<!ELEMENT resultado1 (#PCDATA)>
-<!ELEMENT equipo2 (#PCDATA)>
-<!ELEMENT resultado2 (#PCDATA)>
+<!ELEMENT resultados (#PCDATA)>
