@@ -1,18 +1,26 @@
 package Controlador.ControladoresVista;
 
+import Vista.VentanaAdmin;
+import Vista.VentanaCarga;
 import org.imgscalr.Scalr;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
 public class ControladorImagenes {
+    private static VentanaCarga vc;
+
     private static Map<String, BufferedImage> imagenes = new HashMap<>();
 
     public static void cargarImagenes() {
+        vc = new VentanaCarga();
+        vc.setVisible(true);
+
         System.out.println("Cargando todas las imágenes al inicio...");
         cargarImagen("TheMadZaLogoSimple", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/RRSS/TheMadZaLogoSimple.png?raw=true");
         cargarImagen("Tienda", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/RRSS/tienda.png?raw=true");
@@ -51,6 +59,8 @@ public class ControladorImagenes {
         cargarImagen("Buy", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Tienda/buy.png?raw=true");
 
         System.out.println("Todas las imágenes han sido cargadas.");
+        vc.setVisible(false);
+
     }
 
     private static void cargarImagen(String nombre, String urlStr) {
