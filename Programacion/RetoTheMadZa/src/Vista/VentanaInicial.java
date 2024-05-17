@@ -58,8 +58,6 @@ public class VentanaInicial extends JFrame {
     public VentanaInicial() {
         mostrarImagenesFugaces();
 
-        System.out.println("Iniciando constructor de VentanaInicial.");
-
         // TODO : SE PODRÍA REUTILIZAR ESTO (HACER UNA FUNCIÓN GENERAL PARA TODAS LAS VENTANAS)
 
         // Cargar las imágenes con un tamaño específico.

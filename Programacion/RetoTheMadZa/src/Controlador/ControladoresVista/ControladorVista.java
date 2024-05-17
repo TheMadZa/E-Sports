@@ -12,7 +12,7 @@ public class ControladorVista {
     private ControladorVTienda cvt;
     private ControladorVIS cvis;
     private ControladorVAdmin cva;
-    private ControladorVCompeticiones cvc;
+    private ControladorVCompeticiones cvco;
     private ControladorVEquipos cve;
     private ControladorVJornadas cvjo;
     private ControladorVJuegos cvjue;
@@ -31,7 +31,7 @@ public class ControladorVista {
         cvt = new ControladorVTienda(this);
         cvis = new ControladorVIS(this);
         cva = new ControladorVAdmin(this);
-        cvc = new ControladorVCompeticiones(this);
+        cvco = new ControladorVCompeticiones(this);
         cve = new ControladorVEquipos(this);
         cvjo = new ControladorVJornadas(this);
         cvjue = new ControladorVJuegos(this);
@@ -42,17 +42,39 @@ public class ControladorVista {
         cvi.crearMostrar();
     }
 
-    public void mostrarTienda(){
-        cvt.crearMostrar();
-    }
-
     public void mostrarInicioSesion(){
         cvis.crearMostrar();
+    }
+
+    public void mostrarUser(){
+        //cvu.crearMostrar();// TODO : HACER
     }
 
     public void mostrarVAdmin(){
         cva.crearMostrar();
     }
+
+    public void mostrarJornadas(){
+        //cvj.crearMostrar();// TODO : HACER
+    }
+
+    public void mostrarClasificacion(){
+        //cvcl.crearMostrar();// TODO : HACER
+    }
+
+    public void mostrarEquipos(){
+        cve.crearMostrar();
+    }
+
+    public void mostrarTienda(){
+        cvt.crearMostrar();
+    }
+
+    /*
+    public void mostrarDUsuario(){
+        du.crearMostrar();
+    }
+    */
 
     //COMPETICION
     public void insertarCompeticion(Competicion c) throws Exception {

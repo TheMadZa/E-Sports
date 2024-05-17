@@ -5,6 +5,7 @@ import org.imgscalr.Scalr;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -61,72 +62,16 @@ public class VentanaAdmin extends JFrame {
 
         panelCRUD.setVisible(false);
 
-
-            // Cargar la imagen del botón Twitter con tamaño específico
-            ImageIcon logoConColor = ControladorImagenes.obtenerImagen("LogoColor", 700, 700);
-            if (logoConColor != null) {
-                tfImagenLogo.setIcon(logoConColor);
-            } else {
-                System.err.println("La imagen logo no se encontró.");
-            }
-
-        // Cargar la imagen del botón Tienda con tamaño específico
-        ImageIcon iconoTienda = ControladorImagenes.obtenerImagen("Tienda", 40, 40);
-        if (iconoTienda != null) {
-            bTienda.setIcon(iconoTienda);
-        } else {
-            System.err.println("La imagen Tienda no se encontró.");
-        }
-
-        // Cargar la imagen del botón Inicio con tamaño específico
-        ImageIcon iconoInicio = ControladorImagenes.obtenerImagen("Inicio", 40, 40);
-        if (iconoInicio != null) {
-            bInicio.setIcon(iconoInicio);
-        } else {
-            System.err.println("La imagen Inicio no se encontró.");
-        }
-
-        // Cargar la imagen del botón Salir con tamaño específico
-        ImageIcon iconoSalir = ControladorImagenes.obtenerImagen("Salir", 40, 40);
-        if (iconoSalir != null) {
-            bSalir.setIcon(iconoSalir);
-        } else {
-            System.err.println("La imagen Salir no se encontró.");
-        }
-
-        // Cargar la imagen del botón Twitter con tamaño específico
-        ImageIcon iconoTwitter = ControladorImagenes.obtenerImagen("Twitter", 40, 40);
-        if (iconoTwitter != null) {
-            bTwitter.setIcon(iconoTwitter);
-        } else {
-            System.err.println("La imagen Twitter no se encontró.");
-        }
-
-        // Cargar la imagen del botón Instagram con tamaño específico
-        ImageIcon iconoInstagram = ControladorImagenes.obtenerImagen("Instagram", 40, 40);
-        if (iconoInstagram != null) {
-            bInstagram.setIcon(iconoInstagram);
-        } else {
-            System.err.println("La imagen Instagram no se encontró.");
-        }
-
-        // Cargar la imagen del botón Facebook con tamaño específico
-        ImageIcon iconoFacebook = ControladorImagenes.obtenerImagen("Facebook", 40, 40);
-        if (iconoFacebook != null) {
-            bFacebook.setIcon(iconoFacebook);
-        } else {
-            System.err.println("La imagen Facebook no se encontró.");
-        }
-
-        // Cargar la imagen del logo blanco con tamaño específico
-        ImageIcon iconoLogoBlanco = ControladorImagenes.obtenerImagen("LogoBlanco", 100, 100);
-        if (iconoLogoBlanco != null) {
-            logoBlanco.setIcon(iconoLogoBlanco);
-        } else {
-            System.err.println("La imagen LogoBlanco no se encontró.");
-        }
-
-
+        // Cargar las imágenes con un tamaño específico.
+        cargarImagenEstablecerIcono("TheMadZaLogoSimple", 250, 250, ftThemadza);
+        cargarImagenEstablecerIcono("Tienda", bTienda);
+        cargarImagenEstablecerIcono("Inicio", bInicio);
+        cargarImagenEstablecerIcono("Salir", bSalir);
+        cargarImagenEstablecerIcono("Twitter", bTwitter);
+        cargarImagenEstablecerIcono("Instagram", bInstagram);
+        cargarImagenEstablecerIcono("Facebook", bFacebook);
+        cargarImagenEstablecerIcono("LogoBlanco", 100, 100, logoBlanco);
+        cargarImagenEstablecerIcono("LogoColor", 600, 600, tfImagenLogo);
 
         // Configurar la ventana
         setContentPane(pPrincipal);
@@ -219,23 +164,55 @@ public class VentanaAdmin extends JFrame {
     // Funciones
     public void mostrarDatosEquipos(){
 
+        // TODO : PONER BIEN TODO
+
         setJlDato1("Nombre:");
         JLabel jlFechaFundacion = new JLabel("Fecha de fundación:");
-        JTextField tfFechaFundacion = new JTextField(20);
+        JTextField tfFechaFundacion = new JTextField(); //20
         JLabel jlLogo = new JLabel("Logo:");
-        JTextField tfLogo = new JTextField(20);
+        JTextField tfLogo = new JTextField();
         JLabel jlColor = new JLabel("Color:");
-        JTextField tfColor = new JTextField(20);
+        JTextField tfColor = new JTextField();
 
-        pDatos.add(jlFechaFundacion);
-        pDatos.add(tfFechaFundacion);
-        pDatos.add(jlLogo);
-        pDatos.add(tfLogo);
-        pDatos.add(jlColor);
-        pDatos.add(tfColor);
+        pDatos.setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.anchor = GridBagConstraints.WEST;
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        pDatos.add(getJlDato1(), gbc);
+        gbc.gridy++;
+        pDatos.add(jlFechaFundacion, gbc);
+        gbc.gridy++;
+        pDatos.add(tfFechaFundacion, gbc);
+        gbc.gridy++;
+        pDatos.add(jlLogo, gbc);
+        gbc.gridy++;
+        pDatos.add(tfLogo, gbc);
+        gbc.gridy++;
+        pDatos.add(jlColor, gbc);
+        gbc.gridy++;
+        pDatos.add(tfColor, gbc);
 
-        pDatos.revalidate();
-        pDatos.repaint();
+        //pDatos.revalidate();
+        //pDatos.repaint();
 
+    }
+
+    // Método auxiliar para cargar imágenes y establecer íconos (una función es para los JLabel y la otra para JButton)
+    private void cargarImagenEstablecerIcono(String nombreImagen, int ancho, int alto, JLabel label) {
+        ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
+        if (icono != null) {
+            label.setIcon(icono);
+        } else {
+            System.err.println("La imagen " + nombreImagen + " no se encontró.");
+        }
+    }
+    private void cargarImagenEstablecerIcono(String nombreImagen, JButton button) {
+        ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, 40, 40);
+        if (icono != null) {
+            button.setIcon(icono);
+        } else {
+            System.err.println("La imagen " + nombreImagen + " no se encontró.");
+        }
     }
 }
