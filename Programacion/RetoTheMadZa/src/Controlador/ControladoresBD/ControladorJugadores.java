@@ -74,28 +74,32 @@ public class ControladorJugadores {
         }
     }
 
-    public Juego buscarJuego(int idJuego) throws Exception
+    public Jugador buscarJugador(int idJugador) throws Exception
     {
         try
         {
-            String plantilla = "SELECT * FROM juegos WHERE id_juego = ?";
+            String plantilla = "SELECT * FROM jugadores WHERE id_jugador = ?";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
 
-            sentenciaPre.setInt(1,idJuego);
+            sentenciaPre.setInt(1,idJugador);
 
             ResultSet rs = sentenciaPre.executeQuery();
             if (rs.next())
             {
-                j = new Juego();
-                j.setIdJuego(idJuego);
+                j = new Jugador();
+                j.setIdJugador(idJugador);
                 j.setNombre(rs.getString("nombre"));
-                j.setEmpresa(rs.getString("empresa"));
-                j.setFechaLanzamiento(rs.getDate("fecha_lanzamiento"));
+                j.setNickname(rs.getString("nickname"));
+                j.setNacionalidad(rs.getString("nacionalidad"));
+                j.setRol(rs.getString("rol"));
+                j.setFechaNac(rs.getDate("fecha_nac"));
+                j.setSueldo(rs.getDouble("sueldo"));
+                j.getEquipo().setIdEquipo(rs.getInt("id_equipo"));
             }
             else
             {
-                throw new Exception("No hay ningún juego con ese id");
+                throw new Exception("No hay ningún jugador con ese id");
             }
             sentenciaPre.close();
             return j;
@@ -106,21 +110,25 @@ public class ControladorJugadores {
         }
     }
 
-    public void modificarJuego(Juego j) throws Exception
+    public void modificarJugador(Jugador j) throws Exception
     {
-        String plantilla = "UPDATE juegos SET nombre = ?, empresa = ?, fecha_lanzamiento = ?, " +
-                "WHERE id_juego = ?";
+        String plantilla = "UPDATE jugadores SET nombre = ?, nickname = ?, nacionalidad = ?, rol = ?, fecha_nac = ?," +
+                "sueldo = ?, id_equipo = ? WHERE id_jugador = ?";
 
         PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
 
         sentenciaPre.setString(1, j.getNombre());
-        sentenciaPre.setString(2, j.getEmpresa());
-        sentenciaPre.setDate(3, j.getFechaLanzamiento());
-        sentenciaPre.setInt(4, j.getIdJuego());
+        sentenciaPre.setString(2, j.getNickname());
+        sentenciaPre.setString(3, j.getNacionalidad());
+        sentenciaPre.setString(4, j.getRol());
+        sentenciaPre.setDate(5, j.getFechaNac());
+        sentenciaPre.setDouble(6, j.getSueldo());
+        sentenciaPre.setInt(7, j.getEquipo().getIdEquipo());
+        sentenciaPre.setInt(8, j.getIdJugador());
 
         int n = sentenciaPre.executeUpdate();
         if (n != 1){
-            throw new Exception("No se ha actualizado ningún juego");
+            throw new Exception("No se ha actualizado ningún jugador");
         }
     }
 }

@@ -97,8 +97,8 @@ public class ControladorModelo {
         cjue.insertarJuego(j);
     }
 
-    public void borrarJuego(Juego j) throws Exception {
-        cjue.borrarJuego(j);
+    public void borrarJuego(int idJuego) throws Exception {
+        cjue.borrarJuego(idJuego);
     }
 
     public Juego buscarJuego(Integer id_juego) throws Exception {
@@ -118,8 +118,8 @@ public class ControladorModelo {
         cjug.borrarJugador(idJugador);
     }
 
-    public Jugador buscarJugador(Integer id_jugador) throws Exception {
-        return cjug.buscarJugador(id_jugador);
+    public Jugador buscarJugador(int idJugador) throws Exception {
+        return cjug.buscarJugador(idJugador);
     }
 
     public void modificarJugador(Jugador j) throws Exception {
@@ -131,8 +131,8 @@ public class ControladorModelo {
         cp.insertarPatrocinador(p);
     }
 
-    public void borrarPatrocinador(Patrocinador p) throws Exception {
-        cp.borrarPatrocinador(p);
+    public void borrarPatrocinador(int idPatrocinador) throws Exception {
+        cp.borrarPatrocinador(idPatrocinador);
     }
 
     public Patrocinador buscarPatrocinador(Integer id_patrocinador) throws Exception {
@@ -148,8 +148,8 @@ public class ControladorModelo {
         cs.insertarStaff(s);
     }
 
-    public void borrarStaff(Staff s) throws Exception {
-        cs.borrarStaff(s);
+    public void borrarStaff(int idStaff) throws Exception {
+        cs.borrarStaff(idStaff);
     }
 
     public Staff buscarStaff(Integer id_staff) throws Exception {

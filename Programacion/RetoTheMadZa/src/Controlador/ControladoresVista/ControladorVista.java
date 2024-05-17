@@ -121,8 +121,8 @@ public class ControladorVista {
         cp.insertarJuego(j);
     }
 
-    public void borrarJuego(Juego j) throws Exception{
-        cp.borrarJuego(j);
+    public void borrarJuego(int idJuego) throws Exception{
+        cp.borrarJuego(idJuego);
     }
 
     public Juego buscarJuego(Integer id_juego) throws Exception {
@@ -139,8 +139,8 @@ public class ControladorVista {
         cp.insertarJugador(j);
     }
 
-    public void borrarJugador(Jugador j) throws Exception{
-        cp.borrarJugador(j);
+    public void borrarJugador(int idJugador) throws Exception{
+        cp.borrarJugador(idJugador);
     }
 
     public Jugador buscarJugador(Integer id_jugador) throws Exception {
@@ -157,8 +157,8 @@ public class ControladorVista {
         cp.insertarPatrocinador(p);
     }
 
-    public void borrarPatrocinador(Patrocinador p) throws Exception{
-        cp.borrarPatrocinador(p);
+    public void borrarPatrocinador(int idPatrocinador) throws Exception{
+        cp.borrarPatrocinador(idPatrocinador);
     }
 
     public Patrocinador buscarPatrocinador(Integer id_patrocinador) throws Exception {
@@ -175,8 +175,8 @@ public class ControladorVista {
         cp.insertarStaff(s);
     }
 
-    public void borrarStaff(Staff s) throws Exception{
-        cp.borrarStaff(s);
+    public void borrarStaff(int idStaff) throws Exception{
+        cp.borrarStaff(idStaff);
     }
 
     public Staff buscarStaff(Integer id_staff) throws Exception {
