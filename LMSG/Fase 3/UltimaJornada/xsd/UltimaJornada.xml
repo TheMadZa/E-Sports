@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ultimaJornada 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ultimaJornadaxsd.xsd">
+    <competicion id="1">
+        <nombre_competicion>CS2 MAJOR COPENHAGEN 2024</nombre_competicion>
+        <fecha_inicio>2024-05-05</fecha_inicio>
+        <fecha_fin>2025-05-05</fecha_fin>
+        <nombre_juego>Counter-Strike series</nombre_juego>
+        <jornadas>
+            <jornada id_jornada="10">
+                <numero_jornada>10</numero_jornada>
+                <fecha_jornada>2024-07-26</fecha_jornada>
+                <enfrentamiento id="37">
+                    <equipo1>6</equipo1>
+                    <resultado1>3</resultado1>
+                    <equipo2>10</equipo2>
+                    <resultado2>1</resultado2>
+                </enfrentamiento>
+                <enfrentamiento id="38">
+                    <equipo1>15</equipo1>
+                    <resultado1>1</resultado1>
+                    <equipo2>5</equipo2>
+                    <resultado2>3</resultado2>
+                </enfrentamiento>
+            </jornada>
+        </jornadas>
+    </competicion>
+    <competicion id="3">
+        <nombre_competicion>OWCS 2024</nombre_competicion>
+        <fecha_inicio>2026-07-07</fecha_inicio>
+        <fecha_fin>2027-07-07</fecha_fin>
+        <nombre_juego>Overwatch</nombre_juego>
+        <jornadas>
+            <jornada id_jornada="30">
+                <numero_jornada>10</numero_jornada>
+                <fecha_jornada>2024-07-26</fecha_jornada>
+                <enfrentamiento
+                    id="117">
+                    <equipo1>6</equipo1>
+                    <resultado1>2</resultado1>
+                    <equipo2>16</equipo2>
+                    <resultado2>3</resultado2>
+                </enfrentamiento>
+                <enfrentamiento id="118">
+                    <equipo1>7</equipo1>
+                    <resultado1>3</resultado1>
+                    <equipo2>5</equipo2>
+                    <resultado2>1</resultado2>
+                </enfrentamiento>
+            </jornada>
+        </jornadas>
+    </competicion>
+    <competicion id="4">
+        <nombre_competicion>VCT GAME CHANGERS</nombre_competicion>
+        <fecha_inicio>2028-04-04</fecha_inicio>
+        <fecha_fin>2029-04-04</fecha_fin>
+        <nombre_juego>Valorant</nombre_juego>
+        <jornadas>
+            <jornada id_jornada="40">
+                <numero_jornada>10</numero_jornada>
+                <fecha_jornada>2024-07-26</fecha_jornada>
+                <enfrentamiento id="157">
+                    <equipo1>2</equipo1>
+                    <resultado1>2</resultado1>
+                    <equipo2>11</equipo2>
+                    <resultado2>3</resultado2>
+                </enfrentamiento>
+                <enfrentamiento id="158">
+                    <equipo1>6</equipo1>
+                    <resultado1>1</resultado1>
+                    <equipo2>10</equipo2>
+                    <resultado2>2</resultado2>
+                </enfrentamiento>
+            </jornada>
+        </jornadas>
+    </competicion>
+    <competicion id="2">
+        <nombre_competicion>LEC</nombre_competicion>
+        <fecha_inicio>2025-01-01</fecha_inicio>
+        <fecha_fin>2026-01-01</fecha_fin>
+        <nombre_juego>League of Legends</nombre_juego>
+        <jornadas>
+            <jornada
+                id_jornada="20">
+                <numero_jornada>10</numero_jornada>
+                <fecha_jornada>2024-07-26</fecha_jornada>
+                <enfrentamiento id="77">
+                    <equipo1>14</equipo1>
+                    <resultado1>2</resultado1>
+                    <equipo2>2</equipo2>
+                    <resultado2>1</resultado2>
+                </enfrentamiento>
+                <enfrentamiento id="78">
+                    <equipo1>10</equipo1>
+                    <resultado1>2</resultado1>
+                    <equipo2>8</equipo2>
+                    <resultado2>3</resultado2>
+                </enfrentamiento>
+            </jornada>
+        </jornadas>
+    </competicion>
+</ultimaJornada>
