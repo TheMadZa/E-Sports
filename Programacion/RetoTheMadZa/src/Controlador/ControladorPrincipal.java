@@ -8,13 +8,14 @@ import Modelo.*;
 import java.util.List;
 
 public class ControladorPrincipal {
+    private ControladorVista cv;
     private final ControladorModelo cm;
 
     public ControladorPrincipal() {
         ControladorImagenes ci = new ControladorImagenes();
         ControladorImagenes.cargarImagenes();
-        ControladorVista cv = new ControladorVista(this);
-        cm = new ControladorModelo(this);
+        cv = new ControladorVista(this);
+        cm = new ControladorModelo();
     }
 
     //COMPETICION
@@ -22,8 +23,8 @@ public class ControladorPrincipal {
         cm.insertarCompeticion(c);
     }
 
-    public void borrarCompeticion(Competicion c) throws Exception {
-        cm.borrarCompeticion(c);
+    public void borrarCompeticion(int idCompeticion) throws Exception {
+        cm.borrarCompeticion(idCompeticion);
     }
 
     public Competicion buscarCompeticion(Integer id_competicion) throws Exception {
@@ -47,8 +48,8 @@ public class ControladorPrincipal {
         cm.insertarEquipo(e);
     }
 
-    public void borrarEquipo(Equipo e) throws Exception {
-        cm.borrarEquipo(e);
+    public void borrarEquipo(int idEquipo) throws Exception {
+        cm.borrarEquipo(idEquipo);
     }
 
     public Equipo buscarEquipo(Integer id_equipo) throws Exception {
@@ -64,8 +65,8 @@ public class ControladorPrincipal {
         cm.insertarJornada(j);
     }
 
-    public void borrarJornada(Jornada j) throws Exception {
-        cm.borrarJornada(j);
+    public void borrarJornada(int idJornada) throws Exception {
+        cm.borrarJornada(idJornada);
     }
 
     public Jornada buscarJornada(Integer id_jornada) throws Exception {

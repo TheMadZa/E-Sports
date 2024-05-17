@@ -1,53 +1,121 @@
 package Controlador.ControladoresBD;
 
+import Modelo.Equipo;
 import Modelo.Jornada;
 
 import javax.swing.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ControladorJornadas {
-    private final List<Jornada> jornadas;
+    private Connection con;
+    private Jornada j;
 
-    public ControladorJornadas() {
-        this.jornadas = new ArrayList<>();
-        System.out.println("Elementos creados de ControladorJornadas.");
+    public ControladorJornadas(Connection con) {
+        this.con = con;
     }
 
-    public void insertarJornada(Jornada j) throws Exception {
-        try {
-            jornadas.add(j);
-        } catch (Exception ex) {
-            throw new Exception("Error al insertar la jornada: " + ex.getMessage());
+    public void insertarJornada(Jornada j) throws Exception
+    {
+        try
+        {
+            String plantilla = "INSERT INTO jornadas VALUES (?,?,?,?)";
+
+            PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
+
+            sentenciaPre.setInt(1,j.getIdJornada());
+            sentenciaPre.setInt(2,j.getNumJornada());
+            sentenciaPre.setDate(3,j.getFechaJornada());
+            sentenciaPre.setInt(4,j.getCompeticion().getIdCompeticion());
+
+            int n = sentenciaPre.executeUpdate();
+
+            sentenciaPre.close();
+
+            if (n != 1)
+            {
+                throw new Exception("No se ha insertado la jornada");
+            }
+
+        }
+        catch (SQLIntegrityConstraintViolationException e)
+        {
+            throw new Exception("Ya hay una jornada con ese id");
         }
     }
 
-    public void borrarJornada(Jornada j) throws Exception {
-        if (jornadas.remove(j)) {
-            System.out.println("Jornada eliminada.");
-        } else {
-            throw new Exception("No se encontró la jornada a eliminar.");
-        }
-    }
+    public void borrarJornada(int idJornada) throws Exception
+    {
+        try
+        {
+            String plantilla = "DELETE FROM jornadas WHERE id_jornada = ?";
 
-    public Jornada buscarJornada(Integer id_jornada) throws Exception {
-        for (Jornada jornada : jornadas) {
-            if (jornada.getIdJornada() == id_jornada) {
-                return jornada;
+            PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
+
+            sentenciaPre.setInt(1, idJornada);
+
+            int n = sentenciaPre.executeUpdate();
+            if (n != 1) {
+                throw new Exception("No se ha eliminado ninguna jornada");
             }
         }
-        JOptionPane.showMessageDialog(null, "No hay ninguna jornada con ese ID.");
-        return null;
+        catch (SQLIntegrityConstraintViolationException e)
+        {
+            throw new Exception("No existe una jornada con ese id para borrar");
+        }
     }
 
-    public void modificarJornada(Jornada jornada) throws Exception {
-        Jornada j = buscarJornada(jornada.getIdJornada());
-        if (j != null) {
-            j.setNumJornada(jornada.getNumJornada());
-            j.setFechaJornada(jornada.getFechaJornada());
-            j.setCompeticion(jornada.getCompeticion());
-        } else {
-            throw new Exception("No se encontró ninguna jornada con el ID provisto: " + jornada.getIdJornada());
+    public Jornada buscarJornada(int idJornada) throws Exception
+    {
+        try
+        {
+            String plantilla = "SELECT * FROM jornadas WHERE id_jornada = ?";
+
+            PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
+
+            sentenciaPre.setInt(1,idJornada);
+
+            ResultSet rs = sentenciaPre.executeQuery();
+            if (rs.next())
+            {
+                j = new Jornada();
+                j.setIdJornada(idJornada);
+                j.setNumJornada(rs.getInt("num_jornada"));
+                j.setFechaJornada(rs.getDate("fecha_jornada"));
+                j.getCompeticion().setIdCompeticion(rs.getInt("id_competicion"));
+            }
+            else
+            {
+                throw new Exception("No hay ninguna jornada con ese id");
+            }
+            sentenciaPre.close();
+            return j;
+        }
+        catch (Exception e)
+        {
+            throw new Exception("Error");
+        }
+    }
+
+    public void modificarJornada(Jornada j) throws Exception
+    {
+        String plantilla = "UPDATE jornadas SET num_jornada = ?, fecha_jornada = ?, id_competicion = ?, " +
+                "WHERE id_jornada = ?";
+
+        PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
+
+        sentenciaPre.setInt(1, j.getNumJornada());
+        sentenciaPre.setDate(2, j.getFechaJornada());
+        sentenciaPre.setInt(3, j.getCompeticion().getIdCompeticion());
+        sentenciaPre.setInt(4, j.getIdJornada());
+
+        int n = sentenciaPre.executeUpdate();
+        if (n != 1){
+            throw new Exception("No se ha actualizado ninguna jornada");
         }
     }
 }
