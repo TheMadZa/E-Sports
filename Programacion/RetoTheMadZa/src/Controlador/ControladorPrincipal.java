@@ -82,8 +82,8 @@ public class ControladorPrincipal {
         cm.insertarJuego(j);
     }
 
-    public void borrarJuego(Juego j) throws Exception {
-        cm.borrarJuego(j);
+    public void borrarJuego(int idJuego) throws Exception {
+        cm.borrarJuego(idJuego);
     }
 
     public Juego buscarJuego(Integer id_juego) throws Exception {
@@ -99,8 +99,8 @@ public class ControladorPrincipal {
         cm.insertarJugador(j);
     }
 
-    public void borrarJugador(Jugador j) throws Exception {
-        cm.borrarJugador(j);
+    public void borrarJugador(int idJugador) throws Exception {
+        cm.borrarJugador(idJugador);
     }
 
     public Jugador buscarJugador(Integer id_jugador) throws Exception {
@@ -116,8 +116,8 @@ public class ControladorPrincipal {
         cm.insertarPatrocinador(p);
     }
 
-    public void borrarPatrocinador(Patrocinador p) throws Exception {
-        cm.borrarPatrocinador(p);
+    public void borrarPatrocinador(int idPatrocinador) throws Exception {
+        cm.borrarPatrocinador(idPatrocinador);
     }
 
     public Patrocinador buscarPatrocinador(Integer id_patrocinador) throws Exception {
@@ -133,8 +133,8 @@ public class ControladorPrincipal {
         cm.insertarStaff(s);
     }
 
-    public void borrarStaff(Staff s) throws Exception {
-        cm.borrarStaff(s);
+    public void borrarStaff(int idStaff) throws Exception {
+        cm.borrarStaff(idStaff);
     }
 
     public Staff buscarStaff(Integer id_staff) throws Exception {
@@ -149,4 +149,12 @@ public class ControladorPrincipal {
     public List<EquipoCompeticion> buscarTodosEquiposCompeticiones() throws Exception {
         return cm.buscarTodosEquiposCompeticiones();
     }
+
+
+    //CONEXION
+    public void cerrarConexion() throws Exception{
+        cm.cerrarConexion();
+    }
+
+
 }

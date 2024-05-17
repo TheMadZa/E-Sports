@@ -153,6 +153,7 @@ public class ControladorCompeticiones {
                 c.setEtapa(rs.getString("etapa"));
                 c.getJuego().setIdJuego(rs.getInt("id_juego"));
                 c.getEquipoGanador().setIdEquipo(rs.getInt("id_equipo_ganador"));
+                competiciones.add(c);
             }
             sentenciaPre.close();
             return competiciones;
