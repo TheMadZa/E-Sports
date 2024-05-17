@@ -1,5 +1,6 @@
 package Vista;
 
+import Controlador.ControladoresVista.ControladorImagenes;
 import org.imgscalr.Scalr;
 
 import javax.imageio.ImageIO;
@@ -68,197 +69,42 @@ public class VentanaTienda extends JFrame{
 
     public VentanaTienda() {
 
-        try {
 
-            // Cargar la imagen original del logo
-            URL imageUrl = new URL("https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/RRSS/TheMadZaLogoSimple.png?raw=true");
-            BufferedImage imagenOriginal = ImageIO.read(imageUrl);
+            ftThemadza.setIcon(ControladorImagenes.obtenerImagen("TheMadZaLogoSimple", 250, 250));
+            bTienda.setIcon(ControladorImagenes.obtenerImagen("Tienda", 40, 40));
+            bInicio.setIcon(ControladorImagenes.obtenerImagen("Inicio", 40, 40));
+            bSalir.setIcon(ControladorImagenes.obtenerImagen("Salir", 40, 40));
+            bTwitter.setIcon(ControladorImagenes.obtenerImagen("Twitter", 40, 40));
+            bInstagram.setIcon(ControladorImagenes.obtenerImagen("Instagram", 40, 40));
+            bFacebook.setIcon(ControladorImagenes.obtenerImagen("Facebook", 40, 40));
+            logoBlanco.setIcon(ControladorImagenes.obtenerImagen("LogoBlanco", 100, 100));
+            tienda1.setIcon(ControladorImagenes.obtenerImagen("Tienda1", 400, 400));
+            tienda2.setIcon(ControladorImagenes.obtenerImagen("Tienda2", 400, 400));
+            tienda3.setIcon(ControladorImagenes.obtenerImagen("Tienda3", 400, 400));
+            tienda4.setIcon(ControladorImagenes.obtenerImagen("Tienda4", 400, 400));
+            tienda5.setIcon(ControladorImagenes.obtenerImagen("Tienda5", 400, 400));
+            tienda6.setIcon(ControladorImagenes.obtenerImagen("Tienda6", 400, 400));
+            tienda7.setIcon(ControladorImagenes.obtenerImagen("Tienda7", 400, 400));
+            tienda8.setIcon(ControladorImagenes.obtenerImagen("Tienda8", 400, 400));
+            tienda9.setIcon(ControladorImagenes.obtenerImagen("Tienda9", 400, 400));
+            tienda10.setIcon(ControladorImagenes.obtenerImagen("Tienda10", 400, 400));
+            tienda11.setIcon(ControladorImagenes.obtenerImagen("Tienda11", 400, 400));
+            tienda12.setIcon(ControladorImagenes.obtenerImagen("Tienda12", 400, 400));
 
-            // Escalar la imagen
-            BufferedImage bufferedImage = Scalr.resize(imagenOriginal, 250);
+            ImageIcon iconoBuy = ControladorImagenes.obtenerImagen("Buy", 50, 50);
+            bBuy1.setIcon(iconoBuy);
+            bBuy2.setIcon(iconoBuy);
+            bBuy3.setIcon(iconoBuy);
+            bBuy4.setIcon(iconoBuy);
+            bBuy5.setIcon(iconoBuy);
+            bBuy6.setIcon(iconoBuy);
+            bBuy7.setIcon(iconoBuy);
+            bBuy8.setIcon(iconoBuy);
+            bBuy9.setIcon(iconoBuy);
+            bBuy10.setIcon(iconoBuy);
+            bBuy11.setIcon(iconoBuy);
+            bBuy12.setIcon(iconoBuy);
 
-            // Crear un ImageIcon a partir del BufferedImage escalado
-            ImageIcon iconoEscalado = new ImageIcon(bufferedImage);
-
-            // Asignar el ImageIcon escalado al JLabel ftThemadza
-            ftThemadza.setIcon(iconoEscalado);
-
-
-            // Cargar la imagen Botón Tienda
-            URL Tienda = new URL("https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/RRSS/tienda.png?raw=true");
-            BufferedImage imagenTienda = ImageIO.read(Tienda);
-            BufferedImage bufferedImageTienda = Scalr.resize(imagenTienda, 40);
-            ImageIcon iconoTienda = new ImageIcon(bufferedImageTienda);
-            bTienda.setIcon(iconoTienda);
-
-            // Botón Inicio
-            URL Inicio1 = new URL("https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/inicio.png?raw=true");
-            BufferedImage imagenInicio = ImageIO.read(Inicio1);
-            BufferedImage bufferedImageInicio = Scalr.resize(imagenInicio, 40);
-            ImageIcon iconoInicio = new ImageIcon(bufferedImageInicio);
-            bInicio.setIcon(iconoInicio);
-
-            // Botón Salir
-            URL Salir1 = new URL("https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/powerOff.png?raw=true");
-            BufferedImage imagenSalir = ImageIO.read(Salir1);
-            BufferedImage bufferedImageSalir = Scalr.resize(imagenSalir, 40);
-            ImageIcon iconoSalir = new ImageIcon(bufferedImageSalir);
-            bSalir.setIcon(iconoSalir);
-
-            // Botón Twitter
-            URL Twitter = new URL("https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/RRSS/TwitterLogo.png?raw=true");
-            BufferedImage imagenTwitter = ImageIO.read(Twitter);
-            BufferedImage bufferedImageTwitter = Scalr.resize(imagenTwitter, 40);
-            ImageIcon iconoTwitter = new ImageIcon(bufferedImageTwitter);
-            bTwitter.setIcon(iconoTwitter);
-
-            // Botón Instagram
-            URL Insta = new URL("https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/RRSS/InstagramLogo.png?raw=true");
-            BufferedImage imagenInstagram = ImageIO.read(Insta);
-            BufferedImage bufferedImageInstagram = Scalr.resize(imagenInstagram, 40);
-            ImageIcon iconoInstagram = new ImageIcon(bufferedImageInstagram);
-            bInstagram.setIcon(iconoInstagram);
-
-            // Botón Facebook
-            URL Facebook = new URL("https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/RRSS/FacebookLogo.png?raw=true");
-            BufferedImage imagenFacebook = ImageIO.read(Facebook);
-            BufferedImage bufferedImageFacebook = Scalr.resize(imagenFacebook, 40);
-            ImageIcon iconoFacebook = new ImageIcon(bufferedImageFacebook);
-            bFacebook.setIcon(iconoFacebook);
-
-            // Imagen LogoBlanco
-            URL LogoBlanco = new URL("https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/RRSS/SoloBlanco.png?raw=true");
-            BufferedImage imagenLogoBlanco = ImageIO.read(LogoBlanco);
-            BufferedImage bufferedImageLogoBlanco = Scalr.resize(imagenLogoBlanco, 100);
-            ImageIcon iconoLogoBlanco = new ImageIcon(bufferedImageLogoBlanco);
-            logoBlanco.setIcon(iconoLogoBlanco);
-
-            // Imagen tienda1
-            URL Tienda1 = new URL("https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/Tienda/camiseta1.png?raw=true");
-            BufferedImage imagenOriginal11 = ImageIO.read(Tienda1);
-            BufferedImage bufferedImage11 = Scalr.resize(imagenOriginal11, 400);
-            ImageIcon iconoEscalado11 = new ImageIcon(bufferedImage11);
-            tienda1.setIcon(iconoEscalado11);
-
-            // Imagen Tienda2
-            URL Tienda2 = new URL("https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/Tienda/mochilas.png?raw=true");
-            BufferedImage imagenOriginal24 = ImageIO.read(Tienda2);
-            BufferedImage bufferedImage24 = Scalr.resize(imagenOriginal24, 400);
-            ImageIcon iconoEscalado24 = new ImageIcon(bufferedImage24);
-            tienda2.setIcon(iconoEscalado24);
-
-            // Imagen Tienda3
-            URL Tienda3 = new URL("https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos" +
-                    "/blob/main/Tienda/botellas.png?raw=true");
-            BufferedImage imagenOriginal25 = ImageIO.read(Tienda3);
-            BufferedImage bufferedImage25 = Scalr.resize(imagenOriginal25, 400);
-            ImageIcon iconoEscalado25 = new ImageIcon(bufferedImage25);
-            tienda3.setIcon(iconoEscalado25);
-
-            // Imagen Tienda4
-            URL Tienda4 = new URL("https://github.com/IbaiSaenzDeBuruaga/" +
-                    "E-SportsLogos/blob/main/Tienda/zapatilla1.png?raw=true");
-            BufferedImage imagenOriginal26 = ImageIO.read(Tienda4);
-            BufferedImage bufferedImage26 = Scalr.resize(imagenOriginal26, 400);
-            ImageIcon iconoEscalado26 = new ImageIcon(bufferedImage26);
-            tienda4.setIcon(iconoEscalado26);
-
-            // Imagen Tienda5
-            URL Tienda5 = new URL("https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/Tienda/boxers.png?raw=true");
-            BufferedImage imagenOriginal27 = ImageIO.read(Tienda5);
-            BufferedImage bufferedImage27 = Scalr.resize(imagenOriginal27, 400);
-            ImageIcon iconoEscalado27 = new ImageIcon(bufferedImage27);
-            tienda5.setIcon(iconoEscalado27);
-
-            // Imagen Tienda6
-            URL Tienda6 = new URL("https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/Tienda/raton.png?raw=true");
-            BufferedImage imagenOriginal28 = ImageIO.read(Tienda6);
-            BufferedImage bufferedImage28 = Scalr.resize(imagenOriginal28, 400);
-            ImageIcon iconoEscalado28 = new ImageIcon(bufferedImage28);
-            tienda6.setIcon(iconoEscalado28);
-
-            // Imagen Tienda7
-            URL Tienda7 = new URL("https://github.com/IbaiSaenzDeBuruaga/" +
-                    "E-SportsLogos/blob/main/Tienda/bikini.png?raw=true");
-            BufferedImage imagenOriginal29 = ImageIO.read(Tienda7);
-            BufferedImage bufferedImage29 = Scalr.resize(imagenOriginal29, 400);
-            ImageIcon iconoEscalado29 = new ImageIcon(bufferedImage29);
-            tienda7.setIcon(iconoEscalado29);
-
-            // Imagen Tienda8
-            URL Tienda8 = new URL("https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/Tienda/calcetines.png?raw=true");
-            BufferedImage imagenOriginal30 = ImageIO.read(Tienda8);
-            BufferedImage bufferedImage30 = Scalr.resize(imagenOriginal30, 400);
-            ImageIcon iconoEscalado30 = new ImageIcon(bufferedImage30);
-            tienda8.setIcon(iconoEscalado30);
-
-            // Imagen Tienda9
-            URL Tienda9 = new URL("https://github.com/IbaiSaenzDeBuruaga/" +
-                    "E-SportsLogos/blob/main/Tienda/chaqueta.png?raw=true");
-            BufferedImage imagenOriginal31 = ImageIO.read(Tienda9);
-            BufferedImage bufferedImage31 = Scalr.resize(imagenOriginal31, 400);
-            ImageIcon iconoEscalado31 = new ImageIcon(bufferedImage31);
-            tienda9.setIcon(iconoEscalado31);
-
-            // Imagen Tienda10
-            URL Tienda10 = new URL("https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/Tienda/gorra.png?raw=true");
-            BufferedImage imagenOriginal32 = ImageIO.read(Tienda10);
-            BufferedImage bufferedImage32 = Scalr.resize(imagenOriginal32, 400);
-            ImageIcon iconoEscalado32 = new ImageIcon(bufferedImage32);
-            tienda10.setIcon(iconoEscalado32);
-
-            // Imagen Tienda11
-            URL Tienda11 = new URL("https://github.com/IbaiSaenzDeBuruaga/" +
-                    "E-SportsLogos/blob/main/Tienda/guantes.png?raw=true");
-            BufferedImage imagenOriginal33 = ImageIO.read(Tienda11);
-            BufferedImage bufferedImage33 = Scalr.resize(imagenOriginal33, 400);
-            ImageIcon iconoEscalado33 = new ImageIcon(bufferedImage33);
-            tienda11.setIcon(iconoEscalado33);
-
-            // Imagen Tienda12
-            URL Tienda12 = new URL("https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/Tienda/pantalon.png?raw=true");
-            BufferedImage imagenOriginal34 = ImageIO.read(Tienda12);
-            BufferedImage bufferedImage34 = Scalr.resize(imagenOriginal34, 400);
-            ImageIcon iconoEscalado34 = new ImageIcon(bufferedImage34);
-            tienda12.setIcon(iconoEscalado34);
-
-            // Imagen botonBuy (todos los botones buy)
-            URL buy1 = new URL("https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/Tienda/buy.png?raw=true");
-            BufferedImage imagenOriginal12 = ImageIO.read(buy1);
-            BufferedImage bufferedImage12 = Scalr.resize(imagenOriginal12, 50);
-            ImageIcon iconoEscalado12 = new ImageIcon(bufferedImage12);
-            bBuy1.setIcon(iconoEscalado12);
-            bBuy2.setIcon(iconoEscalado12);
-            bBuy3.setIcon(iconoEscalado12);
-            bBuy4.setIcon(iconoEscalado12);
-            bBuy5.setIcon(iconoEscalado12);
-            bBuy6.setIcon(iconoEscalado12);
-            bBuy7.setIcon(iconoEscalado12);
-            bBuy8.setIcon(iconoEscalado12);
-            bBuy9.setIcon(iconoEscalado12);
-            bBuy10.setIcon(iconoEscalado12);
-            bBuy11.setIcon(iconoEscalado12);
-            bBuy12.setIcon(iconoEscalado12);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
         // Configurar la ventana
         setContentPane(pPrincipal);

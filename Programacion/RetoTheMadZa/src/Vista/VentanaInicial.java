@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 
+import Controlador.ControladoresVista.ControladorImagenes;
 import Modelo.Competicion;
 import org.imgscalr.Scalr;
 
@@ -54,18 +55,6 @@ public class VentanaInicial extends JFrame {
     private JButton bTienda;
     private JLabel logoBlanco;
     private int indiceImagenes = 0;
-    private final String[] urls = {
-            "https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/Noticias/0b9235b8-f812-4629-8c04-e9a5d874134b.png?raw=true",
-            "https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/Noticias/84752ff3-2cd1-465d-832a-c661bb701549.png?raw=true",
-            "https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/Noticias/ba6db8a3-4203-42a0-a5f2-4075bd89e161.png?raw=true",
-            "https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/Noticias/ed187317-1ef3-49a0-86b1-d5387a83ccca.png?raw=true",
-            "https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/Noticias/mano.png?raw=true"
-    };
     private final String text = " TheMadZa, compañía líder en eSports, organiza dos competiciones activas: el Torneo de" +
             " TheMadZa Legends, con premios millonarios para equipos globales, y TheMadZa Clash, enfocado en nuevos" +
             " talentos. Recientemente, lanzaron su tienda online con productos exclusivos y personalizados. Los" +
@@ -77,98 +66,86 @@ public class VentanaInicial extends JFrame {
     public VentanaInicial() {
         mostrarImagenesFugaces();
 
-        try {
+        System.out.println("Iniciando constructor de VentanaInicial.");
 
-            // Cargar la imagen original del logo
-            URL imageUrl = new URL("https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/RRSS/TheMadZaLogoSimple.png?raw=true");
-            BufferedImage imagenOriginal = ImageIO.read(imageUrl);
+        // Cargar la imagen del logo con tamaño específico
+        ImageIcon iconoLogo = ControladorImagenes.obtenerImagen("TheMadZaLogoSimple", 250, 250);
+        if (iconoLogo != null) {
+            ftThemadza.setIcon(iconoLogo);
+        } else {
+            System.err.println("La imagen TheMadZaLogoSimple no se encontró.");
+        }
 
-            // Escalar la imagen
-            BufferedImage bufferedImage = Scalr.resize(imagenOriginal, 250);
-
-            // Crear un ImageIcon a partir del BufferedImage escalado
-            ImageIcon iconoEscalado = new ImageIcon(bufferedImage);
-
-            // Asignar el ImageIcon escalado al JLabel ftThemadza
-            ftThemadza.setIcon(iconoEscalado);
-
-
-            // Cargar la imagen Botón Tienda
-            URL Tienda = new URL("https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/RRSS/tienda.png?raw=true");
-            BufferedImage imagenTienda = ImageIO.read(Tienda);
-            BufferedImage bufferedImageTienda = Scalr.resize(imagenTienda, 40);
-            ImageIcon iconoTienda = new ImageIcon(bufferedImageTienda);
+        // Cargar la imagen del botón Tienda con tamaño específico
+        ImageIcon iconoTienda = ControladorImagenes.obtenerImagen("Tienda", 40, 40);
+        if (iconoTienda != null) {
             bTienda.setIcon(iconoTienda);
+        } else {
+            System.err.println("La imagen Tienda no se encontró.");
+        }
 
-            // Botón Inicio
-            URL Inicio1 = new URL("https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/inicio.png?raw=true");
-            BufferedImage imagenInicio = ImageIO.read(Inicio1);
-            BufferedImage bufferedImageInicio = Scalr.resize(imagenInicio, 40);
-            ImageIcon iconoInicio = new ImageIcon(bufferedImageInicio);
+        // Cargar la imagen del botón Inicio con tamaño específico
+        ImageIcon iconoInicio = ControladorImagenes.obtenerImagen("Inicio", 40, 40);
+        if (iconoInicio != null) {
             bInicio.setIcon(iconoInicio);
+        } else {
+            System.err.println("La imagen Inicio no se encontró.");
+        }
 
-            // Botón Salir
-            URL Salir1 = new URL("https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/powerOff.png?raw=true");
-            BufferedImage imagenSalir = ImageIO.read(Salir1);
-            BufferedImage bufferedImageSalir = Scalr.resize(imagenSalir, 40);
-            ImageIcon iconoSalir = new ImageIcon(bufferedImageSalir);
+        // Cargar la imagen del botón Salir con tamaño específico
+        ImageIcon iconoSalir = ControladorImagenes.obtenerImagen("Salir", 40, 40);
+        if (iconoSalir != null) {
             bSalir.setIcon(iconoSalir);
+        } else {
+            System.err.println("La imagen Salir no se encontró.");
+        }
 
-            // Imagen equipo1
-            // TODO : HABRÍA QUE CARGAR LOS DATOS (LA IMAGEN DEL EQUIPO DESDE LA BD)
-            URL Equipo1 = new URL("https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/faze-clan-logo.png?raw=true");
-            BufferedImage imagenEquipo1 = ImageIO.read(Equipo1);
-            BufferedImage bufferedImageEquipo1 = Scalr.resize(imagenEquipo1, 55);
-            ImageIcon iconoEquipo1 = new ImageIcon(bufferedImageEquipo1);
+        // Cargar la imagen del equipo1 con tamaño específico
+        ImageIcon iconoEquipo1 = ControladorImagenes.obtenerImagen("Equipo1", 55, 55);
+        if (iconoEquipo1 != null) {
             equipo1.setIcon(iconoEquipo1);
+        } else {
+            System.err.println("La imagen Equipo1 no se encontró.");
+        }
 
-            // Imagen equipo2
-            URL Equipo2 = new URL("https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/fnatic-logo.png?raw=true");
-            BufferedImage imagenEquipo2 = ImageIO.read(Equipo2);
-            BufferedImage bufferedImageEquipo2 = Scalr.resize(imagenEquipo2, 55);
-            ImageIcon iconoEquipo2 = new ImageIcon(bufferedImageEquipo2);
+        // Cargar la imagen del equipo2 con tamaño específico
+        ImageIcon iconoEquipo2 = ControladorImagenes.obtenerImagen("Equipo2", 55, 55);
+        if (iconoEquipo2 != null) {
             equipo2.setIcon(iconoEquipo2);
+        } else {
+            System.err.println("La imagen Equipo2 no se encontró.");
+        }
 
-            // Botón Twitter
-            URL Twitter = new URL("https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/RRSS/TwitterLogo.png?raw=true");
-            BufferedImage imagenTwitter = ImageIO.read(Twitter);
-            BufferedImage bufferedImageTwitter = Scalr.resize(imagenTwitter, 40);
-            ImageIcon iconoTwitter = new ImageIcon(bufferedImageTwitter);
+        // Cargar la imagen del botón Twitter con tamaño específico
+        ImageIcon iconoTwitter = ControladorImagenes.obtenerImagen("Twitter", 40, 40);
+        if (iconoTwitter != null) {
             bTwitter.setIcon(iconoTwitter);
+        } else {
+            System.err.println("La imagen Twitter no se encontró.");
+        }
 
-            // Botón Instagram
-            URL Insta = new URL("https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/RRSS/InstagramLogo.png?raw=true");
-            BufferedImage imagenInstagram = ImageIO.read(Insta);
-            BufferedImage bufferedImageInstagram = Scalr.resize(imagenInstagram, 40);
-            ImageIcon iconoInstagram = new ImageIcon(bufferedImageInstagram);
+        // Cargar la imagen del botón Instagram con tamaño específico
+        ImageIcon iconoInstagram = ControladorImagenes.obtenerImagen("Instagram", 40, 40);
+        if (iconoInstagram != null) {
             bInstagram.setIcon(iconoInstagram);
+        } else {
+            System.err.println("La imagen Instagram no se encontró.");
+        }
 
-            // Botón Facebook
-            URL Facebook = new URL("https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/RRSS/FacebookLogo.png?raw=true");
-            BufferedImage imagenFacebook = ImageIO.read(Facebook);
-            BufferedImage bufferedImageFacebook = Scalr.resize(imagenFacebook, 40);
-            ImageIcon iconoFacebook = new ImageIcon(bufferedImageFacebook);
+        // Cargar la imagen del botón Facebook con tamaño específico
+        ImageIcon iconoFacebook = ControladorImagenes.obtenerImagen("Facebook", 40, 40);
+        if (iconoFacebook != null) {
             bFacebook.setIcon(iconoFacebook);
+        } else {
+            System.err.println("La imagen Facebook no se encontró.");
+        }
 
-            // Imagen LogoBlanco
-            URL LogoBlanco = new URL("https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/RRSS/SoloBlanco.png?raw=true");
-            BufferedImage imagenLogoBlanco = ImageIO.read(LogoBlanco);
-            BufferedImage bufferedImageLogoBlanco = Scalr.resize(imagenLogoBlanco, 100);
-            ImageIcon iconoLogoBlanco = new ImageIcon(bufferedImageLogoBlanco);
+        // Cargar la imagen del logo blanco con tamaño específico
+        ImageIcon iconoLogoBlanco = ControladorImagenes.obtenerImagen("LogoBlanco", 100, 100);
+        if (iconoLogoBlanco != null) {
             logoBlanco.setIcon(iconoLogoBlanco);
-
-        } catch (IOException e) {
-            e.printStackTrace();
+        } else {
+            System.err.println("La imagen LogoBlanco no se encontró.");
         }
 
         // Configurar la ventana
@@ -211,25 +188,18 @@ public class VentanaInicial extends JFrame {
         // Crear un temporizador que cambie la imagen después de unos 4 segundos.
         Timer timer = new Timer(3000, e -> {
             // Cambiar la imagen y actualizar el índice
-            indiceImagenes = (indiceImagenes + 1) % urls.length;
-            // Obtener la URL de la imagen actual del array
-            String url = urls[indiceImagenes];
-            try {
-                // Cargar la imagen desde la URL
-                URL imageUrl = new URL(url);
-                BufferedImage imagen = ImageIO.read(imageUrl);
-                // Escalar la imagen a un tamaño adecuado
-                imagen = Scalr.resize(imagen, Scalr.Method.AUTOMATIC, Scalr.Mode.AUTOMATIC, 600, 600);
-                ImageIcon icon = new ImageIcon(imagen);
+            indiceImagenes = (indiceImagenes + 1) % 5; // Número de imágenes en el array
+            // Obtener la imagen del array cargada en el ControladorImagenes
+            ImageIcon icon = ControladorImagenes.obtenerImagen("Noticias" + indiceImagenes, 600, 600);
+            if (icon != null) {
                 ftNoticias.setIcon(icon);
-            } catch (IOException ex) {
-                ex.printStackTrace();
+            } else {
+                System.err.println("La imagen Noticias" + indiceImagenes + " no se encontró.");
             }
         });
         // Comenzar el temporizador
         timer.start();
     }
-
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             VentanaInicial ventana = new VentanaInicial();
