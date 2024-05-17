@@ -28,8 +28,6 @@ public class ControladorModelo {
         cp = new ControladorPatrocinadores(con);
         cs = new ControladorStaff(con);
         cec = new ControladorEquiposCompeticiones(con);
-
-        System.out.println("ControladorModelo inicializado correctamente.");
     }
 
     //COMPETICION

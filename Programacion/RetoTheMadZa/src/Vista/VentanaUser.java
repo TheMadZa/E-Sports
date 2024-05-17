@@ -2,18 +2,13 @@ package Vista;
 
 import Controlador.ControladoresVista.ControladorImagenes;
 import Modelo.Competicion;
-import org.imgscalr.Scalr;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 
-public class VentanaInicialSesion extends JFrame {
+public class VentanaUser extends JFrame {
     private JPanel panelUp;
     private JPanel PanelMenu;
     private JMenuBar mPrincipal;
@@ -66,12 +61,12 @@ public class VentanaInicialSesion extends JFrame {
 
 
 
-    public VentanaInicialSesion() {
+    public VentanaUser() {
         mostrarImagenesFugaces();
 
         mostrarImagenesFugaces();
 
-        System.out.println("Iniciando constructor de VentanaInicial.");
+        System.out.println("Iniciando constructor de VentanaUser.");
 
         // Cargar la imagen del logo con tamaño específico
         ImageIcon iconoLogo = ControladorImagenes.obtenerImagen("TheMadZaLogoSimple", 250, 250);
@@ -208,7 +203,7 @@ public class VentanaInicialSesion extends JFrame {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            VentanaInicialSesion ventana = new VentanaInicialSesion();
+            VentanaUser ventana = new VentanaUser();
             ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             ventana.setExtendedState(JFrame.MAXIMIZED_BOTH);
             ventana.setVisible(true);

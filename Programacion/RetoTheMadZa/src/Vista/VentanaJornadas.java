@@ -63,7 +63,7 @@ public class VentanaJornadas extends JFrame{
     public VentanaJornadas() {
 
 
-        System.out.println("Iniciando constructor de VentanaInicial.");
+        System.out.println("Iniciando constructor de VentanaJornadas.");
 
         // Cargar la imagen del logo con tamaño específico
         ImageIcon iconoLogo = ControladorImagenes.obtenerImagen("TheMadZaLogoSimple", 250, 250);
