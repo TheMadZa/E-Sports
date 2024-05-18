@@ -33,23 +33,14 @@ public class ControladorVAdmin {
 
             accion = e.getActionCommand();
             switch (accion){
-
                 case "CRUD Equipos" -> va.mostrarDatosEquipos();
-
                 case "CRUD Jugadores" -> va.mostrarDatosJugadores();
-
-                case "CRUD Staff" -> System.out.println("puesto staff");
-
-                case "CRUD Patrocinadores" -> System.out.println("nombre patrocinador");
-
-                case "CRUD Juegos" -> System.out.println("nombre juego");
-
-                case "CRUD Competiciones" -> System.out.println("nombre competicion");
-
-                case "CRUD Enfrentamientos" -> System.out.println("hora enfrentamiento");
-
-                case "CRUD Jornadas" -> System.out.println("numero jornada");
-
+                case "CRUD Staff" -> va.mostrarDatosStaff();
+                case "CRUD Patrocinadores" -> va.mostrarDatosPatrocinadores();
+                case "CRUD Juegos" -> va.mostrarDatosJuegos();
+                case "CRUD Competiciones" -> va.mostrarDatosCompeticiones();
+                case "CRUD Enfrentamientos" -> va.mostrarDatosEnfrentamientos();
+                case "CRUD Jornadas" -> va.mostrarDatosJornadas();
             }
 
             if (!va.getPanelCRUD().isVisible())
