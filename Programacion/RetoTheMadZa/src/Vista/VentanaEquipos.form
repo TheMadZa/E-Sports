@@ -936,7 +936,7 @@
                     </constraints>
                     <properties>
                       <foreground color="-394241"/>
-                      <text value="Equipo11"/>
+                      <text value="Equipo 11"/>
                     </properties>
                   </component>
                   <component id="a748f" class="javax.swing.JLabel">
@@ -1724,7 +1724,7 @@
                     </constraints>
                     <properties>
                       <foreground color="-394241"/>
-                      <text value="Equipo12"/>
+                      <text value="Equipo 12"/>
                     </properties>
                   </component>
                   <component id="58ac3" class="javax.swing.JLabel">
@@ -1767,7 +1767,7 @@
                     </constraints>
                     <properties>
                       <foreground color="-394241"/>
-                      <text value="Equipo13"/>
+                      <text value="Equipo 13"/>
                     </properties>
                   </component>
                   <component id="70489" class="javax.swing.JLabel">
@@ -1810,7 +1810,7 @@
                     </constraints>
                     <properties>
                       <foreground color="-394241"/>
-                      <text value="Equipo14"/>
+                      <text value="Equipo 14"/>
                     </properties>
                   </component>
                   <component id="57ade" class="javax.swing.JLabel">
@@ -1853,7 +1853,7 @@
                     </constraints>
                     <properties>
                       <foreground color="-394241"/>
-                      <text value="Equipo15"/>
+                      <text value="Equipo 15"/>
                     </properties>
                   </component>
                   <component id="36683" class="javax.swing.JLabel">
@@ -1896,7 +1896,7 @@
                     </constraints>
                     <properties>
                       <foreground color="-394241"/>
-                      <text value="Equipo12"/>
+                      <text value="Equipo 16"/>
                     </properties>
                   </component>
                   <component id="3b4f" class="javax.swing.JLabel">
@@ -1939,7 +1939,7 @@
                     </constraints>
                     <properties>
                       <foreground color="-394241"/>
-                      <text value="Equipo12"/>
+                      <text value="Equipo 17"/>
                     </properties>
                   </component>
                   <component id="20975" class="javax.swing.JLabel">
@@ -1982,7 +1982,7 @@
                     </constraints>
                     <properties>
                       <foreground color="-394241"/>
-                      <text value="Equipo12"/>
+                      <text value="Equipo 18"/>
                     </properties>
                   </component>
                   <component id="60233" class="javax.swing.JLabel">
@@ -2025,7 +2025,7 @@
                     </constraints>
                     <properties>
                       <foreground color="-394241"/>
-                      <text value="Equipo12"/>
+                      <text value="Equipo 19"/>
                     </properties>
                   </component>
                   <component id="b262" class="javax.swing.JLabel">
@@ -2068,7 +2068,7 @@
                     </constraints>
                     <properties>
                       <foreground color="-394241"/>
-                      <text value="Equipo12"/>
+                      <text value="Equipo 20"/>
                     </properties>
                   </component>
                   <component id="bb902" class="javax.swing.JLabel">
