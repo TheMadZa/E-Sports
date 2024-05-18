@@ -1,6 +1,9 @@
 package Vista;
 
+import Controlador.ControladoresVista.ControladorImagenes;
+
 import javax.swing.*;
+import java.awt.*;
 
 public class VentanaEquipos extends JFrame {
     private JPanel panelUp;
@@ -83,4 +86,66 @@ public class VentanaEquipos extends JFrame {
     private JLabel ftEquipo28;
     private JLabel ftEquipo29;
     private JLabel ftEquipo30;
+
+    public VentanaEquipos() {
+
+        // Cargar las imágenes con un tamaño específico.
+        cargarImagenEstablecerIcono("TheMadZaLogoSimple", 250, 250, ftThemadza);
+        cargarImagenEstablecerIcono("Tienda", bTienda);
+        cargarImagenEstablecerIcono("Inicio", bInicio);
+        cargarImagenEstablecerIcono("Salir", bSalir);
+        cargarImagenEstablecerIcono("Twitter", bTwitter);
+        cargarImagenEstablecerIcono("Instagram", bInstagram);
+        cargarImagenEstablecerIcono("Facebook", bFacebook);
+        cargarImagenEstablecerIcono("LogoBlanco", 100, 100, logoBlanco);
+
+        // Configurar la ventana
+        setContentPane(pPrincipal);
+        setTitle("Ventana Equipos");
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setResizable(true);
+        getRootPane().setDefaultButton(bInicio);
+
+        JComponent[] componentesConBorde = {mPrincipal, bTienda, bInicio, bSalir, bFacebook,
+                bTwitter, bInstagram};
+        for (JComponent componente : componentesConBorde) {
+            componente.setBorder(BorderFactory.createEmptyBorder());
+        }
+
+        Color backgroundColor = Color.decode("#5B2C78");
+        Color foregroundColor = Color.decode("#151135");
+
+        JScrollBar verticalScrollBar = PanelMedio.getVerticalScrollBar();
+        verticalScrollBar.setBackground(backgroundColor);
+        verticalScrollBar.setForeground(foregroundColor);
+        PanelMedio.getViewport().setBackground(backgroundColor);
+        PanelMedio.setBackground(backgroundColor);
+
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            VentanaEquipos ventana = new VentanaEquipos();
+        });
+    }
+
+    // Funciones
+    private void cargarImagenEstablecerIcono(String nombreImagen, int ancho, int alto, JLabel label) {
+        ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
+        if (icono != null) {
+            label.setIcon(icono);
+        } else {
+            System.err.println("La imagen " + nombreImagen + " no se encontró.");
+        }
+    }
+    private void cargarImagenEstablecerIcono(String nombreImagen, JButton button) {
+        ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, 40, 40);
+        if (icono != null) {
+            button.setIcon(icono);
+        } else {
+            System.err.println("La imagen " + nombreImagen + " no se encontró.");
+        }
+    }
 }
