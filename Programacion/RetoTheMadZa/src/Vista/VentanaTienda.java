@@ -114,28 +114,6 @@ public class VentanaTienda extends JFrame{
             componente.setBorder(BorderFactory.createEmptyBorder());
         }
 
-        /*
-        mPrincipal.setBorder(BorderFactory.createEmptyBorder());
-        bTienda.setBorder(BorderFactory.createEmptyBorder());
-        bInicio.setBorder(BorderFactory.createEmptyBorder());
-        bSalir.setBorder(BorderFactory.createEmptyBorder());
-        bFacebook.setBorder(BorderFactory.createEmptyBorder());
-        bTwitter.setBorder(BorderFactory.createEmptyBorder());
-        bInstagram.setBorder(BorderFactory.createEmptyBorder());
-        bBuy1.setBorder(BorderFactory.createEmptyBorder());
-        bBuy2.setBorder(BorderFactory.createEmptyBorder());
-        bBuy3.setBorder(BorderFactory.createEmptyBorder());
-        bBuy4.setBorder(BorderFactory.createEmptyBorder());
-        bBuy5.setBorder(BorderFactory.createEmptyBorder());
-        bBuy6.setBorder(BorderFactory.createEmptyBorder());
-        bBuy7.setBorder(BorderFactory.createEmptyBorder());
-        bBuy8.setBorder(BorderFactory.createEmptyBorder());
-        bBuy9.setBorder(BorderFactory.createEmptyBorder());
-        bBuy10.setBorder(BorderFactory.createEmptyBorder());
-        bBuy11.setBorder(BorderFactory.createEmptyBorder());
-        bBuy12.setBorder(BorderFactory.createEmptyBorder());
-         */
-
         Color backgroundColor = Color.decode("#5B2C78");
         Color foregroundColor = Color.decode("#151135");
 
