@@ -20,53 +20,38 @@ public class ControladorVAdmin {
 
         // Action Listeners de los botones y demás.
         va.addMiCrudAL(new MiCrudAL());
+        va.addBAccionesAL(new BAccionesAL());
         va.addMiVisualizarJornadasAL(new MiVisualizarJornadasAL());
         va.addMiClasificacionJornadasAL(new MiClasificacionJornadasAL());
-        va.addBAccionesAL(new BAccionesAL());
     }
 
     public class MiCrudAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
 
+            va.getpDatos().removeAll();
+
             accion = e.getActionCommand();
             switch (accion){
-
                 case "CRUD Equipos" -> va.mostrarDatosEquipos();
-
-                case "CRUD Jugadores" -> {
-                    va.setJlDato1("Nombre:");
-                    //va.getpDatos().add();
-                }
-                case "CRUD Staff" -> {
-                    va.setJlDato1("Puesto:");
-                    //va.getpDatos().add();
-                }
-                case "CRUD Patrocinadores" -> {
-                    va.setJlDato1("Nombre:");
-                    //va.getpDatos().add();
-                }
-                case "CRUD Juegos" -> {
-                    va.setJlDato1("Nombre:");
-                    //va.getpDatos().add();
-                }
-                case "CRUD Competiciones" -> {
-                    va.setJlDato1("Nombre:");
-                    //va.getpDatos().add();
-                }
-                case "CRUD Enfrentamientos" -> {
-                    va.setJlDato1("Hora:");
-                    //va.getpDatos().add();
-                }
-                case "CRUD Jornadas" -> {
-                    va.setJlDato1("Número:");
-                    //va.getpDatos().add();
-                }
-
+                case "CRUD Jugadores" -> va.mostrarDatosJugadores();
+                case "CRUD Staff" -> va.mostrarDatosStaff();
+                case "CRUD Patrocinadores" -> va.mostrarDatosPatrocinadores();
+                case "CRUD Juegos" -> va.mostrarDatosJuegos();
+                case "CRUD Competiciones" -> va.mostrarDatosCompeticiones();
+                case "CRUD Enfrentamientos" -> va.mostrarDatosEnfrentamientos();
+                case "CRUD Jornadas" -> va.mostrarDatosJornadas();
             }
 
-            va.getPanelCRUD().setVisible(true);
+            if (!va.getPanelCRUD().isVisible())
+                va.getPanelCRUD().setVisible(true);
 
+        }
+    }
+    public class BAccionesAL implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            // TODO : en el insert, después de realizar la accion, mostraría un mensaje diciendo (a parte de que "todo correcto") que el ID ha sido... (para saberlo) (en println y en showmessagedialog)
         }
     }
     public class MiVisualizarJornadasAL implements ActionListener {
@@ -81,11 +66,4 @@ public class ControladorVAdmin {
             // TODO
         }
     }
-    public class BAccionesAL implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            // TODO
-        }
-    }
-
 }
