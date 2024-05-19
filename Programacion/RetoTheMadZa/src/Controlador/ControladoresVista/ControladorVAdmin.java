@@ -1,6 +1,7 @@
 package Controlador.ControladoresVista;
 
 import Vista.VentanaAdmin;
+import Vista.VentanaInicioSesion;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,8 +16,8 @@ public class ControladorVAdmin {
         this.cv = cv;
     }
 
-    public void crearMostrar() {
-        va = new VentanaAdmin();
+    public void crearMostrar(VentanaInicioSesion vis) {
+        va = new VentanaAdmin(vis);
 
         // Action Listeners de los botones y demás.
         va.addMiCrudAL(new MiCrudAL());

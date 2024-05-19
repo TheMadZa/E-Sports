@@ -2,6 +2,8 @@ package Controlador.ControladoresVista;
 
 import Controlador.ControladorPrincipal;
 import Modelo.*;
+import Vista.VentanaInicial;
+import Vista.VentanaInicioSesion;
 
 import java.util.List;
 
@@ -42,16 +44,16 @@ public class ControladorVista {
         cvi.crearMostrar();
     }
 
-    public void mostrarInicioSesion(){
-        cvis.crearMostrar();
+    public void mostrarInicioSesion(VentanaInicial vi){
+        cvis.crearMostrar(vi);
     }
 
     public void mostrarUser(){
         //cvu.crearMostrar();// TODO : HACER
     }
 
-    public void mostrarVAdmin(){
-        cva.crearMostrar();
+    public void mostrarVAdmin(VentanaInicioSesion vis){
+        cva.crearMostrar(vis);
     }
 
     public void mostrarJornadas(){

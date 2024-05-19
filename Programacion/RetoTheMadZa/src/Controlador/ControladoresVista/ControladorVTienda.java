@@ -20,8 +20,6 @@ public class ControladorVTienda {
         vt = new VentanaTienda();
 
         // Action Listeners de los botones y demás.
-        vt.addBTiendaAL(new BTiendaAL());
-        vt.addBInicioAL(new BInicioAL());
         vt.addBSalirAL(new BSalirAL());
         vt.addBFacebookAL(new BFacebookAL());
         vt.addBInstagramAL(new BInstagramAL());
@@ -30,20 +28,6 @@ public class ControladorVTienda {
         vt.addMClasificacionAL(new MClasificacionAL());
         vt.addMEquiposAL(new MEquiposAL());
         vt.addBBuyAL(new BBuyAL());
-    }
-
-    public class BTiendaAL implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            cv.mostrarTienda();
-        }
-    }
-
-    public class BInicioAL implements ActionListener{
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            cv.mostrarInicioSesion();
-        }
     }
 
     public static class BSalirAL implements ActionListener{

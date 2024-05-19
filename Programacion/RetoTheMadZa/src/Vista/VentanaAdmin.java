@@ -71,7 +71,7 @@ public class VentanaAdmin extends JFrame {
     private JTextField tfIdCompeticion;
     private JLabel jlIdCompeticion;
 
-    public VentanaAdmin(){
+    public VentanaAdmin(VentanaInicioSesion vis){
 
         panelCRUD.setVisible(false);
 
@@ -105,11 +105,14 @@ public class VentanaAdmin extends JFrame {
         }
 
         setVisible(true);
+
+        // Destruir la ventana de inicio de sesión.
+        vis.dispose();
     }
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            VentanaAdmin ventana = new VentanaAdmin();
+            VentanaAdmin ventana = new VentanaAdmin(null);
         });
     }
 
@@ -157,17 +160,17 @@ public class VentanaAdmin extends JFrame {
         miEnfrentamientos.addActionListener(al);
         miJornadas.addActionListener(al);
     }
-    public void addMiVisualizarJornadasAL(ActionListener al) {
-        miVisualizarJornadas.addActionListener(al);
-    }
-    public void addMiClasificacionJornadasAL(ActionListener al) {
-        miClasificacionJornadas.addActionListener(al);
-    }
     public void addBAccionesAL(ActionListener al) {
         bInsertar.addActionListener(al);
         bEliminar.addActionListener(al);
         bActualizar.addActionListener(al);
         bConsultar.addActionListener(al);
+    }
+    public void addMiVisualizarJornadasAL(ActionListener al) {
+        miVisualizarJornadas.addActionListener(al);
+    }
+    public void addMiClasificacionJornadasAL(ActionListener al) {
+        miClasificacionJornadas.addActionListener(al);
     }
 
     // Funciones
@@ -248,7 +251,8 @@ public class VentanaAdmin extends JFrame {
 
     public void mostrarDatosPatrocinadores(){
         agregarElemento("Nombre:", new JTextField(), gbc);
-        agregarElemento("ID de su equipo:", new JTextField(), gbc); // TODO : Puede patrocinar más de un equipo. Así que puede que solo habría que añadirlo a PATROCINADORES_EQUIPOS.
+        agregarElemento("ID de su equipo:", new JTextField(), gbc);
+        // TODO : Puede patrocinar más de un equipo. Así que puede que solo habría que añadirlo a PATROCINADORES_EQUIPOS (o sea que no hay que insertar un nuevo patrocinador, ya que ese ya existe).
     }
 
     public void mostrarDatosJuegos(){
