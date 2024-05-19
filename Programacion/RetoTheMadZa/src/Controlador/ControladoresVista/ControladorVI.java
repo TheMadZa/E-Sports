@@ -50,7 +50,7 @@ public class ControladorVI {
     public class BInicioAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            cv.mostrarInicioSesion();
+            cv.mostrarInicioSesion(vi);
         }
     }
 

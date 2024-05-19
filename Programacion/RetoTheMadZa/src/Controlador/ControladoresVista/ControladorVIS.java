@@ -1,5 +1,6 @@
 package Controlador.ControladoresVista;
 
+import Vista.VentanaInicial;
 import Vista.VentanaInicioSesion;
 
 import javax.swing.*;
@@ -15,23 +16,19 @@ public class ControladorVIS {
         this.cv = cv;
     }
 
-    public void crearMostrar() {
-        vis = new VentanaInicioSesion();
+    public void crearMostrar(VentanaInicial vi) {
+        vis = new VentanaInicioSesion(vi);
 
         // Action Listeners de los botones y demás.
         vis.addBIniciarSesionAL(new BIniciarSesionAL());
         vis.addBRegistroAL(new BRegistroAL());
 
-        vis.setVisible(true);
-        vis.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        vis.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        vis.setResizable(true);
     }
 
     public class BIniciarSesionAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            cv.mostrarVAdmin();
+            cv.mostrarVAdmin(vis);
         }
     }
 
