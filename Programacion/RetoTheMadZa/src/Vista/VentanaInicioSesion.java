@@ -21,10 +21,11 @@ public class VentanaInicioSesion extends JFrame {
     private JPanel pDatos;
     private JLabel tfImagenLogo;
 
-    public VentanaInicioSesion(){
+    public VentanaInicioSesion(VentanaInicial vi){
 
         setTitle("Ventana Inicio Sesión");
         setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setResizable(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // PONER UN PANEL DEGRADADO DE FONDO.
@@ -94,11 +95,14 @@ public class VentanaInicioSesion extends JFrame {
         getRootPane().setDefaultButton(bIniciarSesion);
         setVisible(true);
 
+        // Destruir la ventana inicial.
+        vi.dispose();
+
     }
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            VentanaInicioSesion ventana = new VentanaInicioSesion();
+            VentanaInicioSesion ventana = new VentanaInicioSesion(null);
         });
     }
 

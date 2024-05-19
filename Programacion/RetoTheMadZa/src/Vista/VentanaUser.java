@@ -48,109 +48,19 @@ public class VentanaUser extends JFrame {
     private JLabel labelTextoHorizontal;
     private JPanel pPrincipal;
 
-    private int indiceImagenes = 0;
-
-
-    private String text = " TheMadZa, compañía líder en eSports, organiza dos competiciones activas: el Torneo de" +
-            " TheMadZa Legends, con premios millonarios para equipos globales, y TheMadZa Clash, enfocado en nuevos" +
-            " talentos. Recientemente, lanzaron su tienda online con productos exclusivos y personalizados. Los" +
-            " jugadores pueden registrarse fácilmente para participar en competiciones y acceder a contenido" +
-            " exclusivo, sorteos y descuentos especiales. Además, TheMadZa organiza eventos anuales como" +
-            " TheMadZa GameCon para mantener a la comunidad activa y comprometida. ";
-    private int currentIndex = 0;
-
-
-
-    public VentanaUser() {
-        mostrarImagenesFugaces();
-
-        mostrarImagenesFugaces();
-
-        System.out.println("Iniciando constructor de VentanaUser.");
-
-        // Cargar la imagen del logo con tamaño específico
-        ImageIcon iconoLogo = ControladorImagenes.obtenerImagen("TheMadZaLogoSimple", 250, 250);
-        if (iconoLogo != null) {
-            ftThemadza.setIcon(iconoLogo);
-        } else {
-            System.err.println("La imagen TheMadZaLogoSimple no se encontró.");
-        }
-
-        // Cargar la imagen del botón Tienda con tamaño específico
-        ImageIcon iconoTienda = ControladorImagenes.obtenerImagen("Tienda", 40, 40);
-        if (iconoTienda != null) {
-            bTienda.setIcon(iconoTienda);
-        } else {
-            System.err.println("La imagen Tienda no se encontró.");
-        }
-
-        // Cargar la imagen del botón Inicio con tamaño específico
-        ImageIcon iconoInicio = ControladorImagenes.obtenerImagen("Inicio", 40, 40);
-        if (iconoInicio != null) {
-            bInicio.setIcon(iconoInicio);
-        } else {
-            System.err.println("La imagen Inicio no se encontró.");
-        }
-
-        // Cargar la imagen del botón Salir con tamaño específico
-        ImageIcon iconoSalir = ControladorImagenes.obtenerImagen("Salir", 40, 40);
-        if (iconoSalir != null) {
-            bSalir.setIcon(iconoSalir);
-        } else {
-            System.err.println("La imagen Salir no se encontró.");
-        }
-
-        // Cargar la imagen del equipo1 con tamaño específico
-        ImageIcon iconoEquipo1 = ControladorImagenes.obtenerImagen("Equipo1", 55, 55);
-        if (iconoEquipo1 != null) {
-            equipo1.setIcon(iconoEquipo1);
-        } else {
-            System.err.println("La imagen Equipo1 no se encontró.");
-        }
-
-        // Cargar la imagen del equipo2 con tamaño específico
-        ImageIcon iconoEquipo2 = ControladorImagenes.obtenerImagen("Equipo2", 55, 55);
-        if (iconoEquipo2 != null) {
-            equipo2.setIcon(iconoEquipo2);
-        } else {
-            System.err.println("La imagen Equipo2 no se encontró.");
-        }
-
-        // Cargar la imagen del botón Twitter con tamaño específico
-        ImageIcon iconoTwitter = ControladorImagenes.obtenerImagen("Twitter", 40, 40);
-        if (iconoTwitter != null) {
-            bTwitter.setIcon(iconoTwitter);
-        } else {
-            System.err.println("La imagen Twitter no se encontró.");
-        }
-
-        // Cargar la imagen del botón Instagram con tamaño específico
-        ImageIcon iconoInstagram = ControladorImagenes.obtenerImagen("Instagram", 40, 40);
-        if (iconoInstagram != null) {
-            bInstagram.setIcon(iconoInstagram);
-        } else {
-            System.err.println("La imagen Instagram no se encontró.");
-        }
-
-        // Cargar la imagen del botón Facebook con tamaño específico
-        ImageIcon iconoFacebook = ControladorImagenes.obtenerImagen("Facebook", 40, 40);
-        if (iconoFacebook != null) {
-            bFacebook.setIcon(iconoFacebook);
-        } else {
-            System.err.println("La imagen Facebook no se encontró.");
-        }
-
-        // Cargar la imagen del logo blanco con tamaño específico
-        ImageIcon iconoLogoBlanco = ControladorImagenes.obtenerImagen("LogoBlanco", 100, 100);
-        if (iconoLogoBlanco != null) {
-            logoBlanco.setIcon(iconoLogoBlanco);
-        } else {
-            System.err.println("La imagen LogoBlanco no se encontró.");
-        }
+    public VentanaUser(VentanaInicioSesion vis) {
+        cargarImagenEstablecerIcono("TheMadZaLogoSimple", 250, 250, ftThemadza);
+        cargarImagenEstablecerIcono("Tienda", bTienda);
+        cargarImagenEstablecerIcono("Inicio", bInicio);
+        cargarImagenEstablecerIcono("Salir", bSalir);
+        cargarImagenEstablecerIcono("Twitter", bTwitter);
+        cargarImagenEstablecerIcono("Instagram", bInstagram);
+        cargarImagenEstablecerIcono("Facebook", bFacebook);
+        cargarImagenEstablecerIcono("LogoBlanco", 100, 100, logoBlanco);
 
         // Configurar la ventana
         setContentPane(pPrincipal);
-        setTitle("Ventana Inicial Sesión");
+        setTitle("Ventana Usuario Normal");
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(true);
@@ -162,65 +72,21 @@ public class VentanaUser extends JFrame {
             componente.setBorder(BorderFactory.createEmptyBorder());
         }
 
-        // Iniciar el desplazamiento del texto
-        iniciarDesplazamientoTexto();
-
         setVisible(true);
-    }
 
-    private void iniciarDesplazamientoTexto() {
-        Timer timer = new Timer(80, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String displayedText = text.substring(currentIndex) + text.substring(0, currentIndex);
-                labelTextoHorizontal.setText(displayedText);
-                currentIndex++;
-                if (currentIndex >= text.length()) {
-                    currentIndex = 0;
-                }
-            }
-        });
-        timer.start();
-    }
-
-    // Función para mostrar las imágenes transitorias.
-    public void mostrarImagenesFugaces() {
-        // Crear un temporizador que cambie la imagen después de unos 4 segundos.
-        Timer timer = new Timer(3000, e -> {
-            // Cambiar la imagen y actualizar el índice
-            indiceImagenes = (indiceImagenes + 1) % 5; // Número de imágenes en el array
-            // Obtener la imagen del array cargada en el ControladorImagenes
-            ImageIcon icon = ControladorImagenes.obtenerImagen("Noticias" + indiceImagenes, 600, 600);
-            if (icon != null) {
-                ftNoticias.setIcon(icon);
-            } else {
-                System.err.println("La imagen Noticias" + indiceImagenes + " no se encontró.");
-            }
-        });
-        // Comenzar el temporizador
-        timer.start();
+        // Destruir la ventana de inicio de sesión.
+        vis.dispose();
     }
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            VentanaUser ventana = new VentanaUser();
-            ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            ventana.setExtendedState(JFrame.MAXIMIZED_BOTH);
-            ventana.setVisible(true);
+            VentanaUser ventana = new VentanaUser(null);
         });
     }
 
     // Getters y setters
     public JComboBox<String> getCbClasificacion() {
         return cbClasificacion;
-    }
-
-    public void setCbClasificacion(ArrayList<Competicion> listaCompeticiones) {
-        // Poner que ningún elemento esté seleccionado, y por lo tanto, que la tabla esté vacía.
-        this.cbClasificacion.insertItemAt("", -1);
-        for (Competicion competicion : listaCompeticiones) {
-            this.cbClasificacion.addItem(competicion.getNombreCom());
-        }
     }
 
     public JLabel getvEquipo1() {
@@ -344,6 +210,18 @@ public class VentanaUser extends JFrame {
     }
 
     // Listeners
+    public void addMJornadasAL(ActionListener al) {
+        mJornadas.addActionListener(al);
+    }
+    public void addMClasificacionAL(ActionListener al) {
+        mClasificacion.addActionListener(al);
+    }
+    public void addMEquiposAL(ActionListener al) {
+        mequipos.addActionListener(al);
+    }
+    public void addBTiendaAL(ActionListener al) {
+        bTienda.addActionListener(al);
+    }
     public void addBInicioAL(ActionListener al) {
         bInicio.addActionListener(al);
     }
@@ -359,16 +237,29 @@ public class VentanaUser extends JFrame {
     public void addBTwitterAL(ActionListener al) {
         bTwitter.addActionListener(al);
     }
-    public void addMJornadasAL(ActionListener al) {
-        mJornadas.addActionListener(al);
-    }
-    public void addMClasificacionAL(ActionListener al) {
-        mClasificacion.addActionListener(al);
-    }
-    public void addMEquiposAL(ActionListener al) {
-        mequipos.addActionListener(al);
-    }
     public void addCbClasificacionAL(ActionListener al) {
         cbClasificacion.addActionListener(al);
+    }
+
+    // Funciones
+    public void mostrarMensaje(String mensaje){
+        JOptionPane.showMessageDialog(null,mensaje);
+    }
+
+    private void cargarImagenEstablecerIcono(String nombreImagen, int ancho, int alto, JLabel label) {
+        ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
+        if (icono != null) {
+            label.setIcon(icono);
+        } else {
+            System.err.println("La imagen " + nombreImagen + " no se encontró.");
+        }
+    }
+    private void cargarImagenEstablecerIcono(String nombreImagen, JButton button) {
+        ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, 40, 40);
+        if (icono != null) {
+            button.setIcon(icono);
+        } else {
+            System.err.println("La imagen " + nombreImagen + " no se encontró.");
+        }
     }
 }

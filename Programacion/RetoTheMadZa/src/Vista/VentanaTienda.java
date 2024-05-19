@@ -180,7 +180,6 @@ public class VentanaTienda extends JFrame{
 
     }
 
-    // Método auxiliar para cargar imágenes y establecer íconos (una función es para los JLabel y la otra para JButton)
     private void cargarImagenEstablecerIcono(String nombreImagen, int ancho, int alto, JLabel label) {
         ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
         if (icono != null) {
@@ -207,9 +206,6 @@ public class VentanaTienda extends JFrame{
     }
     public void addMEquiposAL(ActionListener al) {
         mequipos.addActionListener(al);
-    }
-    public void addBTiendaAL(ActionListener al) {
-        bTienda.addActionListener(al);
     }
     public void addBInicioAL(ActionListener al) {
         bInicio.addActionListener(al);
