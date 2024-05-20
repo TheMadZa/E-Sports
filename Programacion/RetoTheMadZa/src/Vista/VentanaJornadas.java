@@ -23,7 +23,6 @@ public class VentanaJornadas extends JFrame{
     private JButton bInstagram;
     private JButton bFacebook;
     private JLabel logoBlanco;
-    private JLabel labelTextoHorizontal;
     private JPanel pPrincipal;
     private JPanel panelJornadas;
     private JPanel panelEnfrentamiento1;
@@ -43,7 +42,7 @@ public class VentanaJornadas extends JFrame{
     private JLabel resultadoEquipo2Partido3;
     private JLabel resultadoEquipo1Partido4;
     private JLabel resultadoEquipo2Partido4;
-    private JComboBox cbCompeticion;
+    private JComboBox<String> cbCompeticion;
     private String Equipo1Partido1;
     private String Equipo2Partido1;
     private String Equipo1Partido2;
@@ -52,82 +51,17 @@ public class VentanaJornadas extends JFrame{
     private String Equipo2Partido3;
     private String Equipo1Partido4;
     private String Equipo2Partido4;
-    private final String text = " TheMadZa, compañía líder en eSports, organiza dos competiciones activas: el Torneo de" +
-            " TheMadZa Legends, con premios millonarios para equipos globales, y TheMadZa Clash, enfocado en nuevos" +
-            " talentos. Recientemente, lanzaron su tienda online con productos exclusivos y personalizados. Los" +
-            " jugadores pueden registrarse fácilmente para participar en competiciones y acceder a contenido" +
-            " exclusivo, sorteos y descuentos especiales. Además, TheMadZa organiza eventos anuales como" +
-            " TheMadZa GameCon para mantener a la comunidad activa y comprometida. ";
-    private int currentIndex = 0;
 
-    public VentanaJornadas() {
+    public VentanaJornadas(VentanaInicial vi) {
 
-
-        System.out.println("Iniciando constructor de VentanaJornadas.");
-
-        // Cargar la imagen del logo con tamaño específico
-        ImageIcon iconoLogo = ControladorImagenes.obtenerImagen("TheMadZaLogoSimple", 250, 250);
-        if (iconoLogo != null) {
-            ftThemadza.setIcon(iconoLogo);
-        } else {
-            System.err.println("La imagen TheMadZaLogoSimple no se encontró.");
-        }
-
-        // Cargar la imagen del botón Tienda con tamaño específico
-        ImageIcon iconoTienda = ControladorImagenes.obtenerImagen("Tienda", 40, 40);
-        if (iconoTienda != null) {
-            bTienda.setIcon(iconoTienda);
-        } else {
-            System.err.println("La imagen Tienda no se encontró.");
-        }
-
-        // Cargar la imagen del botón Inicio con tamaño específico
-        ImageIcon iconoInicio = ControladorImagenes.obtenerImagen("Inicio", 40, 40);
-        if (iconoInicio != null) {
-            bInicio.setIcon(iconoInicio);
-        } else {
-            System.err.println("La imagen Inicio no se encontró.");
-        }
-
-        // Cargar la imagen del botón Salir con tamaño específico
-        ImageIcon iconoSalir = ControladorImagenes.obtenerImagen("Salir", 40, 40);
-        if (iconoSalir != null) {
-            bSalir.setIcon(iconoSalir);
-        } else {
-            System.err.println("La imagen Salir no se encontró.");
-        }
-
-        // Cargar la imagen del botón Twitter con tamaño específico
-        ImageIcon iconoTwitter = ControladorImagenes.obtenerImagen("Twitter", 40, 40);
-        if (iconoTwitter != null) {
-            bTwitter.setIcon(iconoTwitter);
-        } else {
-            System.err.println("La imagen Twitter no se encontró.");
-        }
-
-        // Cargar la imagen del botón Instagram con tamaño específico
-        ImageIcon iconoInstagram = ControladorImagenes.obtenerImagen("Instagram", 40, 40);
-        if (iconoInstagram != null) {
-            bInstagram.setIcon(iconoInstagram);
-        } else {
-            System.err.println("La imagen Instagram no se encontró.");
-        }
-
-        // Cargar la imagen del botón Facebook con tamaño específico
-        ImageIcon iconoFacebook = ControladorImagenes.obtenerImagen("Facebook", 40, 40);
-        if (iconoFacebook != null) {
-            bFacebook.setIcon(iconoFacebook);
-        } else {
-            System.err.println("La imagen Facebook no se encontró.");
-        }
-
-        // Cargar la imagen del logo blanco con tamaño específico
-        ImageIcon iconoLogoBlanco = ControladorImagenes.obtenerImagen("LogoBlanco", 100, 100);
-        if (iconoLogoBlanco != null) {
-            logoBlanco.setIcon(iconoLogoBlanco);
-        } else {
-            System.err.println("La imagen LogoBlanco no se encontró.");
-        }
+        cargarImagenEstablecerIcono("TheMadZaLogoSimple", 250, 250, ftThemadza);
+        cargarImagenEstablecerIcono("Tienda", bTienda);
+        cargarImagenEstablecerIcono("Inicio", bInicio);
+        cargarImagenEstablecerIcono("Salir", bSalir);
+        cargarImagenEstablecerIcono("Twitter", bTwitter);
+        cargarImagenEstablecerIcono("Instagram", bInstagram);
+        cargarImagenEstablecerIcono("Facebook", bFacebook);
+        cargarImagenEstablecerIcono("LogoBlanco", 100, 100, logoBlanco);
 
         //equipos
         ImageIcon iconoEquipo1Partido1 = ControladorImagenes.obtenerImagen(Equipo1Partido1, 100, 100);
@@ -157,7 +91,7 @@ public class VentanaJornadas extends JFrame{
 
         // Configurar la ventana
         setContentPane(pPrincipal);
-        setTitle("Ventana Inicial");
+        setTitle("Ventana Jornadas");
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(true);
@@ -168,33 +102,17 @@ public class VentanaJornadas extends JFrame{
             componente.setBorder(BorderFactory.createEmptyBorder());
         }
 
-        // Iniciar el desplazamiento del texto
-        iniciarDesplazamientoTexto();
-
         setVisible(true);
-    }
 
-    private void iniciarDesplazamientoTexto() {
-        Timer timer = new Timer(80, e -> {
-            String displayedText = text.substring(currentIndex) + text.substring(0, currentIndex);
-            labelTextoHorizontal.setText(displayedText);
-            currentIndex++;
-            if (currentIndex >= text.length()) {
-                currentIndex = 0;
-            }
-        });
-        timer.start();
+        // Destruir la ventana de inicio de sesión.
+        vi.dispose();
     }
-
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            VentanaJornadas ventana = new VentanaJornadas();
+            VentanaJornadas ventana = new VentanaJornadas(null);
         });
     }
-
-
-
 
     // Listeners
     public void addMJornadasAL(ActionListener al) {
@@ -224,5 +142,24 @@ public class VentanaJornadas extends JFrame{
     public void addBTwitterAL(ActionListener al) {
         bTwitter.addActionListener(al);
     }
+    public void addCbCompeticionAL(ActionListener al) {
+        cbCompeticion.addActionListener(al);
+    }
 
+    private void cargarImagenEstablecerIcono(String nombreImagen, int ancho, int alto, JLabel label) {
+        ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
+        if (icono != null) {
+            label.setIcon(icono);
+        } else {
+            System.err.println("La imagen " + nombreImagen + " no se encontró.");
+        }
+    }
+    private void cargarImagenEstablecerIcono(String nombreImagen, JButton button) {
+        ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, 40, 40);
+        if (icono != null) {
+            button.setIcon(icono);
+        } else {
+            System.err.println("La imagen " + nombreImagen + " no se encontró.");
+        }
+    }
 }

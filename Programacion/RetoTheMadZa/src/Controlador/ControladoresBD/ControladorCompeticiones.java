@@ -89,7 +89,6 @@ public class ControladorCompeticiones {
         }
     }
 
-    // TODO : IGUAL HABRÍA QUE HACER QUE DEVUELVA LOS EQUIPOS CON MÁS VICTORIAS? (ORDER BY ec.victorias DESC)
     /**
      * Función para obtener logo, victorias y puntos de un equipo en una competición.
      * Se buscarán los logos, las victorias y los puntos totales de los equipos que participan
@@ -107,7 +106,8 @@ public class ControladorCompeticiones {
                                 "FROM equipos e " +
                                 "JOIN equipos_competiciones ec ON e.id_equipo = ec.id_equipo " +
                                 "WHERE ec.id_competicion IN (SELECT id_competicion FROM competiciones "+
-                                "WHERE UPPER(nombre_com) = ?) order by ec.puntos";
+                                "WHERE UPPER(nombre_com) = ?) " +
+                                "ORDER BY ec.victorias DESC";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
             sentenciaPre.setString(1, nombreCom.toUpperCase());
@@ -117,7 +117,7 @@ public class ControladorCompeticiones {
             String[][] listaCompeticiones = new String[10][3];
 
             int i = 0;
-            while (rs.next()) {
+            while (rs.next() && i<5) {
 
                 // Array para almacenar los datos de una fila
                 String[] fila = new String[3];

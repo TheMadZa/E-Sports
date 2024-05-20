@@ -14,13 +14,11 @@ public class ControladorVista {
     private ControladorVTienda cvt;
     private ControladorVIS cvis;
     private ControladorVAdmin cva;
+    private ControladorVUser cvu;
     private ControladorVCompeticiones cvco;
     private ControladorVEquipos cve;
-    private ControladorVJornadas cvjo;
-    private ControladorVJuegos cvjue;
-    private ControladorVJugadores cvjug;
-    private ControladorVPatrocinadores cvpa;
-    private ControladorVStaff cvs;
+    private ControladorVJornadas cvj;
+    private ControladorDUsuario cdu;
 
     private final ControladorPrincipal cp;
 
@@ -30,16 +28,14 @@ public class ControladorVista {
         //Creación de los controladores de las ventanas
 
         cvi = new ControladorVI(this);
-        cvt = new ControladorVTienda(this);
         cvis = new ControladorVIS(this);
         cva = new ControladorVAdmin(this);
+        cvu = new ControladorVUser(this);
         cvco = new ControladorVCompeticiones(this);
         cve = new ControladorVEquipos(this);
-        cvjo = new ControladorVJornadas(this);
-        cvjue = new ControladorVJuegos(this);
-        cvjug = new ControladorVJugadores(this);
-        cvpa = new ControladorVPatrocinadores(this);
-        cvs = new ControladorVStaff(this);
+        cvj = new ControladorVJornadas(this);
+        cdu = new ControladorDUsuario(this);
+        cvt = new ControladorVTienda(this);
 
         cvi.crearMostrar();
     }
@@ -48,35 +44,33 @@ public class ControladorVista {
         cvis.crearMostrar(vi);
     }
 
-    public void mostrarUser(){
-        //cvu.crearMostrar();// TODO : HACER
+    public void mostrarUser(VentanaInicioSesion vis){
+        cvu.crearMostrar(vis);
     }
 
     public void mostrarVAdmin(VentanaInicioSesion vis){
         cva.crearMostrar(vis);
     }
 
-    public void mostrarJornadas(){
-        //cvj.crearMostrar();// TODO : HACER
+    public void mostrarJornadas(VentanaInicial vi){
+        cvj.crearMostrar(vi);
     }
 
-    public void mostrarClasificacion(){
-        //cvcl.crearMostrar();// TODO : HACER
+    public void mostrarClasificacion(VentanaInicial vi){
+        cvco.crearMostrar(vi);
     }
 
-    public void mostrarEquipos(){
-        cve.crearMostrar();
+    public void mostrarEquipos(VentanaInicial vi){
+        cve.crearMostrar(vi);
     }
 
     public void mostrarTienda(){
         cvt.crearMostrar();
     }
 
-    /*
     public void mostrarDUsuario(){
-        du.crearMostrar();
+        cdu.crearMostrar();
     }
-    */
 
     //COMPETICION
     public void insertarCompeticion(Competicion c) throws Exception {

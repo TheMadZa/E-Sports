@@ -1,27 +1,23 @@
 package Controlador.ControladoresVista;
 
+import Vista.VentanaClasificacion;
+import Vista.VentanaInicial;
+
 public class ControladorVCompeticiones {
 
-    //private VentanaCompeticiones vc;
+    private VentanaClasificacion vc;
     private ControladorVista cv;
 
-    public ControladorVCompeticiones(ControladorVista cv)
-    {
+    public ControladorVCompeticiones(ControladorVista cv) {
         this.cv = cv;
     }
 
-    public void crearMostrar()
-    {
-        /*
-        vc = new VentanaCompeticiones();
+    public void crearMostrar(VentanaInicial vi) {
 
-        //Listeners
+        vc = new VentanaClasificacion(vi);
 
-        vc.setVisible(true);
-        */
+        //
+
     }
 
-    /*
-    Listeners
-    */
 }
