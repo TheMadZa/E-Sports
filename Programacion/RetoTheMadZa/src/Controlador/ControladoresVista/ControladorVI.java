@@ -2,12 +2,17 @@ package Controlador.ControladoresVista;
 
 import Modelo.*;
 import Vista.VentanaInicial;
+import org.imgscalr.Scalr;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.net.URL;
 import java.util.List;
+import Controlador.ControladoresVista.ControladorImagenes;
 
 /**
  * Clase ControladorVI que gestiona la primera ventana en aparecer.
@@ -161,6 +166,41 @@ public class ControladorVI {
         vi.getpEquipo5().setText(String.valueOf(listaCompeticiones[4][2]));
 
         // TODO : PONER LAS IMÁGENES
+
+        /*
+        String Equipo1 = listaCompeticiones[0][0];
+        cargarImagenEstablecerIcono("Equipo1", 55, 55, vi.getEquipo1());
+        */
+
+        URL Equipo1 = new URL(listaCompeticiones[0][0]);
+        BufferedImage imagenOriginal1 = ImageIO.read(Equipo1);
+        BufferedImage bufferedImage1 = Scalr.resize(imagenOriginal1, 55);
+        ImageIcon iconoEscalado1 = new ImageIcon(bufferedImage1);
+        vi.getEquipo1().setIcon(iconoEscalado1);
+
+        URL Equipo2 = new URL(listaCompeticiones[1][0]);
+        BufferedImage imagenOriginal2 = ImageIO.read(Equipo2);
+        BufferedImage bufferedImage2 = Scalr.resize(imagenOriginal2, 55);
+        ImageIcon iconoEscalado2 = new ImageIcon(bufferedImage2);
+        vi.getEquipo2().setIcon(iconoEscalado2);
+
+        URL Equipo3 = new URL(listaCompeticiones[2][0]);
+        BufferedImage imagenOriginal3 = ImageIO.read(Equipo3);
+        BufferedImage bufferedImage3 = Scalr.resize(imagenOriginal3, 55);
+        ImageIcon iconoEscalado3 = new ImageIcon(bufferedImage3);
+        vi.getEquipo3().setIcon(iconoEscalado3);
+
+        URL Equipo4 = new URL(listaCompeticiones[3][0]);
+        BufferedImage imagenOriginal4 = ImageIO.read(Equipo4);
+        BufferedImage bufferedImage4 = Scalr.resize(imagenOriginal4, 55);
+        ImageIcon iconoEscalado4 = new ImageIcon(bufferedImage4);
+        vi.getEquipo4().setIcon(iconoEscalado4);
+
+        URL Equipo5 = new URL(listaCompeticiones[4][0]);
+        BufferedImage imagenOriginal5 = ImageIO.read(Equipo5);
+        BufferedImage bufferedImage5 = Scalr.resize(imagenOriginal5, 55);
+        ImageIcon iconoEscalado5 = new ImageIcon(bufferedImage5);
+        vi.getEquipo5().setIcon(iconoEscalado5);
 
         /*
         //Borramos de la lista los equipos que no tienen el id que queremos
