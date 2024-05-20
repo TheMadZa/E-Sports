@@ -107,7 +107,7 @@ public class ControladorCompeticiones {
                                 "FROM equipos e " +
                                 "JOIN equipos_competiciones ec ON e.id_equipo = ec.id_equipo " +
                                 "WHERE ec.id_competicion IN (SELECT id_competicion FROM competiciones "+
-                                "WHERE UPPER(nombre_com) = ?);";
+                                "WHERE UPPER(nombre_com) = ?) order by ec.puntos";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
             sentenciaPre.setString(1, nombreCom.toUpperCase());
@@ -117,7 +117,6 @@ public class ControladorCompeticiones {
             String[][] listaCompeticiones = new String[10][3];
 
             int i = 0;
-            //while (rs.next() && i<10) {
             while (rs.next()) {
 
                 // Array para almacenar los datos de una fila
@@ -150,7 +149,7 @@ public class ControladorCompeticiones {
     public List<Competicion> buscarTodasCompeticiones() throws Exception {
         List<Competicion> competiciones = new ArrayList<>();
         try {
-            String plantilla = "SELECT nombre_com FROM competiciones;";
+            String plantilla = "SELECT nombre_com FROM competiciones";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
 
