@@ -189,8 +189,7 @@ public class ControladorModelo {
         }
     }
 
-    public void cerrarConexion() throws Exception
-    {
+    public void cerrarConexion() throws Exception {
         con.close();
     }
 }

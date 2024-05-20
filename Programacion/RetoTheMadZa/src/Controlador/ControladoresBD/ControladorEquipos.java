@@ -19,10 +19,8 @@ public class ControladorEquipos {
         this.con = con;
     }
 
-    public void insertarEquipo(Equipo e) throws Exception
-    {
-        try
-        {
+    public void insertarEquipo(Equipo e) throws Exception {
+        try {
             String plantilla = "INSERT INTO equipos VALUES (?,?,?,?,?)";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
@@ -37,15 +35,13 @@ public class ControladorEquipos {
 
             sentenciaPre.close();
 
-            if (n != 1)
-            {
-                throw new Exception("No se ha insertado el equipo");
+            if (n != 1) {
+                throw new Exception("No se ha podido insertar el equipo.");
             }
 
         }
-        catch (SQLIntegrityConstraintViolationException ex)
-        {
-            throw new Exception("Ya hay una equipo con ese id");
+        catch (SQLIntegrityConstraintViolationException ex) {
+            throw new Exception("Ya hay registrado una equipo con ese ID.");
         }
     }
 
