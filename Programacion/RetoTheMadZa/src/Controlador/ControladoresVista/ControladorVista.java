@@ -161,11 +161,9 @@ public class ControladorVista {
         cp.borrarJugador(idJugador);
     }
 
-    /*
     public Jugador buscarJugador(Integer id_jugador) throws Exception {
-        //return cp.buscarJugador(id_jugador); // TODO : QUITAR
+        return cp.buscarJugador(id_jugador);
     }
-     */
 
     public void modificarJugador(Jugador j) throws Exception{
         cp.modificarJugador(j);
@@ -214,6 +212,6 @@ public class ControladorVista {
 
     //CONEXION
     public void cerrarConexion() throws Exception{
-        //cp.cerrarConexion(); // TODO : QUITAR
+        cp.cerrarConexion();
     }
 }

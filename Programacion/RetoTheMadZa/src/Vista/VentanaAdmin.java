@@ -175,6 +175,10 @@ public class VentanaAdmin extends JFrame {
 
     // Funciones
 
+    public void mostrarMensaje(String mensaje){
+        JOptionPane.showMessageDialog(null,mensaje);
+    }
+
     public void mostrarDatosEquipos(){
 
         // Agregar elementos al pDatos.
