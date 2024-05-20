@@ -28,9 +28,9 @@ public class VentanaInicial extends JFrame {
     private JPanel panelFoot;
     private JPanel panelJornadas;
     private JLabel ftNoticias;
-    private JMenu mJornadas;
-    private JMenu mClasificacion;
-    private JMenu mequipos;
+    private JMenuItem mJornadas;
+    private JMenuItem mClasificacion;
+    private JMenuItem mEquipos;
     private JPanel PanelMenu;
     private JPanel PanelLogo;
     private JButton bInicio;
@@ -335,7 +335,7 @@ public class VentanaInicial extends JFrame {
         mClasificacion.addActionListener(al);
     }
     public void addMEquiposAL(ActionListener al) {
-        mequipos.addActionListener(al);
+        mEquipos.addActionListener(al);
     }
     public void addBTiendaAL(ActionListener al) {
         bTienda.addActionListener(al);

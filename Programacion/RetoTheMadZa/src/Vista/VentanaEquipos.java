@@ -87,7 +87,7 @@ public class VentanaEquipos extends JFrame {
     private JLabel ftEquipo29;
     private JLabel ftEquipo30;
 
-    public VentanaEquipos() {
+    public VentanaEquipos(VentanaInicial vi) {
 
         // Cargar las imágenes con un tamaño específico.
         cargarImagenEstablecerIcono("TheMadZaLogoSimple", 250, 250, ftThemadza);
@@ -123,11 +123,14 @@ public class VentanaEquipos extends JFrame {
         PanelMedio.setBackground(backgroundColor);
 
         setVisible(true);
+
+        // Destruir la ventana de inicio de sesión.
+        vi.dispose();
     }
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            VentanaEquipos ventana = new VentanaEquipos();
+            VentanaEquipos ventana = new VentanaEquipos(null);
         });
     }
 

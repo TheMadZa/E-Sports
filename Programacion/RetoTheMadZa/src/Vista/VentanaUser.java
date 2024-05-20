@@ -39,7 +39,7 @@ public class VentanaUser extends JFrame {
     private JLabel equipo5;
     private JPanel panelNoticias;
     private JLabel ftNoticias;
-    private JComboBox cbClasificacion;
+    private JComboBox<String> cbClasificacion;
     private JPanel panelFoot;
     private JButton bTwitter;
     private JButton bInstagram;

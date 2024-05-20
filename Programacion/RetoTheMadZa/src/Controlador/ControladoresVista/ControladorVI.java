@@ -105,21 +105,21 @@ public class ControladorVI {
     public class MJornadasAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            cv.mostrarJornadas();
+            cv.mostrarJornadas(vi);
         }
     }
 
     public class MClasificacionAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            cv.mostrarClasificacion();
+            cv.mostrarClasificacion(vi);
         }
     }
 
     public class MEquiposAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            cv.mostrarEquipos();
+            cv.mostrarEquipos(vi);
         }
     }
 
@@ -165,13 +165,13 @@ public class ControladorVI {
         vi.getvEquipo5().setText(String.valueOf(listaCompeticiones[4][1]));
         vi.getpEquipo5().setText(String.valueOf(listaCompeticiones[4][2]));
 
-        // TODO : PONER LAS IMÁGENES
-
         /*
         String Equipo1 = listaCompeticiones[0][0];
         cargarImagenEstablecerIcono("Equipo1", 55, 55, vi.getEquipo1());
         */
 
+        // TODO : Reutilizar código.
+        // Poner las imágenes de sus logos.
         URL Equipo1 = new URL(listaCompeticiones[0][0]);
         BufferedImage imagenOriginal1 = ImageIO.read(Equipo1);
         BufferedImage bufferedImage1 = Scalr.resize(imagenOriginal1, 55);

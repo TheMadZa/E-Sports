@@ -74,4 +74,28 @@ public class VentanaClasificacion extends JFrame{
     private JLabel JLNombreCompeticion10;
     private JLabel JLNombreCompeticion9;
     private JLabel JLNombreCompeticion6;
+    private JPanel pPrincipal;
+
+    public VentanaClasificacion(VentanaInicial vi) {
+
+        // Configurar la ventana
+        setContentPane(pPrincipal);
+        setTitle("Ventana Clasificación");
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setResizable(true);
+        getRootPane().setDefaultButton(bInicio);
+
+        setVisible(true);
+
+        // Destruir la ventana de inicio de sesión.
+        vi.dispose();
+
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            VentanaClasificacion ventana = new VentanaClasificacion(null);
+        });
+    }
 }
