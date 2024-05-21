@@ -95,12 +95,16 @@ public class ControladorImagenes {
         cargarImagen("Equipo29", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/sentinels-logo.png?raw=true");
         cargarImagen("Equipo30", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/imperial-logo.png?raw=true");
 
+        //Flechas
+        cargarImagen("FlechaIzq","https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/RRSS/flechaIzquierda.png?raw=true");
+        cargarImagen("flechaDrch","https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/RRSS/flechaDerecha.png?raw=true");
+
         System.out.println("Todas las imágenes han sido cargadas.");
         vc.setVisible(false);
 
     }
 
-    private static void cargarImagen(String nombre, String urlStr) {
+    public static void cargarImagen(String nombre, String urlStr) {
         try {
             System.out.println("Intentando cargar la imagen: " + nombre + " desde " + urlStr);
             URL imageUrl = new URL(urlStr);
