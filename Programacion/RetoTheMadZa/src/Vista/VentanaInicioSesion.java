@@ -15,8 +15,8 @@ public class VentanaInicioSesion extends JFrame {
     private JPanel pPrincipal;
     private JTextField tfUsuario;
     private JPasswordField ftfContrasena;
-    private JButton bIniciarSesion; // TODO : poner bordes redondos
-    private JButton bRegistrarse; // TODO : poner bordes redondos
+    private JButton bIniciarSesion;
+    private JButton bRegistrarse;
     private JPanel pDatos;
     private JLabel tfImagenLogo;
 
@@ -68,7 +68,7 @@ public class VentanaInicioSesion extends JFrame {
         gbc.insets = new Insets(0, 0, 80, 0);
         pPrincipal.add(pDatos, gbc);
 
-        // Poner la imagen centrada y superpuesta. // TODO : tengo que ponerla bien
+        // Poner la imagen centrada y superpuesta. // TODO : hay que ponerla bien
         try {
 
             // Cargar la imagen original

@@ -102,8 +102,8 @@ public class ControladorVista {
         cp.insertarEquipo(e);
     }
 
-    public void borrarEquipo(int idEquipo) throws Exception{
-        cp.borrarEquipo(idEquipo);
+    public void borrarEquipo(String nombre) throws Exception{
+        cp.borrarEquipo(nombre);
     }
 
     public Equipo buscarEquipo(Integer id_equipo) throws Exception {
@@ -113,9 +113,10 @@ public class ControladorVista {
     public void modificarEquipo(Equipo e) throws Exception{
         cp.modificarEquipo(e);
     }
-//    public int buscarEquipoPorNombre(String nombre) throws Exception{
-//        return cp.buscarEquipoPorNombre(nombre);
-//    }
+
+    public Equipo buscarEquipoPorNombre(String nombre) throws Exception{
+        return cp.buscarEquipoPorNombre(nombre);
+    }
 
 
     //JORNADA
