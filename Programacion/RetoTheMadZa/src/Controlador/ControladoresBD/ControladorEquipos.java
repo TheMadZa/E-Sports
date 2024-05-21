@@ -44,31 +44,26 @@ public class ControladorEquipos {
         }
     }
 
-    public void borrarEquipo(int idEquipo) throws Exception
-    {
-        try
-        {
-            String plantilla = "DELETE FROM equipos WHERE id_equipo = ?";
+    public void borrarEquipo(String nombre) throws Exception {
+        try {
+            String plantilla = "DELETE FROM equipos WHERE UPPER(nom_equipo) = ?";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
 
-            sentenciaPre.setInt(1, idEquipo);
+            sentenciaPre.setString(1, nombre.toUpperCase());
 
             int n = sentenciaPre.executeUpdate();
             if (n != 1) {
-                throw new Exception("No se ha eliminado ningun equipo");
+                throw new Exception("No se ha eliminado ningún equipo.");
             }
         }
-        catch (SQLIntegrityConstraintViolationException e)
-        {
-            throw new Exception("No existe un equipo con ese id para borrar");
+        catch (SQLIntegrityConstraintViolationException e) {
+            throw new Exception("No existe un equipo con ese nombre para poderlo borrar.");
         }
     }
 
-    public Equipo buscarEquipo(int idEquipo) throws Exception
-    {
-        try
-        {
+    public Equipo buscarEquipo(int idEquipo) throws Exception {
+        try {
             String plantilla = "SELECT * FROM equipos WHERE id_equipo = ?";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
@@ -76,8 +71,7 @@ public class ControladorEquipos {
             sentenciaPre.setInt(1,idEquipo);
 
             ResultSet rs = sentenciaPre.executeQuery();
-            if (rs.next())
-            {
+            if (rs.next()) {
                 e = new Equipo();
                 e.setIdEquipo(idEquipo);
                 e.setNomEquipo(rs.getString("nom_equipo"));
@@ -85,34 +79,61 @@ public class ControladorEquipos {
                 e.setLogo(rs.getString("logo"));
                 e.setColor(rs.getString("color"));
             }
-            else
-            {
-                throw new Exception("No hay ningun equipo con ese id");
+            else {
+                throw new Exception("No hay ningún equipo con ese ID.");
             }
             sentenciaPre.close();
             return e;
         }
-        catch (Exception e)
-        {
-            throw new Exception("Error");
+        catch (Exception e) {
+            throw new Exception("Error al buscar equipo por ID.");
         }
     }
 
-    public void modificarEquipo(Equipo e) throws Exception{
-        String plantilla = "UPDATE equipos SET nom_equipo = ?, fecha_fundacion = ?, logo = ?, color = ?" +
-                "WHERE id_equipo = ?";
+    public void modificarEquipo(Equipo e) throws Exception {
+        String plantilla = "UPDATE equipos SET fecha_fundacion = ?, logo = ?, color = ? WHERE nom_equipo = ?";
 
         PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
 
-        sentenciaPre.setString(1, e.getNomEquipo());
-        sentenciaPre.setDate(2, e.getFechaFundacion());
-        sentenciaPre.setString(3, e.getLogo());
-        sentenciaPre.setString(4, e.getColor());
+        sentenciaPre.setDate(1, e.getFechaFundacion());
+        sentenciaPre.setString(2, e.getLogo());
+        sentenciaPre.setString(3, e.getColor());
+        sentenciaPre.setString(4, e.getNomEquipo());
 
         int n = sentenciaPre.executeUpdate();
         if (n != 1){
-            throw new Exception("No se ha actualizado a ningun equipo");
+            throw new Exception("No se ha actualizado ningún equipo.");
         }
+    }
+
+    public Equipo buscarEquipoPorNombre(String nombre) throws Exception{
+
+        try {
+            String plantilla = "SELECT id_equipo, fecha_fundacion, logo, color FROM equipos WHERE UPPER(nom_equipo) = ?";
+
+            PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
+
+            sentenciaPre.setString(1,nombre.toUpperCase());
+
+            ResultSet rs = sentenciaPre.executeQuery();
+            if (rs.next()) {
+                e = new Equipo();
+                e.setIdEquipo(rs.getInt("id_equipo"));
+                e.setFechaFundacion(rs.getDate("fecha_fundacion"));
+                e.setLogo(rs.getString("logo"));
+                e.setColor(rs.getString("color"));
+            }
+            else {
+                throw new Exception("No hay ningún equipo con ese nombre.");
+            }
+
+            sentenciaPre.close();
+            return e;
+        }
+        catch (Exception e) {
+            throw new Exception("Error al buscar equipo por nombre.");
+        }
+
     }
 
     public List<Equipo> cargarEquiposDesdeBD() throws Exception {

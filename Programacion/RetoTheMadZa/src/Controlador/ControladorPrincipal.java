@@ -49,8 +49,8 @@ public class ControladorPrincipal {
         cm.insertarEquipo(e);
     }
 
-    public void borrarEquipo(int idEquipo) throws Exception {
-        cm.borrarEquipo(idEquipo);
+    public void borrarEquipo(String nombre) throws Exception {
+        cm.borrarEquipo(nombre);
     }
 
     public Equipo buscarEquipo(Integer id_equipo) throws Exception {
@@ -59,6 +59,10 @@ public class ControladorPrincipal {
 
     public void modificarEquipo(Equipo e) throws Exception {
         cm.modificarEquipo(e);
+    }
+
+    public Equipo buscarEquipoPorNombre(String nombre) throws Exception{
+        return cm.buscarEquipoPorNombre(nombre);
     }
 
     //JORNADA

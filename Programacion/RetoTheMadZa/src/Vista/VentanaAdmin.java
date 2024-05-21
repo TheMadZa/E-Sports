@@ -218,7 +218,7 @@ public class VentanaAdmin extends JFrame {
         //  Al darle al JCheckBox, aparecerá otro label y textfield para rellenar con el ID de la comp.
         //  Así no solo se podrá registrar el equipo "suelto", si no que también se podrá asociarlo a una competición.
         //  Al darle, también aparecerán los datos del equipo (a parte del nombre) si ya estaba registrado.
-        //  Solo habrá que poner en nombre, seleccionar (o no) el CB, y continuar.
+        //  Solo habrá que poner el nombre, seleccionar (o no) el CB, y continuar.
         //  Se buscarán los datos en la tabla EQUIPOS, y se insertarán en EQUIPOS y puede que en EQUIPOS_COMPETICIONES.
 
         // Crear y agregar el JCheckBox.

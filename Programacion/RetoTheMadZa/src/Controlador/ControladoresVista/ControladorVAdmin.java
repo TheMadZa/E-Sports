@@ -80,7 +80,6 @@ public class ControladorVAdmin {
 
                         switch (accionElegida){
                             case "Insertar" -> {
-                                /*
                                 // Obtener lista con los JTextFields para poder obtener los datos introducidos.
                                 ArrayList<JTextField> listaTextFieldsDinamicos = va.getListaTextFieldsDinamicos();
                                 // Crear un nuevo equipo y añadirle los atributos necesarios.
@@ -91,26 +90,37 @@ public class ControladorVAdmin {
                                 equipo.setFechaFundacion(Date.valueOf(listaTextFieldsDinamicos.get(1).getText()));
                                 equipo.setLogo(listaTextFieldsDinamicos.get(2).getText());
                                 equipo.setColor(listaTextFieldsDinamicos.get(3).getText());
+
+                                // TODO : Y lo del id_competicion?
+
                                 cv.insertarEquipo(equipo);
 
                                 // Ahora obtener el ID del equipo insertado.
-                                //int id = cv.buscarEquipoPorNombre(listaTextFieldsDinamicos.get(0).getText());
-                                 */
+                                Equipo equipoInsertado = cv.buscarEquipoPorNombre(listaTextFieldsDinamicos.get(0).getText());
+                                va.mostrarMensaje("El equipo insertado tiene el ID --> " +equipoInsertado.getIdEquipo()+ ".");
                             }
                             case "Eliminar" -> {
-                                /*
-
-                                 */
+                                // Eliminar por nombre del equipo.
+                                ArrayList<JTextField> listaTextFieldsDinamicos = va.getListaTextFieldsDinamicos();
+                                cv.borrarEquipo(listaTextFieldsDinamicos.get(0).getText());
                             }
                             case "Actualizar" -> {
-                                /*
-
-                                 */
+                                // Actualizar por nombre del equipo.
+                                ArrayList<JTextField> listaTextFieldsDinamicos = va.getListaTextFieldsDinamicos();
+                                Equipo equipo = new Equipo();
+                                equipo.setNomEquipo(listaTextFieldsDinamicos.get(0).getText());
+                                equipo.setFechaFundacion(Date.valueOf(listaTextFieldsDinamicos.get(1).getText()));
+                                equipo.setLogo(listaTextFieldsDinamicos.get(2).getText());
+                                equipo.setColor(listaTextFieldsDinamicos.get(3).getText());
+                                cv.modificarEquipo(equipo);
                             }
                             case "Consultar" -> {
-                                /*
-
-                                 */
+                                // Consultar por nombre del equipo.
+                                ArrayList<JTextField> listaTextFieldsDinamicos = va.getListaTextFieldsDinamicos();
+                                Equipo equipo =  cv.buscarEquipoPorNombre(listaTextFieldsDinamicos.get(0).getText());
+                                listaTextFieldsDinamicos.get(1).setText(String.valueOf(equipo.getFechaFundacion()));
+                                listaTextFieldsDinamicos.get(2).setText(equipo.getLogo());
+                                listaTextFieldsDinamicos.get(3).setText(equipo.getColor());
                             }
                         }
 

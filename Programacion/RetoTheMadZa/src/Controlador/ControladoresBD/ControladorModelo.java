@@ -64,8 +64,8 @@ public class ControladorModelo {
         ce.insertarEquipo(e);
     }
 
-    public void borrarEquipo(int idEquipo) throws Exception {
-        ce.borrarEquipo(idEquipo);
+    public void borrarEquipo(String nombre) throws Exception {
+        ce.borrarEquipo(nombre);
     }
 
     public Equipo buscarEquipo(Integer id_equipo) throws Exception {
@@ -74,6 +74,10 @@ public class ControladorModelo {
 
     public void modificarEquipo(Equipo e) throws Exception {
         ce.modificarEquipo(e);
+    }
+
+    public Equipo buscarEquipoPorNombre(String nombre) throws Exception{
+        return ce.buscarEquipoPorNombre(nombre);
     }
 
     public List<Equipo> cargarEquiposDesdeBD() throws Exception {
