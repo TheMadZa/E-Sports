@@ -33,19 +33,27 @@ public class ControladorVEquipos {
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
+                ve.getbDerecha().setEnabled(true);
+
                 String equipo = ve.getlEquipo().getText();
                 boolean encontrado = false;
 
-                for (numEquipo=1; !encontrado; numEquipo--){
-                    if (numEquipo == 0){
-                        numEquipo=30;
-                    }
+                for (numEquipo=30; !encontrado; numEquipo--){
+
                     if (equipo.equalsIgnoreCase("Equipo"+numEquipo)){
                         ve.getlEquipo().setText("Equipo"+(numEquipo-1));
                         ve.cargarImagenEstablecerIcono("Equipo"+(numEquipo-1),400,400,
                                 ve.getlImagen());
                         encontrado = true;
                     }
+                }
+
+                if (numEquipo == 1){
+                    ve.getbIzquierda().setEnabled(false);
+                } else if (numEquipo == 30) {
+                    ve.getbDerecha().setEnabled(false);
+                } else {
+                    ve.getbIzquierda().setEnabled(true);
                 }
 
             } catch (Exception ex) {
@@ -59,19 +67,27 @@ public class ControladorVEquipos {
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
+                ve.getbIzquierda().setEnabled(true);
+
                 String equipo = ve.getlEquipo().getText();
                 boolean encontrado = false;
 
                 for (numEquipo=1; !encontrado; numEquipo++){
-                    if (numEquipo == 31){
-                        numEquipo=1;
-                    }
+
                     if (equipo.equalsIgnoreCase("Equipo"+numEquipo)){
                         ve.getlEquipo().setText("Equipo"+(numEquipo+1));
                         ve.cargarImagenEstablecerIcono("Equipo"+(numEquipo+1),400,400,
                                 ve.getlImagen());
                         encontrado = true;
                     }
+                }
+
+                if (numEquipo == 1){
+                    ve.getbIzquierda().setEnabled(false);
+                } else if (numEquipo == 30) {
+                    ve.getbDerecha().setEnabled(false);
+                } else {
+                    ve.getbDerecha().setEnabled(true);
                 }
 
             } catch (Exception ex) {
