@@ -168,7 +168,8 @@ public class ControladorModelo {
     public void abrirConexion() {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            String url = "jdbc:oracle:thin:@SrvOracle:1521:ORCL";
+            //String url = "jdbc:oracle:thin:@SrvOracle:1521:ORCL"; // TODO : para conexion ordenador
+            String url = "jdbc:oracle:thin:@172.20.225.114:1521:ORCL"; // TODO : para conexion portatil
             String user = "eqdaw03";
             String passwd = "eqdaw03";
             con = DriverManager.getConnection(url, user, passwd);
