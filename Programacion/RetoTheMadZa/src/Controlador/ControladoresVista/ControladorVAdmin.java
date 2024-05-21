@@ -4,8 +4,11 @@ import Modelo.Equipo;
 import Vista.VentanaAdmin;
 import Vista.VentanaInicioSesion;
 
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class ControladorVAdmin {
 
@@ -24,8 +27,13 @@ public class ControladorVAdmin {
         // Action Listeners de los botones y demás.
         va.addMiCrudAL(new MiCrudAL());
         va.addBAccionesAL(new BAccionesAL());
-        va.addMiVisualizarJornadasAL(new MiVisualizarJornadasAL());
-        va.addMiClasificacionJornadasAL(new MiClasificacionJornadasAL());
+        va.addMiVisualizarJornadasAL(new MiVisualizarJornadasAL()); // TODO
+        va.addMiClasificacionJornadasAL(new MiClasificacionJornadasAL()); // TODO
+        va.addBInicioAL(new BInicioAL());
+        va.addBSalirAL(new BSalirAL());
+        va.addBFacebookAL(new BFacebookAL());
+        va.addBInstagramAL(new BInstagramAL());
+        va.addBTwitterAL(new BTwitterAL());
     }
 
     public class MiCrudAL implements ActionListener {
@@ -67,7 +75,14 @@ public class ControladorVAdmin {
 
                         switch (accionElegida){
                             case "Insertar" -> {
-                                Equipo equipo = new Equipo(); // TODO : ¿pillar datos?
+                                // Obtener lista con los JTextFields para poder obtener los datos introducidos.
+                                ArrayList<JTextField> listaTextFieldsDinamicos = va.getListaTextFieldsDinamicos();
+                                // Crear un nuevo equipo y añadirle los atributos necesarios.
+                                Equipo equipo = new Equipo();
+                                equipo.setNomEquipo(listaTextFieldsDinamicos.get(0).getText());
+                                //equipo.setFechaFundacion(listaTextFieldsDinamicos.get(0).getText()); // TODO : AAAAAA
+                                equipo.setLogo(listaTextFieldsDinamicos.get(0).getText());
+                                equipo.setColor(listaTextFieldsDinamicos.get(0).getText());
                                 cv.insertarEquipo(equipo);
                             }
                             case "Eliminar" -> va.mostrarDatosJugadores();
@@ -117,6 +132,55 @@ public class ControladorVAdmin {
         @Override
         public void actionPerformed(ActionEvent e) {
             // TODO
+        }
+    }
+    public class BInicioAL implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            // TODO : cerrar sesión
+        }
+    }
+
+    public static class BSalirAL implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.exit(0);
+        }
+    }
+
+    public static class BFacebookAL implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            String enlace = "https://www.facebook.com/?locale=es_ES";
+            try {
+                Desktop.getDesktop().browse(java.net.URI.create(enlace));
+            } catch (java.io.IOException ex) {
+                System.out.println("Error al abrir el enlace: " + ex.getMessage());
+            }
+        }
+    }
+    public static class BInstagramAL implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            String enlace = "https://www.instagram.com";
+            try {
+                Desktop.getDesktop().browse(java.net.URI.create(enlace));
+            } catch (java.io.IOException ex) {
+                System.out.println("Error al abrir el enlace: " + ex.getMessage());
+            }
+        }
+    }
+    public static class BTwitterAL implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            String enlace = "https://twitter.com/?logout=1715768138184";
+            try {
+                Desktop.getDesktop().browse(java.net.URI.create(enlace));
+            } catch (java.io.IOException ex) {
+                System.out.println("Error al abrir el enlace: " + ex.getMessage());
+            }
         }
     }
 }

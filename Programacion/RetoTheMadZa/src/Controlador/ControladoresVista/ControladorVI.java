@@ -48,7 +48,7 @@ public class ControladorVI {
     public class BTiendaAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            cv.mostrarTienda();
+            cv.mostrarInicioSesion(vi);
         }
     }
 
@@ -105,21 +105,21 @@ public class ControladorVI {
     public class MJornadasAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            cv.mostrarJornadas(vi);
+            cv.mostrarInicioSesion(vi);
         }
     }
 
     public class MClasificacionAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            cv.mostrarClasificacion(vi);
+            cv.mostrarInicioSesion(vi);
         }
     }
 
     public class MEquiposAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            cv.mostrarEquipos(vi);
+            cv.mostrarInicioSesion(vi);
         }
     }
 

@@ -18,7 +18,6 @@ public class VentanaTienda extends JFrame{
     private JLabel ftThemadza;
     private JButton bInicio;
     private JButton bSalir;
-    private JButton bTienda;
     private JPanel panelFoot;
     private JButton bTwitter;
     private JButton bInstagram;
@@ -58,7 +57,6 @@ public class VentanaTienda extends JFrame{
 
         // Cargar las imágenes con un tamaño específico.
         cargarImagenEstablecerIcono("TheMadZaLogoSimple", 250, 250, ftThemadza);
-        cargarImagenEstablecerIcono("Tienda", bTienda);
         cargarImagenEstablecerIcono("Inicio", bInicio);
         cargarImagenEstablecerIcono("Salir", bSalir);
         cargarImagenEstablecerIcono("Twitter", bTwitter);
@@ -108,7 +106,7 @@ public class VentanaTienda extends JFrame{
         setResizable(true);
         getRootPane().setDefaultButton(bInicio);
 
-        JComponent[] componentesConBorde = {mPrincipal, bTienda, bInicio, bSalir, bFacebook, bTwitter, bInstagram,
+        JComponent[] componentesConBorde = {mPrincipal, bInicio, bSalir, bFacebook, bTwitter, bInstagram,
                 bBuy1, bBuy2, bBuy3, bBuy4, bBuy5, bBuy6, bBuy7, bBuy8, bBuy9, bBuy10, bBuy11, bBuy12};
         for (JComponent componente : componentesConBorde) {
             componente.setBorder(BorderFactory.createEmptyBorder());

@@ -79,7 +79,7 @@ public class VentanaClasificacion extends JFrame{
     private JLabel JLNombreCompeticion6;
     private JPanel pPrincipal;
 
-    public VentanaClasificacion(VentanaInicial vi) {
+    public VentanaClasificacion(VentanaUser vu) {
 
         cargarImagenEstablecerIcono("TheMadZaLogoSimple", 250, 250, ftThemadza);
         cargarImagenEstablecerIcono("Tienda", bTienda);
@@ -106,8 +106,8 @@ public class VentanaClasificacion extends JFrame{
 
         setVisible(true);
 
-        // Destruir la ventana de inicio de sesión.
-        vi.dispose();
+        // Destruir la ventana del user.
+        vu.dispose();
 
     }
 

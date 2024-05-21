@@ -21,15 +21,14 @@ public class ControladorEquipos {
 
     public void insertarEquipo(Equipo e) throws Exception {
         try {
-            String plantilla = "INSERT INTO equipos VALUES (?,?,?,?,?)";
+            String plantilla = "INSERT INTO equipos VALUES (?,?,?,?)";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
 
-            sentenciaPre.setInt(1,e.getIdEquipo());
-            sentenciaPre.setString(2,e.getNomEquipo());
-            sentenciaPre.setDate(3,e.getFechaFundacion());
-            sentenciaPre.setString(4,e.getLogo());
-            sentenciaPre.setString(5,e.getColor());
+            sentenciaPre.setString(1,e.getNomEquipo());
+            sentenciaPre.setDate(2,e.getFechaFundacion());
+            sentenciaPre.setString(3,e.getLogo());
+            sentenciaPre.setString(4,e.getColor());
 
             int n = sentenciaPre.executeUpdate();
 

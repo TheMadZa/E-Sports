@@ -12,9 +12,8 @@ public class VentanaUser extends JFrame {
     private JPanel panelUp;
     private JPanel PanelMenu;
     private JMenuBar mPrincipal;
-    private JMenu mJornadas;
-    private JMenu mClasificacion;
-    private JMenu mequipos;
+    private JMenuItem mJornadas;
+    private JMenuItem mClasificacion;
     private JPanel PanelLogo;
     private JLabel ftThemadza;
     private JButton bInicio;
@@ -47,6 +46,7 @@ public class VentanaUser extends JFrame {
     private JLabel logoBlanco;
     private JLabel labelTextoHorizontal;
     private JPanel pPrincipal;
+    private JMenuItem mEquipos;
 
     public VentanaUser(VentanaInicioSesion vis) {
         cargarImagenEstablecerIcono("TheMadZaLogoSimple", 250, 250, ftThemadza);
@@ -217,7 +217,7 @@ public class VentanaUser extends JFrame {
         mClasificacion.addActionListener(al);
     }
     public void addMEquiposAL(ActionListener al) {
-        mequipos.addActionListener(al);
+        mEquipos.addActionListener(al);
     }
     public void addBTiendaAL(ActionListener al) {
         bTienda.addActionListener(al);

@@ -4,6 +4,7 @@ import Controlador.ControladorPrincipal;
 import Modelo.*;
 import Vista.VentanaInicial;
 import Vista.VentanaInicioSesion;
+import Vista.VentanaUser;
 
 import java.sql.Connection;
 import java.util.List;
@@ -53,16 +54,16 @@ public class ControladorVista {
         cva.crearMostrar(vis);
     }
 
-    public void mostrarJornadas(VentanaInicial vi){
-        cvj.crearMostrar(vi);
+    public void mostrarJornadas(VentanaUser vu){
+        cvj.crearMostrar(vu);
     }
 
-    public void mostrarClasificacion(VentanaInicial vi){
-        cvco.crearMostrar(vi);
+    public void mostrarClasificacion(VentanaUser vu){
+        cvco.crearMostrar(vu);
     }
 
-    public void mostrarEquipos(VentanaInicial vi){
-        cve.crearMostrar(vi);
+    public void mostrarEquipos(VentanaUser vu){
+        cve.crearMostrar(vu);
     }
 
     public void mostrarTienda(){
@@ -204,6 +205,11 @@ public class ControladorVista {
 
     public void modificarStaff(Staff s) throws Exception{
         cp.modificarStaff(s);
+    }
+
+    //USUARIO
+    public boolean validarUsuario(String usuario, String contrasena) throws Exception {
+        return cp.validarUsuario(usuario, contrasena);
     }
 
     //EQUIPO_COMPETICION

@@ -28,7 +28,18 @@ public class ControladorVIS {
     public class BIniciarSesionAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            cv.mostrarVAdmin(vis);
+
+            try {
+                boolean userAdmin = cv.validarUsuario(vis.getTfUsuario(), vis.getTfContrasena());
+
+                if (userAdmin)
+                    cv.mostrarVAdmin(vis);
+                else
+                    cv.mostrarUser(vis);
+            }
+            catch (Exception ex) {
+                vis.mostrarMensaje(ex.getMessage());
+            }
         }
     }
 
