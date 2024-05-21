@@ -9,9 +9,8 @@ public class VentanaJornadas extends JFrame{
     private JPanel panelUp;
     private JPanel PanelMenu;
     private JMenuBar mPrincipal;
-    private JMenu mJornadas;
-    private JMenu mClasificacion;
-    private JMenu mequipos;
+    private JMenuItem mJornadas;
+    private JMenuItem mClasificacion;
     private JPanel PanelLogo;
     private JLabel ftThemadza;
     private JButton bInicio;
@@ -43,6 +42,7 @@ public class VentanaJornadas extends JFrame{
     private JLabel resultadoEquipo1Partido4;
     private JLabel resultadoEquipo2Partido4;
     private JComboBox<String> cbCompeticion;
+    private JMenuItem mEquipos;
     private String Equipo1Partido1;
     private String Equipo2Partido1;
     private String Equipo1Partido2;
@@ -130,7 +130,7 @@ public class VentanaJornadas extends JFrame{
         mClasificacion.addActionListener(al);
     }
     public void addMEquiposAL(ActionListener al) {
-        mequipos.addActionListener(al);
+        mEquipos.addActionListener(al);
     }
     public void addBTiendaAL(ActionListener al) {
         bTienda.addActionListener(al);

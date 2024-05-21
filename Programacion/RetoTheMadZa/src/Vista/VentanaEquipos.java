@@ -10,9 +10,8 @@ public class VentanaEquipos extends JFrame {
     private JPanel panelUp;
     private JPanel PanelMenu;
     private JMenuBar mPrincipal;
-    private JMenu mJornadas;
-    private JMenu mClasificacion;
-    private JMenu mequipos;
+    private JMenuItem mJornadas;
+    private JMenuItem mClasificacion;
     private JPanel PanelLogo;
     private JLabel ftThemadza;
     private JButton bInicio;
@@ -30,6 +29,7 @@ public class VentanaEquipos extends JFrame {
     private JLabel lImagen;
     private JButton bIzquierda;
     private JLabel lEquipo;
+    private JMenuItem mEquipos;
 
     public VentanaEquipos(JFrame ventanaEliminar) {
 
@@ -141,11 +141,40 @@ public class VentanaEquipos extends JFrame {
         this.bIzquierda = bIzquierda;
     }
 
-    //ActionListeners
+    //Listeners
+
     public void addBFlechaDrchAL(ActionListener al){
         bDerecha.addActionListener(al);
     }
     public void addBFlechaIzquAL(ActionListener al){
         bIzquierda.addActionListener(al);
+    }
+
+    public void addMJornadasAL(ActionListener al) {
+        mJornadas.addActionListener(al);
+    }
+    public void addMClasificacionAL(ActionListener al) {
+        mClasificacion.addActionListener(al);
+    }
+    public void addMEquiposAL(ActionListener al) {
+        mEquipos.addActionListener(al);
+    }
+    public void addBTiendaAL(ActionListener al) {
+        bTienda.addActionListener(al);
+    }
+    public void addBInicioAL(ActionListener al) {
+        bInicio.addActionListener(al);
+    }
+    public void addBSalirAL(ActionListener al) {
+        bSalir.addActionListener(al);
+    }
+    public void addBFacebookAL(ActionListener al) {
+        bFacebook.addActionListener(al);
+    }
+    public void addBInstagramAL(ActionListener al) {
+        bInstagram.addActionListener(al);
+    }
+    public void addBTwitterAL(ActionListener al) {
+        bTwitter.addActionListener(al);
     }
 }
