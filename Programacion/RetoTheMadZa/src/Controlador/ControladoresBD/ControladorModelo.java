@@ -4,6 +4,7 @@ import Modelo.*;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.List;
 
 public class ControladorModelo {
@@ -48,6 +49,7 @@ public class ControladorModelo {
     }
 
     public List<Competicion> buscarTodasCompeticiones() throws Exception {
+        System.out.println("Hasta buscarTodasCompeticiones bien.");
         return cc.buscarTodasCompeticiones();
     }
 
@@ -163,10 +165,8 @@ public class ControladorModelo {
     }
 
     //ABRIR LA CONEXION CON LA BASE DE DATOS
-    public void abrirConexion()
-    {
-        try
-        {
+    public void abrirConexion() {
+        try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
             String url = "jdbc:oracle:thin:@SrvOracle:1521:ORCL";
             String user = "eqdaw03";
@@ -183,8 +183,7 @@ public class ControladorModelo {
             cs = new ControladorStaff(con);
             cec = new ControladorEquiposCompeticiones(con);
         }
-        catch (Exception e)
-        {
+        catch (Exception e) {
             System.out.println("Problemas con la base de datos");
         }
     }

@@ -1,5 +1,7 @@
 package Vista;
 
+import Controlador.ControladoresVista.ControladorImagenes;
+
 import javax.swing.*;
 
 public class VentanaClasificacion extends JFrame{
@@ -78,6 +80,15 @@ public class VentanaClasificacion extends JFrame{
 
     public VentanaClasificacion(VentanaInicial vi) {
 
+        cargarImagenEstablecerIcono("TheMadZaLogoSimple", 250, 250, ftThemadza);
+        cargarImagenEstablecerIcono("Tienda", bTienda);
+        cargarImagenEstablecerIcono("Inicio", bInicio);
+        cargarImagenEstablecerIcono("Salir", bSalir);
+        cargarImagenEstablecerIcono("Twitter", bTwitter);
+        cargarImagenEstablecerIcono("Instagram", bInstagram);
+        cargarImagenEstablecerIcono("Facebook", bFacebook);
+        cargarImagenEstablecerIcono("LogoBlanco", 100, 100, logoBlanco);
+
         // Configurar la ventana
         setContentPane(pPrincipal);
         setTitle("Ventana Clasificación");
@@ -85,6 +96,12 @@ public class VentanaClasificacion extends JFrame{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(true);
         getRootPane().setDefaultButton(bInicio);
+
+        JComponent[] componentesConBorde = {mPrincipal, bTienda, bInicio, bSalir, bFacebook,
+                bTwitter, bInstagram};
+        for (JComponent componente : componentesConBorde) {
+            componente.setBorder(BorderFactory.createEmptyBorder());
+        }
 
         setVisible(true);
 
@@ -97,5 +114,23 @@ public class VentanaClasificacion extends JFrame{
         SwingUtilities.invokeLater(() -> {
             VentanaClasificacion ventana = new VentanaClasificacion(null);
         });
+    }
+
+    // Funciones
+    private void cargarImagenEstablecerIcono(String nombreImagen, int ancho, int alto, JLabel label) {
+        ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
+        if (icono != null) {
+            label.setIcon(icono);
+        } else {
+            System.err.println("La imagen " + nombreImagen + " no se encontró.");
+        }
+    }
+    private void cargarImagenEstablecerIcono(String nombreImagen, JButton button) {
+        ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, 40, 40);
+        if (icono != null) {
+            button.setIcon(icono);
+        } else {
+            System.err.println("La imagen " + nombreImagen + " no se encontró.");
+        }
     }
 }
