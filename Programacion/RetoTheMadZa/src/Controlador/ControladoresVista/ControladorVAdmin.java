@@ -8,6 +8,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class ControladorVAdmin {
@@ -83,10 +86,15 @@ public class ControladorVAdmin {
                                 // Crear un nuevo equipo y añadirle los atributos necesarios.
                                 Equipo equipo = new Equipo();
                                 equipo.setNomEquipo(listaTextFieldsDinamicos.get(0).getText());
-                                //equipo.setFechaFundacion(listaTextFieldsDinamicos.get(0).getText()); // TODO : AAAAAA
-                                equipo.setLogo(listaTextFieldsDinamicos.get(0).getText());
-                                equipo.setColor(listaTextFieldsDinamicos.get(0).getText());
+                                //String fechaString = listaTextFieldsDinamicos.get(1).getText();
+                                //LocalDate fechaDate = LocalDate.parse(fechaString, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+                                equipo.setFechaFundacion(Date.valueOf(listaTextFieldsDinamicos.get(1).getText()));
+                                equipo.setLogo(listaTextFieldsDinamicos.get(2).getText());
+                                equipo.setColor(listaTextFieldsDinamicos.get(3).getText());
                                 cv.insertarEquipo(equipo);
+
+                                // Ahora obtener el ID del equipo insertado.
+                                //int id = cv.buscarEquipoPorNombre(listaTextFieldsDinamicos.get(0).getText());
                                  */
                             }
                             case "Eliminar" -> {

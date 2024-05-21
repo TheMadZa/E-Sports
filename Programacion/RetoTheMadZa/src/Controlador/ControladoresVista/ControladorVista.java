@@ -113,6 +113,9 @@ public class ControladorVista {
     public void modificarEquipo(Equipo e) throws Exception{
         cp.modificarEquipo(e);
     }
+//    public int buscarEquipoPorNombre(String nombre) throws Exception{
+//        return cp.buscarEquipoPorNombre(nombre);
+//    }
 
 
     //JORNADA

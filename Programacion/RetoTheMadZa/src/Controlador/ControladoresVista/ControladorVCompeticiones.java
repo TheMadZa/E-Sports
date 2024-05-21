@@ -126,14 +126,14 @@ public class ControladorVCompeticiones {
     public class MClasificacionAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            cv.mostrarClasificacion(vi);
+            cv.mostrarClasificacion(vc);
         }
     }
 
     public class MEquiposAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            cv.mostrarEquipos(vi);
+            cv.mostrarEquipos(vc);
         }
     }
 
