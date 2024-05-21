@@ -2,6 +2,7 @@ package Controlador.ControladoresVista;
 
 import Vista.VentanaClasificacion;
 import Vista.VentanaInicial;
+import Vista.VentanaUser;
 
 public class ControladorVCompeticiones {
 
@@ -12,9 +13,9 @@ public class ControladorVCompeticiones {
         this.cv = cv;
     }
 
-    public void crearMostrar(VentanaInicial vi) {
+    public void crearMostrar(VentanaUser vu) {
 
-        vc = new VentanaClasificacion(vi);
+        vc = new VentanaClasificacion(vu);
 
         //
 

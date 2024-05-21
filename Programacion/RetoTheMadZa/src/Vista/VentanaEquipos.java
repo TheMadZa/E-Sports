@@ -31,7 +31,7 @@ public class VentanaEquipos extends JFrame {
     private JButton bIzquierda;
     private JLabel lEquipo;
 
-    public VentanaEquipos(VentanaInicial vi) {
+    public VentanaEquipos(VentanaUser vu) {
 
         // Cargar las imágenes con un tamaño específico.
         cargarImagenEstablecerIcono("TheMadZaLogoSimple", 250, 250, ftThemadza);
@@ -77,6 +77,9 @@ public class VentanaEquipos extends JFrame {
          */
 
         setVisible(true);
+
+        // Destruir la ventana del user.
+        vu.dispose();
     }
 
     public static void main(String[] args) {

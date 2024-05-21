@@ -1,17 +1,11 @@
 package Vista;
 
 import Controlador.ControladoresVista.ControladorImagenes;
-import org.imgscalr.Scalr;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.net.URL;
+import java.util.ArrayList;
 
 public class VentanaAdmin extends JFrame {
     private JPanel panelUp;
@@ -23,7 +17,6 @@ public class VentanaAdmin extends JFrame {
     private JLabel ftThemadza;
     private JButton bInicio;
     private JButton bSalir;
-    private JButton bTienda;
     private JPanel PanelMedio;
     private JPanel panelCRUD;
     private JPanel panelFoot;
@@ -71,9 +64,14 @@ public class VentanaAdmin extends JFrame {
     private JTextField tfIdCompeticion;
     private JLabel jlIdCompeticion;
 
+    // Lista para almacenar los JTextFields y poder obtenerlos desde el ControladorVAdmin.
+    private ArrayList<JTextField> listaTextFieldsDinamicos;
+
     public VentanaAdmin(VentanaInicioSesion vis){
 
         panelCRUD.setVisible(false);
+
+        listaTextFieldsDinamicos = new ArrayList<>();
 
         // Configurar Layout del pDatos.
         pDatos.setLayout(new GridBagLayout());
@@ -83,7 +81,6 @@ public class VentanaAdmin extends JFrame {
 
         // Cargar las imágenes con un tamaño específico.
         cargarImagenEstablecerIcono("TheMadZaLogoSimple", 250, 250, ftThemadza);
-        cargarImagenEstablecerIcono("Tienda", bTienda);
         cargarImagenEstablecerIcono("Inicio", bInicio);
         cargarImagenEstablecerIcono("Salir", bSalir);
         cargarImagenEstablecerIcono("Twitter", bTwitter);
@@ -99,7 +96,7 @@ public class VentanaAdmin extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(true);
 
-        JComponent[] componentesConBorde = {mPrincipal, bTienda, bInicio, bSalir, bFacebook, bTwitter, bInstagram};
+        JComponent[] componentesConBorde = {mPrincipal, bInicio, bSalir, bFacebook, bTwitter, bInstagram};
         for (JComponent componente : componentesConBorde) {
             componente.setBorder(BorderFactory.createEmptyBorder());
         }
@@ -149,6 +146,14 @@ public class VentanaAdmin extends JFrame {
         this.pDatos = pDatos;
     }
 
+    public void addListaTextFieldsDinamicos(JTextField textField){
+        listaTextFieldsDinamicos.add(textField);
+    }
+
+    public ArrayList<JTextField> getListaTextFieldsDinamicos() {
+        return listaTextFieldsDinamicos;
+    }
+
     // Listeners
     public void addMiCrudAL(ActionListener al) {
         miEquipos.addActionListener(al);
@@ -172,6 +177,21 @@ public class VentanaAdmin extends JFrame {
     public void addMiClasificacionJornadasAL(ActionListener al) {
         miClasificacionJornadas.addActionListener(al);
     }
+    public void addBInicioAL(ActionListener al) {
+        bInicio.addActionListener(al);
+    }
+    public void addBSalirAL(ActionListener al) {
+        bSalir.addActionListener(al);
+    }
+    public void addBFacebookAL(ActionListener al) {
+        bFacebook.addActionListener(al);
+    }
+    public void addBInstagramAL(ActionListener al) {
+        bInstagram.addActionListener(al);
+    }
+    public void addBTwitterAL(ActionListener al) {
+        bTwitter.addActionListener(al);
+    }
 
     // Funciones
 
@@ -180,6 +200,8 @@ public class VentanaAdmin extends JFrame {
     }
 
     public void mostrarDatosEquipos(){
+
+        vaciarListaTextFields();
 
         // Agregar elementos al pDatos.
 
@@ -236,6 +258,7 @@ public class VentanaAdmin extends JFrame {
     }
 
     public void mostrarDatosJugadores(){
+        vaciarListaTextFields();
         agregarElemento("Nombre:", new JTextField(), gbc);
         agregarElemento("Nickname:", new JTextField(), gbc);
         agregarElemento("Nacionalidad:", new JTextField(), gbc);
@@ -246,6 +269,7 @@ public class VentanaAdmin extends JFrame {
     }
 
     public void mostrarDatosStaff(){
+        vaciarListaTextFields();
         agregarElemento("Puesto:", new JTextField(), gbc);
         agregarElemento("Nombre:", new JTextField(), gbc);
         agregarElemento("Fecha de nacimiento:", new JTextField(), gbc);
@@ -254,18 +278,21 @@ public class VentanaAdmin extends JFrame {
     }
 
     public void mostrarDatosPatrocinadores(){
+        vaciarListaTextFields();
         agregarElemento("Nombre:", new JTextField(), gbc);
         agregarElemento("ID de su equipo:", new JTextField(), gbc);
         // TODO : Puede patrocinar más de un equipo. Así que puede que solo habría que añadirlo a PATROCINADORES_EQUIPOS (o sea que no hay que insertar un nuevo patrocinador, ya que ese ya existe).
     }
 
     public void mostrarDatosJuegos(){
+        vaciarListaTextFields();
         agregarElemento("Nombre:", new JTextField(), gbc);
         agregarElemento("Empresa:", new JTextField(), gbc);
         agregarElemento("Fecha de lanzamiento:", new JTextField(), gbc);
     }
 
     public void mostrarDatosCompeticiones(){
+        vaciarListaTextFields();
         agregarElemento("Nombre:", new JTextField(), gbc);
         agregarElemento("Fecha de inicio:", new JTextField(), gbc);
         agregarElemento("Fecha de fin:", new JTextField(), gbc);
@@ -275,6 +302,7 @@ public class VentanaAdmin extends JFrame {
     }
 
     public void mostrarDatosEnfrentamientos(){
+        vaciarListaTextFields();
         agregarElemento("Hora:", new JTextField(), gbc);
         agregarElemento("Resultado del equipo 1:", new JTextField(), gbc);
         agregarElemento("Resultado del equipo 2:", new JTextField(), gbc);
@@ -284,9 +312,15 @@ public class VentanaAdmin extends JFrame {
     }
 
     public void mostrarDatosJornadas(){
+        vaciarListaTextFields();
         agregarElemento("Número de jornada:", new JTextField(), gbc);
         agregarElemento("Fecha:", new JTextField(), gbc);
         agregarElemento("ID de la competición:", new JTextField(), gbc);
+    }
+
+    public void vaciarListaTextFields(){
+        // Eliminar todos los elementos de la lista en donde se guardan los JTextField.
+        listaTextFieldsDinamicos.clear();
     }
 
     // Función para cargar imágenes y establecer íconos (una función es para los JLabel y la otra para los JButton)
@@ -323,6 +357,9 @@ public class VentanaAdmin extends JFrame {
         pDatos.add(label, gbc);
         gbc.gridx = 1;
         pDatos.add(textField, gbc);
+
+        // Añadirlos a la lista para luego poder obtenerlos desde el controlador.
+        addListaTextFieldsDinamicos(textField);
 
         // Actualizar el panel
         pDatos.revalidate();

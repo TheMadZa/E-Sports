@@ -106,6 +106,11 @@ public class VentanaInicioSesion extends JFrame {
         });
     }
 
+    // Funciones
+    public void mostrarMensaje(String mensaje){
+        JOptionPane.showMessageDialog(null,mensaje);
+    }
+
     // Getters y setters
     public String getTfUsuario() {
         return tfUsuario.getText();

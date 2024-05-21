@@ -2,6 +2,7 @@ package Controlador.ControladoresVista;
 
 import Vista.VentanaEquipos;
 import Vista.VentanaInicial;
+import Vista.VentanaUser;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,9 +19,9 @@ public class ControladorVEquipos {
         this.cv = cv;
     }
 
-    public void crearMostrar(VentanaInicial vi) {
+    public void crearMostrar(VentanaUser vu) {
 
-        ve = new VentanaEquipos(vi);
+        ve = new VentanaEquipos(vu);
 
         ve.addBFlechaIzquAL(new BFlechaIzquAL());
         ve.addBFlechaDrchAL(new BFlechaDrchAL());
