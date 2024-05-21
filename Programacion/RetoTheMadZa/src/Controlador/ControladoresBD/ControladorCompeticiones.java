@@ -103,28 +103,31 @@ public class ControladorCompeticiones {
      */
     public String[][] buscarEquiposPorNombreCom(String nombreCom) throws Exception {
         try {
-            String plantilla = "SELECT e.logo, ec.victorias, ec.puntos " +
+            String plantilla = "SELECT e.logo, ec.victorias, ec.puntos, e.nom_equipo, j.nombre AS nombre_juego " +
                                 "FROM equipos e " +
                                 "JOIN equipos_competiciones ec ON e.id_equipo = ec.id_equipo " +
-                                "WHERE ec.id_competicion IN (SELECT id_competicion FROM competiciones "+
-                                "WHERE UPPER(nombre_com) = ?)";
+                                "JOIN competiciones c ON ec.id_competicion = c.id_competicion " +
+                                "JOIN juegos j ON c.id_juego = j.id_juego " +
+                                "WHERE UPPER(c.nombre_com) = ?";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
             sentenciaPre.setString(1, nombreCom.toUpperCase());
             ResultSet rs = sentenciaPre.executeQuery();
 
-            // Array multidimensional con 10 filas y 3 columnas
-            String[][] listaCompeticiones = new String[10][3];
+            // Array multidimensional con 10 filas y 5 columnas
+            String[][] listaCompeticiones = new String[10][5];
 
             int i = 0;
             while (rs.next()) {
 
                 // Array para almacenar los datos de una fila
-                String[] fila = new String[3];
+                String[] fila = new String[5];
 
                 fila[0] = rs.getString("logo");
                 fila[1] = Integer.toString(rs.getInt("victorias"));
                 fila[2] = Integer.toString(rs.getInt("puntos"));
+                fila[3] = rs.getString("nom_equipo");
+                fila[4] = rs.getString("nombre_juego");
 
                 // Agregar la fila al array multidimensional
                 listaCompeticiones[i] = fila;
