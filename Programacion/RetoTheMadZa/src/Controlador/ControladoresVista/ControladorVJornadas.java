@@ -2,6 +2,7 @@ package Controlador.ControladoresVista;
 
 import Vista.VentanaInicial;
 import Vista.VentanaJornadas;
+import Vista.VentanaUser;
 
 public class ControladorVJornadas {
 
@@ -12,9 +13,9 @@ public class ControladorVJornadas {
         this.cv = cv;
     }
 
-    public void crearMostrar(VentanaInicial vi) {
+    public void crearMostrar(VentanaUser vu) {
 
-        vj = new VentanaJornadas(vi);
+        vj = new VentanaJornadas(vu);
 
         //
 

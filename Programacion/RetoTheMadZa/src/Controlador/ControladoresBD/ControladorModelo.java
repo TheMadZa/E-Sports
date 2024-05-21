@@ -1,5 +1,6 @@
 package Controlador.ControladoresBD;
 
+import Controlador.ControladoresVista.ControladorVUser;
 import Modelo.*;
 
 import java.sql.Connection;
@@ -16,6 +17,7 @@ public class ControladorModelo {
     private ControladorJugadores cjug;
     private ControladorPatrocinadores cp;
     private ControladorStaff cs;
+    private ControladorUsuarios cu;
     private ControladorEquiposCompeticiones cec;
 
     public ControladorModelo() {
@@ -28,6 +30,7 @@ public class ControladorModelo {
         cjug = new ControladorJugadores(con);
         cp = new ControladorPatrocinadores(con);
         cs = new ControladorStaff(con);
+        cu = new ControladorUsuarios(con);
         cec = new ControladorEquiposCompeticiones(con);
     }
 
@@ -157,6 +160,11 @@ public class ControladorModelo {
 
     public void modificarStaff(Staff s) throws Exception {
         cs.modificarStaff(s);
+    }
+
+    //USUARIO
+    public boolean validarUsuario(String usuario, String contrasena) throws Exception {
+        return cu.validarUsuario(usuario, contrasena);
     }
 
     //EQUIPO_COMPETICION

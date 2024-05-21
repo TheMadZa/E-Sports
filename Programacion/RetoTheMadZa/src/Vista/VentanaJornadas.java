@@ -52,7 +52,7 @@ public class VentanaJornadas extends JFrame{
     private String Equipo1Partido4;
     private String Equipo2Partido4;
 
-    public VentanaJornadas(VentanaInicial vi) {
+    public VentanaJornadas(VentanaUser vu) {
 
         cargarImagenEstablecerIcono("TheMadZaLogoSimple", 250, 250, ftThemadza);
         cargarImagenEstablecerIcono("Tienda", bTienda);
@@ -104,8 +104,8 @@ public class VentanaJornadas extends JFrame{
 
         setVisible(true);
 
-        // Destruir la ventana de inicio de sesión.
-        vi.dispose();
+        // Destruir la ventana del user.
+        vu.dispose();
     }
 
     public static void main(String[] args) {

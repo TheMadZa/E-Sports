@@ -146,6 +146,11 @@ public class ControladorPrincipal {
         cm.modificarStaff(s);
     }
 
+    //USUARIO
+    public boolean validarUsuario(String usuario, String contrasena) throws Exception {
+        return cm.validarUsuario(usuario, contrasena);
+    }
+
     //EQUIPO_COMPETICION
     public List<EquipoCompeticion> buscarTodosEquiposCompeticiones() throws Exception {
         return cm.buscarTodosEquiposCompeticiones();
