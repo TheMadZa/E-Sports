@@ -9,9 +9,8 @@ public class VentanaClasificacion extends JFrame{
     private JPanel panelUp;
     private JPanel PanelMenu;
     private JMenuBar mPrincipal;
-    private JMenu mJornadas;
-    private JMenu mClasificacion;
-    private JMenu mequipos;
+    private JMenuItem mJornadas;
+    private JMenuItem mClasificacion;
     private JPanel PanelLogo;
     private JLabel ftThemadza;
     private JButton bInicio;
@@ -78,6 +77,7 @@ public class VentanaClasificacion extends JFrame{
     private JLabel JLNombreCompeticion9;
     private JLabel JLNombreCompeticion6;
     private JPanel pPrincipal;
+    private JMenuItem mEquipos;
 
     public VentanaClasificacion(JFrame ventanaEliminar) {
 
@@ -580,7 +580,7 @@ public class VentanaClasificacion extends JFrame{
         mClasificacion.addActionListener(al);
     }
     public void addMEquiposAL(ActionListener al) {
-        mequipos.addActionListener(al);
+        mEquipos.addActionListener(al);
     }
     public void addBTiendaAL(ActionListener al) {
         bTienda.addActionListener(al);

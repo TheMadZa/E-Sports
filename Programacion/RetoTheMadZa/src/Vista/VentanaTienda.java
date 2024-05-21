@@ -11,9 +11,8 @@ public class VentanaTienda extends JFrame{
     private JPanel panelUp;
     private JPanel PanelMenu;
     private JMenuBar mPrincipal;
-    private JMenu mJornadas;
-    private JMenu mClasificacion;
-    private JMenu mequipos;
+    private JMenuItem mJornadas;
+    private JMenuItem mClasificacion;
     private JPanel PanelLogo;
     private JLabel ftThemadza;
     private JButton bInicio;
@@ -52,6 +51,7 @@ public class VentanaTienda extends JFrame{
     private JButton bBuy12;
     private JLabel tienda2;
     private JPanel panelTienda1;
+    private JMenuItem mEquipos;
 
     public VentanaTienda(JFrame ventanaEliminar) {
 
@@ -206,7 +206,7 @@ public class VentanaTienda extends JFrame{
         mClasificacion.addActionListener(al);
     }
     public void addMEquiposAL(ActionListener al) {
-        mequipos.addActionListener(al);
+        mEquipos.addActionListener(al);
     }
     public void addBInicioAL(ActionListener al) {
         bInicio.addActionListener(al);
