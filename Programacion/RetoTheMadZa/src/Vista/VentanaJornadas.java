@@ -12,7 +12,7 @@ public class VentanaJornadas extends JFrame{
     private JMenuItem mJornadas;
     private JMenuItem mClasificacion;
     private JPanel PanelLogo;
-    private JLabel ftThemadza;
+    private JButton ftThemadza;
     private JButton bInicio;
     private JButton bSalir;
     private JButton bTienda;
@@ -54,7 +54,7 @@ public class VentanaJornadas extends JFrame{
 
     public VentanaJornadas(JFrame ventanaEliminar) {
 
-        cargarImagenEstablecerIcono("TheMadZaLogoSimple", 250, 250, ftThemadza);
+        cargarImagenEstablecerIconoBoton("TheMadZaLogoSimple", 250, 250, ftThemadza);
         cargarImagenEstablecerIcono("Tienda", bTienda);
         cargarImagenEstablecerIcono("Inicio", bInicio);
         cargarImagenEstablecerIcono("Salir", bSalir);
@@ -178,6 +178,15 @@ public class VentanaJornadas extends JFrame{
         ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, 40, 40);
         if (icono != null) {
             button.setIcon(icono);
+        } else {
+            System.err.println("La imagen " + nombreImagen + " no se encontró.");
+        }
+    }
+
+    private void cargarImagenEstablecerIconoBoton(String nombreImagen, int ancho, int alto, JButton label) {
+        ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
+        if (icono != null) {
+            label.setIcon(icono);
         } else {
             System.err.println("La imagen " + nombreImagen + " no se encontró.");
         }

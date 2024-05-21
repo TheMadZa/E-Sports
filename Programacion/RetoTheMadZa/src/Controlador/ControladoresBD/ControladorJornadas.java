@@ -118,4 +118,35 @@ public class ControladorJornadas {
             throw new Exception("No se ha actualizado ninguna jornada");
         }
     }
+
+    public String[][] obtenerResultadosUltimaJornada(int idCompeticion) throws Exception {
+        String[][] resultados = new String[4][4]; // Array multidimensional con 4 filas y 4 columnas
+
+        String sql = "SELECT RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2 " +
+                "FROM ENFRENTAMIENTOS " +
+                "WHERE ID_JORNADA = (SELECT MAX(ID_JORNADA) " +
+                "FROM JORNADAS " +
+                "WHERE ID_COMPETICION = ?)";
+        try (PreparedStatement stmt = con.prepareStatement(sql)) {
+            stmt.setInt(1, idCompeticion);
+            ResultSet rs = stmt.executeQuery();
+            int fila = 0;
+            while (rs.next() && fila < 4) {
+                int resultado1 = rs.getInt("RESULTADO1");
+                int resultado2 = rs.getInt("RESULTADO2");
+                int idEquipo1 = rs.getInt("ID_EQUIPO1");
+                int idEquipo2 = rs.getInt("ID_EQUIPO2");
+                resultados[fila][0] = Integer.toString(resultado1);
+                resultados[fila][1] = Integer.toString(resultado2);
+                resultados[fila][2] = Integer.toString(idEquipo1);
+                resultados[fila][3] = Integer.toString(idEquipo2);
+                fila++;
+            }
+        } catch (Exception e) {
+            System.err.println("Error al obtener los resultados de la última jornada: " + e.getMessage());
+            throw e;
+        }
+        return resultados;
+    }
+
 }

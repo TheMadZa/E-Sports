@@ -103,31 +103,33 @@ public class ControladorCompeticiones {
      */
     public String[][] buscarEquiposPorNombreCom(String nombreCom) throws Exception {
         try {
-            String plantilla = "SELECT e.logo, ec.victorias, ec.puntos, e.nom_equipo, j.nombre AS nombre_juego " +
+            String plantilla = "SELECT e.logo, ec.victorias, ec.puntos, e.nom_equipo, j.nombre, e.ID_EQUIPO " +
                                 "FROM equipos e " +
                                 "JOIN equipos_competiciones ec ON e.id_equipo = ec.id_equipo " +
                                 "JOIN competiciones c ON ec.id_competicion = c.id_competicion " +
                                 "JOIN juegos j ON c.id_juego = j.id_juego " +
-                                "WHERE UPPER(c.nombre_com) = ?";
+                                "WHERE UPPER(c.nombre_com) = ?" +
+                                "ORDER BY ec.victorias DESC, ec.puntos DESC";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
             sentenciaPre.setString(1, nombreCom.toUpperCase());
             ResultSet rs = sentenciaPre.executeQuery();
 
             // Array multidimensional con 10 filas y 5 columnas
-            String[][] listaCompeticiones = new String[10][5];
+            String[][] listaCompeticiones = new String[10][6];
 
             int i = 0;
             while (rs.next()) {
 
                 // Array para almacenar los datos de una fila
-                String[] fila = new String[5];
+                String[] fila = new String[6];
 
                 fila[0] = rs.getString("logo");
                 fila[1] = Integer.toString(rs.getInt("victorias"));
                 fila[2] = Integer.toString(rs.getInt("puntos"));
                 fila[3] = rs.getString("nom_equipo");
-                fila[4] = rs.getString("nombre_juego");
+                fila[4] = rs.getString("nombre");
+                fila[5] = rs.getString("ID_EQUIPO");
 
                 // Agregar la fila al array multidimensional
                 listaCompeticiones[i] = fila;

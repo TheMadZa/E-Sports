@@ -170,36 +170,23 @@ public class ControladorVUser {
         */
 
         // Poner las imágenes de sus logos.
-        URL Equipo1 = new URL(listaCompeticiones[0][0]);
-        BufferedImage imagenOriginal1 = ImageIO.read(Equipo1);
-        BufferedImage bufferedImage1 = Scalr.resize(imagenOriginal1, 55);
-        ImageIcon iconoEscalado1 = new ImageIcon(bufferedImage1);
-        vu.getEquipo1().setIcon(iconoEscalado1);
+        setEquipoImagen(vu.getEquipo1(), "Equipo" + listaCompeticiones[0][5]);
+        setEquipoImagen(vu.getEquipo2(), "Equipo" + listaCompeticiones[1][5]);
+        setEquipoImagen(vu.getEquipo3(), "Equipo" + listaCompeticiones[2][5]);
+        setEquipoImagen(vu.getEquipo4(), "Equipo" + listaCompeticiones[3][5]);
+        setEquipoImagen(vu.getEquipo5(), "Equipo" + listaCompeticiones[4][5]);
 
-        URL Equipo2 = new URL(listaCompeticiones[1][0]);
-        BufferedImage imagenOriginal2 = ImageIO.read(Equipo2);
-        BufferedImage bufferedImage2 = Scalr.resize(imagenOriginal2, 55);
-        ImageIcon iconoEscalado2 = new ImageIcon(bufferedImage2);
-        vu.getEquipo2().setIcon(iconoEscalado2);
+    }
 
-        URL Equipo3 = new URL(listaCompeticiones[2][0]);
-        BufferedImage imagenOriginal3 = ImageIO.read(Equipo3);
-        BufferedImage bufferedImage3 = Scalr.resize(imagenOriginal3, 55);
-        ImageIcon iconoEscalado3 = new ImageIcon(bufferedImage3);
-        vu.getEquipo3().setIcon(iconoEscalado3);
-
-        URL Equipo4 = new URL(listaCompeticiones[3][0]);
-        BufferedImage imagenOriginal4 = ImageIO.read(Equipo4);
-        BufferedImage bufferedImage4 = Scalr.resize(imagenOriginal4, 55);
-        ImageIcon iconoEscalado4 = new ImageIcon(bufferedImage4);
-        vu.getEquipo4().setIcon(iconoEscalado4);
-
-        URL Equipo5 = new URL(listaCompeticiones[4][0]);
-        BufferedImage imagenOriginal5 = ImageIO.read(Equipo5);
-        BufferedImage bufferedImage5 = Scalr.resize(imagenOriginal5, 55);
-        ImageIcon iconoEscalado5 = new ImageIcon(bufferedImage5);
-        vu.getEquipo5().setIcon(iconoEscalado5);
-
+    private void setEquipoImagen(JLabel label, String nombreImagen) {
+        BufferedImage imagen = ControladorImagenes.obtenerImagen2(nombreImagen);
+        if (imagen != null) {
+            BufferedImage imagenEscalada = Scalr.resize(imagen, 55);
+            ImageIcon iconoEscalado = new ImageIcon(imagenEscalada);
+            label.setIcon(iconoEscalado);
+        } else {
+            System.err.println("Imagen no encontrada: " + nombreImagen);
+        }
     }
 
     public void llenarComboBox(){

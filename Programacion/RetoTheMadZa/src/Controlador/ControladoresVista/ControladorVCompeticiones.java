@@ -194,66 +194,27 @@ public class ControladorVCompeticiones {
         //cargarImagenEstablecerIcono("Equipo1", 55, 55, vi.getEquipo1());
 
         // Poner las imágenes de sus logos.
-        URL Equipo1 = new URL(listaCompeticiones[0][0]);
-        BufferedImage imagenOriginal1 = ImageIO.read(Equipo1);
-        BufferedImage bufferedImage1 = Scalr.resize(imagenOriginal1, 55);
-        ImageIcon iconoEscalado1 = new ImageIcon(bufferedImage1);
-        vc.getImgPrimer().setIcon(iconoEscalado1);
+        setEquipoImagen(vc.getImgPrimer(), "Equipo" + listaCompeticiones[0][5]);
+        setEquipoImagen(vc.getImgSegundo(), "Equipo" + listaCompeticiones[1][5]);
+        setEquipoImagen(vc.getImgTercero(), "Equipo" + listaCompeticiones[2][5]);
+        setEquipoImagen(vc.getImgCuarto(), "Equipo" + listaCompeticiones[3][5]);
+        setEquipoImagen(vc.getImgQuinto(), "Equipo" + listaCompeticiones[4][5]);
+        setEquipoImagen(vc.getImgSexto(), "Equipo" + listaCompeticiones[5][5]);
+        setEquipoImagen(vc.getImgSeptimo(), "Equipo" + listaCompeticiones[6][5]);
+        setEquipoImagen(vc.getImgOctavo(), "Equipo" + listaCompeticiones[7][5]);
+        setEquipoImagen(vc.getImgNoveno(), "Equipo" + listaCompeticiones[8][5]);
+        setEquipoImagen(vc.getImgDecimo(), "Equipo" + listaCompeticiones[9][5]);
+    }
 
-        URL Equipo2 = new URL(listaCompeticiones[1][0]);
-        BufferedImage imagenOriginal2 = ImageIO.read(Equipo2);
-        BufferedImage bufferedImage2 = Scalr.resize(imagenOriginal2, 55);
-        ImageIcon iconoEscalado2 = new ImageIcon(bufferedImage2);
-        vc.getImgSegundo().setIcon(iconoEscalado2);
-
-        URL Equipo3 = new URL(listaCompeticiones[2][0]);
-        BufferedImage imagenOriginal3 = ImageIO.read(Equipo3);
-        BufferedImage bufferedImage3 = Scalr.resize(imagenOriginal3, 55);
-        ImageIcon iconoEscalado3 = new ImageIcon(bufferedImage3);
-        vc.getImgTercero().setIcon(iconoEscalado3);
-
-        URL Equipo4 = new URL(listaCompeticiones[3][0]);
-        BufferedImage imagenOriginal4 = ImageIO.read(Equipo4);
-        BufferedImage bufferedImage4 = Scalr.resize(imagenOriginal4, 55);
-        ImageIcon iconoEscalado4 = new ImageIcon(bufferedImage4);
-        vc.getImgCuarto().setIcon(iconoEscalado4);
-
-        URL Equipo5 = new URL(listaCompeticiones[4][0]);
-        BufferedImage imagenOriginal5 = ImageIO.read(Equipo5);
-        BufferedImage bufferedImage5 = Scalr.resize(imagenOriginal5, 55);
-        ImageIcon iconoEscalado5 = new ImageIcon(bufferedImage5);
-        vc.getImgQuinto().setIcon(iconoEscalado5);
-
-        URL Equipo6 = new URL(listaCompeticiones[5][0]);
-        BufferedImage imagenOriginal6 = ImageIO.read(Equipo6);
-        BufferedImage bufferedImage6 = Scalr.resize(imagenOriginal6, 55);
-        ImageIcon iconoEscalado6 = new ImageIcon(bufferedImage6);
-        vc.getImgSexto().setIcon(iconoEscalado6);
-
-        URL Equipo7 = new URL(listaCompeticiones[6][0]);
-        BufferedImage imagenOriginal7 = ImageIO.read(Equipo7);
-        BufferedImage bufferedImage7 = Scalr.resize(imagenOriginal7, 55);
-        ImageIcon iconoEscalado7 = new ImageIcon(bufferedImage7);
-        vc.getImgSeptimo().setIcon(iconoEscalado7);
-
-        URL Equipo8 = new URL(listaCompeticiones[7][0]);
-        BufferedImage imagenOriginal8 = ImageIO.read(Equipo8);
-        BufferedImage bufferedImage8 = Scalr.resize(imagenOriginal8, 55);
-        ImageIcon iconoEscalado8 = new ImageIcon(bufferedImage8);
-        vc.getImgOctavo().setIcon(iconoEscalado8);
-
-        URL Equipo9 = new URL(listaCompeticiones[8][0]);
-        BufferedImage imagenOriginal9 = ImageIO.read(Equipo9);
-        BufferedImage bufferedImage9 = Scalr.resize(imagenOriginal9, 55);
-        ImageIcon iconoEscalado9 = new ImageIcon(bufferedImage9);
-        vc.getImgNoveno().setIcon(iconoEscalado9);
-
-        URL Equipo10 = new URL(listaCompeticiones[9][0]);
-        BufferedImage imagenOriginal10 = ImageIO.read(Equipo10);
-        BufferedImage bufferedImage10 = Scalr.resize(imagenOriginal10, 55);
-        ImageIcon iconoEscalado10 = new ImageIcon(bufferedImage10);
-        vc.getImgDecimo().setIcon(iconoEscalado10);
-
+    private void setEquipoImagen(JLabel label, String nombreImagen) {
+        BufferedImage imagen = ControladorImagenes.obtenerImagen2(nombreImagen);
+        if (imagen != null) {
+            BufferedImage imagenEscalada = Scalr.resize(imagen, 55);
+            ImageIcon iconoEscalado = new ImageIcon(imagenEscalada);
+            label.setIcon(iconoEscalado);
+        } else {
+            System.err.println("Imagen no encontrada: " + nombreImagen);
+        }
     }
 
     public class CbClasificacionAL implements ActionListener{

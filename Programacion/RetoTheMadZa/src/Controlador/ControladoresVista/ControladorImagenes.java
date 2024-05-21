@@ -8,6 +8,7 @@ import org.imgscalr.Scalr;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import java.awt.image.BufferedImage;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
@@ -33,48 +34,50 @@ public class ControladorImagenes {
         vc.setVisible(true);
 
         System.out.println("Cargando todas las imágenes al inicio...");
-        cargarImagen("TheMadZaLogoSimple", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/RRSS/TheMadZaLogoSimple.png?raw=true");
-        cargarImagen("Tienda", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/RRSS/tienda.png?raw=true");
-        cargarImagen("Inicio", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/inicio.png?raw=true");
-        cargarImagen("Salir", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/powerOff.png?raw=true");
-        cargarImagen("Twitter", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/RRSS/TwitterLogo.png?raw=true");
-        cargarImagen("Instagram", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/RRSS/InstagramLogo.png?raw=true");
-        cargarImagen("Facebook", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/RRSS/FacebookLogo.png?raw=true");
-        cargarImagen("LogoBlanco", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/RRSS/SoloBlanco.png?raw=true");
+        cargarImagenLocal("TheMadZaLogoSimple", "/Vista/Imagenes/logos/TheMadZaLogoSimple.png");
+        cargarImagenLocal("Tienda", "/Vista/Imagenes/Botones/tienda.png");
+        cargarImagenLocal("Inicio", "/Vista/Imagenes/Botones/inicio.png");
+        cargarImagenLocal("Salir", "/Vista/Imagenes/Botones/powerOff.png");
+        cargarImagenLocal("Twitter", "/Vista/Imagenes/RRSS/TwitterLogo.png");
+        cargarImagenLocal("Instagram", "/Vista/Imagenes/RRSS/InstagramLogo.png");
+        cargarImagenLocal("Facebook", "/Vista/Imagenes/RRSS/FacebookLogo.png");
+        cargarImagenLocal("LogoBlanco", "/Vista/Imagenes/logos/SoloBlanco.png");
 
         // Cargar array de URLs
         String[] urlsNoticias = {
-                "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Noticias/0b9235b8-f812-4629-8c04-e9a5d874134b.png?raw=true",
-                "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Noticias/84752ff3-2cd1-465d-832a-c661bb701549.png?raw=true",
-                "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Noticias/ba6db8a3-4203-42a0-a5f2-4075bd89e161.png?raw=true",
-                "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Noticias/ed187317-1ef3-49a0-86b1-d5387a83ccca.png?raw=true",
-                "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Noticias/mano.png?raw=true"
+                "/Vista/Imagenes/Noticias/noticia1.png",
+                "/Vista/Imagenes/Noticias/noticia2.png",
+                "/Vista/Imagenes/Noticias/noticia3.png",
+                "/Vista/Imagenes/Noticias/noticia4.png",
+                "/Vista/Imagenes/Noticias/noticia5.png",
+                "/Vista/Imagenes/Noticias/noticia6.png",
+                "/Vista/Imagenes/Noticias/noticia7.png"
         };
 
-        cargarImagenesDesdeArray("Noticias", urlsNoticias);
+        cargarImagenesDesdeArrayLocal("Noticias", urlsNoticias);
 
-        cargarImagen("Tienda1", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Tienda/camiseta1.png?raw=true");
-        cargarImagen("Tienda2", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Tienda/mochilas.png?raw=true");
-        cargarImagen("Tienda3", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Tienda/botellas.png?raw=true");
-        cargarImagen("Tienda4", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Tienda/zapatilla1.png?raw=true");
-        cargarImagen("Tienda5", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Tienda/boxers.png?raw=true");
-        cargarImagen("Tienda6", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Tienda/raton.png?raw=true");
-        cargarImagen("Tienda7", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Tienda/bikini.png?raw=true");
-        cargarImagen("Tienda8", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Tienda/calcetines.png?raw=true");
-        cargarImagen("Tienda9", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Tienda/chaqueta.png?raw=true");
-        cargarImagen("Tienda10", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Tienda/gorra.png?raw=true");
-        cargarImagen("Tienda11", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Tienda/guantes.png?raw=true");
-        cargarImagen("Tienda12", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Tienda/pantalon.png?raw=true");
-        cargarImagen("Buy", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/Tienda/buy.png?raw=true");
+        cargarImagenLocal("Tienda1", "/Vista/Imagenes/Tienda/camiseta1.png");
+        cargarImagenLocal("Tienda2", "/Vista/Imagenes/Tienda/mochilas.png");
+        cargarImagenLocal("Tienda3", "/Vista/Imagenes/Tienda/botellas.png");
+        cargarImagenLocal("Tienda4", "/Vista/Imagenes/Tienda/zapatilla1.png");
+        cargarImagenLocal("Tienda5", "/Vista/Imagenes/Tienda/boxers.png");
+        cargarImagenLocal("Tienda6", "/Vista/Imagenes/Tienda/raton.png");
+        cargarImagenLocal("Tienda7", "/Vista/Imagenes/Tienda/bikini.png");
+        cargarImagenLocal("Tienda8", "/Vista/Imagenes/Tienda/calcetines.png");
+        cargarImagenLocal("Tienda9", "/Vista/Imagenes/Tienda/chaqueta.png");
+        cargarImagenLocal("Tienda10", "/Vista/Imagenes/Tienda/gorra.png");
+        cargarImagenLocal("Tienda11", "/Vista/Imagenes/Tienda/guantes.png");
+        cargarImagenLocal("Tienda12", "/Vista/Imagenes/Tienda/pantalon.png");
+        cargarImagenLocal("Buy", "/Vista/Imagenes/Tienda/buy.png");
 
-        cargarImagen("LogoColor", "https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/RRSS/TheMadZaLogoSoloNegro.png?raw=true");
+        cargarImagenLocal("LogoColor", "/Vista/Imagenes/logos/TheMadZaLogoSoloNegro.png");
 
         //Equipos
         cargarEquiposDesdeBD();
 
         //Flechas
-        cargarImagen("FlechaIzq","https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/RRSS/flechaIzquierda.png?raw=true");
-        cargarImagen("flechaDrch","https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/RRSS/flechaDerecha.png?raw=true");
+        cargarImagenLocal("FlechaIzq","/Vista/Imagenes/Botones/flechaIzquierda.png");
+        cargarImagenLocal("flechaDrch","/Vista/Imagenes/Botones/flechaDerecha.png");
 
         System.out.println("Todas las imágenes han sido cargadas.");
         vc.setVisible(false);
@@ -97,9 +100,34 @@ public class ControladorImagenes {
         }
     }
 
+    public void cargarImagenLocal(String nombre, String path) {
+        try {
+            System.out.println("Intentando cargar la imagen: " + nombre + " desde " + path);
+            InputStream imageStream = getClass().getResourceAsStream(path);
+            if (imageStream == null) {
+                throw new RuntimeException("No se pudo encontrar la imagen en el path: " + path);
+            }
+            BufferedImage imagenOriginal = ImageIO.read(imageStream);
+            if (imagenOriginal == null) {
+                throw new RuntimeException("No se pudo cargar la imagen de: " + path);
+            }
+            imagenes.put(nombre, imagenOriginal);
+            System.out.println("Imagen cargada y almacenada correctamente: " + nombre);
+        } catch (Exception e) {
+            System.err.println("Error al cargar la imagen: " + nombre);
+            e.printStackTrace();
+        }
+    }
+
     private void cargarImagenesDesdeArray(String baseNombre, String[] urls) {
         for (int i = 0; i < urls.length; i++) {
             cargarImagen(baseNombre + i, urls[i]);
+        }
+    }
+
+    private void cargarImagenesDesdeArrayLocal(String baseNombre, String[] urls) {
+        for (int i = 0; i < urls.length; i++) {
+            cargarImagenLocal(baseNombre + i, urls[i]);
         }
     }
 
@@ -119,6 +147,10 @@ public class ControladorImagenes {
             return null;
         }
         return new ImageIcon(imagenes.get(nombre));
+    }
+
+    public static BufferedImage obtenerImagen2(String nombre) {
+        return imagenes.get(nombre);
     }
 
     public void cargarEquiposDesdeBD() {
