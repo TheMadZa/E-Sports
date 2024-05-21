@@ -4,6 +4,7 @@ import Controlador.ControladoresVista.ControladorImagenes;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class VentanaEquipos extends JFrame {
     private JPanel panelUp;
@@ -22,11 +23,13 @@ public class VentanaEquipos extends JFrame {
     private JButton bInstagram;
     private JButton bFacebook;
     private JLabel logoBlanco;
-    private JScrollPane PanelMedio;
+    private JPanel PanelMedio;
     private JLabel ftEquipo1;
     private JPanel pPrincipal;
-    private JPanel PnaelMedio;
     private JButton bDerecha;
+    private JLabel lImagen;
+    private JButton bIzquierda;
+    private JLabel lEquipo;
 
     public VentanaEquipos(VentanaInicial vi) {
 
@@ -39,10 +42,10 @@ public class VentanaEquipos extends JFrame {
         cargarImagenEstablecerIcono("Instagram", bInstagram);
         cargarImagenEstablecerIcono("Facebook", bFacebook);
         cargarImagenEstablecerIcono("LogoBlanco", 100, 100, logoBlanco);
-        cargarImagenEstablecerIcono("Equipo1", 400, 400, ftEquipo1);
+        cargarImagenEstablecerIcono("Equipo1", 400, 400, lImagen);
 
-        cargarImagenEstablecerIcono("FlechaIzq", 400, 400, ftEquipo1);
-        cargarImagenEstablecerIcono("flechaDrch", 400, 400, ftEquipo1);
+        cargarImagenEstablecerIcono("FlechaIzq", bIzquierda);
+        cargarImagenEstablecerIcono("flechaDrch", bDerecha);
 
 
 
@@ -53,6 +56,8 @@ public class VentanaEquipos extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(true);
         getRootPane().setDefaultButton(bInicio);
+        bIzquierda.setBorder(BorderFactory.createEmptyBorder());
+        bDerecha.setBorder(BorderFactory.createEmptyBorder());
 
         JComponent[] componentesConBorde = {mPrincipal, bTienda, bInicio, bSalir, bFacebook,
                 bTwitter, bInstagram};
@@ -63,11 +68,13 @@ public class VentanaEquipos extends JFrame {
         Color backgroundColor = Color.decode("#5B2C78");
         Color foregroundColor = Color.decode("#151135");
 
+        /*
         JScrollBar verticalScrollBar = PanelMedio.getVerticalScrollBar();
         verticalScrollBar.setBackground(backgroundColor);
         verticalScrollBar.setForeground(foregroundColor);
         PanelMedio.getViewport().setBackground(backgroundColor);
         PanelMedio.setBackground(backgroundColor);
+         */
 
         setVisible(true);
     }
@@ -79,7 +86,7 @@ public class VentanaEquipos extends JFrame {
     }
 
     // Funciones
-    private void cargarImagenEstablecerIcono(String nombreImagen, int ancho, int alto, JLabel label) {
+    public void cargarImagenEstablecerIcono(String nombreImagen, int ancho, int alto, JLabel label) {
         ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
         if (icono != null) {
             label.setIcon(icono);
@@ -87,12 +94,39 @@ public class VentanaEquipos extends JFrame {
             System.err.println("La imagen " + nombreImagen + " no se encontró.");
         }
     }
-    private void cargarImagenEstablecerIcono(String nombreImagen, JButton button) {
+    public void cargarImagenEstablecerIcono(String nombreImagen, JButton button) {
         ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, 40, 40);
         if (icono != null) {
             button.setIcon(icono);
         } else {
             System.err.println("La imagen " + nombreImagen + " no se encontró.");
         }
+    }
+
+    //Getters y setters
+
+
+    public JLabel getlImagen() {
+        return lImagen;
+    }
+
+    public void setlImagen(JLabel lImagen) {
+        this.lImagen = lImagen;
+    }
+
+    public JLabel getlEquipo() {
+        return lEquipo;
+    }
+
+    public void setlEquipo(JLabel lEquipo) {
+        this.lEquipo = lEquipo;
+    }
+
+    //ActionListeners
+    public void addBFlechaDrchAL(ActionListener al){
+        bDerecha.addActionListener(al);
+    }
+    public void addBFlechaIzquAL(ActionListener al){
+        bIzquierda.addActionListener(al);
     }
 }
