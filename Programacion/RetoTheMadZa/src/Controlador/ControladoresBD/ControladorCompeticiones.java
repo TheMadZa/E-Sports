@@ -20,7 +20,7 @@ public class ControladorCompeticiones {
 
     public void insertarCompeticion(Competicion c) throws Exception {
         try {
-            String plantilla = "INSERT INTO competiciones VALUES (?,?,?,?,?,?,?);";
+            String plantilla = "INSERT INTO competiciones VALUES (?,?,?,?,?,?,?)";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
 
@@ -47,7 +47,7 @@ public class ControladorCompeticiones {
 
     public void borrarCompeticion(int idCompeticion) throws Exception {
         try {
-            String plantilla = "DELETE FROM competiciones WHERE id_competicion = ?;";
+            String plantilla = "DELETE FROM competiciones WHERE id_competicion = ?";
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
             sentenciaPre.setInt(1, idCompeticion);
             int n = sentenciaPre.executeUpdate();
@@ -63,7 +63,7 @@ public class ControladorCompeticiones {
 
     public Competicion buscarCompeticion(int idCompeticion) throws Exception {
         try {
-            String plantilla = "SELECT * FROM competiciones WHERE id_competicion = ?;";
+            String plantilla = "SELECT * FROM competiciones WHERE id_competicion = ?";
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
             sentenciaPre.setInt(1, idCompeticion);
 
@@ -89,6 +89,7 @@ public class ControladorCompeticiones {
         }
     }
 
+    // TODO : IGUAL HABRÍA QUE HACER QUE DEVUELVA LOS EQUIPOS CON MÁS VICTORIAS? (ORDER BY ec.victorias DESC)
     /**
      * Función para obtener logo, victorias y puntos de un equipo en una competición.
      * Se buscarán los logos, las victorias y los puntos totales de los equipos que participan
@@ -106,8 +107,7 @@ public class ControladorCompeticiones {
                                 "FROM equipos e " +
                                 "JOIN equipos_competiciones ec ON e.id_equipo = ec.id_equipo " +
                                 "WHERE ec.id_competicion IN (SELECT id_competicion FROM competiciones "+
-                                "WHERE UPPER(nombre_com) = ?) " +
-                                "ORDER BY ec.victorias DESC";
+                                "WHERE UPPER(nombre_com) = ?)";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
             sentenciaPre.setString(1, nombreCom.toUpperCase());
@@ -117,7 +117,7 @@ public class ControladorCompeticiones {
             String[][] listaCompeticiones = new String[10][3];
 
             int i = 0;
-            while (rs.next() && i<5) {
+            while (rs.next()) {
 
                 // Array para almacenar los datos de una fila
                 String[] fila = new String[3];
@@ -147,6 +147,7 @@ public class ControladorCompeticiones {
 
     // TODO : SEGURAMENTE SE PUEDA PONER QUE DEVUELVA UN ARRAYLIST PERO DE STRING nombre_com
     public List<Competicion> buscarTodasCompeticiones() throws Exception {
+
         List<Competicion> competiciones = new ArrayList<>();
         try {
             String plantilla = "SELECT nombre_com FROM competiciones";
@@ -159,6 +160,7 @@ public class ControladorCompeticiones {
                 c.setNombreCom(rs.getString("nombre_com"));
                 competiciones.add(c);
             }
+
             sentenciaPre.close();
             return competiciones;
         }
@@ -169,7 +171,7 @@ public class ControladorCompeticiones {
 
     public void modificarCompeticion(Competicion c) throws Exception {
         String plantilla = "UPDATE competiciones SET nombre_com = ?, fecha_inicio = ?, fecha_fin = ?, etapa = ?, " +
-                            "id_juego = ?, id_equipo_ganador = ? WHERE id_competicion = ?;";
+                            "id_juego = ?, id_equipo_ganador = ? WHERE id_competicion = ?";
 
         PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
 

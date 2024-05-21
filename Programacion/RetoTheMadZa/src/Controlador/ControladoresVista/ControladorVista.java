@@ -5,6 +5,7 @@ import Modelo.*;
 import Vista.VentanaInicial;
 import Vista.VentanaInicioSesion;
 
+import java.sql.Connection;
 import java.util.List;
 
 public class ControladorVista {
