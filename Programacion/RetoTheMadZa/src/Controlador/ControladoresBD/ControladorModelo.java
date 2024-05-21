@@ -52,7 +52,6 @@ public class ControladorModelo {
     }
 
     public List<Competicion> buscarTodasCompeticiones() throws Exception {
-        System.out.println("Hasta buscarTodasCompeticiones bien.");
         return cc.buscarTodasCompeticiones();
     }
 
@@ -75,6 +74,10 @@ public class ControladorModelo {
 
     public void modificarEquipo(Equipo e) throws Exception {
         ce.modificarEquipo(e);
+    }
+
+    public List<Equipo> cargarEquiposDesdeBD() throws Exception {
+        return ce.cargarEquiposDesdeBD();
     }
 
     //JORNADA

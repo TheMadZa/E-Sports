@@ -15,7 +15,6 @@ import java.net.URL;
 import java.util.List;
 
 public class ControladorVCompeticiones {
-
     private VentanaInicial vi;
     private VentanaClasificacion vc;
     private ControladorVista cv;
@@ -24,24 +23,22 @@ public class ControladorVCompeticiones {
         this.cv = cv;
     }
 
-    public void crearMostrar(VentanaInicial vi) {
+    public void crearMostrar(JFrame ventanaEliminar) {
 
-        vc = new VentanaClasificacion(vi);
+        vc = new VentanaClasificacion(ventanaEliminar);
 
         llenarComboBox();
 
         vc.addBTiendaAL(new BTiendaAL());
         vc.addBInicioAL(new BInicioAL());
-        vc.addBSalirAL(new ControladorVI.BSalirAL());
-        vc.addBFacebookAL(new ControladorVI.BFacebookAL());
-        vc.addBInstagramAL(new ControladorVI.BInstagramAL());
-        vc.addBTwitterAL(new ControladorVI.BTwitterAL());
+        vc.addBSalirAL(new BSalirAL());
+        vc.addBFacebookAL(new BFacebookAL());
+        vc.addBInstagramAL(new BInstagramAL());
+        vc.addBTwitterAL(new BTwitterAL());
         vc.addMJornadasAL(new MJornadasAL());
         vc.addMClasificacionAL(new MClasificacionAL());
         vc.addMEquiposAL(new MEquiposAL());
         vc.addCbCompeticionAL(new CbClasificacionAL());
-
-        //
 
     }
 
@@ -60,17 +57,19 @@ public class ControladorVCompeticiones {
             JOptionPane.showMessageDialog(null,e.getMessage());
         }
     }
+
     public class BTiendaAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            cv.mostrarTienda();
+            cv.mostrarTienda(vc);
         }
     }
 
     public class BInicioAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            cv.mostrarInicioSesion(vi);
+            // TODO : cerrar sesión y volver a v inicio sesion
+            cv.mostrarInicioSesion(vc);
         }
     }
 
@@ -120,7 +119,7 @@ public class ControladorVCompeticiones {
     public class MJornadasAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            cv.mostrarJornadas(vi);
+            cv.mostrarJornadas(vc);
         }
     }
 
@@ -138,13 +137,12 @@ public class ControladorVCompeticiones {
         }
     }
 
-
     public void rellenarTablaEquiposCompeticion(String nombreSeleccionado) throws Exception {
 
         // Obtener un array multidimensional (5F·3C) con los datos de los equipos de la competición seleccionada.
         String[][] listaCompeticiones = cv.buscarEquiposPorNombreCom(nombreSeleccionado);
 
-        // Aparecerán los 10 equipos con más victorias en  orden victoria - puntos
+        // Aparecerán los 10 equipos con más victorias en orden "victoria - puntos"
         vc.getJLvictoriasPrimero().setText(String.valueOf(listaCompeticiones[0][1]));
         vc.getJLpuntosPrimer().setText(String.valueOf(listaCompeticiones[0][2]));
         vc.getJLvictoriasSegundo().setText(String.valueOf(listaCompeticiones[1][1]));
@@ -166,6 +164,7 @@ public class ControladorVCompeticiones {
         vc.getJLvictoriasDecimo().setText(String.valueOf(listaCompeticiones[9][1]));
         vc.getJLpuntosDecimo().setText(String.valueOf(listaCompeticiones[9][2]));
 
+        // Los nombres de los equipos.
         vc.getJLnomPrimer().setText(String.valueOf(listaCompeticiones[0][3]));
         vc.getJLnomSegundo().setText(String.valueOf(listaCompeticiones[1][3]));
         vc.getJLnomTercer().setText(String.valueOf(listaCompeticiones[2][3]));
@@ -177,6 +176,7 @@ public class ControladorVCompeticiones {
         vc.getJLnomNoveno().setText(String.valueOf(listaCompeticiones[8][3]));
         vc.getJLnomDecimo().setText(String.valueOf(listaCompeticiones[9][3]));
 
+        // El nombre del juego.
         vc.getTfNombreJuego().setText(String.valueOf(listaCompeticiones[0][4]));
 
         vc.getJLNombreCompeticion().setText(String.valueOf(vc.getCbCompeticion().getSelectedItem()));
@@ -193,8 +193,6 @@ public class ControladorVCompeticiones {
         //String Equipo1 = listaCompeticiones[0][0];
         //cargarImagenEstablecerIcono("Equipo1", 55, 55, vi.getEquipo1());
 
-
-        // TODO : Reutilizar código.
         // Poner las imágenes de sus logos.
         URL Equipo1 = new URL(listaCompeticiones[0][0]);
         BufferedImage imagenOriginal1 = ImageIO.read(Equipo1);
@@ -256,7 +254,6 @@ public class ControladorVCompeticiones {
         ImageIcon iconoEscalado10 = new ImageIcon(bufferedImage10);
         vc.getImgDecimo().setIcon(iconoEscalado10);
 
-
     }
 
     public class CbClasificacionAL implements ActionListener{
@@ -274,6 +271,4 @@ public class ControladorVCompeticiones {
 
         }
     }
-
-
 }

@@ -53,7 +53,7 @@ public class VentanaTienda extends JFrame{
     private JLabel tienda2;
     private JPanel panelTienda1;
 
-    public VentanaTienda() {
+    public VentanaTienda(JFrame ventanaEliminar) {
 
         // Cargar las imágenes con un tamaño específico.
         cargarImagenEstablecerIcono("TheMadZaLogoSimple", 250, 250, ftThemadza);
@@ -122,11 +122,14 @@ public class VentanaTienda extends JFrame{
         PanelMedio.setBackground(backgroundColor);
 
         setVisible(true);
+
+        // Destruir la ventana anterior.
+        ventanaEliminar.dispose();
     }
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            VentanaTienda ventana = new VentanaTienda();
+            VentanaTienda ventana = new VentanaTienda(null);
         });
     }
 

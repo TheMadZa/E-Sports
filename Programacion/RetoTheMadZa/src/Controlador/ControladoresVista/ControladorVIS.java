@@ -16,8 +16,8 @@ public class ControladorVIS {
         this.cv = cv;
     }
 
-    public void crearMostrar(VentanaInicial vi) {
-        vis = new VentanaInicioSesion(vi);
+    public void crearMostrar(JFrame ventanaEliminar) {
+        vis = new VentanaInicioSesion(ventanaEliminar);
 
         // Action Listeners de los botones y demás.
         vis.addBIniciarSesionAL(new BIniciarSesionAL());

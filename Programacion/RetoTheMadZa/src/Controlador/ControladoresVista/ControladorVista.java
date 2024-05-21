@@ -2,11 +2,9 @@ package Controlador.ControladoresVista;
 
 import Controlador.ControladorPrincipal;
 import Modelo.*;
-import Vista.VentanaInicial;
 import Vista.VentanaInicioSesion;
-import Vista.VentanaUser;
 
-import java.sql.Connection;
+import javax.swing.*;
 import java.util.List;
 
 public class ControladorVista {
@@ -42,8 +40,8 @@ public class ControladorVista {
         cvi.crearMostrar();
     }
 
-    public void mostrarInicioSesion(VentanaInicial vi){
-        cvis.crearMostrar(vi);
+    public void mostrarInicioSesion(JFrame ventanaEliminar){
+        cvis.crearMostrar(ventanaEliminar);
     }
 
     public void mostrarUser(VentanaInicioSesion vis){
@@ -54,20 +52,20 @@ public class ControladorVista {
         cva.crearMostrar(vis);
     }
 
-    public void mostrarJornadas(VentanaUser vu){
-        cvj.crearMostrar(vu);
+    public void mostrarJornadas(JFrame ventanaEliminar){
+        cvj.crearMostrar(ventanaEliminar);
     }
 
-    public void mostrarClasificacion(VentanaUser vu){
-        cvco.crearMostrar(vu);
+    public void mostrarClasificacion(JFrame ventanaEliminar){
+        cvco.crearMostrar(ventanaEliminar);
     }
 
-    public void mostrarEquipos(VentanaUser vu){
-        cve.crearMostrar(vu);
+    public void mostrarEquipos(JFrame ventanaEliminar){
+        cve.crearMostrar(ventanaEliminar);
     }
 
-    public void mostrarTienda(){
-        cvt.crearMostrar();
+    public void mostrarTienda(JFrame ventanaEliminar){
+        cvt.crearMostrar(ventanaEliminar);
     }
 
     public void mostrarDUsuario(){
@@ -98,7 +96,6 @@ public class ControladorVista {
     public void modificarCompeticion(Competicion c) throws Exception{
         cp.modificarCompeticion(c);
     }
-
 
     //EQUIPO
     public void insertarEquipo(Equipo e) throws Exception {

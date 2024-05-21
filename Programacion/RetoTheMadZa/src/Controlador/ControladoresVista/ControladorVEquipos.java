@@ -4,6 +4,7 @@ import Vista.VentanaEquipos;
 import Vista.VentanaInicial;
 import Vista.VentanaUser;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -19,9 +20,9 @@ public class ControladorVEquipos {
         this.cv = cv;
     }
 
-    public void crearMostrar(VentanaUser vu) {
+    public void crearMostrar(JFrame ventanaEliminar) {
 
-        ve = new VentanaEquipos(vu);
+        ve = new VentanaEquipos(ventanaEliminar);
 
         ve.addBFlechaIzquAL(new BFlechaIzquAL());
         ve.addBFlechaDrchAL(new BFlechaDrchAL());

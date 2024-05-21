@@ -114,4 +114,28 @@ public class ControladorEquipos {
             throw new Exception("No se ha actualizado a ningun equipo");
         }
     }
+
+    public List<Equipo> cargarEquiposDesdeBD() throws Exception {
+        ArrayList<Equipo> listaEquipos = new ArrayList<>();
+
+        String plantilla = "SELECT ID_EQUIPO, NOM_EQUIPO, LOGO FROM EQUIPOS";
+
+        PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
+
+        ResultSet rs = sentenciaPre.executeQuery();
+
+        while (rs.next()) {
+            int id = rs.getInt("ID_EQUIPO");
+            String nombre = rs.getString("NOM_EQUIPO");
+            String logoUrl = rs.getString("LOGO");
+
+            Equipo e = new Equipo();
+            e.setIdEquipo(id);
+            e.setNomEquipo(nombre);
+            e.setLogo(logoUrl);
+
+            listaEquipos.add(e);
+        }
+        return listaEquipos;
+    }
 }
