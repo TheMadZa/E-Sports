@@ -74,7 +74,7 @@ public class ControladorImagenes {
 
         //Flechas
         cargarImagen("FlechaIzq","https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/RRSS/flechaIzquierda.png?raw=true");
-        cargarImagen("FlechaDrch","https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/RRSS/flechaDerecha.png?raw=true");
+        cargarImagen("flechaDrch","https://github.com/IbaiSaenzDeBuruaga/E-SportsLogos/blob/main/RRSS/flechaDerecha.png?raw=true");
 
         System.out.println("Todas las imágenes han sido cargadas.");
         vc.setVisible(false);
