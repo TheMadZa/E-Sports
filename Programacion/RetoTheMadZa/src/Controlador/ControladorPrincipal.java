@@ -10,12 +10,12 @@ import java.util.List;
 public class ControladorPrincipal {
     private ControladorVista cv;
     private final ControladorModelo cm;
+    private ControladorImagenes ci;
 
     public ControladorPrincipal() {
-        ControladorImagenes ci = new ControladorImagenes();
-        ControladorImagenes.cargarImagenes();
-
         cm = new ControladorModelo();
+        ci = new ControladorImagenes(cm);
+        ci.cargarImagenes();
         cv = new ControladorVista(this);
     }
 
@@ -156,11 +156,8 @@ public class ControladorPrincipal {
         return cm.buscarTodosEquiposCompeticiones();
     }
 
-
     //CONEXION
     public void cerrarConexion() throws Exception{
         cm.cerrarConexion();
     }
-
-
 }

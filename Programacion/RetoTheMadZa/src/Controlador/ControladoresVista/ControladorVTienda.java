@@ -1,14 +1,13 @@
 package Controlador.ControladoresVista;
 
-import Vista.VentanaInicioSesion;
 import Vista.VentanaTienda;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ControladorVTienda {
-
     private VentanaTienda vt;
     private ControladorVista cv;
 
@@ -16,8 +15,8 @@ public class ControladorVTienda {
         this.cv = cv;
     }
 
-    public void crearMostrar() {
-        vt = new VentanaTienda();
+    public void crearMostrar(JFrame ventanaEliminar) {
+        vt = new VentanaTienda(ventanaEliminar);
 
         // Action Listeners de los botones y demás.
         vt.addBSalirAL(new BSalirAL());
@@ -27,6 +26,7 @@ public class ControladorVTienda {
         vt.addMJornadasAL(new MJornadasAL());
         vt.addMClasificacionAL(new MClasificacionAL());
         vt.addMEquiposAL(new MEquiposAL());
+        vt.addBInicioAL(new BInicioAL());
         vt.addBBuyAL(new BBuyAL());
     }
 
@@ -76,21 +76,29 @@ public class ControladorVTienda {
     public class MJornadasAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            cv.mostrarJornadas(vt);
         }
     }
 
     public class MClasificacionAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            cv.mostrarClasificacion(vt);
         }
     }
 
     public class MEquiposAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
+            cv.mostrarEquipos(vt);
+        }
+    }
 
+    public class BInicioAL implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            // TODO : cerrar sesión y volver a v inicio sesion
+            cv.mostrarInicioSesion(vt);
         }
     }
 

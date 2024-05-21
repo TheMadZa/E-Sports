@@ -46,14 +46,15 @@ public class ControladorVUser {
     public class BTiendaAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            cv.mostrarTienda();
+            cv.mostrarTienda(vu);
         }
     }
 
     public class BInicioAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            // TODO : cerrar sesión
+            // TODO : cerrar sesión y volver a v inicio sesion
+            cv.mostrarInicioSesion(vu);
         }
     }
 
@@ -168,7 +169,6 @@ public class ControladorVUser {
         cargarImagenEstablecerIcono("Equipo1", 55, 55, vi.getEquipo1());
         */
 
-        // TODO : Reutilizar código.
         // Poner las imágenes de sus logos.
         URL Equipo1 = new URL(listaCompeticiones[0][0]);
         BufferedImage imagenOriginal1 = ImageIO.read(Equipo1);

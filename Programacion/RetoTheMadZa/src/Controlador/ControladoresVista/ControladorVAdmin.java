@@ -27,8 +27,10 @@ public class ControladorVAdmin {
         // Action Listeners de los botones y demás.
         va.addMiCrudAL(new MiCrudAL());
         va.addBAccionesAL(new BAccionesAL());
-        va.addMiVisualizarJornadasAL(new MiVisualizarJornadasAL()); // TODO
-        va.addMiClasificacionJornadasAL(new MiClasificacionJornadasAL()); // TODO
+        va.addMiVisualizarEquiposAL(new MiVisualizarEquiposAL());
+        va.addMiVisualizarJornadasAL(new MiVisualizarJornadasAL());
+        va.addMiClasificacionJornadasAL(new MiClasificacionJornadasAL());
+        va.addMGenerarXmlAL(new MGenerarXmlAL());
         va.addBInicioAL(new BInicioAL());
         va.addBSalirAL(new BSalirAL());
         va.addBFacebookAL(new BFacebookAL());
@@ -75,6 +77,7 @@ public class ControladorVAdmin {
 
                         switch (accionElegida){
                             case "Insertar" -> {
+                                /*
                                 // Obtener lista con los JTextFields para poder obtener los datos introducidos.
                                 ArrayList<JTextField> listaTextFieldsDinamicos = va.getListaTextFieldsDinamicos();
                                 // Crear un nuevo equipo y añadirle los atributos necesarios.
@@ -84,10 +87,23 @@ public class ControladorVAdmin {
                                 equipo.setLogo(listaTextFieldsDinamicos.get(0).getText());
                                 equipo.setColor(listaTextFieldsDinamicos.get(0).getText());
                                 cv.insertarEquipo(equipo);
+                                 */
                             }
-                            case "Eliminar" -> va.mostrarDatosJugadores();
-                            case "Actualizar" -> va.mostrarDatosStaff();
-                            case "Consultar" -> va.mostrarDatosPatrocinadores();
+                            case "Eliminar" -> {
+                                /*
+
+                                 */
+                            }
+                            case "Actualizar" -> {
+                                /*
+
+                                 */
+                            }
+                            case "Consultar" -> {
+                                /*
+
+                                 */
+                            }
                         }
 
                     }
@@ -122,22 +138,35 @@ public class ControladorVAdmin {
 
         }
     }
+    public class MiVisualizarEquiposAL implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            cv.mostrarEquipos(va);
+        }
+    }
     public class MiVisualizarJornadasAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            // TODO
+            cv.mostrarJornadas(va);
         }
     }
     public class MiClasificacionJornadasAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            // TODO
+            cv.mostrarClasificacion(va);
+        }
+    }
+    public class MGenerarXmlAL implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            //cv.mostrarGenerarXml(va); // TODO : falta hacer Za
         }
     }
     public class BInicioAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            // TODO : cerrar sesión
+            // TODO : cerrar sesión y volver a v inicio sesion
+            cv.mostrarInicioSesion(va);
         }
     }
 
@@ -182,5 +211,9 @@ public class ControladorVAdmin {
                 System.out.println("Error al abrir el enlace: " + ex.getMessage());
             }
         }
+    }
+
+    public VentanaAdmin obtenerVentana(){
+        return va;
     }
 }

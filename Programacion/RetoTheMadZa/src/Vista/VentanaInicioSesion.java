@@ -8,20 +8,19 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 public class VentanaInicioSesion extends JFrame {
 
     private JPanel pPrincipal;
     private JTextField tfUsuario;
-    private JTextField tfContrasena;
+    private JPasswordField ftfContrasena;
     private JButton bIniciarSesion; // TODO : poner bordes redondos
     private JButton bRegistrarse; // TODO : poner bordes redondos
     private JPanel pDatos;
     private JLabel tfImagenLogo;
 
-    public VentanaInicioSesion(VentanaInicial vi){
+    public VentanaInicioSesion(JFrame ventanaEliminar){
 
         setTitle("Ventana Inicio Sesión");
         setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -96,7 +95,7 @@ public class VentanaInicioSesion extends JFrame {
         setVisible(true);
 
         // Destruir la ventana inicial.
-        vi.dispose();
+        ventanaEliminar.dispose();
 
     }
 
@@ -119,10 +118,10 @@ public class VentanaInicioSesion extends JFrame {
         this.tfUsuario.setText(usuario);
     }
     public String getTfContrasena() {
-        return tfContrasena.getText();
+        return ftfContrasena.getText();
     }
     public void setTfContrasena(String contrasena) {
-        this.tfContrasena.setText(contrasena);
+        this.ftfContrasena.setText(contrasena);
     }
 
     // Listeners

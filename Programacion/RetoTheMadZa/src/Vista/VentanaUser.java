@@ -47,6 +47,7 @@ public class VentanaUser extends JFrame {
     private JLabel labelTextoHorizontal;
     private JPanel pPrincipal;
     private JMenuItem mEquipos;
+    private int indiceImagenes = 0;
 
     public VentanaUser(VentanaInicioSesion vis) {
         cargarImagenEstablecerIcono("TheMadZaLogoSimple", 250, 250, ftThemadza);
@@ -76,6 +77,24 @@ public class VentanaUser extends JFrame {
 
         // Destruir la ventana de inicio de sesión.
         vis.dispose();
+    }
+
+    // Función para mostrar las imágenes transitorias.
+    public void mostrarImagenesFugaces() {
+        // Crear un temporizador que cambie la imagen después de unos 4 segundos.
+        Timer timer = new Timer(3000, e -> {
+            // Cambiar la imagen y actualizar el índice
+            indiceImagenes = (indiceImagenes + 1) % 5; // Número de imágenes en el array
+            // Obtener la imagen del array cargada en el ControladorImagenes
+            ImageIcon icon = ControladorImagenes.obtenerImagen("Noticias" + indiceImagenes, 600, 600);
+            if (icon != null) {
+                ftNoticias.setIcon(icon);
+            } else {
+                System.err.println("La imagen Noticias" + indiceImagenes + " no se encontró.");
+            }
+        });
+        // Comenzar el temporizador
+        timer.start();
     }
 
     public static void main(String[] args) {

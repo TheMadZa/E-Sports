@@ -52,7 +52,7 @@ public class VentanaJornadas extends JFrame{
     private String Equipo1Partido4;
     private String Equipo2Partido4;
 
-    public VentanaJornadas(VentanaUser vu) {
+    public VentanaJornadas(JFrame ventanaEliminar) {
 
         cargarImagenEstablecerIcono("TheMadZaLogoSimple", 250, 250, ftThemadza);
         cargarImagenEstablecerIcono("Tienda", bTienda);
@@ -63,8 +63,17 @@ public class VentanaJornadas extends JFrame{
         cargarImagenEstablecerIcono("Facebook", bFacebook);
         cargarImagenEstablecerIcono("LogoBlanco", 100, 100, logoBlanco);
 
+        cargarImagenEstablecerIcono("Equipo1", 75, 75, ftEquipo1Partido1);
+        cargarImagenEstablecerIcono("Equipo1", 75, 75, ftEquipo2Partido1);
+        cargarImagenEstablecerIcono("Equipo1", 75, 75, ftEquipo1Partido2);
+        cargarImagenEstablecerIcono("Equipo1", 75, 75, ftEquipo2Partido2);
+        cargarImagenEstablecerIcono("Equipo1", 75, 75, ftEquipo1Partido3);
+        cargarImagenEstablecerIcono("Equipo1", 75, 75, ftEquipo2Partido3);
+        cargarImagenEstablecerIcono("Equipo1", 75, 75, ftEquipo1Partido4);
+        cargarImagenEstablecerIcono("Equipo1", 75, 75, ftEquipo2Partido4);
+
         //equipos
-        ImageIcon iconoEquipo1Partido1 = ControladorImagenes.obtenerImagen(Equipo1Partido1, 100, 100);
+       /* ImageIcon iconoEquipo1Partido1 = ControladorImagenes.obtenerImagen(Equipo1Partido1, 100, 100);
         ftEquipo1Partido1.setIcon(iconoEquipo1Partido1);
 
         ImageIcon iconoEquipo2Partido1 = ControladorImagenes.obtenerImagen(Equipo2Partido1, 100, 100);
@@ -86,8 +95,7 @@ public class VentanaJornadas extends JFrame{
         ftEquipo1Partido4.setIcon(iconoEquipo1Partido4);
 
         ImageIcon iconoEquipo2Partido4 = ControladorImagenes.obtenerImagen(Equipo2Partido4, 100, 100);
-        ftEquipo2Partido4.setIcon(iconoEquipo2Partido4);
-
+        ftEquipo2Partido4.setIcon(iconoEquipo2Partido4);*/
 
         // Configurar la ventana
         setContentPane(pPrincipal);
@@ -104,8 +112,8 @@ public class VentanaJornadas extends JFrame{
 
         setVisible(true);
 
-        // Destruir la ventana del user.
-        vu.dispose();
+        // Destruir la ventana anterior.
+        ventanaEliminar.dispose();
     }
 
     public static void main(String[] args) {
@@ -144,6 +152,18 @@ public class VentanaJornadas extends JFrame{
     }
     public void addCbCompeticionAL(ActionListener al) {
         cbCompeticion.addActionListener(al);
+    }
+
+    public JComboBox<String> getCbCompeticion() {
+        return cbCompeticion;
+    }
+
+    public void mostrarMensaje(String mensaje){
+        JOptionPane.showMessageDialog(null,mensaje);
+    }
+
+    public void setCbCompeticion(JComboBox<String> cbCompeticion) {
+        this.cbCompeticion = cbCompeticion;
     }
 
     private void cargarImagenEstablecerIcono(String nombreImagen, int ancho, int alto, JLabel label) {

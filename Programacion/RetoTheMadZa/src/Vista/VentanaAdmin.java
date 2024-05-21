@@ -51,6 +51,8 @@ public class VentanaAdmin extends JFrame {
     private JButton bConsultar;
     private JPanel pBotones;
     private JPanel pDatos;
+    private JMenuItem mGenerarXml;
+    private JMenuItem miVisualizarEquipos;
 
     // Declarar la clase para colocar elementos que se le aplicará a los JLabel y JTextField en el pDatos.
     private final GridBagConstraints gbc;
@@ -171,11 +173,17 @@ public class VentanaAdmin extends JFrame {
         bActualizar.addActionListener(al);
         bConsultar.addActionListener(al);
     }
+    public void addMiVisualizarEquiposAL(ActionListener al) {
+        miVisualizarEquipos.addActionListener(al);
+    }
     public void addMiVisualizarJornadasAL(ActionListener al) {
         miVisualizarJornadas.addActionListener(al);
     }
     public void addMiClasificacionJornadasAL(ActionListener al) {
         miClasificacionJornadas.addActionListener(al);
+    }
+    public void addMGenerarXmlAL(ActionListener al) {
+        mGenerarXml.addActionListener(al);
     }
     public void addBInicioAL(ActionListener al) {
         bInicio.addActionListener(al);
