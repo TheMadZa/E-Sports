@@ -172,7 +172,7 @@ public class ControladorVI {
 
         // TODO : Reutilizar código.
         // Poner las imágenes de sus logos.
-        URL Equipo1 = new URL(listaCompeticiones[0][0]);
+        /*URL Equipo1 = new URL(listaCompeticiones[0][0]);
         BufferedImage imagenOriginal1 = ImageIO.read(Equipo1);
         BufferedImage bufferedImage1 = Scalr.resize(imagenOriginal1, 55);
         ImageIcon iconoEscalado1 = new ImageIcon(bufferedImage1);
@@ -200,7 +200,14 @@ public class ControladorVI {
         BufferedImage imagenOriginal5 = ImageIO.read(Equipo5);
         BufferedImage bufferedImage5 = Scalr.resize(imagenOriginal5, 55);
         ImageIcon iconoEscalado5 = new ImageIcon(bufferedImage5);
-        vi.getEquipo5().setIcon(iconoEscalado5);
+        vi.getEquipo5().setIcon(iconoEscalado5);*/
+
+        setEquipoImagen(vi.getEquipo1(), "Equipo" + listaCompeticiones[0][5]);
+        setEquipoImagen(vi.getEquipo2(), "Equipo" + listaCompeticiones[1][5]);
+        setEquipoImagen(vi.getEquipo3(), "Equipo" + listaCompeticiones[2][5]);
+        setEquipoImagen(vi.getEquipo4(), "Equipo" + listaCompeticiones[3][5]);
+        setEquipoImagen(vi.getEquipo5(), "Equipo" + listaCompeticiones[4][5]);
+
 
         /*
         //Borramos de la lista los equipos que no tienen el id que queremos
@@ -262,6 +269,17 @@ public class ControladorVI {
         vi.getEquipo5().setIcon(iconoEscalado5);
         */
 
+    }
+
+    private void setEquipoImagen(JLabel label, String nombreImagen) {
+        BufferedImage imagen = ControladorImagenes.obtenerImagen2(nombreImagen);
+        if (imagen != null) {
+            BufferedImage imagenEscalada = Scalr.resize(imagen, 55);
+            ImageIcon iconoEscalado = new ImageIcon(imagenEscalada);
+            label.setIcon(iconoEscalado);
+        } else {
+            System.err.println("Imagen no encontrada: " + nombreImagen);
+        }
     }
 
     public void llenarComboBox(){

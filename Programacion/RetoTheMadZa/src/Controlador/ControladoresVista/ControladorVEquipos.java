@@ -45,31 +45,25 @@ public class ControladorVEquipos {
                 ve.getbDerecha().setEnabled(true);
 
                 String equipo = ve.getlEquipo().getText();
-                boolean encontrado = false;
+                int numEquipo = Integer.parseInt(equipo.replace("Equipo", ""));
 
-                for (numEquipo=30; !encontrado; numEquipo--){
+                if (numEquipo > 1) {
+                    numEquipo--;  // Decrementar el número de equipo
+                    String nuevoEquipo = "Equipo" + numEquipo;
+                    ve.getlEquipo().setText(nuevoEquipo);
+                    ve.cargarImagenEstablecerIcono(nuevoEquipo, 400, 400, ve.getlImagen());
 
-                    if (equipo.equalsIgnoreCase("Equipo"+numEquipo)){
-                        ve.getlEquipo().setText("Equipo"+(numEquipo-1));
-                        ve.cargarImagenEstablecerIcono("Equipo"+(numEquipo-1),400,400,
-                                ve.getlImagen());
-                        encontrado = true;
+                    if (numEquipo == 1) {
+                        ve.getbIzquierda().setEnabled(false);
                     }
                 }
-
-                if (numEquipo == 1){
-                    ve.getbIzquierda().setEnabled(false);
-                } else if (numEquipo == 30) {
-                    ve.getbDerecha().setEnabled(false);
-                } else {
-                    ve.getbIzquierda().setEnabled(true);
-                }
-
             } catch (Exception ex) {
                 throw new RuntimeException(ex);
             }
         }
     }
+
+
 
     public class BFlechaDrchAL implements ActionListener {
 
@@ -79,31 +73,24 @@ public class ControladorVEquipos {
                 ve.getbIzquierda().setEnabled(true);
 
                 String equipo = ve.getlEquipo().getText();
-                boolean encontrado = false;
+                int numEquipo = Integer.parseInt(equipo.replace("Equipo", ""));
 
-                for (numEquipo=1; !encontrado; numEquipo++){
+                if (numEquipo < 30) {
+                    numEquipo++;  // Incrementar el número de equipo
+                    String nuevoEquipo = "Equipo" + numEquipo;
+                    ve.getlEquipo().setText(nuevoEquipo);
+                    ve.cargarImagenEstablecerIcono(nuevoEquipo, 400, 400, ve.getlImagen());
 
-                    if (equipo.equalsIgnoreCase("Equipo"+numEquipo)){
-                        ve.getlEquipo().setText("Equipo"+(numEquipo+1));
-                        ve.cargarImagenEstablecerIcono("Equipo"+(numEquipo+1),400,400,
-                                ve.getlImagen());
-                        encontrado = true;
+                    if (numEquipo == 30) {
+                        ve.getbDerecha().setEnabled(false);
                     }
                 }
-
-                if (numEquipo == 1){
-                    ve.getbIzquierda().setEnabled(false);
-                } else if (numEquipo == 30) {
-                    ve.getbDerecha().setEnabled(false);
-                } else {
-                    ve.getbDerecha().setEnabled(true);
-                }
-
             } catch (Exception ex) {
                 throw new RuntimeException(ex);
             }
         }
     }
+
 
     public class BTiendaAL implements ActionListener {
         @Override

@@ -12,7 +12,7 @@ public class VentanaClasificacion extends JFrame{
     private JMenuItem mJornadas;
     private JMenuItem mClasificacion;
     private JPanel PanelLogo;
-    private JLabel ftThemadza;
+    private JButton ftThemadza;
     private JButton bInicio;
     private JButton bSalir;
     private JButton bTienda;
@@ -81,7 +81,7 @@ public class VentanaClasificacion extends JFrame{
 
     public VentanaClasificacion(JFrame ventanaEliminar) {
 
-        cargarImagenEstablecerIcono("TheMadZaLogoSimple", 250, 250, ftThemadza);
+        cargarImagenEstablecerIconoBoton("TheMadZaLogoSimple", 250, 250, ftThemadza);
         cargarImagenEstablecerIcono("Tienda", bTienda);
         cargarImagenEstablecerIcono("Inicio", bInicio);
         cargarImagenEstablecerIcono("Salir", bSalir);
@@ -608,5 +608,14 @@ public class VentanaClasificacion extends JFrame{
 
     public void mostrarMensaje(String mensaje){
         JOptionPane.showMessageDialog(null,mensaje);
+    }
+
+    private void cargarImagenEstablecerIconoBoton(String nombreImagen, int ancho, int alto, JButton label) {
+        ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
+        if (icono != null) {
+            label.setIcon(icono);
+        } else {
+            System.err.println("La imagen " + nombreImagen + " no se encontró.");
+        }
     }
 }

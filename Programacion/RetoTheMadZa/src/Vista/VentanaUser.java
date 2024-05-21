@@ -1,12 +1,9 @@
 package Vista;
 
 import Controlador.ControladoresVista.ControladorImagenes;
-import Modelo.Competicion;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 public class VentanaUser extends JFrame {
     private JPanel panelUp;
@@ -15,7 +12,7 @@ public class VentanaUser extends JFrame {
     private JMenuItem mJornadas;
     private JMenuItem mClasificacion;
     private JPanel PanelLogo;
-    private JLabel ftThemadza;
+    private JButton ftThemadza;
     private JButton bInicio;
     private JButton bSalir;
     private JButton bTienda;
@@ -39,7 +36,6 @@ public class VentanaUser extends JFrame {
     private JPanel panelNoticias;
     private JLabel ftNoticias;
     private JComboBox<String> cbClasificacion;
-    private JPanel panelFoot;
     private JButton bTwitter;
     private JButton bInstagram;
     private JButton bFacebook;
@@ -47,10 +43,22 @@ public class VentanaUser extends JFrame {
     private JLabel labelTextoHorizontal;
     private JPanel pPrincipal;
     private JMenuItem mEquipos;
+    private JPanel panelFoot;
     private int indiceImagenes = 0;
 
+    private final String text = " TheMadZa, compañía líder en eSports, organiza dos competiciones activas: el Torneo de" +
+            " TheMadZa Legends, con premios millonarios para equipos globales, y TheMadZa Clash, enfocado en nuevos" +
+            " talentos. Recientemente, lanzaron su tienda online con productos exclusivos y personalizados. Los" +
+            " jugadores pueden registrarse fácilmente para participar en competiciones y acceder a contenido" +
+            " exclusivo, sorteos y descuentos especiales. Además, TheMadZa organiza eventos anuales como" +
+            " TheMadZa GameCon para mantener a la comunidad activa y comprometida. ";
+    private int currentIndex = 0;
+
     public VentanaUser(VentanaInicioSesion vis) {
-        cargarImagenEstablecerIcono("TheMadZaLogoSimple", 250, 250, ftThemadza);
+        mostrarImagenesFugaces();
+
+        // Cargar las imágenes con un tamaño específico.
+        cargarImagenEstablecerIconoBoton("TheMadZaLogoSimple", 250, 250, ftThemadza);
         cargarImagenEstablecerIcono("Tienda", bTienda);
         cargarImagenEstablecerIcono("Inicio", bInicio);
         cargarImagenEstablecerIcono("Salir", bSalir);
@@ -68,15 +76,29 @@ public class VentanaUser extends JFrame {
         getRootPane().setDefaultButton(bInicio);
 
         JComponent[] componentesConBorde = {mPrincipal, bTienda, bInicio, bSalir, cbClasificacion, bFacebook,
-                bTwitter, bInstagram};
+                bTwitter, bInstagram, ftThemadza};
         for (JComponent componente : componentesConBorde) {
             componente.setBorder(BorderFactory.createEmptyBorder());
         }
+
+        iniciarDesplazamientoTexto();
 
         setVisible(true);
 
         // Destruir la ventana de inicio de sesión.
         vis.dispose();
+    }
+
+    private void iniciarDesplazamientoTexto() {
+        Timer timer = new Timer(80, e -> {
+            String displayedText = text.substring(currentIndex) + text.substring(0, currentIndex);
+            labelTextoHorizontal.setText(displayedText);
+            currentIndex++;
+            if (currentIndex >= text.length()) {
+                currentIndex = 0;
+            }
+        });
+        timer.start();
     }
 
     // Función para mostrar las imágenes transitorias.
@@ -266,6 +288,15 @@ public class VentanaUser extends JFrame {
     }
 
     private void cargarImagenEstablecerIcono(String nombreImagen, int ancho, int alto, JLabel label) {
+        ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
+        if (icono != null) {
+            label.setIcon(icono);
+        } else {
+            System.err.println("La imagen " + nombreImagen + " no se encontró.");
+        }
+    }
+
+    private void cargarImagenEstablecerIconoBoton(String nombreImagen, int ancho, int alto, JButton label) {
         ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
         if (icono != null) {
             label.setIcon(icono);
