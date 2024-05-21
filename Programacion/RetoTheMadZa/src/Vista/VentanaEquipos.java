@@ -122,6 +122,22 @@ public class VentanaEquipos extends JFrame {
         this.lEquipo = lEquipo;
     }
 
+    public JButton getbDerecha() {
+        return bDerecha;
+    }
+
+    public void setbDerecha(JButton bDerecha) {
+        this.bDerecha = bDerecha;
+    }
+
+    public JButton getbIzquierda() {
+        return bIzquierda;
+    }
+
+    public void setbIzquierda(JButton bIzquierda) {
+        this.bIzquierda = bIzquierda;
+    }
+
     //ActionListeners
     public void addBFlechaDrchAL(ActionListener al){
         bDerecha.addActionListener(al);

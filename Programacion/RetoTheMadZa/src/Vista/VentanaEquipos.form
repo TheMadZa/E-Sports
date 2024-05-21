@@ -395,6 +395,7 @@
             </constraints>
             <properties>
               <background color="-10802056"/>
+              <enabled value="false"/>
               <foreground color="-10802056"/>
               <text value=""/>
             </properties>
