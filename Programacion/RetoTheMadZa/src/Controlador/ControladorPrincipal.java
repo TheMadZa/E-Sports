@@ -167,6 +167,27 @@ public class ControladorPrincipal {
     public List<EquipoCompeticion> buscarTodosEquiposCompeticiones() throws Exception {
         return cm.buscarTodosEquiposCompeticiones();
     }
+    //XML
+    public String obtenerXMLClasificacionDTD () throws Exception{
+        return cm.obtenerXMLClasificacionDTD();
+    }
+    public String obtenerXMLClasificacionXSD () throws Exception{
+        return cm.obtenerXMLClasificacionXSD();
+    }
+    public String obtenerXMLJornadasDTD () throws Exception{
+        return cm.obtenerXMLJornadasDTD();
+    }
+    public String  obtenerXMLJornadasXSD() throws Exception{
+        return cm.obtenerXMLJornadasXSD();
+    }
+    public String obtenerXMLUltimaJornadaDTD () throws Exception{
+        return cm.obtenerXMLUltimaJornadaDTD();
+    }
+    public String  obtenerXMLUltimaJornadaXSD() throws Exception{
+        return cm.obtenerXMLUltimaJornadaXSD();
+    }
+
+
 
     //CONEXION
     public void cerrarConexion() throws Exception{

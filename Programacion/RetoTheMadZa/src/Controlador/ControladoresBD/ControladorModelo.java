@@ -18,6 +18,8 @@ public class ControladorModelo {
     private ControladorUsuarios cu;
     private ControladorEquiposCompeticiones cec;
 
+    private ControladorXML cxm;
+
     public ControladorModelo() {
         abrirConexion();
 
@@ -30,6 +32,7 @@ public class ControladorModelo {
         cs = new ControladorStaff(con);
         cu = new ControladorUsuarios(con);
         cec = new ControladorEquiposCompeticiones(con);
+        cxm = new ControladorXML(con);
     }
 
     //COMPETICION
@@ -180,6 +183,31 @@ public class ControladorModelo {
     public List<EquipoCompeticion> buscarTodosEquiposCompeticiones() throws Exception {
         return cec.buscarTodosEquiposCompeticiones();
     }
+    //XML
+    public String obtenerXMLClasificacionDTD () throws Exception{
+        return cxm.obtenerXMLClasificacionDTD();
+    }
+    public String  obtenerXMLClasificacionXSD() throws Exception{
+        return cxm.obtenerXMLClasificacionXSD();
+    }
+    public String obtenerXMLJornadasDTD () throws Exception{
+        return cxm.obtenerXMLJornadasDTD();
+    }
+    public String  obtenerXMLJornadasXSD() throws Exception{
+        return cxm.obtenerXMLJornadasXSD();
+    }
+    public String obtenerXMLUltimaJornadaDTD () throws Exception{
+        return cxm.obtenerXMLUltimaJornadaDTD();
+    }
+    public String  obtenerXMLUltimaJornadaXSD() throws Exception{
+        return cxm.obtenerXMLUltimaJornadaXSD();
+    }
+
+
+
+
+
+
 
     //ABRIR LA CONEXION CON LA BASE DE DATOS
     public void abrirConexion() {

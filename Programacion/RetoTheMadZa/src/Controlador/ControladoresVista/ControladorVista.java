@@ -20,6 +20,8 @@ public class ControladorVista {
     private ControladorVJornadas cvj;
     private ControladorDUsuario cdu;
 
+    private ControladorVxml cxl;
+
     private final ControladorPrincipal cp;
 
     public ControladorVista(ControladorPrincipal cp) {
@@ -36,6 +38,7 @@ public class ControladorVista {
         cvj = new ControladorVJornadas(this);
         cdu = new ControladorDUsuario(this);
         cvt = new ControladorVTienda(this);
+        cxl = new ControladorVxml(this);
 
         cvi.crearMostrar();
     }
@@ -70,6 +73,10 @@ public class ControladorVista {
 
     public void mostrarDUsuario(){
         cdu.crearMostrar();
+    }
+
+    public void mostrarXML(JFrame ventanaEliminar){
+        cxl.crearMostrar(ventanaEliminar);
     }
 
     //COMPETICION
@@ -224,6 +231,27 @@ public class ControladorVista {
     public List<EquipoCompeticion> buscarTodosEquiposCompeticiones() throws Exception {
         return cp.buscarTodosEquiposCompeticiones();
     }
+
+    //XML
+    public String obtenerXMLClasificacionDTD () throws Exception{
+        return cp.obtenerXMLClasificacionDTD();
+    }
+    public String obtenerXMLClasificacionXSD () throws Exception{
+        return cp.obtenerXMLClasificacionXSD();
+    }
+    public String obtenerXMLJornadasDTD () throws Exception{
+        return cp.obtenerXMLJornadasDTD();
+    }
+    public String  obtenerXMLJornadasXSD() throws Exception{
+        return cp.obtenerXMLJornadasXSD();
+    }
+    public String obtenerXMLUltimaJornadaDTD () throws Exception{
+        return cp.obtenerXMLUltimaJornadaDTD();
+    }
+    public String  obtenerXMLUltimaJornadaXSD() throws Exception{
+        return cp.obtenerXMLUltimaJornadaXSD();
+    }
+
 
     //CONEXION
     public void cerrarConexion() throws Exception{
