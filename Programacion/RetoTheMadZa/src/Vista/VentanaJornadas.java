@@ -3,6 +3,7 @@ package Vista;
 import Controlador.ControladoresVista.ControladorImagenes;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionListener;
 
 public class VentanaJornadas extends JFrame{
@@ -100,7 +101,14 @@ public class VentanaJornadas extends JFrame{
         // Configurar la ventana
         setContentPane(pPrincipal);
         setTitle("Ventana Jornadas");
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+        if (gd.isFullScreenSupported()) {
+            gd.setFullScreenWindow(this);
+        } else {
+            System.err.println("Pantalla completa no soportada");
+            setExtendedState(JFrame.MAXIMIZED_BOTH); // Tamaño por defecto si pantalla completa no está soportada
+            this.setVisible(true);
+        }
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(true);
         getRootPane().setDefaultButton(bInicio);
