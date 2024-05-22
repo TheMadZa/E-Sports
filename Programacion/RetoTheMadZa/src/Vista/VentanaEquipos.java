@@ -30,6 +30,7 @@ public class VentanaEquipos extends JFrame {
     private JButton bIzquierda;
     private JLabel lEquipo;
     private JMenuItem mEquipos;
+    private JLabel nombreEquipo;
 
     public VentanaEquipos(JFrame ventanaEliminar) {
 
@@ -146,6 +147,14 @@ public class VentanaEquipos extends JFrame {
 
     public void setbIzquierda(JButton bIzquierda) {
         this.bIzquierda = bIzquierda;
+    }
+
+    public JLabel getNombreEquipo() {
+        return nombreEquipo;
+    }
+
+    public void setNombreEquipo(String nombre) {
+        this.nombreEquipo.setText(nombre);
     }
 
     //Listeners

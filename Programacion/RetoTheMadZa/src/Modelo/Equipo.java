@@ -1,5 +1,6 @@
 package Modelo;
 
+import javax.swing.*;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -38,6 +39,7 @@ public class Equipo {
     public String getNomEquipo() {
         return nomEquipo;
     }
+
 
     public void setNomEquipo(String nomEquipo) {
         this.nomEquipo = nomEquipo;
