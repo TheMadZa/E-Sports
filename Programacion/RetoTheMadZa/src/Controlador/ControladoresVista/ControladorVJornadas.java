@@ -26,7 +26,6 @@ public class ControladorVJornadas {
 
         llenarComboBox();
 
-
         vj.addBTiendaAL(new BTiendaAL());
         vj.addBInicioAL(new BInicioAL());
         vj.addBSalirAL(new BSalirAL());
@@ -50,7 +49,6 @@ public class ControladorVJornadas {
     public class BInicioAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            // TODO : cerrar sesión y volver a v inicio sesion
             cv.mostrarInicioSesion(vj);
         }
     }

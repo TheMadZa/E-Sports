@@ -51,9 +51,13 @@ public class ControladorVEquipos {
     public void obtenerEquipos() throws Exception{
         try {
             equipos = cv.cargarEquiposDesdeBD();
-            ve.setNombreEquipo(equipos.get(posicionEquipo).getNomEquipo());
-            ve.cargarImagenEstablecerIcono(equipos.getFirst().getLogo(), 400,400,ve.getlImagen());
-            posicionEquipo = 0;
+            if (!equipos.isEmpty()) {
+                ve.setNombreEquipo(equipos.get(0).getNomEquipo());
+                ve.cargarImagenEstablecerIcono(equipos.get(0).getLogo(), 400, 400, ve.getlImagen());
+                posicionEquipo = 0;
+            } else {
+                JOptionPane.showMessageDialog(null, "No se encontraron equipos.");
+            }
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -113,7 +117,6 @@ public class ControladorVEquipos {
     public class BInicioAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            // TODO : cerrar sesión y volver a v inicio sesion
             cv.mostrarInicioSesion(ve);
         }
     }

@@ -118,4 +118,30 @@ public class ControladorJuegos {
             throw new Exception("No se ha actualizado ningún juego");
         }
     }
+
+    public Juego buscarJuegoPorNombre(String nombre) throws Exception{
+
+        try {
+            String plantilla = "SELECT id_juego, empresa, fecha_lanzamiento FROM juegos WHERE UPPER(nombre) = ?";
+
+            PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
+            sentenciaPre.setString(1, nombre.toUpperCase());
+            ResultSet rs = sentenciaPre.executeQuery();
+            if (rs.next()) {
+                j = new Juego();
+                j.setIdJuego(rs.getInt("id_juego"));
+                j.setEmpresa(rs.getString("empresa"));
+                j.setFechaLanzamiento(rs.getDate("fecha_lanzamiento"));
+            }
+            else {
+                throw new Exception("No hay ningún juego registrado con ese nombre.");
+            }
+            sentenciaPre.close();
+            return j;
+        }
+        catch (Exception e) {
+            throw new Exception("Error al buscar juego por nombre.");
+        }
+
+    }
 }

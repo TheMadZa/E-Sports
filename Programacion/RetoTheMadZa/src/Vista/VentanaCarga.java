@@ -10,14 +10,9 @@ public class VentanaCarga extends JFrame {
     public VentanaCarga() {
         setContentPane(pPrincipal);
         setTitle("Ventana Carga");
-        GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
-        if (gd.isFullScreenSupported()) {
-            gd.setFullScreenWindow(this);
-        } else {
-            System.err.println("Pantalla completa no soportada");
-            setExtendedState(JFrame.MAXIMIZED_BOTH); // Tamaño por defecto si pantalla completa no está soportada
-            this.setVisible(true);
-        }
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setResizable(true);
+        setVisible(true);
     }
 }

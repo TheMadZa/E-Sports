@@ -22,18 +22,6 @@ public class VentanaInicioSesion extends JFrame {
 
     public VentanaInicioSesion(JFrame ventanaEliminar){
 
-        setTitle("Ventana Inicio Sesión");
-        GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
-        if (gd.isFullScreenSupported()) {
-            gd.setFullScreenWindow(this);
-        } else {
-            System.err.println("Pantalla completa no soportada");
-            setExtendedState(JFrame.MAXIMIZED_BOTH); // Tamaño por defecto si pantalla completa no está soportada
-            this.setVisible(true);
-        }
-        setResizable(true);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
         // PONER UN PANEL DEGRADADO DE FONDO.
 
         // Inicializar el panel del degradado y establecer los colores.
@@ -97,7 +85,12 @@ public class VentanaInicioSesion extends JFrame {
             throw new RuntimeException(e);
         }
 
+        // Configurar la ventana
         setContentPane(pPrincipal);
+        setTitle("Ventana Inicio Sesión");
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setResizable(true);
         getRootPane().setDefaultButton(bIniciarSesion);
         setVisible(true);
 

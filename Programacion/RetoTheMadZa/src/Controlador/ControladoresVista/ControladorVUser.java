@@ -53,7 +53,6 @@ public class ControladorVUser {
     public class BInicioAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            // TODO : cerrar sesión y volver a v inicio sesion
             cv.mostrarInicioSesion(vu);
         }
     }

@@ -5,17 +5,20 @@ import java.awt.event.*;
 
 public class DialogoUsuario extends JDialog {
     private JPanel pPrincipal;
-    private JButton buttonOK;
+    private JButton buttonOk;
+    private JPanel pDatos;
+    private JTextField tfUsuario;
     private JButton buttonCancel;
+    private JPasswordField ftfContrasena;
 
     public DialogoUsuario() {
         setContentPane(pPrincipal);
         setTitle("Dialogo Usuario");
-        setSize(600,600); // Poner bien
+        setSize(600,600);
         setLocationRelativeTo(null);
         setResizable(true);
         setModal(true);
-        getRootPane().setDefaultButton(buttonOK);
+        getRootPane().setDefaultButton(buttonOk);
 
         // call onCancel() when cross is clicked
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
@@ -43,5 +46,26 @@ public class DialogoUsuario extends JDialog {
 
     public static void main(String[] args) {
         DialogoUsuario dialog = new DialogoUsuario();
+    }
+
+    // Funciones
+    public void mostrarMensaje(String mensaje){
+        JOptionPane.showMessageDialog(null,mensaje);
+    }
+
+    // Getters
+    public String getTfUsuario() {
+        return tfUsuario.getText();
+    }
+    public String getFtfContrasena() {
+        return ftfContrasena.getText();
+    }
+
+    // Listeners
+    public void addButtonOkAL(ActionListener al) {
+        buttonOk.addActionListener(al);
+    }
+    public void addButtonCancelAL(ActionListener al) {
+        buttonCancel.addActionListener(al);
     }
 }

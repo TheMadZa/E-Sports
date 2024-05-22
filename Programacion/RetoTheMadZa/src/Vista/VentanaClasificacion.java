@@ -94,15 +94,7 @@ public class VentanaClasificacion extends JFrame{
         // Configurar la ventana
         setContentPane(pPrincipal);
         setTitle("Ventana Clasificación");
-        GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
-        if (gd.isFullScreenSupported()) {
-            gd.setFullScreenWindow(this);
-        } else {
-            System.err.println("Pantalla completa no soportada");
-            this.setSize(800, 600); // Tamaño por defecto si pantalla completa no está soportada
-            this.setVisible(true);
-        }
-    
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(true);
         getRootPane().setDefaultButton(bInicio);
