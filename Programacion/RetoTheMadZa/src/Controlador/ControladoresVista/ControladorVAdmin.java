@@ -77,8 +77,9 @@ public class ControladorVAdmin {
                 // Dependiendo de la tabla sobre la que queramos hacer una acción, y la acción en la BD que sea:
                 switch (tablaElegida){
 
-                    /*
+
                     case "CRUD Equipos" -> {
+                        /*
                         // El equipo tendrá nombre, fecha, logo, color, y puede que el id de la competición.
 
                         // Obtener lista con los JTextFields para poder obtener los datos introducidos.
@@ -161,35 +162,37 @@ public class ControladorVAdmin {
                             }
                         }
 
+                    */
                     }
                     case "CRUD Jugadores" -> {
+                        /*
 
                         ArrayList<JTextField> listaTextFieldsDinamicos = va.getListaTextFieldsDinamicos();
 
                         switch (accionElegida){
                             case "Insertar" -> {
-//                                agregarElemento("Nombre:", new JTextField(), gbc);
-//                                agregarElemento("Nickname:", new JTextField(), gbc);
-//                                agregarElemento("Nacionalidad:", new JTextField(), gbc);
-//                                agregarElemento("Rol:", new JTextField(), gbc);
-//                                agregarElemento("Fecha de nacimiento:", new JTextField(), gbc);
-//                                agregarElemento("Sueldo:", new JTextField(), gbc);
-//                                agregarElemento("ID de su equipo:", new JTextField(), gbc);
-//
-//                                Jugador jugador = new Jugador();
-//                                jugador.setNombre(listaTextFieldsDinamicos.get(0).getText());
-//                                jugador.setNickname(listaTextFieldsDinamicos.get(1).getText());
-//                                jugador.setNacionalidad(listaTextFieldsDinamicos.get(2).getText());
-//                                jugador.setRol(listaTextFieldsDinamicos.get(3).getText());
-//                                jugador.setFechaNac(Date.valueOf(listaTextFieldsDinamicos.get(4).getText()));
-//                                jugador.setSueldo(Double.parseDouble(listaTextFieldsDinamicos.get(5).getText()));
-//                                Equipo equipo = cv.bus
-//                                jugador.setEquipo(equipo.get);
-//                                cv.insertarEquipo(equipo);
-//                                // Ahora obtener el ID del equipo insertado.
-//                                Equipo equipoInsertado = cv.buscarEquipoPorNombre(listaTextFieldsDinamicos.get(0).getText());
-//                                va.mostrarMensaje("El equipo insertado tiene el ID --> " +equipoInsertado.getIdEquipo()+ ".");
-//                                System.out.println("El equipo insertado tiene el ID --> " +equipoInsertado.getIdEquipo()+ ".");
+                                agregarElemento("Nombre:", new JTextField(), gbc);
+                                agregarElemento("Nickname:", new JTextField(), gbc);
+                                agregarElemento("Nacionalidad:", new JTextField(), gbc);
+                                agregarElemento("Rol:", new JTextField(), gbc);
+                                agregarElemento("Fecha de nacimiento:", new JTextField(), gbc);
+                                agregarElemento("Sueldo:", new JTextField(), gbc);
+                                agregarElemento("ID de su equipo:", new JTextField(), gbc);
+
+                                Jugador jugador = new Jugador();
+                                jugador.setNombre(listaTextFieldsDinamicos.get(0).getText());
+                                jugador.setNickname(listaTextFieldsDinamicos.get(1).getText());
+                                jugador.setNacionalidad(listaTextFieldsDinamicos.get(2).getText());
+                                jugador.setRol(listaTextFieldsDinamicos.get(3).getText());
+                                jugador.setFechaNac(Date.valueOf(listaTextFieldsDinamicos.get(4).getText()));
+                                jugador.setSueldo(Double.parseDouble(listaTextFieldsDinamicos.get(5).getText()));
+                                Equipo equipo = cv.bus
+                                jugador.setEquipo(equipo.get);
+                                cv.insertarEquipo(equipo);
+                                // Ahora obtener el ID del equipo insertado.
+                                Equipo equipoInsertado = cv.buscarEquipoPorNombre(listaTextFieldsDinamicos.get(0).getText());
+                                va.mostrarMensaje("El equipo insertado tiene el ID --> " +equipoInsertado.getIdEquipo()+ ".");
+                                System.out.println("El equipo insertado tiene el ID --> " +equipoInsertado.getIdEquipo()+ ".");
                             }
                             case "Eliminar" -> {
                                 // Eliminar por nombre del equipo.
@@ -212,6 +215,7 @@ public class ControladorVAdmin {
                                 listaTextFieldsDinamicos.get(3).setText(equipo.getColor());
                             }
                         }
+                         */
 
                     }
                     case "CRUD Staff" -> {
@@ -221,6 +225,8 @@ public class ControladorVAdmin {
 
                     }
                     case "CRUD Juegos" -> {
+                        // El juego tendrá nombre, empresa y fecha de lanzamiento.
+
                         ArrayList<JTextField> listaTextFieldsDinamicos = va.getListaTextFieldsDinamicos();
 
                         switch (accionElegida){
@@ -229,15 +235,15 @@ public class ControladorVAdmin {
                                     Juego juego = new Juego();
                                     juego.setNombre(listaTextFieldsDinamicos.get(0).getText());
                                     juego.setEmpresa(listaTextFieldsDinamicos.get(1).getText());
-                                    LocalDate fechaLanzamiento = LocalDate.parse(listaTextFieldsDinamicos.get(2).getText(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+                                    LocalDate fechaLanzamiento = LocalDate.parse(listaTextFieldsDinamicos.get(2).getText(), DateTimeFormatter.ofPattern("dd-MM-yy"));
                                     juego.setFechaLanzamiento(Date.valueOf(fechaLanzamiento));
                                     cv.insertarJuego(juego);
                                     Juego juegoInsertado = cv.buscarJuegoPorNombre(juego.getNombre());
-                                    va.mostrarMensaje("El juego insertado tiene el ID --> " + juegoInsertado.getIdJuego() + ".");
-                                    System.out.println("El juego insertado tiene el ID --> " + juegoInsertado.getIdJuego() + ".");
+                                    va.mostrarMensaje("El juego insertado tiene el ID ➤ " + juegoInsertado.getIdJuego() + ".");
+                                    System.out.println("El juego insertado tiene el ID ➤ " + juegoInsertado.getIdJuego() + ".");
                                 }
                                 else
-                                    System.out.println("Error por atributos.");
+                                    System.out.println("Error por cantidad de atributos de juegos.");
                             }
                             case "Eliminar" -> {
 
@@ -260,7 +266,6 @@ public class ControladorVAdmin {
                     case "CRUD Jornadas" -> {
 
                     }
-                    */
 
                 }
 
