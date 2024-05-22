@@ -48,22 +48,14 @@ public class VentanaEquipos extends JFrame {
         cargarImagenEstablecerIcono("FlechaIzq", bIzquierda);
         cargarImagenEstablecerIcono("flechaDrch", bDerecha);
 
-
-
         // Configurar la ventana
         setContentPane(pPrincipal);
         setTitle("Ventana Equipos");
-        GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
-        if (gd.isFullScreenSupported()) {
-            gd.setFullScreenWindow(this);
-        } else {
-            System.err.println("Pantalla completa no soportada");
-            setExtendedState(JFrame.MAXIMIZED_BOTH); // Tamaño por defecto si pantalla completa no está soportada
-            this.setVisible(true);
-        }
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(true);
         getRootPane().setDefaultButton(bInicio);
+
         bIzquierda.setBorder(BorderFactory.createEmptyBorder());
         bDerecha.setBorder(BorderFactory.createEmptyBorder());
 
@@ -72,17 +64,6 @@ public class VentanaEquipos extends JFrame {
         for (JComponent componente : componentesConBorde) {
             componente.setBorder(BorderFactory.createEmptyBorder());
         }
-
-        Color backgroundColor = Color.decode("#5B2C78");
-        Color foregroundColor = Color.decode("#151135");
-
-        /*
-        JScrollBar verticalScrollBar = PanelMedio.getVerticalScrollBar();
-        verticalScrollBar.setBackground(backgroundColor);
-        verticalScrollBar.setForeground(foregroundColor);
-        PanelMedio.getViewport().setBackground(backgroundColor);
-        PanelMedio.setBackground(backgroundColor);
-         */
 
         setVisible(true);
 
