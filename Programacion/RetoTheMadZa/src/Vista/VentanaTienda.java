@@ -120,7 +120,7 @@ public class VentanaTienda extends JFrame{
     // Funciones
     public void mostrarMensajeBuy() {
 
-        Font font = new Font("Arial", Font.BOLD, 16);
+        Font font = new Font("Arial", Font.BOLD, 20);
         String message = "Añadido al carrito.";
 
         // Creación del panel de mensaje personalizado

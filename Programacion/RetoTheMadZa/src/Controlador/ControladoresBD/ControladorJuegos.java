@@ -19,32 +19,27 @@ public class ControladorJuegos {
         this.con = con;
     }
 
-    public void insertarJuego(Juego j) throws Exception
-    {
-        try
-        {
-            String plantilla = "INSERT INTO juegos VALUES (?,?,?,?)";
+    public void insertarJuego(Juego j) throws Exception {
+        try {
+            String plantilla = "INSERT INTO JUEGOS (nombre, empresa, fecha_lanzamiento) VALUES (?,?,?)";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
 
-            sentenciaPre.setInt(1,j.getIdJuego());
-            sentenciaPre.setString(2,j.getNombre());
-            sentenciaPre.setString(3,j.getEmpresa());
-            sentenciaPre.setDate(4,j.getFechaLanzamiento());
+            sentenciaPre.setString(1,j.getNombre());
+            sentenciaPre.setString(2,j.getEmpresa());
+            sentenciaPre.setDate(3,j.getFechaLanzamiento());
 
             int n = sentenciaPre.executeUpdate();
 
             sentenciaPre.close();
 
-            if (n != 1)
-            {
-                throw new Exception("No se ha insertado el juego");
+            if (n != 1) {
+                throw new Exception("No se ha insertado el juego.");
             }
 
         }
-        catch (SQLIntegrityConstraintViolationException e)
-        {
-            throw new Exception("Ya hay un juego con ese id");
+        catch (SQLIntegrityConstraintViolationException e) {
+            throw new Exception("Ya existe un juego con esos datos.");
         }
     }
 
