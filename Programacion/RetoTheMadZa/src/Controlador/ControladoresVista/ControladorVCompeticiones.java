@@ -15,7 +15,6 @@ import java.net.URL;
 import java.util.List;
 
 public class ControladorVCompeticiones {
-    private VentanaInicial vi;
     private VentanaClasificacion vc;
     private ControladorVista cv;
 

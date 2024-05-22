@@ -20,6 +20,8 @@ public class ControladorModelo {
     private ControladorUsuarios cu;
     private ControladorEquiposCompeticiones cec;
 
+    private ControladorXML cxm;
+
     public ControladorModelo() {
         abrirConexion();
 
@@ -32,6 +34,7 @@ public class ControladorModelo {
         cs = new ControladorStaff(con);
         cu = new ControladorUsuarios(con);
         cec = new ControladorEquiposCompeticiones(con);
+        cxm = new ControladorXML(con);
     }
 
     //COMPETICION
@@ -178,14 +181,39 @@ public class ControladorModelo {
     public List<EquipoCompeticion> buscarTodosEquiposCompeticiones() throws Exception {
         return cec.buscarTodosEquiposCompeticiones();
     }
+    //XML
+    public String obtenerXMLClasificacionDTD () throws Exception{
+        return cxm.obtenerXMLClasificacionDTD();
+    }
+    public String  obtenerXMLClasificacionXSD() throws Exception{
+        return cxm.obtenerXMLClasificacionXSD();
+    }
+    public String obtenerXMLJornadasDTD () throws Exception{
+        return cxm.obtenerXMLJornadasDTD();
+    }
+    public String  obtenerXMLJornadasXSD() throws Exception{
+        return cxm.obtenerXMLJornadasXSD();
+    }
+    public String obtenerXMLUltimaJornadaDTD () throws Exception{
+        return cxm.obtenerXMLUltimaJornadaDTD();
+    }
+    public String  obtenerXMLUltimaJornadaXSD() throws Exception{
+        return cxm.obtenerXMLUltimaJornadaXSD();
+    }
+
+
+
+
+
+
 
     //ABRIR LA CONEXION CON LA BASE DE DATOS
     public void abrirConexion() {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
             //String url = "jdbc:oracle:thin:@SrvOracle:1521:ORCL"; // TODO : para conexion ordenador
-            //String url = "jdbc:oracle:thin:@172.20.225.114:1521:ORCL"; // TODO : para conexion portatil
-            String url = "jdbc:oracle:thin:@//localhost:1521/XEPDB1";//TODO : para conexion en casa
+            String url = "jdbc:oracle:thin:@172.20.225.114:1521:ORCL"; // TODO : para conexion portatil
+            //String url = "jdbc:oracle:thin:@//localhost:1521/XEPDB1";//TODO : para conexion en casa
             //String user = "C##eqdaw03";
             String user = "eqdaw03";
             String passwd = "eqdaw03";

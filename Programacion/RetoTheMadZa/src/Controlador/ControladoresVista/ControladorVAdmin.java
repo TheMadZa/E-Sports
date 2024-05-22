@@ -177,7 +177,7 @@ public class ControladorVAdmin {
     public class MGenerarXmlAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            //cv.mostrarGenerarXml(va); // TODO : falta hacer Za
+            cv.mostrarXML(va); // TODO : hecho za
         }
     }
     public class BInicioAL implements ActionListener{

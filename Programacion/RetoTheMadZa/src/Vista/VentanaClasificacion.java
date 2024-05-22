@@ -30,7 +30,7 @@ public class VentanaClasificacion extends JFrame{
     private JLabel JLNombreJuego;
     private JLabel JLnomPrimer;
     private JLabel JLnomQuinto;
-    private JPanel pPrimerPuesto;
+    private JPanel pPuestos;
     private JLabel JLnomSexto;
     private JLabel JLnomSeptimo;
     private JLabel JLnomOctavo;
@@ -205,11 +205,11 @@ public class VentanaClasificacion extends JFrame{
     }
 
     public JPanel getpPrimerPuesto() {
-        return pPrimerPuesto;
+        return pPuestos;
     }
 
     public void setpPrimerPuesto(JPanel pPrimerPuesto) {
-        this.pPrimerPuesto = pPrimerPuesto;
+        this.pPuestos = pPrimerPuesto;
     }
 
     public JLabel getJLnomSexto() {
