@@ -3,9 +3,7 @@ package Controlador.ControladoresBD;
 import Controlador.ControladoresVista.ControladorVUser;
 import Modelo.*;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.List;
 
 public class ControladorModelo {
@@ -101,6 +99,10 @@ public class ControladorModelo {
         cjo.modificarJornada(j);
     }
 
+    public String[][] obtenerResultadosUltimaJornada(int idCompeticion) throws Exception {
+        return cjo.obtenerResultadosUltimaJornada(idCompeticion);
+    }
+
     //JUEGO
     public void insertarJuego(Juego j) throws Exception {
         cjue.insertarJuego(j);
@@ -184,8 +186,8 @@ public class ControladorModelo {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
             //String url = "jdbc:oracle:thin:@SrvOracle:1521:ORCL"; // TODO : para conexion ordenador
-            //String url = "jdbc:oracle:thin:@172.20.225.114:1521:ORCL"; // TODO : para conexion portatil
-            String url = "jdbc:oracle:thin:@//localhost:1521/XEPDB1";//TODO : para conexion en casa
+            String url = "jdbc:oracle:thin:@172.20.225.114:1521:ORCL"; // TODO : para conexion portatil
+            //String url = "jdbc:oracle:thin:@//localhost:1521/XEPDB1";//TODO : para conexion en casa
             //String user = "C##eqdaw03";
             String user = "eqdaw03";
             String passwd = "eqdaw03";

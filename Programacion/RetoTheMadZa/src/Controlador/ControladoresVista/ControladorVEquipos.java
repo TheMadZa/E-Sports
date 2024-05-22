@@ -1,18 +1,23 @@
 package Controlador.ControladoresVista;
 
+import Modelo.Equipo;
 import Vista.VentanaEquipos;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ControladorVEquipos {
 
     private VentanaEquipos ve;
     private ControladorVista cv;
     private ControladorImagenes ci;
-    private int numEquipo;
+    private int posicionEquipo;
+    private int posicionArray;
+    private List<Equipo> equipos;
 
     public ControladorVEquipos(ControladorVista cv)
     {
@@ -22,6 +27,12 @@ public class ControladorVEquipos {
     public void crearMostrar(JFrame ventanaEliminar) {
 
         ve = new VentanaEquipos(ventanaEliminar);
+
+        try {
+            obtenerEquipos();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
         ve.addBFlechaIzquAL(new BFlechaIzquAL());
         ve.addBFlechaDrchAL(new BFlechaDrchAL());
@@ -37,31 +48,50 @@ public class ControladorVEquipos {
 
     }
 
+    public void obtenerEquipos() throws Exception{
+        try {
+            equipos = cv.cargarEquiposDesdeBD();
+            ve.cargarImagenEstablecerIcono(equipos.getFirst().getLogo(), 400,400,ve.getlImagen());
+            posicionEquipo = 0;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public class BFlechaIzquAL implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
+                posicionArray = posicionEquipo + 1;
+
                 ve.getbDerecha().setEnabled(true);
 
-                String equipo = ve.getlEquipo().getText();
-                int numEquipo = Integer.parseInt(equipo.replace("Equipo", ""));
-
-                if (numEquipo > 1) {
-                    numEquipo--;  // Decrementar el número de equipo
-                    String nuevoEquipo = "Equipo" + numEquipo;
-                    ve.getlEquipo().setText(nuevoEquipo);
-                    ve.cargarImagenEstablecerIcono(nuevoEquipo, 400, 400, ve.getlImagen());
-
-                    if (numEquipo == 1) {
-                        ve.getbIzquierda().setEnabled(false);
-                    }
+                if (posicionEquipo-1 == 0){
+                    ve.getbIzquierda().setEnabled(false);
                 }
+                else {
+                    ve.getbIzquierda().setEnabled(true);
+                }
+
+                ve.cargarImagenEstablecerIcono("Equipo"+equipos.get(posicionEquipo-1).getIdEquipo(),400,400,
+                        ve.getlImagen());
+
+                posicionEquipo--;
+
+                if (equipos.get(posicionEquipo) == equipos.getLast()){
+                    ve.getbDerecha().setEnabled(false);
+                }
+                else if (equipos.get(posicionEquipo) == equipos.getFirst()) {
+                    ve.getbIzquierda().setEnabled(false);
+                }
+
             } catch (Exception ex) {
                 throw new RuntimeException(ex);
             }
         }
     }
+
 
 
 
@@ -70,26 +100,35 @@ public class ControladorVEquipos {
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
+                posicionArray = posicionEquipo + 1;
+
                 ve.getbIzquierda().setEnabled(true);
 
-                String equipo = ve.getlEquipo().getText();
-                int numEquipo = Integer.parseInt(equipo.replace("Equipo", ""));
-
-                if (numEquipo < 30) {
-                    numEquipo++;  // Incrementar el número de equipo
-                    String nuevoEquipo = "Equipo" + numEquipo;
-                    ve.getlEquipo().setText(nuevoEquipo);
-                    ve.cargarImagenEstablecerIcono(nuevoEquipo, 400, 400, ve.getlImagen());
-
-                    if (numEquipo == 30) {
-                        ve.getbDerecha().setEnabled(false);
-                    }
+                if (posicionArray == equipos.size()){
+                    ve.getbDerecha().setEnabled(false);
                 }
+                else {
+                    ve.getbDerecha().setEnabled(true);
+                }
+
+                ve.cargarImagenEstablecerIcono("Equipo"+equipos.get(posicionArray).getIdEquipo(),400,400,
+                        ve.getlImagen());
+
+                posicionEquipo++;
+
+                if (equipos.get(posicionEquipo) == equipos.getLast()){
+                    ve.getbDerecha().setEnabled(false);
+                }
+                else if (equipos.get(posicionEquipo) == equipos.getFirst()) {
+                    ve.getbIzquierda().setEnabled(false);
+                }
+
             } catch (Exception ex) {
                 throw new RuntimeException(ex);
             }
         }
     }
+
 
 
     public class BTiendaAL implements ActionListener {
@@ -147,6 +186,14 @@ public class ControladorVEquipos {
             } catch (java.io.IOException ex) {
                 System.out.println("Error al abrir el enlace: " + ex.getMessage());
             }
+        }
+    }
+
+    private static void abrirEnlace(String enlace) {
+        try {
+            Desktop.getDesktop().browse(java.net.URI.create(enlace));
+        } catch (java.io.IOException ex) {
+            System.out.println("Error al abrir el enlace: " + ex.getMessage());
         }
     }
 
