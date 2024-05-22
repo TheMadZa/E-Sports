@@ -28,6 +28,7 @@ public class ControladorVTienda {
         vt.addMEquiposAL(new MEquiposAL());
         vt.addBInicioAL(new BInicioAL());
         vt.addBBuyAL(new BBuyAL());
+        vt.addBThemadzaAL(new BThemadzaAL());
     }
 
     public static class BSalirAL implements ActionListener{
@@ -108,4 +109,11 @@ public class ControladorVTienda {
         }
     }
 
+    public class BThemadzaAL implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            //cv.mostrarVPrincipal(vt,); // TODO : Poner que se muestre la VAdmin o VUser dependiendo de la V desde la que se activó la VTienda.
+            // TODO : Poner para las ventanas de equipos, jornadas, clasificacion y xml también.
+        }
+    }
 }
