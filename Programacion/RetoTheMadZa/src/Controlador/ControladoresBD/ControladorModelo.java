@@ -3,9 +3,7 @@ package Controlador.ControladoresBD;
 import Controlador.ControladoresVista.ControladorVUser;
 import Modelo.*;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.List;
 
 public class ControladorModelo {
@@ -102,6 +100,10 @@ public class ControladorModelo {
 
     public void modificarJornada(Jornada j) throws Exception {
         cjo.modificarJornada(j);
+    }
+
+    public String[][] obtenerResultadosUltimaJornada(int idCompeticion) throws Exception {
+        return cjo.obtenerResultadosUltimaJornada(idCompeticion);
     }
 
     //JUEGO

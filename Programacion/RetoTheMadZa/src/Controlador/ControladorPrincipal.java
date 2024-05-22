@@ -65,6 +65,10 @@ public class ControladorPrincipal {
         return cm.buscarEquipoPorNombre(nombre);
     }
 
+    public List<Equipo> cargarEquiposDesdeBD() throws Exception {
+        return cm.cargarEquiposDesdeBD();
+    }
+
     //JORNADA
     public void insertarJornada(Jornada j) throws Exception {
         cm.insertarJornada(j);
@@ -80,6 +84,10 @@ public class ControladorPrincipal {
 
     public void modificarJornada(Jornada j) throws Exception {
         cm.modificarJornada(j);
+    }
+
+    public String[][] obtenerResultadosUltimaJornada(int idCompeticion) throws Exception {
+        return cm.obtenerResultadosUltimaJornada(idCompeticion);
     }
 
     //JUEGO
