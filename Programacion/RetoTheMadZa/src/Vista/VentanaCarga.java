@@ -1,6 +1,7 @@
 package Vista;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class VentanaCarga extends JFrame {
     private JPanel pPrincipal;
@@ -9,7 +10,14 @@ public class VentanaCarga extends JFrame {
     public VentanaCarga() {
         setContentPane(pPrincipal);
         setTitle("Ventana Carga");
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+        if (gd.isFullScreenSupported()) {
+            gd.setFullScreenWindow(this);
+        } else {
+            System.err.println("Pantalla completa no soportada");
+            setExtendedState(JFrame.MAXIMIZED_BOTH); // Tamaño por defecto si pantalla completa no está soportada
+            this.setVisible(true);
+        }
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }
