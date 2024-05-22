@@ -64,75 +64,41 @@ public class ControladorVEquipos {
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
-                posicionArray = posicionEquipo - 1;
-
-                ve.getbDerecha().setEnabled(true);
-
-                if (posicionEquipo - 1 == 0){
-                    ve.getbIzquierda().setEnabled(false);
-                }
-                else {
-                    ve.getbIzquierda().setEnabled(true);
-                }
-
-                ve.cargarImagenEstablecerIcono("Equipo"+equipos.get(posicionEquipo - 1).getIdEquipo(), 400, 400,
-                        ve.getlImagen());
-
-                ve.setNombreEquipo(equipos.get(posicionEquipo - 1).getNomEquipo());
-
                 posicionEquipo--;
-
-                if (equipos.get(posicionEquipo) == equipos.getLast()){
-                    ve.getbDerecha().setEnabled(false);
-                }
-                else if (equipos.get(posicionEquipo) == equipos.getFirst()) {
-                    ve.getbIzquierda().setEnabled(false);
-                }
-
+                actualizarBotones();
+                ve.cargarImagenEstablecerIcono("Equipo" + equipos.get(posicionEquipo).getIdEquipo(), 400, 400, ve.getlImagen());
+                ve.setNombreEquipo(equipos.get(posicionEquipo).getNomEquipo());
             } catch (Exception ex) {
                 throw new RuntimeException(ex);
             }
         }
+
+        private void actualizarBotones() {
+            ve.getbDerecha().setEnabled(posicionEquipo < equipos.size() - 1);
+            ve.getbIzquierda().setEnabled(posicionEquipo > 0);
+        }
     }
 
-
-
-
-
     public class BFlechaDrchAL implements ActionListener {
+
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
-                posicionArray = posicionEquipo + 1;
-
-                ve.getbIzquierda().setEnabled(true);
-
-                if (posicionArray == equipos.size()){
-                    ve.getbDerecha().setEnabled(false);
-                }
-                else {
-                    ve.getbDerecha().setEnabled(true);
-                }
-
-                ve.cargarImagenEstablecerIcono("Equipo"+equipos.get(posicionArray).getIdEquipo(),400,400,
-                        ve.getlImagen());
-
-                ve.setNombreEquipo(equipos.get(posicionArray).getNomEquipo());
-
                 posicionEquipo++;
-
-                if (equipos.get(posicionEquipo) == equipos.getLast()){
-                    ve.getbDerecha().setEnabled(false);
-                }
-                else if (equipos.get(posicionEquipo) == equipos.getFirst()) {
-                    ve.getbIzquierda().setEnabled(false);
-                }
-
+                actualizarBotones();
+                ve.cargarImagenEstablecerIcono("Equipo" + equipos.get(posicionEquipo).getIdEquipo(), 400, 400, ve.getlImagen());
+                ve.setNombreEquipo(equipos.get(posicionEquipo).getNomEquipo());
             } catch (Exception ex) {
                 throw new RuntimeException(ex);
             }
         }
+
+        private void actualizarBotones() {
+            ve.getbDerecha().setEnabled(posicionEquipo < equipos.size() - 1);
+            ve.getbIzquierda().setEnabled(posicionEquipo > 0);
+        }
     }
+
 
 
 

@@ -192,7 +192,7 @@ public class VentanaInicial extends JFrame {
         // Crear un temporizador que cambie la imagen después de unos 4 segundos.
         Timer timer = new Timer(3000, e -> {
             // Cambiar la imagen y actualizar el índice
-            indiceImagenes = (indiceImagenes + 1) % 5; // Número de imágenes en el array
+            indiceImagenes = (indiceImagenes + 1) % 7; // Número de imágenes en el array
             // Obtener la imagen del array cargada en el ControladorImagenes
             ImageIcon icon = ControladorImagenes.obtenerImagen("Noticias" + indiceImagenes, 600, 600);
             if (icon != null) {
