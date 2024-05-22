@@ -291,11 +291,18 @@ public class ControladorVI {
                 vi.getCbClasificacion().addItem(competicion.getNombreCom());
             }
 
-            vi.getCbClasificacion().setSelectedIndex(-1);
+            // Check if there are competitions and populate table with first item
+            if (!listaCompeticiones.isEmpty()) {
+                String nombreCom = listaCompeticiones.get(0).getNombreCom();
+                rellenarTablaEquiposCompeticion(nombreCom);
+            }
+
+            vi.getCbClasificacion().setSelectedIndex(0); // Select the first item
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,e.getMessage());
         }
     }
+
 
 }

@@ -50,7 +50,13 @@ public class ControladorVCompeticiones {
                 vc.getCbClasificacion().addItem(competicion.getNombreCom());
             }
 
-            vc.getCbClasificacion().setSelectedIndex(-1);
+            // Check if there are competitions and populate table with first item
+            if (!listaCompeticiones.isEmpty()) {
+                String nombreCom = listaCompeticiones.get(0).getNombreCom();
+                rellenarTablaEquiposCompeticion(nombreCom);
+            }
+
+            vc.getCbClasificacion().setSelectedIndex(-1); // Deselect item initially
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,e.getMessage());
