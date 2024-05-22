@@ -102,8 +102,8 @@ public class ControladorModelo {
         cjo.modificarJornada(j);
     }
 
-    public String[][] obtenerResultadosUltimaJornada(int idCompeticion) throws Exception {
-        return cjo.obtenerResultadosUltimaJornada(idCompeticion);
+    public String[][] obtenerResultadosUltimaJornada(String nombreCom) throws Exception {
+        return cjo.obtenerResultadosUltimaJornadaPorNombreCom(nombreCom);
     }
 
     //JUEGO

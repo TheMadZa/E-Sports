@@ -86,8 +86,8 @@ public class ControladorPrincipal {
         cm.modificarJornada(j);
     }
 
-    public String[][] obtenerResultadosUltimaJornada(int idCompeticion) throws Exception {
-        return cm.obtenerResultadosUltimaJornada(idCompeticion);
+    public String[][] obtenerResultadosUltimaJornada(String nombreCom) throws Exception {
+        return cm.obtenerResultadosUltimaJornada(nombreCom);
     }
 
     //JUEGO

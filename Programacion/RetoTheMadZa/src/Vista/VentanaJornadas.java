@@ -199,4 +199,142 @@ public class VentanaJornadas extends JFrame{
             System.err.println("La imagen " + nombreImagen + " no se encontró.");
         }
     }
+
+    //getters
+
+    public JPanel getPanelUp() {
+        return panelUp;
+    }
+
+    public void setPanelUp(JPanel panelUp) {
+        this.panelUp = panelUp;
+    }
+
+    public JLabel getFtEquipo1Partido1() {
+        return ftEquipo1Partido1;
+    }
+
+    public void setFtEquipo1Partido1(JLabel ftEquipo1Partido1) {
+        this.ftEquipo1Partido1 = ftEquipo1Partido1;
+    }
+
+    public JLabel getFtEquipo2Partido1() {
+        return ftEquipo2Partido1;
+    }
+
+    public void setFtEquipo2Partido1(JLabel ftEquipo2Partido1) {
+        this.ftEquipo2Partido1 = ftEquipo2Partido1;
+    }
+
+    public JLabel getFtEquipo2Partido2() {
+        return ftEquipo2Partido2;
+    }
+
+    public void setFtEquipo2Partido2(JLabel ftEquipo2Partido2) {
+        this.ftEquipo2Partido2 = ftEquipo2Partido2;
+    }
+
+    public JLabel getFtEquipo2Partido3() {
+        return ftEquipo2Partido3;
+    }
+
+    public void setFtEquipo2Partido3(JLabel ftEquipo2Partido3) {
+        this.ftEquipo2Partido3 = ftEquipo2Partido3;
+    }
+
+    public JLabel getFtEquipo2Partido4() {
+        return ftEquipo2Partido4;
+    }
+
+    public void setFtEquipo2Partido4(JLabel ftEquipo2Partido4) {
+        this.ftEquipo2Partido4 = ftEquipo2Partido4;
+    }
+
+    public JLabel getFtEquipo1Partido2() {
+        return ftEquipo1Partido2;
+    }
+
+    public void setFtEquipo1Partido2(JLabel ftEquipo1Partido2) {
+        this.ftEquipo1Partido2 = ftEquipo1Partido2;
+    }
+
+    public JLabel getFtEquipo1Partido3() {
+        return ftEquipo1Partido3;
+    }
+
+    public void setFtEquipo1Partido3(JLabel ftEquipo1Partido3) {
+        this.ftEquipo1Partido3 = ftEquipo1Partido3;
+    }
+
+    public JLabel getFtEquipo1Partido4() {
+        return ftEquipo1Partido4;
+    }
+
+    public void setFtEquipo1Partido4(JLabel ftEquipo1Partido4) {
+        this.ftEquipo1Partido4 = ftEquipo1Partido4;
+    }
+
+    public JLabel getResultadoEquipo1Partido1() {
+        return resultadoEquipo1Partido1;
+    }
+
+    public void setResultadoEquipo1Partido1(JLabel resultadoEquipo1Partido1) {
+        this.resultadoEquipo1Partido1 = resultadoEquipo1Partido1;
+    }
+
+    public JLabel getResultadoEquipo2Partido1() {
+        return resultadoEquipo2Partido1;
+    }
+
+    public void setResultadoEquipo2Partido1(JLabel resultadoEquipo2Partido1) {
+        this.resultadoEquipo2Partido1 = resultadoEquipo2Partido1;
+    }
+
+    public JLabel getResultadoEquipo1Partido2() {
+        return resultadoEquipo1Partido2;
+    }
+
+    public void setResultadoEquipo1Partido2(JLabel resultadoEquipo1Partido2) {
+        this.resultadoEquipo1Partido2 = resultadoEquipo1Partido2;
+    }
+
+    public JLabel getResultadoEquipo2Partido2() {
+        return resultadoEquipo2Partido2;
+    }
+
+    public void setResultadoEquipo2Partido2(JLabel resultadoEquipo2Partido2) {
+        this.resultadoEquipo2Partido2 = resultadoEquipo2Partido2;
+    }
+
+    public JLabel getResultadoEquipo1Partido3() {
+        return resultadoEquipo1Partido3;
+    }
+
+    public void setResultadoEquipo1Partido3(JLabel resultadoEquipo1Partido3) {
+        this.resultadoEquipo1Partido3 = resultadoEquipo1Partido3;
+    }
+
+    public JLabel getResultadoEquipo2Partido3() {
+        return resultadoEquipo2Partido3;
+    }
+
+    public void setResultadoEquipo2Partido3(JLabel resultadoEquipo2Partido3) {
+        this.resultadoEquipo2Partido3 = resultadoEquipo2Partido3;
+    }
+
+    public JLabel getResultadoEquipo1Partido4() {
+        return resultadoEquipo1Partido4;
+    }
+
+    public void setResultadoEquipo1Partido4(JLabel resultadoEquipo1Partido4) {
+        this.resultadoEquipo1Partido4 = resultadoEquipo1Partido4;
+    }
+
+    public JLabel getResultadoEquipo2Partido4() {
+        return resultadoEquipo2Partido4;
+    }
+
+    public void setResultadoEquipo2Partido4(JLabel resultadoEquipo2Partido4) {
+        this.resultadoEquipo2Partido4 = resultadoEquipo2Partido4;
+    }
 }

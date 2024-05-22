@@ -2,11 +2,13 @@ package Controlador.ControladoresVista;
 
 import Modelo.Competicion;
 import Vista.VentanaJornadas;
+import org.imgscalr.Scalr;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 import java.util.List;
 
 public class ControladorVJornadas {
@@ -23,6 +25,7 @@ public class ControladorVJornadas {
         vj = new VentanaJornadas(ventanaEliminar);
 
         llenarComboBox();
+
 
         vj.addBTiendaAL(new BTiendaAL());
         vj.addBInicioAL(new BInicioAL());
@@ -137,12 +140,53 @@ public class ControladorVJornadas {
 
             for (Competicion competicion : listaCompeticiones){
                 vj.getCbCompeticion().addItem(competicion.getNombreCom());
+                rellenarTablaEquiposJornadas(competicion.getNombreCom());
             }
 
             vj.getCbCompeticion().setSelectedIndex(-1);
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,e.getMessage());
+        }
+    }
+
+    public void rellenarTablaEquiposJornadas(String nombreCom) throws Exception {
+
+        // Obtener un array multidimensional (5F·3C) con los datos de los equipos de la competición seleccionada.
+        String[][] listaJornadas = cv.obtenerResultadosUltimaJornada(nombreCom);
+
+        // Aparecerán los 10 equipos con más victorias en orden "victoria - puntos"
+        vj.getResultadoEquipo1Partido1().setText(String.valueOf(listaJornadas[0][1]));
+
+
+
+
+
+
+        //String Equipo1 = listaCompeticiones[0][0];
+        //cargarImagenEstablecerIcono("Equipo1", 55, 55, vi.getEquipo1());
+
+        // Poner las imágenes de sus logos.
+        /*setEquipoImagen(vc.getImgPrimer(), "Equipo" + listaCompeticiones[0][5]);
+        setEquipoImagen(vc.getImgSegundo(), "Equipo" + listaCompeticiones[1][5]);
+        setEquipoImagen(vc.getImgTercero(), "Equipo" + listaCompeticiones[2][5]);
+        setEquipoImagen(vc.getImgCuarto(), "Equipo" + listaCompeticiones[3][5]);
+        setEquipoImagen(vc.getImgQuinto(), "Equipo" + listaCompeticiones[4][5]);
+        setEquipoImagen(vc.getImgSexto(), "Equipo" + listaCompeticiones[5][5]);
+        setEquipoImagen(vc.getImgSeptimo(), "Equipo" + listaCompeticiones[6][5]);
+        setEquipoImagen(vc.getImgOctavo(), "Equipo" + listaCompeticiones[7][5]);
+        setEquipoImagen(vc.getImgNoveno(), "Equipo" + listaCompeticiones[8][5]);
+        setEquipoImagen(vc.getImgDecimo(), "Equipo" + listaCompeticiones[9][5]);*/
+    }
+
+    private void setEquipoImagen(JLabel label, String nombreImagen) {
+        BufferedImage imagen = ControladorImagenes.obtenerImagen2(nombreImagen);
+        if (imagen != null) {
+            BufferedImage imagenEscalada = Scalr.resize(imagen, 55);
+            ImageIcon iconoEscalado = new ImageIcon(imagenEscalada);
+            label.setIcon(iconoEscalado);
+        } else {
+            System.err.println("Imagen no encontrada: " + nombreImagen);
         }
     }
 
