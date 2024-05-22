@@ -198,11 +198,18 @@ public class ControladorVUser {
                 vu.getCbClasificacion().addItem(competicion.getNombreCom());
             }
 
-            vu.getCbClasificacion().setSelectedIndex(-1);
+            // Check if there are competitions and populate table with first item
+            if (!listaCompeticiones.isEmpty()) {
+                String nombreCom = listaCompeticiones.get(0).getNombreCom();
+                rellenarTablaEquiposCompeticion(nombreCom);
+            }
+
+            vu.getCbClasificacion().setSelectedIndex(0); // Select the first item
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,e.getMessage());
         }
     }
+
 
 }

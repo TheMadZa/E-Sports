@@ -140,10 +140,15 @@ public class ControladorVJornadas {
 
             for (Competicion competicion : listaCompeticiones){
                 vj.getCbCompeticion().addItem(competicion.getNombreCom());
-                rellenarTablaEquiposJornadas(competicion.getNombreCom());
             }
 
-            vj.getCbCompeticion().setSelectedIndex(-1);
+            // Check if there are competitions and populate table with first item
+            if (!listaCompeticiones.isEmpty()) {
+                String nombreCom = listaCompeticiones.get(0).getNombreCom();
+                rellenarTablaEquiposJornadas(nombreCom);
+            }
+
+            vj.getCbCompeticion().setSelectedIndex(0); // Select the first item
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,e.getMessage());
