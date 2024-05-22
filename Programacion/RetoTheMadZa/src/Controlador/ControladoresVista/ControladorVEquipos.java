@@ -51,6 +51,7 @@ public class ControladorVEquipos {
     public void obtenerEquipos() throws Exception{
         try {
             equipos = cv.cargarEquiposDesdeBD();
+            ve.setNombreEquipo(equipos.get(posicionEquipo).getNomEquipo());
             ve.cargarImagenEstablecerIcono(equipos.getFirst().getLogo(), 400,400,ve.getlImagen());
             posicionEquipo = 0;
         } catch (Exception e) {
@@ -63,19 +64,21 @@ public class ControladorVEquipos {
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
-                posicionArray = posicionEquipo + 1;
+                posicionArray = posicionEquipo - 1;
 
                 ve.getbDerecha().setEnabled(true);
 
-                if (posicionEquipo-1 == 0){
+                if (posicionEquipo - 1 == 0){
                     ve.getbIzquierda().setEnabled(false);
                 }
                 else {
                     ve.getbIzquierda().setEnabled(true);
                 }
 
-                ve.cargarImagenEstablecerIcono("Equipo"+equipos.get(posicionEquipo-1).getIdEquipo(),400,400,
+                ve.cargarImagenEstablecerIcono("Equipo"+equipos.get(posicionEquipo - 1).getIdEquipo(), 400, 400,
                         ve.getlImagen());
+
+                ve.setNombreEquipo(equipos.get(posicionEquipo - 1).getNomEquipo());
 
                 posicionEquipo--;
 
@@ -95,8 +98,8 @@ public class ControladorVEquipos {
 
 
 
-    public class BFlechaDrchAL implements ActionListener {
 
+    public class BFlechaDrchAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
@@ -114,6 +117,8 @@ public class ControladorVEquipos {
                 ve.cargarImagenEstablecerIcono("Equipo"+equipos.get(posicionArray).getIdEquipo(),400,400,
                         ve.getlImagen());
 
+                ve.setNombreEquipo(equipos.get(posicionArray).getNomEquipo());
+
                 posicionEquipo++;
 
                 if (equipos.get(posicionEquipo) == equipos.getLast()){
@@ -128,6 +133,7 @@ public class ControladorVEquipos {
             }
         }
     }
+
 
 
 
