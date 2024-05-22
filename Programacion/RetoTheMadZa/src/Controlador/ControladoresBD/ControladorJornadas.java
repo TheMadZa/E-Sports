@@ -119,27 +119,26 @@ public class ControladorJornadas {
         }
     }
 
-    public String[][] obtenerResultadosUltimaJornada(int idCompeticion) throws Exception {
+    public String[][] obtenerResultadosUltimaJornadaPorNombreCom(String nombreCom) throws Exception {
         String[][] resultados = new String[4][4]; // Array multidimensional con 4 filas y 4 columnas
 
-        String sql = "SELECT RESULTADO1, RESULTADO2, ID_EQUIPO1, ID_EQUIPO2 " +
-                "FROM ENFRENTAMIENTOS " +
-                "WHERE ID_JORNADA = (SELECT MAX(ID_JORNADA) " +
-                "FROM JORNADAS " +
-                "WHERE ID_COMPETICION = ?)";
+        String sql = "SELECT e.RESULTADO1, e.RESULTADO2, e.ID_EQUIPO1, e.ID_EQUIPO2 " +
+                "FROM ENFRENTAMIENTOS e " +
+                "JOIN JORNADAS j ON e.ID_JORNADA = j.ID_JORNADA " +
+                "JOIN COMPETICIONES c ON j.ID_COMPETICION = c.ID_COMPETICION " +
+                "WHERE UPPER(c.NOMBRE_COM) = ? " +
+                "AND j.ID_JORNADA = (SELECT MAX(j2.ID_JORNADA) " +
+                "FROM JORNADAS j2 " +
+                "WHERE j2.ID_COMPETICION = c.ID_COMPETICION)";
         try (PreparedStatement stmt = con.prepareStatement(sql)) {
-            stmt.setInt(1, idCompeticion);
+            stmt.setString(1, nombreCom.toUpperCase());
             ResultSet rs = stmt.executeQuery();
             int fila = 0;
             while (rs.next() && fila < 4) {
-                int resultado1 = rs.getInt("RESULTADO1");
-                int resultado2 = rs.getInt("RESULTADO2");
-                int idEquipo1 = rs.getInt("ID_EQUIPO1");
-                int idEquipo2 = rs.getInt("ID_EQUIPO2");
-                resultados[fila][0] = Integer.toString(resultado1);
-                resultados[fila][1] = Integer.toString(resultado2);
-                resultados[fila][2] = Integer.toString(idEquipo1);
-                resultados[fila][3] = Integer.toString(idEquipo2);
+                resultados[fila][0] = Integer.toString(rs.getInt("RESULTADO1"));
+                resultados[fila][1] = Integer.toString(rs.getInt("RESULTADO2"));
+                resultados[fila][2] = Integer.toString(rs.getInt("ID_EQUIPO1"));
+                resultados[fila][3] = Integer.toString(rs.getInt("ID_EQUIPO2"));
                 fila++;
             }
         } catch (Exception e) {
@@ -148,5 +147,6 @@ public class ControladorJornadas {
         }
         return resultados;
     }
+
 
 }

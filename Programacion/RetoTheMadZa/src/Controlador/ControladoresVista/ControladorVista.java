@@ -146,8 +146,8 @@ public class ControladorVista {
         cp.modificarJornada(j);
     }
 
-    public String[][] obtenerResultadosUltimaJornada(int idCompeticion) throws Exception {
-        return cp.obtenerResultadosUltimaJornada(idCompeticion);
+    public String[][] obtenerResultadosUltimaJornada(String nombreCom) throws Exception {
+        return cp.obtenerResultadosUltimaJornada(nombreCom);
     }
 
 
