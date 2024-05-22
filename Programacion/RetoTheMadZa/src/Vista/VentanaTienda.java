@@ -14,7 +14,7 @@ public class VentanaTienda extends JFrame{
     private JMenuItem mJornadas;
     private JMenuItem mClasificacion;
     private JPanel PanelLogo;
-    private JLabel ftThemadza;
+    private JButton ftThemadza;
     private JButton bInicio;
     private JButton bSalir;
     private JPanel panelFoot;
@@ -56,7 +56,7 @@ public class VentanaTienda extends JFrame{
     public VentanaTienda(JFrame ventanaEliminar) {
 
         // Cargar las imágenes con un tamaño específico.
-        cargarImagenEstablecerIcono("TheMadZaLogoSimple", 250, 250, ftThemadza);
+        cargarImagenEstablecerIconoBoton("TheMadZaLogoSimple", 250, 250, ftThemadza);
         cargarImagenEstablecerIcono("Inicio", bInicio);
         cargarImagenEstablecerIcono("Salir", bSalir);
         cargarImagenEstablecerIcono("Twitter", bTwitter);
@@ -82,22 +82,6 @@ public class VentanaTienda extends JFrame{
             boton.setIcon(iconoBuy);
         }
 
-        /*
-        ImageIcon iconoBuy = ControladorImagenes.obtenerImagen("Buy", 50, 50);
-        bBuy1.setIcon(iconoBuy);
-        bBuy2.setIcon(iconoBuy);
-        bBuy3.setIcon(iconoBuy);
-        bBuy4.setIcon(iconoBuy);
-        bBuy5.setIcon(iconoBuy);
-        bBuy6.setIcon(iconoBuy);
-        bBuy7.setIcon(iconoBuy);
-        bBuy8.setIcon(iconoBuy);
-        bBuy9.setIcon(iconoBuy);
-        bBuy10.setIcon(iconoBuy);
-        bBuy11.setIcon(iconoBuy);
-        bBuy12.setIcon(iconoBuy);
-         */
-
         // Configurar la ventana
         setContentPane(pPrincipal);
         setTitle("Ventana Tienda");
@@ -107,7 +91,7 @@ public class VentanaTienda extends JFrame{
         getRootPane().setDefaultButton(bInicio);
 
         JComponent[] componentesConBorde = {mPrincipal, bInicio, bSalir, bFacebook, bTwitter, bInstagram,
-                bBuy1, bBuy2, bBuy3, bBuy4, bBuy5, bBuy6, bBuy7, bBuy8, bBuy9, bBuy10, bBuy11, bBuy12};
+                bBuy1, bBuy2, bBuy3, bBuy4, bBuy5, bBuy6, bBuy7, bBuy8, bBuy9, bBuy10, bBuy11, bBuy12, ftThemadza};
         for (JComponent componente : componentesConBorde) {
             componente.setBorder(BorderFactory.createEmptyBorder());
         }
@@ -189,6 +173,16 @@ public class VentanaTienda extends JFrame{
             System.err.println("La imagen " + nombreImagen + " no se encontró.");
         }
     }
+
+    private void cargarImagenEstablecerIconoBoton(String nombreImagen, int ancho, int alto, JButton label) {
+        ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
+        if (icono != null) {
+            label.setIcon(icono);
+        } else {
+            System.err.println("La imagen " + nombreImagen + " no se encontró.");
+        }
+    }
+
     private void cargarImagenEstablecerIcono(String nombreImagen, JButton button) {
         ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, 40, 40);
         if (icono != null) {
@@ -236,6 +230,9 @@ public class VentanaTienda extends JFrame{
         bBuy10.addActionListener(al);
         bBuy11.addActionListener(al);
         bBuy12.addActionListener(al);
+    }
+    public void addBThemadzaAL(ActionListener al) {
+        ftThemadza.addActionListener(al);
     }
 }
 

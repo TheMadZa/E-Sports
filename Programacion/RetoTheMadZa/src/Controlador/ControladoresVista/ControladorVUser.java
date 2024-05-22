@@ -41,8 +41,6 @@ public class ControladorVUser {
         vu.addCbClasificacionAL(new CbClasificacionAL());
     }
 
-
-
     public class BTiendaAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
