@@ -118,6 +118,9 @@ public class ControladorVista {
         return cp.buscarEquipoPorNombre(nombre);
     }
 
+    public List<Equipo> cargarEquiposDesdeBD() throws Exception {
+        return cp.cargarEquiposDesdeBD();
+    }
 
     //JORNADA
     public void insertarJornada(Jornada j) throws Exception {
@@ -134,6 +137,10 @@ public class ControladorVista {
 
     public void modificarJornada(Jornada j) throws Exception{
         cp.modificarJornada(j);
+    }
+
+    public String[][] obtenerResultadosUltimaJornada(int idCompeticion) throws Exception {
+        return cp.obtenerResultadosUltimaJornada(idCompeticion);
     }
 
 
