@@ -123,7 +123,7 @@ public class ControladorVJornadas {
             try {
                 String nombreSeleccionado = String.valueOf(vj.getCbCompeticion().getSelectedItem());
                 if (nombreSeleccionado != null && !nombreSeleccionado.isEmpty()){
-                    //rellenarTablaEquiposCompeticion(nombreSeleccionado);
+                    rellenarTablaEquiposJornadas(nombreSeleccionado);
                 }
             }
             catch (Exception ex) {
@@ -152,11 +152,18 @@ public class ControladorVJornadas {
 
     public void rellenarTablaEquiposJornadas(String nombreCom) throws Exception {
 
-        // Obtener un array multidimensional (5F·3C) con los datos de los equipos de la competición seleccionada.
+        // Obtener un array multidimensional con los datos de los equipos de la competición seleccionada.
         String[][] listaJornadas = cv.obtenerResultadosUltimaJornada(nombreCom);
 
-        // Aparecerán los 10 equipos con más victorias en orden "victoria - puntos"
-        vj.getResultadoEquipo1Partido1().setText(String.valueOf(listaJornadas[0][1]));
+        // Colocar los resultados
+        vj.getResultadoEquipo1Partido1().setText(String.valueOf(listaJornadas[0][0]));
+        vj.getResultadoEquipo2Partido1().setText(String.valueOf(listaJornadas[0][1]));
+        vj.getResultadoEquipo1Partido2().setText(String.valueOf(listaJornadas[1][0]));
+        vj.getResultadoEquipo2Partido2().setText(String.valueOf(listaJornadas[1][1]));
+        vj.getResultadoEquipo1Partido3().setText(String.valueOf(listaJornadas[2][0]));
+        vj.getResultadoEquipo2Partido3().setText(String.valueOf(listaJornadas[2][1]));
+        vj.getResultadoEquipo1Partido4().setText(String.valueOf(listaJornadas[3][0]));
+        vj.getResultadoEquipo2Partido4().setText(String.valueOf(listaJornadas[3][1]));
 
 
 
@@ -167,22 +174,21 @@ public class ControladorVJornadas {
         //cargarImagenEstablecerIcono("Equipo1", 55, 55, vi.getEquipo1());
 
         // Poner las imágenes de sus logos.
-        /*setEquipoImagen(vc.getImgPrimer(), "Equipo" + listaCompeticiones[0][5]);
-        setEquipoImagen(vc.getImgSegundo(), "Equipo" + listaCompeticiones[1][5]);
-        setEquipoImagen(vc.getImgTercero(), "Equipo" + listaCompeticiones[2][5]);
-        setEquipoImagen(vc.getImgCuarto(), "Equipo" + listaCompeticiones[3][5]);
-        setEquipoImagen(vc.getImgQuinto(), "Equipo" + listaCompeticiones[4][5]);
-        setEquipoImagen(vc.getImgSexto(), "Equipo" + listaCompeticiones[5][5]);
-        setEquipoImagen(vc.getImgSeptimo(), "Equipo" + listaCompeticiones[6][5]);
-        setEquipoImagen(vc.getImgOctavo(), "Equipo" + listaCompeticiones[7][5]);
-        setEquipoImagen(vc.getImgNoveno(), "Equipo" + listaCompeticiones[8][5]);
-        setEquipoImagen(vc.getImgDecimo(), "Equipo" + listaCompeticiones[9][5]);*/
+        setEquipoImagen(vj.getFtEquipo1Partido1(), "Equipo" + listaJornadas[0][2]);
+        setEquipoImagen(vj.getFtEquipo2Partido1(), "Equipo" + listaJornadas[0][3]);
+        setEquipoImagen(vj.getFtEquipo1Partido2(), "Equipo" + listaJornadas[1][2]);
+        setEquipoImagen(vj.getFtEquipo2Partido2(), "Equipo" + listaJornadas[1][3]);
+        setEquipoImagen(vj.getFtEquipo1Partido3(), "Equipo" + listaJornadas[2][2]);
+        setEquipoImagen(vj.getFtEquipo2Partido3(), "Equipo" + listaJornadas[2][3]);
+        setEquipoImagen(vj.getFtEquipo1Partido4(), "Equipo" + listaJornadas[3][2]);
+        setEquipoImagen(vj.getFtEquipo2Partido4(), "Equipo" + listaJornadas[3][3]);
+
     }
 
     private void setEquipoImagen(JLabel label, String nombreImagen) {
         BufferedImage imagen = ControladorImagenes.obtenerImagen2(nombreImagen);
         if (imagen != null) {
-            BufferedImage imagenEscalada = Scalr.resize(imagen, 55);
+            BufferedImage imagenEscalada = Scalr.resize(imagen, 150);
             ImageIcon iconoEscalado = new ImageIcon(imagenEscalada);
             label.setIcon(iconoEscalado);
         } else {
