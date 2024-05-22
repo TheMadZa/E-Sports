@@ -168,6 +168,9 @@ public class ControladorVista {
         cp.modificarJuego(j);
     }
 
+    public Juego buscarJuegoPorNombre(String nombre) throws Exception{
+        return cp.buscarJuegoPorNombre(nombre);
+    }
 
     //JUGADOR
     public void insertarJugador(Jugador j) throws Exception {
@@ -227,9 +230,17 @@ public class ControladorVista {
         return cp.validarUsuario(usuario, contrasena);
     }
 
+    public boolean insertarUsuario(Usuario usuario) throws Exception {
+        return cp.insertarUsuario(usuario);
+    }
+
     //EQUIPO_COMPETICION
     public List<EquipoCompeticion> buscarTodosEquiposCompeticiones() throws Exception {
         return cp.buscarTodosEquiposCompeticiones();
+    }
+
+    public void insertarEquipoCompeticion(int idEquipo, int idCompeticion) throws Exception {
+        cp.insertarEquipoCompeticion(idEquipo, idCompeticion);
     }
 
     //XML

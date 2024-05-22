@@ -107,6 +107,10 @@ public class ControladorPrincipal {
         cm.modificarJuego(j);
     }
 
+    public Juego buscarJuegoPorNombre(String nombre) throws Exception{
+        return cm.buscarJuegoPorNombre(nombre);
+    }
+
     //JUGADOR
     public void insertarJugador(Jugador j) throws Exception {
         cm.insertarJugador(j);
@@ -163,10 +167,19 @@ public class ControladorPrincipal {
         return cm.validarUsuario(usuario, contrasena);
     }
 
+    public boolean insertarUsuario(Usuario usuario) throws Exception {
+        return cm.insertarUsuario(usuario);
+    }
+
     //EQUIPO_COMPETICION
     public List<EquipoCompeticion> buscarTodosEquiposCompeticiones() throws Exception {
         return cm.buscarTodosEquiposCompeticiones();
     }
+
+    public void insertarEquipoCompeticion(int idEquipo, int idCompeticion) throws Exception {
+        cm.insertarEquipoCompeticion(idEquipo, idCompeticion);
+    }
+
     //XML
     public String obtenerXMLClasificacionDTD () throws Exception{
         return cm.obtenerXMLClasificacionDTD();
@@ -186,8 +199,6 @@ public class ControladorPrincipal {
     public String  obtenerXMLUltimaJornadaXSD() throws Exception{
         return cm.obtenerXMLUltimaJornadaXSD();
     }
-
-
 
     //CONEXION
     public void cerrarConexion() throws Exception{

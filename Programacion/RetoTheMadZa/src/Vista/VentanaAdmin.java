@@ -94,16 +94,10 @@ public class VentanaAdmin extends JFrame {
         // Configurar la ventana
         setContentPane(pPrincipal);
         setTitle("Ventana Administrador");
-        GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
-        if (gd.isFullScreenSupported()) {
-            gd.setFullScreenWindow(this);
-        } else {
-            System.err.println("Pantalla completa no soportada");
-            setExtendedState(JFrame.MAXIMIZED_BOTH); // Tamaño por defecto si pantalla completa no está soportada
-            this.setVisible(true);
-        }
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(true);
+        getRootPane().setDefaultButton(bInicio);
 
         JComponent[] componentesConBorde = {mPrincipal, bInicio, bSalir, bFacebook, bTwitter, bInstagram};
         for (JComponent componente : componentesConBorde) {
@@ -257,9 +251,13 @@ public class VentanaAdmin extends JFrame {
                 pDatos.add(jlIdCompeticion, gbc);
                 gbc.gridx = 1;
                 pDatos.add(tfIdCompeticion, gbc);
+                // Añadir a la lista la casilla del ID de la competición.
+                addListaTextFieldsDinamicos(tfIdCompeticion);
             } else {
                 pDatos.remove(jlIdCompeticion);
                 pDatos.remove(tfIdCompeticion);
+                // Eliminar de la lista la casilla del ID de la competición.
+                listaTextFieldsDinamicos.remove(4);
             }
             pDatos.revalidate();
             pDatos.repaint();
@@ -336,6 +334,9 @@ public class VentanaAdmin extends JFrame {
     public void vaciarListaTextFields(){
         // Eliminar todos los elementos de la lista en donde se guardan los JTextField.
         listaTextFieldsDinamicos.clear();
+        pDatos.removeAll();
+        pDatos.revalidate();
+        pDatos.repaint();
     }
 
     // Función para cargar imágenes y establecer íconos (una función es para los JLabel y la otra para los JButton)

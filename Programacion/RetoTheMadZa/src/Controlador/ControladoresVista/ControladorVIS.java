@@ -46,7 +46,7 @@ public class ControladorVIS {
     public class BRegistroAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            // TODO : Aparecerá un dialog para meter los datos de un nuevo usuario (solo podrá ser "Normal) y se hará un insert.
+            // Aparecerá un dialog para meter los datos de un nuevo usuario (solo podrá ser "Normal) y se hará un insert.
             cv.mostrarDUsuario();
         }
     }

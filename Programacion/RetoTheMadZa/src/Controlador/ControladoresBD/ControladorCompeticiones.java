@@ -89,7 +89,6 @@ public class ControladorCompeticiones {
         }
     }
 
-    // TODO : IGUAL HABRÍA QUE HACER QUE DEVUELVA LOS EQUIPOS CON MÁS VICTORIAS? (ORDER BY ec.victorias DESC)
     /**
      * Función para obtener logo, victorias y puntos de un equipo en una competición.
      * Se buscarán los logos, las victorias y los puntos totales de los equipos que participan
@@ -108,7 +107,7 @@ public class ControladorCompeticiones {
                                 "JOIN equipos_competiciones ec ON e.id_equipo = ec.id_equipo " +
                                 "JOIN competiciones c ON ec.id_competicion = c.id_competicion " +
                                 "JOIN juegos j ON c.id_juego = j.id_juego " +
-                                "WHERE UPPER(c.nombre_com) = ?" +
+                                "WHERE UPPER(c.nombre_com) = ? " +
                                 "ORDER BY ec.victorias DESC, ec.puntos DESC";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
@@ -150,7 +149,6 @@ public class ControladorCompeticiones {
         }
     }
 
-    // TODO : SEGURAMENTE SE PUEDA PONER QUE DEVUELVA UN ARRAYLIST PERO DE STRING nombre_com
     public List<Competicion> buscarTodasCompeticiones() throws Exception {
 
         List<Competicion> competiciones = new ArrayList<>();
