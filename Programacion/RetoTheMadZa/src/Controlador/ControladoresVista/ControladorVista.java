@@ -109,8 +109,8 @@ public class ControladorVista {
         cp.insertarEquipo(e);
     }
 
-    public void borrarEquipo(String nombre) throws Exception{
-        cp.borrarEquipo(nombre);
+    public void borrarEquipo(int idEquipo) throws Exception{
+        cp.borrarEquipo(idEquipo);
     }
 
     public Equipo buscarEquipo(Integer id_equipo) throws Exception {

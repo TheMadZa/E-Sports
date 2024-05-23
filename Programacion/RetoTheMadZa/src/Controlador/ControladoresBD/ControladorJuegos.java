@@ -34,12 +34,12 @@ public class ControladorJuegos {
             sentenciaPre.close();
 
             if (n != 1) {
-                throw new Exception("No se ha insertado el juego.");
+                throw new Exception("No se ha podido insertar el juego.");
             }
 
         }
         catch (SQLIntegrityConstraintViolationException e) {
-            throw new Exception("Ya existe un juego con esos datos.");
+            throw new Exception("Ya hay registrado un juego con esos datos.");
         }
     }
 
