@@ -22,20 +22,32 @@ public class ControladorDUsuario {
 
         du.addButtonOkAL(new ButtonOkAL());
         du.addButtonCancelAL(new ButtonCancelAL());
+
+        du.setVisible(true);
     }
 
-    // TODO : NO VA
     public class ButtonOkAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
 
             try {
-                Usuario usuario = new Usuario(du.getTfUsuario(),du.getFtfContrasena(),"N");
+                String nombre = du.getTfUsuario();
+                if (nombre.isEmpty()){
+                    throw new Exception("El nombre es obligatorio");
+                }
+
+                String contrasena = du.getFtfContrasena();
+                if (contrasena.isEmpty()){
+                    throw new Exception("La contraseña es obligatoria");
+                }
+                Usuario usuario = new Usuario(nombre,contrasena,"N");
 
                 boolean insercionHecha = cv.insertarUsuario(usuario);
 
-                if (insercionHecha)
+                if (insercionHecha) {
+                    System.out.println("Usuario registrado");
                     du.dispose();
+                }
 
             }
             catch (Exception ex) {
