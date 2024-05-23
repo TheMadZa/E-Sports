@@ -64,8 +64,8 @@ public class ControladorModelo {
         ce.insertarEquipo(e);
     }
 
-    public void borrarEquipo(String nombre) throws Exception {
-        ce.borrarEquipo(nombre);
+    public void borrarEquipo(int idEquipo) throws Exception {
+        ce.borrarEquipo(idEquipo);
     }
 
     public Equipo buscarEquipo(Integer id_equipo) throws Exception {
@@ -219,10 +219,10 @@ public class ControladorModelo {
     public void abrirConexion() {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            String url = "jdbc:oracle:thin:@SrvOracle:1521:ORCL"; // TODO : para conexión ordenadores clase
-            //String url = "jdbc:oracle:thin:@172.20.225.114:1521:ORCL"; // TODO : para conexión portatil
-            //String url = "jdbc:oracle:thin:@//localhost:1521/XEPDB1";//TODO : para conexión en casa (Ibai)
-            //String url = "jdbc:oracle:thin:@//0.tcp.eu.ngrok.io:19568:1521/XEPDB1";//TODO : para conexión en casa (Lorena)
+            //String url = "jdbc:oracle:thin:@SrvOracle:1521:ORCL"; // TODO : para conexión ordenadores clase
+            String url = "jdbc:oracle:thin:@172.20.225.114:1521:ORCL"; // TODO : para conexión portatil
+            //String url = "jdbc:oracle:thin:@//localhost:1521/XEPDB1"; // TODO : para conexión en casa (Ibai)
+            //String url = "jdbc:oracle:thin:@//4.tcp.eu.ngrok.io:16055:1521/XEPDB1"; // TODO : para conexión en casa (Lorena)
             //String user = "C##eqdaw03";
             String user = "eqdaw03";
             String passwd = "eqdaw03";

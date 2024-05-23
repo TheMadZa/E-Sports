@@ -21,7 +21,7 @@ public class ControladorEquipos {
 
     public void insertarEquipo(Equipo e) throws Exception {
         try {
-            String plantilla = "INSERT INTO equipos VALUES (?,?,?,?)";
+            String plantilla = "INSERT INTO equipos (nom_equipo, fecha_fundacion, logo , color) VALUES (?,?,?,?)";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
 
@@ -40,25 +40,25 @@ public class ControladorEquipos {
 
         }
         catch (SQLIntegrityConstraintViolationException ex) {
-            throw new Exception("Ya hay registrado una equipo con ese ID.");
+            throw new Exception("Ya hay registrado una equipo con esos datos.");
         }
     }
 
-    public void borrarEquipo(String nombre) throws Exception {
+    public void borrarEquipo(int idEquipo) throws Exception {
         try {
-            String plantilla = "DELETE FROM equipos WHERE UPPER(nom_equipo) = ?";
+            String plantilla = "DELETE FROM equipos WHERE UPPER(id_equipo) = ?";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
 
-            sentenciaPre.setString(1, nombre.toUpperCase());
+            sentenciaPre.setInt(1, idEquipo);
 
             int n = sentenciaPre.executeUpdate();
             if (n != 1) {
-                throw new Exception("No se ha eliminado ningún equipo.");
+                throw new Exception("No se ha podido eliminar ningún equipo.");
             }
         }
         catch (SQLIntegrityConstraintViolationException e) {
-            throw new Exception("No existe un equipo con ese nombre para poderlo borrar.");
+            throw new Exception("No hay registrado ningún equipo con ese ID para poderlo borrar.");
         }
     }
 
@@ -80,7 +80,7 @@ public class ControladorEquipos {
                 e.setColor(rs.getString("color"));
             }
             else {
-                throw new Exception("No hay ningún equipo con ese ID.");
+                throw new Exception("No hay ningún equipo registrado con ese ID.");
             }
             sentenciaPre.close();
             return e;
@@ -102,7 +102,7 @@ public class ControladorEquipos {
 
         int n = sentenciaPre.executeUpdate();
         if (n != 1){
-            throw new Exception("No se ha actualizado ningún equipo.");
+            throw new Exception("No se ha podido actualizar ningún equipo.");
         }
     }
 
@@ -124,7 +124,7 @@ public class ControladorEquipos {
                 e.setColor(rs.getString("color"));
             }
             else {
-                throw new Exception("No hay ningún equipo con ese nombre.");
+                throw new Exception("No hay ningún equipo registrado con ese nombre.");
             }
 
             sentenciaPre.close();

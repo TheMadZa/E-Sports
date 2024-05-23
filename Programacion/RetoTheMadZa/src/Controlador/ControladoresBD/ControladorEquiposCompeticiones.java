@@ -45,17 +45,17 @@ public class ControladorEquiposCompeticiones {
 
     public void insertarEquipoCompeticion(int idEquipo, int idCompeticion) throws Exception {
 
-        try
-        {
-            String plantilla = "INSERT INTO equipos_competiciones VALUES (?,?,?,?)";
+        try {
+//            String plantilla = "INSERT INTO equipos_competiciones VALUES (?,?,?,?)";
+            String plantilla = "INSERT INTO equipos_competiciones (id_equipo, id_competicion) VALUES (?,?)";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
 
-            // PONER VICTORIAS Y PUNTOS = 0
+//             PONER VICTORIAS Y PUNTOS = 0
             sentenciaPre.setInt(1,idEquipo);
             sentenciaPre.setInt(2,idCompeticion);
-            sentenciaPre.setInt(3,0);
-            sentenciaPre.setInt(4,0);
+//            sentenciaPre.setInt(3,0);
+//            sentenciaPre.setInt(4,0);
 
             int n = sentenciaPre.executeUpdate();
 

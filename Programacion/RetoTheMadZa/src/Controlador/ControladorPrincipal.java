@@ -49,8 +49,8 @@ public class ControladorPrincipal {
         cm.insertarEquipo(e);
     }
 
-    public void borrarEquipo(String nombre) throws Exception {
-        cm.borrarEquipo(nombre);
+    public void borrarEquipo(int idEquipo) throws Exception {
+        cm.borrarEquipo(idEquipo);
     }
 
     public Equipo buscarEquipo(Integer id_equipo) throws Exception {
