@@ -35,8 +35,6 @@ public class DialogoUsuario extends JDialog {
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
-        setVisible(true);
-
     }
 
     private void onCancel() {
