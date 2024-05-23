@@ -50,6 +50,10 @@ public class DialogoUsuario extends JDialog {
     public void mostrarMensaje(String mensaje){
         JOptionPane.showMessageDialog(null,mensaje);
     }
+    public void vaciarCasillas(){
+        tfUsuario.setText("");
+        ftfContrasena.setText("");
+    }
 
     // Getters
     public String getTfUsuario() {
@@ -58,6 +62,7 @@ public class DialogoUsuario extends JDialog {
     public String getFtfContrasena() {
         return ftfContrasena.getText();
     }
+
 
     // Listeners
     public void addButtonOkAL(ActionListener al) {

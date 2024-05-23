@@ -32,21 +32,26 @@ public class ControladorDUsuario {
 
             try {
                 String nombre = du.getTfUsuario();
-                if (nombre.isEmpty()){
-                    throw new Exception("El nombre es obligatorio");
+                String contrasena = du.getFtfContrasena();
+
+                if (nombre.isEmpty() && contrasena.isEmpty()) {
+                    throw new Exception("El nombre y la contraseña son campos obligatorios.");
+                }
+                else if (nombre.isEmpty()) {
+                    throw new Exception("El nombre es obligatorio.");
+                }
+                else if (contrasena.isEmpty()) {
+                    throw new Exception("La contraseña es obligatoria.");
                 }
 
-                String contrasena = du.getFtfContrasena();
-                if (contrasena.isEmpty()){
-                    throw new Exception("La contraseña es obligatoria");
-                }
                 Usuario usuario = new Usuario(nombre,contrasena,"N");
 
                 boolean insercionHecha = cv.insertarUsuario(usuario);
 
                 if (insercionHecha) {
-                    System.out.println("Usuario registrado");
-                    du.dispose();
+                    du.mostrarMensaje("Usuario registrado");
+                    System.out.println("Usuario registrado.");
+                    du.vaciarCasillas();
                 }
 
             }
@@ -59,7 +64,7 @@ public class ControladorDUsuario {
     public class ButtonCancelAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            du.mostrarMensaje("Debe registrar un usuario.");
+            du.mostrarMensaje("Debe registrar un usuario con rol `Normal´.");
         }
     }
 

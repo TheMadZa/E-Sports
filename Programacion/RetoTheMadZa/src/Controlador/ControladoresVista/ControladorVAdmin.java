@@ -1,8 +1,6 @@
 package Controlador.ControladoresVista;
 
-import Modelo.Equipo;
 import Modelo.Juego;
-import Modelo.Jugador;
 import Vista.VentanaAdmin;
 import Vista.VentanaInicioSesion;
 
@@ -21,6 +19,7 @@ public class ControladorVAdmin {
     private ControladorVista cv;
     private String tablaElegida;
     private String accionElegida;
+    private boolean datosRellenados = false;
 
     public ControladorVAdmin(ControladorVista cv) {
         this.cv = cv;
@@ -51,14 +50,38 @@ public class ControladorVAdmin {
 
             tablaElegida = e.getActionCommand();
             switch (tablaElegida){
-                case "CRUD Equipos" -> va.mostrarDatosEquipos();
-                case "CRUD Jugadores" -> va.mostrarDatosJugadores();
-                case "CRUD Staff" -> va.mostrarDatosStaff();
-                case "CRUD Patrocinadores" -> va.mostrarDatosPatrocinadores();
-                case "CRUD Juegos" -> va.mostrarDatosJuegos();
-                case "CRUD Competiciones" -> va.mostrarDatosCompeticiones();
-                case "CRUD Enfrentamientos" -> va.mostrarDatosEnfrentamientos();
-                case "CRUD Jornadas" -> va.mostrarDatosJornadas();
+                case "CRUD Equipos" -> {
+                    va.mostrarDatosEquipos();
+                    datosRellenados = false;
+                }
+                case "CRUD Jugadores" -> {
+                    va.mostrarDatosJugadores();
+                    datosRellenados = false;
+                }
+                case "CRUD Staff" -> {
+                    va.mostrarDatosStaff();
+                    datosRellenados = false;
+                }
+                case "CRUD Patrocinadores" -> {
+                    va.mostrarDatosPatrocinadores();
+                    datosRellenados = false;
+                }
+                case "CRUD Juegos" -> {
+                    va.mostrarDatosJuegos();
+                    datosRellenados = false;
+                }
+                case "CRUD Competiciones" -> {
+                    va.mostrarDatosCompeticiones();
+                    datosRellenados = false;
+                }
+                case "CRUD Enfrentamientos" -> {
+                    va.mostrarDatosEnfrentamientos();
+                    datosRellenados = false;
+                }
+                case "CRUD Jornadas" -> {
+                    va.mostrarDatosJornadas();
+                    datosRellenados = false;
+                }
             }
 
             if (!va.getPanelCRUD().isVisible())
@@ -225,35 +248,18 @@ public class ControladorVAdmin {
 
                     }
                     case "CRUD Juegos" -> {
-                        // El juego tendrá nombre, empresa y fecha de lanzamiento.
 
+                        // El juego tendrá nombre, empresa y fecha de lanzamiento.
+  
                         ArrayList<JTextField> listaTextFieldsDinamicos = va.getListaTextFieldsDinamicos();
+                        String nombre = listaTextFieldsDinamicos.get(0).getText();
+                        String empresa = listaTextFieldsDinamicos.get(1).getText();
 
                         switch (accionElegida){
-                            case "Insertar" -> {
-                                if (listaTextFieldsDinamicos.size() == 3) {
-                                    Juego juego = new Juego();
-                                    juego.setNombre(listaTextFieldsDinamicos.get(0).getText());
-                                    juego.setEmpresa(listaTextFieldsDinamicos.get(1).getText());
-                                    LocalDate fechaLanzamiento = LocalDate.parse(listaTextFieldsDinamicos.get(2).getText(), DateTimeFormatter.ofPattern("dd-MM-yy"));
-                                    juego.setFechaLanzamiento(Date.valueOf(fechaLanzamiento));
-                                    cv.insertarJuego(juego);
-                                    Juego juegoInsertado = cv.buscarJuegoPorNombre(juego.getNombre());
-                                    va.mostrarMensaje("El juego insertado tiene el ID ➤ " + juegoInsertado.getIdJuego() + ".");
-                                    System.out.println("El juego insertado tiene el ID ➤ " + juegoInsertado.getIdJuego() + ".");
-                                }
-                                else
-                                    System.out.println("Error por cantidad de atributos de juegos.");
-                            }
-                            case "Eliminar" -> {
-
-                            }
-                            case "Actualizar" -> {
-
-                            }
-                            case "Consultar" -> {
-
-                            }
+                            case "Insertar" -> insertarJuego(nombre, empresa, listaTextFieldsDinamicos);
+                            case "Eliminar" -> borrarJuego(nombre, empresa, listaTextFieldsDinamicos);
+                            case "Actualizar" -> modificarJuego(nombre, empresa, listaTextFieldsDinamicos);
+                            case "Consultar" -> consultarJuego(nombre, listaTextFieldsDinamicos);
                         }
 
                     }
@@ -350,7 +356,129 @@ public class ControladorVAdmin {
         }
     }
 
-    public VentanaAdmin obtenerVentana(){
-        return va;
+    // Funciones
+
+    // Operaciones con juegos
+    public void insertarJuego(String nombre, String empresa, ArrayList<JTextField> listaTextFieldsDinamicos){
+        try {
+
+            // Con todos los datos rellenados.
+            if (!nombre.isEmpty() && !empresa.isEmpty() && !listaTextFieldsDinamicos.get(2).getText().isEmpty()) {
+                Juego juego = new Juego();
+                juego.setNombre(nombre);
+                juego.setEmpresa(empresa);
+                LocalDate fechaLanzamientoLD = LocalDate.parse(listaTextFieldsDinamicos.get(2).getText(), DateTimeFormatter.ofPattern("dd-MM-yy"));
+                Date fechaLanzamiento = Date.valueOf(fechaLanzamientoLD);
+                juego.setFechaLanzamiento(fechaLanzamiento);
+                cv.insertarJuego(juego);
+                Juego juegoInsertado = cv.buscarJuegoPorNombre(nombre);
+                va.mostrarMensaje("El juego insertado tiene el ID ➤ " + juegoInsertado.getIdJuego() + ".");
+                System.out.println("El juego insertado tiene el ID ➤ " + juegoInsertado.getIdJuego() + ".");
+                limpiarCasillasJuego(listaTextFieldsDinamicos);
+            }
+            else {
+                System.out.println("Por favor, rellene todas las casillas.");
+                va.mostrarMensaje("Por favor, rellene todas las casillas.");
+            }
+
+        }
+        catch (Exception ex){
+            System.out.println("Error en la inserción de un juego.\n" +ex.getMessage());
+            va.mostrarMensaje("Error en la inserción de un juego.\n" +ex.getMessage());
+        }
     }
+    public void borrarJuego(String nombre, String empresa, ArrayList<JTextField> listaTextFieldsDinamicos){
+        try {
+
+            // Con solo la casilla del nombre rellenada.
+            if (!nombre.isEmpty() && empresa.isEmpty() && listaTextFieldsDinamicos.get(2).getText().isEmpty()){
+                Juego juegoInsertado = cv.buscarJuegoPorNombre(nombre);
+                cv.borrarJuego(juegoInsertado.getIdJuego());
+                va.mostrarMensaje("Juego eliminado correctamente.");
+                System.out.println("Juego eliminado correctamente.");
+                limpiarCasillasJuego(listaTextFieldsDinamicos);
+            }
+            else
+                va.mostrarMensaje("Por favor, rellene únicamente la casilla correspondiente al nombre.");
+
+        }
+        catch (Exception ex){
+            System.out.println("Error en la eliminación de un juego.\n" +ex.getMessage());
+            va.mostrarMensaje("Error en la eliminación de un juego.\n" +ex.getMessage());
+        }
+    }
+    public void modificarJuego(String nombre, String empresa, ArrayList<JTextField> listaTextFieldsDinamicos){
+        try {
+
+            // Con la casilla del nombre rellenada, se clica en "Actualizar" y aparecen los datos
+            //  del objeto existente. Cuando se vuelva a clicar deben estar las casillas rellendas para modificar el objeto.
+            if (!nombre.isEmpty() && listaTextFieldsDinamicos.get(1).getText().isEmpty() &&
+                    listaTextFieldsDinamicos.get(2).getText().isEmpty()){
+                if (!datosRellenados){
+                    Juego juego = cv.buscarJuegoPorNombre(nombre);
+                    listaTextFieldsDinamicos.get(1).setText(juego.getEmpresa());
+                    LocalDate fechaLanzamientoLD = juego.getFechaLanzamiento().toLocalDate();
+                    String fechaS = fechaLanzamientoLD.format(DateTimeFormatter.ofPattern("dd-MM-yy"));
+                    listaTextFieldsDinamicos.get(2).setText(fechaS);
+                    datosRellenados = true;
+                }
+            } else if (!nombre.isEmpty() && !listaTextFieldsDinamicos.get(1).getText().isEmpty() &&
+                    !listaTextFieldsDinamicos.get(2).getText().isEmpty()) {
+                if (datosRellenados){
+                    Juego juego = new Juego();
+                    juego.setNombre(nombre);
+                    juego.setEmpresa(empresa);
+                    LocalDate fechaLanzamientoLD = LocalDate.parse(listaTextFieldsDinamicos.get(2).getText(), DateTimeFormatter.ofPattern("dd-MM-yy"));
+                    Date fechaLanzamiento = Date.valueOf(fechaLanzamientoLD);
+                    juego.setFechaLanzamiento(fechaLanzamiento);
+                    cv.modificarJuego(juego);
+                    va.mostrarMensaje("Juego modificado correctamente.");
+                    System.out.println("Juego modificado correctamente.");
+                    limpiarCasillasJuego(listaTextFieldsDinamicos);
+                    datosRellenados = false;
+                }
+                else
+                    va.mostrarMensaje("Por favor, rellene correctamente las casillas."); // TODO : Poner mejor el mensaje.
+            }
+            else
+                va.mostrarMensaje("Por favor, rellene correctamente las casillas necesarias."); // TODO : Poner mejor el mensaje.
+            // TODO : Poner más excepciones.
+
+        }
+        catch (Exception ex){
+            System.out.println("Error en la modificación de un juego.\n" +ex.getMessage());
+            va.mostrarMensaje("Error en la modificación de un juego.\n" +ex.getMessage());
+        }
+    }
+    public void consultarJuego(String nombre, ArrayList<JTextField> listaTextFieldsDinamicos){
+        try {
+
+            // Limpiar 2 casillas.
+            listaTextFieldsDinamicos.get(1).setText("");
+            listaTextFieldsDinamicos.get(2).setText("");
+            // Con la casilla del nombre rellenada, se clica en "Consultar" y aparecen los demás datos del objeto existente.
+            if (!nombre.isEmpty() && listaTextFieldsDinamicos.get(1).getText().isEmpty() &&
+                    listaTextFieldsDinamicos.get(2).getText().isEmpty()){
+                Juego juego = cv.buscarJuegoPorNombre(nombre);
+                listaTextFieldsDinamicos.get(1).setText(juego.getEmpresa());
+                LocalDate fechaLanzamientoLD = juego.getFechaLanzamiento().toLocalDate();
+                String fechaS = fechaLanzamientoLD.format(DateTimeFormatter.ofPattern("dd-MM-yy"));
+                listaTextFieldsDinamicos.get(2).setText(fechaS);
+            }
+            else
+                va.mostrarMensaje("Por favor, rellene únicamente la casilla correspondiente al nombre.");
+
+        }
+        catch (Exception ex){
+            System.out.println("Error en la consulta de un juego.\n" +ex.getMessage());
+            va.mostrarMensaje("Error en la consulta de un juego.\n" +ex.getMessage());
+        }
+    }
+
+    public void limpiarCasillasJuego(ArrayList<JTextField> listaTextFieldsDinamicos){
+        listaTextFieldsDinamicos.get(0).setText("");
+        listaTextFieldsDinamicos.get(1).setText("");
+        listaTextFieldsDinamicos.get(2).setText("");
+    }
+
 }
