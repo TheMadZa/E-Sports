@@ -5,7 +5,10 @@
     <constraints>
       <xy x="20" y="20" width="1475" height="864"/>
     </constraints>
-    <properties/>
+    <properties>
+      <background color="-10802056"/>
+      <foreground color="-10802056"/>
+    </properties>
     <border type="none"/>
     <children>
       <grid id="1843f" binding="panelUp" layout-manager="GridLayoutManager" row-count="1" column-count="9" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
