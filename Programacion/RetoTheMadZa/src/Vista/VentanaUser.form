@@ -92,7 +92,7 @@
           <grid id="1cc19" binding="PanelLogo" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
-              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="2" indent="19" use-parent-layout="false"/>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="2" indent="18" use-parent-layout="false"/>
             </constraints>
             <properties>
               <background color="-15527899"/>
@@ -219,7 +219,7 @@
                 <properties>
                   <font name="Inter Semi Bold" size="28" style="0"/>
                   <foreground color="-394241"/>
-                  <text value="Derrotas"/>
+                  <text value="Puntos"/>
                 </properties>
               </component>
               <component id="c595f" class="javax.swing.JLabel" binding="vEquipo1">
