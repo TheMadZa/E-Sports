@@ -14,20 +14,33 @@ import java.awt.image.BufferedImage;
 import java.net.URL;
 import java.util.List;
 
+/**
+ * La Controlador Clasificaciones
+ * La clase ControladorVCompeticiones maneja la lógica de la vista para la ventana de clasificación de competiciones.
+ *
+ * @author Zahir
+ */
 public class ControladorVCompeticiones {
     private VentanaClasificacion vc;
     private ControladorVista cv;
 
+    /**
+     * Constructor que inicializa el controlador con una instancia de ControladorVista.
+     *
+     * @param cv la instancia de ControladorVista.
+     */
     public ControladorVCompeticiones(ControladorVista cv) {
         this.cv = cv;
     }
 
+    /**
+     * Crea y muestra la ventana de clasificación, agregando los ActionListeners correspondientes.
+     *
+     * @param ventanaEliminar la ventana que será reemplazada por la nueva ventana de clasificación.
+     */
     public void crearMostrar(JFrame ventanaEliminar) {
-
         vc = new VentanaClasificacion(ventanaEliminar);
-
         llenarComboBox();
-
         vc.addBTiendaAL(new BTiendaAL());
         vc.addBInicioAL(new BInicioAL());
         vc.addBSalirAL(new BSalirAL());
@@ -38,15 +51,17 @@ public class ControladorVCompeticiones {
         vc.addMClasificacionAL(new MClasificacionAL());
         vc.addMEquiposAL(new MEquiposAL());
         vc.addCbCompeticionAL(new CbClasificacionAL());
-
     }
 
-    public void llenarComboBox(){
+    /**
+     * Llena el ComboBox con la lista de competiciones obtenidas desde el modelo.
+     */
+    public void llenarComboBox() {
         try {
             vc.getCbClasificacion().removeAllItems();
             List<Competicion> listaCompeticiones = cv.buscarTodasCompeticiones();
 
-            for (Competicion competicion : listaCompeticiones){
+            for (Competicion competicion : listaCompeticiones) {
                 vc.getCbClasificacion().addItem(competicion.getNombreCom());
             }
 
@@ -57,12 +72,14 @@ public class ControladorVCompeticiones {
             }
 
             vc.getCbClasificacion().setSelectedIndex(-1); // Deselect item initially
-
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,e.getMessage());
+            JOptionPane.showMessageDialog(null, e.getMessage());
         }
     }
 
+    /**
+     * Clase interna que maneja el evento de acción para el botón de tienda.
+     */
     public class BTiendaAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -70,21 +87,30 @@ public class ControladorVCompeticiones {
         }
     }
 
-    public class BInicioAL implements ActionListener{
+    /**
+     * Clase interna que maneja el evento de acción para el botón de inicio.
+     */
+    public class BInicioAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             cv.mostrarInicioSesion(vc);
         }
     }
 
-    public static class BSalirAL implements ActionListener{
+    /**
+     * Clase interna que maneja el evento de acción para el botón de salir.
+     */
+    public static class BSalirAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             System.exit(0);
         }
     }
 
-    public static class BFacebookAL implements ActionListener{
+    /**
+     * Clase interna que maneja el evento de acción para el botón de Facebook.
+     */
+    public static class BFacebookAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             String enlace = "https://www.facebook.com/?locale=es_ES";
@@ -95,8 +121,11 @@ public class ControladorVCompeticiones {
             }
         }
     }
-    public static class BInstagramAL implements ActionListener{
 
+    /**
+     * Clase interna que maneja el evento de acción para el botón de Instagram.
+     */
+    public static class BInstagramAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             String enlace = "https://www.instagram.com";
@@ -107,8 +136,11 @@ public class ControladorVCompeticiones {
             }
         }
     }
-    public static class BTwitterAL implements ActionListener{
 
+    /**
+     * Clase interna que maneja el evento de acción para el botón de Twitter.
+     */
+    public static class BTwitterAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             String enlace = "https://twitter.com/?logout=1715768138184";
@@ -120,29 +152,43 @@ public class ControladorVCompeticiones {
         }
     }
 
-    public class MJornadasAL implements ActionListener{
+    /**
+     * Clase interna que maneja el evento de acción para el menú de jornadas.
+     */
+    public class MJornadasAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             cv.mostrarJornadas(vc);
         }
     }
 
-    public class MClasificacionAL implements ActionListener{
+    /**
+     * Clase interna que maneja el evento de acción para el menú de clasificación.
+     */
+    public class MClasificacionAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             cv.mostrarClasificacion(vc);
         }
     }
 
-    public class MEquiposAL implements ActionListener{
+    /**
+     * Clase interna que maneja el evento de acción para el menú de equipos.
+     */
+    public class MEquiposAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             cv.mostrarEquipos(vc);
         }
     }
 
+    /**
+     * Rellena la tabla de equipos con los datos de la competición seleccionada.
+     *
+     * @param nombreSeleccionado el nombre de la competición seleccionada.
+     * @throws Exception si ocurre un error al obtener los datos.
+     */
     public void rellenarTablaEquiposCompeticion(String nombreSeleccionado) throws Exception {
-
         // Obtener un array multidimensional (5F·3C) con los datos de los equipos de la competición seleccionada.
         String[][] listaCompeticiones = cv.buscarEquiposPorNombreCom(nombreSeleccionado);
 
@@ -194,9 +240,6 @@ public class ControladorVCompeticiones {
         vc.getJLNombreCompeticion9().setText(String.valueOf(vc.getCbCompeticion().getSelectedItem()));
         vc.getJLNombreCompeticion10().setText(String.valueOf(vc.getCbCompeticion().getSelectedItem()));
 
-        //String Equipo1 = listaCompeticiones[0][0];
-        //cargarImagenEstablecerIcono("Equipo1", 55, 55, vi.getEquipo1());
-
         // Poner las imágenes de sus logos.
         setEquipoImagen(vc.getImgPrimer(), "Equipo" + listaCompeticiones[0][5]);
         setEquipoImagen(vc.getImgSegundo(), "Equipo" + listaCompeticiones[1][5]);
@@ -210,6 +253,12 @@ public class ControladorVCompeticiones {
         setEquipoImagen(vc.getImgDecimo(), "Equipo" + listaCompeticiones[9][5]);
     }
 
+    /**
+     * Establece la imagen de un equipo en un JLabel.
+     *
+     * @param label        el JLabel donde se establecerá la imagen.
+     * @param nombreImagen el nombre de la imagen a cargar.
+     */
     private void setEquipoImagen(JLabel label, String nombreImagen) {
         BufferedImage imagen = ControladorImagenes.obtenerImagen2(nombreImagen);
         if (imagen != null) {
@@ -221,19 +270,20 @@ public class ControladorVCompeticiones {
         }
     }
 
-    public class CbClasificacionAL implements ActionListener{
+    /**
+     * Clase interna que maneja el evento de acción para la selección de competición en el ComboBox.
+     */
+    public class CbClasificacionAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
                 String nombreSeleccionado = String.valueOf(vc.getCbClasificacion().getSelectedItem());
-                if (nombreSeleccionado != null && !nombreSeleccionado.isEmpty()){
+                if (nombreSeleccionado != null && !nombreSeleccionado.isEmpty()) {
                     rellenarTablaEquiposCompeticion(nombreSeleccionado);
                 }
-            }
-            catch (Exception ex) {
+            } catch (Exception ex) {
                 vc.mostrarMensaje(ex.getMessage());
             }
-
         }
     }
 }

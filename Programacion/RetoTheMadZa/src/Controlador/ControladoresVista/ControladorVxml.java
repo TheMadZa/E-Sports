@@ -1,6 +1,5 @@
 package Controlador.ControladoresVista;
 
-import Vista.VentanaClasificacion;
 import Vista.VentanaXML;
 
 import javax.swing.*;
@@ -10,18 +9,32 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Controlador XMLs
+ * ControladorVxml se encarga de manejar la lógica de la vista para la ventana de XML.
+ *
+ * @author Zahir
+ */
 public class ControladorVxml {
-    public VentanaXML vx;
+    private VentanaXML vx;
+    private ControladorVista cv;
 
-    public ControladorVista cv;
-
+    /**
+     * Constructor que inicializa el controlador con una instancia de ControladorVista.
+     *
+     * @param cv la instancia de ControladorVista.
+     */
     public ControladorVxml(ControladorVista cv) {
         this.cv = cv;
     }
+
+    /**
+     * Crea y muestra la ventana de XML, agregando los ActionListeners correspondientes.
+     *
+     * @param ventanaEliminar la ventana que será reemplazada por la nueva ventana de XML.
+     */
     public void crearMostrar(JFrame ventanaEliminar) {
-
         vx = new VentanaXML(ventanaEliminar);
-
         vx.addBTiendaAL(new BTiendaAL());
         vx.addBInicioAL(new BInicioAL());
         vx.addBSalirAL(new BSalirAL());
@@ -36,6 +49,9 @@ public class ControladorVxml {
         vx.addbtXSD(new btXSD());
     }
 
+    /**
+     * Clase interna que maneja el evento de acción para el botón de tienda.
+     */
     public class BTiendaAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -43,21 +59,30 @@ public class ControladorVxml {
         }
     }
 
-    public class BInicioAL implements ActionListener{
+    /**
+     * Clase interna que maneja el evento de acción para el botón de inicio.
+     */
+    public class BInicioAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             cv.mostrarInicioSesion(vx);
         }
     }
 
-    public static class BSalirAL implements ActionListener{
+    /**
+     * Clase interna que maneja el evento de acción para el botón de salir.
+     */
+    public static class BSalirAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             System.exit(0);
         }
     }
 
-    public static class BFacebookAL implements ActionListener{
+    /**
+     * Clase interna que maneja el evento de acción para el botón de Facebook.
+     */
+    public static class BFacebookAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             String enlace = "https://www.facebook.com/?locale=es_ES";
@@ -68,8 +93,11 @@ public class ControladorVxml {
             }
         }
     }
-    public static class BInstagramAL implements ActionListener{
 
+    /**
+     * Clase interna que maneja el evento de acción para el botón de Instagram.
+     */
+    public static class BInstagramAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             String enlace = "https://www.instagram.com";
@@ -80,8 +108,11 @@ public class ControladorVxml {
             }
         }
     }
-    public static class BTwitterAL implements ActionListener{
 
+    /**
+     * Clase interna que maneja el evento de acción para el botón de Twitter.
+     */
+    public static class BTwitterAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             String enlace = "https://twitter.com/?logout=1715768138184";
@@ -93,110 +124,106 @@ public class ControladorVxml {
         }
     }
 
-    public class MJornadasAL implements ActionListener{
+    /**
+     * Clase interna que maneja el evento de acción para el menú de jornadas.
+     */
+    public class MJornadasAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             cv.mostrarJornadas(vx);
         }
     }
 
-    public class MClasificacionAL implements ActionListener{
+    /**
+     * Clase interna que maneja el evento de acción para el menú de clasificación.
+     */
+    public class MClasificacionAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             cv.mostrarClasificacion(vx);
         }
     }
 
-    public class MEquiposAL implements ActionListener{
+    /**
+     * Clase interna que maneja el evento de acción para el menú de equipos.
+     */
+    public class MEquiposAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             cv.mostrarEquipos(vx);
         }
     }
 
+    /**
+     * Clase interna que maneja el evento de acción para la selección de XML en el ComboBox.
+     */
     public class CbXML implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             String selectedItem = String.valueOf(vx.getCbXMLSelec().getSelectedItem());
-                switch (selectedItem) {
-                    case "Clasificacion":
-                        try {
-                            String resultDTD = cv.obtenerXMLClasificacionDTD();
-                            String resultXSD = cv.obtenerXMLClasificacionXSD();
-                            vx.getTaXMLDTD().setText(resultDTD);
-                            vx.getTaXMLXSD().setText(resultXSD);
-                        } catch (Exception ex) {
-                            // Manejo más detallado de la excepción
-                            ex.printStackTrace();
-                            JOptionPane.showMessageDialog(null, "Error al obtener XML de Clasificación: " + ex.getMessage());
-                        }
-                        break;
-                    case "Jornadas":
-                        try {
-                            String resultDTD = cv.obtenerXMLJornadasDTD();
-                            String resultXSD = cv.obtenerXMLJornadasXSD();
-                            vx.getTaXMLDTD().setText(resultDTD);
-                            vx.getTaXMLXSD().setText(resultXSD);
-                        } catch (Exception ex) {
-                            // Manejo más detallado de la excepción
-                            ex.printStackTrace();
-                            JOptionPane.showMessageDialog(null, "Error al obtener XML de Clasificación: " + ex.getMessage());
-                        }
-                        break;
-                    case "UltimaJornada":
-                        try {
-                            String resultDTD = cv.obtenerXMLUltimaJornadaDTD();
-                            String resultXSD = cv.obtenerXMLUltimaJornadaXSD();
-                            vx.getTaXMLDTD().setText(resultDTD);
-                            vx.getTaXMLXSD().setText(resultXSD);
-                        } catch (Exception ex) {
-                            // Manejo más detallado de la excepción
-                            ex.printStackTrace();
-                            JOptionPane.showMessageDialog(null, "Error al obtener XML de Clasificación: " + ex.getMessage());
-                        }
-                        break;
-
-                }
-
+            switch (selectedItem) {
+                case "Clasificacion":
+                    try {
+                        String resultDTD = cv.obtenerXMLClasificacionDTD();
+                        String resultXSD = cv.obtenerXMLClasificacionXSD();
+                        vx.getTaXMLDTD().setText(resultDTD);
+                        vx.getTaXMLXSD().setText(resultXSD);
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
+                        JOptionPane.showMessageDialog(null, "Error al obtener XML de Clasificación: " + ex.getMessage());
+                    }
+                    break;
+                case "Jornadas":
+                    try {
+                        String resultDTD = cv.obtenerXMLJornadasDTD();
+                        String resultXSD = cv.obtenerXMLJornadasXSD();
+                        vx.getTaXMLDTD().setText(resultDTD);
+                        vx.getTaXMLXSD().setText(resultXSD);
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
+                        JOptionPane.showMessageDialog(null, "Error al obtener XML de Clasificación: " + ex.getMessage());
+                    }
+                    break;
+                case "UltimaJornada":
+                    try {
+                        String resultDTD = cv.obtenerXMLUltimaJornadaDTD();
+                        String resultXSD = cv.obtenerXMLUltimaJornadaXSD();
+                        vx.getTaXMLDTD().setText(resultDTD);
+                        vx.getTaXMLXSD().setText(resultXSD);
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
+                        JOptionPane.showMessageDialog(null, "Error al obtener XML de Clasificación: " + ex.getMessage());
+                    }
+                    break;
+            }
         }
     }
+
+    /**
+     * Clase interna que maneja el evento de acción para copiar el contenido DTD al portapapeles.
+     */
     public class btDTD implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            // Obtener el texto del JTextArea
             String text = vx.getTaXMLDTD().getText();
-
-            // Crear un StringSelection con el texto
             StringSelection stringSelection = new StringSelection(text);
-
-            // Obtener el portapapeles del sistema
             Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
-
-            // Establecer el contenido del portapapeles
             clipboard.setContents(stringSelection, null);
-
-            // Opcional: mostrar un mensaje de confirmación
             JOptionPane.showMessageDialog(null, "Texto copiado al portapapeles.");
         }
     }
+
+    /**
+     * Clase interna que maneja el evento de acción para copiar el contenido XSD al portapapeles.
+     */
     public class btXSD implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            // Obtener el texto del JTextArea
             String text = vx.getTaXMLXSD().getText();
-
-            // Crear un StringSelection con el texto
             StringSelection stringSelection = new StringSelection(text);
-
-            // Obtener el portapapeles del sistema
             Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
-
-            // Establecer el contenido del portapapeles
             clipboard.setContents(stringSelection, null);
-
-            // Opcional: mostrar un mensaje de confirmación
             JOptionPane.showMessageDialog(null, "Texto copiado al portapapeles.");
         }
     }
-
 }
