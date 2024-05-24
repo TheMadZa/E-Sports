@@ -7,7 +7,7 @@ AS
         FROM EQUIPOS_COMPETICIONES
         WHERE ID_COMPETICION = p_cod_compe;
 
-    v_num_jornadas CONSTANT NUMBER := 10;  -- Número fijo de jornadas por competición
+    v_num_jornadas CONSTANT NUMBER := 10;  -- NÃºmero fijo de jornadas por competiciÃ³n
     v_jornada_date DATE := SYSDATE;
     v_cod_jornada NUMBER;
     TYPE equipo_tab IS TABLE OF NUMBER;
@@ -17,17 +17,17 @@ AS
     v_last_enfrentamiento_id NUMBER;
 
 BEGIN
-    -- Obtener el último ID de jornada y enfrentamiento
+    -- Obtener el Ãºltimo ID de jornada y enfrentamiento
     SELECT NVL(MAX(ID_JORNADA), 0) INTO v_last_jornada_id FROM JORNADAS;
     SELECT NVL(MAX(ID_ENFRENTAMIENTO), 0) INTO v_last_enfrentamiento_id FROM ENFRENTAMIENTOS;
 
-    -- Obtener los equipos en la competición
+    -- Obtener los equipos en la competiciÃ³n
     OPEN equipos_cur;
     FETCH equipos_cur BULK COLLECT INTO equipos;
     CLOSE equipos_cur;
 
     IF equipos.COUNT < 8 THEN
-        RAISE_APPLICATION_ERROR(-20001, 'El número de equipos debe ser al menos 8 para garantizar 4 enfrentamientos por jornada.');
+        RAISE_APPLICATION_ERROR(-20001, 'El nÃºmero de equipos debe ser al menos 8 para garantizar 4 enfrentamientos por jornada.');
     END IF;
 
     FOR i IN 1..v_num_jornadas LOOP
@@ -61,7 +61,7 @@ BEGIN
         v_jornada_date := v_jornada_date + 7;
     END LOOP;
 END;
-
+/
 
 CREATE OR REPLACE TRIGGER TRG_GENERATE_CALENDAR
 AFTER UPDATE OF etapa ON competiciones
