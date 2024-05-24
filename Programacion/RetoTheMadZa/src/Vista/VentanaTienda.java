@@ -9,7 +9,10 @@ import java.awt.event.ActionListener;
 
 /**
  * Ventana Tienda.
- * @author Ibai
+ * Esta clase representa la interfaz gráfica de usuario de la tienda de la aplicación.
+ * Permite a los usuarios explorar productos disponibles y realizar compras.
+ * @author Ibai, Lorena
+ * @version 1.0
  */
 public class VentanaTienda extends JFrame{
     private JPanel pPrincipal;
@@ -58,6 +61,11 @@ public class VentanaTienda extends JFrame{
     private JPanel panelTienda1;
     private JMenuItem mEquipos;
 
+    /**
+     * Constructor de la clase VentanaTienda.
+     * Crea una nueva ventana de la tienda y carga los componentes de la interfaz.
+     * @param ventanaEliminar La ventana anterior que se eliminará al abrir la tienda.
+     */
     public VentanaTienda(JFrame ventanaEliminar) {
 
         // Cargar las imágenes con un tamaño específico.
@@ -117,6 +125,11 @@ public class VentanaTienda extends JFrame{
         ventanaEliminar.dispose();
     }
 
+    /**
+     * Método principal de la clase para iniciar la aplicación.
+     * Crea una nueva instancia de VentanaTienda y la muestra en la interfaz gráfica.
+     * @param args Los argumentos de la línea de comandos (no utilizados).
+     */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             VentanaTienda ventana = new VentanaTienda(null);
@@ -124,6 +137,11 @@ public class VentanaTienda extends JFrame{
     }
 
     // Funciones
+
+    /**
+     * Muestra un mensaje de confirmación de compra personalizado en la interfaz.
+     * Este mensaje indica que un artículo ha sido añadido al carrito de compras.
+     */
     public void mostrarMensajeBuy() {
 
         Font font = new Font("Arial", Font.BOLD, 20);
@@ -171,6 +189,14 @@ public class VentanaTienda extends JFrame{
 
     }
 
+    /**
+     * Carga una imagen y la establece como icono en un componente JLabel con el tamaño especificado.
+     * Si la imagen no se encuentra, imprime un mensaje de error en la consola.
+     * @param nombreImagen El nombre de la imagen que se va a cargar.
+     * @param ancho El ancho deseado para la imagen.
+     * @param alto El alto deseado para la imagen.
+     * @param label El JLabel en el que se establecerá la imagen como icono.
+     */
     private void cargarImagenEstablecerIcono(String nombreImagen, int ancho, int alto, JLabel label) {
         ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
         if (icono != null) {
@@ -180,6 +206,14 @@ public class VentanaTienda extends JFrame{
         }
     }
 
+    /**
+     * Carga una imagen y la establece como icono en un componente JButton con el tamaño especificado.
+     * Si la imagen no se encuentra, imprime un mensaje de error en la consola.
+     * @param nombreImagen El nombre de la imagen que se va a cargar.
+     * @param ancho El ancho deseado para la imagen.
+     * @param alto El alto deseado para la imagen.
+     * @param label El JButton en el que se establecerá la imagen como icono.
+     */
     private void cargarImagenEstablecerIconoBoton(String nombreImagen, int ancho, int alto, JButton label) {
         ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
         if (icono != null) {
@@ -189,6 +223,12 @@ public class VentanaTienda extends JFrame{
         }
     }
 
+    /**
+     * Carga una imagen y la establece como icono en un componente JButton con un tamaño predeterminado de 40x40 píxeles.
+     * Si la imagen no se encuentra, imprime un mensaje de error en la consola.
+     * @param nombreImagen El nombre de la imagen que se va a cargar.
+     * @param button El JButton en el que se establecerá la imagen como icono.
+     */
     private void cargarImagenEstablecerIcono(String nombreImagen, JButton button) {
         ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, 40, 40);
         if (icono != null) {

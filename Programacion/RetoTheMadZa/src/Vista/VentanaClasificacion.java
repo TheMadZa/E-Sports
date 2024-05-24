@@ -7,9 +7,13 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 /**
- * Ventana de Clasificacion en la que se muestra una tabala con toda la clasificacion de los equipos.
- * @author Zahir
- * @author Ibai
+ * Ventana de Clasificacion en la que se muestra una tabla con toda la clasificacion de los equipos.
+ * Esta clase representa la ventana de clasificación en la que se muestra una tabla con la clasificación
+ * de los equipos. Contiene elementos como botones, etiquetas y menús para interactuar con la ventana.
+ * También maneja la carga de imágenes y la configuración de íconos para los componentes visuales.
+ *
+ * @author Zahir, Ibai, Lorena
+ * @version 1.0
  */
 
 public class VentanaClasificacion extends JFrame{
@@ -86,6 +90,12 @@ public class VentanaClasificacion extends JFrame{
     private JPanel pPrincipal;
     private JMenuItem mEquipos;
 
+    /**
+     * Constructor de la clase VentanaClasificacion.
+     * Crea una nueva instancia de la ventana de clasificación y configura sus propiedades básicas.
+     * También carga las imágenes y establece los iconos para los botones y etiquetas.
+     * @param ventanaEliminar La ventana anterior que se debe eliminar al abrir esta ventana.
+     */
     public VentanaClasificacion(JFrame ventanaEliminar) {
 
         cargarImagenEstablecerIconoBoton("TheMadZaLogoSimple", 250, 250, ftThemadza);
@@ -118,6 +128,10 @@ public class VentanaClasificacion extends JFrame{
         ventanaEliminar.dispose();
     }
 
+    /**
+     * Método principal para ejecutar la ventana de clasificación.
+     * @param args Los argumentos de la línea de comandos (no se utilizan).
+     */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             VentanaClasificacion ventana = new VentanaClasificacion(null);
@@ -125,6 +139,14 @@ public class VentanaClasificacion extends JFrame{
     }
 
     // Funciones
+
+    /**
+     * Carga una imagen y establece un ícono para un JLabel.
+     * @param nombreImagen El nombre de la imagen a cargar.
+     * @param ancho El ancho del ícono.
+     * @param alto El alto del ícono.
+     * @param label El JLabel al que se le establecerá el ícono.
+     */
     private void cargarImagenEstablecerIcono(String nombreImagen, int ancho, int alto, JLabel label) {
         ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
         if (icono != null) {
@@ -133,6 +155,12 @@ public class VentanaClasificacion extends JFrame{
             System.err.println("La imagen " + nombreImagen + " no se encontró.");
         }
     }
+
+    /**
+     * Carga una imagen y establece un ícono para un JButton.
+     * @param nombreImagen El nombre de la imagen a cargar.
+     * @param button El JButton al que se le establecerá el ícono.
+     */
     private void cargarImagenEstablecerIcono(String nombreImagen, JButton button) {
         ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, 40, 40);
         if (icono != null) {
@@ -612,12 +640,21 @@ public class VentanaClasificacion extends JFrame{
         cbCompeticion.addActionListener(al);
     }
 
-
-
+    /**
+     * Muestra un mensaje en un cuadro de diálogo.
+     * @param mensaje El mensaje a mostrar.
+     */
     public void mostrarMensaje(String mensaje){
         JOptionPane.showMessageDialog(null,mensaje);
     }
 
+    /**
+     * Carga una imagen y establece un ícono para un JButton.
+     * @param nombreImagen El nombre de la imagen a cargar.
+     * @param ancho El ancho del ícono.
+     * @param alto El alto del ícono.
+     * @param label El JButton al que se le establecerá el ícono.
+     */
     private void cargarImagenEstablecerIconoBoton(String nombreImagen, int ancho, int alto, JButton label) {
         ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
         if (icono != null) {

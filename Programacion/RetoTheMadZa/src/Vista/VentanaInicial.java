@@ -8,7 +8,13 @@ import Controlador.ControladoresVista.ControladorImagenes;
 
 /**
  * Ventana Inicial.
- * @author Ibai
+ * Esta clase representa la ventana inicial de la aplicación.
+ * Muestra información sobre la compañía TheMadZa y sus actividades.
+ * Contiene elementos como etiquetas, botones, menús desplegables y texto desplazable.
+ * Además, carga imágenes y establece iconos para los componentes visuales.
+ *
+ * @author Ibai, Lorena, Zahir, Julen
+ * @version 1.0
  */
 
 public class VentanaInicial extends JFrame {
@@ -61,6 +67,11 @@ public class VentanaInicial extends JFrame {
             " TheMadZa GameCon para mantener a la comunidad activa y comprometida. ";
     private int currentIndex = 0;
 
+    /**
+     * Constructor de la clase VentanaInicial.
+     * Crea una nueva instancia de la ventana inicial y configura sus propiedades básicas.
+     * Además, carga imágenes y establece iconos para los componentes visuales.
+     */
     public VentanaInicial() {
         mostrarImagenesFugaces();
 
@@ -174,6 +185,10 @@ public class VentanaInicial extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Método para iniciar el desplazamiento del texto en la ventana.
+     * Este método utiliza un temporizador para desplazar el texto de manera horizontal.
+     */
     private void iniciarDesplazamientoTexto() {
         Timer timer = new Timer(80, e -> {
             String displayedText = text.substring(currentIndex) + text.substring(0, currentIndex);
@@ -187,6 +202,11 @@ public class VentanaInicial extends JFrame {
     }
 
     // Función para mostrar las imágenes transitorias.
+
+    /**
+     * Función para mostrar imágenes fugaces.
+     * Esta función utiliza un temporizador para cambiar la imagen después de unos segundos.
+     */
     public void mostrarImagenesFugaces() {
         // Crear un temporizador que cambie la imagen después de unos 4 segundos.
         Timer timer = new Timer(3000, e -> {
@@ -203,6 +223,13 @@ public class VentanaInicial extends JFrame {
         // Comenzar el temporizador
         timer.start();
     }
+
+    /**
+     * Método principal para iniciar la aplicación.
+     * Este método crea una instancia de la clase VentanaInicial y la muestra en el hilo de eventos de Swing.
+     *
+     * @param args Los argumentos de la línea de comandos (no se utilizan en este método).
+     */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             VentanaInicial ventana = new VentanaInicial();
@@ -367,11 +394,26 @@ public class VentanaInicial extends JFrame {
     }
 
     // Funciones
+
+    /**
+     * Muestra un mensaje en un cuadro de diálogo.
+     *
+     * @param mensaje El mensaje que se mostrará en el cuadro de diálogo.
+     */
     public void mostrarMensaje(String mensaje){
         JOptionPane.showMessageDialog(null,mensaje);
     }
 
     // Método auxiliar para cargar imágenes y establecer íconos (una función es para los JLabel y la otra para JButton)
+
+    /**
+     * Carga una imagen y la establece como ícono en un JLabel.
+     *
+     * @param nombreImagen El nombre de la imagen que se cargará.
+     * @param ancho El ancho deseado para la imagen.
+     * @param alto El alto deseado para la imagen.
+     * @param label El JLabel donde se establecerá el ícono.
+     */
     private void cargarImagenEstablecerIcono(String nombreImagen, int ancho, int alto, JLabel label) {
         ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
         if (icono != null) {
@@ -380,6 +422,13 @@ public class VentanaInicial extends JFrame {
             System.err.println("La imagen " + nombreImagen + " no se encontró.");
         }
     }
+
+    /**
+     * Carga una imagen y la establece como ícono en un JButton.
+     *
+     * @param nombreImagen El nombre de la imagen que se cargará.
+     * @param button El JButton donde se establecerá el ícono.
+     */
     private void cargarImagenEstablecerIcono(String nombreImagen, JButton button) {
         ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, 40, 40);
         if (icono != null) {

@@ -7,8 +7,10 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 /**
- * Ventana Jornadas.
- * @author Ibai
+ * Esta clase representa la ventana de Jornadas.
+ *
+ * @author Ibai, Lorena
+ * @version 1.0
  */
 public class VentanaJornadas extends JFrame{
     private JPanel panelUp;
@@ -57,6 +59,11 @@ public class VentanaJornadas extends JFrame{
     private String Equipo1Partido4;
     private String Equipo2Partido4;
 
+    /**
+     * Constructor de la clase VentanaJornadas.
+     *
+     * @param ventanaEliminar La ventana que se eliminará cuando se abra esta ventana.
+     */
     public VentanaJornadas(JFrame ventanaEliminar) {
 
         cargarImagenEstablecerIconoBoton("TheMadZaLogoSimple", 250, 250, ftThemadza);
@@ -122,6 +129,11 @@ public class VentanaJornadas extends JFrame{
         ventanaEliminar.dispose();
     }
 
+    /**
+     * Método principal para ejecutar la ventana de Jornadas.
+     *
+     * @param args Los argumentos de la línea de comandos (no utilizados).
+     */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             VentanaJornadas ventana = new VentanaJornadas(null);
@@ -159,19 +171,30 @@ public class VentanaJornadas extends JFrame{
     public void addCbCompeticionAL(ActionListener al) {
         cbCompeticion.addActionListener(al);
     }
-
     public JComboBox<String> getCbCompeticion() {
         return cbCompeticion;
     }
-
-    public void mostrarMensaje(String mensaje){
-        JOptionPane.showMessageDialog(null,mensaje);
-    }
-
     public void setCbCompeticion(JComboBox<String> cbCompeticion) {
         this.cbCompeticion = cbCompeticion;
     }
 
+    /**
+     * Muestra un mensaje en una ventana emergente.
+     *
+     * @param mensaje El mensaje que se mostrará.
+     */
+    public void mostrarMensaje(String mensaje){
+        JOptionPane.showMessageDialog(null,mensaje);
+    }
+
+    /**
+     * Carga una imagen desde un archivo y establece esa imagen como icono en un JLabel,
+     * dimensionándola al ancho y alto proporcionados.
+     * @param nombreImagen El nombre del archivo de la imagen.
+     * @param ancho El ancho deseado para la imagen.
+     * @param alto El alto deseado para la imagen.
+     * @param label El JLabel en el que se establecerá la imagen.
+     */
     private void cargarImagenEstablecerIcono(String nombreImagen, int ancho, int alto, JLabel label) {
         ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
         if (icono != null) {
@@ -180,6 +203,13 @@ public class VentanaJornadas extends JFrame{
             System.err.println("La imagen " + nombreImagen + " no se encontró.");
         }
     }
+
+    /**
+     * Carga una imagen desde un archivo y establece esa imagen como icono en un JButton,
+     * dimensionándola a 40x40 píxeles.
+     * @param nombreImagen El nombre del archivo de la imagen.
+     * @param button El JButton en el que se establecerá la imagen.
+     */
     private void cargarImagenEstablecerIcono(String nombreImagen, JButton button) {
         ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, 40, 40);
         if (icono != null) {
@@ -189,6 +219,14 @@ public class VentanaJornadas extends JFrame{
         }
     }
 
+    /**
+     * Carga una imagen desde un archivo y establece esa imagen como icono en un JButton,
+     * dimensionándola al ancho y alto proporcionados.
+     * @param nombreImagen El nombre del archivo de la imagen.
+     * @param ancho El ancho deseado para la imagen.
+     * @param alto El alto deseado para la imagen.
+     * @param label El JButton en el que se establecerá la imagen.
+     */
     private void cargarImagenEstablecerIconoBoton(String nombreImagen, int ancho, int alto, JButton label) {
         ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
         if (icono != null) {

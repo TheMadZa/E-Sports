@@ -234,6 +234,10 @@ public class VentanaAdmin extends JFrame {
         JOptionPane.showMessageDialog(null,mensaje);
     }
 
+    /**
+     * Muestra los datos relacionados con los equipos en el panel de datos.
+     * Además, permite al usuario seleccionar si desea registrar el equipo en una competición.
+     */
     public void mostrarDatosEquipos(){
 
         vaciarListaTextFields();
@@ -296,6 +300,10 @@ public class VentanaAdmin extends JFrame {
 
     }
 
+    /**
+     * Muestra los datos relacionados con los jugadores en el panel de datos.
+     * Los datos incluyen nombre, apodo, nacionalidad, rol, fecha de nacimiento, sueldo y ID del equipo.
+     */
     public void mostrarDatosJugadores(){
         vaciarListaTextFields();
         agregarElemento("Nombre:", new JTextField(), gbc);
@@ -307,6 +315,10 @@ public class VentanaAdmin extends JFrame {
         agregarElemento("ID de su equipo:", new JTextField(), gbc);
     }
 
+    /**
+     * Muestra los datos relacionados con el personal del equipo en el panel de datos.
+     * Los datos incluyen puesto, nombre, fecha de nacimiento, sueldo y ID del equipo.
+     */
     public void mostrarDatosStaff(){
         vaciarListaTextFields();
         agregarElemento("Puesto:", new JTextField(), gbc);
@@ -316,6 +328,10 @@ public class VentanaAdmin extends JFrame {
         agregarElemento("ID de su equipo:", new JTextField(), gbc);
     }
 
+    /**
+     * Muestra los datos relacionados con los patrocinadores en el panel de datos.
+     * Los datos incluyen nombre y ID del equipo.
+     */
     public void mostrarDatosPatrocinadores(){
         vaciarListaTextFields();
         agregarElemento("Nombre:", new JTextField(), gbc);
@@ -323,6 +339,10 @@ public class VentanaAdmin extends JFrame {
         // TODO : Puede patrocinar más de un equipo. Así que puede que solo habría que añadirlo a PATROCINADORES_EQUIPOS (o sea que no hay que insertar un nuevo patrocinador, ya que ese ya existe).
     }
 
+    /**
+     * Muestra los datos relacionados con los juegos en el panel de datos.
+     * Los datos incluyen nombre, empresa y fecha de lanzamiento.
+     */
     public void mostrarDatosJuegos(){
         vaciarListaTextFields();
         agregarElemento("Nombre:", new JTextField(), gbc);
@@ -330,6 +350,11 @@ public class VentanaAdmin extends JFrame {
         agregarElemento("Fecha de lanzamiento:", new JTextField(), gbc);
     }
 
+    /**
+     * Muestra los datos relacionados con las competiciones en el panel de datos.
+     * Los datos incluyen nombre, fecha de inicio, fecha de fin, estado de la etapa, ID del juego
+     * y ID del equipo ganador (si lo hay).
+     */
     public void mostrarDatosCompeticiones(){
         vaciarListaTextFields();
         agregarElemento("Nombre:", new JTextField(), gbc);
@@ -340,6 +365,10 @@ public class VentanaAdmin extends JFrame {
         agregarElemento("ID del equipo ganador:", new JTextField(), gbc); // TODO : Puede ser null.
     }
 
+    /**
+     * Muestra los datos relacionados con los enfrentamientos en el panel de datos.
+     * Los datos incluyen hora, resultado de los equipos, ID de los equipos y ID de la jornada.
+     */
     public void mostrarDatosEnfrentamientos(){
         vaciarListaTextFields();
         agregarElemento("Hora:", new JTextField(), gbc);
@@ -350,6 +379,10 @@ public class VentanaAdmin extends JFrame {
         agregarElemento("ID de la jornada:", new JTextField(), gbc);
     }
 
+    /**
+     * Muestra los datos relacionados con las jornadas en el panel de datos.
+     * Los datos incluyen número de jornada, fecha y ID de la competición.
+     */
     public void mostrarDatosJornadas(){
         vaciarListaTextFields();
         agregarElemento("Número de jornada:", new JTextField(), gbc);
@@ -357,6 +390,10 @@ public class VentanaAdmin extends JFrame {
         agregarElemento("ID de la competición:", new JTextField(), gbc);
     }
 
+    /**
+     * Vacía la lista de JTextField y el panel de datos.
+     * Este método se utiliza para limpiar los campos de entrada de datos.
+     */
     public void vaciarListaTextFields(){
         // Eliminar todos los elementos de la lista en donde se guardan los JTextField.
         listaTextFieldsDinamicos.clear();
@@ -366,6 +403,15 @@ public class VentanaAdmin extends JFrame {
     }
 
     // Función para cargar imágenes y establecer íconos (una función es para los JLabel y la otra para los JButton)
+
+    /**
+     * Carga una imagen y la establece como ícono en un JLabel con el tamaño especificado.
+     * Si la imagen no se encuentra, muestra un mensaje de error en la consola.
+     * @param nombreImagen El nombre de la imagen a cargar.
+     * @param ancho El ancho deseado para la imagen.
+     * @param alto El alto deseado para la imagen.
+     * @param label El JLabel donde se establecerá el ícono.
+     */
     private void cargarImagenEstablecerIcono(String nombreImagen, int ancho, int alto, JLabel label) {
         ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
         if (icono != null) {
@@ -374,6 +420,13 @@ public class VentanaAdmin extends JFrame {
             System.err.println("La imagen " + nombreImagen + " no se encontró.");
         }
     }
+
+    /**
+     * Carga una imagen y la establece como ícono en un JButton con un tamaño predeterminado de 40x40 píxeles.
+     * Si la imagen no se encuentra, muestra un mensaje de error en la consola.
+     * @param nombreImagen El nombre de la imagen a cargar.
+     * @param button El JButton donde se establecerá el ícono.
+     */
     private void cargarImagenEstablecerIcono(String nombreImagen, JButton button) {
         ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, 40, 40);
         if (icono != null) {
@@ -383,6 +436,14 @@ public class VentanaAdmin extends JFrame {
         }
     }
 
+    /**
+     * Agrega un elemento al panel de datos, que consiste en un JLabel y un JTextField con el texto y tamaño especificados.
+     * Los elementos se colocan en la posición especificada por el GridBagConstraints.
+     * Además, los JTextField se agregan a una lista para facilitar su acceso posteriormente desde el controlador.
+     * @param labelText El texto del JLabel.
+     * @param textField El JTextField.
+     * @param gbc El GridBagConstraints que especifica la posición del elemento en el panel de datos.
+     */
     private void agregarElemento(String labelText, JTextField textField, GridBagConstraints gbc) {
         // Configurar JLabel.
         JLabel label = new JLabel(labelText);

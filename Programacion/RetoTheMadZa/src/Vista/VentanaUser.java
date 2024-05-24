@@ -9,7 +9,12 @@ import java.awt.event.ActionListener;
 
 /**
  * Ventana Inicial 2.
- * @author Ibai
+ * Esta clase representa la ventana inicial para los usuarios.
+ * Proporciona funcionalidades para cargar imágenes, establecerlas como iconos en componentes JLabel y JButton,
+ * mostrar mensajes emergentes y configurar listeners para los elementos de la interfaz.
+ * Además, contiene métodos para iniciar el desplazamiento de texto y mostrar imágenes fugaces.
+ * @author Ibai, Lorena
+ * @version 1.0
  */
 public class VentanaUser extends JFrame {
     private JPanel panelUp;
@@ -60,6 +65,11 @@ public class VentanaUser extends JFrame {
             " TheMadZa GameCon para mantener a la comunidad activa y comprometida. ";
     private int currentIndex = 0;
 
+    /**
+     * Constructor de la clase VentanaUser.
+     * Crea una nueva instancia de la ventana de usuario normal.
+     * @param vis La ventana de inicio de sesión que se desea cerrar al mostrar esta ventana.
+     */
     public VentanaUser(VentanaInicioSesion vis) {
         mostrarImagenesFugaces();
 
@@ -95,6 +105,10 @@ public class VentanaUser extends JFrame {
         vis.dispose();
     }
 
+    /**
+     * Inicia el desplazamiento horizontal del texto en la ventana.
+     * Este método crea un temporizador que cambia el texto de manera cíclica para simular un efecto de desplazamiento.
+     */
     private void iniciarDesplazamientoTexto() {
         Timer timer = new Timer(80, e -> {
             String displayedText = text.substring(currentIndex) + text.substring(0, currentIndex);
@@ -108,6 +122,11 @@ public class VentanaUser extends JFrame {
     }
 
     // Función para mostrar las imágenes transitorias.
+
+    /**
+     * Muestra imágenes fugaces en la ventana.
+     * Este método cambia la imagen mostrada en intervalos regulares para simular un efecto de diapositivas.
+     */
     public void mostrarImagenesFugaces() {
         // Crear un temporizador que cambie la imagen después de unos 4 segundos.
         Timer timer = new Timer(3000, e -> {
@@ -125,6 +144,13 @@ public class VentanaUser extends JFrame {
         timer.start();
     }
 
+    /**
+     * Método principal de la clase VentanaUser.
+     * Este método es el punto de entrada principal para la aplicación.
+     * Inicia la interfaz de usuario en un hilo de despacho de eventos de Swing para garantizar la seguridad de la interfaz.
+     * Crea una instancia de la ventana de usuario normal y la muestra.
+     * @param args Los argumentos de la línea de comandos (no se utilizan en esta aplicación).
+     */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             VentanaUser ventana = new VentanaUser(null);
@@ -289,10 +315,23 @@ public class VentanaUser extends JFrame {
     }
 
     // Funciones
+
+    /**
+     * Muestra un mensaje emergente con el mensaje especificado.
+     * @param mensaje El mensaje que se desea mostrar en el mensaje emergente.
+     */
     public void mostrarMensaje(String mensaje){
         JOptionPane.showMessageDialog(null,mensaje);
     }
 
+    /**
+     * Carga una imagen y la establece como icono en un componente JLabel con el tamaño especificado.
+     * Si la imagen no se encuentra, imprime un mensaje de error en la consola.
+     * @param nombreImagen El nombre de la imagen que se va a cargar.
+     * @param ancho El ancho deseado para la imagen.
+     * @param alto El alto deseado para la imagen.
+     * @param label El JLabel en el que se establecerá la imagen como icono.
+     */
     private void cargarImagenEstablecerIcono(String nombreImagen, int ancho, int alto, JLabel label) {
         ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
         if (icono != null) {
@@ -301,6 +340,13 @@ public class VentanaUser extends JFrame {
             System.err.println("La imagen " + nombreImagen + " no se encontró.");
         }
     }
+
+    /**
+     * Carga una imagen y la establece como icono en un componente JButton con un tamaño predeterminado de 40x40 píxeles.
+     * Si la imagen no se encuentra, imprime un mensaje de error en la consola.
+     * @param nombreImagen El nombre de la imagen que se va a cargar.
+     * @param button El JButton en el que se establecerá la imagen como icono.
+     */
     private void cargarImagenEstablecerIcono(String nombreImagen, JButton button) {
         ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, 40, 40);
         if (icono != null) {
