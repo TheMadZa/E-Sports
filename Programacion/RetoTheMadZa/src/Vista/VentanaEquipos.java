@@ -45,8 +45,8 @@ public class VentanaEquipos extends JFrame {
         cargarImagenEstablecerIcono("LogoBlanco", 100, 100, logoBlanco);
         cargarImagenEstablecerIcono("Equipo1", 400, 400, lImagen);
 
-        cargarImagenEstablecerIcono("FlechaIzq", bIzquierda);
-        cargarImagenEstablecerIcono("flechaDrch", bDerecha);
+        cargarImagenEstablecerIconoBoton("FlechaIzq", 100,100, bIzquierda);
+        cargarImagenEstablecerIconoBoton("flechaDrch",100,100, bDerecha);
 
         // Configurar la ventana
         setContentPane(pPrincipal);
@@ -58,6 +58,7 @@ public class VentanaEquipos extends JFrame {
 
         bIzquierda.setBorder(BorderFactory.createEmptyBorder());
         bDerecha.setBorder(BorderFactory.createEmptyBorder());
+        ftThemadza.setBorder(BorderFactory.createEmptyBorder());
 
         JComponent[] componentesConBorde = {mPrincipal, bTienda, bInicio, bSalir, bFacebook,
                 bTwitter, bInstagram};

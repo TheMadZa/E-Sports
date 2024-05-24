@@ -71,6 +71,7 @@ public class ControladorImagenes {
         cargarImagenLocal("Buy", "/Vista/Imagenes/Tienda/buy.png");
 
         cargarImagenLocal("LogoColor", "/Vista/Imagenes/logos/TheMadZaLogoSoloNegro.png");
+        cargarImagenLocal("TheMadZaLogoColor", "/Vista/Imagenes/logos/TheMadZaLogoColor.png");
 
         //Equipos
         cargarEquiposDesdeBD();
