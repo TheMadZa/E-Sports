@@ -12,8 +12,13 @@ import java.io.IOException;
 import java.net.URL;
 
 /**
- * Ventana de inicio de sesion.
- * @author Lorena
+ * Ventana de inicio de sesión.
+ * Esta ventana proporciona una interfaz para que los usuarios inicien sesión en el sistema.
+ * También permite la visualización de la imagen de logo de la aplicación.
+ * La ventana incluye campos para el nombre de usuario, contraseña y botones para iniciar sesión y registrarse.
+ *
+ * @author Lorena, Ibai
+ * @version 1.0
  */
 public class VentanaInicioSesion extends JFrame {
 
@@ -25,6 +30,12 @@ public class VentanaInicioSesion extends JFrame {
     private JPanel pDatos;
     private JLabel tfImagenLogo;
 
+    /**
+     * Constructor de la clase VentanaInicioSesion.
+     * Crea una nueva instancia de la ventana de inicio de sesión y la muestra en la pantalla.
+     *
+     * @param ventanaEliminar La ventana que se eliminará después de que se muestre esta ventana de inicio de sesión.
+     */
     public VentanaInicioSesion(JFrame ventanaEliminar){
 
         // PONER UN PANEL DEGRADADO DE FONDO.
@@ -89,6 +100,12 @@ public class VentanaInicioSesion extends JFrame {
 
     }
 
+    /**
+     * Método principal para iniciar la aplicación.
+     * Este método crea una instancia de la clase VentanaInicioSesion y la muestra en el hilo de eventos de Swing.
+     *
+     * @param args Los argumentos de la línea de comandos (no se utilizan en este método).
+     */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             VentanaInicioSesion ventana = new VentanaInicioSesion(null);
@@ -96,6 +113,13 @@ public class VentanaInicioSesion extends JFrame {
     }
 
     // Funciones
+
+    /**
+     * Muestra un mensaje emergente en la pantalla.
+     * Este método muestra un cuadro de diálogo emergente con el mensaje proporcionado.
+     *
+     * @param mensaje El mensaje que se mostrará en el cuadro de diálogo.
+     */
     public void mostrarMensaje(String mensaje){
         JOptionPane.showMessageDialog(null,mensaje);
     }
@@ -122,6 +146,16 @@ public class VentanaInicioSesion extends JFrame {
         bRegistrarse.addActionListener(al);
     }
 
+    /**
+     * Carga una imagen y la establece como icono en un JLabel con el ancho y alto especificados.
+     * Si la imagen se carga correctamente, se establece como icono en el JLabel proporcionado.
+     * Si la imagen no se encuentra, se imprime un mensaje de error en la consola.
+     *
+     * @param nombreImagen El nombre de la imagen que se va a cargar.
+     * @param ancho        El ancho deseado para la imagen.
+     * @param alto         El alto deseado para la imagen.
+     * @param label        El JLabel en el que se establecerá la imagen.
+     */
     private void cargarImagenEstablecerIcono(String nombreImagen, int ancho, int alto, JLabel label) {
         ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
         if (icono != null) {
@@ -130,6 +164,15 @@ public class VentanaInicioSesion extends JFrame {
             System.err.println("La imagen " + nombreImagen + " no se encontró.");
         }
     }
+
+    /**
+     * Carga una imagen y la establece como icono en un JButton con un tamaño predeterminado de 40x40.
+     * Si la imagen se carga correctamente, se establece como icono en el JButton proporcionado.
+     * Si la imagen no se encuentra, se imprime un mensaje de error en la consola.
+     *
+     * @param nombreImagen El nombre de la imagen que se va a cargar.
+     * @param button       El JButton en el que se establecerá la imagen.
+     */
     private void cargarImagenEstablecerIcono(String nombreImagen, JButton button) {
         ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, 40, 40);
         if (icono != null) {

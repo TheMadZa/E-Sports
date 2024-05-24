@@ -5,6 +5,18 @@ import Controlador.ControladoresVista.ControladorImagenes;
 import javax.swing.*;
 import java.awt.event.ActionListener;
 
+/**
+ * La clase VentanaXML representa la interfaz de usuario para visualizar y manipular archivos XML.
+ * Proporciona opciones para seleccionar archivos XML, mostrar su contenido y copiar su estructura DTD o XSD.
+ * Extiende la clase JFrame de Swing para crear una ventana de aplicación.
+ * Utiliza un controlador de imágenes para cargar iconos y logotipos.
+ * Esta clase incluye varios componentes Swing como botones, áreas de texto y menús.
+ * Permite la interacción con el usuario a través de acciones de botón y menú.
+ * Implementa métodos para cargar imágenes, añadir listeners y mostrar mensajes.
+ *
+ * @author Zahir
+ * @version 1.0
+ */
 public class VentanaXML extends JFrame{
     private JPanel panelUp;
     private JPanel PanelMenu;
@@ -31,6 +43,15 @@ public class VentanaXML extends JFrame{
     private JTextArea taXMLXSD;
     private JButton btCopiarXSD;
 
+    /**
+     * Constructor de la clase VentanaXML.
+     * Crea una nueva ventana de la interfaz de usuario para manipular archivos XML.
+     * Carga y establece los iconos para varios botones de la interfaz gráfica.
+     * Configura la apariencia y el comportamiento de la ventana.
+     * Destruye la ventana anterior pasada como parámetro.
+     *
+     * @param ventanaEliminar La ventana anterior que se eliminará al crear esta nueva ventana.
+     */
     public VentanaXML(JFrame ventanaEliminar) {
 
         cargarImagenEstablecerIconoBoton("TheMadZaLogoSimple", 250, 250, ftThemadza);
@@ -62,6 +83,12 @@ public class VentanaXML extends JFrame{
         ventanaEliminar.dispose();
     }
 
+    /**
+     * Método principal de la clase VentanaXML.
+     * Crea una instancia de VentanaXML y la muestra en el hilo de eventos de Swing.
+     *
+     * @param args Los argumentos de la línea de comandos (no se utilizan).
+     */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             VentanaClasificacion ventana = new VentanaClasificacion(null);
@@ -69,6 +96,15 @@ public class VentanaXML extends JFrame{
     }
 
     // Funciones
+
+    /**
+     * Carga una imagen y la establece como icono para un JLabel.
+     *
+     * @param nombreImagen El nombre de la imagen a cargar.
+     * @param ancho        El ancho deseado para la imagen.
+     * @param alto         El alto deseado para la imagen.
+     * @param label        El JLabel al que se le establecerá el icono.
+     */
     private void cargarImagenEstablecerIcono(String nombreImagen, int ancho, int alto, JLabel label) {
         ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
         if (icono != null) {
@@ -77,6 +113,13 @@ public class VentanaXML extends JFrame{
             System.err.println("La imagen " + nombreImagen + " no se encontró.");
         }
     }
+
+    /**
+     * Carga una imagen y la establece como icono para un JButton.
+     *
+     * @param nombreImagen El nombre de la imagen a cargar.
+     * @param button       El JButton al que se le establecerá el icono.
+     */
     private void cargarImagenEstablecerIcono(String nombreImagen, JButton button) {
         ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, 40, 40);
         if (icono != null) {
@@ -236,11 +279,23 @@ public class VentanaXML extends JFrame{
         btCopiarDTD.addActionListener(al);
     }
 
-
+    /**
+     * Muestra un mensaje de diálogo emergente con el mensaje especificado.
+     *
+     * @param mensaje El mensaje a mostrar en el diálogo.
+     */
     public void mostrarMensaje(String mensaje){
         JOptionPane.showMessageDialog(null,mensaje);
     }
 
+    /**
+     * Carga una imagen y la establece como icono para un JButton.
+     *
+     * @param nombreImagen El nombre de la imagen a cargar.
+     * @param ancho        El ancho deseado para la imagen.
+     * @param alto         El alto deseado para la imagen.
+     * @param label       El JButton al que se le establecerá el icono.
+     */
     private void cargarImagenEstablecerIconoBoton(String nombreImagen, int ancho, int alto, JButton label) {
         ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
         if (icono != null) {

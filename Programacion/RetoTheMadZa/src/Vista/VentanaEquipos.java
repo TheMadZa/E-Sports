@@ -8,8 +8,12 @@ import java.awt.event.ActionListener;
 
 /**
  * Ventana de Equipos donde se muestran todos los equipos.
- * @author Ibai
- * @author Julen
+ * Esta clase representa la ventana de equipos en la que se muestran todos los equipos disponibles.
+ * Contiene elementos como botones, etiquetas y menús para interactuar con la ventana.
+ * También maneja la carga de imágenes y la configuración de íconos para los componentes visuales.
+ *
+ * @author Ibai, Julen
+ * @version 1.0
  */
 public class VentanaEquipos extends JFrame {
     private JPanel panelUp;
@@ -37,6 +41,12 @@ public class VentanaEquipos extends JFrame {
     private JMenuItem mEquipos;
     private JLabel nombreEquipo;
 
+    /**
+     * Constructor de la clase VentanaEquipos.
+     * Crea una nueva instancia de la ventana de equipos y configura sus propiedades básicas.
+     * También carga las imágenes y establece los iconos para los botones y etiquetas.
+     * @param ventanaEliminar La ventana anterior que se debe eliminar al abrir esta ventana.
+     */
     public VentanaEquipos(JFrame ventanaEliminar) {
 
         // Cargar las imágenes con un tamaño específico.
@@ -77,6 +87,10 @@ public class VentanaEquipos extends JFrame {
         ventanaEliminar.dispose();
     }
 
+    /**
+     * Método principal para ejecutar la ventana de equipos.
+     * @param args Los argumentos de la línea de comandos (no se utilizan).
+     */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             VentanaEquipos ventana = new VentanaEquipos(null);
@@ -84,6 +98,14 @@ public class VentanaEquipos extends JFrame {
     }
 
     // Funciones
+
+    /**
+     * Carga una imagen y establece un ícono para un JLabel.
+     * @param nombreImagen El nombre de la imagen a cargar.
+     * @param ancho El ancho del ícono.
+     * @param alto El alto del ícono.
+     * @param label El JLabel al que se le establecerá el ícono.
+     */
     public void cargarImagenEstablecerIcono(String nombreImagen, int ancho, int alto, JLabel label) {
         ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
         if (icono != null) {
@@ -92,6 +114,12 @@ public class VentanaEquipos extends JFrame {
             System.err.println("La imagen " + nombreImagen + " no se encontró.");
         }
     }
+
+    /**
+     * Carga una imagen y establece un ícono para un JButton.
+     * @param nombreImagen El nombre de la imagen a cargar.
+     * @param button El JButton al que se le establecerá el ícono.
+     */
     public void cargarImagenEstablecerIcono(String nombreImagen, JButton button) {
         ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, 40, 40);
         if (icono != null) {
@@ -181,6 +209,13 @@ public class VentanaEquipos extends JFrame {
         bTwitter.addActionListener(al);
     }
 
+    /**
+     * Carga una imagen y establece un ícono para un JButton.
+     * @param nombreImagen El nombre de la imagen a cargar.
+     * @param ancho El ancho del ícono.
+     * @param alto El alto del ícono.
+     * @param label El JButton al que se le establecerá el ícono.
+     */
     private void cargarImagenEstablecerIconoBoton(String nombreImagen, int ancho, int alto, JButton label) {
         ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
         if (icono != null) {
