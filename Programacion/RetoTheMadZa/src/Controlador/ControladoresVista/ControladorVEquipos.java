@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
+// TODO : JAVADOC
 public class ControladorVEquipos {
 
     private VentanaEquipos ve;

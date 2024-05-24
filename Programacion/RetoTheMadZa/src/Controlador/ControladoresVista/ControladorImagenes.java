@@ -18,7 +18,7 @@ import java.util.Map;
  * Clase ControladorImagenes para cargar las imágenes.
  * Gestiona la carga inicial de todas las imágenes del proyecto.
  *
- * @author Ibai
+ * @author Ibai, Lorena
  */
 public class ControladorImagenes {
     private ControladorModelo cm;

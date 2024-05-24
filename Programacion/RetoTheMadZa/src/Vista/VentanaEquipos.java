@@ -71,12 +71,8 @@ public class VentanaEquipos extends JFrame {
         setResizable(true);
         getRootPane().setDefaultButton(bInicio);
 
-        bIzquierda.setBorder(BorderFactory.createEmptyBorder());
-        bDerecha.setBorder(BorderFactory.createEmptyBorder());
-        ftThemadza.setBorder(BorderFactory.createEmptyBorder());
-
         JComponent[] componentesConBorde = {mPrincipal, bTienda, bInicio, bSalir, bFacebook,
-                bTwitter, bInstagram};
+                bTwitter, bInstagram, bIzquierda, bDerecha, ftThemadza};
         for (JComponent componente : componentesConBorde) {
             componente.setBorder(BorderFactory.createEmptyBorder());
         }

@@ -6,7 +6,7 @@ import java.sql.Timestamp;
  * Clase que representa un enfrentamiento entre dos equipos en una jornada.
  * Un enfrentamiento tiene lugar en una fecha y hora determinadas, y puede tener un resultado asociado.
  *
- * @autor Ibai
+ * @autor Ibai, Lorena
  * @version 1.0
  */
 

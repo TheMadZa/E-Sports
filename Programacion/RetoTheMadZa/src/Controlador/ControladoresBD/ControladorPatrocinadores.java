@@ -1,15 +1,11 @@
 package Controlador.ControladoresBD;
 
-import Modelo.Jugador;
 import Modelo.Patrocinador;
 
-import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLIntegrityConstraintViolationException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Clase ControladorPatrocinadores que gestiona las consultas sobre los patrocinadores.
@@ -17,7 +13,7 @@ import java.util.List;
  * <p>Proporciona métodos para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre los patrocinadores
  * en la base de datos.</p>
  *
- * @author Julen, Ibai
+ * @author Julen, Ibai, Lorena
  * @version 1.0
  */
 public class ControladorPatrocinadores {
@@ -40,30 +36,25 @@ public class ControladorPatrocinadores {
      * @throws Exception Si ocurre un error durante la inserción.
      * @throws SQLIntegrityConstraintViolationException Si ya existe un patrocinador con el mismo ID.
      */
-    public void insertarPatrocinador(Patrocinador p) throws Exception
-    {
-        try
-        {
-            String plantilla = "INSERT INTO patrocinadores VALUES (?,?)";
+    public void insertarPatrocinador(Patrocinador p) throws Exception {
+        try {
+            String plantilla = "INSERT INTO patrocinadores (nombre) VALUES (?)";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
 
-            sentenciaPre.setInt(1,p.getIdPatrocinador());
-            sentenciaPre.setString(2,p.getNombre());
+            sentenciaPre.setString(1,p.getNombre());
 
             int n = sentenciaPre.executeUpdate();
 
             sentenciaPre.close();
 
-            if (n != 1)
-            {
-                throw new Exception("No se ha insertado el patrocinador");
+            if (n != 1) {
+                throw new Exception("No se ha podido insertar el patrocinador.");
             }
 
         }
-        catch (SQLIntegrityConstraintViolationException e)
-        {
-            throw new Exception("Ya hay un patrocinador con ese id");
+        catch (SQLIntegrityConstraintViolationException e) {
+            throw new Exception("Ya hay un patrocinador con ese nombre.");
         }
     }
 
@@ -74,10 +65,8 @@ public class ControladorPatrocinadores {
      * @throws Exception Si ocurre un error durante la eliminación.
      * @throws SQLIntegrityConstraintViolationException Si no existe un patrocinador con el ID especificado.
      */
-    public void borrarPatrocinador(int idPatrocinador) throws Exception
-    {
-        try
-        {
+    public void borrarPatrocinador(int idPatrocinador) throws Exception {
+        try {
             String plantilla = "DELETE FROM patrocinadores WHERE id_patrocinador = ?";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
@@ -86,12 +75,11 @@ public class ControladorPatrocinadores {
 
             int n = sentenciaPre.executeUpdate();
             if (n != 1) {
-                throw new Exception("No se ha eliminado ningún patrocinador");
+                throw new Exception("No se ha podido eliminar ningún patrocinador.");
             }
         }
-        catch (SQLIntegrityConstraintViolationException e)
-        {
-            throw new Exception("No existe un patrocinador con ese id para borrar");
+        catch (SQLIntegrityConstraintViolationException e) {
+            throw new Exception("No hay ningún patrocinador registrado con esos datos para borrar.");
         }
     }
 
@@ -138,18 +126,45 @@ public class ControladorPatrocinadores {
      * @param p Es el objeto patrocinador del cual queremos actualizar uno o varios valores suyos buscandolo por id.
      * @throws Exception Si ocurre un error durante la modificación.
      */
-    public void modificarPatrocinador(Patrocinador p) throws Exception
-    {
-        String plantilla = "UPDATE jugadores SET nombre = ?, WHERE id_patrocinador = ?";
+    public void modificarPatrocinador(int idEquipo, int idPatrocinador) throws Exception {
+        String plantilla = "UPDATE patrocinadores_equipo SET id_equipo = ? WHERE id_patrocinador = ?";
 
         PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
 
-        sentenciaPre.setString(1, p.getNombre());
-        sentenciaPre.setInt(2, p.getIdPatrocinador());
+        sentenciaPre.setInt(1, idEquipo);
+        sentenciaPre.setInt(2, idPatrocinador);
 
         int n = sentenciaPre.executeUpdate();
-        if (n != 1){
-            throw new Exception("No se ha actualizado ningún patrocinador");
+        if (n != 1) {
+            throw new Exception("No se ha podido actualizar ningún patrocinador.");
         }
+    }
+
+    // TODO : JAVADOC
+    public Patrocinador buscarPatrocinadorPorNombre(String nombre) throws Exception{
+
+        try {
+            p = null;
+
+            String plantilla = "SELECT id_patrocinador, nombre FROM patrocinadores WHERE UPPER(nombre) = ?";
+
+            PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
+
+            sentenciaPre.setString(1,nombre.toUpperCase());
+
+            ResultSet rs = sentenciaPre.executeQuery();
+            if (rs.next()) {
+                p = new Patrocinador();
+                p.setIdPatrocinador(rs.getInt("id_patrocinador"));
+                p.setNombre(rs.getString("nombre"));
+            }
+
+            sentenciaPre.close();
+            return p;
+        }
+        catch (Exception e) {
+            throw new Exception("Error al buscar patrocinador por nombre.");
+        }
+
     }
 }

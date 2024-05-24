@@ -168,7 +168,7 @@ public class ControladorJuegos {
     public Juego buscarJuegoPorNombre(String nombre) throws Exception {
 
         try {
-            String plantilla = "SELECT id_juego, empresa, fecha_lanzamiento FROM juegos WHERE UPPER(nombre) = ?";
+            String plantilla = "SELECT id_juego, nombre, empresa, fecha_lanzamiento FROM juegos WHERE UPPER(nombre) = ?";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
             sentenciaPre.setString(1, nombre.toUpperCase());
@@ -176,6 +176,7 @@ public class ControladorJuegos {
             if (rs.next()) {
                 j = new Juego();
                 j.setIdJuego(rs.getInt("id_juego"));
+                j.setNombre(rs.getString("nombre"));
                 j.setEmpresa(rs.getString("empresa"));
                 j.setFechaLanzamiento(rs.getDate("fecha_lanzamiento"));
             }

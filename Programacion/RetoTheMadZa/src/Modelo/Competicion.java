@@ -7,7 +7,7 @@ import java.sql.Date;
  * Una competición es un evento deportivo en el que varios equipos compiten entre sí
  * siguiendo un conjunto de reglas establecidas.
  *
- * @author Ibai
+ * @author Ibai, Lorena
  * @version 1.0
  */
 public class Competicion {

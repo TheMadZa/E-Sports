@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.util.List;
 
+// TODO : JAVADOC
 public class ControladorVJornadas {
 
     private VentanaJornadas vj;

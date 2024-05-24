@@ -3,7 +3,7 @@ import Controlador.ControladorPrincipal;
 
 /**
  * Clase Main que ejecutará el programa al completo.
- * Contiene el código para ejecutar el controlador principal y la Automatizacion.
+ * Contiene el código para ejecutar el controlador principal y la automatización.
  *
  * @author Ibai
  * @author Lorena
@@ -21,7 +21,6 @@ public class Main {
     public static void main(String[] args) {
 
         ControladorPrincipal c = new ControladorPrincipal();
-
 
         Scheduler.startScheduledTask();
 

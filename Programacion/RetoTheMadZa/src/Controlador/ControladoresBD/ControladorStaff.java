@@ -1,5 +1,6 @@
 package Controlador.ControladoresBD;
 
+import Modelo.Equipo;
 import Modelo.Patrocinador;
 import Modelo.Staff;
 
@@ -40,34 +41,30 @@ public class ControladorStaff {
      * @throws Exception Si ocurre un error durante la inserción.
      * @throws SQLIntegrityConstraintViolationException Si ya existe un miembro del staff con el mismo ID.
      */
-    public void insertarStaff(Staff s) throws Exception
-    {
-        try
-        {
-            String plantilla = "INSERT INTO staffs VALUES (?,?,?,?,?,?)";
+    public void insertarStaff(Staff s) throws Exception {
+        try {
+            String plantilla = "INSERT INTO staffs (puesto, nombre, fecha_nac, sueldo, id_equipo) VALUES (?,?,?,?,?)";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
 
-            sentenciaPre.setInt(1,s.getIdStaff());
-            sentenciaPre.setString(2,s.getPuesto());
-            sentenciaPre.setString(3,s.getNombre());
-            sentenciaPre.setDate(4,s.getFechaNac());
-            sentenciaPre.setDouble(5,s.getSueldo());
-            sentenciaPre.setInt(6,s.getEquipo().getIdEquipo());
+            sentenciaPre.setString(1,s.getPuesto());
+            sentenciaPre.setString(2,s.getNombre());
+            sentenciaPre.setDate(3,s.getFechaNac());
+            sentenciaPre.setDouble(4,s.getSueldo());
+            sentenciaPre.setInt(5,s.getEquipo().getIdEquipo());
 
             int n = sentenciaPre.executeUpdate();
 
             sentenciaPre.close();
 
-            if (n != 1)
-            {
-                throw new Exception("No se ha insertado el staff");
+            if (n != 1) {
+                throw new Exception("No se ha podido insertar el miembro del staff.");
             }
 
         }
         catch (SQLIntegrityConstraintViolationException e)
         {
-            throw new Exception("Ya hay un staff con ese id");
+            throw new Exception("Ya hay registrado un staff con esos datos.");
         }
     }
 
@@ -78,10 +75,8 @@ public class ControladorStaff {
      * @throws Exception Si ocurre un error durante la eliminación.
      * @throws SQLIntegrityConstraintViolationException Si no existe un miembro del staff con el ID especificado.
      */
-    public void borrarStaff(int idStaff) throws Exception
-    {
-        try
-        {
+    public void borrarStaff(int idStaff) throws Exception {
+        try {
             String plantilla = "DELETE FROM staffs WHERE id_staff = ?";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
@@ -90,12 +85,11 @@ public class ControladorStaff {
 
             int n = sentenciaPre.executeUpdate();
             if (n != 1) {
-                throw new Exception("No se ha eliminado ningún staff");
+                throw new Exception("No se ha podido eliminar ningún miembro del staff.");
             }
         }
-        catch (SQLIntegrityConstraintViolationException e)
-        {
-            throw new Exception("No existe un staff con ese id para borrar");
+        catch (SQLIntegrityConstraintViolationException e) {
+            throw new Exception("No hay ningún miembro del staff registrado con ese ID para borrar.");
         }
     }
 
@@ -146,23 +140,51 @@ public class ControladorStaff {
      * @param s Es el objeto staff del cual queremos actualizar uno o varios valores suyos buscandolo por id.
      * @throws Exception Si ocurre un error durante la modificación.
      */
-    public void modificarStaff(Staff s) throws Exception
-    {
-        String plantilla = "UPDATE staffs SET puesto = ?, nombre = ?, fecha_nac = ?, sueldo = ?, id_equipo = ?" +
-                "WHERE id_staff = ?";
+    public void modificarStaff(Staff s) throws Exception {
+        String plantilla = "UPDATE staffs SET puesto = ?, fecha_nac = ?, sueldo = ?, id_equipo = ? WHERE nombre = ?";
 
         PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
 
         sentenciaPre.setString(1, s.getPuesto());
-        sentenciaPre.setString(2, s.getNombre());
-        sentenciaPre.setDate(3, s.getFechaNac());
-        sentenciaPre.setDouble(4, s.getSueldo());
-        sentenciaPre.setInt(5, s.getEquipo().getIdEquipo());
-        sentenciaPre.setInt(6, s.getIdStaff());
+        sentenciaPre.setDate(2, s.getFechaNac());
+        sentenciaPre.setDouble(3, s.getSueldo());
+        sentenciaPre.setInt(4, s.getEquipo().getIdEquipo());
+        sentenciaPre.setString(5, s.getNombre());
 
         int n = sentenciaPre.executeUpdate();
         if (n != 1){
-            throw new Exception("No se ha actualizado ningún staff");
+            throw new Exception("No se ha podido actualizar ningún miembro del staff.");
+        }
+    }
+
+    // TODO : JAVADOC
+    public Staff buscarStaffPorNombre(String nombre) throws Exception {
+        try {
+            String plantilla = "SELECT id_staff, puesto, nombre, fecha_nac, sueldo, id_equipo FROM juegos " +
+                    "WHERE UPPER(nombre) = ?";
+
+            PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
+            sentenciaPre.setString(1, nombre.toUpperCase());
+            ResultSet rs = sentenciaPre.executeQuery();
+            if (rs.next()) {
+                s = new Staff();
+                s.setIdStaff(rs.getInt("id_staff"));
+                s.setPuesto(rs.getString("puesto"));
+                s.setNombre(rs.getString("nombre"));
+                s.setFechaNac(rs.getDate("fecha_nac"));
+                s.setSueldo(rs.getDouble("sueldo"));
+                Equipo equipo = new Equipo();
+                equipo.setIdEquipo(rs.getInt("id_equipo"));
+                s.setEquipo(equipo);
+            }
+            else {
+                throw new Exception("No hay ningún staff registrado con ese nombre.");
+            }
+            sentenciaPre.close();
+            return s;
+        }
+        catch (Exception e) {
+            throw new Exception("Error al buscar staff por nombre.");
         }
     }
 }

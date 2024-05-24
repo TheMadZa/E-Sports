@@ -1,15 +1,10 @@
 package Vista;
 
 import Controlador.ControladoresVista.ControladorImagenes;
-import org.imgscalr.Scalr;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.net.URL;
 
 /**
  * Ventana de inicio de sesión.
@@ -79,12 +74,7 @@ public class VentanaInicioSesion extends JFrame {
         gbc.insets = new Insets(0, 0, 80, 0);
         pPrincipal.add(pDatos, gbc);
 
-        // Poner la imagen centrada y superpuesta. // TODO : hay que ponerla bien
-
-
-            cargarImagenEstablecerIcono("TheMadZaLogoColor", 200, 200, tfImagenLogo);
-
-
+        cargarImagenEstablecerIcono(tfImagenLogo);
 
         // Configurar la ventana
         setContentPane(pPrincipal);
@@ -128,14 +118,8 @@ public class VentanaInicioSesion extends JFrame {
     public String getTfUsuario() {
         return tfUsuario.getText();
     }
-    public void setTfUsuario(String usuario) {
-        this.tfUsuario.setText(usuario);
-    }
     public String getTfContrasena() {
         return ftfContrasena.getText();
-    }
-    public void setTfContrasena(String contrasena) {
-        this.ftfContrasena.setText(contrasena);
     }
 
     // Listeners
@@ -151,35 +135,14 @@ public class VentanaInicioSesion extends JFrame {
      * Si la imagen se carga correctamente, se establece como icono en el JLabel proporcionado.
      * Si la imagen no se encuentra, se imprime un mensaje de error en la consola.
      *
-     * @param nombreImagen El nombre de la imagen que se va a cargar.
-     * @param ancho        El ancho deseado para la imagen.
-     * @param alto         El alto deseado para la imagen.
-     * @param label        El JLabel en el que se establecerá la imagen.
+     * @param label El JLabel en el que se establecerá la imagen.
      */
-    private void cargarImagenEstablecerIcono(String nombreImagen, int ancho, int alto, JLabel label) {
-        ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
+    private void cargarImagenEstablecerIcono(JLabel label) {
+        ImageIcon icono = ControladorImagenes.obtenerImagen("TheMadZaLogoColor", 200, 200);
         if (icono != null) {
             label.setIcon(icono);
         } else {
-            System.err.println("La imagen " + nombreImagen + " no se encontró.");
+            System.err.println("La imagen " + "TheMadZaLogoColor" + " no se encontró.");
         }
     }
-
-    /**
-     * Carga una imagen y la establece como icono en un JButton con un tamaño predeterminado de 40x40.
-     * Si la imagen se carga correctamente, se establece como icono en el JButton proporcionado.
-     * Si la imagen no se encuentra, se imprime un mensaje de error en la consola.
-     *
-     * @param nombreImagen El nombre de la imagen que se va a cargar.
-     * @param button       El JButton en el que se establecerá la imagen.
-     */
-    private void cargarImagenEstablecerIcono(String nombreImagen, JButton button) {
-        ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, 40, 40);
-        if (icono != null) {
-            button.setIcon(icono);
-        } else {
-            System.err.println("La imagen " + nombreImagen + " no se encontró.");
-        }
-    }
-
 }

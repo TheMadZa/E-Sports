@@ -4,7 +4,7 @@ package Modelo;
  * Clase que representa a un usuario del sistema.
  * Cada usuario tiene un nombre de usuario, una contraseña y un tipo de usuario.
  *
- * @author Ibai
+ * @author Ibai, Lorena
  * @version 1.0
  */
 public class Usuario {

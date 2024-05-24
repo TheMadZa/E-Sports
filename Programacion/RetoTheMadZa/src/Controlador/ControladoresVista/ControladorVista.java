@@ -5,8 +5,10 @@ import Modelo.*;
 import Vista.VentanaInicioSesion;
 
 import javax.swing.*;
+import java.util.ArrayList;
 import java.util.List;
 
+// TODO : JAVADOC
 public class ControladorVista {
 
     //CONTROLADORES DE LAS VENTANAS
@@ -203,8 +205,12 @@ public class ControladorVista {
         return cp.buscarPatrocinador(id_patrocinador);
     }
 
-    public void modificarPatrocinador(Patrocinador p) throws Exception{
-        cp.modificarPatrocinador(p);
+    public void modificarPatrocinador(int idEquipo, int idPatrocinador) throws Exception{
+        cp.modificarPatrocinador(idEquipo, idPatrocinador);
+    }
+
+    public Patrocinador buscarPatrocinadorPorNombre(String nombre) throws Exception{
+        return cp.buscarPatrocinadorPorNombre(nombre);
     }
 
 
@@ -225,6 +231,10 @@ public class ControladorVista {
         cp.modificarStaff(s);
     }
 
+    public Staff buscarStaffPorNombre(String nombre) throws Exception {
+        return cp.buscarStaffPorNombre(nombre);
+    }
+
     //USUARIO
     public boolean validarUsuario(String usuario, String contrasena) throws Exception {
         return cp.validarUsuario(usuario, contrasena);
@@ -241,6 +251,19 @@ public class ControladorVista {
 
     public void insertarEquipoCompeticion(int idEquipo, int idCompeticion) throws Exception {
         cp.insertarEquipoCompeticion(idEquipo, idCompeticion);
+    }
+
+    //PATROCINADOR_EQUIPO
+    public void insertarPatrocinadorEquipo(int idPatrocinador, int idEquipo) throws Exception {
+        cp.insertarPatrocinadorEquipo(idPatrocinador, idEquipo);
+    }
+
+    public ArrayList<Integer> buscarEquiposPatrocinador(int idPatrocinador) throws Exception {
+        return cp.buscarEquiposPatrocinador(idPatrocinador);
+    }
+
+    public void borrarPatrocinadorEquipo(int idPatrocinador, int idEquipo) throws Exception {
+        cp.borrarPatrocinadorEquipo(idPatrocinador, idEquipo);
     }
 
     //XML

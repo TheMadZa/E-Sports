@@ -14,6 +14,7 @@ import java.awt.image.BufferedImage;
 import java.net.URL;
 import java.util.List;
 
+// TODO : JAVADOC
 public class ControladorVUser {
 
     private VentanaUser vu;

@@ -1,7 +1,6 @@
 package Controlador.ControladoresVista;
 
-import Modelo.Equipo;
-import Modelo.Juego;
+import Modelo.*;
 import Vista.VentanaAdmin;
 import Vista.VentanaInicioSesion;
 
@@ -14,6 +13,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
+// TODO : JAVADOC
 public class ControladorVAdmin {
 
     private VentanaAdmin va;
@@ -110,18 +110,15 @@ public class ControladorVAdmin {
                         ArrayList<JTextField> listaTextFieldsDinamicos = va.getListaTextFieldsDinamicos();
 
                         String nombre = listaTextFieldsDinamicos.get(0).getText();
-                        String fechaFundacionS = listaTextFieldsDinamicos.get(1).getText();
-                        LocalDate fechaFundacionLD = LocalDate.parse(fechaFundacionS, formatoFecha);
-                        Date fechaFundacion = Date.valueOf(fechaFundacionLD);
                         String logo = listaTextFieldsDinamicos.get(2).getText();
                         String color = listaTextFieldsDinamicos.get(3).getText();
                         int idCompeticion = Integer.parseInt(listaTextFieldsDinamicos.get(4).getText());
 
                         switch (accionElegida){
-                            case "Insertar" -> insertarEquipo(nombre, fechaFundacion, logo, color, idCompeticion,
+                            case "Insertar" -> insertarEquipo(nombre, logo, color, idCompeticion,
                                     listaTextFieldsDinamicos);
                             case "Eliminar" -> borrarEquipo(nombre, logo, color, listaTextFieldsDinamicos);
-                            case "Actualizar" -> modificarEquipo(nombre, fechaFundacion, logo, color, idCompeticion,
+                            case "Actualizar" -> modificarEquipo(nombre, logo, color, idCompeticion,
                                     listaTextFieldsDinamicos);
                             case "Consultar" -> consultarEquipo(nombre, logo, color, listaTextFieldsDinamicos);
                         }
@@ -137,9 +134,9 @@ public class ControladorVAdmin {
                         String nickname = listaTextFieldsDinamicos.get(1).getText();
                         String nacionalidad = listaTextFieldsDinamicos.get(2).getText();
                         String rol = listaTextFieldsDinamicos.get(3).getText();
-                        String fechaNacimientoS = listaTextFieldsDinamicos.get(4).getText();
-                        LocalDate fechaNacimientoLD = LocalDate.parse(fechaNacimientoS, formatoFecha);
-                        Date fechaNacimiento = Date.valueOf(fechaNacimientoLD);
+                        String fechaNacimientoS = listaTextFieldsDinamicos.get(4).getText(); // TODO : QUITAR (PILLAR CON LISTA...)
+                        LocalDate fechaNacimientoLD = LocalDate.parse(fechaNacimientoS, formatoFecha); // TODO : QUITAR
+                        Date fechaNacimiento = Date.valueOf(fechaNacimientoLD); // TODO : QUITAR
                         int idEquipo = Integer.parseInt(listaTextFieldsDinamicos.get(5).getText());
 
                         switch (accionElegida){
@@ -153,85 +150,50 @@ public class ControladorVAdmin {
                                     idEquipo, listaTextFieldsDinamicos);
                         }
 
-                        /*
-                        switch (accionElegida){
-                            case "Insertar" -> {
-
-                                Jugador jugador = new Jugador();
-                                jugador.setNombre(listaTextFieldsDinamicos.get(0).getText());
-                                jugador.setNickname(listaTextFieldsDinamicos.get(1).getText());
-                                jugador.setNacionalidad(listaTextFieldsDinamicos.get(2).getText());
-                                jugador.setRol(listaTextFieldsDinamicos.get(3).getText());
-                                jugador.setFechaNac(Date.valueOf(listaTextFieldsDinamicos.get(4).getText()));
-                                jugador.setSueldo(Double.parseDouble(listaTextFieldsDinamicos.get(5).getText()));
-                                Equipo equipo = cv.bus
-                                jugador.setEquipo(equipo.get);
-                                cv.insertarEquipo(equipo);
-                                // Ahora obtener el ID del equipo insertado.
-                                Equipo equipoInsertado = cv.buscarEquipoPorNombre(listaTextFieldsDinamicos.get(0).getText());
-                                va.mostrarMensaje("El equipo insertado tiene el ID --> " +equipoInsertado.getIdEquipo()+ ".");
-                                System.out.println("El equipo insertado tiene el ID --> " +equipoInsertado.getIdEquipo()+ ".");
-                            }
-                            case "Eliminar" -> {
-                                // Eliminar por nombre del equipo.
-                                cv.borrarEquipo(listaTextFieldsDinamicos.get(0).getText());
-                            }
-                            case "Actualizar" -> {
-                                // Actualizar equipo.
-                                Equipo equipo = new Equipo();
-                                equipo.setNomEquipo(listaTextFieldsDinamicos.get(0).getText());
-                                equipo.setFechaFundacion(Date.valueOf(listaTextFieldsDinamicos.get(1).getText()));
-                                equipo.setLogo(listaTextFieldsDinamicos.get(2).getText());
-                                equipo.setColor(listaTextFieldsDinamicos.get(3).getText());
-                                cv.modificarEquipo(equipo);
-                            }
-                            case "Consultar" -> {
-                                // Consultar por nombre del equipo.
-                                Equipo equipo =  cv.buscarEquipoPorNombre(listaTextFieldsDinamicos.get(0).getText());
-                                listaTextFieldsDinamicos.get(1).setText(String.valueOf(equipo.getFechaFundacion()));
-                                listaTextFieldsDinamicos.get(2).setText(equipo.getLogo());
-                                listaTextFieldsDinamicos.get(3).setText(equipo.getColor());
-                            }
-                        }
-                         */
-
                     }
                     case "CRUD Staff" -> {
 
-                        // El miembro del staff tendrá .
+                        // El miembro del staff tendrá puesto, nombre, fecha de nacimiento, sueldo e id del equipo.
 
                         ArrayList<JTextField> listaTextFieldsDinamicos = va.getListaTextFieldsDinamicos();
 
-                        // todo
+                        String puesto = listaTextFieldsDinamicos.get(0).getText();
+                        String nombre = listaTextFieldsDinamicos.get(1).getText();
+                        String fechaNacimientoS = listaTextFieldsDinamicos.get(2).getText(); // TODO : QUITAR
+                        LocalDate fechaNacimientoLD = LocalDate.parse(fechaNacimientoS, formatoFecha); // TODO : QUITAR
+                        Date fechaNacimiento = Date.valueOf(fechaNacimientoLD); // TODO : QUITAR
+                        double sueldo = Double.parseDouble(listaTextFieldsDinamicos.get(3).getText());
+                        int idEquipo = Integer.parseInt(listaTextFieldsDinamicos.get(4).getText());
 
                         switch (accionElegida) {
-                            case "Insertar" -> insertarStaff();
-                            case "Eliminar" -> borrarStaff();
-                            case "Actualizar" -> modificarStaff();
-                            case "Consultar" -> consultarStaff();
+                            case "Insertar" -> insertarStaff(puesto, nombre, fechaNacimiento, sueldo, idEquipo, listaTextFieldsDinamicos);
+                            case "Eliminar" -> borrarStaff(nombre, listaTextFieldsDinamicos);
+                            case "Actualizar" -> modificarStaff(puesto, nombre, fechaNacimiento, sueldo, idEquipo, listaTextFieldsDinamicos);
+                            case "Consultar" -> consultarStaff(nombre, listaTextFieldsDinamicos);
                         }
 
                     }
                     case "CRUD Patrocinadores" -> {
 
-                        // El patrocinador tendrá .
+                        // El patrocinador tendrá nombre e id del equipo.
 
                         ArrayList<JTextField> listaTextFieldsDinamicos = va.getListaTextFieldsDinamicos();
 
-                        // todo
+                        String nombre = listaTextFieldsDinamicos.get(0).getText();
+                        int idEquipo = Integer.parseInt(listaTextFieldsDinamicos.get(1).getText());
 
                         switch (accionElegida) {
-                            case "Insertar" -> insertarPatrocinador();
-                            case "Eliminar" -> borrarPatrocinador();
-                            case "Actualizar" -> modificarPatrocinador();
-                            case "Consultar" -> consultarPatrocinador();
+                            case "Insertar" -> insertarPatrocinador(nombre, idEquipo, listaTextFieldsDinamicos);
+                            case "Eliminar" -> borrarPatrocinador(nombre, idEquipo, listaTextFieldsDinamicos);
+                            case "Actualizar" -> modificarPatrocinador(nombre, idEquipo, listaTextFieldsDinamicos);
+                            case "Consultar" -> consultarPatrocinador(nombre, listaTextFieldsDinamicos);
                         }
 
                     }
                     case "CRUD Juegos" -> {
 
                         // El juego tendrá nombre, empresa y fecha de lanzamiento.
-  
+
                         ArrayList<JTextField> listaTextFieldsDinamicos = va.getListaTextFieldsDinamicos();
                         String nombre = listaTextFieldsDinamicos.get(0).getText();
                         String empresa = listaTextFieldsDinamicos.get(1).getText();
@@ -246,23 +208,24 @@ public class ControladorVAdmin {
                     }
                     case "CRUD Competiciones" -> {
 
-                        // La competición tendrá .
+                        // La competición tendrá nombre, fecha de inicio, fecha de fin, estado de la etapa, id del juego e id del posible equipo ganador.
 
                         ArrayList<JTextField> listaTextFieldsDinamicos = va.getListaTextFieldsDinamicos();
 
-                        // todo
+                        String nombre = listaTextFieldsDinamicos.get(0).getText();
+                        String etapa = listaTextFieldsDinamicos.get(0).getText();
 
                         switch (accionElegida) {
-                            case "Insertar" -> insertarCompeticion();
-                            case "Eliminar" -> borrarCompeticion();
-                            case "Actualizar" -> modificarCompeticion();
-                            case "Consultar" -> consultarCompeticion();
+                            case "Insertar" -> insertarCompeticion(nombre, etapa, listaTextFieldsDinamicos);
+                            case "Eliminar" -> borrarCompeticion(nombre, etapa, listaTextFieldsDinamicos);
+                            case "Actualizar" -> modificarCompeticion(nombre, etapa, listaTextFieldsDinamicos);
+                            case "Consultar" -> consultarCompeticion(nombre, etapa, listaTextFieldsDinamicos);
                         }
 
                     }
                     case "CRUD Enfrentamientos" -> {
 
-                        // El enfrentamiento tendrá .
+                        // El enfrentamiento tendrá hora, resultado del equipo 1, resultado del equipo 2, id del equipo 1, id del equipo 2 e id de la jornada.
 
                         ArrayList<JTextField> listaTextFieldsDinamicos = va.getListaTextFieldsDinamicos();
 
@@ -274,11 +237,11 @@ public class ControladorVAdmin {
                             case "Actualizar" -> modificarEnfrentamiento();
                             case "Consultar" -> consultarEnfrentamiento();
                         }
-                        
+
                     }
                     case "CRUD Jornadas" -> {
 
-                        // La jornada tendrá .
+                        // La jornada tendrá número de jornada, fecha e id de la competición.
 
                         ArrayList<JTextField> listaTextFieldsDinamicos = va.getListaTextFieldsDinamicos();
 
@@ -379,7 +342,7 @@ public class ControladorVAdmin {
     // Funciones
 
     // Operaciones con equipos
-    public void insertarEquipo(String nombre, Date fechaFundacion, String logo, String color, int idCompeticion,
+    public void insertarEquipo(String nombre, String logo, String color, int idCompeticion,
                                ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
@@ -401,11 +364,16 @@ public class ControladorVAdmin {
                         listaTextFieldsDinamicos.get(2).setText(equipoExistir.getLogo());
                         listaTextFieldsDinamicos.get(3).setText(equipoExistir.getColor());
                         cv.insertarEquipoCompeticion(equipoExistir.getIdEquipo(),idCompeticion);
+                        va.mostrarMensaje("Relación de equipo con competición implementada correctamente.");
+                        System.out.println("Relación de equipo con competición implementada correctamente.");
                     }
                     else {
                         // Insertar equipo e insertarlo en la competición.
                         Equipo equipo = new Equipo();
                         equipo.setNomEquipo(nombre);
+                        LocalDate fechaFundacionLD = LocalDate.parse(listaTextFieldsDinamicos.get(1).getText(),
+                                formatoFecha);
+                        Date fechaFundacion = Date.valueOf(fechaFundacionLD);
                         equipo.setFechaFundacion(fechaFundacion);
                         equipo.setLogo(logo);
                         equipo.setColor(color);
@@ -416,9 +384,11 @@ public class ControladorVAdmin {
                         // Ahora obtener el ID del equipo insertado.
                         va.mostrarMensaje("El equipo insertado tiene el ID --> " +equipoInsertado.getIdEquipo()+ ".");
                         System.out.println("El equipo insertado tiene el ID --> " +equipoInsertado.getIdEquipo()+ ".");
+                        va.mostrarMensaje("Relación de equipo con competición implementada correctamente.");
+                        System.out.println("Relación de equipo con competición implementada correctamente.");
                         limpiarCasillasClase(listaTextFieldsDinamicos);
                     }
-                    
+
                 }
                 else
                     va.mostrarMensaje("Por favor, rellene todas las casillas.");
@@ -430,6 +400,9 @@ public class ControladorVAdmin {
                     // Crear un nuevo equipo y añadirle los atributos necesarios.
                     Equipo equipo = new Equipo();
                     equipo.setNomEquipo(nombre);
+                    LocalDate fechaFundacionLD = LocalDate.parse(listaTextFieldsDinamicos.get(1).getText(),
+                            formatoFecha);
+                    Date fechaFundacion = Date.valueOf(fechaFundacionLD);
                     equipo.setFechaFundacion(fechaFundacion);
                     equipo.setLogo(logo);
                     equipo.setColor(color);
@@ -471,7 +444,7 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la eliminación de un equipo.\n" +ex.getMessage());
         }
     }
-    public void modificarEquipo(String nombre, Date fechaFundacion, String logo, String color, int idCompeticion,
+    public void modificarEquipo(String nombre, String logo, String color, int idCompeticion,
                                 ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
@@ -497,6 +470,9 @@ public class ControladorVAdmin {
                     // Modificar un equipo solo.
                     Equipo equipo = new Equipo();
                     equipo.setNomEquipo(nombre);
+                    LocalDate fechaFundacionLD = LocalDate.parse(listaTextFieldsDinamicos.get(1).getText(),
+                            formatoFecha);
+                    Date fechaFundacion = Date.valueOf(fechaFundacionLD);
                     equipo.setFechaFundacion(fechaFundacion);
                     equipo.setLogo(logo);
                     equipo.setColor(color);
@@ -553,7 +529,47 @@ public class ControladorVAdmin {
                                 int idEquipo, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
-            //
+            /*
+                        switch (accionElegida){
+                            case "Insertar" -> {
+
+                                Jugador jugador = new Jugador();
+                                jugador.setNombre(listaTextFieldsDinamicos.get(0).getText());
+                                jugador.setNickname(listaTextFieldsDinamicos.get(1).getText());
+                                jugador.setNacionalidad(listaTextFieldsDinamicos.get(2).getText());
+                                jugador.setRol(listaTextFieldsDinamicos.get(3).getText());
+                                jugador.setFechaNac(Date.valueOf(listaTextFieldsDinamicos.get(4).getText()));
+                                jugador.setSueldo(Double.parseDouble(listaTextFieldsDinamicos.get(5).getText()));
+                                Equipo equipo = cv.bus
+                                jugador.setEquipo(equipo.get);
+                                cv.insertarEquipo(equipo);
+                                // Ahora obtener el ID del equipo insertado.
+                                Equipo equipoInsertado = cv.buscarEquipoPorNombre(listaTextFieldsDinamicos.get(0).getText());
+                                va.mostrarMensaje("El equipo insertado tiene el ID --> " +equipoInsertado.getIdEquipo()+ ".");
+                                System.out.println("El equipo insertado tiene el ID --> " +equipoInsertado.getIdEquipo()+ ".");
+                            }
+                            case "Eliminar" -> {
+                                // Eliminar por nombre del equipo.
+                                cv.borrarEquipo(listaTextFieldsDinamicos.get(0).getText());
+                            }
+                            case "Actualizar" -> {
+                                // Actualizar equipo.
+                                Equipo equipo = new Equipo();
+                                equipo.setNomEquipo(listaTextFieldsDinamicos.get(0).getText());
+                                equipo.setFechaFundacion(Date.valueOf(listaTextFieldsDinamicos.get(1).getText()));
+                                equipo.setLogo(listaTextFieldsDinamicos.get(2).getText());
+                                equipo.setColor(listaTextFieldsDinamicos.get(3).getText());
+                                cv.modificarEquipo(equipo);
+                            }
+                            case "Consultar" -> {
+                                // Consultar por nombre del equipo.
+                                Equipo equipo =  cv.buscarEquipoPorNombre(listaTextFieldsDinamicos.get(0).getText());
+                                listaTextFieldsDinamicos.get(1).setText(String.valueOf(equipo.getFechaFundacion()));
+                                listaTextFieldsDinamicos.get(2).setText(equipo.getLogo());
+                                listaTextFieldsDinamicos.get(3).setText(equipo.getColor());
+                            }
+                        }
+                         */
 
         }
         catch (Exception ex){
@@ -599,10 +615,25 @@ public class ControladorVAdmin {
     }
 
     // Operaciones con staff
-    public void insertarStaff(){
+    public void insertarStaff(String puesto, String nombre, Date fechaNacimiento, double sueldo, int idEquipo, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
-            //
+            if (!puesto.isEmpty() && !nombre.isEmpty() && fechaNacimiento != null && sueldo > 0 && idEquipo > 0) {
+                Staff staff = new Staff();
+                staff.setPuesto(puesto);
+                staff.setNombre(nombre);
+                staff.setFechaNac(fechaNacimiento);
+                staff.setSueldo(sueldo);
+                Equipo equipo = cv.buscarEquipo(idEquipo);
+                staff.setEquipo(equipo);
+                cv.insertarStaff(staff);
+                Staff staffInsertado = cv.buscarStaffPorNombre(nombre);
+                va.mostrarMensaje("El staff insertado tiene el ID ➤ " + staffInsertado.getIdStaff() + ".");
+                limpiarCasillasClase(listaTextFieldsDinamicos);
+            }
+            else {
+                va.mostrarMensaje("Por favor, rellene todas las casillas.");
+            }
 
         }
         catch (Exception ex){
@@ -610,10 +641,18 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la inserción de un staff.\n" +ex.getMessage());
         }
     }
-    public void borrarStaff(){
+    public void borrarStaff(String nombre, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
-            //
+            if (!nombre.isEmpty()) {
+                Staff staff = cv.buscarStaffPorNombre(nombre);
+                cv.borrarStaff(staff.getIdStaff());
+                va.mostrarMensaje("Staff eliminado correctamente.");
+                limpiarCasillasClase(listaTextFieldsDinamicos);
+            }
+            else {
+                va.mostrarMensaje("Por favor, rellene la casilla correspondiente al nombre.");
+            }
 
         }
         catch (Exception ex){
@@ -621,10 +660,42 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la eliminación de un staff.\n" +ex.getMessage());
         }
     }
-    public void modificarStaff(){
+    public void modificarStaff(String puesto, String nombre, Date fechaNacimiento, double sueldo, int idEquipo, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
-            //
+            if (!nombre.isEmpty() && puesto.isEmpty() && fechaNacimiento != null && sueldo>0 && idEquipo>0) {
+                if (!datosRellenados) {
+                    Staff staff = cv.buscarStaffPorNombre(nombre);
+                    listaTextFieldsDinamicos.get(0).setText(staff.getPuesto());
+                    listaTextFieldsDinamicos.get(2).setText(staff.getFechaNac().toString());
+                    listaTextFieldsDinamicos.get(3).setText(String.valueOf(staff.getSueldo()));
+                    listaTextFieldsDinamicos.get(4).setText(String.valueOf(staff.getEquipo().getIdEquipo()));
+                    datosRellenados = true;
+                }
+            }
+            else if (!nombre.isEmpty() && !puesto.isEmpty() && !listaTextFieldsDinamicos.get(2).getText().isEmpty() &&
+                    !listaTextFieldsDinamicos.get(3).getText().isEmpty()
+                    && !listaTextFieldsDinamicos.get(4).getText().isEmpty()) {
+                if (datosRellenados) {
+                    Staff staff = new Staff();
+                    staff.setPuesto(puesto);
+                    staff.setNombre(nombre);
+                    staff.setFechaNac(fechaNacimiento);
+                    staff.setSueldo(sueldo);
+                    Equipo equipo = new Equipo();
+                    equipo.setIdEquipo(idEquipo);
+                    staff.setEquipo(equipo);
+                    cv.modificarStaff(staff);
+                    va.mostrarMensaje("Staff modificado correctamente.");
+                    System.out.println("Staff modificado correctamente.");
+                    limpiarCasillasClase(listaTextFieldsDinamicos);
+                    datosRellenados = false;
+                }
+                else
+                    va.mostrarMensaje("Por favor, rellene las casillas correctamente.");
+            }
+            else
+                va.mostrarMensaje("Por favor, rellene las casillas correctamente.");
 
         }
         catch (Exception ex){
@@ -632,10 +703,23 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la modificación de un staff.\n" +ex.getMessage());
         }
     }
-    public void consultarStaff(){
+    public void consultarStaff(String nombre, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
-            //
+            listaTextFieldsDinamicos.get(0).setText("");
+            listaTextFieldsDinamicos.get(2).setText("");
+            listaTextFieldsDinamicos.get(3).setText("");
+            listaTextFieldsDinamicos.get(4).setText("");
+            if (!nombre.isEmpty()) {
+                Staff staff = cv.buscarStaffPorNombre(nombre);
+                listaTextFieldsDinamicos.get(0).setText(staff.getPuesto());
+                listaTextFieldsDinamicos.get(2).setText(staff.getFechaNac().toString());
+                listaTextFieldsDinamicos.get(3).setText(String.valueOf(staff.getSueldo()));
+                listaTextFieldsDinamicos.get(4).setText(String.valueOf(staff.getEquipo().getIdEquipo()));
+            }
+            else {
+                va.mostrarMensaje("Por favor, rellene la casilla correspondiente al nombre.");
+            }
 
         }
         catch (Exception ex){
@@ -645,10 +729,40 @@ public class ControladorVAdmin {
     }
 
     // Operaciones con patrocinadores
-    public void insertarPatrocinador(){
+
+    // Puede patrocinar más de un equipo. Así que puede que solo habría que añadirlo a PATROCINADORES_EQUIPOS
+    //  (y no hay que insertar un nuevo patrocinador, ya que ese ya existe).
+
+    public void insertarPatrocinador(String nombre, int idEquipo, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
-            //
+            if (!nombre.isEmpty() && !listaTextFieldsDinamicos.get(1).getText().isEmpty()) {
+                // Insertar en Patrocinadores_equipos y puede que en Patrocinadores.
+                Patrocinador patrocinadorExistente = cv.buscarPatrocinadorPorNombre(nombre);
+                // Si el patrocinador no existe, hay que insertar en 2 tablas:
+                if (patrocinadorExistente == null){
+                    Patrocinador patrocinador = new Patrocinador();
+                    patrocinador.setNombre(nombre);
+                    cv.insertarPatrocinador(patrocinador);
+
+                    Patrocinador patrocinadorInsertado = cv.buscarPatrocinadorPorNombre(nombre);
+                    cv.insertarPatrocinadorEquipo(patrocinadorInsertado.getIdPatrocinador(),idEquipo);
+
+                    va.mostrarMensaje("El patrocinador insertado tiene el ID ➤ " + patrocinadorInsertado.getIdPatrocinador() + ".");
+                    System.out.println("El patrocinador insertado tiene el ID ➤ " + patrocinadorInsertado.getIdPatrocinador() + ".");
+                    limpiarCasillasClase(listaTextFieldsDinamicos);
+                }
+                // Si el patrocinador sí existe, hay que insertar en 1 tabla:
+                else {
+                    cv.insertarPatrocinadorEquipo(patrocinadorExistente.getIdPatrocinador(),idEquipo);
+
+                    va.mostrarMensaje("Relación de patrocinador con equipo implementada correctamente.");
+                    System.out.println("Relación de patrocinador con equipo implementada correctamente.");
+                    limpiarCasillasClase(listaTextFieldsDinamicos);
+                }
+            }
+            else
+                va.mostrarMensaje("Por favor, rellene correctamente las 2 casillas.");
 
         }
         catch (Exception ex){
@@ -656,10 +770,35 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la inserción de un patrocinador.\n" +ex.getMessage());
         }
     }
-    public void borrarPatrocinador(){
+    public void borrarPatrocinador(String nombre, int idEquipo, ArrayList<JTextField> listaTextFieldsDinamicos){
+        // Se podrá desvincular con un equipo que patrocina (eliminar una fila de 'Patrocinadores_equipos') o eliminar un patrocinador.
         try {
-
-            //
+            // Si solo hay que borrar un patrocinador:
+            if (!nombre.isEmpty() && listaTextFieldsDinamicos.get(1).getText().isEmpty()) {
+                Patrocinador patrocinador = cv.buscarPatrocinadorPorNombre(nombre);
+                if (patrocinador != null){
+                    cv.borrarPatrocinador(patrocinador.getIdPatrocinador());
+                    va.mostrarMensaje("Patrocinador eliminado correctamente.");
+                    System.out.println("Patrocinador eliminado correctamente.");
+                    limpiarCasillasClase(listaTextFieldsDinamicos);
+                }
+                else
+                    va.mostrarMensaje("El patrocinador especificado no existe.");
+            }
+            // Si hay que borrar de 'Patrocinadores_equipos':
+            else if (!nombre.isEmpty() && !listaTextFieldsDinamicos.get(1).getText().isEmpty()) {
+                Patrocinador patrocinadorExistente = cv.buscarPatrocinadorPorNombre(nombre);
+                if (patrocinadorExistente != null) {
+                    cv.borrarPatrocinadorEquipo(patrocinadorExistente.getIdPatrocinador(),idEquipo);
+                    va.mostrarMensaje("Relación de patrocinador con equipo eliminada correctamente.");
+                    System.out.println("Relación de patrocinador con equipo eliminada correctamente.");
+                    limpiarCasillasClase(listaTextFieldsDinamicos);
+                }
+                else
+                    va.mostrarMensaje("El patrocinador especificado no existe.");
+            }
+            else
+                va.mostrarMensaje("Por favor, rellene las casillas correspondientes.");
 
         }
         catch (Exception ex){
@@ -667,21 +806,46 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la eliminación de un patrocinador.\n" +ex.getMessage());
         }
     }
-    public void modificarPatrocinador(){
+    public void modificarPatrocinador(String nombre, int idEquipo, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
-            //
+            // TODO : no hace falta. (QUITAR OPCIÓN EN VENTANA Y EL LISTENER...)
 
         }
         catch (Exception ex){
             System.out.println("Error en la modificación de un patrocinador.\n" +ex.getMessage());
             va.mostrarMensaje("Error en la modificación de un patrocinador.\n" +ex.getMessage());
         }
+
     }
-    public void consultarPatrocinador(){
+    public void consultarPatrocinador(String nombre, ArrayList<JTextField> listaTextFieldsDinamicos){
+        // Obtendrá los ID de los equipos que patrocina.
         try {
 
-            //
+            listaTextFieldsDinamicos.get(1).setText("");
+
+            Patrocinador p = cv.buscarPatrocinadorPorNombre(nombre);
+            if (p != null) {
+                ArrayList<Integer> listaEquiposPatrocinador = cv.buscarEquiposPatrocinador(p.getIdPatrocinador());
+
+                if (!listaEquiposPatrocinador.isEmpty()) {
+                    // Convertir la lista de IDs en una cadena separada por comas.
+                    StringBuilder equiposTexto = new StringBuilder();
+                    for (Integer idEquipo : listaEquiposPatrocinador) {
+                        if (!equiposTexto.isEmpty()) {
+                            equiposTexto.append(", ");
+                        }
+                        equiposTexto.append(idEquipo);
+                    }
+                    // Establecer el texto en el TextField
+                    listaTextFieldsDinamicos.get(1).setText(equiposTexto.toString());
+                }
+                else {
+                    va.mostrarMensaje("El patrocinador no patrocina ningún equipo.");
+                }
+            }
+            else
+                va.mostrarMensaje("El patrocinador especificado no existe.");
 
         }
         catch (Exception ex){
@@ -699,8 +863,7 @@ public class ControladorVAdmin {
                 Juego juego = new Juego();
                 juego.setNombre(nombre);
                 juego.setEmpresa(empresa);
-                LocalDate fechaLanzamientoLD = LocalDate.parse(listaTextFieldsDinamicos.get(2).getText(),
-                                                DateTimeFormatter.ofPattern("dd-MM-yy"));
+                LocalDate fechaLanzamientoLD = LocalDate.parse(listaTextFieldsDinamicos.get(2).getText(), formatoFecha);
                 Date fechaLanzamiento = Date.valueOf(fechaLanzamientoLD);
                 juego.setFechaLanzamiento(fechaLanzamiento);
                 cv.insertarJuego(juego);
@@ -761,7 +924,7 @@ public class ControladorVAdmin {
                     juego.setNombre(nombre);
                     juego.setEmpresa(empresa);
                     LocalDate fechaLanzamientoLD = LocalDate.parse(listaTextFieldsDinamicos.get(2).getText(),
-                                                    formatoFecha);
+                            formatoFecha);
                     Date fechaLanzamiento = Date.valueOf(fechaLanzamientoLD);
                     juego.setFechaLanzamiento(fechaLanzamiento);
                     cv.modificarJuego(juego);
@@ -809,10 +972,31 @@ public class ControladorVAdmin {
     }
 
     // Operaciones con competiciones
-    public void insertarCompeticion(){
+    // La competición tendrá nombre, fecha de inicio, fecha de fin, estado de la etapa, id del juego e id del posible equipo ganador.
+    public void insertarCompeticion(String nombre, String etapa, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
-            //
+            if (!nombre.isEmpty() && listaTextFieldsDinamicos.get(1).getText().isEmpty()
+                    && listaTextFieldsDinamicos.get(2).getText().isEmpty() && etapa.isEmpty()
+                    && listaTextFieldsDinamicos.get(4).getText().isEmpty()
+                    && listaTextFieldsDinamicos.get(5).getText().isEmpty()){
+                Competicion c = new Competicion();
+                c.setNombreCom(nombre);
+                LocalDate fechaInicioLD = LocalDate.parse(listaTextFieldsDinamicos.get(1).getText(), formatoFecha);
+                Date fechaInicio = Date.valueOf(fechaInicioLD);
+                c.setFechaInicio(fechaInicio);
+                LocalDate fechaFinLD = LocalDate.parse(listaTextFieldsDinamicos.get(2).getText(), formatoFecha);
+                Date fechaFin = Date.valueOf(fechaFinLD);
+                c.setFechaFin(fechaFin);
+                c.setEtapa(etapa);
+                Juego j = cv.buscarJuego(Integer.valueOf(listaTextFieldsDinamicos.get(4).getText()));
+                c.setJuego(j);
+                Equipo e = cv.buscarEquipo(Integer.valueOf(listaTextFieldsDinamicos.get(5).getText()));
+                c.setEquipoGanador(e);
+                cv.insertarCompeticion(c);
+            }
+            else
+                va.mostrarMensaje("Por favor, rellene todas las casillas.");
 
         }
         catch (Exception ex){
@@ -820,7 +1004,7 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la inserción de un competición.\n" +ex.getMessage());
         }
     }
-    public void borrarCompeticion(){
+    public void borrarCompeticion(String nombre, String etapa, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
             //
@@ -831,7 +1015,7 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la eliminación de un competición.\n" +ex.getMessage());
         }
     }
-    public void modificarCompeticion(){
+    public void modificarCompeticion(String nombre, String etapa, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
             //
@@ -842,7 +1026,7 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la modificación de un competición.\n" +ex.getMessage());
         }
     }
-    public void consultarCompeticion(){
+    public void consultarCompeticion(String nombre, String etapa, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
             //
