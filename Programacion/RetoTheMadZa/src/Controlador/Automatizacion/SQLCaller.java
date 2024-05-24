@@ -61,7 +61,7 @@ public class SQLCaller {
      */
     private static void saveToDesktop(String fileName, String content) throws IOException {
         // Obtener la ruta del escritorio del usuario y crear el directorio zaXML con la fecha y hora
-        Path desktopDir = Paths.get(System.getProperty("user.home"), "Desktop", "zaXML");
+        Path desktopDir = Paths.get(System.getProperty("user.home"), "Desktop", "HistorialXMLs");
 
         // Obtener la fecha y hora actual
         LocalDateTime now = LocalDateTime.now();
