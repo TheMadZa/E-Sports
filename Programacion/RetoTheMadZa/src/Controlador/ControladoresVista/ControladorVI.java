@@ -14,6 +14,7 @@ import java.net.URL;
 import java.util.List;
 import Controlador.ControladoresVista.ControladorImagenes;
 
+// TODO : JAVADOC
 /**
  * Clase ControladorVI que gestiona la primera ventana en aparecer.
  *

@@ -4,6 +4,7 @@ import Controlador.ControladoresVista.ControladorVUser;
 import Modelo.*;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,7 +12,7 @@ import java.util.List;
  *
  * <p>Esta clase proporciona métodos para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar)
  *  * sobre diferentes entidades en la base de datos, como competiciones, equipos, jornadas, juegos, jugadores,
- *  * patrocinadores, staff, usuarios, equipos-competiciones y XML.</p>
+ *  * patrocinadores, staff, usuarios, equipos-competiciones, patrocinadores-equipos y XML.</p>
  *
  * @author Julen, Lorena, Zahir, Ibai
  * @version 1.0
@@ -27,6 +28,7 @@ public class ControladorModelo {
     private ControladorStaff cs;
     private ControladorUsuarios cu;
     private ControladorEquiposCompeticiones cec;
+    private ControladorPatrocinadoresEquipos cpe;
     private ControladorXML cxm;
 
     /**
@@ -44,6 +46,7 @@ public class ControladorModelo {
      * @see ControladorStaff
      * @see ControladorUsuarios
      * @see ControladorEquiposCompeticiones
+     * @see ControladorPatrocinadoresEquipos
      * @see ControladorXML
      */
     public ControladorModelo() {
@@ -58,6 +61,7 @@ public class ControladorModelo {
         cs = new ControladorStaff(con);
         cu = new ControladorUsuarios(con);
         cec = new ControladorEquiposCompeticiones(con);
+        cpe = new ControladorPatrocinadoresEquipos(con);
         cxm = new ControladorXML(con);
     }
 
@@ -184,8 +188,12 @@ public class ControladorModelo {
         return cp.buscarPatrocinador(id_patrocinador);
     }
 
-    public void modificarPatrocinador(Patrocinador p) throws Exception {
-        cp.modificarPatrocinador(p);
+    public void modificarPatrocinador(int idEquipo, int idPatrocinador) throws Exception {
+        cp.modificarPatrocinador(idEquipo, idPatrocinador);
+    }
+
+    public Patrocinador buscarPatrocinadorPorNombre(String nombre) throws Exception{
+        return cp.buscarPatrocinadorPorNombre(nombre);
     }
 
     //STAFF
@@ -205,6 +213,10 @@ public class ControladorModelo {
         cs.modificarStaff(s);
     }
 
+    public Staff buscarStaffPorNombre(String nombre) throws Exception {
+        return cs.buscarStaffPorNombre(nombre);
+    }
+
     //USUARIO
     public boolean validarUsuario(String usuario, String contrasena) throws Exception {
         return cu.validarUsuario(usuario, contrasena);
@@ -221,6 +233,19 @@ public class ControladorModelo {
 
     public void insertarEquipoCompeticion(int idEquipo, int idCompeticion) throws Exception {
         cec.insertarEquipoCompeticion(idEquipo, idCompeticion);
+    }
+
+    //PATROCINADOR_EQUIPO
+    public void insertarPatrocinadorEquipo(int idPatrocinador, int idEquipo) throws Exception {
+        cpe.insertarPatrocinadorEquipo(idPatrocinador, idEquipo);
+    }
+
+    public ArrayList<Integer> buscarEquiposPatrocinador(int idPatrocinador) throws Exception {
+        return cpe.buscarEquiposPatrocinador(idPatrocinador);
+    }
+
+    public void borrarPatrocinadorEquipo(int idPatrocinador, int idEquipo) throws Exception {
+        cpe.borrarPatrocinadorEquipo(idPatrocinador, idEquipo);
     }
 
     //XML
@@ -250,10 +275,9 @@ public class ControladorModelo {
     public void abrirConexion() {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            //String url = "jdbc:oracle:thin:@SrvOracle:1521:ORCL"; // TODO : para conexión ordenadores clase
-            String url = "jdbc:oracle:thin:@172.20.225.114:1521:ORCL"; // TODO : para conexión portatil
+            String url = "jdbc:oracle:thin:@172.20.225.114:1521:ORCL"; // TODO : para conexión clase
             //String url = "jdbc:oracle:thin:@//localhost:1521/XEPDB1"; // TODO : para conexión en casa (Ibai)
-            //String url = "jdbc:oracle:thin:@//4.tcp.eu.ngrok.io:16055:1521/XEPDB1"; // TODO : para conexión en casa (Lorena)
+            //String url = "jdbc:oracle:thin:@//4.tcp.eu.ngrok.io:14479:1521/XEPDB1"; // TODO : para conexión en casa (Lorena)
             //String url = "jdbc:oracle:thin:@//localhost:1521/XE"; // TODO : para conexión en casa (za)
             //String user = "C##eqdaw03";
             String user = "eqdaw03";
@@ -271,6 +295,7 @@ public class ControladorModelo {
             cp = new ControladorPatrocinadores(con);
             cs = new ControladorStaff(con);
             cec = new ControladorEquiposCompeticiones(con);
+            cpe = new ControladorPatrocinadoresEquipos(con);
         }
         catch (Exception e) {
             System.out.println("Problemas con la base de datos");

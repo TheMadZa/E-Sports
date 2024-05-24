@@ -7,6 +7,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+// TODO : JAVADOC
 public class ControladorVTienda {
     private VentanaTienda vt;
     private ControladorVista cv;

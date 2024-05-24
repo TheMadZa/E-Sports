@@ -16,7 +16,7 @@ import java.awt.event.*;
  *
  * Esta clase es una subclase de JDialog.
  *
- * @author Lorena
+ * @author Lorena, Ibai
  * @version 1.0
  */
 public class DialogoUsuario extends JDialog {

@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 /**
  * Esta clase representa la ventana de Jornadas.
  *
- * @author Ibai, Lorena
+ * @author Ibai
  * @version 1.0
  */
 public class VentanaJornadas extends JFrame{
@@ -116,9 +116,9 @@ public class VentanaJornadas extends JFrame{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(true);
         getRootPane().setDefaultButton(bInicio);
-        ftThemadza.setBorder(BorderFactory.createEmptyBorder());
 
-        JComponent[] componentesConBorde = {mPrincipal, bTienda, bInicio, bSalir, bFacebook, bTwitter, bInstagram};
+        JComponent[] componentesConBorde = {mPrincipal, bTienda, bInicio, bSalir, bFacebook, bTwitter, bInstagram,
+                ftThemadza};
         for (JComponent componente : componentesConBorde) {
             componente.setBorder(BorderFactory.createEmptyBorder());
         }

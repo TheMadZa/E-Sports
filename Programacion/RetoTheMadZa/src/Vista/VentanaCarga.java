@@ -7,7 +7,7 @@ import java.awt.*;
  * Esta clase representa una ventana de carga que se utiliza para mostrar un indicador de carga
  * mientras se cargan las imágenes en la aplicación.
  *
- * @author Ibai, Lorena
+ * @author Ibai
  * @version 1.0
  */
 public class VentanaCarga extends JFrame {

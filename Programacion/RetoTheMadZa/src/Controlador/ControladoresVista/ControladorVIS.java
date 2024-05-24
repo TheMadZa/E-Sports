@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+// TODO : JAVADOC
 public class ControladorVIS {
 
     private VentanaInicioSesion vis;

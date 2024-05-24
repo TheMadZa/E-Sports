@@ -35,7 +35,8 @@ public class ControladorCompeticiones {
      */
     public void insertarCompeticion(Competicion c) throws Exception {
         try {
-            String plantilla = "INSERT INTO competiciones VALUES (?,?,?,?,?,?,?)";
+            String plantilla = "INSERT INTO competiciones (nombre_com, fecha_inicio, fecha_fin, etapa, id_juego, " +
+                                "id_equipo_ganador) VALUES (?,?,?,?,?,?,?)";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
 

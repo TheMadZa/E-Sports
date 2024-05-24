@@ -155,7 +155,7 @@ public class ControladorEquipos {
     public Equipo buscarEquipoPorNombre(String nombre) throws Exception{
 
         try {
-            String plantilla = "SELECT id_equipo, fecha_fundacion, logo, color FROM equipos WHERE UPPER(nom_equipo) = ?";
+            String plantilla = "SELECT id_equipo, nom_equipo, fecha_fundacion, logo, color FROM equipos WHERE UPPER(nom_equipo) = ?";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
 
@@ -165,6 +165,7 @@ public class ControladorEquipos {
             if (rs.next()) {
                 e = new Equipo();
                 e.setIdEquipo(rs.getInt("id_equipo"));
+                e.setNomEquipo(rs.getString("nom_equipo"));
                 e.setFechaFundacion(rs.getDate("fecha_fundacion"));
                 e.setLogo(rs.getString("logo"));
                 e.setColor(rs.getString("color"));
@@ -213,7 +214,7 @@ public class ControladorEquipos {
             return listaEquipos;
         }
         catch (Exception e){
-            throw new Exception("Error al cargar equipos desde base de datos");
+            throw new Exception("Error al cargar equipos desde base de datos.");
         }
     }
 }

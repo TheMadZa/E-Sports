@@ -114,10 +114,9 @@ public class VentanaClasificacion extends JFrame{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(true);
         getRootPane().setDefaultButton(bInicio);
-        ftThemadza.setBorder(BorderFactory.createEmptyBorder());
 
         JComponent[] componentesConBorde = {mPrincipal, bTienda, bInicio, bSalir, bFacebook,
-                bTwitter, bInstagram};
+                bTwitter, bInstagram, ftThemadza};
         for (JComponent componente : componentesConBorde) {
             componente.setBorder(BorderFactory.createEmptyBorder());
         }

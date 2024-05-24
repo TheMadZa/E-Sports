@@ -5,6 +5,7 @@ import Controlador.ControladoresVista.ControladorImagenes;
 import Controlador.ControladoresVista.ControladorVista;
 import Modelo.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -157,8 +158,12 @@ public class ControladorPrincipal {
         return cm.buscarPatrocinador(id_patrocinador);
     }
 
-    public void modificarPatrocinador(Patrocinador p) throws Exception {
-        cm.modificarPatrocinador(p);
+    public void modificarPatrocinador(int idEquipo, int idPatrocinador) throws Exception {
+        cm.modificarPatrocinador(idEquipo, idPatrocinador);
+    }
+
+    public Patrocinador buscarPatrocinadorPorNombre(String nombre) throws Exception{
+        return cm.buscarPatrocinadorPorNombre(nombre);
     }
 
     //STAFF
@@ -178,6 +183,10 @@ public class ControladorPrincipal {
         cm.modificarStaff(s);
     }
 
+    public Staff buscarStaffPorNombre(String nombre) throws Exception {
+        return cm.buscarStaffPorNombre(nombre);
+    }
+
     //USUARIO
     public boolean validarUsuario(String usuario, String contrasena) throws Exception {
         return cm.validarUsuario(usuario, contrasena);
@@ -194,6 +203,19 @@ public class ControladorPrincipal {
 
     public void insertarEquipoCompeticion(int idEquipo, int idCompeticion) throws Exception {
         cm.insertarEquipoCompeticion(idEquipo, idCompeticion);
+    }
+
+    //PATROCINADOR_EQUIPO
+    public void insertarPatrocinadorEquipo(int idPatrocinador, int idEquipo) throws Exception {
+        cm.insertarPatrocinadorEquipo(idPatrocinador, idEquipo);
+    }
+
+    public ArrayList<Integer> buscarEquiposPatrocinador(int idPatrocinador) throws Exception {
+        return cm.buscarEquiposPatrocinador(idPatrocinador);
+    }
+
+    public void borrarPatrocinadorEquipo(int idPatrocinador, int idEquipo) throws Exception {
+        cm.borrarPatrocinadorEquipo(idPatrocinador, idEquipo);
     }
 
     //XML

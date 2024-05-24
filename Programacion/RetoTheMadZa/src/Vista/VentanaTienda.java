@@ -117,7 +117,6 @@ public class VentanaTienda extends JFrame{
         verticalScrollBar.setForeground(foregroundColor);
         PanelMedio.getViewport().setBackground(backgroundColor);
         PanelMedio.setBackground(backgroundColor);
-        ftThemadza.setBorder(BorderFactory.createEmptyBorder());
 
         setVisible(true);
 
