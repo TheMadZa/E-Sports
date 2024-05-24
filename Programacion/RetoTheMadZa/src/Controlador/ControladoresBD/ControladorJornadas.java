@@ -11,14 +11,35 @@ import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase ControladorJornadas que gestiona las consultas sobre las jornadas.
+ *
+ * <p>Proporciona métodos para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre las jornadas
+ * en la base de datos.</p>
+ *
+ * @author Julen
+ * @version 1.0
+ */
 public class ControladorJornadas {
     private Connection con;
     private Jornada j;
 
+    /**
+     * Constructor de la clase ControladorJornadas.
+     *
+     * @param con Es la conexión con la base de datos que se ejecuta junto con el constructor.
+     */
     public ControladorJornadas(Connection con) {
         this.con = con;
     }
 
+    /**
+     * Función para insertar una jornada pasandole todos sus valores.
+     *
+     * @param j Es el objeto jornada que vamos a insertar en la base de datos
+     * @throws Exception Si ocurre un error durante la inserción.
+     * @throws SQLIntegrityConstraintViolationException Si ya existe una jornada con el mismo ID.
+     */
     public void insertarJornada(Jornada j) throws Exception
     {
         try
@@ -48,6 +69,13 @@ public class ControladorJornadas {
         }
     }
 
+    /**
+     * Función para borrar una jornada pasandole su id.
+     *
+     * @param idJornada Es el id de la jornada y sirve para identificar la jornada que queremos borrar
+     * @throws Exception Si ocurre un error durante la eliminación.
+     * @throws SQLIntegrityConstraintViolationException Si no existe una jornada con el ID especificado.
+     */
     public void borrarJornada(int idJornada) throws Exception
     {
         try
@@ -69,6 +97,13 @@ public class ControladorJornadas {
         }
     }
 
+    /**
+     * Función para buscar datos sobre una jornada pasandole su id.
+     *
+     * @param idJornada Es el id de la jornada que sirve para identificar la jornada que queremos buscar.
+     * @return Se devuelve el objeto jornada con todos sus valores.
+     * @throws Exception Si ocurre un error durante la búsqueda.
+     */
     public Jornada buscarJornada(int idJornada) throws Exception
     {
         try
@@ -101,6 +136,12 @@ public class ControladorJornadas {
         }
     }
 
+    /**
+     * Función para modificar uno o más datos sobre la jornada que identifiquemos con su id.
+     *
+     * @param j Es el objeto jornada del cual queremos actualizar uno o varios valores suyos buscandolo por id.
+     * @throws Exception Si ocurre un error durante la modificación.
+     */
     public void modificarJornada(Jornada j) throws Exception
     {
         String plantilla = "UPDATE jornadas SET num_jornada = ?, fecha_jornada = ?, id_competicion = ?, " +
@@ -119,6 +160,16 @@ public class ControladorJornadas {
         }
     }
 
+    /**
+     * Función para obtener el resultado del equipo local y visitante, id del equipo local y visitante de los
+     * enfrentamientos de la ultima jornada.
+     * Se buscarán el resultado del equipo local y visitante, id del equipo local y visitante que participan en una
+     * competicion, la cual se buscará por su nombre.
+     *
+     * @param nombreCom Es el nombre de la competición que se utiliza para buscar la competición que queramos.
+     * @return Se devuelve un array bidimensional con datos de la tabla Enfrentamientos.
+     * @throws Exception Si ocurre un error durante la búsqueda.
+     */
     public String[][] obtenerResultadosUltimaJornadaPorNombreCom(String nombreCom) throws Exception {
         String[][] resultados = new String[4][4]; // Array multidimensional con 4 filas y 4 columnas
 

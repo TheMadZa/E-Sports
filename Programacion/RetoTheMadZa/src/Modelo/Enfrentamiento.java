@@ -2,6 +2,14 @@ package Modelo;
 
 import java.sql.Timestamp;
 
+/**
+ * Clase que representa un enfrentamiento entre dos equipos en una jornada.
+ * Un enfrentamiento tiene lugar en una fecha y hora determinadas, y puede tener un resultado asociado.
+ *
+ * @autor Ibai
+ * @version 1.0
+ */
+
 public class Enfrentamiento {
 
     private int idEnfrentamiento;
@@ -12,10 +20,26 @@ public class Enfrentamiento {
     private Equipo equipo2;
     private Jornada jornada;
 
-    // Constructors
+    /**
+     * Constructor vacío de la clase Enfrentamiento.
+     * Crea una instancia de Enfrentamiento con valores predeterminados.
+     */
+    // Constructores
     public Enfrentamiento() {
     }
 
+    /**
+     * Constructor de la clase Enfrentamiento con parámetros.
+     * Crea una instancia de Enfrentamiento con los valores proporcionados.
+     *
+     * @param idEnfrentamiento    Identificador único del enfrentamiento.
+     * @param horaEnfrentamiento  Fecha y hora del enfrentamiento.
+     * @param resultado1          Resultado del primer equipo en el enfrentamiento.
+     * @param resultado2          Resultado del segundo equipo en el enfrentamiento.
+     * @param equipo1             Primer equipo del enfrentamiento.
+     * @param equipo2             Segundo equipo del enfrentamiento.
+     * @param jornada             Jornada en la que tiene lugar el enfrentamiento.
+     */
     public Enfrentamiento(int idEnfrentamiento, Timestamp horaEnfrentamiento, int resultado1, int resultado2,
                           Equipo equipo1, Equipo equipo2, Jornada jornada) {
         this.idEnfrentamiento = idEnfrentamiento;
@@ -84,7 +108,17 @@ public class Enfrentamiento {
         this.jornada = jornada;
     }
 
+
     // equals and hashCode
+
+    /**
+     * Compara este enfrentamiento con otro objeto para verificar si son iguales.
+     * Dos enfrentamientos se consideran iguales si tienen el mismo identificador de enfrentamiento,
+     * los mismos resultados, y se llevan a cabo en la misma fecha y hora.
+     *
+     * @param o Objeto a comparar con este enfrentamiento.
+     * @return true si el objeto dado es igual a este enfrentamiento, false de lo contrario.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -98,6 +132,11 @@ public class Enfrentamiento {
         return horaEnfrentamiento != null ? horaEnfrentamiento.equals(that.horaEnfrentamiento) : that.horaEnfrentamiento == null;
     }
 
+    /**
+     * Calcula el código hash para este enfrentamiento.
+     *
+     * @return El código hash calculado para este enfrentamiento.
+     */
     @Override
     public int hashCode() {
         int result = idEnfrentamiento;

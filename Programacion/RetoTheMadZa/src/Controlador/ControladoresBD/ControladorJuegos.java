@@ -11,14 +11,35 @@ import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase ControladorJuegos que gestiona las consultas sobre los juegos.
+ *
+ * <p>Proporciona métodos para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre los juegos
+ * en la base de datos.</p>
+ *
+ * @author Julen, Lorena
+ * @version 1.0
+ */
 public class ControladorJuegos {
     private Connection con;
     private Juego j;
 
+    /**
+     * Constructor de la clase ControladorJuegos.
+     *
+     * @param con Es la conexión con la base de datos que se ejecuta junto con el constructor.
+     */
     public ControladorJuegos(Connection con) {
         this.con = con;
     }
 
+    /**
+     * Función para insertar un juego pasándole todos sus valores.
+     *
+     * @param j Es el objeto jornada que vamos a insertar en la base de datos
+     * @throws Exception Si ocurre un error durante la inserción.
+     * @throws SQLIntegrityConstraintViolationException Si ya existe un juego con el mismo nombre.
+     */
     public void insertarJuego(Juego j) throws Exception {
         try {
             String plantilla = "INSERT INTO JUEGOS (nombre, empresa, fecha_lanzamiento) VALUES (?,?,?)";
@@ -43,6 +64,13 @@ public class ControladorJuegos {
         }
     }
 
+    /**
+     * Función para borrar un juego pasandole su id.
+     *
+     * @param idJuego Es el id del juego y sirve para identificar el juego que queremos borrar
+     * @throws Exception Si ocurre un error durante la eliminación.
+     * @throws SQLIntegrityConstraintViolationException Si no existe un juego con el ID especificado.
+     */
     public void borrarJuego(int idJuego) throws Exception {
         PreparedStatement sentenciaPre = null;
         try {
@@ -72,7 +100,13 @@ public class ControladorJuegos {
         }
     }
 
-
+    /**
+     * Función para buscar datos sobre un juego pasandole su id.
+     *
+     * @param idJuego Es el id del juego que sirve para identificar el juego que queremos buscar.
+     * @return Se devuelve el objeto juego con todos sus valores.
+     * @throws Exception Si ocurre un error durante la búsqueda.
+     */
     public Juego buscarJuego(int idJuego) throws Exception {
         try {
             String plantilla = "SELECT * FROM juegos WHERE id_juego = ?";
@@ -100,6 +134,12 @@ public class ControladorJuegos {
         }
     }
 
+    /**
+     * Función para modificar uno o más datos sobre el juego que identifiquemos con su nombre.
+     *
+     * @param j Es el objeto juego del cual queremos actualizar uno o varios valores suyos buscandolo por nombre.
+     * @throws Exception Si ocurre un error durante la modificación.
+     */
     public void modificarJuego(Juego j) throws Exception {
         String plantilla = "UPDATE juegos SET empresa = ?, fecha_lanzamiento = ? WHERE nombre = ?";
 
@@ -118,6 +158,13 @@ public class ControladorJuegos {
         }
     }
 
+    /**
+     * Función para buscar el id, empresa y fecha de lanzamiento sobre un juego pasándole su nombre.
+     *
+     * @param nombre Es el nombre del juego que sirve para identificar al juego que queremos buscar
+     * @return Se devuelve el objeto juego con los valores que le hemos dicho.
+     * @throws Exception Si ocurre un error durante la búsqueda.
+     */
     public Juego buscarJuegoPorNombre(String nombre) throws Exception {
 
         try {

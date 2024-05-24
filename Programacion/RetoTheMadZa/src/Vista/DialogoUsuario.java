@@ -5,6 +5,20 @@ import Controlador.ControladoresVista.ControladorImagenes;
 import javax.swing.*;
 import java.awt.event.*;
 
+/**
+ * Clase que representa un diálogo para ingresar datos de usuario.
+ * Este diálogo permite al usuario ingresar un nombre de usuario y una contraseña.
+ * Proporciona métodos para mostrar un mensaje, vaciar las casillas de texto y obtener los valores ingresados.
+ *
+ * Este diálogo contiene dos campos de texto: uno para el nombre de usuario y otro para la contraseña.
+ * También incluye botones para confirmar o cancelar la operación.
+ * El diálogo se muestra modalmente, lo que significa que bloquea la interacción con otras ventanas hasta que se cierra.
+ *
+ * Esta clase es una subclase de JDialog.
+ *
+ * @author Lorena
+ * @version 1.0
+ */
 public class DialogoUsuario extends JDialog {
     private JPanel pPrincipal;
     private JButton buttonOk;
@@ -16,6 +30,10 @@ public class DialogoUsuario extends JDialog {
 
 
 
+    /**
+     * Constructor de la clase DialogoUsuario.
+     * Crea una instancia del diálogo de usuario, inicializando sus componentes y configurando su comportamiento.
+     */
     public DialogoUsuario() {
         setContentPane(pPrincipal);
         setTitle("Dialogo Usuario");
@@ -43,19 +61,39 @@ public class DialogoUsuario extends JDialog {
 
     }
 
+    /**
+     * Método invocado cuando se cancela el diálogo.
+     * Agrega aquí tu código si es necesario.
+     */
     private void onCancel() {
         // add your code here if necessary
         dispose();
     }
 
+    /**
+     * Método principal para ejecutar el diálogo de usuario.
+     * Crea una instancia del diálogo de usuario y lo muestra.
+     *
+     * @param args Los argumentos de la línea de comandos (no utilizados).
+     */
     public static void main(String[] args) {
         DialogoUsuario dialog = new DialogoUsuario();
     }
 
     // Funciones
+
+    /**
+     * Muestra un mensaje en un cuadro de diálogo emergente.
+     *
+     * @param mensaje El mensaje a mostrar.
+     */
     public void mostrarMensaje(String mensaje){
         JOptionPane.showMessageDialog(null,mensaje);
     }
+
+    /**
+     * Vacía las casillas de texto del diálogo.
+     */
     public void vaciarCasillas(){
         tfUsuario.setText("");
         ftfContrasena.setText("");
@@ -88,9 +126,20 @@ public class DialogoUsuario extends JDialog {
 
 
     // Listeners
+    /**
+     * Agrega un ActionListener al botón "Ok".
+     *
+     * @param al El ActionListener a agregar.
+     */
     public void addButtonOkAL(ActionListener al) {
         buttonOk.addActionListener(al);
     }
+
+    /**
+     * Agrega un ActionListener al botón "Cancelar".
+     *
+     * @param al El ActionListener a agregar.
+     */
     public void addButtonCancelAL(ActionListener al) {
         buttonCancel.addActionListener(al);
     }

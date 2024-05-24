@@ -6,6 +6,16 @@ import Modelo.*;
 import java.sql.*;
 import java.util.List;
 
+/**
+ * Clase ControladorModelo que gestiona todos los controladores y les da acceso a la base de datos.
+ *
+ * <p>Esta clase proporciona métodos para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar)
+ *  * sobre diferentes entidades en la base de datos, como competiciones, equipos, jornadas, juegos, jugadores,
+ *  * patrocinadores, staff, usuarios, equipos-competiciones y XML.</p>
+ *
+ * @author Julen, Lorena, Zahir, Ibai
+ * @version 1.0
+ */
 public class ControladorModelo {
     private Connection con;
     private ControladorCompeticiones cc;
@@ -19,6 +29,23 @@ public class ControladorModelo {
     private ControladorEquiposCompeticiones cec;
     private ControladorXML cxm;
 
+    /**
+     * Constructor de la clase ControladorModelo.
+     *
+     * <p>Este constructor inicializa un objeto ControladorModelo y crea instancias de varios controladores
+     * relacionados, dándoles acceso a la base de datos.</p>
+     *
+     * @see ControladorCompeticiones
+     * @see ControladorEquipos
+     * @see ControladorJornadas
+     * @see ControladorJuegos
+     * @see ControladorJugadores
+     * @see ControladorPatrocinadores
+     * @see ControladorStaff
+     * @see ControladorUsuarios
+     * @see ControladorEquiposCompeticiones
+     * @see ControladorXML
+     */
     public ControladorModelo() {
         abrirConexion();
 
@@ -34,6 +61,7 @@ public class ControladorModelo {
         cxm = new ControladorXML(con);
     }
 
+    //TODO: Añadir javadoc para todo lo de debajo
     //COMPETICION
     public void insertarCompeticion(Competicion c) throws Exception {
         cc.insertarCompeticion(c);
@@ -215,6 +243,9 @@ public class ControladorModelo {
         return cxm.obtenerXMLUltimaJornadaXSD();
     }
 
+    /**
+     * Abre la conexión con la base de datos.
+     */
     //ABRIR LA CONEXION CON LA BASE DE DATOS
     public void abrirConexion() {
         try {
@@ -243,6 +274,11 @@ public class ControladorModelo {
         }
     }
 
+    /**
+     * Cierra la conexión con la base de datos.
+     *
+     * @throws Exception Si ocurre un error al cerrar la conexión.
+     */
     public void cerrarConexion() throws Exception {
         con.close();
     }

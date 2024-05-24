@@ -9,14 +9,37 @@ import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase ControladorEquiposCompeticiones que gestiona las consultas sobre la relación entre equipos y competiciones.
+ *
+ * <p>Esta clase proporciona métodos para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar)
+ * sobre la relación entre equipos y competiciones en la base de datos.</p>
+ *
+ * @author Julen, Lorena
+ * @version 1.0
+ */
 public class ControladorEquiposCompeticiones {
     private Connection con;
     private EquipoCompeticion ec;
 
+    /**
+     * Constructor de la clase ControladorEquiposCompeticiones.
+     *
+     * @param con Es la conexión con la base de datos que se ejecuta junto con el constructor.
+     */
     public ControladorEquiposCompeticiones(Connection con) {
         this.con = con;
     }
 
+    /**
+     * Función para buscar todas las victorias y puntos de todos los equipos que estén en una competición como mínimo.
+     *
+     * <p>Esta función obtiene las victorias y los puntos de todos los equipos que están participando en al menos
+     * una competición. Devuelve una lista de objetos EquipoCompeticion con estos datos.</p>
+     *
+     * @return Devuelve una lista con todos los equipos que están en una competición
+     * @throws Exception Si ocurre un error durante la búsqueda.
+     */
     public List<EquipoCompeticion> buscarTodosEquiposCompeticiones() throws Exception
     {
         List<EquipoCompeticion> equiposCompeticiones = new ArrayList<>();
@@ -43,6 +66,17 @@ public class ControladorEquiposCompeticiones {
         }
     }
 
+    /**
+     * Función para insertar un equipo en una competición pasándole el id del equipo y el de la competición.
+     *
+     * <p>Esta función inserta un equipo en una competición específica. Se requiere el ID del equipo y el ID
+     * de la competición.</p>
+     *
+     * @param idEquipo Es el id del equipo que vamos a insertar en la competicion.
+     * @param idCompeticion Es el id de la competición que va a recibir el equipo.
+     * @throws Exception Si ocurre un error durante la inserción.
+     * @throws SQLIntegrityConstraintViolationException
+     */
     public void insertarEquipoCompeticion(int idEquipo, int idCompeticion) throws Exception {
 
         try {

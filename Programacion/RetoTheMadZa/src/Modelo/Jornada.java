@@ -4,6 +4,14 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Collection;
 
+/**
+ * Clase que representa una jornada en una competición deportiva.
+ * Cada jornada tiene un número, una fecha y una lista de enfrentamientos entre equipos.
+ * Está asociada a una competición específica.
+ *
+ * @author Lorena, Ibai
+ * @version 1.0
+ */
 public class Jornada {
     private int idJornada;
     private int numJornada;
@@ -11,10 +19,23 @@ public class Jornada {
     private Collection<Enfrentamiento> listaEnfrentamientos;
     private Competicion competicion;
 
-    // Constructors
+    // Constructores
+
+    /**
+     * Constructor vacío de la clase Jornada.
+     * Crea una instancia de Jornada con valores predeterminados.
+     */
     public Jornada() {
     }
 
+    /**
+     * Constructor de la clase Jornada con parámetros.
+     *
+     * @param idJornada    Identificador único de la jornada.
+     * @param numJornada   Número de la jornada dentro de la competición.
+     * @param fechaJornada Fecha en la que tiene lugar la jornada.
+     * @param competicion  Competición a la que pertenece esta jornada.
+     */
     public Jornada(int idJornada, int numJornada, Date fechaJornada, Competicion competicion) {
         this.idJornada = idJornada;
         this.numJornada = numJornada;
@@ -64,6 +85,12 @@ public class Jornada {
     }
 
     // Add single enfrentamiento
+
+    /**
+     * Añade un enfrentamiento a la lista de enfrentamientos de la jornada.
+     *
+     * @param enfrentamiento Enfrentamiento a añadir.
+     */
     public void addEnfrentamiento(Enfrentamiento enfrentamiento) {
         if (listaEnfrentamientos == null)
             listaEnfrentamientos = new ArrayList<>();
@@ -71,6 +98,15 @@ public class Jornada {
     }
 
     // equals and hashCode
+
+    /**
+     * Compara esta jornada con otro objeto para verificar si son iguales.
+     * Dos jornadas se consideran iguales si tienen el mismo identificador,
+     * el mismo número y la misma fecha.
+     *
+     * @param o Objeto a comparar con esta jornada.
+     * @return true si el objeto dado es igual a esta jornada, false de lo contrario.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -83,6 +119,11 @@ public class Jornada {
         return fechaJornada != null ? fechaJornada.equals(jornada.fechaJornada) : jornada.fechaJornada == null;
     }
 
+    /**
+     * Calcula el código hash de esta jornada.
+     *
+     * @return Código hash de esta jornada.
+     */
     @Override
     public int hashCode() {
         int result = idJornada;

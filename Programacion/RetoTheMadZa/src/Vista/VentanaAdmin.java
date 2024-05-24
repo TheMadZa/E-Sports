@@ -7,6 +7,20 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+/**
+ * Clase que representa la ventana principal del administrador del sistema.
+ * Esta ventana proporciona acceso a diferentes funciones administrativas y muestra diferentes paneles para CRUD.
+ * También incluye botones para navegar por la aplicación y enlaces a redes sociales.
+ *
+ * La ventana contiene un menú superior con opciones para administrar jornadas, equipos, jugadores, staff, patrocinadores,
+ * juegos, competiciones y enfrentamientos. Además, permite generar archivos XML.
+ * La ventana también incluye botones para inicio de sesión y para salir de la aplicación.
+ *
+ * Esta clase es una subclase de JFrame.
+ *
+ * @author Lorena, Ibai
+ * @version 1.0
+ */
 public class VentanaAdmin extends JFrame {
     private JPanel panelUp;
     private JPanel PanelMenu;
@@ -69,6 +83,12 @@ public class VentanaAdmin extends JFrame {
     // Lista para almacenar los JTextFields y poder obtenerlos desde el ControladorVAdmin.
     private ArrayList<JTextField> listaTextFieldsDinamicos;
 
+    /**
+     * Constructor de la clase `VentanaAdmin`.
+     * Crea una instancia de la ventana de administrador, inicializando sus componentes y configurando su comportamiento.
+     *
+     * @param vis La ventana de inicio de sesión que debe ser destruida al abrir esta ventana.
+     */
     public VentanaAdmin(VentanaInicioSesion vis){
 
         panelCRUD.setVisible(false);
@@ -110,6 +130,12 @@ public class VentanaAdmin extends JFrame {
         vis.dispose();
     }
 
+    /**
+     * Método principal para ejecutar la ventana de administrador.
+     * Crea una instancia de la ventana de administrador y la muestra.
+     *
+     * @param args Los argumentos de la línea de comandos (no utilizados).
+     */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             VentanaAdmin ventana = new VentanaAdmin(null);

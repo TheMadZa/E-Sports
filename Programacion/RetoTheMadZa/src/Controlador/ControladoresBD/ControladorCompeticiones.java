@@ -8,16 +8,31 @@ import java.util.List;
 /**
  * Clase ControladorCompeticiones que gestiona las consultas sobre las competiciones.
  *
- * @author Julen
+ * <p>Esta clase proporciona métodos para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar)
+ * sobre las competiciones en la base de datos.</p>
+ *
+ * @author Julen, Lorena, Zahir, Ibai
+ * @version 1.0
  */
 public class ControladorCompeticiones {
     private final Connection con;
     private Competicion c;
 
+    /**
+     * Constructor de la clase ControladorCompeticiones.
+     *
+     * @param con Es la conexión con la base de datos que se ejecuta junto con el constructor.
+     */
     public ControladorCompeticiones(Connection con) {
         this.con = con;
     }
 
+    /**
+     * Función para insertar una competicion pasandole todos sus valores.
+     *
+     * @param c Es el objeto competicion que vamos a insertar en la base de datos
+     * @throws Exception Si ocurre un error durante la inserción.
+     */
     public void insertarCompeticion(Competicion c) throws Exception {
         try {
             String plantilla = "INSERT INTO competiciones VALUES (?,?,?,?,?,?,?)";
@@ -45,6 +60,12 @@ public class ControladorCompeticiones {
         }
     }
 
+    /**
+     * Función para borrar una competicion pasandole el id.
+     *
+     * @param idCompeticion Es el id de la competición y sirve para identificar la competición que queremos borrar
+     * @throws Exception Si ocurre un error durante la eliminación.
+     */
     public void borrarCompeticion(int idCompeticion) throws Exception {
         try {
             String plantilla = "DELETE FROM competiciones WHERE id_competicion = ?";
@@ -61,6 +82,13 @@ public class ControladorCompeticiones {
         }
     }
 
+    /**
+     * Función para buscar datos sobre una competicion pasandole su id.
+     *
+     * @param idCompeticion Es el id de la competición que sirve para identificar la competición que queremos buscar
+     * @return Se devuelve el objeto competicion con todos sus valores.
+     * @throws Exception Si no se encuentra la competición o si ocurre un error durante la búsqueda.
+     */
     public Competicion buscarCompeticion(int idCompeticion) throws Exception {
         try {
             String plantilla = "SELECT * FROM competiciones WHERE id_competicion = ?";
@@ -90,15 +118,17 @@ public class ControladorCompeticiones {
     }
 
     /**
-     * Función para obtener logo, victorias y puntos de un equipo en una competición.
-     * Se buscarán los logos, las victorias y los puntos totales de los equipos que participan
-     * en una determinada competición, filtrada por el nombre de la misma.
+     * Función para buscar equipos por nombre de la competición
      *
-     * @author Julen
-     * @author Lorena
-     * @param nombreCom
-     * @return String[][]
-     * @throws Exception
+     * <p>Devuelve para obtener logo, victorias y puntos de un equipo en una competición.
+     * Se buscarán los logos, las victorias, los puntos totales, los nombres de los equipos, los nombres de los
+     * jugadores y los id de los equipos que participan en una determinada competición, filtrada por el nombre de
+     * la misma.</p>
+     *
+     * @param nombreCom Es el nombre de la competición que se utiliza para buscar los equipos de una competición en
+     * concreto.
+     * @return Se devuelve un array bidimensional con datos de los Equipos.
+     * @throws Exception Si ocurre un error durante la búsqueda.
      */
     public String[][] buscarEquiposPorNombreCom(String nombreCom) throws Exception {
         try {
@@ -149,6 +179,12 @@ public class ControladorCompeticiones {
         }
     }
 
+    /**
+     * Función para buscar todos los nombres de cada competicion.
+     *
+     * @return Se devuelve una lista con todas las Competiciones.
+     * @throws Exception Si ocurre un error durante la búsqueda.
+     */
     public List<Competicion> buscarTodasCompeticiones() throws Exception {
 
         List<Competicion> competiciones = new ArrayList<>();
@@ -172,6 +208,12 @@ public class ControladorCompeticiones {
         }
     }
 
+    /**
+     * Función para modificar la competicion .
+     *
+     * @param c Es el objeto competicion del cual queremos actualizar uno o varios valores suyos.
+     * @throws Exception Si ocurre un error durante la modificación.
+     */
     public void modificarCompeticion(Competicion c) throws Exception {
         String plantilla = "UPDATE competiciones SET nombre_com = ?, fecha_inicio = ?, fecha_fin = ?, etapa = ?, " +
                             "id_juego = ?, id_equipo_ganador = ? WHERE id_competicion = ?";

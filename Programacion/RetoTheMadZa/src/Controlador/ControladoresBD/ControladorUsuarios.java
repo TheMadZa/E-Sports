@@ -3,20 +3,39 @@ package Controlador.ControladoresBD;
 import Modelo.Equipo;
 import Modelo.Usuario;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
+/**
+ * Clase ControladorUsuarios que gestiona las consultas sobre los usuarios.
+ *
+ * <p>Proporciona métodos para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre los usuarios
+ * en la base de datos.</p>
+ *
+ * @author Lorena
+ * @version 1.0
+ */
 public class ControladorUsuarios {
 
     private Connection con;
     private Equipo e;
 
+    /**
+     * Constructor de la clase ControladorUsuarios.
+     *
+     * @param con Es la conexión con la base de datos que se ejecuta junto con el constructor.
+     */
     public ControladorUsuarios(Connection con) {
         this.con = con;
     }
 
+    /**
+     * Función para validar un usuario obteniendo su tipo con su nombre y contraseña.
+     *
+     * @param usuario Es el nombre del usuario para validar si existe.
+     * @param contrasena Es la contraseña que servirá para saber si esa es la contraseña del usuario.
+     * @return Devuelve un valor boolean para saber si el usuario existe o no.
+     * @throws Exception Si ocurre un error durante la validación.
+     */
     public boolean validarUsuario(String usuario, String contrasena) throws Exception {
 
         try {
@@ -54,6 +73,13 @@ public class ControladorUsuarios {
 
     }
 
+    /**
+     * Función para insertar un usuario pasándole todos sus valores.
+     *
+     * @param usuario Es el objeto usuario que vamos a insertar en la base de datos
+     * @return Devuelve un valor boolean para saber si la inserción ha ido bien o no
+     * @throws Exception Si ocurre un error durante la inserción.
+     */
     public boolean insertarUsuario(Usuario usuario) throws Exception {
 
         try {
@@ -86,6 +112,12 @@ public class ControladorUsuarios {
 
     }
 
+    /**
+     * Función para borrar un usuario pasandole su nombre.
+     *
+     * @param nomUsuario Es el nombre del usuario y sirve para identificar el usuario que queremos borrar
+     * @throws Exception Si ocurre un error durante la eliminación.
+     */
     public void borrarUsuario(String nomUsuario) throws Exception {
         PreparedStatement sentenciaPre = null;
         try {
@@ -112,6 +144,13 @@ public class ControladorUsuarios {
         }
     }
 
+    /**
+     * Función para buscar datos sobre un usuario pasandole su nombre.
+     *
+     * @param nomUsuario Es el nombre del usuario que sirve para identificar el usuario que queremos buscar.
+     * @return Se devuelve el objeto usuario con todos sus valores.
+     * @throws Exception Si ocurre un error durante la búsqueda.
+     */
     public Usuario buscarUsuario(String nomUsuario) throws Exception {
         try {
             String plantilla = "SELECT * FROM usuarios WHERE nom_usuario = ?";
@@ -134,6 +173,12 @@ public class ControladorUsuarios {
         }
     }
 
+    /**
+     * Función para modificar uno o más datos sobre el usuario que identifiquemos con su nombre.
+     *
+     * @param usuario Es el objeto usuario del cual queremos actualizar uno o varios valores suyos buscandolo por nombre
+     * @throws Exception Si ocurre un error durante la modificación.
+     */
     public void modificarUsuario(Usuario usuario) throws Exception {
         try {
             String plantilla = "UPDATE usuarios SET contrasena = ?, tipo = ? WHERE nom_usuario = ?";
