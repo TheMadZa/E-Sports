@@ -6,6 +6,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+
+/**
+ * Ventana Inicial 2.
+ * @author Ibai
+ */
 public class VentanaUser extends JFrame {
     private JPanel panelUp;
     private JPanel PanelMenu;

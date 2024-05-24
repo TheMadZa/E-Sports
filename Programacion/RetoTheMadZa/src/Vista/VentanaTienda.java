@@ -6,6 +6,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+
+/**
+ * Ventana Tienda.
+ * @author Ibai
+ */
 public class VentanaTienda extends JFrame{
     private JPanel pPrincipal;
     private JPanel panelUp;

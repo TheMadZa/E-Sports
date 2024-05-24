@@ -6,6 +6,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+/**
+ * Ventana Jornadas.
+ * @author Ibai
+ */
 public class VentanaJornadas extends JFrame{
     private JPanel panelUp;
     private JPanel PanelMenu;

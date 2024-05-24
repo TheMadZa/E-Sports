@@ -6,6 +6,11 @@ import java.awt.event.ActionListener;
 
 import Controlador.ControladoresVista.ControladorImagenes;
 
+/**
+ * Ventana Inicial.
+ * @author Ibai
+ */
+
 public class VentanaInicial extends JFrame {
     private JPanel pPrincipal;
     private JPanel PanelMedio;

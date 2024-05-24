@@ -6,6 +6,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+/**
+ * Ventana de Equipos donde se muestran todos los equipos.
+ * @author Ibai
+ * @author Julen
+ */
 public class VentanaEquipos extends JFrame {
     private JPanel panelUp;
     private JPanel PanelMenu;
