@@ -1,6 +1,7 @@
 package Controlador.Automatizacion;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileSystemView;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -60,8 +61,9 @@ public class SQLCaller {
      * @throws IOException si ocurre un error al escribir el archivo.
      */
     private static void saveToDesktop(String fileName, String content) throws IOException {
-        // Obtener la ruta del escritorio del usuario y crear el directorio zaXML con la fecha y hora
-        Path desktopDir = Paths.get(System.getProperty("user.home"), "Desktop", "HistorialXMLs");
+        // Obtener la ruta del escritorio del usuario y crear el directorio HistorialXMLs
+        FileSystemView fsv = FileSystemView.getFileSystemView();
+        Path desktopDir = fsv.getHomeDirectory().toPath().resolve("HistorialXMLs");
 
         // Obtener la fecha y hora actual
         LocalDateTime now = LocalDateTime.now();
