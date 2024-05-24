@@ -34,14 +34,14 @@ public class ControladorImagenes {
         vc.setVisible(true);
 
         System.out.println("Cargando todas las imágenes al inicio...");
-        cargarImagenLocal("TheMadZaLogoSimple", "/Vista/Imagenes/logos/TheMadZaLogoSimple.png");
+        cargarImagenLocal("TheMadZaLogoSimple", "/Vista/Imagenes/Logos/TheMadZaLogoSimple.png");
         cargarImagenLocal("Tienda", "/Vista/Imagenes/Botones/tienda.png");
         cargarImagenLocal("Inicio", "/Vista/Imagenes/Botones/inicio.png");
         cargarImagenLocal("Salir", "/Vista/Imagenes/Botones/powerOff.png");
         cargarImagenLocal("Twitter", "/Vista/Imagenes/RRSS/TwitterLogo.png");
         cargarImagenLocal("Instagram", "/Vista/Imagenes/RRSS/InstagramLogo.png");
         cargarImagenLocal("Facebook", "/Vista/Imagenes/RRSS/FacebookLogo.png");
-        cargarImagenLocal("LogoBlanco", "/Vista/Imagenes/logos/SoloBlanco.png");
+        cargarImagenLocal("LogoBlanco", "/Vista/Imagenes/Logos/SoloBlanco.png");
 
         // Cargar array de URLs
         String[] urlsNoticias = {
@@ -70,8 +70,8 @@ public class ControladorImagenes {
         cargarImagenLocal("Tienda12", "/Vista/Imagenes/Tienda/pantalon.png");
         cargarImagenLocal("Buy", "/Vista/Imagenes/Tienda/buy.png");
 
-        cargarImagenLocal("LogoColor", "/Vista/Imagenes/logos/TheMadZaLogoSoloNegro.png");
-        cargarImagenLocal("TheMadZaLogoColor", "/Vista/Imagenes/logos/TheMadZaLogoColor.png");
+        cargarImagenLocal("LogoColor", "/Vista/Imagenes/Logos/TheMadZaLogoSoloNegro.png");
+        cargarImagenLocal("TheMadZaLogoColor", "/Vista/Imagenes/Logos/TheMadZaLogoColor.png");
 
         //Equipos
         cargarEquiposDesdeBD();
