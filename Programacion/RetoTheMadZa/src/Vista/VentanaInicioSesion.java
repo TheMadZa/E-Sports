@@ -11,6 +11,10 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
 
+/**
+ * Ventana de inicio de sesion.
+ * @author Lorena
+ */
 public class VentanaInicioSesion extends JFrame {
 
     private JPanel pPrincipal;

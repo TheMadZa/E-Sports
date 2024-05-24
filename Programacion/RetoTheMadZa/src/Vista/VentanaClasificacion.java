@@ -6,6 +6,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+/**
+ * Ventana de Clasificacion en la que se muestra una tabala con toda la clasificacion de los equipos.
+ * @author Zahir
+ * @author Ibai
+ */
+
 public class VentanaClasificacion extends JFrame{
     private JPanel panelUp;
     private JPanel PanelMenu;
