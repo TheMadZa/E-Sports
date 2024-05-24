@@ -45,7 +45,7 @@ public class VentanaInicioSesion extends JFrame {
 
                 // Colores para el degradado
                 Color colorInicio = new Color(0x201641);
-                Color colorFin = new Color(0xAE72C2);
+                Color colorFin = new Color(0xC892DC);
 
                 // Crear y configurar el objeto GradientPaint
                 //GradientPaint gradientPaint = new GradientPaint(start, colorInicio, end, colorFin);

@@ -72,7 +72,7 @@ public class VentanaXML extends JFrame{
         getRootPane().setDefaultButton(bInicio);
 
         JComponent[] componentesConBorde = {mPrincipal, bTienda, bInicio, bSalir, bFacebook,
-                bTwitter, bInstagram};
+                bTwitter, bInstagram, ftThemadza};
         for (JComponent componente : componentesConBorde) {
             componente.setBorder(BorderFactory.createEmptyBorder());
         }

@@ -44,26 +44,23 @@ public class ControladorPatrocinadoresEquipos {
     }
 
     public ArrayList<Integer> buscarEquiposPatrocinador(int idPatrocinador) throws Exception {
-
+        ArrayList<Integer> listaEquiposPatrocinador = new ArrayList<>();
         try {
-            ArrayList<Integer> listaEquiposPatrocinador;
             String plantilla = "SELECT id_equipo FROM patrocinadores_equipos WHERE id_patrocinador = ?";
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
             sentenciaPre.setInt(1, idPatrocinador);
             ResultSet rs = sentenciaPre.executeQuery();
-            listaEquiposPatrocinador = new ArrayList<>();
-            if (rs.next()) {
+            while (rs.next()) {
                 listaEquiposPatrocinador.add(rs.getInt("id_equipo"));
             }
-            else {
-                throw new Exception("No hay ningún patrocinador registrado con ese ID.");
-            }
             sentenciaPre.close();
+            if (listaEquiposPatrocinador.isEmpty()) {
+                throw new Exception("El patrocinador no patrocina ningún equipo.");
+            }
             return listaEquiposPatrocinador;
         } catch (SQLException e) {
             throw new Exception("Error al buscar en `patrocinadores_equipos´: " + e.getMessage());
         }
-
     }
 
     public void borrarPatrocinadorEquipo(int idPatrocinador, int idEquipo) throws Exception {

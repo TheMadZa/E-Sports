@@ -97,7 +97,7 @@ public class ControladorEquipos {
      */
     public Equipo buscarEquipo(int idEquipo) throws Exception {
         try {
-            String plantilla = "SELECT * FROM equipos WHERE id_equipo = ?";
+            String plantilla = "SELECT nom_equipo, fecha_fundacion, logo, color FROM equipos WHERE id_equipo = ?";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
 
@@ -113,13 +113,13 @@ public class ControladorEquipos {
                 e.setColor(rs.getString("color"));
             }
             else {
-                throw new Exception("No hay ningún equipo registrado con ese ID.");
+                throw new Exception("Error al buscar equipo por ID.");
             }
             sentenciaPre.close();
             return e;
         }
         catch (Exception e) {
-            throw new Exception("Error al buscar equipo por ID.");
+            throw new Exception("No hay ningún equipo registrado con ese ID.");
         }
     }
 

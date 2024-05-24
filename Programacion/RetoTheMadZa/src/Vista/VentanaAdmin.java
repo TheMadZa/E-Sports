@@ -117,7 +117,7 @@ public class VentanaAdmin extends JFrame {
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(true);
-        getRootPane().setDefaultButton(bInicio);
+        getRootPane().setDefaultButton(bInsertar);
 
         JComponent[] componentesConBorde = {mPrincipal, bInicio, bSalir, bFacebook, bTwitter, bInstagram};
         for (JComponent componente : componentesConBorde) {
@@ -335,8 +335,7 @@ public class VentanaAdmin extends JFrame {
     public void mostrarDatosPatrocinadores(){
         vaciarListaTextFields();
         agregarElemento("Nombre:", new JTextField(), gbc);
-        agregarElemento("ID de su equipo:", new JTextField(), gbc);
-        // TODO : Puede patrocinar más de un equipo. Así que puede que solo habría que añadirlo a PATROCINADORES_EQUIPOS (o sea que no hay que insertar un nuevo patrocinador, ya que ese ya existe).
+        agregarElemento("ID de sus equipos:", new JTextField(), gbc);
     }
 
     /**

@@ -106,6 +106,10 @@ public class ControladorVista {
         cp.modificarCompeticion(c);
     }
 
+    public Competicion buscarCompeticionPorNombre(String nombre) throws Exception{
+        return cp.buscarCompeticionPorNombre(nombre);
+    }
+
     //EQUIPO
     public void insertarEquipo(Equipo e) throws Exception {
         cp.insertarEquipo(e);
@@ -189,6 +193,10 @@ public class ControladorVista {
 
     public void modificarJugador(Jugador j) throws Exception{
         cp.modificarJugador(j);
+    }
+
+    public Jugador buscarJugadorPorNombre(String nombre) throws Exception{
+        return cp.buscarJugadorPorNombre(nombre);
     }
 
 
