@@ -1,5 +1,7 @@
 package Vista;
 
+import Controlador.ControladoresVista.ControladorImagenes;
+
 import javax.swing.*;
 import java.awt.event.*;
 
@@ -10,15 +12,19 @@ public class DialogoUsuario extends JDialog {
     private JTextField tfUsuario;
     private JButton buttonCancel;
     private JPasswordField ftfContrasena;
+    private JLabel ftLogo;
+
+
 
     public DialogoUsuario() {
         setContentPane(pPrincipal);
         setTitle("Dialogo Usuario");
-        setSize(600,600);
+        setSize(600,800);
         setLocationRelativeTo(null);
         setResizable(true);
         setModal(true);
         getRootPane().setDefaultButton(buttonOk);
+        cargarImagenEstablecerIcono("TheMadZaLogoColor", 200, 200, ftLogo);
 
         // call onCancel() when cross is clicked
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
@@ -53,6 +59,23 @@ public class DialogoUsuario extends JDialog {
     public void vaciarCasillas(){
         tfUsuario.setText("");
         ftfContrasena.setText("");
+    }
+
+    private void cargarImagenEstablecerIcono(String nombreImagen, int ancho, int alto, JLabel label) {
+        ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
+        if (icono != null) {
+            label.setIcon(icono);
+        } else {
+            System.err.println("La imagen " + nombreImagen + " no se encontró.");
+        }
+    }
+    private void cargarImagenEstablecerIcono(String nombreImagen, JButton button) {
+        ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, 40, 40);
+        if (icono != null) {
+            button.setIcon(icono);
+        } else {
+            System.err.println("La imagen " + nombreImagen + " no se encontró.");
+        }
     }
 
     // Getters

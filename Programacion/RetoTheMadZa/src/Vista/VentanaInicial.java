@@ -144,6 +144,7 @@ public class VentanaInicial extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(true);
         getRootPane().setDefaultButton(bInicio);
+        ftThemadza.setBorder(BorderFactory.createEmptyBorder());
 
         JComponent[] componentesConBorde = {mPrincipal, bTienda, bInicio, bSalir, cbClasificacion, bFacebook,
                 bTwitter, bInstagram};

@@ -1,5 +1,6 @@
 package Vista;
 
+import Controlador.ControladoresVista.ControladorImagenes;
 import org.imgscalr.Scalr;
 
 import javax.imageio.ImageIO;
@@ -64,26 +65,11 @@ public class VentanaInicioSesion extends JFrame {
         pPrincipal.add(pDatos, gbc);
 
         // Poner la imagen centrada y superpuesta. // TODO : hay que ponerla bien
-        try {
 
-            // Cargar la imagen original
-            URL imageUrl = new URL("https://github.com/IbaiSaenzDeBuruaga" +
-                    "/E-SportsLogos/blob/main/RRSS/TheMadZaLogoColor.png?raw=true");
-            BufferedImage imagenOriginal = ImageIO.read(imageUrl);
 
-            // Escalar la imagen usando ImgScalr
-            BufferedImage bufferedImage = Scalr.resize(imagenOriginal, 200);
+            cargarImagenEstablecerIcono("TheMadZaLogoColor", 200, 200, tfImagenLogo);
 
-            // Crear un ImageIcon a partir del BufferedImage escalado
-            ImageIcon iconoEscalado = new ImageIcon(bufferedImage);
 
-            // Asignar el ImageIcon escalado al JLabel ftThemadza
-            tfImagenLogo.setIcon(iconoEscalado);
-
-        }
-        catch (IOException e) {
-            throw new RuntimeException(e);
-        }
 
         // Configurar la ventana
         setContentPane(pPrincipal);
@@ -130,6 +116,23 @@ public class VentanaInicioSesion extends JFrame {
     }
     public void addBRegistroAL(ActionListener al) {
         bRegistrarse.addActionListener(al);
+    }
+
+    private void cargarImagenEstablecerIcono(String nombreImagen, int ancho, int alto, JLabel label) {
+        ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
+        if (icono != null) {
+            label.setIcon(icono);
+        } else {
+            System.err.println("La imagen " + nombreImagen + " no se encontró.");
+        }
+    }
+    private void cargarImagenEstablecerIcono(String nombreImagen, JButton button) {
+        ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, 40, 40);
+        if (icono != null) {
+            button.setIcon(icono);
+        } else {
+            System.err.println("La imagen " + nombreImagen + " no se encontró.");
+        }
     }
 
 }
