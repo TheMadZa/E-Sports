@@ -250,13 +250,16 @@ public class ControladorModelo {
     public void abrirConexion() {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            String url = "jdbc:oracle:thin:@SrvOracle:1521:ORCL"; // TODO : para conexión ordenadores clase
-            //String url = "jdbc:oracle:thin:@172.20.225.114:1521:ORCL"; // TODO : para conexión portatil
+            //String url = "jdbc:oracle:thin:@SrvOracle:1521:ORCL"; // TODO : para conexión ordenadores clase
+            String url = "jdbc:oracle:thin:@172.20.225.114:1521:ORCL"; // TODO : para conexión portatil
             //String url = "jdbc:oracle:thin:@//localhost:1521/XEPDB1"; // TODO : para conexión en casa (Ibai)
             //String url = "jdbc:oracle:thin:@//4.tcp.eu.ngrok.io:16055:1521/XEPDB1"; // TODO : para conexión en casa (Lorena)
+            //String url = "jdbc:oracle:thin:@//localhost:1521/XE"; // TODO : para conexión en casa (za)
             //String user = "C##eqdaw03";
             String user = "eqdaw03";
             String passwd = "eqdaw03";
+            //String user = "SYSTEM"; // TODO : para conexion en casa (za)
+            //String passwd = "zahir2812"; // TODO : para conexion en casa (za)
             con = DriverManager.getConnection(url, user, passwd);
             System.out.println("Conexión abierta");
 
