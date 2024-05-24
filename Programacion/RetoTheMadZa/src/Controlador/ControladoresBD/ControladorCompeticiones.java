@@ -1,6 +1,9 @@
 package Controlador.ControladoresBD;
 
 import Modelo.Competicion;
+import Modelo.Equipo;
+import Modelo.Juego;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -216,22 +219,55 @@ public class ControladorCompeticiones {
      * @throws Exception Si ocurre un error durante la modificación.
      */
     public void modificarCompeticion(Competicion c) throws Exception {
-        String plantilla = "UPDATE competiciones SET nombre_com = ?, fecha_inicio = ?, fecha_fin = ?, etapa = ?, " +
-                            "id_juego = ?, id_equipo_ganador = ? WHERE id_competicion = ?";
+        String plantilla = "UPDATE competiciones SET fecha_inicio = ?, fecha_fin = ?, etapa = ?, " +
+                            "id_juego = ?, id_equipo_ganador = ? WHERE nombre_com = ?";
 
         PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
 
-        sentenciaPre.setString(1, c.getNombreCom());
-        sentenciaPre.setDate(2, c.getFechaInicio());
-        sentenciaPre.setDate(3, c.getFechaFin());
-        sentenciaPre.setString(4, c.getEtapa());
-        sentenciaPre.setInt(5, c.getJuego().getIdJuego());
-        sentenciaPre.setInt(6, c.getEquipoGanador().getIdEquipo());
-        sentenciaPre.setInt(7, c.getIdCompeticion());
+        sentenciaPre.setDate(1, c.getFechaInicio());
+        sentenciaPre.setDate(2, c.getFechaFin());
+        sentenciaPre.setString(3, c.getEtapa());
+        sentenciaPre.setInt(4, c.getJuego().getIdJuego());
+        sentenciaPre.setInt(5, c.getEquipoGanador().getIdEquipo());
+        sentenciaPre.setString(6, c.getNombreCom().toUpperCase());
 
         int n = sentenciaPre.executeUpdate();
         if (n != 1){
-            throw new Exception("No se ha actualizado ninguna competición.");
+            throw new Exception("No se ha podido actualizar ninguna competición.");
         }
+    }
+
+    public Competicion buscarCompeticionPorNombre(String nombre) throws Exception{
+
+        try {
+            String plantilla = "SELECT id_competicion, fecha_inicio, fecha_fin, etapa, id_juego, id_equipo_ganador " +
+                                "FROM competiciones WHERE UPPER(nombre_com) = ?";
+
+            PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
+            sentenciaPre.setString(1, nombre.toUpperCase());
+            ResultSet rs = sentenciaPre.executeQuery();
+            if (rs.next()) {
+                c = new Competicion();
+                c.setIdCompeticion(rs.getInt("id_competicion"));
+                c.setFechaInicio(rs.getDate("fecha_inicio"));
+                c.setFechaFin(rs.getDate("fecha_fin"));
+                c.setEtapa(rs.getString("etapa"));
+                Juego juego = new Juego();
+                juego.setIdJuego(rs.getInt("id_juego"));
+                c.setJuego(juego);
+                Equipo equipo = new Equipo();
+                equipo.setIdEquipo(rs.getInt("id_equipo_ganador"));
+                c.setEquipoGanador(equipo);
+            }
+            else {
+                throw new Exception("No hay ninguna competición registrada con ese nombre.");
+            }
+            sentenciaPre.close();
+            return c;
+        }
+        catch (Exception e) {
+            throw new Exception("Error al buscar competición por nombre.");
+        }
+
     }
 }

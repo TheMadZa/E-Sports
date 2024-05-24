@@ -71,7 +71,6 @@ public class ControladorVCompeticiones {
                 rellenarTablaEquiposCompeticion(nombreCom);
             }
 
-            vc.getCbClasificacion().setSelectedIndex(-1); // Deselect item initially
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }

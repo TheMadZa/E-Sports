@@ -160,7 +160,7 @@ public class ControladorStaff {
     // TODO : JAVADOC
     public Staff buscarStaffPorNombre(String nombre) throws Exception {
         try {
-            String plantilla = "SELECT id_staff, puesto, nombre, fecha_nac, sueldo, id_equipo FROM juegos " +
+            String plantilla = "SELECT id_staff, puesto, nombre, fecha_nac, sueldo, id_equipo FROM staffs " +
                     "WHERE UPPER(nombre) = ?";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);

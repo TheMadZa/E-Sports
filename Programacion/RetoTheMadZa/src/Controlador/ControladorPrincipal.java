@@ -61,6 +61,10 @@ public class ControladorPrincipal {
         cm.modificarCompeticion(c);
     }
 
+    public Competicion buscarCompeticionPorNombre(String nombre) throws Exception{
+        return cm.buscarCompeticionPorNombre(nombre);
+    }
+
     //EQUIPO
     public void insertarEquipo(Equipo e) throws Exception {
         cm.insertarEquipo(e);
@@ -143,6 +147,10 @@ public class ControladorPrincipal {
 
     public void modificarJugador(Jugador j) throws Exception {
         cm.modificarJugador(j);
+    }
+
+    public Jugador buscarJugadorPorNombre(String nombre) throws Exception{
+        return cm.buscarJugadorPorNombre(nombre);
     }
 
     //PATROCINADOR
