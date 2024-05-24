@@ -2,6 +2,14 @@ package Modelo;
 
 import java.sql.Date;
 
+/**
+ * Clase que representa una competición en el sistema.
+ * Una competición es un evento deportivo en el que varios equipos compiten entre sí
+ * siguiendo un conjunto de reglas establecidas.
+ *
+ * @author Ibai
+ * @version 1.0
+ */
 public class Competicion {
 
     private int idCompeticion;
@@ -12,10 +20,26 @@ public class Competicion {
     private Juego juego;
     private Equipo equipoGanador;
 
-    // Constructors
+    /**
+     * Constructor vacío de la clase Competicion.
+     * Crea una instancia de Competicion con valores predeterminados.
+     */
+    // Constructores
     public Competicion() {
     }
 
+    /**
+     * Constructor de la clase Competicion con parámetros.
+     * Crea una instancia de Competicion con los valores proporcionados.
+     *
+     * @param idCompeticion Identificador único de la competición.
+     * @param nombreCom     Nombre de la competición.
+     * @param fechaInicio   Fecha de inicio de la competición.
+     * @param fechaFin      Fecha de fin de la competición.
+     * @param etapa         Etapa actual de la competición.
+     * @param juego         Juego asociado a la competición.
+     * @param equipoGanador Equipo ganador de la competición (puede ser null si no se ha determinado aún).
+     */
     public Competicion(int idCompeticion, String nombreCom, Date fechaInicio, Date fechaFin, String etapa,
                        Juego juego, Equipo equipoGanador) {
         this.idCompeticion = idCompeticion;
@@ -85,6 +109,16 @@ public class Competicion {
     }
 
     // equals and hashCode
+
+    /**
+     * Compara esta competición con otro objeto para verificar si son iguales.
+     * Dos competiciones se consideran iguales si tienen el mismo identificador de competición,
+     * el mismo nombre, la misma fecha de inicio, la misma fecha de fin, la misma etapa, el mismo juego
+     * y el mismo equipo ganador.
+     *
+     * @param o Objeto a comparar con esta competición.
+     * @return true si el objeto dado es igual a esta competición, false de lo contrario.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -101,6 +135,11 @@ public class Competicion {
         return equipoGanador.equals(that.equipoGanador);
     }
 
+    /**
+     * Calcula el código hash para esta competición.
+     *
+     * @return El código hash calculado para esta competición.
+     */
     @Override
     public int hashCode() {
         int result = idCompeticion;

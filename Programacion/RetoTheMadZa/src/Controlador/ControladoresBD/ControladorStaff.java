@@ -11,14 +11,35 @@ import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase ControladorStaffs que gestiona las consultas sobre los staffs.
+ *
+ * <p>Proporciona métodos para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre el staff
+ * en la base de datos.</p>
+ *
+ * @author Julen, Ibai
+ * @version 1.0
+ */
 public class ControladorStaff {
     private Connection con;
     private Staff s;
 
+    /**
+     * Constructor de la clase ControladorStaffs.
+     *
+     * @param con Es la conexión con la base de datos que se ejecuta junto con el constructor.
+     */
     public ControladorStaff(Connection con) {
         this.con = con;
     }
 
+    /**
+     * Función para insertar un staff pasándole todos sus valores.
+     *
+     * @param s Es el objeto staff que vamos a insertar en la base de datos
+     * @throws Exception Si ocurre un error durante la inserción.
+     * @throws SQLIntegrityConstraintViolationException Si ya existe un miembro del staff con el mismo ID.
+     */
     public void insertarStaff(Staff s) throws Exception
     {
         try
@@ -50,6 +71,13 @@ public class ControladorStaff {
         }
     }
 
+    /**
+     * Función para borrar un staff pasandole su id.
+     *
+     * @param idStaff Es el id del staff y sirve para identificar el staff que queremos borrar
+     * @throws Exception Si ocurre un error durante la eliminación.
+     * @throws SQLIntegrityConstraintViolationException Si no existe un miembro del staff con el ID especificado.
+     */
     public void borrarStaff(int idStaff) throws Exception
     {
         try
@@ -71,6 +99,13 @@ public class ControladorStaff {
         }
     }
 
+    /**
+     * Función para buscar datos sobre un staff pasandole su id.
+     *
+     * @param idStaff Es el id del staff que sirve para identificar el staff que queremos buscar.
+     * @return Se devuelve el objeto staff con todos sus valores.
+     * @throws Exception Si ocurre un error durante la búsqueda.
+     */
     public Staff buscarStaff(int idStaff) throws Exception
     {
         try
@@ -105,6 +140,12 @@ public class ControladorStaff {
         }
     }
 
+    /**
+     * Función para modificar uno o más datos sobre el staff que identifiquemos con su id.
+     *
+     * @param s Es el objeto staff del cual queremos actualizar uno o varios valores suyos buscandolo por id.
+     * @throws Exception Si ocurre un error durante la modificación.
+     */
     public void modificarStaff(Staff s) throws Exception
     {
         String plantilla = "UPDATE staffs SET puesto = ?, nombre = ?, fecha_nac = ?, sueldo = ?, id_equipo = ?" +

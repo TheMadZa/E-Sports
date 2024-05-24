@@ -11,14 +11,34 @@ import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase ControladorEquipos que gestiona las consultas sobre los equipos.
+ *
+ * <p>Esta clase proporciona métodos para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar)
+ * sobre los equipos en la base de datos.</p>
+ *
+ * @author Julen, Lorena, Ibai
+ * @version 1.0
+ */
 public class ControladorEquipos {
     private Connection con;
     private Equipo e;
 
+    /**
+     * Constructor de la clase ControladorEquipos.
+     *
+     * @param con Es la conexión con la base de datos que se ejecuta junto con el constructor.
+     */
     public ControladorEquipos(Connection con) {
         this.con = con;
     }
 
+    /**
+     * Función para insertar un equipo pasandole todos sus valores.
+     *
+     * @param e Es el objeto equipo que vamos a insertar en la base de datos
+     * @throws Exception Si ocurre un error durante la inserción.
+     */
     public void insertarEquipo(Equipo e) throws Exception {
         try {
             String plantilla = "INSERT INTO equipos (nom_equipo, fecha_fundacion, logo , color) VALUES (?,?,?,?)";
@@ -44,6 +64,12 @@ public class ControladorEquipos {
         }
     }
 
+    /**
+     * Función para borrar una competicion pasandole el id.
+     *
+     * @param idEquipo Es el id del equipo y sirve para identificar el equipo que queremos borrar
+     * @throws Exception Si ocurre un error durante la eliminación.
+     */
     public void borrarEquipo(int idEquipo) throws Exception {
         try {
             String plantilla = "DELETE FROM equipos WHERE UPPER(id_equipo) = ?";
@@ -62,6 +88,13 @@ public class ControladorEquipos {
         }
     }
 
+    /**
+     * Función para buscar datos sobre un equipo pasandole su id.
+     *
+     * @param idEquipo Es el id del equipo que sirve para identificar al equipo que queremos buscar
+     * @return Se devuelve el objeto equipo con todos sus valores.
+     * @throws Exception Si no se encuentra el equipo o si ocurre un error durante la búsqueda.
+     */
     public Equipo buscarEquipo(int idEquipo) throws Exception {
         try {
             String plantilla = "SELECT * FROM equipos WHERE id_equipo = ?";
@@ -90,6 +123,12 @@ public class ControladorEquipos {
         }
     }
 
+    /**
+     * Función para modificar el equipo .
+     *
+     * @param e Es el objeto equipo del cual queremos actualizar uno o varios valores suyos buscandolo por nombre.
+     * @throws Exception Si ocurre un error durante la modificación.
+     */
     public void modificarEquipo(Equipo e) throws Exception {
         String plantilla = "UPDATE equipos SET fecha_fundacion = ?, logo = ?, color = ? WHERE nom_equipo = ?";
 
@@ -106,6 +145,13 @@ public class ControladorEquipos {
         }
     }
 
+    /**
+     * Función para buscar el id, fecha de fundacion, logo y color sobre un equipo pasándole su nombre.
+     *
+     * @param nombre Es el nombre del equipo que sirve para identificar al equipo que queremos buscar
+     * @return Se devuelve el objeto equipo con los valores que le hemos dicho.
+     * @throws Exception Si no se encuentra el equipo o si ocurre un error durante la búsqueda.
+     */
     public Equipo buscarEquipoPorNombre(String nombre) throws Exception{
 
         try {
@@ -136,27 +182,38 @@ public class ControladorEquipos {
 
     }
 
+    /**
+     * Función para buscar el id, nombre y logo de todos los equipos.
+     *
+     * @return Se devuelve una lista con todos los Equipos.
+     * @throws Exception Si ocurre un error durante la carga de equipos.
+     */
     public List<Equipo> cargarEquiposDesdeBD() throws Exception {
-        ArrayList<Equipo> listaEquipos = new ArrayList<>();
+        try {
+            ArrayList<Equipo> listaEquipos = new ArrayList<>();
 
-        String plantilla = "SELECT ID_EQUIPO, NOM_EQUIPO, LOGO FROM EQUIPOS";
+            String plantilla = "SELECT ID_EQUIPO, NOM_EQUIPO, LOGO FROM EQUIPOS";
 
-        PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
+            PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
 
-        ResultSet rs = sentenciaPre.executeQuery();
+            ResultSet rs = sentenciaPre.executeQuery();
 
-        while (rs.next()) {
-            int id = rs.getInt("ID_EQUIPO");
-            String nombre = rs.getString("NOM_EQUIPO");
-            String logoUrl = rs.getString("LOGO");
+            while (rs.next()) {
+                int id = rs.getInt("ID_EQUIPO");
+                String nombre = rs.getString("NOM_EQUIPO");
+                String logoUrl = rs.getString("LOGO");
 
-            Equipo e = new Equipo();
-            e.setIdEquipo(id);
-            e.setNomEquipo(nombre);
-            e.setLogo(logoUrl);
+                Equipo e = new Equipo();
+                e.setIdEquipo(id);
+                e.setNomEquipo(nombre);
+                e.setLogo(logoUrl);
 
-            listaEquipos.add(e);
+                listaEquipos.add(e);
+            }
+            return listaEquipos;
         }
-        return listaEquipos;
+        catch (Exception e){
+            throw new Exception("Error al cargar equipos desde base de datos");
+        }
     }
 }

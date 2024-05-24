@@ -2,6 +2,13 @@ package Modelo;
 
 import java.sql.Date;
 
+/**
+ * Clase que representa al personal de un equipo deportivo.
+ * Cada miembro del personal tiene un puesto, un nombre, una fecha de nacimiento, un sueldo y puede estar asociado a un equipo.
+ *
+ * @author Ibai, Zahir, Lorena
+ * @version 1.0
+ */
 public class Staff {
     private int idStaff;
     private String puesto;
@@ -10,10 +17,26 @@ public class Staff {
     private double sueldo;
     private Equipo equipo;
 
-    // Constructors
+    // Constructores
+
+    /**
+     * Constructor vacío de la clase Staff.
+     * Crea una instancia de Staff sin inicializar sus atributos.
+     */
     public Staff() {
     }
 
+    /**
+     * Constructor de la clase Staff con parámetros.
+     * Crea una instancia de Staff con los atributos proporcionados.
+     *
+     * @param idStaff   Identificador único del miembro del personal.
+     * @param puesto    El puesto del miembro del personal.
+     * @param nombre    El nombre del miembro del personal.
+     * @param fechaNac  La fecha de nacimiento del miembro del personal.
+     * @param sueldo    El sueldo del miembro del personal.
+     * @param equipo    El equipo al que está asociado el miembro del personal.
+     */
     public Staff(int idStaff, String puesto, String nombre, Date fechaNac, double sueldo, Equipo equipo) {
         this.idStaff = idStaff;
         this.puesto = puesto;
@@ -73,6 +96,13 @@ public class Staff {
     }
 
     // equals and hashCode
+
+    /**
+     * Compara este objeto con otro para determinar si son iguales.
+     *
+     * @param o El objeto con el que comparar.
+     * @return true si los objetos son iguales, false en caso contrario.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -87,6 +117,11 @@ public class Staff {
         return fechaNac != null ? fechaNac.equals(staff.fechaNac) : staff.fechaNac == null;
     }
 
+    /**
+     * Calcula el valor hash de este objeto.
+     *
+     * @return El valor hash del objeto.
+     */
     @Override
     public int hashCode() {
         int result;

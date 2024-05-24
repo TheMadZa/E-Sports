@@ -2,16 +2,37 @@ package Modelo;
 
 import java.sql.Date;
 
+/**
+ * Clase que representa un juego en el sistema.
+ * Un juego tiene un nombre, una empresa desarrolladora y una fecha de lanzamiento.
+ *
+ * @author Ibai, Lorena
+ * @version 1.0
+ */
+
 public class Juego {
     private int idJuego;
     private String nombre;
     private String empresa;
     private Date fechaLanzamiento;
 
-    // Constructors
+    // Constructores
+
+    /**
+     * Constructor vacío de la clase Juego.
+     * Crea una instancia de Juego con valores predeterminados.
+     */
     public Juego() {
     }
 
+    /**
+     * Constructor de la clase Juego con parámetros.
+     *
+     * @param idJuego          Identificador único del juego.
+     * @param nombre           Nombre del juego.
+     * @param empresa          Empresa desarrolladora del juego.
+     * @param fechaLanzamiento Fecha de lanzamiento del juego.
+     */
     public Juego(int idJuego, String nombre, String empresa, Date fechaLanzamiento) {
         this.idJuego = idJuego;
         this.nombre = nombre;
@@ -53,6 +74,15 @@ public class Juego {
     }
 
     // equals and hashCode
+
+    /**
+     * Compara este juego con otro objeto para verificar si son iguales.
+     * Dos juegos se consideran iguales si tienen el mismo identificador,
+     * el mismo nombre, la misma empresa y la misma fecha de lanzamiento.
+     *
+     * @param o Objeto a comparar con este juego.
+     * @return true si el objeto dado es igual a este juego, false de lo contrario.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -66,6 +96,11 @@ public class Juego {
         return fechaLanzamiento != null ? fechaLanzamiento.equals(juego.fechaLanzamiento) : juego.fechaLanzamiento == null;
     }
 
+    /**
+     * Calcula el código hash de este juego.
+     *
+     * @return Código hash de este juego.
+     */
     @Override
     public int hashCode() {
         int result = idJuego;

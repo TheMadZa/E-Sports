@@ -7,11 +7,27 @@ import Modelo.*;
 
 import java.util.List;
 
+/**
+ * Controlador principal que actúa como intermediario entre la vista y el modelo.
+ *
+ * Gestiona las operaciones relacionadas con la interacción de la vista con los datos del modelo.
+ *
+ * @author Ibai, Lorena, Zahir, Julen
+ * @version 1.0
+ */
 public class ControladorPrincipal {
     private ControladorVista cv;
     private final ControladorModelo cm;
     private ControladorImagenes ci;
 
+    /**
+     * Constructor de la clase ControladorPrincipal.
+     * Inicializa los controladores de vista y modelo, y carga las imágenes.
+     *
+     * @see ControladorModelo
+     * @see ControladorImagenes
+     * @see ControladorVista
+     */
     public ControladorPrincipal() {
         cm = new ControladorModelo();
         ci = new ControladorImagenes(cm);

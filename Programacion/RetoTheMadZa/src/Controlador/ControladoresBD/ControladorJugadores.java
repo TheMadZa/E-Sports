@@ -12,14 +12,35 @@ import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase ControladorJugadores que gestiona las consultas sobre los jugadores.
+ *
+ * <p>Proporciona métodos para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre los jugadores
+ * en la base de datos.</p>
+ *
+ * @author Julen
+ * @version 1.0
+ */
 public class ControladorJugadores {
     private Connection con;
     private Jugador j;
 
+    /**
+     * Constructor de la clase ControladorJugadores.
+     *
+     * @param con Es la conexión con la base de datos que se ejecuta junto con el constructor.
+     */
     public ControladorJugadores(Connection con) {
         this.con = con;
     }
 
+    /**
+     * Función para insertar un jugador pasándole todos sus valores.
+     *
+     * @param j Es el objeto jugador que vamos a insertar en la base de datos
+     * @throws Exception Si ocurre un error durante la inserción.
+     * @throws SQLIntegrityConstraintViolationException Si ya existe un jugador con el mismo ID.
+     */
     public void insertarJugador(Jugador j) throws Exception
     {
         try
@@ -53,6 +74,13 @@ public class ControladorJugadores {
         }
     }
 
+    /**
+     * Función para borrar un jugador pasandole su id.
+     *
+     * @param idJugador Es el id del jugador y sirve para identificar el jugador que queremos borrar
+     * @throws Exception Si ocurre un error durante la eliminación.
+     * @throws SQLIntegrityConstraintViolationException Si no existe un jugador con el ID especificado.
+     */
     public void borrarJugador(int idJugador) throws Exception
     {
         try
@@ -74,6 +102,13 @@ public class ControladorJugadores {
         }
     }
 
+    /**
+     * Función para buscar datos sobre un jugador pasandole su id.
+     *
+     * @param idJugador Es el id del jugador que sirve para identificar el jugador que queremos buscar.
+     * @return Se devuelve el objeto jugador con todos sus valores.
+     * @throws Exception Si ocurre un error durante la búsqueda.
+     */
     public Jugador buscarJugador(int idJugador) throws Exception
     {
         try
@@ -110,6 +145,12 @@ public class ControladorJugadores {
         }
     }
 
+    /**
+     * Función para modificar uno o más datos sobre el jugador que identifiquemos con su id.
+     *
+     * @param j Es el objeto jugador del cual queremos actualizar uno o varios valores suyos buscandolo por id.
+     * @throws Exception Si ocurre un error durante la modificación.
+     */
     public void modificarJugador(Jugador j) throws Exception
     {
         String plantilla = "UPDATE jugadores SET nombre = ?, nickname = ?, nacionalidad = ?, rol = ?, fecha_nac = ?," +

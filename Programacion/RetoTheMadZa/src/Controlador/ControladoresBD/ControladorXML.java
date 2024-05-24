@@ -2,13 +2,32 @@ package Controlador.ControladoresBD;
 
 import java.sql.*;
 
+/**
+ * Clase ControladorXML que gestiona las operaciones relacionadas con XML en la base de datos.
+ *
+ * <p>Esta clase proporciona métodos para obtener XML con y sin validación de tipo DTD y XSD desde la base de datos.</p>
+ *
+ * @author Zahir
+ * @version 1.0
+ */
 public class ControladorXML {
     private final Connection con;
 
+    /**
+     * Constructor de la clase ControladorXML.
+     *
+     * @param con La conexión a la base de datos.
+     */
     public ControladorXML(Connection con) {
         this.con = con;
     }
 
+    /**
+     * Obtiene el XML de la clasificación con validación de tipo DTD.
+     *
+     * @return El XML de la clasificación con validación de tipo DTD.
+     * @throws Exception Si ocurre un error durante la obtención del XML.
+     */
     public String obtenerXMLClasificacionDTD() throws Exception {
         CallableStatement callableStatement = null;
         Statement statement = null;
@@ -36,6 +55,12 @@ public class ControladorXML {
         return result.toString();
     }
 
+    /**
+     * Obtiene el XML de la clasificación con validación de tipo XSD.
+     *
+     * @return El XML de la clasificación con validación de tipo XSD.
+     * @throws Exception Si ocurre un error durante la obtención del XML.
+     */
     public String obtenerXMLClasificacionXSD() throws Exception {
         CallableStatement callableStatement = null;
         Statement statement = null;
@@ -65,6 +90,13 @@ public class ControladorXML {
 
         return result.toString();
     }
+
+    /**
+     * Obtiene el XML de las jornadas con validación de tipo DTD.
+     *
+     * @return El XML de las jornadas con validación de tipo DTD.
+     * @throws Exception Si ocurre un error durante la obtención del XML.
+     */
     public String obtenerXMLJornadasDTD() throws Exception {
         CallableStatement callableStatement = null;
         Statement statement = null;
@@ -92,6 +124,12 @@ public class ControladorXML {
         return result.toString();
     }
 
+    /**
+     * Obtiene el XML de las jornadas con validación de tipo XSD.
+     *
+     * @return El XML de las jornadas con validación de tipo XSD.
+     * @throws Exception Si ocurre un error durante la obtención del XML.
+     */
     public String obtenerXMLJornadasXSD() throws Exception {
         CallableStatement callableStatement = null;
         Statement statement = null;
@@ -121,6 +159,13 @@ public class ControladorXML {
 
         return result.toString();
     }
+
+    /**
+     * Obtiene el XML de la última jornada con validación de tipo DTD.
+     *
+     * @return El XML de la última jornada con validación de tipo DTD.
+     * @throws Exception Si ocurre un error durante la obtención del XML.
+     */
     public String obtenerXMLUltimaJornadaDTD() throws Exception {
         CallableStatement callableStatement = null;
         Statement statement = null;
@@ -148,6 +193,12 @@ public class ControladorXML {
         return result.toString();
     }
 
+    /**
+     * Obtiene el XML de la última jornada con validación de tipo XSD.
+     *
+     * @return El XML de la última jornada con validación de tipo XSD.
+     * @throws Exception Si ocurre un error durante la obtención del XML.
+     */
     public String obtenerXMLUltimaJornadaXSD() throws Exception {
         CallableStatement callableStatement = null;
         Statement statement = null;

@@ -1,13 +1,31 @@
 package Modelo;
 
+/**
+ * Clase que representa un patrocinador en el sistema.
+ * Cada patrocinador tiene un identificador único y un nombre.
+ *
+ * @author Ibai, Lorena
+ * @version 1.0
+ */
 public class Patrocinador {
     private int idPatrocinador;
     private String nombre;
 
-    // Constructors
+    // Constructores
+
+    /**
+     * Constructor vacío de la clase Patrocinador.
+     * Crea una instancia de Patrocinador con valores predeterminados.
+     */
     public Patrocinador() {
     }
 
+    /**
+     * Constructor de la clase Patrocinador con parámetros.
+     *
+     * @param idPatrocinador Identificador único del patrocinador.
+     * @param nombre         Nombre del patrocinador.
+     */
     public Patrocinador(int idPatrocinador, String nombre) {
         this.idPatrocinador = idPatrocinador;
         this.nombre = nombre;
@@ -31,6 +49,14 @@ public class Patrocinador {
     }
 
     // equals and hashCode
+
+    /**
+     * Compara este patrocinador con otro objeto para verificar si son iguales.
+     * Dos patrocinadores se consideran iguales si tienen el mismo identificador y el mismo nombre.
+     *
+     * @param o Objeto a comparar con este patrocinador.
+     * @return true si el objeto dado es igual a este patrocinador, false de lo contrario.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -42,6 +68,11 @@ public class Patrocinador {
         return nombre != null ? nombre.equals(that.nombre) : that.nombre == null;
     }
 
+    /**
+     * Calcula el código hash de este patrocinador.
+     *
+     * @return Código hash de este patrocinador.
+     */
     @Override
     public int hashCode() {
         int result = idPatrocinador;
