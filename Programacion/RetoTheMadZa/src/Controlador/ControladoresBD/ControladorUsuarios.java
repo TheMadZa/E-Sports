@@ -1,6 +1,7 @@
 package Controlador.ControladoresBD;
 
 import Modelo.Equipo;
+import Modelo.Juego;
 import Modelo.Usuario;
 
 import java.sql.*;
@@ -17,7 +18,7 @@ import java.sql.*;
 public class ControladorUsuarios {
 
     private Connection con;
-    private Equipo e;
+    private Usuario u;
 
     /**
      * Constructor de la clase ControladorUsuarios.
@@ -194,6 +195,33 @@ public class ControladorUsuarios {
         } catch (SQLException e) {
             throw new Exception("Error al actualizar el usuario: " + e.getMessage());
         }
+    }
+
+    // TODO : JAVADOC
+    public Usuario buscarUsuarioPorNombre(String nombreUsuario) throws Exception {
+
+        try {
+            String plantilla = "SELECT nom_usuario, contrasena, tipo FROM usuarios WHERE UPPER(nom_usuario) = ?";
+
+            PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
+            sentenciaPre.setString(1, nombreUsuario.toUpperCase());
+            ResultSet rs = sentenciaPre.executeQuery();
+            if (rs.next()) {
+                u = new Usuario();
+                u.setNomUsuario(rs.getString("nom_usuario"));
+                u.setContrasena(rs.getString("contrasena"));
+                u.setTipo(rs.getString("tipo"));
+            }
+            else {
+                throw new Exception("No hay ningún usuario registrado con ese nombre.");
+            }
+            sentenciaPre.close();
+            return u;
+        }
+        catch (Exception e) {
+            throw new Exception("Error al buscar usuario por nombre.");
+        }
+
     }
 
 }

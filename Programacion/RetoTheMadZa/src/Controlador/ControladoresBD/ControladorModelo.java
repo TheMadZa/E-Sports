@@ -27,6 +27,7 @@ public class ControladorModelo {
     private ControladorPatrocinadores cp;
     private ControladorStaff cs;
     private ControladorUsuarios cu;
+    private ControladorEnfrentamientos cen;
     private ControladorEquiposCompeticiones cec;
     private ControladorPatrocinadoresEquipos cpe;
     private ControladorXML cxm;
@@ -45,6 +46,7 @@ public class ControladorModelo {
      * @see ControladorPatrocinadores
      * @see ControladorStaff
      * @see ControladorUsuarios
+     * @see ControladorEnfrentamientos
      * @see ControladorEquiposCompeticiones
      * @see ControladorPatrocinadoresEquipos
      * @see ControladorXML
@@ -60,6 +62,7 @@ public class ControladorModelo {
         cp = new ControladorPatrocinadores(con);
         cs = new ControladorStaff(con);
         cu = new ControladorUsuarios(con);
+        cen = new ControladorEnfrentamientos(con);
         cec = new ControladorEquiposCompeticiones(con);
         cpe = new ControladorPatrocinadoresEquipos(con);
         cxm = new ControladorXML(con);
@@ -95,6 +98,19 @@ public class ControladorModelo {
         return cc.buscarCompeticionPorNombre(nombre);
     }
 
+    //ENFRENTAMIENTO
+    public void borrarEnfrentamiento(int idEnfrentamiento) throws Exception{
+        cen.borrarEnfrentamiento(idEnfrentamiento);
+    }
+
+    public Enfrentamiento buscarEnfrentamiento(int idEnfrentamiento) throws Exception {
+        return cen.buscarEnfrentamiento(idEnfrentamiento);
+    }
+
+    public void modificarEnfrentamiento(Enfrentamiento e) throws Exception{
+        cen.modificarEnfrentamiento(e);
+    }
+
     //EQUIPO
     public void insertarEquipo(Equipo e) throws Exception {
         ce.insertarEquipo(e);
@@ -121,10 +137,6 @@ public class ControladorModelo {
     }
 
     //JORNADA
-    public void insertarJornada(Jornada j) throws Exception {
-        cjo.insertarJornada(j);
-    }
-
     public void borrarJornada(int idJornada) throws Exception {
         cjo.borrarJornada(idJornada);
     }
@@ -171,10 +183,6 @@ public class ControladorModelo {
         cjug.borrarJugador(idJugador);
     }
 
-    public Jugador buscarJugador(int idJugador) throws Exception {
-        return cjug.buscarJugador(idJugador);
-    }
-
     public void modificarJugador(Jugador j) throws Exception {
         cjug.modificarJugador(j);
     }
@@ -192,14 +200,6 @@ public class ControladorModelo {
         cp.borrarPatrocinador(idPatrocinador);
     }
 
-    public Patrocinador buscarPatrocinador(Integer id_patrocinador) throws Exception {
-        return cp.buscarPatrocinador(id_patrocinador);
-    }
-
-    public void modificarPatrocinador(int idEquipo, int idPatrocinador) throws Exception {
-        cp.modificarPatrocinador(idEquipo, idPatrocinador);
-    }
-
     public Patrocinador buscarPatrocinadorPorNombre(String nombre) throws Exception{
         return cp.buscarPatrocinadorPorNombre(nombre);
     }
@@ -211,10 +211,6 @@ public class ControladorModelo {
 
     public void borrarStaff(int idStaff) throws Exception {
         cs.borrarStaff(idStaff);
-    }
-
-    public Staff buscarStaff(Integer id_staff) throws Exception {
-        return cs.buscarStaff(id_staff);
     }
 
     public void modificarStaff(Staff s) throws Exception {
@@ -232,6 +228,18 @@ public class ControladorModelo {
 
     public boolean insertarUsuario(Usuario usuario) throws Exception {
         return cu.insertarUsuario(usuario);
+    }
+
+    public void borrarUsuario(String nombreUsuario) throws Exception {
+        cu.borrarUsuario(nombreUsuario);
+    }
+
+    public void modificarUsuario(Usuario u) throws Exception {
+        cu.modificarUsuario(u);
+    }
+
+    public Usuario buscarUsuarioPorNombre(String nombreUsuario) throws Exception {
+        return cu.buscarUsuarioPorNombre(nombreUsuario);
     }
 
     //EQUIPO_COMPETICION

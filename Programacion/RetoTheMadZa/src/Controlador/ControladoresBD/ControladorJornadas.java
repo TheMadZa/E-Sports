@@ -34,66 +34,25 @@ public class ControladorJornadas {
     }
 
     /**
-     * Función para insertar una jornada pasandole todos sus valores.
-     *
-     * @param j Es el objeto jornada que vamos a insertar en la base de datos
-     * @throws Exception Si ocurre un error durante la inserción.
-     * @throws SQLIntegrityConstraintViolationException Si ya existe una jornada con el mismo ID.
-     */
-    public void insertarJornada(Jornada j) throws Exception
-    {
-        try
-        {
-            String plantilla = "INSERT INTO jornadas VALUES (?,?,?,?)";
-
-            PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
-
-            sentenciaPre.setInt(1,j.getIdJornada());
-            sentenciaPre.setInt(2,j.getNumJornada());
-            sentenciaPre.setDate(3,j.getFechaJornada());
-            sentenciaPre.setInt(4,j.getCompeticion().getIdCompeticion());
-
-            int n = sentenciaPre.executeUpdate();
-
-            sentenciaPre.close();
-
-            if (n != 1)
-            {
-                throw new Exception("No se ha insertado la jornada");
-            }
-
-        }
-        catch (SQLIntegrityConstraintViolationException e)
-        {
-            throw new Exception("Ya hay una jornada con ese id");
-        }
-    }
-
-    /**
      * Función para borrar una jornada pasandole su id.
      *
      * @param idJornada Es el id de la jornada y sirve para identificar la jornada que queremos borrar
      * @throws Exception Si ocurre un error durante la eliminación.
      * @throws SQLIntegrityConstraintViolationException Si no existe una jornada con el ID especificado.
      */
-    public void borrarJornada(int idJornada) throws Exception
-    {
-        try
-        {
+    public void borrarJornada(int idJornada) throws Exception {
+        try {
             String plantilla = "DELETE FROM jornadas WHERE id_jornada = ?";
-
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
-
             sentenciaPre.setInt(1, idJornada);
 
             int n = sentenciaPre.executeUpdate();
             if (n != 1) {
-                throw new Exception("No se ha eliminado ninguna jornada");
+                throw new Exception("No hay ninguna jornada registrada con ese ID.");
             }
         }
-        catch (SQLIntegrityConstraintViolationException e)
-        {
-            throw new Exception("No existe una jornada con ese id para borrar");
+        catch (SQLIntegrityConstraintViolationException e) {
+            throw new Exception("No se ha podido eliminador ninguna jornada.");
         }
     }
 
@@ -142,8 +101,7 @@ public class ControladorJornadas {
      * @param j Es el objeto jornada del cual queremos actualizar uno o varios valores suyos buscandolo por id.
      * @throws Exception Si ocurre un error durante la modificación.
      */
-    public void modificarJornada(Jornada j) throws Exception
-    {
+    public void modificarJornada(Jornada j) throws Exception {
         String plantilla = "UPDATE jornadas SET num_jornada = ?, fecha_jornada = ?, id_competicion = ?, " +
                 "WHERE id_jornada = ?";
 
@@ -156,7 +114,7 @@ public class ControladorJornadas {
 
         int n = sentenciaPre.executeUpdate();
         if (n != 1){
-            throw new Exception("No se ha actualizado ninguna jornada");
+            throw new Exception("No se ha podido actualizar ninguna jornada.");
         }
     }
 

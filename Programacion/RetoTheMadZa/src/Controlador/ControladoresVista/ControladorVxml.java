@@ -72,10 +72,15 @@ public class ControladorVxml {
     /**
      * Clase interna que maneja el evento de acción para el botón de salir.
      */
-    public static class BSalirAL implements ActionListener {
+    public class BSalirAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            System.exit(0);
+            try {
+                cv.cerrarConexion();
+                System.exit(0);
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
         }
     }
 

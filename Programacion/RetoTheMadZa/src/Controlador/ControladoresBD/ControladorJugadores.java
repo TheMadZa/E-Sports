@@ -99,50 +99,6 @@ public class ControladorJugadores {
         }
     }
 
-
-    /**
-     * Función para buscar datos sobre un jugador pasandole su id.
-     *
-     * @param idJugador Es el id del jugador que sirve para identificar el jugador que queremos buscar.
-     * @return Se devuelve el objeto jugador con todos sus valores.
-     * @throws Exception Si ocurre un error durante la búsqueda.
-     */
-    public Jugador buscarJugador(int idJugador) throws Exception
-    {
-        try
-        {
-            String plantilla = "SELECT * FROM jugadores WHERE id_jugador = ?";
-
-            PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
-
-            sentenciaPre.setInt(1,idJugador);
-
-            ResultSet rs = sentenciaPre.executeQuery();
-            if (rs.next())
-            {
-                j = new Jugador();
-                j.setIdJugador(idJugador);
-                j.setNombre(rs.getString("nombre"));
-                j.setNickname(rs.getString("nickname"));
-                j.setNacionalidad(rs.getString("nacionalidad"));
-                j.setRol(rs.getString("rol"));
-                j.setFechaNac(rs.getDate("fecha_nac"));
-                j.setSueldo(rs.getDouble("sueldo"));
-                j.getEquipo().setIdEquipo(rs.getInt("id_equipo"));
-            }
-            else
-            {
-                throw new Exception("No hay ningún jugador con ese ID.");
-            }
-            sentenciaPre.close();
-            return j;
-        }
-        catch (Exception e)
-        {
-            throw new Exception("Error");
-        }
-    }
-
     /**
      * Función para modificar uno o más datos sobre el jugador que identifiquemos con su id.
      *

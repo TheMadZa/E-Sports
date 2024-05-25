@@ -32,10 +32,15 @@ public class ControladorVTienda {
         vt.addBThemadzaAL(new BThemadzaAL());
     }
 
-    public static class BSalirAL implements ActionListener{
+    public class BSalirAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            System.exit(0);
+            try {
+                cv.cerrarConexion();
+                System.exit(0);
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
         }
     }
 
