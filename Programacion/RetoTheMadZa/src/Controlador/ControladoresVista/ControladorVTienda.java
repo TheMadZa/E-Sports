@@ -7,15 +7,27 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-// TODO : JAVADOC
+/**
+ * Controlador para la ventana de la tienda.
+ */
 public class ControladorVTienda {
     private VentanaTienda vt;
     private ControladorVista cv;
 
+    /**
+     * Constructor de ControladorVTienda.
+     *
+     * @param cv Controlador de la vista principal.
+     */
     public ControladorVTienda(ControladorVista cv) {
         this.cv = cv;
     }
 
+    /**
+     * Crea y muestra la ventana de la tienda.
+     *
+     * @param ventanaEliminar Ventana principal que se va a ocultar.
+     */
     public void crearMostrar(JFrame ventanaEliminar) {
         vt = new VentanaTienda(ventanaEliminar);
 
@@ -32,6 +44,9 @@ public class ControladorVTienda {
         vt.addBThemadzaAL(new BThemadzaAL());
     }
 
+    /**
+     * Acción para salir de la aplicación.
+     */
     public class BSalirAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -44,6 +59,9 @@ public class ControladorVTienda {
         }
     }
 
+    /**
+     * Acción para abrir Facebook en el navegador.
+     */
     public static class BFacebookAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -55,6 +73,10 @@ public class ControladorVTienda {
             }
         }
     }
+
+    /**
+     * Acción para abrir Instagram en el navegador.
+     */
     public static class BInstagramAL implements ActionListener{
 
         @Override
@@ -67,6 +89,10 @@ public class ControladorVTienda {
             }
         }
     }
+
+    /**
+     * Acción para abrir Twitter en el navegador.
+     */
     public static class BTwitterAL implements ActionListener{
 
         @Override
@@ -80,6 +106,9 @@ public class ControladorVTienda {
         }
     }
 
+    /**
+     * Acción para mostrar las jornadas.
+     */
     public class MJornadasAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -87,6 +116,9 @@ public class ControladorVTienda {
         }
     }
 
+    /**
+     * Acción para mostrar la clasificación.
+     */
     public class MClasificacionAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -94,6 +126,9 @@ public class ControladorVTienda {
         }
     }
 
+    /**
+     * Acción para mostrar los equipos.
+     */
     public class MEquiposAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -101,6 +136,9 @@ public class ControladorVTienda {
         }
     }
 
+    /**
+     * Acción para mostrar la ventana de inicio de sesión.
+     */
     public class BInicioAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -108,6 +146,9 @@ public class ControladorVTienda {
         }
     }
 
+    /**
+     * Acción para mostrar un mensaje de compra.
+     */
     public class BBuyAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -115,6 +156,9 @@ public class ControladorVTienda {
         }
     }
 
+    /**
+     * Acción para realizar una acción específica (a completar).
+     */
     public class BThemadzaAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {

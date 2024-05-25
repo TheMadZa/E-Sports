@@ -10,7 +10,10 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-// TODO : JAVADOC
+/**
+ * Controlador para la ventana de visualización de equipos.
+ */
+
 public class ControladorVEquipos {
 
     private VentanaEquipos ve;
@@ -20,10 +23,19 @@ public class ControladorVEquipos {
     private int posicionArray;
     private List<Equipo> equipos;
 
+    /**
+     * Constructor del controlador de equipos.
+     * @param cv Controlador de la vista principal.
+     */
+
     public ControladorVEquipos(ControladorVista cv)
     {
         this.cv = cv;
     }
+    /**
+     * Crea y muestra la ventana de equipos.
+     * @param ventanaEliminar Ventana padre que se eliminará al abrir la ventana de equipos.
+     */
 
     public void crearMostrar(JFrame ventanaEliminar) {
 
@@ -34,7 +46,7 @@ public class ControladorVEquipos {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
+        // Agregar ActionListener a los botones y elementos de la ventana
         ve.addBFlechaIzquAL(new BFlechaIzquAL());
         ve.addBFlechaDrchAL(new BFlechaDrchAL());
         ve.addBTiendaAL(new BTiendaAL());
@@ -48,6 +60,10 @@ public class ControladorVEquipos {
         ve.addMEquiposAL(new MEquiposAL());
 
     }
+    /**
+     * Obtiene los equipos de la base de datos y muestra el primero en la ventana.
+     * @throws Exception Si hay un error al obtener los equipos.
+     */
 
     public void obtenerEquipos() throws Exception{
         try {
@@ -63,7 +79,9 @@ public class ControladorVEquipos {
             throw new RuntimeException(e);
         }
     }
-
+    /**
+     * ActionListener para el botón de flecha izquierda.
+     */
     public class BFlechaIzquAL implements ActionListener {
 
         @Override
@@ -84,6 +102,10 @@ public class ControladorVEquipos {
         }
     }
 
+    /**
+     * ActionListener para el botón de flecha derecha.
+     */
+
     public class BFlechaDrchAL implements ActionListener {
 
         @Override
@@ -97,16 +119,15 @@ public class ControladorVEquipos {
                 throw new RuntimeException(ex);
             }
         }
-
         private void actualizarBotones() {
             ve.getbDerecha().setEnabled(posicionEquipo < equipos.size() - 1);
             ve.getbIzquierda().setEnabled(posicionEquipo > 0);
         }
     }
 
-
-
-
+    /**
+     * ActionListener para el botón de tienda.
+     */
 
     public class BTiendaAL implements ActionListener {
         @Override
@@ -114,6 +135,9 @@ public class ControladorVEquipos {
             cv.mostrarTienda(ve);
         }
     }
+    /**
+     * ActionListener para el botón de inicio.
+     */
 
     public class BInicioAL implements ActionListener{
         @Override
@@ -121,7 +145,9 @@ public class ControladorVEquipos {
             cv.mostrarInicioSesion(ve);
         }
     }
-
+    /**
+     * ActionListener para el botón de salir.
+     */
     public class BSalirAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -133,7 +159,9 @@ public class ControladorVEquipos {
             }
         }
     }
-
+    /**
+     * ActionListener para el botón de Facebook.
+     */
     public static class BFacebookAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -145,6 +173,9 @@ public class ControladorVEquipos {
             }
         }
     }
+    /**
+     * ActionListener para el botón de Instagram.
+     */
     public static class BInstagramAL implements ActionListener{
 
         @Override
@@ -157,6 +188,9 @@ public class ControladorVEquipos {
             }
         }
     }
+    /**
+     * ActionListener para el botón de Twitter.
+     */
     public static class BTwitterAL implements ActionListener{
 
         @Override
@@ -169,7 +203,10 @@ public class ControladorVEquipos {
             }
         }
     }
-
+    /**
+     * Abre un enlace externo en el navegador predeterminado.
+     * @param enlace Enlace a abrir.
+     */
     private static void abrirEnlace(String enlace) {
         try {
             Desktop.getDesktop().browse(java.net.URI.create(enlace));
@@ -177,21 +214,27 @@ public class ControladorVEquipos {
             System.out.println("Error al abrir el enlace: " + ex.getMessage());
         }
     }
-
+    /**
+     * ActionListener para el menú de Jornadas.
+     */
     public class MJornadasAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             cv.mostrarJornadas(ve);
         }
     }
-
+    /**
+     * ActionListener para el menú de Clasificación.
+     */
     public class MClasificacionAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             cv.mostrarClasificacion(ve);
         }
     }
-
+    /**
+     * ActionListener para el menú de Equipos.
+     */
     public class MEquiposAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {

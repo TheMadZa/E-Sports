@@ -11,16 +11,28 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.util.List;
 
-// TODO : JAVADOC
+/**
+ * Controlador para la vista de las jornadas.
+ */
 public class ControladorVJornadas {
 
     private VentanaJornadas vj;
     private ControladorVista cv;
 
+    /**
+     * Constructor de ControladorVJornadas.
+     *
+     * @param cv Controlador de la vista principal.
+     */
     public ControladorVJornadas(ControladorVista cv) {
         this.cv = cv;
     }
 
+    /**
+     * Crea y muestra la ventana de las jornadas.
+     *
+     * @param ventanaEliminar Ventana que se va a eliminar.
+     */
     public void crearMostrar(JFrame ventanaEliminar) {
 
         vj = new VentanaJornadas(ventanaEliminar);
@@ -40,6 +52,9 @@ public class ControladorVJornadas {
 
     }
 
+    /**
+     * Acción para mostrar la tienda.
+     */
     public class BTiendaAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -47,6 +62,9 @@ public class ControladorVJornadas {
         }
     }
 
+    /**
+     * Acción para mostrar la ventana de inicio de sesión.
+     */
     public class BInicioAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -54,6 +72,9 @@ public class ControladorVJornadas {
         }
     }
 
+    /**
+     * Acción para salir de la aplicación.
+     */
     public class BSalirAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -66,6 +87,9 @@ public class ControladorVJornadas {
         }
     }
 
+    /**
+     * Acción para abrir Facebook en el navegador.
+     */
     public static class BFacebookAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -77,6 +101,10 @@ public class ControladorVJornadas {
             }
         }
     }
+
+    /**
+     * Acción para abrir Instagram en el navegador.
+     */
     public static class BInstagramAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -88,6 +116,10 @@ public class ControladorVJornadas {
             }
         }
     }
+
+    /**
+     * Acción para abrir Twitter en el navegador.
+     */
     public static class BTwitterAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -100,6 +132,9 @@ public class ControladorVJornadas {
         }
     }
 
+    /**
+     * Acción para mostrar las jornadas.
+     */
     public class MJornadasAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -107,6 +142,9 @@ public class ControladorVJornadas {
         }
     }
 
+    /**
+     * Acción para mostrar la clasificación.
+     */
     public class MClasificacionAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -114,6 +152,9 @@ public class ControladorVJornadas {
         }
     }
 
+    /**
+     * Acción para mostrar los equipos.
+     */
     public class MEquiposAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -121,6 +162,9 @@ public class ControladorVJornadas {
         }
     }
 
+    /**
+     * Acción para manejar la selección en el ComboBox de clasificación.
+     */
     public class CbClasificacionAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -137,6 +181,9 @@ public class ControladorVJornadas {
         }
     }
 
+    /**
+     * Llena el ComboBox con las competiciones disponibles.
+     */
     public void llenarComboBox(){
         try {
             vj.getCbCompeticion().removeAllItems();
@@ -146,19 +193,25 @@ public class ControladorVJornadas {
                 vj.getCbCompeticion().addItem(competicion.getNombreCom());
             }
 
-            // Check if there are competitions and populate table with first item
+            // Verificar si hay competiciones y poblar la tabla con el primer ítem
             if (!listaCompeticiones.isEmpty()) {
                 String nombreCom = listaCompeticiones.get(0).getNombreCom();
                 rellenarTablaEquiposJornadas(nombreCom);
             }
 
-            vj.getCbCompeticion().setSelectedIndex(0); // Select the first item
+            vj.getCbCompeticion().setSelectedIndex(0); // Seleccionar el primer ítem
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,e.getMessage());
         }
     }
 
+    /**
+     * Rellena la tabla de equipos según la competición seleccionada.
+     *
+     * @param nombreCom Nombre de la competición seleccionada.
+     * @throws Exception Si ocurre algún error.
+     */
     public void rellenarTablaEquiposJornadas(String nombreCom) throws Exception {
 
         // Obtener un array multidimensional con los datos de los equipos de la competición seleccionada.
@@ -174,15 +227,7 @@ public class ControladorVJornadas {
         vj.getResultadoEquipo1Partido4().setText(String.valueOf(listaJornadas[3][0]));
         vj.getResultadoEquipo2Partido4().setText(String.valueOf(listaJornadas[3][1]));
 
-
-
-
-
-
-        //String Equipo1 = listaCompeticiones[0][0];
-        //cargarImagenEstablecerIcono("Equipo1", 55, 55, vi.getEquipo1());
-
-        // Poner las imágenes de sus logos.
+        // Poner las imágenes de los equipos
         setEquipoImagen(vj.getFtEquipo1Partido1(), "Equipo" + listaJornadas[0][2]);
         setEquipoImagen(vj.getFtEquipo2Partido1(), "Equipo" + listaJornadas[0][3]);
         setEquipoImagen(vj.getFtEquipo1Partido2(), "Equipo" + listaJornadas[1][2]);
@@ -194,6 +239,12 @@ public class ControladorVJornadas {
 
     }
 
+    /**
+     * Establece la imagen del equipo en un JLabel.
+     *
+     * @param label       JLabel donde se establecerá la imagen.
+     * @param nombreImagen Nombre de la imagen del equipo.
+     */
     private void setEquipoImagen(JLabel label, String nombreImagen) {
         BufferedImage imagen = ControladorImagenes.obtenerImagen2(nombreImagen);
         if (imagen != null) {
