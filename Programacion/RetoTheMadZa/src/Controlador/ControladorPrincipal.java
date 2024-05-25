@@ -65,6 +65,19 @@ public class ControladorPrincipal {
         return cm.buscarCompeticionPorNombre(nombre);
     }
 
+    //ENFRENTAMIENTO
+    public void borrarEnfrentamiento(int idEnfrentamiento) throws Exception{
+        cm.borrarEnfrentamiento(idEnfrentamiento);
+    }
+
+    public Enfrentamiento buscarEnfrentamiento(int idEnfrentamiento) throws Exception {
+        return cm.buscarEnfrentamiento(idEnfrentamiento);
+    }
+
+    public void modificarEnfrentamiento(Enfrentamiento e) throws Exception{
+        cm.modificarEnfrentamiento(e);
+    }
+
     //EQUIPO
     public void insertarEquipo(Equipo e) throws Exception {
         cm.insertarEquipo(e);
@@ -91,10 +104,6 @@ public class ControladorPrincipal {
     }
 
     //JORNADA
-    public void insertarJornada(Jornada j) throws Exception {
-        cm.insertarJornada(j);
-    }
-
     public void borrarJornada(int idJornada) throws Exception {
         cm.borrarJornada(idJornada);
     }
@@ -141,10 +150,6 @@ public class ControladorPrincipal {
         cm.borrarJugador(idJugador);
     }
 
-    public Jugador buscarJugador(Integer id_jugador) throws Exception {
-        return cm.buscarJugador(id_jugador);
-    }
-
     public void modificarJugador(Jugador j) throws Exception {
         cm.modificarJugador(j);
     }
@@ -162,14 +167,6 @@ public class ControladorPrincipal {
         cm.borrarPatrocinador(idPatrocinador);
     }
 
-    public Patrocinador buscarPatrocinador(Integer id_patrocinador) throws Exception {
-        return cm.buscarPatrocinador(id_patrocinador);
-    }
-
-    public void modificarPatrocinador(int idEquipo, int idPatrocinador) throws Exception {
-        cm.modificarPatrocinador(idEquipo, idPatrocinador);
-    }
-
     public Patrocinador buscarPatrocinadorPorNombre(String nombre) throws Exception{
         return cm.buscarPatrocinadorPorNombre(nombre);
     }
@@ -181,10 +178,6 @@ public class ControladorPrincipal {
 
     public void borrarStaff(int idStaff) throws Exception {
         cm.borrarStaff(idStaff);
-    }
-
-    public Staff buscarStaff(Integer id_staff) throws Exception {
-        return cm.buscarStaff(id_staff);
     }
 
     public void modificarStaff(Staff s) throws Exception {
@@ -202,6 +195,18 @@ public class ControladorPrincipal {
 
     public boolean insertarUsuario(Usuario usuario) throws Exception {
         return cm.insertarUsuario(usuario);
+    }
+
+    public void borrarUsuario(String nombreUsuario) throws Exception {
+        cm.borrarUsuario(nombreUsuario);
+    }
+
+    public void modificarUsuario(Usuario u) throws Exception {
+        cm.modificarUsuario(u);
+    }
+
+    public Usuario buscarUsuarioPorNombre(String nombreUsuario) throws Exception {
+        return cm.buscarUsuarioPorNombre(nombreUsuario);
     }
 
     //EQUIPO_COMPETICION

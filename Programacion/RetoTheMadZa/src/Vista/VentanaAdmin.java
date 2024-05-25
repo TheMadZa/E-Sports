@@ -67,6 +67,8 @@ public class VentanaAdmin extends JFrame {
     private JPanel pDatos;
     private JMenuItem mGenerarXml;
     private JMenuItem miVisualizarEquipos;
+    private JMenu mUsuarios;
+    private JMenuItem miUsuarios;
 
     // Declarar la clase para colocar elementos que se le aplicará a los JLabel y JTextField en el pDatos.
     private final GridBagConstraints gbc;
@@ -175,6 +177,14 @@ public class VentanaAdmin extends JFrame {
         this.pDatos = pDatos;
     }
 
+    public JButton getbInsertar() {
+        return bInsertar;
+    }
+
+    public JButton getbActualizar() {
+        return bActualizar;
+    }
+
     public void addListaTextFieldsDinamicos(JTextField textField){
         listaTextFieldsDinamicos.add(textField);
     }
@@ -193,6 +203,7 @@ public class VentanaAdmin extends JFrame {
         miCompeticiones.addActionListener(al);
         miEnfrentamientos.addActionListener(al);
         miJornadas.addActionListener(al);
+        miUsuarios.addActionListener(al);
     }
     public void addBAccionesAL(ActionListener al) {
         bInsertar.addActionListener(al);
@@ -370,6 +381,7 @@ public class VentanaAdmin extends JFrame {
      */
     public void mostrarDatosEnfrentamientos(){
         vaciarListaTextFields();
+        agregarElemento("ID del enfrentamiento:", new JTextField(), gbc);
         agregarElemento("Hora:", new JTextField(), gbc);
         agregarElemento("Resultado del equipo 1:", new JTextField(), gbc);
         agregarElemento("Resultado del equipo 2:", new JTextField(), gbc);
@@ -384,9 +396,18 @@ public class VentanaAdmin extends JFrame {
      */
     public void mostrarDatosJornadas(){
         vaciarListaTextFields();
+        agregarElemento("ID de jornada:", new JTextField(), gbc);
         agregarElemento("Número de jornada:", new JTextField(), gbc);
         agregarElemento("Fecha:", new JTextField(), gbc);
         agregarElemento("ID de la competición:", new JTextField(), gbc);
+    }
+
+    // TODO : JAVADOC
+    public void mostrarDatosUsuarios(){
+        vaciarListaTextFields();
+        agregarElemento("Nombre de usuario:", new JTextField(), gbc);
+        agregarElemento("Contraseña:", new JTextField(), gbc);
+        agregarElemento("Tipo:", new JTextField(), gbc); // TODO : PONER COMO 2 CHECKBOX
     }
 
     /**

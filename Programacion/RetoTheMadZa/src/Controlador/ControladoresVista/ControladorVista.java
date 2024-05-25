@@ -110,6 +110,19 @@ public class ControladorVista {
         return cp.buscarCompeticionPorNombre(nombre);
     }
 
+    //ENFRENTAMIENTO
+    public void borrarEnfrentamiento(int idEnfrentamiento) throws Exception{
+        cp.borrarEnfrentamiento(idEnfrentamiento);
+    }
+
+    public Enfrentamiento buscarEnfrentamiento(int idEnfrentamiento) throws Exception {
+        return cp.buscarEnfrentamiento(idEnfrentamiento);
+    }
+
+    public void modificarEnfrentamiento(Enfrentamiento e) throws Exception{
+        cp.modificarEnfrentamiento(e);
+    }
+
     //EQUIPO
     public void insertarEquipo(Equipo e) throws Exception {
         cp.insertarEquipo(e);
@@ -136,10 +149,6 @@ public class ControladorVista {
     }
 
     //JORNADA
-    public void insertarJornada(Jornada j) throws Exception {
-        cp.insertarJornada(j);
-    }
-
     public void borrarJornada(int idJornada) throws Exception{
         cp.borrarJornada(idJornada);
     }
@@ -187,10 +196,6 @@ public class ControladorVista {
         cp.borrarJugador(idJugador);
     }
 
-    public Jugador buscarJugador(Integer id_jugador) throws Exception {
-        return cp.buscarJugador(id_jugador);
-    }
-
     public void modificarJugador(Jugador j) throws Exception{
         cp.modificarJugador(j);
     }
@@ -209,14 +214,6 @@ public class ControladorVista {
         cp.borrarPatrocinador(idPatrocinador);
     }
 
-    public Patrocinador buscarPatrocinador(Integer id_patrocinador) throws Exception {
-        return cp.buscarPatrocinador(id_patrocinador);
-    }
-
-    public void modificarPatrocinador(int idEquipo, int idPatrocinador) throws Exception{
-        cp.modificarPatrocinador(idEquipo, idPatrocinador);
-    }
-
     public Patrocinador buscarPatrocinadorPorNombre(String nombre) throws Exception{
         return cp.buscarPatrocinadorPorNombre(nombre);
     }
@@ -229,10 +226,6 @@ public class ControladorVista {
 
     public void borrarStaff(int idStaff) throws Exception{
         cp.borrarStaff(idStaff);
-    }
-
-    public Staff buscarStaff(Integer id_staff) throws Exception {
-        return cp.buscarStaff(id_staff);
     }
 
     public void modificarStaff(Staff s) throws Exception{
@@ -250,6 +243,18 @@ public class ControladorVista {
 
     public boolean insertarUsuario(Usuario usuario) throws Exception {
         return cp.insertarUsuario(usuario);
+    }
+
+    public void borrarUsuario(String nombreUsuario) throws Exception {
+        cp.borrarUsuario(nombreUsuario);
+    }
+
+    public void modificarUsuario(Usuario u) throws Exception {
+        cp.modificarUsuario(u);
+    }
+
+    public Usuario buscarUsuarioPorNombre(String nombreUsuario) throws Exception {
+        return cp.buscarUsuarioPorNombre(nombreUsuario);
     }
 
     //EQUIPO_COMPETICION
@@ -293,7 +298,6 @@ public class ControladorVista {
     public String  obtenerXMLUltimaJornadaXSD() throws Exception{
         return cp.obtenerXMLUltimaJornadaXSD();
     }
-
 
     //CONEXION
     public void cerrarConexion() throws Exception{

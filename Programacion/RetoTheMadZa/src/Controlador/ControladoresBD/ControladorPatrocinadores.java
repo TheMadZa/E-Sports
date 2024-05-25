@@ -83,63 +83,6 @@ public class ControladorPatrocinadores {
         }
     }
 
-    /**
-     * Función para buscar datos sobre un patrocinador pasandole su id.
-     *
-     * @param idPatrocinador Es el id del patrocinador que sirve para identificar el patrocinador que queremos buscar.
-     * @return Se devuelve el objeto patrocinador con todos sus valores.
-     * @throws Exception Si ocurre un error durante la búsqueda.
-     */
-    public Patrocinador buscarPatrocinador(int idPatrocinador) throws Exception
-    {
-        try
-        {
-            String plantilla = "SELECT * FROM patrocinadores WHERE id_patrocinador = ?";
-
-            PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
-
-            sentenciaPre.setInt(1,idPatrocinador);
-
-            ResultSet rs = sentenciaPre.executeQuery();
-            if (rs.next())
-            {
-                p = new Patrocinador();
-                p.setIdPatrocinador(idPatrocinador);
-                p.setNombre(rs.getString("nombre"));
-            }
-            else
-            {
-                throw new Exception("No hay ningún patrocinador con ese id");
-            }
-            sentenciaPre.close();
-            return p;
-        }
-        catch (Exception e)
-        {
-            throw new Exception("Error");
-        }
-    }
-
-    /**
-     * Función para modificar uno o más datos sobre el patrocinador que identifiquemos con su id.
-     *
-     * @param p Es el objeto patrocinador del cual queremos actualizar uno o varios valores suyos buscandolo por id.
-     * @throws Exception Si ocurre un error durante la modificación.
-     */
-    public void modificarPatrocinador(int idEquipo, int idPatrocinador) throws Exception {
-        String plantilla = "UPDATE patrocinadores_equipo SET id_equipo = ? WHERE id_patrocinador = ?";
-
-        PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
-
-        sentenciaPre.setInt(1, idEquipo);
-        sentenciaPre.setInt(2, idPatrocinador);
-
-        int n = sentenciaPre.executeUpdate();
-        if (n != 1) {
-            throw new Exception("No se ha podido actualizar ningún patrocinador.");
-        }
-    }
-
     // TODO : JAVADOC
     public Patrocinador buscarPatrocinadorPorNombre(String nombre) throws Exception{
 

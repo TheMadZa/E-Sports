@@ -94,47 +94,6 @@ public class ControladorStaff {
     }
 
     /**
-     * Función para buscar datos sobre un staff pasandole su id.
-     *
-     * @param idStaff Es el id del staff que sirve para identificar el staff que queremos buscar.
-     * @return Se devuelve el objeto staff con todos sus valores.
-     * @throws Exception Si ocurre un error durante la búsqueda.
-     */
-    public Staff buscarStaff(int idStaff) throws Exception
-    {
-        try
-        {
-            String plantilla = "SELECT * FROM staffs WHERE id_staff = ?";
-
-            PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
-
-            sentenciaPre.setInt(1,idStaff);
-
-            ResultSet rs = sentenciaPre.executeQuery();
-            if (rs.next())
-            {
-                s = new Staff();
-                s.setIdStaff(idStaff);
-                s.setPuesto(rs.getString("puesto"));
-                s.setNombre(rs.getString("nombre"));
-                s.setFechaNac(rs.getDate("fecha_nac"));
-                s.setSueldo(rs.getDouble("sueldo"));
-                s.getEquipo().setIdEquipo(rs.getInt("id_equipo"));
-            }
-            else
-            {
-                throw new Exception("No hay ningún staff con ese id");
-            }
-            sentenciaPre.close();
-            return s;
-        }
-        catch (Exception e)
-        {
-            throw new Exception("Error");
-        }
-    }
-
-    /**
      * Función para modificar uno o más datos sobre el staff que identifiquemos con su id.
      *
      * @param s Es el objeto staff del cual queremos actualizar uno o varios valores suyos buscandolo por id.
