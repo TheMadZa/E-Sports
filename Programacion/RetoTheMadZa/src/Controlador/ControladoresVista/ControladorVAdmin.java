@@ -17,7 +17,9 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 
-// TODO : JAVADOC
+/**
+ * Controlador para la interfaz de administrador.
+ */
 public class ControladorVAdmin {
 
     private VentanaAdmin va;
@@ -29,10 +31,18 @@ public class ControladorVAdmin {
     private final double salarioMinimo = 1134;
     private final SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
 
+    /**
+     * Constructor para el controlador de la interfaz de administrador.
+     * @param cv Controlador de la vista principal.
+     */
+
     public ControladorVAdmin(ControladorVista cv) {
         this.cv = cv;
     }
-
+    /**
+     * Crea y muestra la ventana de administrador.
+     * @param vis Ventana de inicio de sesión.
+     */
     public void crearMostrar(VentanaInicioSesion vis) {
         va = new VentanaAdmin(vis);
 
@@ -50,13 +60,24 @@ public class ControladorVAdmin {
         va.addBTwitterAL(new BTwitterAL());
     }
 
+    /**
+     * ActionListener para los botones CRUD en la interfaz de administrador.
+     */
     public class MiCrudAL implements ActionListener {
+
+        /**
+         * Método que maneja los eventos de acción.
+         * @param e El evento de acción.
+         */
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            // Elimina todos los componentes del panel de datos.
             va.getpDatos().removeAll();
 
+            // Obtiene el comando de acción del evento.
             tablaElegida = e.getActionCommand();
+
+            // Realiza diferentes acciones según la tabla seleccionada.
             switch (tablaElegida){
                 case "CRUD Equipos" -> {
                     va.mostrarDatosEquipos();
@@ -103,12 +124,21 @@ public class ControladorVAdmin {
                 }
             }
 
+            // Muestra el panel CRUD si está oculto.
             if (!va.getPanelCRUD().isVisible())
                 va.getPanelCRUD().setVisible(true);
-
         }
     }
+    /**
+     * ActionListener para los botones de acciones en la interfaz de administrador.
+     */
     public class BAccionesAL implements ActionListener {
+
+        /**
+         * Método que maneja los eventos de acción.
+         * @param e El evento de acción.
+         */
+
         @Override
         public void actionPerformed(ActionEvent e) {
 
@@ -280,88 +310,144 @@ public class ControladorVAdmin {
 
         }
     }
+    /**
+     * ActionListener para visualizar equipos en la interfaz de administrador.
+     */
     public class MiVisualizarEquiposAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            // Llama al método de la vista principal para mostrar equipos.
             cv.mostrarEquipos(va);
         }
     }
+
+    /**
+     * ActionListener para visualizar jornadas en la interfaz de administrador.
+     */
     public class MiVisualizarJornadasAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            // Llama al método de la vista principal para mostrar jornadas.
             cv.mostrarJornadas(va);
         }
     }
+
+    /**
+     * ActionListener para mostrar la clasificación de jornadas en la interfaz de administrador.
+     */
     public class MiClasificacionJornadasAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            // Llama al método de la vista principal para mostrar la clasificación.
             cv.mostrarClasificacion(va);
         }
     }
+
+    /**
+     * ActionListener para generar un archivo XML en la interfaz de administrador.
+     */
     public class MGenerarXmlAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            // Llama al método de la vista principal para mostrar el XML.
             cv.mostrarXML(va);
         }
     }
+
+    /**
+     * ActionListener para volver a la pantalla de inicio en la interfaz de administrador.
+     */
     public class BInicioAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
+            // Llama al método de la vista principal para mostrar la pantalla de inicio de sesión.
             cv.mostrarInicioSesion(va);
         }
     }
 
+    /**
+     * ActionListener para salir de la aplicación en la interfaz de administrador.
+     */
     public class BSalirAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
+                // Cierra la conexión y sale de la aplicación.
                 cv.cerrarConexion();
                 System.exit(0);
             } catch (Exception ex) {
+                // Maneja cualquier excepción lanzando una RuntimeException.
                 throw new RuntimeException(ex);
             }
         }
     }
 
-    public static class BFacebookAL implements ActionListener{
+
+    /**
+     * ActionListener para abrir el enlace de Facebook en la interfaz de administrador.
+     */
+    public static class BFacebookAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            // Enlace de Facebook.
             String enlace = "https://www.facebook.com/?locale=es_ES";
             try {
+                // Abre el enlace en el navegador web predeterminado.
                 Desktop.getDesktop().browse(java.net.URI.create(enlace));
             } catch (java.io.IOException ex) {
+                // Maneja cualquier excepción mostrando un mensaje de error en la consola.
                 System.out.println("Error al abrir el enlace: " + ex.getMessage());
             }
         }
     }
-    public static class BInstagramAL implements ActionListener{
 
+    /**
+     * ActionListener para abrir el enlace de Instagram en la interfaz de administrador.
+     */
+    public static class BInstagramAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            // Enlace de Instagram.
             String enlace = "https://www.instagram.com";
             try {
+                // Abre el enlace en el navegador web predeterminado.
                 Desktop.getDesktop().browse(java.net.URI.create(enlace));
             } catch (java.io.IOException ex) {
+                // Maneja cualquier excepción mostrando un mensaje de error en la consola.
                 System.out.println("Error al abrir el enlace: " + ex.getMessage());
             }
         }
     }
-    public static class BTwitterAL implements ActionListener{
 
+    /**
+     * ActionListener para abrir el enlace de Twitter en la interfaz de administrador.
+     */
+    public static class BTwitterAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            // Enlace de Twitter.
             String enlace = "https://twitter.com/?logout=1715768138184";
             try {
+                // Abre el enlace en el navegador web predeterminado.
                 Desktop.getDesktop().browse(java.net.URI.create(enlace));
             } catch (java.io.IOException ex) {
+                // Maneja cualquier excepción mostrando un mensaje de error en la consola.
                 System.out.println("Error al abrir el enlace: " + ex.getMessage());
             }
         }
     }
+
 
     // Funciones
 
     // Operaciones con equipos
+    /**
+     * Inserta un equipo en la base de datos, opcionalmente asociándolo a una competición.
+     * @param nombre El nombre del equipo.
+     * @param logo El logo del equipo.
+     * @param color El color del equipo.
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos que contienen los datos del equipo.
+     */
     public void insertarEquipo(String nombre, String logo, String color,
                                ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
@@ -453,6 +539,13 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la inserción de un equipo.\n" +ex.getMessage());
         }
     }
+    /**
+     * Elimina un equipo de la base de datos.
+     * @param nombre El nombre del equipo a eliminar.
+     * @param logo El logo del equipo (no se utiliza en esta operación pero se incluye para mantener la firma del método).
+     * @param color El color del equipo (no se utiliza en esta operación pero se incluye para mantener la firma del método).
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
+     */
     public void borrarEquipo(String nombre, String logo, String color, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
@@ -474,6 +567,13 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la eliminación de un equipo.\n" +ex.getMessage());
         }
     }
+    /**
+     * Modifica un equipo en la base de datos.
+     * @param nombre El nombre del equipo a modificar.
+     * @param logo El nuevo logo del equipo.
+     * @param color El nuevo color del equipo.
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos que contienen los datos del equipo.
+     */
     public void modificarEquipo(String nombre, String logo, String color,
                                 ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
@@ -524,6 +624,13 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la modificación de un equipo.\n" +ex.getMessage());
         }
     }
+    /**
+     * Consulta los datos de un equipo en la base de datos y los muestra en los campos de texto correspondientes.
+     * @param nombre El nombre del equipo a consultar.
+     * @param logo El logo del equipo (no se utiliza en esta operación pero se incluye para mantener la firma del método).
+     * @param color El color del equipo (no se utiliza en esta operación pero se incluye para mantener la firma del método).
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
+     */
     public void consultarEquipo(String nombre, String logo, String color,
                                 ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
@@ -557,6 +664,14 @@ public class ControladorVAdmin {
     }
 
     // Operaciones con jugadores
+    /**
+     * Inserta un nuevo jugador en la base de datos.
+     * @param nombre El nombre del jugador.
+     * @param nickname El apodo del jugador.
+     * @param nacionalidad La nacionalidad del jugador.
+     * @param rol El rol del jugador.
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos que contienen los datos del jugador.
+     */
     public void insertarJugador(String nombre, String nickname, String nacionalidad, String rol, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
@@ -620,6 +735,14 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la inserción de un jugador.\n" +ex.getMessage());
         }
     }
+    /**
+     * Elimina un jugador de la base de datos.
+     * @param nombre El nombre del jugador a eliminar.
+     * @param nickname El apodo del jugador (no se utiliza en esta operación pero se incluye para mantener la firma del método).
+     * @param nacionalidad La nacionalidad del jugador (no se utiliza en esta operación pero se incluye para mantener la firma del método).
+     * @param rol El rol del jugador (no se utiliza en esta operación pero se incluye para mantener la firma del método).
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
+     */
     public void borrarJugador(String nombre, String nickname, String nacionalidad, String rol, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
@@ -643,6 +766,14 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la eliminación de un jugador.\n" +ex.getMessage());
         }
     }
+    /**
+     * Modifica los datos de un jugador en la base de datos.
+     * @param nombre El nombre del jugador.
+     * @param nickname El apodo del jugador.
+     * @param nacionalidad La nacionalidad del jugador.
+     * @param rol El rol del jugador.
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos que contienen los datos del jugador.
+     */
     public void modificarJugador(String nombre, String nickname, String nacionalidad, String rol, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
@@ -703,6 +834,14 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la modificación de un jugador.\n" +ex.getMessage());
         }
     }
+    /**
+     * Consulta los datos de un jugador en la base de datos y los muestra en los campos de texto dinámicos.
+     * @param nombre El nombre del jugador a consultar.
+     * @param nickname El apodo del jugador (no se utiliza en esta operación pero se incluye para mantener la firma del método).
+     * @param nacionalidad La nacionalidad del jugador (no se utiliza en esta operación pero se incluye para mantener la firma del método).
+     * @param rol El rol del jugador (no se utiliza en esta operación pero se incluye para mantener la firma del método).
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
+     */
     public void consultarJugador(String nombre, String nickname, String nacionalidad, String rol, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
@@ -741,6 +880,12 @@ public class ControladorVAdmin {
     }
 
     // Operaciones con staff
+    /**
+     * Inserta un miembro del staff en la base de datos.
+     * @param puesto El puesto del miembro del staff.
+     * @param nombre El nombre del miembro del staff.
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
+     */
     public void insertarStaff(String puesto, String nombre, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
@@ -778,6 +923,11 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la inserción de un staff.\n" +ex.getMessage());
         }
     }
+    /**
+     * Elimina un miembro del staff de la base de datos.
+     * @param nombre El nombre del miembro del staff a eliminar.
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
+     */
     public void borrarStaff(String nombre, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
@@ -797,6 +947,12 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la eliminación de un staff.\n" +ex.getMessage());
         }
     }
+    /**
+     * Modifica un miembro del staff en la base de datos.
+     * @param puesto El puesto actualizado del miembro del staff.
+     * @param nombre El nombre del miembro del staff.
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
+     */
     public void modificarStaff(String puesto, String nombre, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
@@ -853,6 +1009,11 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la modificación de un staff.\n" +ex.getMessage());
         }
     }
+    /**
+     * Consulta la información de un miembro del staff en la base de datos y muestra los detalles en los campos de texto.
+     * @param nombre El nombre del miembro del staff a consultar.
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
+     */
     public void consultarStaff(String nombre, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
@@ -896,7 +1057,12 @@ public class ControladorVAdmin {
 
     // Puede patrocinar más de un equipo. Así que puede que solo habría que añadirlo a PATROCINADORES_EQUIPOS
     //  (y no hay que insertar un nuevo patrocinador, ya que ese ya existe).
-
+    /**
+     * Inserta un patrocinador en la base de datos y establece su relación con un equipo.
+     * @param nombre El nombre del patrocinador a insertar.
+     * @param idEquipo El ID del equipo que el patrocinador patrocina.
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
+     */
     public void insertarPatrocinador(String nombre, int idEquipo, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
@@ -935,6 +1101,11 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la inserción de un patrocinador.\n" +ex.getMessage());
         }
     }
+    /**
+     * Elimina un patrocinador de la base de datos o su relación con un equipo.
+     * @param nombre El nombre del patrocinador a eliminar.
+     * @param idEquipo El ID del equipo cuya relación con el patrocinador
+     */
     public void borrarPatrocinador(String nombre, int idEquipo, ArrayList<JTextField> listaTextFieldsDinamicos){
         // Se podrá desvincular con un equipo que patrocina (eliminar una fila de 'Patrocinadores_equipos') o eliminar un patrocinador.
         try {
@@ -971,6 +1142,11 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la eliminación de un patrocinador.\n" +ex.getMessage());
         }
     }
+    /**
+     * Consulta la información de un patrocinador en la base de datos y muestra los detalles en los campos de texto.
+     * @param nombre El nombre del patrocinador a consultar.
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
+     */
     public void consultarPatrocinador(String nombre, ArrayList<JTextField> listaTextFieldsDinamicos){
         // Obtendrá los ID de los equipos que patrocina.
         try {
@@ -1010,6 +1186,12 @@ public class ControladorVAdmin {
     }
 
     // Operaciones con juegos
+    /**
+     * Inserta un nuevo juego en la base de datos.
+     * @param nombre El nombre del juego a insertar.
+     * @param empresa La empresa desarrolladora del juego.
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
+     */
     public void insertarJuego(String nombre, String empresa, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
@@ -1040,6 +1222,12 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la inserción de un juego.\n" +ex.getMessage());
         }
     }
+    /**
+     * Elimina un juego de la base de datos.
+     * @param nombre El nombre del juego a eliminar.
+     * @param empresa La empresa desarrolladora del juego.
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
+     */
     public void borrarJuego(String nombre, String empresa, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
@@ -1060,6 +1248,12 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la eliminación de un juego.\n" +ex.getMessage());
         }
     }
+    /**
+     * Modifica los datos de un juego en la base de datos.
+     * @param nombre El nombre del juego a modificar.
+     * @param empresa La empresa desarrolladora del juego.
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
+     */
     public void modificarJuego(String nombre, String empresa, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
@@ -1107,6 +1301,11 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la modificación de un juego.\n" +ex.getMessage());
         }
     }
+    /**
+     * Consulta la información de un juego en la base de datos y muestra los detalles en los campos de texto.
+     * @param nombre El nombre del juego a consultar.
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
+     */
     public void consultarJuego(String nombre, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
@@ -1136,6 +1335,12 @@ public class ControladorVAdmin {
     }
 
     // Operaciones con competiciones
+    /**
+     * Inserta una nueva competición en la base de datos.
+     * @param nombre El nombre de la competición.
+     * @param etapa La etapa de la competición.
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
+     */
     public void insertarCompeticion(String nombre, String etapa, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
@@ -1176,6 +1381,12 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la inserción de un competición.\n" +ex.getMessage());
         }
     }
+    /**
+     * Elimina una competición de la base de datos.
+     * @param nombre El nombre de la competición a eliminar.
+     * @param etapa La etapa de la competición.
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
+     */
     public void borrarCompeticion(String nombre, String etapa, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
@@ -1197,6 +1408,12 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la eliminación de un competición.\n" +ex.getMessage());
         }
     }
+    /**
+     * Modifica una competición existente en la base de datos.
+     * @param nombre El nombre de la competición.
+     * @param etapa La etapa de la competición.
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
+     */
     public void modificarCompeticion(String nombre, String etapa, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
@@ -1261,6 +1478,12 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la modificación de un competición.\n" +ex.getMessage());
         }
     }
+    /**
+     * Consulta una competición en la base de datos.
+     * @param nombre El nombre de la competición.
+     * @param etapa La etapa de la competición.
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
+     */
     public void consultarCompeticion(String nombre, String etapa, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
@@ -1299,6 +1522,10 @@ public class ControladorVAdmin {
     }
 
     // Operaciones con enfrentamientos
+    /**
+     * Elimina un enfrentamiento de la base de datos.
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
+     */
     public void borrarEnfrentamiento(ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
@@ -1326,6 +1553,10 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la eliminación de un enfrentamiento.\n" +ex.getMessage());
         }
     }
+    /**
+     * Modifica un enfrentamiento existente en la base de datos.
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
+     */
     public void modificarEnfrentamiento(ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
@@ -1398,6 +1629,10 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la modificación de un enfrentamiento.\n" +ex.getMessage());
         }
     }
+    /**
+     * Consulta un enfrentamiento en la base de datos y muestra sus detalles en los campos de texto dinámicos.
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
+     */
     public void consultarEnfrentamiento(ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
@@ -1441,6 +1676,10 @@ public class ControladorVAdmin {
     }
 
     // Operaciones con jornadas
+    /**
+     * Elimina una jornada de la base de datos.
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
+     */
     public void borrarJornada(ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
@@ -1465,6 +1704,10 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la eliminación de una jornada.\n" +ex.getMessage());
         }
     }
+    /**
+     * Modifica una jornada en la base de datos.
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
+     */
     public void modificarJornada(ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
@@ -1520,6 +1763,10 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la modificación de una jornada.\n" +ex.getMessage());
         }
     }
+    /**
+     * Consulta una jornada en la base de datos y muestra sus detalles en los campos de texto dinámicos.
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
+     */
     public void consultarJornada(ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
@@ -1556,6 +1803,13 @@ public class ControladorVAdmin {
     }
 
     // Operaciones con usuarios
+    /**
+     * Inserta un nuevo usuario en la base de datos.
+     * @param nombreUsuario Nombre de usuario del nuevo usuario.
+     * @param contrasena Contraseña del nuevo usuario.
+     * @param tipo Tipo de usuario ("A" para Administrador, "N" para Normal).
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
+     */
     public void insertarUsuario(String nombreUsuario, String contrasena, String tipo,
                                 ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
@@ -1591,6 +1845,13 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la inserción de un usuario.\n" +ex.getMessage());
         }
     }
+    /**
+     * Elimina un usuario de la base de datos.
+     * @param nombreUsuario Nombre de usuario del usuario a eliminar.
+     * @param contrasena Contraseña del usuario a eliminar.
+     * @param tipo Tipo de usuario (no se utiliza en la eliminación).
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
+     */
     public void borrarUsuario(String nombreUsuario, String contrasena, String tipo,
                               ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
@@ -1610,6 +1871,13 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la eliminación de un usuario.\n" +ex.getMessage());
         }
     }
+    /**
+     * Modifica un usuario existente en la base de datos.
+     * @param nombreUsuario Nombre de usuario del usuario a modificar.
+     * @param contrasena Nueva contraseña del usuario.
+     * @param tipo Nuevo tipo de usuario ("A" para Administrador, "N" para Normal).
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
+     */
     public void modificarUsuario(String nombreUsuario, String contrasena, String tipo,
                                  ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
@@ -1646,6 +1914,13 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la modificación de un usuario.\n" +ex.getMessage());
         }
     }
+    /**
+     * Consulta un usuario en la base de datos y muestra su información en los campos de texto dinámicos.
+     * @param nombreUsuario Nombre de usuario del usuario a consultar.
+     * @param contrasena Contraseña del usuario (no se utiliza en la consulta).
+     * @param tipo Tipo de usuario (no se utiliza en la consulta).
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos donde se mostrará la información del usuario.
+     */
     public void consultarUsuario(String nombreUsuario, String contrasena, String tipo,
                                  ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
@@ -1681,5 +1956,4 @@ public class ControladorVAdmin {
             textField.setText("");
         }
     }
-
 }

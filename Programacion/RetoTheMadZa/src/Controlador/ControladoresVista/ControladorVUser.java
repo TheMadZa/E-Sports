@@ -14,16 +14,28 @@ import java.awt.image.BufferedImage;
 import java.net.URL;
 import java.util.List;
 
-// TODO : JAVADOC
+/**
+ * Controlador para la vista de usuario.
+ */
 public class ControladorVUser {
 
     private VentanaUser vu;
     private ControladorVista cv;
 
+    /**
+     * Constructor de ControladorVUser.
+     *
+     * @param cv Controlador de la vista principal.
+     */
     public ControladorVUser(ControladorVista cv) {
         this.cv = cv;
     }
 
+    /**
+     * Crea y muestra la ventana de usuario.
+     *
+     * @param vis Ventana de inicio de sesión asociada.
+     */
     public void crearMostrar(VentanaInicioSesion vis) {
         vu = new VentanaUser(vis);
 
@@ -42,6 +54,9 @@ public class ControladorVUser {
         vu.addCbClasificacionAL(new CbClasificacionAL());
     }
 
+    /**
+     * Acción para mostrar la tienda.
+     */
     public class BTiendaAL implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -49,6 +64,9 @@ public class ControladorVUser {
         }
     }
 
+    /**
+     * Acción para mostrar la ventana de inicio de sesión.
+     */
     public class BInicioAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -56,6 +74,9 @@ public class ControladorVUser {
         }
     }
 
+    /**
+     * Acción para salir de la aplicación.
+     */
     public class BSalirAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -68,6 +89,9 @@ public class ControladorVUser {
         }
     }
 
+    /**
+     * Acción para abrir Facebook en el navegador.
+     */
     public static class BFacebookAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -79,6 +103,10 @@ public class ControladorVUser {
             }
         }
     }
+
+    /**
+     * Acción para abrir Instagram en el navegador.
+     */
     public static class BInstagramAL implements ActionListener{
 
         @Override
@@ -91,6 +119,10 @@ public class ControladorVUser {
             }
         }
     }
+
+    /**
+     * Acción para abrir Twitter en el navegador.
+     */
     public static class BTwitterAL implements ActionListener{
 
         @Override
@@ -104,6 +136,9 @@ public class ControladorVUser {
         }
     }
 
+    /**
+     * Acción para mostrar las jornadas.
+     */
     public class MJornadasAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -111,6 +146,9 @@ public class ControladorVUser {
         }
     }
 
+    /**
+     * Acción para mostrar la clasificación.
+     */
     public class MClasificacionAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -118,6 +156,9 @@ public class ControladorVUser {
         }
     }
 
+    /**
+     * Acción para mostrar los equipos.
+     */
     public class MEquiposAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -125,6 +166,9 @@ public class ControladorVUser {
         }
     }
 
+    /**
+     * Acción para manejar la selección en el ComboBox de clasificación.
+     */
     public class CbClasificacionAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -142,13 +186,10 @@ public class ControladorVUser {
     }
 
     /**
-     * Función que muestra los datos de los equipos según la competición.
-     * Se rellena la tabla con los 5 equipos con más victorias de la competición seleccionada en el JComboBox.
+     * Rellena la tabla de equipos según la competición seleccionada.
      *
-     * @author Julen
-     * @author Lorena
-     * @param nombreSeleccionado
-     * @throws Exception
+     * @param nombreSeleccionado Nombre de la competición seleccionada.
+     * @throws Exception Si ocurre algún error.
      */
     public void rellenarTablaEquiposCompeticion(String nombreSeleccionado) throws Exception {
 
@@ -167,11 +208,6 @@ public class ControladorVUser {
         vu.getvEquipo5().setText(String.valueOf(listaCompeticiones[4][1]));
         vu.getpEquipo5().setText(String.valueOf(listaCompeticiones[4][2]));
 
-        /*
-        String Equipo1 = listaCompeticiones[0][0];
-        cargarImagenEstablecerIcono("Equipo1", 55, 55, vi.getEquipo1());
-        */
-
         // Poner las imágenes de sus logos.
         setEquipoImagen(vu.getEquipo1(), "Equipo" + listaCompeticiones[0][5]);
         setEquipoImagen(vu.getEquipo2(), "Equipo" + listaCompeticiones[1][5]);
@@ -181,6 +217,12 @@ public class ControladorVUser {
 
     }
 
+    /**
+     * Establece la imagen del equipo en un JLabel.
+     *
+     * @param label       JLabel donde se establecerá la imagen.
+     * @param nombreImagen Nombre de la imagen del equipo.
+     */
     private void setEquipoImagen(JLabel label, String nombreImagen) {
         BufferedImage imagen = ControladorImagenes.obtenerImagen2(nombreImagen);
         if (imagen != null) {
@@ -192,27 +234,29 @@ public class ControladorVUser {
         }
     }
 
-    public void llenarComboBox(){
+    /**
+     * Llena el ComboBox con las competiciones disponibles.
+     */
+    public void llenarComboBox() {
         try {
             vu.getCbClasificacion().removeAllItems();
             List<Competicion> listaCompeticiones = cv.buscarTodasCompeticiones();
 
-            for (Competicion competicion : listaCompeticiones){
+            for (Competicion competicion : listaCompeticiones) {
                 vu.getCbClasificacion().addItem(competicion.getNombreCom());
             }
 
-            // Check if there are competitions and populate table with first item
+            // Verificar si hay competiciones y poblar la tabla con el primer ítem
             if (!listaCompeticiones.isEmpty()) {
                 String nombreCom = listaCompeticiones.get(0).getNombreCom();
                 rellenarTablaEquiposCompeticion(nombreCom);
             }
 
-            vu.getCbClasificacion().setSelectedIndex(0); // Select the first item
+            vu.getCbClasificacion().setSelectedIndex(0); // Seleccionar el primer ítem
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,e.getMessage());
+            JOptionPane.showMessageDialog(null, e.getMessage());
         }
+
     }
-
-
 }
