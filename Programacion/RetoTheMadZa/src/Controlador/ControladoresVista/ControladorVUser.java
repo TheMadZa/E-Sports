@@ -16,6 +16,8 @@ import java.util.List;
 
 /**
  * Controlador para la vista de usuario.
+ *
+ * @author Ibai, Lorena
  */
 public class ControladorVUser {
 

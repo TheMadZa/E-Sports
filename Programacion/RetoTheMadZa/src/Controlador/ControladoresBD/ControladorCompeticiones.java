@@ -38,25 +38,23 @@ public class ControladorCompeticiones {
      */
     public void insertarCompeticion(Competicion c) throws Exception {
         try {
-            String plantilla = "INSERT INTO competiciones (nombre_com, fecha_inicio, fecha_fin, etapa, id_juego, " +
-                                "id_equipo_ganador) VALUES (?,?,?,?,?,?,?)";
+            String plantilla = "INSERT INTO competiciones (nombre_com, fecha_inicio, fecha_fin, etapa, id_juego) " +
+                                "VALUES (?,?,?,?,?)";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
 
-            sentenciaPre.setInt(1, c.getIdCompeticion());
-            sentenciaPre.setString(2, c.getNombreCom());
-            sentenciaPre.setDate(3, c.getFechaInicio());
-            sentenciaPre.setDate(4, c.getFechaFin());
-            sentenciaPre.setString(5, c.getEtapa());
-            sentenciaPre.setInt(6, c.getJuego().getIdJuego());
-            sentenciaPre.setInt(7, c.getEquipoGanador().getIdEquipo());
+            sentenciaPre.setString(1, c.getNombreCom());
+            sentenciaPre.setDate(2, c.getFechaInicio());
+            sentenciaPre.setDate(3, c.getFechaFin());
+            sentenciaPre.setString(4, c.getEtapa());
+            sentenciaPre.setInt(5, c.getJuego().getIdJuego());
 
             int n = sentenciaPre.executeUpdate();
 
             sentenciaPre.close();
 
             if (n != 1) {
-                throw new Exception("No se ha insertado la competición.");
+                throw new Exception("No se ha podido insertar la competición.");
             }
         }
         catch (SQLIntegrityConstraintViolationException e) {
@@ -94,12 +92,17 @@ public class ControladorCompeticiones {
      * @throws Exception Si no se encuentra la competición o si ocurre un error durante la búsqueda.
      */
     public Competicion buscarCompeticion(int idCompeticion) throws Exception {
+        c = null;
+        PreparedStatement sentenciaPre = null;
+        ResultSet rs = null;
+
         try {
-            String plantilla = "SELECT * FROM competiciones WHERE id_competicion = ?";
-            PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
+            String plantilla = "SELECT nombre_com, fecha_inicio, fecha_fin, etapa, id_juego, id_equipo_ganador " +
+                                "FROM competiciones WHERE id_competicion = ?";
+            sentenciaPre = con.prepareStatement(plantilla);
             sentenciaPre.setInt(1, idCompeticion);
 
-            ResultSet rs = sentenciaPre.executeQuery();
+            rs = sentenciaPre.executeQuery();
             if (rs.next()) {
                 c = new Competicion();
                 c.setIdCompeticion(idCompeticion);
@@ -107,18 +110,36 @@ public class ControladorCompeticiones {
                 c.setFechaInicio(rs.getDate("fecha_inicio"));
                 c.setFechaFin(rs.getDate("fecha_fin"));
                 c.setEtapa(rs.getString("etapa"));
-                c.getJuego().setIdJuego(rs.getInt("id_juego"));
-                c.getEquipoGanador().setIdEquipo(rs.getInt("id_equipo_ganador"));
+                Juego j = new Juego();
+                j.setIdJuego(rs.getInt("id_juego"));
+                c.setJuego(j);
+                Equipo e = new Equipo();
+                e.setIdEquipo(rs.getInt("id_equipo_ganador"));
+                c.setEquipoGanador(e);
             }
             else {
                 throw new Exception("No hay ninguna competición con ese ID.");
             }
-            sentenciaPre.close();
-            return c;
+        }
+        catch (SQLException e) {
+            throw new Exception("Error al querer obtener una competición.", e);
         }
         catch (Exception e) {
             throw new Exception("Error al obtener una competición.");
         }
+        finally {
+            try {
+                if (rs != null) rs.close();
+            } catch (SQLException e) {
+                System.err.println("Error al cerrar ResultSet: " + e.getMessage());
+            }
+            try {
+                if (sentenciaPre != null) sentenciaPre.close();
+            } catch (SQLException e) {
+                System.err.println("Error al cerrar PreparedStatement: " + e.getMessage());
+            }
+        }
+        return c;
     }
 
     /**
@@ -220,7 +241,7 @@ public class ControladorCompeticiones {
      */
     public void modificarCompeticion(Competicion c) throws Exception {
         String plantilla = "UPDATE competiciones SET fecha_inicio = ?, fecha_fin = ?, etapa = ?, " +
-                            "id_juego = ?, id_equipo_ganador = ? WHERE nombre_com = ?";
+                            "id_juego = ?, id_equipo_ganador = ? WHERE UPPER(nombre_com) = ?";
 
         PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
 

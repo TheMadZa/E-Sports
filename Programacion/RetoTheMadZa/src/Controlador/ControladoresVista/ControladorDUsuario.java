@@ -10,6 +10,8 @@ import java.awt.event.ActionListener;
 
 /**
  * Controlador para el diálogo de usuario.
+ *
+ * @author Lorena, Julen
  */
 public class ControladorDUsuario {
 

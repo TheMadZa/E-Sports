@@ -12,6 +12,8 @@ import java.util.List;
 
 /**
  * Controlador para la ventana de visualización de equipos.
+ *
+ * @author Ibai, Julen
  */
 
 public class ControladorVEquipos {

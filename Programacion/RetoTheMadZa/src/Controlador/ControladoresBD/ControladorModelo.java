@@ -301,7 +301,7 @@ public class ControladorModelo {
             //String user = "SYSTEM"; // TODO : para conexion en casa (za)
             //String passwd = "zahir2812"; // TODO : para conexion en casa (za)
             con = DriverManager.getConnection(url, user, passwd);
-            System.out.println("Conexión abierta");
+            System.out.println("Conexión abierta.");
 
             cc = new ControladorCompeticiones(con);
             ce = new ControladorEquipos(con);
@@ -314,7 +314,7 @@ public class ControladorModelo {
             cpe = new ControladorPatrocinadoresEquipos(con);
         }
         catch (Exception e) {
-            System.out.println("Problemas con la base de datos");
+            System.out.println("Problemas con la base de datos.");
         }
     }
 

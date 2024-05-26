@@ -16,7 +16,7 @@ import java.util.List;
  * <p>Proporciona métodos para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre los jugadores
  * en la base de datos.</p>
  *
- * @author Julen
+ * @author Julen, Lorena
  * @version 1.0
  */
 public class ControladorJugadores {
@@ -125,7 +125,13 @@ public class ControladorJugadores {
         }
     }
 
-    // TODO : JAVADOC
+    /**
+     * Función para buscar los datos sobre el jugador que identifiquemos con su nombre.
+     *
+     * @param nombre Es el nombre del jugador con el cual obtendremos los demás datos.
+     * @return El objeto Jugador obtenido.
+     * @throws Exception Si ocurre un error durante la búsqueda.
+     */
     public Jugador buscarJugadorPorNombre(String nombre) throws Exception{
 
         try {
@@ -149,13 +155,13 @@ public class ControladorJugadores {
                 j.setEquipo(e);
             }
             else {
-                throw new Exception("No hay ningún juego registrado con ese nombre.");
+                throw new Exception("No hay ningún jugador registrado con ese nombre.");
             }
             sentenciaPre.close();
             return j;
         }
         catch (Exception e) {
-            throw new Exception("Error al buscar juego por nombre.");
+            throw new Exception("Error al buscar jugador por nombre.");
         }
 
     }
