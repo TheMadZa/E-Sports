@@ -1,13 +1,11 @@
 package Controlador.ControladoresBD;
 
+import Modelo.Competicion;
 import Modelo.Equipo;
 import Modelo.Jornada;
 
 import javax.swing.*;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLIntegrityConstraintViolationException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -80,7 +78,9 @@ public class ControladorJornadas {
                 j.setIdJornada(idJornada);
                 j.setNumJornada(rs.getInt("num_jornada"));
                 j.setFechaJornada(rs.getDate("fecha_jornada"));
-                j.getCompeticion().setIdCompeticion(rs.getInt("id_competicion"));
+                Competicion c = new Competicion();
+                c.setIdCompeticion(rs.getInt("id_competicion"));
+                j.setCompeticion(c);
             }
             else
             {
@@ -102,19 +102,35 @@ public class ControladorJornadas {
      * @throws Exception Si ocurre un error durante la modificación.
      */
     public void modificarJornada(Jornada j) throws Exception {
-        String plantilla = "UPDATE jornadas SET num_jornada = ?, fecha_jornada = ?, id_competicion = ?, " +
-                "WHERE id_jornada = ?";
+        PreparedStatement sentenciaPre = null;
 
-        PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
+        try {
+            String plantilla = "UPDATE jornadas SET num_jornada = ?, fecha_jornada = ?, id_competicion = ? " +
+                                "WHERE id_jornada = ?";
+            sentenciaPre = con.prepareStatement(plantilla);
 
-        sentenciaPre.setInt(1, j.getNumJornada());
-        sentenciaPre.setDate(2, j.getFechaJornada());
-        sentenciaPre.setInt(3, j.getCompeticion().getIdCompeticion());
-        sentenciaPre.setInt(4, j.getIdJornada());
+            sentenciaPre.setInt(1, j.getNumJornada());
+            sentenciaPre.setDate(2, j.getFechaJornada());
+            sentenciaPre.setInt(3, j.getCompeticion().getIdCompeticion());
+            sentenciaPre.setInt(4, j.getIdJornada());
 
-        int n = sentenciaPre.executeUpdate();
-        if (n != 1){
-            throw new Exception("No se ha podido actualizar ninguna jornada.");
+            int n = sentenciaPre.executeUpdate();
+
+            if (n != 1) {
+                throw new Exception("No se ha podido actualizar ninguna jornada.");
+            }
+        } catch (SQLException sqlEx) {
+            throw new Exception("Error al actualizar la jornada en la base de datos.", sqlEx);
+        } catch (Exception ex) {
+            throw new Exception("Error al actualizar la jornada.", ex);
+        } finally {
+            if (sentenciaPre != null) {
+                try {
+                    sentenciaPre.close();
+                } catch (SQLException ex) {
+                    System.err.println("Error al cerrar PreparedStatement: " + ex.getMessage());
+                }
+            }
         }
     }
 

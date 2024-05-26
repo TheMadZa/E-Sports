@@ -84,10 +84,41 @@ public class ControladorEnfrentamientos {
 
     }
 
-    public void modificarEnfrentamiento(Enfrentamiento e) throws Exception{
+    public void modificarEnfrentamiento(Enfrentamiento e) throws Exception {
+        PreparedStatement sentenciaPre = null;
 
-        //
+        try {
+            String plantilla = "UPDATE enfrentamientos SET hora_enfrentamiento = ?, resultado1 = ?, resultado2 = ?, " +
+                                "id_equipo1 = ?, id_equipo2 = ?, id_jornada = ? WHERE id_enfrentamiento = ?";
+            sentenciaPre = con.prepareStatement(plantilla);
 
+            sentenciaPre.setTimestamp(1, e.getHoraEnfrentamiento());
+            sentenciaPre.setInt(2, e.getResultado1());
+            sentenciaPre.setInt(3, e.getResultado2());
+            sentenciaPre.setInt(4, e.getEquipo1().getIdEquipo());
+            sentenciaPre.setInt(5, e.getEquipo2().getIdEquipo());
+            sentenciaPre.setInt(6, e.getJornada().getIdJornada());
+            sentenciaPre.setInt(7, e.getIdEnfrentamiento());
+
+            int n = sentenciaPre.executeUpdate();
+
+            if (n != 1) {
+                throw new Exception("No se ha podido actualizar ningún enfrentamiento.");
+            }
+        } catch (SQLException sqlEx) {
+            throw new Exception("Error al actualizar el enfrentamiento en la base de datos.", sqlEx);
+        } catch (Exception ex) {
+            throw new Exception("Error al actualizar el enfrentamiento.", ex);
+        } finally {
+            if (sentenciaPre != null) {
+                try {
+                    sentenciaPre.close();
+                } catch (SQLException ex) {
+                    System.err.println("Error al cerrar PreparedStatement: " + ex.getMessage());
+                }
+            }
+        }
     }
+
 
 }

@@ -10,6 +10,8 @@ import java.util.List;
 
 /**
  * Controlador para gestionar las vistas y la interacción con el modelo.
+ *
+ * @author Ibai, Lorena, Zahir, Julen
  */
 public class ControladorVista {
 

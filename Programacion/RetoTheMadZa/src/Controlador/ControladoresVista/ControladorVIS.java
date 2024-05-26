@@ -1,6 +1,5 @@
 package Controlador.ControladoresVista;
 
-import Vista.VentanaInicial;
 import Vista.VentanaInicioSesion;
 
 import javax.swing.*;
@@ -9,6 +8,8 @@ import java.awt.event.ActionListener;
 
 /**
  * Controlador para la vista de inicio de sesión.
+ *
+ * @author Ibai, Lorena, Zahir, Julen
  */
 public class ControladorVIS {
 

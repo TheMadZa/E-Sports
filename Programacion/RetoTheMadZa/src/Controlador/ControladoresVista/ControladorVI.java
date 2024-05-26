@@ -14,11 +14,10 @@ import java.net.URL;
 import java.util.List;
 import Controlador.ControladoresVista.ControladorImagenes;
 
-// TODO : JAVADOC
 /**
  * Clase ControladorVI que gestiona la primera ventana en aparecer.
  *
- * @author Julen
+ * @author Julen, Ibai, Lorena, Zahir
  */
 public class ControladorVI {
     private VentanaInicial vi;
@@ -171,109 +170,11 @@ public class ControladorVI {
         vi.getvEquipo5().setText(String.valueOf(listaCompeticiones[4][1]));
         vi.getpEquipo5().setText(String.valueOf(listaCompeticiones[4][2]));
 
-        /*
-        String Equipo1 = listaCompeticiones[0][0];
-        cargarImagenEstablecerIcono("Equipo1", 55, 55, vi.getEquipo1());
-        */
-
-        // TODO : Reutilizar código.
-        // Poner las imágenes de sus logos.
-        /*URL Equipo1 = new URL(listaCompeticiones[0][0]);
-        BufferedImage imagenOriginal1 = ImageIO.read(Equipo1);
-        BufferedImage bufferedImage1 = Scalr.resize(imagenOriginal1, 55);
-        ImageIcon iconoEscalado1 = new ImageIcon(bufferedImage1);
-        vi.getEquipo1().setIcon(iconoEscalado1);
-
-        URL Equipo2 = new URL(listaCompeticiones[1][0]);
-        BufferedImage imagenOriginal2 = ImageIO.read(Equipo2);
-        BufferedImage bufferedImage2 = Scalr.resize(imagenOriginal2, 55);
-        ImageIcon iconoEscalado2 = new ImageIcon(bufferedImage2);
-        vi.getEquipo2().setIcon(iconoEscalado2);
-
-        URL Equipo3 = new URL(listaCompeticiones[2][0]);
-        BufferedImage imagenOriginal3 = ImageIO.read(Equipo3);
-        BufferedImage bufferedImage3 = Scalr.resize(imagenOriginal3, 55);
-        ImageIcon iconoEscalado3 = new ImageIcon(bufferedImage3);
-        vi.getEquipo3().setIcon(iconoEscalado3);
-
-        URL Equipo4 = new URL(listaCompeticiones[3][0]);
-        BufferedImage imagenOriginal4 = ImageIO.read(Equipo4);
-        BufferedImage bufferedImage4 = Scalr.resize(imagenOriginal4, 55);
-        ImageIcon iconoEscalado4 = new ImageIcon(bufferedImage4);
-        vi.getEquipo4().setIcon(iconoEscalado4);
-
-        URL Equipo5 = new URL(listaCompeticiones[4][0]);
-        BufferedImage imagenOriginal5 = ImageIO.read(Equipo5);
-        BufferedImage bufferedImage5 = Scalr.resize(imagenOriginal5, 55);
-        ImageIcon iconoEscalado5 = new ImageIcon(bufferedImage5);
-        vi.getEquipo5().setIcon(iconoEscalado5);*/
-
         setEquipoImagen(vi.getEquipo1(), "Equipo" + listaCompeticiones[0][5]);
         setEquipoImagen(vi.getEquipo2(), "Equipo" + listaCompeticiones[1][5]);
         setEquipoImagen(vi.getEquipo3(), "Equipo" + listaCompeticiones[2][5]);
         setEquipoImagen(vi.getEquipo4(), "Equipo" + listaCompeticiones[3][5]);
         setEquipoImagen(vi.getEquipo5(), "Equipo" + listaCompeticiones[4][5]);
-
-
-        /*
-        //Borramos de la lista los equipos que no tienen el id que queremos
-
-        for (EquipoCompeticion equipoCompeticion : equipoCompeticiones){
-            if (!equipoCompeticion.getCompeticion().equals(c)){
-                equipoCompeticiones.remove(equipoCompeticion);
-            }
-        }
-
-        //De los 5 mejores conseguir el logo, victorias y puntos
-        List<EquipoCompeticion> primerosCinco = equipoCompeticiones.subList(0,5);
-
-        vi.getvEquipo1().setText(String.valueOf(primerosCinco.get(0).getVictorias()));
-        vi.getpEquipo1().setText(String.valueOf(primerosCinco.get(0).getPuntos()));
-        vi.getvEquipo2().setText(String.valueOf(primerosCinco.get(1).getVictorias()));
-        vi.getpEquipo2().setText(String.valueOf(primerosCinco.get(1).getPuntos()));
-        vi.getvEquipo3().setText(String.valueOf(primerosCinco.get(2).getVictorias()));
-        vi.getpEquipo3().setText(String.valueOf(primerosCinco.get(2).getPuntos()));
-        vi.getvEquipo4().setText(String.valueOf(primerosCinco.get(3).getVictorias()));
-        vi.getpEquipo4().setText(String.valueOf(primerosCinco.get(3).getPuntos()));
-        vi.getvEquipo5().setText(String.valueOf(primerosCinco.get(4).getVictorias()));
-        vi.getpEquipo5().setText(String.valueOf(primerosCinco.get(4).getPuntos()));
-
-        vi.getEquipo1().setText(primerosCinco.get(0).getEquipo().getLogo());
-        vi.getEquipo2().setText(primerosCinco.get(1).getEquipo().getLogo());
-        vi.getEquipo3().setText(primerosCinco.get(2).getEquipo().getLogo());
-        vi.getEquipo4().setText(primerosCinco.get(3).getEquipo().getLogo());
-        vi.getEquipo5().setText(primerosCinco.get(4).getEquipo().getLogo());
-
-        URL Equipo1 = new URL(primerosCinco.get(0).getEquipo().getLogo());
-        BufferedImage imagenOriginal1 = ImageIO.read(Equipo1);
-        BufferedImage bufferedImage1 = Scalr.resize(imagenOriginal1, 55);
-        ImageIcon iconoEscalado1 = new ImageIcon(bufferedImage1);
-        vi.getEquipo1().setIcon(iconoEscalado1);
-
-        URL Equipo2 = new URL(primerosCinco.get(1).getEquipo().getLogo());
-        BufferedImage imagenOriginal2 = ImageIO.read(Equipo2);
-        BufferedImage bufferedImage2 = Scalr.resize(imagenOriginal2, 55);
-        ImageIcon iconoEscalado2 = new ImageIcon(bufferedImage2);
-        vi.getEquipo2().setIcon(iconoEscalado2);
-
-        URL Equipo3 = new URL(primerosCinco.get(2).getEquipo().getLogo());
-        BufferedImage imagenOriginal3 = ImageIO.read(Equipo3);
-        BufferedImage bufferedImage3 = Scalr.resize(imagenOriginal3, 55);
-        ImageIcon iconoEscalado3 = new ImageIcon(bufferedImage3);
-        vi.getEquipo3().setIcon(iconoEscalado3);
-
-        URL Equipo4 = new URL(primerosCinco.get(3).getEquipo().getLogo());
-        BufferedImage imagenOriginal4 = ImageIO.read(Equipo4);
-        BufferedImage bufferedImage4 = Scalr.resize(imagenOriginal4, 55);
-        ImageIcon iconoEscalado4 = new ImageIcon(bufferedImage4);
-        vi.getEquipo4().setIcon(iconoEscalado4);
-
-        URL Equipo5 = new URL(primerosCinco.get(4).getEquipo().getLogo());
-        BufferedImage imagenOriginal5 = ImageIO.read(Equipo5);
-        BufferedImage bufferedImage5 = Scalr.resize(imagenOriginal5, 55);
-        ImageIcon iconoEscalado5 = new ImageIcon(bufferedImage5);
-        vi.getEquipo5().setIcon(iconoEscalado5);
-        */
 
     }
 

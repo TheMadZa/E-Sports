@@ -13,6 +13,8 @@ import java.util.List;
 
 /**
  * Controlador para la vista de las jornadas.
+ *
+ * @author Ibai, Julen
  */
 public class ControladorVJornadas {
 

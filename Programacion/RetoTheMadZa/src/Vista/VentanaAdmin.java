@@ -372,7 +372,7 @@ public class VentanaAdmin extends JFrame {
         agregarElemento("Fecha de fin:", new JTextField(), gbc);
         agregarElemento("Estado de la etapa:", new JTextField(), gbc);
         agregarElemento("ID de su juego:", new JTextField(), gbc);
-        agregarElemento("ID del equipo ganador:", new JTextField(), gbc); // TODO : Puede ser null.
+        agregarElemento("ID del equipo ganador:", new JTextField(), gbc);
     }
 
     /**
@@ -402,7 +402,10 @@ public class VentanaAdmin extends JFrame {
         agregarElemento("ID de la competición:", new JTextField(), gbc);
     }
 
-    // TODO : JAVADOC
+    /**
+     * Muestra los datos relacionados con los usuarios en el panel de datos.
+     * Los datos incluyen nombre de usuario, contraseña y tipo de usuario.
+     */
     public void mostrarDatosUsuarios(){
         vaciarListaTextFields();
         agregarElemento("Nombre de usuario:", new JTextField(), gbc);

@@ -9,6 +9,8 @@ import java.awt.event.ActionListener;
 
 /**
  * Controlador para la ventana de la tienda.
+ *
+ * @author Ibai, Lorena
  */
 public class ControladorVTienda {
     private VentanaTienda vt;

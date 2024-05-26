@@ -97,6 +97,8 @@ public class ControladorEquipos {
      */
     public Equipo buscarEquipo(int idEquipo) throws Exception {
         try {
+            e = null;
+
             String plantilla = "SELECT nom_equipo, fecha_fundacion, logo, color FROM equipos WHERE id_equipo = ?";
 
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);

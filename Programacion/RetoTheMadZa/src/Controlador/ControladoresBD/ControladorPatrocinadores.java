@@ -90,9 +90,7 @@ public class ControladorPatrocinadores {
             p = null;
 
             String plantilla = "SELECT id_patrocinador, nombre FROM patrocinadores WHERE UPPER(nombre) = ?";
-
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
-
             sentenciaPre.setString(1,nombre.toUpperCase());
 
             ResultSet rs = sentenciaPre.executeQuery();
