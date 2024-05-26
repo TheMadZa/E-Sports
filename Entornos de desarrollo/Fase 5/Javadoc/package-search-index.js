@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"Controlador"},{"l":"Controlador.Automatizacion"},{"l":"Controlador.ControladoresBD"},{"l":"Controlador.ControladoresVista"},{"l":"Modelo"},{"l":"org.imgscalr"},{"l":"Vista"}];updateSearchResults();
