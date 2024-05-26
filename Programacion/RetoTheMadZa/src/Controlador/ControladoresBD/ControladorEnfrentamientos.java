@@ -3,20 +3,35 @@ package Controlador.ControladoresBD;
 import Modelo.Enfrentamiento;
 import Modelo.Equipo;
 import Modelo.Jornada;
-import Modelo.Juego;
 
 import java.sql.*;
 
-// TODO : JAVADOC
+/**
+ * ControladorEnfrentamientos maneja las operaciones relacionadas con la base de datos
+ * para los enfrentamientos, incluyendo borrar, buscar y modificar enfrentamientos.
+ *
+ * @author Lorena
+ */
 public class ControladorEnfrentamientos {
 
-    private Connection con;
-    private Enfrentamiento e;
+    private final Connection con;
 
+    /**
+     * Constructor de la clase ControladorEnfrentamientos.
+     *
+     * @param con la conexión a la base de datos.
+     */
     public ControladorEnfrentamientos(Connection con) {
         this.con = con;
     }
 
+    /**
+     * Borra un enfrentamiento de la base de datos por su ID.
+     *
+     * @param idEnfrentamiento el ID del enfrentamiento a borrar.
+     * @throws Exception si ocurre un error al borrar el enfrentamiento o si no se puede
+     * eliminar debido a restricciones de integridad.
+     */
     public void borrarEnfrentamiento(int idEnfrentamiento) throws Exception{
 
         PreparedStatement sentenciaPre = null;
@@ -48,6 +63,14 @@ public class ControladorEnfrentamientos {
 
     }
 
+    /**
+     * Busca un enfrentamiento en la base de datos por su ID.
+     *
+     * @param idEnfrentamiento el ID del enfrentamiento a buscar.
+     * @return el enfrentamiento encontrado.
+     * @throws Exception si ocurre un error al buscar el enfrentamiento o si no se encuentra
+     * ningún enfrentamiento con el ID proporcionado.
+     */
     public Enfrentamiento buscarEnfrentamiento(int idEnfrentamiento) throws Exception {
 
         try {
@@ -56,6 +79,7 @@ public class ControladorEnfrentamientos {
             sentenciaPre.setInt(1,idEnfrentamiento);
 
             ResultSet rs = sentenciaPre.executeQuery();
+            Enfrentamiento e;
             if (rs.next()) {
                 e = new Enfrentamiento();
                 e.setIdEnfrentamiento(idEnfrentamiento);
@@ -84,6 +108,12 @@ public class ControladorEnfrentamientos {
 
     }
 
+    /**
+     * Modifica un enfrentamiento existente en la base de datos.
+     *
+     * @param e el enfrentamiento a modificar.
+     * @throws Exception si ocurre un error al actualizar el enfrentamiento.
+     */
     public void modificarEnfrentamiento(Enfrentamiento e) throws Exception {
         PreparedStatement sentenciaPre = null;
 

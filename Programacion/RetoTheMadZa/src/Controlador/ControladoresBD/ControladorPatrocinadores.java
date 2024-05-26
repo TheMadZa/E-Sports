@@ -17,8 +17,7 @@ import java.sql.SQLIntegrityConstraintViolationException;
  * @version 1.0
  */
 public class ControladorPatrocinadores {
-    private Connection con;
-    private Patrocinador p;
+    private final Connection con;
 
     /**
      * Constructor de la clase ControladorPatrocinadores.
@@ -83,11 +82,17 @@ public class ControladorPatrocinadores {
         }
     }
 
-    // TODO : JAVADOC
+    /**
+     * Busca un patrocinador en la base de datos por su nombre.
+     *
+     * @param nombre el nombre del patrocinador a buscar.
+     * @return el patrocinador encontrado o null si no se encuentra ningún patrocinador con el nombre dado.
+     * @throws Exception si ocurre un error al buscar el patrocinador en la base de datos.
+     */
     public Patrocinador buscarPatrocinadorPorNombre(String nombre) throws Exception{
 
         try {
-            p = null;
+            Patrocinador p = null;
 
             String plantilla = "SELECT id_patrocinador, nombre FROM patrocinadores WHERE UPPER(nombre) = ?";
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);

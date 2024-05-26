@@ -1,7 +1,5 @@
 package Controlador.ControladoresBD;
 
-import Modelo.Equipo;
-import Modelo.Juego;
 import Modelo.Usuario;
 
 import java.sql.*;
@@ -17,8 +15,7 @@ import java.sql.*;
  */
 public class ControladorUsuarios {
 
-    private Connection con;
-    private Usuario u;
+    private final Connection con;
 
     /**
      * Constructor de la clase ControladorUsuarios.
@@ -84,7 +81,6 @@ public class ControladorUsuarios {
     public boolean insertarUsuario(Usuario usuario) throws Exception {
 
         try {
-            boolean insercionHecha;
 
             String plantilla = "INSERT INTO usuarios VALUES (?,?,?)";
 
@@ -100,10 +96,8 @@ public class ControladorUsuarios {
 
             if (n != 1)
                 throw new Exception("No se ha podido insertar el usuario.");
-            else
-                insercionHecha = true;
 
-            return insercionHecha;
+            return true;
         }
         catch (SQLException ex) {
             throw new Exception("Error al insertar el usuario: " + ex.getMessage());
@@ -146,35 +140,6 @@ public class ControladorUsuarios {
     }
 
     /**
-     * Función para buscar datos sobre un usuario pasandole su nombre.
-     *
-     * @param nomUsuario Es el nombre del usuario que sirve para identificar el usuario que queremos buscar.
-     * @return Se devuelve el objeto usuario con todos sus valores.
-     * @throws Exception Si ocurre un error durante la búsqueda.
-     */
-    public Usuario buscarUsuario(String nomUsuario) throws Exception {
-        try {
-            String plantilla = "SELECT * FROM usuarios WHERE nom_usuario = ?";
-            PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
-            sentenciaPre.setString(1, nomUsuario);
-            ResultSet rs = sentenciaPre.executeQuery();
-            Usuario usuario = null;
-            if (rs.next()) {
-                usuario = new Usuario();
-                usuario.setContrasena(rs.getString("contrasena"));
-                usuario.setTipo(rs.getString("tipo"));
-            }
-            else {
-                throw new Exception("No hay ningún usuario registrado con ese nombre.");
-            }
-            sentenciaPre.close();
-            return usuario;
-        } catch (SQLException e) {
-            throw new Exception("Error al buscar el usuario: " + e.getMessage());
-        }
-    }
-
-    /**
      * Función para modificar uno o más datos sobre el usuario que identifiquemos con su nombre.
      *
      * @param usuario Es el objeto usuario del cual queremos actualizar uno o varios valores suyos buscandolo por nombre
@@ -197,7 +162,13 @@ public class ControladorUsuarios {
         }
     }
 
-    // TODO : JAVADOC
+    /**
+     * Busca un usuario en la base de datos por su nombre de usuario.
+     *
+     * @param nombreUsuario el nombre de usuario a buscar.
+     * @return el objeto Usuario encontrado con los detalles del usuario.
+     * @throws Exception si no se encuentra ningún usuario con el nombre dado o si ocurre un error durante la búsqueda.
+     */
     public Usuario buscarUsuarioPorNombre(String nombreUsuario) throws Exception {
 
         try {
@@ -206,6 +177,7 @@ public class ControladorUsuarios {
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
             sentenciaPre.setString(1, nombreUsuario.toUpperCase());
             ResultSet rs = sentenciaPre.executeQuery();
+            Usuario u;
             if (rs.next()) {
                 u = new Usuario();
                 u.setNomUsuario(rs.getString("nom_usuario"));

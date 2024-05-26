@@ -14,7 +14,7 @@ import java.awt.event.ActionListener;
 public class ControladorVIS {
 
     private VentanaInicioSesion vis;
-    private ControladorVista cv;
+    private final ControladorVista cv;
 
     /**
      * Constructor del controlador de la vista de inicio de sesión.

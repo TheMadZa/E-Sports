@@ -3,7 +3,6 @@ package Vista;
 import Controlador.ControladoresVista.ControladorImagenes;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionListener;
 
 /**
@@ -66,7 +65,7 @@ public class VentanaJornadas extends JFrame{
      */
     public VentanaJornadas(JFrame ventanaEliminar) {
 
-        cargarImagenEstablecerIconoBoton("TheMadZaLogoSimple", 250, 250, ftThemadza);
+        cargarImagenEstablecerIconoBoton(ftThemadza);
         cargarImagenEstablecerIcono("Tienda", bTienda);
         cargarImagenEstablecerIcono("Inicio", bInicio);
         cargarImagenEstablecerIcono("Salir", bSalir);
@@ -84,31 +83,6 @@ public class VentanaJornadas extends JFrame{
         cargarImagenEstablecerIcono("Equipo1", 75, 75, ftEquipo1Partido4);
         cargarImagenEstablecerIcono("Equipo1", 75, 75, ftEquipo2Partido4);
 
-        //equipos
-       /* ImageIcon iconoEquipo1Partido1 = ControladorImagenes.obtenerImagen(Equipo1Partido1, 100, 100);
-        ftEquipo1Partido1.setIcon(iconoEquipo1Partido1);
-
-        ImageIcon iconoEquipo2Partido1 = ControladorImagenes.obtenerImagen(Equipo2Partido1, 100, 100);
-        ftEquipo2Partido1.setIcon(iconoEquipo2Partido1);
-
-        ImageIcon iconoEquipo1Partido2 = ControladorImagenes.obtenerImagen(Equipo1Partido2, 100, 100);
-        ftEquipo1Partido2.setIcon(iconoEquipo1Partido2);
-
-        ImageIcon iconoEquipo2Partido2 = ControladorImagenes.obtenerImagen(Equipo2Partido2, 100, 100);
-        ftEquipo2Partido2.setIcon(iconoEquipo2Partido2);
-
-        ImageIcon iconoEquipo1Partido3 = ControladorImagenes.obtenerImagen(Equipo1Partido3, 100, 100);
-        ftEquipo1Partido3.setIcon(iconoEquipo1Partido3);
-
-        ImageIcon iconoEquipo2Partido3 = ControladorImagenes.obtenerImagen(Equipo2Partido3, 100, 100);
-        ftEquipo2Partido3.setIcon(iconoEquipo2Partido3);
-
-        ImageIcon iconoEquipo1Partido4 = ControladorImagenes.obtenerImagen(Equipo1Partido4, 100, 100);
-        ftEquipo1Partido4.setIcon(iconoEquipo1Partido4);
-
-        ImageIcon iconoEquipo2Partido4 = ControladorImagenes.obtenerImagen(Equipo2Partido4, 100, 100);
-        ftEquipo2Partido4.setIcon(iconoEquipo2Partido4);*/
-
         // Configurar la ventana
         setContentPane(pPrincipal);
         setTitle("Ventana Jornadas");
@@ -125,8 +99,8 @@ public class VentanaJornadas extends JFrame{
 
         setVisible(true);
 
-        // Destruir la ventana anterior.
-        ventanaEliminar.dispose();
+        // Ocultar la ventana anterior.
+        ventanaEliminar.setVisible(false);
     }
 
     /**
@@ -174,8 +148,8 @@ public class VentanaJornadas extends JFrame{
     public JComboBox<String> getCbCompeticion() {
         return cbCompeticion;
     }
-    public void setCbCompeticion(JComboBox<String> cbCompeticion) {
-        this.cbCompeticion = cbCompeticion;
+    public void addBThemadzaAL(ActionListener al) {
+        ftThemadza.addActionListener(al);
     }
 
     /**
@@ -222,17 +196,15 @@ public class VentanaJornadas extends JFrame{
     /**
      * Carga una imagen desde un archivo y establece esa imagen como icono en un JButton,
      * dimensionándola al ancho y alto proporcionados.
-     * @param nombreImagen El nombre del archivo de la imagen.
-     * @param ancho El ancho deseado para la imagen.
-     * @param alto El alto deseado para la imagen.
+     *
      * @param label El JButton en el que se establecerá la imagen.
      */
-    private void cargarImagenEstablecerIconoBoton(String nombreImagen, int ancho, int alto, JButton label) {
-        ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
+    private void cargarImagenEstablecerIconoBoton(JButton label) {
+        ImageIcon icono = ControladorImagenes.obtenerImagen("TheMadZaLogoSimple", 250, 250);
         if (icono != null) {
             label.setIcon(icono);
         } else {
-            System.err.println("La imagen " + nombreImagen + " no se encontró.");
+            System.err.println("La imagen " + "TheMadZaLogoSimple" + " no se encontró.");
         }
     }
 
@@ -250,127 +222,63 @@ public class VentanaJornadas extends JFrame{
         return ftEquipo1Partido1;
     }
 
-    public void setFtEquipo1Partido1(JLabel ftEquipo1Partido1) {
-        this.ftEquipo1Partido1 = ftEquipo1Partido1;
-    }
-
     public JLabel getFtEquipo2Partido1() {
         return ftEquipo2Partido1;
-    }
-
-    public void setFtEquipo2Partido1(JLabel ftEquipo2Partido1) {
-        this.ftEquipo2Partido1 = ftEquipo2Partido1;
     }
 
     public JLabel getFtEquipo2Partido2() {
         return ftEquipo2Partido2;
     }
 
-    public void setFtEquipo2Partido2(JLabel ftEquipo2Partido2) {
-        this.ftEquipo2Partido2 = ftEquipo2Partido2;
-    }
-
     public JLabel getFtEquipo2Partido3() {
         return ftEquipo2Partido3;
-    }
-
-    public void setFtEquipo2Partido3(JLabel ftEquipo2Partido3) {
-        this.ftEquipo2Partido3 = ftEquipo2Partido3;
     }
 
     public JLabel getFtEquipo2Partido4() {
         return ftEquipo2Partido4;
     }
 
-    public void setFtEquipo2Partido4(JLabel ftEquipo2Partido4) {
-        this.ftEquipo2Partido4 = ftEquipo2Partido4;
-    }
-
     public JLabel getFtEquipo1Partido2() {
         return ftEquipo1Partido2;
-    }
-
-    public void setFtEquipo1Partido2(JLabel ftEquipo1Partido2) {
-        this.ftEquipo1Partido2 = ftEquipo1Partido2;
     }
 
     public JLabel getFtEquipo1Partido3() {
         return ftEquipo1Partido3;
     }
 
-    public void setFtEquipo1Partido3(JLabel ftEquipo1Partido3) {
-        this.ftEquipo1Partido3 = ftEquipo1Partido3;
-    }
-
     public JLabel getFtEquipo1Partido4() {
         return ftEquipo1Partido4;
-    }
-
-    public void setFtEquipo1Partido4(JLabel ftEquipo1Partido4) {
-        this.ftEquipo1Partido4 = ftEquipo1Partido4;
     }
 
     public JLabel getResultadoEquipo1Partido1() {
         return resultadoEquipo1Partido1;
     }
 
-    public void setResultadoEquipo1Partido1(JLabel resultadoEquipo1Partido1) {
-        this.resultadoEquipo1Partido1 = resultadoEquipo1Partido1;
-    }
-
     public JLabel getResultadoEquipo2Partido1() {
         return resultadoEquipo2Partido1;
-    }
-
-    public void setResultadoEquipo2Partido1(JLabel resultadoEquipo2Partido1) {
-        this.resultadoEquipo2Partido1 = resultadoEquipo2Partido1;
     }
 
     public JLabel getResultadoEquipo1Partido2() {
         return resultadoEquipo1Partido2;
     }
 
-    public void setResultadoEquipo1Partido2(JLabel resultadoEquipo1Partido2) {
-        this.resultadoEquipo1Partido2 = resultadoEquipo1Partido2;
-    }
-
     public JLabel getResultadoEquipo2Partido2() {
         return resultadoEquipo2Partido2;
-    }
-
-    public void setResultadoEquipo2Partido2(JLabel resultadoEquipo2Partido2) {
-        this.resultadoEquipo2Partido2 = resultadoEquipo2Partido2;
     }
 
     public JLabel getResultadoEquipo1Partido3() {
         return resultadoEquipo1Partido3;
     }
 
-    public void setResultadoEquipo1Partido3(JLabel resultadoEquipo1Partido3) {
-        this.resultadoEquipo1Partido3 = resultadoEquipo1Partido3;
-    }
-
     public JLabel getResultadoEquipo2Partido3() {
         return resultadoEquipo2Partido3;
-    }
-
-    public void setResultadoEquipo2Partido3(JLabel resultadoEquipo2Partido3) {
-        this.resultadoEquipo2Partido3 = resultadoEquipo2Partido3;
     }
 
     public JLabel getResultadoEquipo1Partido4() {
         return resultadoEquipo1Partido4;
     }
 
-    public void setResultadoEquipo1Partido4(JLabel resultadoEquipo1Partido4) {
-        this.resultadoEquipo1Partido4 = resultadoEquipo1Partido4;
-    }
-
     public JLabel getResultadoEquipo2Partido4() {
         return resultadoEquipo2Partido4;
-    }
-
-    public void setResultadoEquipo2Partido4(JLabel resultadoEquipo2Partido4) {
-        this.resultadoEquipo2Partido4 = resultadoEquipo2Partido4;
     }
 }

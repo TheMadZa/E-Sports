@@ -18,12 +18,11 @@ import java.util.List;
  * <p>Proporciona métodos para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre el staff
  * en la base de datos.</p>
  *
- * @author Julen, Ibai
+ * @author Julen, Ibai, Lorena
  * @version 1.0
  */
 public class ControladorStaff {
-    private Connection con;
-    private Staff s;
+    private final Connection con;
 
     /**
      * Constructor de la clase ControladorStaffs.
@@ -116,7 +115,13 @@ public class ControladorStaff {
         }
     }
 
-    // TODO : JAVADOC
+    /**
+     * Busca un miembro del staff en la base de datos por su nombre.
+     *
+     * @param nombre el nombre del miembro del staff a buscar.
+     * @return el objeto Staff encontrado con los detalles del miembro del staff.
+     * @throws Exception si no se encuentra ningún miembro del staff con el nombre dado o si ocurre un error durante la búsqueda.
+     */
     public Staff buscarStaffPorNombre(String nombre) throws Exception {
         try {
             String plantilla = "SELECT id_staff, puesto, nombre, fecha_nac, sueldo, id_equipo FROM staffs " +
@@ -125,6 +130,7 @@ public class ControladorStaff {
             PreparedStatement sentenciaPre = con.prepareStatement(plantilla);
             sentenciaPre.setString(1, nombre.toUpperCase());
             ResultSet rs = sentenciaPre.executeQuery();
+            Staff s;
             if (rs.next()) {
                 s = new Staff();
                 s.setIdStaff(rs.getInt("id_staff"));

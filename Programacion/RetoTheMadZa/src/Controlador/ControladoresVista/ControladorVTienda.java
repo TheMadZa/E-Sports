@@ -14,7 +14,8 @@ import java.awt.event.ActionListener;
  */
 public class ControladorVTienda {
     private VentanaTienda vt;
-    private ControladorVista cv;
+    private final ControladorVista cv;
+    private JFrame ventanaEliminar;
 
     /**
      * Constructor de ControladorVTienda.
@@ -31,6 +32,7 @@ public class ControladorVTienda {
      * @param ventanaEliminar Ventana principal que se va a ocultar.
      */
     public void crearMostrar(JFrame ventanaEliminar) {
+        this.ventanaEliminar = ventanaEliminar;
         vt = new VentanaTienda(ventanaEliminar);
 
         // Action Listeners de los botones y demás.
@@ -62,49 +64,43 @@ public class ControladorVTienda {
     }
 
     /**
-     * Acción para abrir Facebook en el navegador.
+     * ActionListener para el botón de Facebook.
      */
     public static class BFacebookAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            String enlace = "https://www.facebook.com/?locale=es_ES";
-            try {
-                Desktop.getDesktop().browse(java.net.URI.create(enlace));
-            } catch (java.io.IOException ex) {
-                System.out.println("Error al abrir el enlace: " + ex.getMessage());
-            }
+            abrirEnlace("https://www.facebook.com/?locale=es_ES");
         }
     }
-
     /**
-     * Acción para abrir Instagram en el navegador.
+     * ActionListener para el botón de Instagram.
      */
     public static class BInstagramAL implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            String enlace = "https://www.instagram.com";
-            try {
-                Desktop.getDesktop().browse(java.net.URI.create(enlace));
-            } catch (java.io.IOException ex) {
-                System.out.println("Error al abrir el enlace: " + ex.getMessage());
-            }
+            abrirEnlace("https://www.instagram.com");
         }
     }
-
     /**
-     * Acción para abrir Twitter en el navegador.
+     * ActionListener para el botón de Twitter.
      */
     public static class BTwitterAL implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            String enlace = "https://twitter.com/?logout=1715768138184";
-            try {
-                Desktop.getDesktop().browse(java.net.URI.create(enlace));
-            } catch (java.io.IOException ex) {
-                System.out.println("Error al abrir el enlace: " + ex.getMessage());
-            }
+            abrirEnlace("https://twitter.com/?logout=1715768138184");
+        }
+    }
+    /**
+     * Abre un enlace externo en el navegador predeterminado.
+     * @param enlace Enlace a abrir.
+     */
+    private static void abrirEnlace(String enlace) {
+        try {
+            Desktop.getDesktop().browse(java.net.URI.create(enlace));
+        } catch (java.io.IOException ex) {
+            System.out.println("Error al abrir el enlace: " + ex.getMessage());
         }
     }
 
@@ -159,13 +155,14 @@ public class ControladorVTienda {
     }
 
     /**
-     * Acción para realizar una acción específica (a completar).
+     * Acción para mostrar la ventana desde la que se activó la VTienda.
+     * Esta ventana se eliminará y se mostrará la VAdmin o VUser (volverá a la anterior), como si fuese la ventana principal.
      */
     public class BThemadzaAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            //cv.mostrarVPrincipal(vt,); // TODO : Poner que se muestre la VAdmin o VUser dependiendo de la V desde la que se activó la VTienda.
-            // TODO : Poner para las ventanas de equipos, jornadas, clasificacion y xml también.
+            vt.dispose();
+            ventanaEliminar.setVisible(true);
         }
     }
 }

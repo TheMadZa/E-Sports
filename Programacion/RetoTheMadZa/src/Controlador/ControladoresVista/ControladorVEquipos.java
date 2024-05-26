@@ -7,7 +7,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,11 +18,10 @@ import java.util.List;
 public class ControladorVEquipos {
 
     private VentanaEquipos ve;
-    private ControladorVista cv;
-    private ControladorImagenes ci;
+    private final ControladorVista cv;
     private int posicionEquipo;
-    private int posicionArray;
     private List<Equipo> equipos;
+    private JFrame ventanaEliminar;
 
     /**
      * Constructor del controlador de equipos.
@@ -40,6 +38,8 @@ public class ControladorVEquipos {
      */
 
     public void crearMostrar(JFrame ventanaEliminar) {
+
+        this.ventanaEliminar = ventanaEliminar;
 
         ve = new VentanaEquipos(ventanaEliminar);
 
@@ -60,14 +60,14 @@ public class ControladorVEquipos {
         ve.addMJornadasAL(new MJornadasAL());
         ve.addMClasificacionAL(new MClasificacionAL());
         ve.addMEquiposAL(new MEquiposAL());
+        ve.addBThemadzaAL(new BThemadzaAL());
 
     }
     /**
      * Obtiene los equipos de la base de datos y muestra el primero en la ventana.
-     * @throws Exception Si hay un error al obtener los equipos.
      */
 
-    public void obtenerEquipos() throws Exception{
+    public void obtenerEquipos() {
         try {
             equipos = cv.cargarEquiposDesdeBD();
             if (!equipos.isEmpty()) {
@@ -167,12 +167,7 @@ public class ControladorVEquipos {
     public static class BFacebookAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            String enlace = "https://www.facebook.com/?locale=es_ES";
-            try {
-                Desktop.getDesktop().browse(java.net.URI.create(enlace));
-            } catch (java.io.IOException ex) {
-                System.out.println("Error al abrir el enlace: " + ex.getMessage());
-            }
+            abrirEnlace("https://www.facebook.com/?locale=es_ES");
         }
     }
     /**
@@ -182,12 +177,7 @@ public class ControladorVEquipos {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            String enlace = "https://www.instagram.com";
-            try {
-                Desktop.getDesktop().browse(java.net.URI.create(enlace));
-            } catch (java.io.IOException ex) {
-                System.out.println("Error al abrir el enlace: " + ex.getMessage());
-            }
+            abrirEnlace("https://www.instagram.com");
         }
     }
     /**
@@ -197,12 +187,7 @@ public class ControladorVEquipos {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            String enlace = "https://twitter.com/?logout=1715768138184";
-            try {
-                Desktop.getDesktop().browse(java.net.URI.create(enlace));
-            } catch (java.io.IOException ex) {
-                System.out.println("Error al abrir el enlace: " + ex.getMessage());
-            }
+            abrirEnlace("https://twitter.com/?logout=1715768138184");
         }
     }
     /**
@@ -241,6 +226,18 @@ public class ControladorVEquipos {
         @Override
         public void actionPerformed(ActionEvent e) {
             cv.mostrarEquipos(ve);
+        }
+    }
+
+    /**
+     * Acción para mostrar la ventana desde la que se activó la VEquipos.
+     * Esta ventana se eliminará y se mostrará la VAdmin o VUser (volverá a la anterior), como si fuese la ventana principal.
+     */
+    public class BThemadzaAL implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            ve.dispose();
+            ventanaEliminar.setVisible(true);
         }
     }
 

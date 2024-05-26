@@ -1,6 +1,5 @@
 package Controlador.ControladoresBD;
 
-import Controlador.ControladoresVista.ControladorVUser;
 import Modelo.*;
 
 import java.sql.*;
@@ -26,11 +25,11 @@ public class ControladorModelo {
     private ControladorJugadores cjug;
     private ControladorPatrocinadores cp;
     private ControladorStaff cs;
-    private ControladorUsuarios cu;
-    private ControladorEnfrentamientos cen;
+    private final ControladorUsuarios cu;
+    private final ControladorEnfrentamientos cen;
     private ControladorEquiposCompeticiones cec;
     private ControladorPatrocinadoresEquipos cpe;
-    private ControladorXML cxm;
+    private final ControladorXML cxm;
 
     /**
      * Constructor de la clase ControladorModelo.
@@ -68,7 +67,6 @@ public class ControladorModelo {
         cxm = new ControladorXML(con);
     }
 
-    //TODO: Añadir javadoc para todo lo de debajo
     //COMPETICION
     public void insertarCompeticion(Competicion c) throws Exception {
         cc.insertarCompeticion(c);
@@ -285,24 +283,32 @@ public class ControladorModelo {
     }
 
     /**
-     * Abre la conexión con la base de datos.
+     * Abre la conexión con la base de datos utilizando el controlador Oracle JDBC y establece
+     * las conexiones a diferentes controladores de la aplicación.
      */
-    //ABRIR LA CONEXION CON LA BASE DE DATOS
     public void abrirConexion() {
         try {
+            // Carga el controlador JDBC de Oracle
             Class.forName("oracle.jdbc.driver.OracleDriver");
+
+            // URL de conexión a la base de datos
             String url = "jdbc:oracle:thin:@172.20.225.114:1521:ORCL"; // TODO : para conexión clase
             //String url = "jdbc:oracle:thin:@//localhost:1521/XEPDB1"; // TODO : para conexión en casa (Ibai)
             //String url = "jdbc:oracle:thin:@//4.tcp.eu.ngrok.io:14479:1521/XEPDB1"; // TODO : para conexión en casa (Lorena)
             //String url = "jdbc:oracle:thin:@//localhost:1521/XE"; // TODO : para conexión en casa (za)
+
+            // Credenciales de la base de datos
             //String user = "C##eqdaw03";
             String user = "eqdaw03";
             String passwd = "eqdaw03";
             //String user = "SYSTEM"; // TODO : para conexion en casa (za)
             //String passwd = "zahir2812"; // TODO : para conexion en casa (za)
+
+            // Establece la conexión con la base de datos
             con = DriverManager.getConnection(url, user, passwd);
             System.out.println("Conexión abierta.");
 
+            // Inicializa los controladores de la aplicación con la conexión establecida
             cc = new ControladorCompeticiones(con);
             ce = new ControladorEquipos(con);
             cjo = new ControladorJornadas(con);

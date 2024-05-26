@@ -2,16 +2,13 @@ package Controlador.ControladoresVista;
 
 import Modelo.Competicion;
 import Vista.VentanaClasificacion;
-import Vista.VentanaInicial;
 import org.imgscalr.Scalr;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.net.URL;
 import java.util.List;
 
 /**
@@ -22,7 +19,8 @@ import java.util.List;
  */
 public class ControladorVCompeticiones {
     private VentanaClasificacion vc;
-    private ControladorVista cv;
+    private final ControladorVista cv;
+    private JFrame ventanaEliminar;
 
     /**
      * Constructor que inicializa el controlador con una instancia de ControladorVista.
@@ -39,7 +37,11 @@ public class ControladorVCompeticiones {
      * @param ventanaEliminar la ventana que será reemplazada por la nueva ventana de clasificación.
      */
     public void crearMostrar(JFrame ventanaEliminar) {
+
+        this.ventanaEliminar = ventanaEliminar;
+
         vc = new VentanaClasificacion(ventanaEliminar);
+
         llenarComboBox();
         vc.addBTiendaAL(new BTiendaAL());
         vc.addBInicioAL(new BInicioAL());
@@ -51,6 +53,8 @@ public class ControladorVCompeticiones {
         vc.addMClasificacionAL(new MClasificacionAL());
         vc.addMEquiposAL(new MEquiposAL());
         vc.addCbCompeticionAL(new CbClasificacionAL());
+        vc.addBThemadzaAL(new BThemadzaAL());
+
     }
 
     /**
@@ -112,47 +116,43 @@ public class ControladorVCompeticiones {
     }
 
     /**
-     * Clase interna que maneja el evento de acción para el botón de Facebook.
+     * ActionListener para el botón de Facebook.
      */
-    public static class BFacebookAL implements ActionListener {
+    public static class BFacebookAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            String enlace = "https://www.facebook.com/?locale=es_ES";
-            try {
-                Desktop.getDesktop().browse(java.net.URI.create(enlace));
-            } catch (java.io.IOException ex) {
-                System.out.println("Error al abrir el enlace: " + ex.getMessage());
-            }
+            abrirEnlace("https://www.facebook.com/?locale=es_ES");
         }
     }
-
     /**
-     * Clase interna que maneja el evento de acción para el botón de Instagram.
+     * ActionListener para el botón de Instagram.
      */
-    public static class BInstagramAL implements ActionListener {
+    public static class BInstagramAL implements ActionListener{
+
         @Override
         public void actionPerformed(ActionEvent e) {
-            String enlace = "https://www.instagram.com";
-            try {
-                Desktop.getDesktop().browse(java.net.URI.create(enlace));
-            } catch (java.io.IOException ex) {
-                System.out.println("Error al abrir el enlace: " + ex.getMessage());
-            }
+            abrirEnlace("https://www.instagram.com");
         }
     }
-
     /**
-     * Clase interna que maneja el evento de acción para el botón de Twitter.
+     * ActionListener para el botón de Twitter.
      */
-    public static class BTwitterAL implements ActionListener {
+    public static class BTwitterAL implements ActionListener{
+
         @Override
         public void actionPerformed(ActionEvent e) {
-            String enlace = "https://twitter.com/?logout=1715768138184";
-            try {
-                Desktop.getDesktop().browse(java.net.URI.create(enlace));
-            } catch (java.io.IOException ex) {
-                System.out.println("Error al abrir el enlace: " + ex.getMessage());
-            }
+            abrirEnlace("https://twitter.com/?logout=1715768138184");
+        }
+    }
+    /**
+     * Abre un enlace externo en el navegador predeterminado.
+     * @param enlace Enlace a abrir.
+     */
+    private static void abrirEnlace(String enlace) {
+        try {
+            Desktop.getDesktop().browse(java.net.URI.create(enlace));
+        } catch (java.io.IOException ex) {
+            System.out.println("Error al abrir el enlace: " + ex.getMessage());
         }
     }
 
@@ -288,6 +288,18 @@ public class ControladorVCompeticiones {
             } catch (Exception ex) {
                 vc.mostrarMensaje(ex.getMessage());
             }
+        }
+    }
+
+    /**
+     * Acción para mostrar la ventana desde la que se activó la VClasificacion.
+     * Esta ventana se eliminará y se mostrará la VAdmin o VUser (volverá a la anterior), como si fuese la ventana principal.
+     */
+    public class BThemadzaAL implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            vc.dispose();
+            ventanaEliminar.setVisible(true);
         }
     }
 }

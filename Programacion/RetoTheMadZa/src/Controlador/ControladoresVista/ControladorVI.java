@@ -4,15 +4,12 @@ import Modelo.*;
 import Vista.VentanaInicial;
 import org.imgscalr.Scalr;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.net.URL;
 import java.util.List;
-import Controlador.ControladoresVista.ControladorImagenes;
 
 /**
  * Clase ControladorVI que gestiona la primera ventana en aparecer.
@@ -71,39 +68,44 @@ public class ControladorVI {
         }
     }
 
+    /**
+     * ActionListener para el botón de Facebook.
+     */
     public static class BFacebookAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            String enlace = "https://www.facebook.com/?locale=es_ES";
-            try {
-                Desktop.getDesktop().browse(java.net.URI.create(enlace));
-            } catch (java.io.IOException ex) {
-                System.out.println("Error al abrir el enlace: " + ex.getMessage());
-            }
+            abrirEnlace("https://www.facebook.com/?locale=es_ES");
         }
     }
+    /**
+     * ActionListener para el botón de Instagram.
+     */
     public static class BInstagramAL implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            String enlace = "https://www.instagram.com";
-            try {
-                Desktop.getDesktop().browse(java.net.URI.create(enlace));
-            } catch (java.io.IOException ex) {
-                System.out.println("Error al abrir el enlace: " + ex.getMessage());
-            }
+            abrirEnlace("https://www.instagram.com");
         }
     }
+    /**
+     * ActionListener para el botón de Twitter.
+     */
     public static class BTwitterAL implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            String enlace = "https://twitter.com/?logout=1715768138184";
-            try {
-                Desktop.getDesktop().browse(java.net.URI.create(enlace));
-            } catch (java.io.IOException ex) {
-                System.out.println("Error al abrir el enlace: " + ex.getMessage());
-            }
+            abrirEnlace("https://twitter.com/?logout=1715768138184");
+        }
+    }
+    /**
+     * Abre un enlace externo en el navegador predeterminado.
+     * @param enlace Enlace a abrir.
+     */
+    private static void abrirEnlace(String enlace) {
+        try {
+            Desktop.getDesktop().browse(java.net.URI.create(enlace));
+        } catch (java.io.IOException ex) {
+            System.out.println("Error al abrir el enlace: " + ex.getMessage());
         }
     }
 
@@ -148,10 +150,8 @@ public class ControladorVI {
      * Función que muestra los datos de los equipos según la competición.
      * Se rellena la tabla con los 5 equipos con más victorias de la competición seleccionada en el JComboBox.
      *
-     * @author Julen
-     * @author Lorena
-     * @param nombreSeleccionado
-     * @throws Exception
+     * @param nombreSeleccionado Es el nombre de la competición seleccionada en el JComboBox.
+     * @throws Exception Si ocurre algún error inesperado.
      */
     public void rellenarTablaEquiposCompeticion(String nombreSeleccionado) throws Exception {
 

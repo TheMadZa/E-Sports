@@ -79,8 +79,8 @@ public class VentanaEquipos extends JFrame {
 
         setVisible(true);
 
-        // Destruir la ventana anterior.
-        ventanaEliminar.dispose();
+        // Ocultar la ventana anterior.
+        ventanaEliminar.setVisible(false);
     }
 
     /**
@@ -127,41 +127,16 @@ public class VentanaEquipos extends JFrame {
 
     //Getters y setters
 
-
     public JLabel getlImagen() {
         return lImagen;
-    }
-
-    public void setlImagen(JLabel lImagen) {
-        this.lImagen = lImagen;
-    }
-
-    public JLabel getlEquipo() {
-        return lEquipo;
-    }
-
-    public void setlEquipo(JLabel lEquipo) {
-        this.lEquipo = lEquipo;
     }
 
     public JButton getbDerecha() {
         return bDerecha;
     }
 
-    public void setbDerecha(JButton bDerecha) {
-        this.bDerecha = bDerecha;
-    }
-
     public JButton getbIzquierda() {
         return bIzquierda;
-    }
-
-    public void setbIzquierda(JButton bIzquierda) {
-        this.bIzquierda = bIzquierda;
-    }
-
-    public JLabel getNombreEquipo() {
-        return nombreEquipo;
     }
 
     public void setNombreEquipo(String nombre) {
@@ -176,7 +151,6 @@ public class VentanaEquipos extends JFrame {
     public void addBFlechaIzquAL(ActionListener al){
         bIzquierda.addActionListener(al);
     }
-
     public void addMJornadasAL(ActionListener al) {
         mJornadas.addActionListener(al);
     }
@@ -203,6 +177,9 @@ public class VentanaEquipos extends JFrame {
     }
     public void addBTwitterAL(ActionListener al) {
         bTwitter.addActionListener(al);
+    }
+    public void addBThemadzaAL(ActionListener al) {
+        ftThemadza.addActionListener(al);
     }
 
     /**

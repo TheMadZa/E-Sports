@@ -1,23 +1,38 @@
 package Controlador.ControladoresBD;
 
-import Modelo.Competicion;
-import Modelo.Equipo;
 import Modelo.PatrocinadorEquipo;
-import Modelo.Usuario;
 
 import java.sql.*;
 import java.util.ArrayList;
 
-// TODO : JAVADOC
+/**
+ * ControladorPatrocinadoresEquipos maneja las operaciones relacionadas con la tabla
+ * `patrocinadores_equipos` en la base de datos, incluyendo insertar, buscar y borrar registros.
+ *
+ * @author Julen, Lorena
+ */
 public class ControladorPatrocinadoresEquipos {
 
-    private Connection con;
+    private final Connection con;
     private PatrocinadorEquipo pe;
 
+    /**
+     * Constructor de la clase ControladorPatrocinadoresEquipos.
+     *
+     * @param con la conexión a la base de datos.
+     */
     public ControladorPatrocinadoresEquipos(Connection con) {
         this.con = con;
     }
 
+    /**
+     * Inserta un nuevo registro en la tabla `patrocinadores_equipos`.
+     *
+     * @param idPatrocinador el ID del patrocinador.
+     * @param idEquipo el ID del equipo.
+     * @throws Exception si ocurre un error al insertar el registro o si ya existe un registro
+     * con los mismos datos.
+     */
     public void insertarPatrocinadorEquipo(int idPatrocinador, int idEquipo) throws Exception {
 
         try {
@@ -43,6 +58,14 @@ public class ControladorPatrocinadoresEquipos {
 
     }
 
+    /**
+     * Busca todos los equipos patrocinados por un patrocinador específico.
+     *
+     * @param idPatrocinador el ID del patrocinador.
+     * @return una lista de IDs de los equipos patrocinados por el patrocinador.
+     * @throws Exception si ocurre un error al buscar los equipos patrocinados o si el
+     * patrocinador no patrocina ningún equipo.
+     */
     public ArrayList<Integer> buscarEquiposPatrocinador(int idPatrocinador) throws Exception {
         ArrayList<Integer> listaEquiposPatrocinador = new ArrayList<>();
         try {
@@ -63,6 +86,14 @@ public class ControladorPatrocinadoresEquipos {
         }
     }
 
+    /**
+     * Borra un registro de la tabla `patrocinadores_equipos`.
+     *
+     * @param idPatrocinador el ID del patrocinador.
+     * @param idEquipo el ID del equipo.
+     * @throws Exception si ocurre un error al borrar el registro o si no existe un registro
+     * con los datos proporcionados.
+     */
     public void borrarPatrocinadorEquipo(int idPatrocinador, int idEquipo) throws Exception {
 
         try {
