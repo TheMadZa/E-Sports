@@ -10,7 +10,6 @@ import java.util.List;
 
 /**
  * Controlador principal que actúa como intermediario entre la vista y el modelo.
- *
  * Gestiona las operaciones relacionadas con la interacción de la vista con los datos del modelo.
  *
  * @author Ibai, Lorena, Zahir, Julen

@@ -25,9 +25,8 @@ import java.util.ArrayList;
 public class ControladorVAdmin {
 
     private VentanaAdmin va;
-    private ControladorVista cv;
+    private final ControladorVista cv;
     private String tablaElegida;
-    private String accionElegida;
     private boolean datosRellenados = false;
     private final DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("dd-MM-yy");
     private final double salarioMinimo = 1134;
@@ -192,7 +191,7 @@ public class ControladorVAdmin {
 
             try {
 
-                accionElegida = e.getActionCommand();
+                String accionElegida = e.getActionCommand();
 
                 // Dependiendo de la tabla sobre la que queramos hacer una acción, y la acción en la BD que sea:
                 switch (tablaElegida){
@@ -439,58 +438,44 @@ public class ControladorVAdmin {
         }
     }
 
-
     /**
-     * ActionListener para abrir el enlace de Facebook en la interfaz de administrador.
+     * ActionListener para el botón de Facebook.
      */
-    public static class BFacebookAL implements ActionListener {
+    public static class BFacebookAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            // Enlace de Facebook.
-            String enlace = "https://www.facebook.com/?locale=es_ES";
-            try {
-                // Abre el enlace en el navegador web predeterminado.
-                Desktop.getDesktop().browse(java.net.URI.create(enlace));
-            } catch (java.io.IOException ex) {
-                // Maneja cualquier excepción mostrando un mensaje de error en la consola.
-                System.out.println("Error al abrir el enlace: " + ex.getMessage());
-            }
+            abrirEnlace("https://www.facebook.com/?locale=es_ES");
         }
     }
-
     /**
-     * ActionListener para abrir el enlace de Instagram en la interfaz de administrador.
+     * ActionListener para el botón de Instagram.
      */
-    public static class BInstagramAL implements ActionListener {
+    public static class BInstagramAL implements ActionListener{
+
         @Override
         public void actionPerformed(ActionEvent e) {
-            // Enlace de Instagram.
-            String enlace = "https://www.instagram.com";
-            try {
-                // Abre el enlace en el navegador web predeterminado.
-                Desktop.getDesktop().browse(java.net.URI.create(enlace));
-            } catch (java.io.IOException ex) {
-                // Maneja cualquier excepción mostrando un mensaje de error en la consola.
-                System.out.println("Error al abrir el enlace: " + ex.getMessage());
-            }
+            abrirEnlace("https://www.instagram.com");
         }
     }
-
     /**
-     * ActionListener para abrir el enlace de Twitter en la interfaz de administrador.
+     * ActionListener para el botón de Twitter.
      */
-    public static class BTwitterAL implements ActionListener {
+    public static class BTwitterAL implements ActionListener{
+
         @Override
         public void actionPerformed(ActionEvent e) {
-            // Enlace de Twitter.
-            String enlace = "https://twitter.com/?logout=1715768138184";
-            try {
-                // Abre el enlace en el navegador web predeterminado.
-                Desktop.getDesktop().browse(java.net.URI.create(enlace));
-            } catch (java.io.IOException ex) {
-                // Maneja cualquier excepción mostrando un mensaje de error en la consola.
-                System.out.println("Error al abrir el enlace: " + ex.getMessage());
-            }
+            abrirEnlace("https://twitter.com/?logout=1715768138184");
+        }
+    }
+    /**
+     * Abre un enlace externo en el navegador predeterminado.
+     * @param enlace Enlace a abrir.
+     */
+    private static void abrirEnlace(String enlace) {
+        try {
+            Desktop.getDesktop().browse(java.net.URI.create(enlace));
+        } catch (java.io.IOException ex) {
+            System.out.println("Error al abrir el enlace: " + ex.getMessage());
         }
     }
 
@@ -498,10 +483,11 @@ public class ControladorVAdmin {
 
     // Operaciones con equipos
 
-    // Mediante la inserción se podrán hacer 3 cosas: solamente insertar un equipo, insertar un equipo nuevo y
-    // relacionarlo con una competición, o relacionar un equipo existente con una competición.
     /**
-     * Inserta un equipo en la base de datos, opcionalmente asociándolo a una competición.
+     * Inserta un equipo en la base de datos, relaciona un equipo con una competición, o las dos cosas a la vez.
+     * Mediante la inserción se podrán hacer 3 cosas: solamente insertar un equipo, insertar un equipo nuevo y
+     * relacionarlo con una competición, o relacionar un equipo existente con una competición.
+     *
      * @param nombre El nombre del equipo.
      * @param logo El logo del equipo.
      * @param color El color del equipo.
@@ -637,6 +623,9 @@ public class ControladorVAdmin {
     }
     /**
      * Modifica un equipo en la base de datos.
+     * Con la casilla del nombre rellenada, se clica en "Actualizar" y aparecen los datos del objeto existente. Cuando
+     * se vuelva a clicar deben estar las casillas rellendas para modificar el objeto.
+     *
      * @param nombre El nombre del equipo a modificar.
      * @param logo El nuevo logo del equipo.
      * @param color El nuevo color del equipo.
@@ -646,9 +635,6 @@ public class ControladorVAdmin {
                                 ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
-            // Con la casilla del nombre rellenada, se clica en "Actualizar" y aparecen los datos
-            //  del objeto existente. Cuando se vuelva a clicar deben estar las casillas rellendas
-            //  para modificar el objeto.
             if (!nombre.isEmpty() && listaTextFieldsDinamicos.get(1).getText().isEmpty() && logo.isEmpty()
                     && color.isEmpty()){
                 if (!datosRellenados){
@@ -733,6 +719,7 @@ public class ControladorVAdmin {
     }
 
     // Operaciones con jugadores
+
     /**
      * Inserta un nuevo jugador en la base de datos.
      * @param nombre El nombre del jugador.
@@ -971,6 +958,7 @@ public class ControladorVAdmin {
     }
 
     // Operaciones con staff
+
     /**
      * Inserta un miembro del staff en la base de datos.
      * @param puesto El puesto del miembro del staff.
@@ -1125,15 +1113,6 @@ public class ControladorVAdmin {
     public void consultarStaff(String nombre, String puesto, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
-            /*
-            String fechaNacimientoS = listaTextFieldsDinamicos.get(2).getText();
-                        LocalDate fechaNacimientoLD = LocalDate.parse(fechaNacimientoS, formatoFecha);
-                        Date fechaNacimiento = Date.valueOf(fechaNacimientoLD);
-                        double sueldo = Double.parseDouble(listaTextFieldsDinamicos.get(3).getText());
-                        int idEquipo = Integer.parseInt(listaTextFieldsDinamicos.get(4).getText());
-             */
-            // El miembro del staff tendrá puesto, nombre, fecha de nacimiento, sueldo e id del equipo.
-
             listaTextFieldsDinamicos.get(0).setText("");
             listaTextFieldsDinamicos.get(2).setText("");
             listaTextFieldsDinamicos.get(3).setText("");
@@ -1165,10 +1144,11 @@ public class ControladorVAdmin {
 
     // Operaciones con patrocinadores
 
-    // Puede patrocinar más de un equipo. Así que puede que solo habría que añadirlo a PATROCINADORES_EQUIPOS
-    //  (y no hay que insertar un nuevo patrocinador, ya que ese ya existe).
     /**
-     * Inserta un patrocinador en la base de datos y establece su relación con un equipo.
+     * Inserta un patrocinador en la base de datos y/o establece su relación con un equipo.
+     * Puede patrocinar más de un equipo. Así que puede que solo habría que añadirlo a PATROCINADORES_EQUIPOS
+     * (y no hay que insertar un nuevo patrocinador, ya que ese ya existe).
+     *
      * @param nombre El nombre del patrocinador a insertar.
      * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
      */
@@ -1224,14 +1204,14 @@ public class ControladorVAdmin {
             va.mostrarMensaje("Error en la inserción de un patrocinador.\n" +ex.getMessage());
         }
     }
-        // Se podrá desvincular con un equipo que patrocina (eliminar una fila de 'Patrocinadores_equipos') o
-        // eliminar un patrocinador.
     /**
      * Elimina un patrocinador de la base de datos o su relación con un equipo.
+     * Se podrá desvincular con un equipo que patrocina (eliminar una fila de 'Patrocinadores_equipos') o eliminar un patrocinador.
+     *
      * @param nombre El nombre del patrocinador a eliminar.
+     * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
      */
     public void borrarPatrocinador(String nombre, ArrayList<JTextField> listaTextFieldsDinamicos){
-        // Se podrá desvincular con un equipo que patrocina (eliminar una fila de 'Patrocinadores_equipos') o eliminar un patrocinador.
         try {
             // Si solo hay que borrar un patrocinador:
             if (!nombre.isEmpty() && listaTextFieldsDinamicos.get(1).getText().isEmpty()) {
@@ -1273,12 +1253,13 @@ public class ControladorVAdmin {
         }
     }
     /**
-     * Consulta la información de un patrocinador en la base de datos y muestra los detalles en los campos de texto.
+     * Consulta los equipos patrocinados según el ID del patrocinador y los muestra.
+     * Consulta los ID de los equipos que patrocina un patrocinador en la base de datos y los muestra en el campo de texto.
+     *
      * @param nombre El nombre del patrocinador a consultar.
      * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
      */
     public void consultarPatrocinador(String nombre, ArrayList<JTextField> listaTextFieldsDinamicos){
-        // Obtendrá los ID de los equipos que patrocina.
         try {
 
             listaTextFieldsDinamicos.get(1).setText("");
@@ -1315,6 +1296,7 @@ public class ControladorVAdmin {
     }
 
     // Operaciones con juegos
+
     /**
      * Inserta un nuevo juego en la base de datos.
      * @param nombre El nombre del juego a insertar.
@@ -1387,8 +1369,6 @@ public class ControladorVAdmin {
     public void modificarJuego(String nombre, String empresa, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
-            // Con la casilla del nombre rellenada, se clica en "Actualizar" y aparecen los datos
-            //  del objeto existente. Cuando se vuelva a clicar deben estar las casillas rellendas para modificar el objeto.
             if (!nombre.isEmpty() && listaTextFieldsDinamicos.get(1).getText().isEmpty() &&
                     listaTextFieldsDinamicos.get(2).getText().isEmpty()){
                 if (!datosRellenados){
@@ -1440,10 +1420,9 @@ public class ControladorVAdmin {
     public void consultarJuego(String nombre, ArrayList<JTextField> listaTextFieldsDinamicos){
         try {
 
-            // Limpiar 2 casillas.
             listaTextFieldsDinamicos.get(1).setText("");
             listaTextFieldsDinamicos.get(2).setText("");
-            // Con la casilla del nombre rellenada, se clica en "Consultar" y aparecen los demás datos del objeto existente.
+
             if (!nombre.isEmpty() && listaTextFieldsDinamicos.get(1).getText().isEmpty() &&
                     listaTextFieldsDinamicos.get(2).getText().isEmpty()){
                 Juego juego = cv.buscarJuegoPorNombre(nombre);
@@ -1466,6 +1445,7 @@ public class ControladorVAdmin {
     }
 
     // Operaciones con competiciones
+
     /**
      * Inserta una nueva competición en la base de datos.
      * @param nombre El nombre de la competición.
@@ -1656,6 +1636,7 @@ public class ControladorVAdmin {
     }
 
     // Operaciones con enfrentamientos
+
     /**
      * Elimina un enfrentamiento de la base de datos.
      * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
@@ -1814,6 +1795,7 @@ public class ControladorVAdmin {
     }
 
     // Operaciones con jornadas
+
     /**
      * Elimina una jornada de la base de datos.
      * @param listaTextFieldsDinamicos Lista de campos de texto dinámicos.
@@ -1941,6 +1923,7 @@ public class ControladorVAdmin {
     }
 
     // Operaciones con usuarios
+
     /**
      * Inserta un nuevo usuario en la base de datos.
      * @param nombreUsuario Nombre de usuario del nuevo usuario.
@@ -2086,7 +2069,6 @@ public class ControladorVAdmin {
      * Eliminará el contenido de todos los textfield que hay dentro del ArrayList, los cuales corresponden a
      * las columnas de una tabla de la BD.
      *
-     * @author Lorena
      * @param listaTextFieldsDinamicos Es el ArrayList con los JTextFields que representan a las columnas de una tabla.
      */
     public void limpiarCasillasVentana(ArrayList<JTextField> listaTextFieldsDinamicos) {

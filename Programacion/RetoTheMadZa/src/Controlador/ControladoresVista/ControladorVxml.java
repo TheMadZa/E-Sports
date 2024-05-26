@@ -17,7 +17,8 @@ import java.awt.event.ActionListener;
  */
 public class ControladorVxml {
     private VentanaXML vx;
-    private ControladorVista cv;
+    private final ControladorVista cv;
+    private JFrame ventanaEliminar;
 
     /**
      * Constructor que inicializa el controlador con una instancia de ControladorVista.
@@ -34,7 +35,11 @@ public class ControladorVxml {
      * @param ventanaEliminar la ventana que será reemplazada por la nueva ventana de XML.
      */
     public void crearMostrar(JFrame ventanaEliminar) {
+
+        this.ventanaEliminar = ventanaEliminar;
+
         vx = new VentanaXML(ventanaEliminar);
+
         vx.addBTiendaAL(new BTiendaAL());
         vx.addBInicioAL(new BInicioAL());
         vx.addBSalirAL(new BSalirAL());
@@ -47,6 +52,8 @@ public class ControladorVxml {
         vx.addXML(new CbXML());
         vx.addbtDTD(new btDTD());
         vx.addbtXSD(new btXSD());
+        vx.addBThemadzaAL(new BThemadzaAL());
+
     }
 
     /**
@@ -85,47 +92,43 @@ public class ControladorVxml {
     }
 
     /**
-     * Clase interna que maneja el evento de acción para el botón de Facebook.
+     * ActionListener para el botón de Facebook.
      */
-    public static class BFacebookAL implements ActionListener {
+    public static class BFacebookAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            String enlace = "https://www.facebook.com/?locale=es_ES";
-            try {
-                Desktop.getDesktop().browse(java.net.URI.create(enlace));
-            } catch (java.io.IOException ex) {
-                System.out.println("Error al abrir el enlace: " + ex.getMessage());
-            }
+            abrirEnlace("https://www.facebook.com/?locale=es_ES");
         }
     }
-
     /**
-     * Clase interna que maneja el evento de acción para el botón de Instagram.
+     * ActionListener para el botón de Instagram.
      */
-    public static class BInstagramAL implements ActionListener {
+    public static class BInstagramAL implements ActionListener{
+
         @Override
         public void actionPerformed(ActionEvent e) {
-            String enlace = "https://www.instagram.com";
-            try {
-                Desktop.getDesktop().browse(java.net.URI.create(enlace));
-            } catch (java.io.IOException ex) {
-                System.out.println("Error al abrir el enlace: " + ex.getMessage());
-            }
+            abrirEnlace("https://www.instagram.com");
         }
     }
-
     /**
-     * Clase interna que maneja el evento de acción para el botón de Twitter.
+     * ActionListener para el botón de Twitter.
      */
-    public static class BTwitterAL implements ActionListener {
+    public static class BTwitterAL implements ActionListener{
+
         @Override
         public void actionPerformed(ActionEvent e) {
-            String enlace = "https://twitter.com/?logout=1715768138184";
-            try {
-                Desktop.getDesktop().browse(java.net.URI.create(enlace));
-            } catch (java.io.IOException ex) {
-                System.out.println("Error al abrir el enlace: " + ex.getMessage());
-            }
+            abrirEnlace("https://twitter.com/?logout=1715768138184");
+        }
+    }
+    /**
+     * Abre un enlace externo en el navegador predeterminado.
+     * @param enlace Enlace a abrir.
+     */
+    private static void abrirEnlace(String enlace) {
+        try {
+            Desktop.getDesktop().browse(java.net.URI.create(enlace));
+        } catch (java.io.IOException ex) {
+            System.out.println("Error al abrir el enlace: " + ex.getMessage());
         }
     }
 
@@ -167,7 +170,7 @@ public class ControladorVxml {
         public void actionPerformed(ActionEvent e) {
             String selectedItem = String.valueOf(vx.getCbXMLSelec().getSelectedItem());
             switch (selectedItem) {
-                case "Clasificacion":
+                case "Clasificacion" -> {
                     try {
                         String resultDTD = cv.obtenerXMLClasificacionDTD();
                         String resultXSD = cv.obtenerXMLClasificacionXSD();
@@ -177,8 +180,8 @@ public class ControladorVxml {
                         ex.printStackTrace();
                         JOptionPane.showMessageDialog(null, "Error al obtener XML de Clasificación: " + ex.getMessage());
                     }
-                    break;
-                case "Jornadas":
+                }
+                case "Jornadas" -> {
                     try {
                         String resultDTD = cv.obtenerXMLJornadasDTD();
                         String resultXSD = cv.obtenerXMLJornadasXSD();
@@ -188,8 +191,8 @@ public class ControladorVxml {
                         ex.printStackTrace();
                         JOptionPane.showMessageDialog(null, "Error al obtener XML de Clasificación: " + ex.getMessage());
                     }
-                    break;
-                case "UltimaJornada":
+                }
+                case "UltimaJornada" -> {
                     try {
                         String resultDTD = cv.obtenerXMLUltimaJornadaDTD();
                         String resultXSD = cv.obtenerXMLUltimaJornadaXSD();
@@ -199,7 +202,7 @@ public class ControladorVxml {
                         ex.printStackTrace();
                         JOptionPane.showMessageDialog(null, "Error al obtener XML de Clasificación: " + ex.getMessage());
                     }
-                    break;
+                }
             }
         }
     }
@@ -229,6 +232,18 @@ public class ControladorVxml {
             Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
             clipboard.setContents(stringSelection, null);
             JOptionPane.showMessageDialog(null, "Texto copiado al portapapeles.");
+        }
+    }
+
+    /**
+     * Acción para mostrar la ventana desde la que se activó la VXml.
+     * Esta ventana se eliminará y se mostrará la VAdmin o VUser (volverá a la anterior), como si fuese la ventana principal.
+     */
+    public class BThemadzaAL implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            vx.dispose();
+            ventanaEliminar.setVisible(true);
         }
     }
 }

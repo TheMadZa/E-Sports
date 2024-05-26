@@ -19,7 +19,8 @@ import java.util.List;
 public class ControladorVJornadas {
 
     private VentanaJornadas vj;
-    private ControladorVista cv;
+    private final ControladorVista cv;
+    private JFrame ventanaEliminar;
 
     /**
      * Constructor de ControladorVJornadas.
@@ -37,6 +38,8 @@ public class ControladorVJornadas {
      */
     public void crearMostrar(JFrame ventanaEliminar) {
 
+        this.ventanaEliminar = ventanaEliminar;
+
         vj = new VentanaJornadas(ventanaEliminar);
 
         llenarComboBox();
@@ -51,6 +54,7 @@ public class ControladorVJornadas {
         vj.addMClasificacionAL(new MClasificacionAL());
         vj.addMEquiposAL(new MEquiposAL());
         vj.addCbCompeticionAL(new CbClasificacionAL());
+        vj.addBThemadzaAL(new BThemadzaAL());
 
     }
 
@@ -90,47 +94,43 @@ public class ControladorVJornadas {
     }
 
     /**
-     * Acción para abrir Facebook en el navegador.
+     * ActionListener para el botón de Facebook.
      */
     public static class BFacebookAL implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            String enlace = "https://www.facebook.com/?locale=es_ES";
-            try {
-                Desktop.getDesktop().browse(java.net.URI.create(enlace));
-            } catch (java.io.IOException ex) {
-                System.out.println("Error al abrir el enlace: " + ex.getMessage());
-            }
+            abrirEnlace("https://www.facebook.com/?locale=es_ES");
         }
     }
-
     /**
-     * Acción para abrir Instagram en el navegador.
+     * ActionListener para el botón de Instagram.
      */
     public static class BInstagramAL implements ActionListener{
+
         @Override
         public void actionPerformed(ActionEvent e) {
-            String enlace = "https://www.instagram.com";
-            try {
-                Desktop.getDesktop().browse(java.net.URI.create(enlace));
-            } catch (java.io.IOException ex) {
-                System.out.println("Error al abrir el enlace: " + ex.getMessage());
-            }
+            abrirEnlace("https://www.instagram.com");
         }
     }
-
     /**
-     * Acción para abrir Twitter en el navegador.
+     * ActionListener para el botón de Twitter.
      */
     public static class BTwitterAL implements ActionListener{
+
         @Override
         public void actionPerformed(ActionEvent e) {
-            String enlace = "https://twitter.com/?logout=1715768138184";
-            try {
-                Desktop.getDesktop().browse(java.net.URI.create(enlace));
-            } catch (java.io.IOException ex) {
-                System.out.println("Error al abrir el enlace: " + ex.getMessage());
-            }
+            abrirEnlace("https://twitter.com/?logout=1715768138184");
+        }
+    }
+    /**
+     * Abre un enlace externo en el navegador predeterminado.
+     * @param enlace Enlace a abrir.
+     */
+    private static void abrirEnlace(String enlace) {
+        try {
+            Desktop.getDesktop().browse(java.net.URI.create(enlace));
+        } catch (java.io.IOException ex) {
+            System.out.println("Error al abrir el enlace: " + ex.getMessage());
         }
     }
 
@@ -255,6 +255,18 @@ public class ControladorVJornadas {
             label.setIcon(iconoEscalado);
         } else {
             System.err.println("Imagen no encontrada: " + nombreImagen);
+        }
+    }
+
+    /**
+     * Acción para mostrar la ventana desde la que se activó la VJornadas.
+     * Esta ventana se eliminará y se mostrará la VAdmin o VUser (volverá a la anterior), como si fuese la ventana principal.
+     */
+    public class BThemadzaAL implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            vj.dispose();
+            ventanaEliminar.setVisible(true);
         }
     }
 

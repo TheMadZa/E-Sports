@@ -1,7 +1,6 @@
 package Vista;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionListener;
 
 import Controlador.ControladoresVista.ControladorImagenes;
@@ -59,8 +58,8 @@ public class VentanaInicial extends JFrame {
     private JButton bTienda;
     private JLabel logoBlanco;
     private int indiceImagenes = 0;
-    private final String text = " TheMadZa, compañía líder en eSports, organiza dos competiciones activas: el Torneo de" +
-            " TheMadZa Legends, con premios millonarios para equipos globales, y TheMadZa Clash, enfocado en nuevos" +
+    private final String text = " TheMadZa, compañía líder en eSports, organiza dos competiciones activas: el Torneo " +
+            "de TheMadZa Legends, con premios millonarios para equipos globales, y TheMadZa Clash, enfocado en nuevos" +
             " talentos. Recientemente, lanzaron su tienda online con productos exclusivos y personalizados. Los" +
             " jugadores pueden registrarse fácilmente para participar en competiciones y acceder a contenido" +
             " exclusivo, sorteos y descuentos especiales. Además, TheMadZa organiza eventos anuales como" +
@@ -87,72 +86,6 @@ public class VentanaInicial extends JFrame {
         cargarImagenEstablecerIcono("Facebook", bFacebook);
         cargarImagenEstablecerIcono("LogoBlanco", 100, 100, logoBlanco);
 
-        /*
-        // Cargar la imagen del logo con tamaño específico
-        ImageIcon iconoLogo = ControladorImagenes.obtenerImagen("TheMadZaLogoSimple", 250, 250);
-        if (iconoLogo != null) {
-            ftThemadza.setIcon(iconoLogo);
-        } else {
-            System.err.println("La imagen TheMadZaLogoSimple no se encontró.");
-        }
-
-        // Cargar la imagen del botón Tienda con tamaño específico
-        ImageIcon iconoTienda = ControladorImagenes.obtenerImagen("Tienda", 40, 40);
-        if (iconoTienda != null) {
-            bTienda.setIcon(iconoTienda);
-        } else {
-            System.err.println("La imagen Tienda no se encontró.");
-        }
-
-        // Cargar la imagen del botón Inicio con tamaño específico
-        ImageIcon iconoInicio = ControladorImagenes.obtenerImagen("Inicio", 40, 40);
-        if (iconoInicio != null) {
-            bInicio.setIcon(iconoInicio);
-        } else {
-            System.err.println("La imagen Inicio no se encontró.");
-        }
-
-        // Cargar la imagen del botón Salir con tamaño específico
-        ImageIcon iconoSalir = ControladorImagenes.obtenerImagen("Salir", 40, 40);
-        if (iconoSalir != null) {
-            bSalir.setIcon(iconoSalir);
-        } else {
-            System.err.println("La imagen Salir no se encontró.");
-        }
-
-        // Cargar la imagen del botón Twitter con tamaño específico
-        ImageIcon iconoTwitter = ControladorImagenes.obtenerImagen("Twitter", 40, 40);
-        if (iconoTwitter != null) {
-            bTwitter.setIcon(iconoTwitter);
-        } else {
-            System.err.println("La imagen Twitter no se encontró.");
-        }
-
-        // Cargar la imagen del botón Instagram con tamaño específico
-        ImageIcon iconoInstagram = ControladorImagenes.obtenerImagen("Instagram", 40, 40);
-        if (iconoInstagram != null) {
-            bInstagram.setIcon(iconoInstagram);
-        } else {
-            System.err.println("La imagen Instagram no se encontró.");
-        }
-
-        // Cargar la imagen del botón Facebook con tamaño específico
-        ImageIcon iconoFacebook = ControladorImagenes.obtenerImagen("Facebook", 40, 40);
-        if (iconoFacebook != null) {
-            bFacebook.setIcon(iconoFacebook);
-        } else {
-            System.err.println("La imagen Facebook no se encontró.");
-        }
-
-        // Cargar la imagen del logo blanco con tamaño específico
-        ImageIcon iconoLogoBlanco = ControladorImagenes.obtenerImagen("LogoBlanco", 100, 100);
-        if (iconoLogoBlanco != null) {
-            logoBlanco.setIcon(iconoLogoBlanco);
-        } else {
-            System.err.println("La imagen LogoBlanco no se encontró.");
-        }
-         */
-
         // Configurar la ventana
         setContentPane(pPrincipal);
         setTitle("Ventana Inicial");
@@ -166,17 +99,6 @@ public class VentanaInicial extends JFrame {
         for (JComponent componente : componentesConBorde) {
             componente.setBorder(BorderFactory.createEmptyBorder());
         }
-
-        /*
-        mPrincipal.setBorder(BorderFactory.createEmptyBorder());
-        bTienda.setBorder(BorderFactory.createEmptyBorder());
-        bInicio.setBorder(BorderFactory.createEmptyBorder());
-        bSalir.setBorder(BorderFactory.createEmptyBorder());
-        cbClasificacion.setBorder(BorderFactory.createEmptyBorder());
-        bFacebook.setBorder(BorderFactory.createEmptyBorder());
-        bTwitter.setBorder(BorderFactory.createEmptyBorder());
-        bInstagram.setBorder(BorderFactory.createEmptyBorder());
-         */
 
         // Iniciar el desplazamiento del texto
         iniciarDesplazamientoTexto();
@@ -212,7 +134,7 @@ public class VentanaInicial extends JFrame {
             // Cambiar la imagen y actualizar el índice
             indiceImagenes = (indiceImagenes + 1) % 7; // Número de imágenes en el array
             // Obtener la imagen del array cargada en el ControladorImagenes
-            ImageIcon icon = ControladorImagenes.obtenerImagen("Noticias" + indiceImagenes, 600, 600);
+            ImageIcon icon = ControladorImagenes.obtenerImagen("Noticias" + indiceImagenes,600,600);
             if (icon != null) {
                 ftNoticias.setIcon(icon);
             } else {
@@ -244,120 +166,60 @@ public class VentanaInicial extends JFrame {
         return vEquipo1;
     }
 
-    public void setvEquipo1(JLabel vEquipo1) {
-        this.vEquipo1 = vEquipo1;
-    }
-
     public JLabel getvEquipo2() {
         return vEquipo2;
-    }
-
-    public void setvEquipo2(JLabel vEquipo2) {
-        this.vEquipo2 = vEquipo2;
     }
 
     public JLabel getvEquipo3() {
         return vEquipo3;
     }
 
-    public void setvEquipo3(JLabel vEquipo3) {
-        this.vEquipo3 = vEquipo3;
-    }
-
     public JLabel getvEquipo4() {
         return vEquipo4;
-    }
-
-    public void setvEquipo4(JLabel vEquipo4) {
-        this.vEquipo4 = vEquipo4;
     }
 
     public JLabel getvEquipo5() {
         return vEquipo5;
     }
 
-    public void setvEquipo5(JLabel vEquipo5) {
-        this.vEquipo5 = vEquipo5;
-    }
-
     public JLabel getpEquipo1() {
         return pEquipo1;
-    }
-
-    public void setpEquipo1(JLabel pEquipo1) {
-        this.pEquipo1 = pEquipo1;
     }
 
     public JLabel getpEquipo2() {
         return pEquipo2;
     }
 
-    public void setpEquipo2(JLabel pEquipo2) {
-        this.pEquipo2 = pEquipo2;
-    }
-
     public JLabel getpEquipo3() {
         return pEquipo3;
-    }
-
-    public void setpEquipo3(JLabel pEquipo3) {
-        this.pEquipo3 = pEquipo3;
     }
 
     public JLabel getpEquipo4() {
         return pEquipo4;
     }
 
-    public void setpEquipo4(JLabel pEquipo4) {
-        this.pEquipo4 = pEquipo4;
-    }
-
     public JLabel getpEquipo5() {
         return pEquipo5;
-    }
-
-    public void setpEquipo5(JLabel pEquipo5) {
-        this.pEquipo5 = pEquipo5;
     }
 
     public JLabel getEquipo2() {
         return equipo2;
     }
 
-    public void setEquipo2(JLabel equipo2) {
-        this.equipo2 = equipo2;
-    }
-
     public JLabel getEquipo3() {
         return equipo3;
-    }
-
-    public void setEquipo3(JLabel equipo3) {
-        this.equipo3 = equipo3;
     }
 
     public JLabel getEquipo4() {
         return equipo4;
     }
 
-    public void setEquipo4(JLabel equipo4) {
-        this.equipo4 = equipo4;
-    }
-
     public JLabel getEquipo5() {
         return equipo5;
     }
 
-    public void setEquipo5(JLabel equipo5) {
-        this.equipo5 = equipo5;
-    }
-
     public JLabel getEquipo1() {
         return equipo1;
-    }
-
-    public void setEquipo1(JLabel equipo1) {
-        this.equipo1 = equipo1;
     }
 
     // Listeners

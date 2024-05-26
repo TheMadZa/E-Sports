@@ -123,8 +123,8 @@ public class VentanaClasificacion extends JFrame{
 
         setVisible(true);
 
-        // Destruir la ventana anterior.
-        ventanaEliminar.dispose();
+        // Ocultar la ventana anterior.
+        ventanaEliminar.setVisible(false);
     }
 
     /**
@@ -637,6 +637,9 @@ public class VentanaClasificacion extends JFrame{
     }
     public void addCbCompeticionAL(ActionListener al) {
         cbCompeticion.addActionListener(al);
+    }
+    public void addBThemadzaAL(ActionListener al) {
+        ftThemadza.addActionListener(al);
     }
 
     /**

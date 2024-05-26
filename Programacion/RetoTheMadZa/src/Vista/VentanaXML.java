@@ -54,14 +54,14 @@ public class VentanaXML extends JFrame{
      */
     public VentanaXML(JFrame ventanaEliminar) {
 
-        cargarImagenEstablecerIconoBoton("TheMadZaLogoSimple", 250, 250, ftThemadza);
+        cargarImagenEstablecerIconoBoton(ftThemadza);
         cargarImagenEstablecerIcono("Tienda", bTienda);
         cargarImagenEstablecerIcono("Inicio", bInicio);
         cargarImagenEstablecerIcono("Salir", bSalir);
         cargarImagenEstablecerIcono("Twitter", bTwitter);
         cargarImagenEstablecerIcono("Instagram", bInstagram);
         cargarImagenEstablecerIcono("Facebook", bFacebook);
-        cargarImagenEstablecerIcono("LogoBlanco", 100, 100, logoBlanco);
+        cargarImagenEstablecerIcono(logoBlanco);
 
         // Configurar la ventana
         setContentPane(pPrincipal);
@@ -79,8 +79,8 @@ public class VentanaXML extends JFrame{
 
         setVisible(true);
 
-        // Destruir la ventana anterior.
-        ventanaEliminar.dispose();
+        // Ocultar la ventana anterior.
+        ventanaEliminar.setVisible(false);
     }
 
     /**
@@ -100,17 +100,14 @@ public class VentanaXML extends JFrame{
     /**
      * Carga una imagen y la establece como icono para un JLabel.
      *
-     * @param nombreImagen El nombre de la imagen a cargar.
-     * @param ancho        El ancho deseado para la imagen.
-     * @param alto         El alto deseado para la imagen.
-     * @param label        El JLabel al que se le establecerá el icono.
+     * @param label El JLabel al que se le establecerá el icono.
      */
-    private void cargarImagenEstablecerIcono(String nombreImagen, int ancho, int alto, JLabel label) {
-        ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
+    private void cargarImagenEstablecerIcono(JLabel label) {
+        ImageIcon icono = ControladorImagenes.obtenerImagen("LogoBlanco", 100, 100);
         if (icono != null) {
             label.setIcon(icono);
         } else {
-            System.err.println("La imagen " + nombreImagen + " no se encontró.");
+            System.err.println("La imagen " + "LogoBlanco" + " no se encontró.");
         }
     }
 
@@ -221,24 +218,12 @@ public class VentanaXML extends JFrame{
         return cbXMLSelec;
     }
 
-    public void setCbXMLSelec(JComboBox cbXMLSelec) {
-        this.cbXMLSelec = cbXMLSelec;
-    }
-
     public JTextArea getTaXMLXSD() {
         return taXMLXSD;
     }
 
-    public void setTaXMLXSD(JTextArea taXMLXSD) {
-        this.taXMLXSD = taXMLXSD;
-    }
-
     public JTextArea getTaXMLDTD() {
         return taXMLDTD;
-    }
-
-    public void setTaXMLDTD(JTextArea taXMLDTD) {
-        this.taXMLDTD = taXMLDTD;
     }
 
     public void addMJornadasAL(ActionListener al) {
@@ -278,6 +263,9 @@ public class VentanaXML extends JFrame{
     public void addbtDTD(ActionListener al){
         btCopiarDTD.addActionListener(al);
     }
+    public void addBThemadzaAL(ActionListener al) {
+        ftThemadza.addActionListener(al);
+    }
 
     /**
      * Muestra un mensaje de diálogo emergente con el mensaje especificado.
@@ -291,17 +279,14 @@ public class VentanaXML extends JFrame{
     /**
      * Carga una imagen y la establece como icono para un JButton.
      *
-     * @param nombreImagen El nombre de la imagen a cargar.
-     * @param ancho        El ancho deseado para la imagen.
-     * @param alto         El alto deseado para la imagen.
-     * @param label       El JButton al que se le establecerá el icono.
+     * @param label El JButton al que se le establecerá el icono.
      */
-    private void cargarImagenEstablecerIconoBoton(String nombreImagen, int ancho, int alto, JButton label) {
-        ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
+    private void cargarImagenEstablecerIconoBoton(JButton label) {
+        ImageIcon icono = ControladorImagenes.obtenerImagen("TheMadZaLogoSimple", 250, 250);
         if (icono != null) {
             label.setIcon(icono);
         } else {
-            System.err.println("La imagen " + nombreImagen + " no se encontró.");
+            System.err.println("La imagen " + "TheMadZaLogoSimple" + " no se encontró.");
         }
     }
 

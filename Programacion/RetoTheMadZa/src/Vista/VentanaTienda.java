@@ -69,7 +69,7 @@ public class VentanaTienda extends JFrame{
     public VentanaTienda(JFrame ventanaEliminar) {
 
         // Cargar las imágenes con un tamaño específico.
-        cargarImagenEstablecerIconoBoton("TheMadZaLogoSimple", 250, 250, ftThemadza);
+        cargarImagenEstablecerIconoBoton(ftThemadza);
         cargarImagenEstablecerIcono("Inicio", bInicio);
         cargarImagenEstablecerIcono("Salir", bSalir);
         cargarImagenEstablecerIcono("Twitter", bTwitter);
@@ -120,8 +120,8 @@ public class VentanaTienda extends JFrame{
 
         setVisible(true);
 
-        // Destruir la ventana anterior.
-        ventanaEliminar.dispose();
+        // Ocultar la ventana anterior.
+        ventanaEliminar.setVisible(false);
     }
 
     /**
@@ -208,17 +208,15 @@ public class VentanaTienda extends JFrame{
     /**
      * Carga una imagen y la establece como icono en un componente JButton con el tamaño especificado.
      * Si la imagen no se encuentra, imprime un mensaje de error en la consola.
-     * @param nombreImagen El nombre de la imagen que se va a cargar.
-     * @param ancho El ancho deseado para la imagen.
-     * @param alto El alto deseado para la imagen.
+     *
      * @param label El JButton en el que se establecerá la imagen como icono.
      */
-    private void cargarImagenEstablecerIconoBoton(String nombreImagen, int ancho, int alto, JButton label) {
-        ImageIcon icono = ControladorImagenes.obtenerImagen(nombreImagen, ancho, alto);
+    private void cargarImagenEstablecerIconoBoton(JButton label) {
+        ImageIcon icono = ControladorImagenes.obtenerImagen("TheMadZaLogoSimple", 250, 250);
         if (icono != null) {
             label.setIcon(icono);
         } else {
-            System.err.println("La imagen " + nombreImagen + " no se encontró.");
+            System.err.println("La imagen " + "TheMadZaLogoSimple" + " no se encontró.");
         }
     }
 
